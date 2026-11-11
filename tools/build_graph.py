@@ -11,6 +11,9 @@ import itertools
 import json
 import sqlite3
 import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import uni_geo  # noqa: E402
 
 DB, UNI_JSONL, XLSX, OUT = sys.argv[1:5]
 CA = {"UZ", "KZ", "KG", "TJ", "TM"}
@@ -103,8 +106,11 @@ for row in ws.iter_rows(values_only=True):
         ds.append([ids[0], str(d["Название"])[:140], d.get("Область") or "", d.get("Год") or ""])
 
 nodes_u = {u: dict(unis[u], w=works_by_uni.get(u, 0)) for u in unis}
+pos = uni_geo.display([(k, v["lat"], v["lon"]) for k, v in nodes_u.items()])
+for k, v in nodes_u.items():
+    v["city"] = uni_geo.fix(k, v["lat"], v["lon"], v["city"])[2]; v["lat"], v["lon"], v["p"] = pos[k]
 out = {
-    "unis": [[v["id"], v["name"], v["c"], round(v["lat"], 3), round(v["lon"], 3), v["city"], v["w"]] for v in nodes_u.values()],
+    "unis": [[v["id"], v["name"], v["c"], round(v["lat"], 4), round(v["lon"], 4), v["city"], v["w"], v["p"]] for v in nodes_u.values()],
     "topics": [[s, sub_total[s], sub_field[s][0], sub_field[s][1]] for s in top_subs],
     "uniTopic": ut,
     "co": co,

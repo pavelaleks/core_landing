@@ -14,7 +14,7 @@ def ring(r):
     for i in r:
         a=arc(i); pts.extend(a if not pts else a[1:])
     return pts
-def simplify(pts,tol=0.04):
+def simplify(pts,tol=0.015):
     out=[pts[0]]
     for p in pts[1:]:
         if abs(p[0]-out[-1][0])+abs(p[1]-out[-1][1])>tol: out.append(p)

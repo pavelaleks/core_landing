@@ -10,6 +10,8 @@ import hashlib
 import json
 import os
 import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import uni_geo  # noqa: E402
 
 HUB = sys.argv[1]
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -103,9 +105,10 @@ for line in open(os.path.join(DS, "universities", "processed", "universities.jso
     if not u.get("is_higher_ed"):
         continue
     loc, ids, r = u.get("location") or {}, u.get("identifiers") or {}, u.get("research") or {}
+    lat, lon, city = uni_geo.fix(u["id"], loc.get("lat"), loc.get("lon"), u.get("city"))  # registry corrections only, no OSM data
     urows.append({"id": u["id"], "country": u["country"], "name": u.get("name"), "name_national": u.get("name_national"),
                   "name_ru": u.get("name_ru"), "name_en": u.get("name_en"), "acronyms": "; ".join(u.get("acronyms") or []),
-                  "city": u.get("city"), "lat": loc.get("lat"), "lon": loc.get("lon"), "website": u.get("website"),
+                  "city": city, "lat": lat, "lon": lon, "website": u.get("website"),
                   "founded": u.get("founded"), "ror": ids.get("ror"), "wikidata": ids.get("wikidata"), "openalex": ids.get("openalex"),
                   "works_count": r.get("works_count"), "cited_by_count": r.get("cited_by_count"), "h_index": r.get("h_index")})
 write_csv(os.path.join(OUT, "samples", "universities.csv"), uf, urows)

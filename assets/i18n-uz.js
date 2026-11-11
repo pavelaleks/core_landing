@@ -934,5 +934,7 @@ window.CORE_UZ = {
 "Запросить →": "Soʻrash →",
 "Справочники и подборки (вузы, клиники), аналитику и отчёты, пилот, данные под заказ и предзаказ проверки модели. Готовые наборы данных из архивов вузов появятся по мере подписания договоров с университетами.": "Maʼlumotnomalar va roʻyxatlar (universitetlar, klinikalar), tahlil va hisobotlar, pilot, buyurtma maʼlumotlar va modelni tekshirishga oldindan buyurtma. Universitet arxivlaridagi tayyor toʻplamlar universitetlar bilan shartnomalar imzolanishi bilan paydo boʻladi.",
 "Мне нужны проверенные данные": "Menga tekshirilgan maʼlumotlar kerak",
-"Бизнесу и госорганам: подборки, выгрузки, аналитика": "Biznes va davlat idoralariga: roʻyxatlar, eksportlar, tahlil"
+"Бизнесу и госорганам: подборки, выгрузки, аналитика": "Biznes va davlat idoralariga: roʻyxatlar, eksportlar, tahlil",
+"местоположение: город": "joylashuv: shahar",
+"Вращайте карту мышью или пальцем · нажмите на вуз, чтобы увидеть его связи · вузы с найденным адресом стоят на своём кампусе, остальные — в центре города · данные: OpenAlex, ROR, Wikidata, OpenStreetMap": "Xaritani sichqoncha yoki barmoq bilan aylantiring · aloqalarini koʻrish uchun universitetni bosing · manzili topilgan universitetlar oʻz kampusida, qolganlari — shahar markazida · maʼlumotlar: OpenAlex, ROR, Wikidata, OpenStreetMap"
 };

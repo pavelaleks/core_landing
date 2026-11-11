@@ -72,7 +72,7 @@
    "name": "sample-csv",
    "contentUrl": "https://pavelaleks.github.io/core_landing/api/v0/datasets/universities/sample.csv",
    "encodingFormat": "text/csv",
-   "sha256": "16fe840a27778125bcb8ede1d281b67d58508e536d914e53174e9a0a78661915"
+   "sha256": "a68345197e4b47025cc018e50a89e682f939f42886d52fd5d6018637f1c3a447"
   }
  ],
  "recordSet": [

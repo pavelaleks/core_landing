@@ -1,4 +1,6 @@
-import json, csv, sys, openpyxl, collections
+import json, csv, sys, os, openpyxl, collections
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import uni_geo
 D=sys.argv[1]; XL=sys.argv[2]; OUT=sys.argv[3]
 out={}
 # universities
@@ -10,6 +12,9 @@ for line in open(f"{D}/universities/processed/universities.jsonl"):
     if loc.get("lat") is None: continue
     r=u.get("research") or {}
     unis.append([u["id"],u.get("name_en") or u["name"],u["country"],round(loc["lat"],3),round(loc["lon"],3),u.get("city") or "",r.get("works_count") or 0,u.get("founded") or 0,u.get("name_ru") or "",u.get("name_national") or ""])
+pos=uni_geo.display([(u[0],u[3],u[4]) for u in unis])
+for u in unis:
+    u[5]=uni_geo.fix(u[0],u[3],u[4],u[5])[2]; u[3],u[4],p=pos[u[0]]; u.append(p)  # idx 10: 1 campus, 0 city
 out["unis"]=unis
 uni_total=collections.Counter()
 for line in open(f"{D}/universities/processed/universities.jsonl"):

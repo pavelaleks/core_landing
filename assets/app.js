@@ -257,7 +257,7 @@
       var h;
       if (best.t === "uni") {
         var u = best.d;
-        h = "<b>" + esc(uniName(u)) + "</b>" + esc(u[5] || "") + " · " + pick(COUNTRY[u[2]]) + "<br><span class='mono' style='color:var(--teal)'>" + u[0] + "</span> · " + nf(u[6]) + " " + T("works", "работ");
+        h = "<b>" + esc(uniName(u)) + "</b>" + esc(u[5] || "") + (u[10] ? "" : " (" + T("location: city", "местоположение: город") + ")") + " · " + pick(COUNTRY[u[2]]) + "<br><span class='mono' style='color:var(--teal)'>" + u[0] + "</span> · " + nf(u[6]) + " " + T("works", "работ");
       } else {
         var m = best.d;
         h = "<b>" + pick(MEDTYPE[m[2]] || MEDTYPE.other) + "</b>" + pick(REGION[m[4]] || ["", ""]);

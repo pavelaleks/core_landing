@@ -99,12 +99,12 @@ function init() {
   const pillarPos = [];
   const uniPts = [], uniSizes = [];
   GD.unis.forEach((u) => {
-    const [id, name, c, lat, lon, city, w] = u;
+    const [id, name, c, lat, lon, city, w, prec] = u;
     const h = 1.2 + Math.log10(1 + w) * 3.2;
     const base = P(lon, lat, 0), top = P(lon, lat, h);
     pillarPos.push(base.x, 0, base.z, top.x, h, top.z);
     uniPts.push(top.x, h, top.z);
-    uniById[id] = { id, name, c, city, w, top, base, topics: [], partners: 0, ds: 0, world: [] };
+    uniById[id] = { id, name, c, city, w, prec, top, base, topics: [], partners: 0, ds: 0, world: [] };
     uniPick.push(uniById[id]);
   });
   const pillars = new THREE.LineSegments(geom(pillarPos), new THREE.LineBasicMaterial({ color: 0x3ddbc1, transparent: true, opacity: 0.45, blending: THREE.AdditiveBlending }));
@@ -262,7 +262,7 @@ function init() {
     const coN = arcs.filter((a) => a.a === U.id || a.b === U.id).length;
     panel.innerHTML = `<button class="g3-x" aria-label="close">×</button>
       <span class="mono small" style="color:var(--teal)">${U.id}</span>
-      <h4>${uniName(U.id, U.name)}</h4><p class="small muted">${U.city}</p>
+      <h4>${uniName(U.id, U.name)}</h4><p class="small muted">${U.city}${U.prec ? "" : " · " + T("location: city", "местоположение: город")}</p>
       <div class="g3-kpi"><div><b>${nf(U.w)}</b><span>${T("works", "работ")}</span></div><div><b>${coN}</b><span>${T("strong CA links", "сильных связей в ЦА")}</span></div><div><b>${U.ds}</b><span>${T("open datasets by scholars", "открытых наборов учёных")}</span></div></div>
       ${topT ? `<p class="small muted" style="margin-top:12px">${T("Strongest research areas", "Сильные направления")}</p><ul class="g3-topics">${topT}</ul>` : ""}`;
     panel.hidden = false;
@@ -286,7 +286,7 @@ function init() {
     renderer.domElement.style.cursor = p ? "pointer" : "grab";
     if (!p) { tip.hidden = true; return; }
     tip.innerHTML = p.kind === "uni"
-      ? `<b>${uniName(p.U.id, p.U.name)}</b>${p.U.city} · <span class="mono">${p.U.id}</span><br>${nf(p.U.w)} ${T("works", "работ")} · ${T("click to explore", "нажмите, чтобы открыть")}`
+      ? `<b>${uniName(p.U.id, p.U.name)}</b>${p.U.city}${p.U.prec ? "" : " (" + T("location: city", "местоположение: город") + ")"} · <span class="mono">${p.U.id}</span><br>${nf(p.U.w)} ${T("works", "работ")} · ${T("click to explore", "нажмите, чтобы открыть")}`
       : `<b>${topicName(p.t.s)}</b>${topicName(p.t.field)} · ${nf(p.t.n)} ${T("works", "работ")}`;
     tip.style.left = Math.min(p.x + 14, W() - 240) + "px"; tip.style.top = p.y + 14 + "px"; tip.hidden = false;
   });
