@@ -127,9 +127,9 @@
       '<div id="roles"' + (ok ? "" : " hidden") + ">" +
       "<h2>Кем вы входите?</h2>" +
       '<div class="grid3">' +
-      '<button class="card role" data-role="buyer"><span class="mono">ПОКУПАТЕЛЬ</span><b>Мне нужны данные</b><p>Компания, разработчик ИИ, страховая, фарма, госорган. Найти набор, посмотреть, что внутри, запросить доступ и скачать.</p></button>' +
-      '<button class="card role" data-role="university"><span class="mono">ВУЗ</span><b>У нас есть данные</b><p>Сотрудник, уполномоченный вузом. Загрузить набор, подтвердить права, следить за проверкой и заявками.</p></button>' +
-      '<button class="card role" data-role="operator"><span class="mono">ОПЕРАТОР CORE</span><b>Проверяю и выдаю доступ</b><p>Команда CORE. Одобрить заявки покупателей, провести набор вуза через проверку прав и разметку.</p></button>' +
+      '<button class="card role-card" data-role="buyer"><span class="rc-k">Покупатель</span><b>Мне нужны данные</b><p>Компания, разработчик ИИ, страховая, фарма, госорган. Найти набор, посмотреть, что внутри, запросить доступ и скачать.</p></button>' +
+      '<button class="card role-card" data-role="university"><span class="rc-k">Вуз</span><b>У нас есть данные</b><p>Сотрудник, уполномоченный вузом. Загрузить набор, подтвердить права, следить за проверкой и заявками.</p></button>' +
+      '<button class="card role-card" data-role="operator"><span class="rc-k">Оператор CORE</span><b>Проверяю и выдаю доступ</b><p>Команда CORE. Одобрить заявки покупателей, провести набор вуза через проверку прав и разметку.</p></button>' +
       "</div>" +
       '<div class="card" style="margin-top:16px"><b>Сценарий проверки за 5 минут</b><ol class="steps">' +
       "<li>Войдите как <b>покупатель</b>, откройте любой набор, посмотрите «до и после» и отправьте заявку.</li>" +
@@ -146,7 +146,7 @@
         inv.parentNode.hidden = true; document.getElementById("roles").hidden = false;
       } else document.getElementById("ierr").hidden = false;
     };
-    Array.prototype.forEach.call(document.querySelectorAll(".role"), function (b) {
+    Array.prototype.forEach.call(document.querySelectorAll(".role-card"), function (b) {
       b.onclick = function () { askWho(b.getAttribute("data-role")); };
     });
   }
