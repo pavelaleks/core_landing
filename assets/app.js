@@ -31,9 +31,15 @@
     uz: "CORE — SI uchun litsenziyalangan Markaziy Osiyo maʼlumotlari"
   };
 
+  var PAGE = document.body.dataset.page || "home";
+  var TITLES_UNI = {
+    en: "CORE for universities — put your data to work",
+    ru: "CORE для университетов — данные работают на вуз",
+    uz: "Universitetlar uchun CORE — maʼlumotlaringiz universitet uchun ishlaydi"
+  };
   function applyLang() {
     document.documentElement.lang = lang;
-    document.title = TITLES[lang];
+    document.title = (PAGE === "universities" ? TITLES_UNI : TITLES)[lang];
     $$("[data-ru]").forEach(function (el) {
       if (el.dataset.en === undefined) el.dataset.en = el.innerHTML;
       el.innerHTML = lang === "en" ? el.dataset.en : T(el.dataset.en, el.dataset.ru);
@@ -92,7 +98,7 @@
 
   /* ---------------- nav ---------------- */
   var nav = $(".nav");
-  window.addEventListener("scroll", function () { nav.classList.toggle("scrolled", window.scrollY > 8); }, { passive: true });
+  if (nav) window.addEventListener("scroll", function () { nav.classList.toggle("scrolled", window.scrollY > 8); }, { passive: true });
   $(".burger").addEventListener("click", function () {
     var o = nav.classList.toggle("open"); this.setAttribute("aria-expanded", String(o));
   });
@@ -304,7 +310,7 @@
     var bc = D.uniByCountry || {};
     bars($("#uniBars"), ["UZ", "KZ", "KG", "TJ"].map(function (c) { return [pick(COUNTRY[c]), bc[c] || 0]; }), "var(--teal)");
   }
-  $("#uniSearch").addEventListener("input", function () { uniFilter.q = this.value.trim(); renderUni(); });
+  if ($("#uniSearch")) $("#uniSearch").addEventListener("input", function () { uniFilter.q = this.value.trim(); renderUni(); });
   $$("#uniCountry button").forEach(function (b) {
     b.addEventListener("click", function () { $$("#uniCountry button").forEach(function (x) { x.classList.toggle("on", x === b); }); uniFilter.c = b.dataset.c; renderUni(); });
   });
@@ -400,8 +406,8 @@
       "<div><b>" + nf(Object.keys(unis).length) + "</b><span>" + T("universities", "вузов") + "</span></div>" +
       "<div><b>" + nf(samdu) + "</b><span>" + T("at Samarkand State Univ.", "у СамГУ") + "</span></div>";
   }
-  $("#pipeSearch").addEventListener("input", function () { pf.q = this.value.trim(); renderPipe(); });
-  fieldSel.addEventListener("change", function () { pf.f = this.value; renderPipe(); });
+  if ($("#pipeSearch")) $("#pipeSearch").addEventListener("input", function () { pf.q = this.value.trim(); renderPipe(); });
+  if (fieldSel) fieldSel.addEventListener("change", function () { pf.f = this.value; renderPipe(); });
   $$("#pipeType button").forEach(function (b) {
     b.addEventListener("click", function () { $$("#pipeType button").forEach(function (x) { x.classList.toggle("on", x === b); }); pf.m = b.dataset.m; renderPipe(); });
   });
@@ -419,15 +425,22 @@
   listeners.push(renderActive);
 
   /* ---------------- revenue calculator ---------------- */
+  var share = 0.7;
   function calc() {
+    if (!$("#cDs")) return;
     var ds = +$("#cDs").value, lic = +$("#cLic").value, price = +$("#cPrice").value;
     $("#oDs").textContent = ds; $("#oLic").textContent = lic; $("#oPrice").textContent = nf(price);
-    var uni = ds * lic * price * 0.7;
+    var uni = ds * lic * price * share;
     $("#rUni").textContent = "$" + nf(Math.round(uni));
     $("#rAuth").textContent = "$" + nf(Math.round(uni * 0.3));
   }
-  ["#cDs", "#cLic", "#cPrice"].forEach(function (s) { $(s).addEventListener("input", calc); });
-  listeners.push(calc);
+  if ($("#cDs")) {
+    ["#cDs", "#cLic", "#cPrice"].forEach(function (s) { $(s).addEventListener("input", calc); });
+    $$("#cTier button").forEach(function (b) {
+      b.addEventListener("click", function () { $$("#cTier button").forEach(function (x) { x.classList.toggle("on", x === b); }); share = +b.dataset.share; calc(); });
+    });
+    listeners.push(calc);
+  }
 
   /* ---------------- copy ---------------- */
   $$(".copy").forEach(function (b) {
@@ -440,9 +453,10 @@
   });
 
   /* ---------------- lead form ---------------- */
-  var form = $("#leadForm"), ftype = "buyer";
+  var form = $("#leadForm"), ftype = document.body.dataset.formDefault || "buyer";
   var FORM_TEXT = {
     buyer: { org: ["Company", "Компания"], role: ["Role", "Должность"], msg: ["What data do you need? Languages, volume, timeline.", "Какие данные нужны? Языки, объём, сроки."] },
+    med: { org: ["Company", "Компания"], role: ["Role", "Должность"], msg: ["Which specialties, regions and patient countries?", "Какие направления, регионы и страны пациентов?"] },
     bench: { org: ["Company", "Компания"], role: ["Role", "Должность"], msg: ["Which models do you want evaluated?", "Какие модели хотите проверить?"] },
     university: { org: ["University", "Университет"], role: ["Position", "Должность"], msg: ["Which collections or data could your university share?", "Какие фонды или данные мог бы предоставить ваш вуз?"] },
     researcher: { org: ["Your university", "Ваш университет"], role: ["Department / lab", "Кафедра / лаборатория"], msg: ["Describe the dataset: content, size, language, who holds the rights.", "Опишите датасет: содержание, объём, язык, у кого права."] },
@@ -450,22 +464,25 @@
   };
   function setType(t) {
     ftype = t;
-    var segT = t === "bench" ? "buyer" : t;
+    var segT = t === "bench" || t === "med" ? "buyer" : t;
     $$("#formType button").forEach(function (b) { b.classList.toggle("on", b.dataset.t === segT); });
     form.elements.type.value = t;
     var ft = FORM_TEXT[t];
     $(".org-label").textContent = pick(ft.org);
     $(".role-label").textContent = pick(ft.role);
     $(".msg-label").textContent = pick(ft.msg);
-    $(".f-buyer").hidden = !(t === "buyer" || t === "bench");
+    $(".f-buyer").hidden = !(t === "buyer" || t === "bench" || t === "med");
     $(".f-researcher").hidden = t !== "researcher";
     if (t === "bench") form.elements.usecase.selectedIndex = 1;
+    if (t === "med") form.elements.usecase.selectedIndex = 3;
   }
+  if (form) {
   $$("#formType button").forEach(function (b) { b.addEventListener("click", function () { setType(b.dataset.t); }); });
   $$("[data-form]").forEach(function (a) { a.addEventListener("click", function () { setType(a.dataset.form); }); });
   listeners.push(function () { setType(ftype); });
+  }
 
-  form.addEventListener("submit", function (e) {
+  if (form) form.addEventListener("submit", function (e) {
     e.preventDefault();
     var status = $("#formStatus");
     status.classList.remove("err");
@@ -478,7 +495,7 @@
     var data = {};
     new FormData(form).forEach(function (v, k) { data[k] = v; });
     data.lang = lang; data.page = location.href; data.ts = new Date().toISOString();
-    var TYPE_RU = { buyer: "покупатель", bench: "бенчмарк", university: "вуз", researcher: "исследователь", investor: "инвестор" };
+    var TYPE_RU = { med: "медтуризм", buyer: "покупатель", bench: "бенчмарк", university: "вуз", researcher: "исследователь", investor: "инвестор" };
     data._subject = "CORE · заявка: " + (TYPE_RU[data.type] || data.type) + " · " + data.org;
     data._template = "table"; data._captcha = "false";
     if (data.email) data._replyto = data.email;
@@ -500,6 +517,17 @@
       status.textContent = T("The form is not connected yet (see assets/config.js).", "Форма ещё не подключена (см. assets/config.js).");
     }
   });
+
+  /* ---------------- telegram & analytics (from config.js) ---------------- */
+  if (CFG.telegram) {
+    var tg = String(CFG.telegram).replace(/^@/, "").replace(/^https?:\/\/t\.me\//, "");
+    $$(".tg-link").forEach(function (a) { a.href = "https://t.me/" + tg; a.hidden = false; });
+  }
+  if (CFG.plausibleDomain) {
+    var ps = document.createElement("script");
+    ps.defer = true; ps.src = "https://plausible.io/js/script.js"; ps.setAttribute("data-domain", CFG.plausibleDomain);
+    document.head.appendChild(ps);
+  }
 
   /* ---------------- reveal ---------------- */
   var revealEls = $$(".sec-head, .card, .flow, .team, .strip-grid");

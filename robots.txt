@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://pavelaleks.github.io/core_landing/sitemap.xml

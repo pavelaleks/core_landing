@@ -6,5 +6,9 @@ window.CORE_CONFIG = {
   // activation email to this address — click "Activate Form" in it once.
   formEndpoint: "https://formsubmit.co/ajax/pavel.alekseev.gasu@gmail.com",
   // Fallback: if no endpoint is set, the form opens the visitor's mail client addressed here.
-  contactEmail: "pavel.alekseev.gasu@gmail.com"
+  contactEmail: "pavel.alekseev.gasu@gmail.com",
+  // Telegram username or channel for the "Telegram" buttons (e.g. "core_data"). Empty = buttons hidden.
+  telegram: "",
+  // Plausible analytics domain (e.g. "pavelaleks.github.io/core_landing"). Empty = no analytics.
+  plausibleDomain: ""
 };
