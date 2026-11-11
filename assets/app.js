@@ -542,6 +542,29 @@
     if (t === "bench") form.elements.usecase.selectedIndex = 1;
     if (t === "med") form.elements.usecase.selectedIndex = 3;
   }
+  /* the form lives in a dialog: every "#contact" link opens it with the right request type */
+  var dlg = $("#contactDlg");
+  if (dlg && dlg.showModal) {
+    var openDlg = function (t) {
+      if (t) setType(t);
+      if (!dlg.open) {
+        var st = $("#formStatus"); if (st && !/Спасибо|Thank|Rahmat/.test(st.textContent)) { st.textContent = ""; st.classList.remove("err"); }
+        $$(".touched", form).forEach(function (i) { i.classList.remove("touched"); });
+        dlg.showModal();
+      }
+      var first = form && form.elements.name; if (first) setTimeout(function () { first.focus(); }, 50);
+    };
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest && e.target.closest('a[href="#contact"]');
+      if (!a) return;
+      e.preventDefault();
+      openDlg(a.getAttribute("data-form"));
+    });
+    $("#dlgClose").setAttribute("aria-label", T("Close", "Закрыть"));
+    $("#dlgClose").addEventListener("click", function () { dlg.close(); });
+    dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
+    if (location.hash === "#contact") setTimeout(function () { openDlg(); }, 300);
+  }
   if (form) {
   $$("#formType button").forEach(function (b) { b.addEventListener("click", function () { setType(b.dataset.t); }); });
   $$("[data-form]").forEach(function (a) { a.addEventListener("click", function () { setType(a.dataset.form); }); });

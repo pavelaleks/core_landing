@@ -931,3 +931,23 @@ html.has-subnav{scroll-padding-top:136px}
 @media (max-width:600px){.cat-filters select{flex:1 1 100%}}
 .cat-item{min-width:0;overflow-wrap:anywhere}
 .cat-act .btn{white-space:normal;text-align:center}
+
+/* contact: short band + dialog */
+.contact-band{padding:72px 0;border-top:1px solid var(--line);background:linear-gradient(180deg,rgba(var(--teal-rgb),.05),transparent)}
+.cb-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
+.cb-in h2{font-size:clamp(28px,3vw,40px)}
+.cb-in .sub{margin-top:10px}
+.cb-actions{display:flex;flex-wrap:wrap;gap:10px}
+.dlg{width:min(640px,calc(100vw - 24px));max-height:calc(100vh - 32px);padding:0;border:1px solid var(--line2);border-radius:18px;background:var(--surface);color:var(--text);box-shadow:0 40px 120px -30px rgba(var(--ink),.45);overflow:auto}
+.dlg::backdrop{background:rgba(20,16,12,.45);backdrop-filter:blur(3px)}
+.dlg-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:22px 24px 0}
+.dlg-head h3{font-size:22px}
+.dlg-x{font-size:28px;line-height:1;width:40px;height:40px;border-radius:50%;color:var(--muted);flex:none}
+.dlg-x:hover{background:rgba(var(--ink),.06);color:var(--text)}
+.dlg .form{padding:18px 24px 24px;border:0;box-shadow:none;background:none}
+@media (max-width:600px){.dlg{width:100vw;max-width:100vw;max-height:100vh;height:100vh;border-radius:0;margin:0}.cb-actions .btn{flex:1 1 100%}}
+.dlg .form label.consent{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:var(--body)}
+.dlg .form label.consent input{width:18px;height:18px;margin-top:3px;flex:none;accent-color:var(--teal)}
+.foot-in{grid-template-columns:minmax(240px,1fr) minmax(0,2fr)}
+.foot-links{justify-content:flex-end;gap:12px 22px}
+@media (max-width:860px){.foot-in{grid-template-columns:minmax(0,1fr)}.foot-links{justify-content:flex-start}}

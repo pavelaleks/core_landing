@@ -1101,5 +1101,9 @@ window.CORE_UZ = {
 "Наши базы, наборы, подготовленные CORE, слой регионов и 405 открытых наборов учёных — каждый проверен вручную. Ищите по теме, стране и области.": "Bizning bazalarimiz, CORE tayyorlagan toʻplamlar, hududlar qatlami va olimlarning 405 ta ochiq toʻplami — har biri qoʻlda tekshirilgan. Mavzu, mamlakat va soha boʻyicha qidiring.",
 "Открытые наборы учёных принадлежат их авторам и лежат в открытых хранилищах. CORE их не перепродаёт: по запросу мы готовим их к работе вместе с вузом-партнёром.": "Olimlarning ochiq toʻplamlari mualliflariga tegishli va ochiq omborlarda turadi. CORE ularni qayta sotmaydi: soʻrov boʻyicha hamkor universitet bilan birga ularni ishga tayyorlaymiz.",
 "Ещё 405 открытых наборов учёных региона — в каталоге": "Mintaqa olimlarining yana 405 ta ochiq toʻplami — katalogda",
-"Поиск по теме, стране и области, проверка каждой записи, ссылки на источники.": "Mavzu, mamlakat va soha boʻyicha qidiruv, har bir yozuv tekshiruvi, manbalarga havolalar."
+"Поиск по теме, стране и области, проверка каждой записи, ссылки на источники.": "Mavzu, mamlakat va soha boʻyicha qidiruv, har bir yozuv tekshiruvi, manbalarga havolalar.",
+"Обсудим вашу задачу": "Vazifangizni muhokama qilamiz",
+"Короткая заявка — ответим в течение рабочего дня. Образец данных — за 24 часа.": "Qisqa ariza — ish kuni davomida javob beramiz. Maʼlumotlar namunasi — 24 soat ichida.",
+"Расскажите, что вам нужно": "Sizga nima kerakligini ayting",
+"Заявка попадёт к нужному человеку в команде.": "Ariza jamoadagi kerakli odamga yetib boradi."
 };

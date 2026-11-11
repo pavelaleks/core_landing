@@ -132,20 +132,19 @@
 </section>
 
 <!-- ============ CONTACT ============ -->
-<section class="sec sec-alt" id="contact">
-  <div class="wrap contact">
+<section class="sec contact-band" id="contact">
+  <div class="wrap cb-in">
     <div>
-      <span class="eyebrow" data-ru="Контакт">Контакт</span>
-      <h2 data-ru="Расскажите, что вам нужно. Ответим за 24 часа.">Расскажите, что вам нужно. Ответим за 24 часа.</h2>
-      <p class="sub" data-ru="Выберите, кто вы, — заявка попадёт к нужному человеку в команде.">Выберите, кто вы, — заявка попадёт к нужному человеку в команде.</p>
-      <ul class="checks">
-        <li data-ru="Образец данных — в течение 24 часов">Образец данных — в течение 24 часов</li>
-        <li data-ru="Встреча с вузом — с проектом меморандума">Встреча с вузом — с проектом меморандума</li>
-        <li data-ru="Инвесторам — презентация и комната данных">Инвесторам — презентация и комната данных</li>
-      </ul>
-      <a class="btn btn-ghost tg-link" href="#" target="_blank" rel="noopener" hidden><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M21.5 4.5 2.9 11.6c-.9.4-.9 1.1 0 1.4l4.7 1.5 1.8 5.6c.2.6.5.7 1 .3l2.6-2.3 4.9 3.6c.6.4 1.1.2 1.3-.6l3.1-14.6c.3-1.2-.4-1.6-1.4-1.2z" fill="currentColor"/></svg><span>Telegram</span></a>
+      <h2 data-ru="Обсудим вашу задачу">Обсудим вашу задачу</h2>
+      <p class="sub" data-ru="Короткая заявка — ответим в течение рабочего дня. Образец данных — за 24 часа.">Короткая заявка — ответим в течение рабочего дня. Образец данных — за 24 часа.</p>
     </div>
-    <form class="card form" id="leadForm" novalidate>
+    <div class="cb-actions"><a href="#contact" class="btn btn-primary" data-form="buyer" data-ru="Нужны данные">Нужны данные</a><a href="#contact" class="btn btn-ghost" data-form="university" data-ru="Подключить вуз">Подключить вуз</a><a href="#contact" class="btn btn-ghost" data-form="investor" data-ru="Инвесторам">Инвесторам</a><a class="btn btn-ghost tg-link" href="#" target="_blank" rel="noopener" hidden><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M21.5 4.5 2.9 11.6c-.9.4-.9 1.1 0 1.4l4.7 1.5 1.8 5.6c.2.6.5.7 1 .3l2.6-2.3 4.9 3.6c.6.4 1.1.2 1.3-.6l3.1-14.6c.3-1.2-.4-1.6-1.4-1.2z" fill="currentColor"/></svg><span>Telegram</span></a></div>
+  </div>
+</section>
+<dialog class="dlg" id="contactDlg" aria-labelledby="dlgTitle">
+  <div class="dlg-head"><div><h3 id="dlgTitle" data-ru="Расскажите, что вам нужно">Расскажите, что вам нужно</h3><p class="small muted" data-ru="Заявка попадёт к нужному человеку в команде.">Заявка попадёт к нужному человеку в команде.</p></div>
+  <button type="button" class="dlg-x" id="dlgClose" aria-label="Close">×</button></div>
+  <form class="form" id="leadForm" novalidate>
       <div class="seg form-type" id="formType">
         <button type="button" data-t="buyer" data-ru="Нужны данные">Нужны данные</button>
         <button type="button" data-t="university" data-ru="Вуз">Вуз</button>
@@ -178,8 +177,7 @@
       <button class="btn btn-primary btn-block" type="submit" data-ru="Отправить">Отправить</button>
       <p class="form-status small" id="formStatus" role="status"></p>
     </form>
-  </div>
-</section>
+</dialog>
 </main>
 
 <footer class="foot">
