@@ -1,0 +1,1768 @@
+{
+ "@context": {
+  "@language": "en",
+  "@vocab": "https://schema.org/",
+  "cr": "http://mlcommons.org/croissant/",
+  "sc": "https://schema.org/",
+  "dct": "http://purl.org/dc/terms/",
+  "field": "cr:field",
+  "recordSet": "cr:recordSet",
+  "fileObject": "cr:fileObject",
+  "source": "cr:source",
+  "extract": "cr:extract",
+  "column": "cr:column",
+  "dataType": {
+   "@id": "cr:dataType",
+   "@type": "@vocab"
+  },
+  "conformsTo": "dct:conformsTo"
+ },
+ "@type": "sc:Dataset",
+ "conformsTo": "http://mlcommons.org/croissant/1.0",
+ "name": "insurance-literacy-syrdarya",
+ "description": "Insurance literacy and inclusion survey, Syrdarya region (n = 353). Composite scores stored as Excel formulas evaluated into values Columns renamed to readable names; a respondent ID added Invalid values (age 0) cleared; blank language answers coded Codebook in English, Russian and Uzbek 8 construct indices (trust, benefit, intention to buy …) and a segment summary for business",
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "url": "https://pavelaleks.github.io/core_landing/app/",
+ "citeAs": "Eshpulatov, Dostonbek; Xaydarova, Durdona; Ismoilova, Muyassar; Berdiyev, Gayrat; Sherbekova, Kamola (2026). Determinants of Insurance Inclusion in an Emerging Market — Survey Data from the Syrdarya Region, Uzbekistan (n = 353). Zenodo. https://doi.org/10.5281/zenodo.21217677",
+ "isBasedOn": "https://doi.org/10.5281/zenodo.21217677",
+ "creator": [
+  {
+   "@type": "Person",
+   "name": "Eshpulatov, Dostonbek"
+  },
+  {
+   "@type": "Person",
+   "name": "Xaydarova, Durdona"
+  },
+  {
+   "@type": "Person",
+   "name": "Ismoilova, Muyassar"
+  },
+  {
+   "@type": "Person",
+   "name": "Berdiyev, Gayrat"
+  },
+  {
+   "@type": "Person",
+   "name": "Sherbekova, Kamola"
+  },
+  {
+   "@type": "Organization",
+   "name": "CORE"
+  }
+ ],
+ "distribution": [
+  {
+   "@type": "cr:FileObject",
+   "@id": "data",
+   "name": "insurance_survey_syrdarya.csv",
+   "contentUrl": "data/insurance_survey_syrdarya.csv",
+   "encodingFormat": "text/csv",
+   "sha256": "c3b74668cb8aaee95c86395d41203c3a287b6cf8309e11eba222dffcf10b2ac1"
+  }
+ ],
+ "recordSet": [
+  {
+   "@type": "cr:RecordSet",
+   "@id": "rows",
+   "name": "rows",
+   "field": [
+    {
+     "@type": "cr:Field",
+     "@id": "rows/respondent_id",
+     "name": "respondent_id",
+     "description": "Respondent ID assigned by CORE",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "respondent_id"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/region",
+     "name": "region",
+     "description": "Region",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "region"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/gender",
+     "name": "gender",
+     "description": "Gender",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "gender"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/age",
+     "name": "age",
+     "description": "Age, years",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "age"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/marital_status",
+     "name": "marital_status",
+     "description": "Marital status",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "marital_status"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/education",
+     "name": "education",
+     "description": "Education",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "education"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/avg_monthly_expenses_uzs",
+     "name": "avg_monthly_expenses_uzs",
+     "description": "Average monthly expenses, UZS",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "avg_monthly_expenses_uzs"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/lang_russian",
+     "name": "lang_russian",
+     "description": "Speaks Russian",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "lang_russian"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/lang_english",
+     "name": "lang_english",
+     "description": "Speaks English",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "lang_english"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/lang_turkish",
+     "name": "lang_turkish",
+     "description": "Speaks Turkish",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "lang_turkish"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/lang_other",
+     "name": "lang_other",
+     "description": "Speaks another language",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "lang_other"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/languages_count",
+     "name": "languages_count",
+     "description": "Number of foreign languages",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "languages_count"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/settlement",
+     "name": "settlement",
+     "description": "Urban or rural",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "settlement"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/DL1",
+     "name": "DL1",
+     "description": "Digital literacy, item 1",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "DL1"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/DL2",
+     "name": "DL2",
+     "description": "Digital literacy, item 2",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "DL2"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/DL3",
+     "name": "DL3",
+     "description": "Digital literacy, item 3",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "DL3"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/DL4",
+     "name": "DL4",
+     "description": "Digital literacy, item 4",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "DL4"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/DL5",
+     "name": "DL5",
+     "description": "Digital literacy, item 5",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "DL5"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/DL6",
+     "name": "DL6",
+     "description": "Digital literacy, item 6",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "DL6"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/DL7",
+     "name": "DL7",
+     "description": "Digital literacy, item 7",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "DL7"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/DL8",
+     "name": "DL8",
+     "description": "Digital literacy, item 8",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "DL8"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/DL9",
+     "name": "DL9",
+     "description": "Digital literacy, item 9",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "DL9"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/DL10",
+     "name": "DL10",
+     "description": "Digital literacy, item 10",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "DL10"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/DL11",
+     "name": "DL11",
+     "description": "Digital literacy, item 11",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "DL11"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/DL12",
+     "name": "DL12",
+     "description": "Digital literacy, item 12",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "DL12"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/DL13",
+     "name": "DL13",
+     "description": "Digital literacy, item 13",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "DL13"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/DL14",
+     "name": "DL14",
+     "description": "Digital literacy, item 14",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "DL14"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/DL15",
+     "name": "DL15",
+     "description": "Digital literacy, item 15",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "DL15"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/DL16",
+     "name": "DL16",
+     "description": "Digital literacy, item 16",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "DL16"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/DL17",
+     "name": "DL17",
+     "description": "Digital literacy, item 17",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "DL17"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/DL18",
+     "name": "DL18",
+     "description": "Digital literacy, item 18",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "DL18"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/DL19",
+     "name": "DL19",
+     "description": "Digital literacy, item 19",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "DL19"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/DL20",
+     "name": "DL20",
+     "description": "Digital literacy, item 20",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "DL20"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/FL1",
+     "name": "FL1",
+     "description": "Financial literacy item 1",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "FL1"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/FL2",
+     "name": "FL2",
+     "description": "Financial literacy item 2",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "FL2"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/FL3",
+     "name": "FL3",
+     "description": "Financial literacy item 3",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "FL3"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/FL4",
+     "name": "FL4",
+     "description": "Financial literacy item 4",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "FL4"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/FL5",
+     "name": "FL5",
+     "description": "Financial literacy item 5",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "FL5"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/FL6",
+     "name": "FL6",
+     "description": "Financial literacy item 6",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "FL6"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/FL7",
+     "name": "FL7",
+     "description": "Financial literacy item 7",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "FL7"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/fin_knowledge_score",
+     "name": "fin_knowledge_score",
+     "description": "Financial knowledge score",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "fin_knowledge_score"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/FL8",
+     "name": "FL8",
+     "description": "Financial literacy item 8",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "FL8"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/FL9",
+     "name": "FL9",
+     "description": "Financial literacy item 9",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "FL9"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/FL10",
+     "name": "FL10",
+     "description": "Financial literacy item 10",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "FL10"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/FL11",
+     "name": "FL11",
+     "description": "Financial literacy item 11",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "FL11"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/FL12",
+     "name": "FL12",
+     "description": "Financial literacy item 12",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "FL12"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/FL13",
+     "name": "FL13",
+     "description": "Financial literacy item 13",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "FL13"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/fin_behavior_score",
+     "name": "fin_behavior_score",
+     "description": "Financial behaviour score",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "fin_behavior_score"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/FL14",
+     "name": "FL14",
+     "description": "Financial literacy item 14",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "FL14"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/FL15",
+     "name": "FL15",
+     "description": "Financial literacy item 15",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "FL15"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/fin_attitude_score",
+     "name": "fin_attitude_score",
+     "description": "Financial attitude score",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "fin_attitude_score"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/fin_literacy_score",
+     "name": "fin_literacy_score",
+     "description": "Financial literacy, total",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "fin_literacy_score"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/ILit1",
+     "name": "ILit1",
+     "description": "Insurance literacy, item 1",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "ILit1"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/ILit2",
+     "name": "ILit2",
+     "description": "Insurance literacy, item 2",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "ILit2"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/ILit3",
+     "name": "ILit3",
+     "description": "Insurance literacy, item 3",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "ILit3"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/ILit4",
+     "name": "ILit4",
+     "description": "Insurance literacy, item 4",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "ILit4"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/ILit5",
+     "name": "ILit5",
+     "description": "Insurance literacy, item 5",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "ILit5"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/ILit6",
+     "name": "ILit6",
+     "description": "Insurance literacy, item 6",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "ILit6"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/ILit7",
+     "name": "ILit7",
+     "description": "Insurance literacy, item 7",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "ILit7"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/ILit8",
+     "name": "ILit8",
+     "description": "Insurance literacy, item 8",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "ILit8"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/ILit9",
+     "name": "ILit9",
+     "description": "Insurance literacy, item 9",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "ILit9"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/ILit10",
+     "name": "ILit10",
+     "description": "Insurance literacy, item 10",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "ILit10"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/ILit11",
+     "name": "ILit11",
+     "description": "Insurance literacy, item 11",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "ILit11"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/ILit12",
+     "name": "ILit12",
+     "description": "Insurance literacy, item 12",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "ILit12"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/ILit13",
+     "name": "ILit13",
+     "description": "Insurance literacy, item 13",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "ILit13"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/Incl1",
+     "name": "Incl1",
+     "description": "Insurance inclusion, item 1",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "Incl1"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/Incl2",
+     "name": "Incl2",
+     "description": "Insurance inclusion, item 2",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "Incl2"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/Incl3",
+     "name": "Incl3",
+     "description": "Insurance inclusion, item 3",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "Incl3"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/Incl4",
+     "name": "Incl4",
+     "description": "Insurance inclusion, item 4",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "Incl4"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/Incl5",
+     "name": "Incl5",
+     "description": "Insurance inclusion, item 5",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "Incl5"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/Incl6",
+     "name": "Incl6",
+     "description": "Insurance inclusion, item 6",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "Incl6"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/Incl7",
+     "name": "Incl7",
+     "description": "Insurance inclusion, item 7",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "Incl7"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/Incl8",
+     "name": "Incl8",
+     "description": "Insurance inclusion, item 8",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "Incl8"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/Incl9",
+     "name": "Incl9",
+     "description": "Insurance inclusion, item 9",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "Incl9"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/Trust1",
+     "name": "Trust1",
+     "description": "Trust in insurers, item 1",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "Trust1"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/Trust2",
+     "name": "Trust2",
+     "description": "Trust in insurers, item 2",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "Trust2"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/Trust3",
+     "name": "Trust3",
+     "description": "Trust in insurers, item 3",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "Trust3"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/Trust4",
+     "name": "Trust4",
+     "description": "Trust in insurers, item 4",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "Trust4"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/Trust5",
+     "name": "Trust5",
+     "description": "Trust in insurers, item 5",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "Trust5"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/Trust6",
+     "name": "Trust6",
+     "description": "Trust in insurers, item 6",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "Trust6"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/Trust7",
+     "name": "Trust7",
+     "description": "Trust in insurers, item 7",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "Trust7"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/Trust8",
+     "name": "Trust8",
+     "description": "Trust in insurers, item 8",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "Trust8"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/Trust9",
+     "name": "Trust9",
+     "description": "Trust in insurers, item 9",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "Trust9"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/Trust10",
+     "name": "Trust10",
+     "description": "Trust in insurers, item 10",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "Trust10"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/Trust11",
+     "name": "Trust11",
+     "description": "Trust in insurers, item 11",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "Trust11"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/Trust12",
+     "name": "Trust12",
+     "description": "Trust in insurers, item 12",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "Trust12"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/Trust13",
+     "name": "Trust13",
+     "description": "Trust in insurers, item 13",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "Trust13"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/ExBen1",
+     "name": "ExBen1",
+     "description": "Expected benefit, item 1",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "ExBen1"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/ExBen2",
+     "name": "ExBen2",
+     "description": "Expected benefit, item 2",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "ExBen2"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/ExBen3",
+     "name": "ExBen3",
+     "description": "Expected benefit, item 3",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "ExBen3"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/ExBen4",
+     "name": "ExBen4",
+     "description": "Expected benefit, item 4",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "ExBen4"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/ExBen5",
+     "name": "ExBen5",
+     "description": "Expected benefit, item 5",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "ExBen5"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/ExBen6",
+     "name": "ExBen6",
+     "description": "Expected benefit, item 6",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "ExBen6"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/AttBuy1",
+     "name": "AttBuy1",
+     "description": "Intention to buy, item 1",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "AttBuy1"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/AttBuy2",
+     "name": "AttBuy2",
+     "description": "Intention to buy, item 2",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "AttBuy2"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/AttBuy3",
+     "name": "AttBuy3",
+     "description": "Intention to buy, item 3",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "AttBuy3"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/AttBuy4",
+     "name": "AttBuy4",
+     "description": "Intention to buy, item 4",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "AttBuy4"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/Risk1",
+     "name": "Risk1",
+     "description": "Perceived risk, item 1",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "Risk1"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/Risk2",
+     "name": "Risk2",
+     "description": "Perceived risk, item 2",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "Risk2"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/Risk3",
+     "name": "Risk3",
+     "description": "Perceived risk, item 3",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "Risk3"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/Risk4",
+     "name": "Risk4",
+     "description": "Perceived risk, item 4",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "Risk4"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/Risk5",
+     "name": "Risk5",
+     "description": "Perceived risk, item 5",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "Risk5"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/PosAtt1",
+     "name": "PosAtt1",
+     "description": "Attitude to insurance, item 1",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "PosAtt1"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/PosAtt2",
+     "name": "PosAtt2",
+     "description": "Attitude to insurance, item 2",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "PosAtt2"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/PosAtt3",
+     "name": "PosAtt3",
+     "description": "Attitude to insurance, item 3",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "PosAtt3"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/dig_literacy_idx",
+     "name": "dig_literacy_idx",
+     "description": "Digital literacy — index (CORE)",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "dig_literacy_idx"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/ins_literacy_idx",
+     "name": "ins_literacy_idx",
+     "description": "Insurance literacy — index (CORE)",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "ins_literacy_idx"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/ins_inclusion_idx",
+     "name": "ins_inclusion_idx",
+     "description": "Insurance inclusion — index (CORE)",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "ins_inclusion_idx"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/trust_idx",
+     "name": "trust_idx",
+     "description": "Trust in insurers — index (CORE)",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "trust_idx"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/benefit_idx",
+     "name": "benefit_idx",
+     "description": "Expected benefit — index (CORE)",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "benefit_idx"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/intention_idx",
+     "name": "intention_idx",
+     "description": "Intention to buy — index (CORE)",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "intention_idx"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/risk_idx",
+     "name": "risk_idx",
+     "description": "Perceived risk — index (CORE)",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "risk_idx"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/attitude_idx",
+     "name": "attitude_idx",
+     "description": "Attitude to insurance — index (CORE)",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "attitude_idx"
+      }
+     }
+    }
+   ]
+  }
+ ]
+}

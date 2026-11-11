@@ -1,0 +1,950 @@
+{
+ "@context": {
+  "@language": "en",
+  "@vocab": "https://schema.org/",
+  "cr": "http://mlcommons.org/croissant/",
+  "sc": "https://schema.org/",
+  "dct": "http://purl.org/dc/terms/",
+  "field": "cr:field",
+  "recordSet": "cr:recordSet",
+  "fileObject": "cr:fileObject",
+  "source": "cr:source",
+  "extract": "cr:extract",
+  "column": "cr:column",
+  "dataType": {
+   "@id": "cr:dataType",
+   "@type": "@vocab"
+  },
+  "conformsTo": "dct:conformsTo"
+ },
+ "@type": "sc:Dataset",
+ "conformsTo": "http://mlcommons.org/croissant/1.0",
+ "name": "covid-almaty-cohort",
+ "description": "Hospitalised COVID-19 patients in Almaty, 2020–2021 (n = 2,313), standardised. Free-text organism names (partly Russian) mapped to standard species names and NCBI taxon IDs Mixed susceptibility codes unified to S/I/R; antibiotics coded with ATC Diagnoses coded with ICD-10, lab tests with LOINC Range and logic checks with flags per record Codebook in English, Russian and Uzbek",
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "url": "https://pavelaleks.github.io/core_landing/app/",
+ "citeAs": "Nurmatova, Aigerim; Begadilova, Tolkyn; Ramazanova, Bakyt (2026). Data and R code for: Clinical severity and in-hospital outcomes across pre-VOC, Alpha-dominant, and Delta-dominant SARS-CoV-2 periods in Almaty, Kazakhstan: a retrospective cohort study. Zenodo. https://doi.org/10.5281/zenodo.23608062",
+ "isBasedOn": "https://doi.org/10.5281/zenodo.23608062",
+ "creator": [
+  {
+   "@type": "Person",
+   "name": "Nurmatova, Aigerim"
+  },
+  {
+   "@type": "Person",
+   "name": "Begadilova, Tolkyn"
+  },
+  {
+   "@type": "Person",
+   "name": "Ramazanova, Bakyt"
+  },
+  {
+   "@type": "Organization",
+   "name": "CORE"
+  }
+ ],
+ "distribution": [
+  {
+   "@type": "cr:FileObject",
+   "@id": "data",
+   "name": "covid_almaty_cohort.csv",
+   "contentUrl": "data/covid_almaty_cohort.csv",
+   "encodingFormat": "text/csv",
+   "sha256": "3c24d21595fc7f5e133b8cf46f75937f651da6af7a5d4cb3f5c3af60664d0ae0"
+  }
+ ],
+ "recordSet": [
+  {
+   "@type": "cr:RecordSet",
+   "@id": "rows",
+   "name": "rows",
+   "field": [
+    {
+     "@type": "cr:Field",
+     "@id": "rows/record_id",
+     "name": "record_id",
+     "description": "Random study record identifier assigned at de-identification (not linkable to hospital records)",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "record_id"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/duplicate_record",
+     "name": "duplicate_record",
+     "description": "1 = later record of a hospital chart identifier already in the cohort (excluded from the primary analysis; used only in sensitivity analysis 2); 0 = analytic cohort",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "duplicate_record"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/sex",
+     "name": "sex",
+     "description": "Sex",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "sex"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/age",
+     "name": "age",
+     "description": "Age at admission, years (one decimal)",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "age"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/admission_month",
+     "name": "admission_month",
+     "description": "Calendar month of admission",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "admission_month"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/period",
+     "name": "period",
+     "description": "Epidemic period assigned by admission date from national genomic surveillance",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "period"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/days_to_period_boundary",
+     "name": "days_to_period_boundary",
+     "description": "Days between admission and the nearest period cut-point (31 Jan 2021, 30 Jun 2021, 31 Dec 2021); used for sensitivity analysis 3",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "days_to_period_boundary"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/symptom_to_admission_days",
+     "name": "symptom_to_admission_days",
+     "description": "Days from symptom onset to admission (values <0 or >60 set to missing)",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "symptom_to_admission_days"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/los_days",
+     "name": "los_days",
+     "description": "Length of hospital stay",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "los_days"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/severity",
+     "name": "severity",
+     "description": "Highest illness severity grade during admission, national protocol scale",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "severity"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/ards",
+     "name": "ards",
+     "description": "Acute respiratory distress syndrome (Berlin definition) recorded as complication",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "ards"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/resp_failure_grade",
+     "name": "resp_failure_grade",
+     "description": "Respiratory failure grade",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "resp_failure_grade"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/sepsis",
+     "name": "sepsis",
+     "description": "Sepsis",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "sepsis"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/septic_shock",
+     "name": "septic_shock",
+     "description": "Septic shock",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "septic_shock"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/com_htn",
+     "name": "com_htn",
+     "description": "Hypertension",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "com_htn"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/com_chf",
+     "name": "com_chf",
+     "description": "Chronic heart failure or coronary artery disease",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "com_chf"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/com_dm",
+     "name": "com_dm",
+     "description": "Diabetes mellitus",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "com_dm"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/com_copd",
+     "name": "com_copd",
+     "description": "Chronic obstructive pulmonary disease",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "com_copd"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/com_ckd",
+     "name": "com_ckd",
+     "description": "Chronic kidney disease",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "com_ckd"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/com_obesity",
+     "name": "com_obesity",
+     "description": "Obesity",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "com_obesity"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/com_anemia",
+     "name": "com_anemia",
+     "description": "Anemia",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "com_anemia"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/com_cancer",
+     "name": "com_cancer",
+     "description": "Malignancy",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "com_cancer"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/com_asthma_allergy",
+     "name": "com_asthma_allergy",
+     "description": "Asthma or allergic disease",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "com_asthma_allergy"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/com_ctd",
+     "name": "com_ctd",
+     "description": "Autoimmune, connective-tissue or thyroid disease",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "com_ctd"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/comorbidity_count",
+     "name": "comorbidity_count",
+     "description": "Number of the 10 comorbidities above",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "comorbidity_count"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/any_comorbidity",
+     "name": "any_comorbidity",
+     "description": "At least one comorbidity",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "any_comorbidity"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/vaccination",
+     "name": "vaccination",
+     "description": "COVID-19 vaccination status at admission (unknown status: unvaccinated before Feb 2021, missing thereafter)",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "vaccination"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/pcr_positive",
+     "name": "pcr_positive",
+     "description": "SARS-CoV-2 RT-PCR result",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "pcr_positive"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/hr",
+     "name": "hr",
+     "description": "Heart rate at admission",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "hr"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/rr",
+     "name": "rr",
+     "description": "Respiratory rate at admission",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "rr"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/spo2",
+     "name": "spo2",
+     "description": "Peripheral oxygen saturation on room air at admission",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "spo2"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/hb",
+     "name": "hb",
+     "description": "Hemoglobin",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "hb"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/wbc",
+     "name": "wbc",
+     "description": "White blood cell count",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "wbc"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/lymphocytes",
+     "name": "lymphocytes",
+     "description": "Lymphocytes",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "lymphocytes"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/platelets",
+     "name": "platelets",
+     "description": "Platelet count",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "platelets"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/urea",
+     "name": "urea",
+     "description": "Urea",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "urea"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/creatinine",
+     "name": "creatinine",
+     "description": "Creatinine",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "creatinine"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/crp",
+     "name": "crp",
+     "description": "C-reactive protein",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "crp"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/ct_category",
+     "name": "ct_category",
+     "description": "Chest CT involvement, national protocol visual scale",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "ct_category"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/outcome",
+     "name": "outcome",
+     "description": "In-hospital outcome of the index admission",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "outcome"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/death",
+     "name": "death",
+     "description": "In-hospital death (primary outcome)",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "death"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/icu_transfer",
+     "name": "icu_transfer",
+     "description": "Transfer to intensive care unit",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "icu_transfer"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/severe_outcome",
+     "name": "severe_outcome",
+     "description": "Composite: death or ICU transfer",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "severe_outcome"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/organism_raw",
+     "name": "organism_raw",
+     "description": "Organism reported from admission nasopharyngeal/throat swab culture, as recorded (Russian free-text entries such as \"нет роста\" = no growth)",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "organism_raw"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/culture_result",
+     "name": "culture_result",
+     "description": "Swab culture result",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "culture_result"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/organism",
+     "name": "organism",
+     "description": "Organism, standard name",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "organism"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/organism_group",
+     "name": "organism_group",
+     "description": "Organism group",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "organism_group"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/organism_ncbi_taxon",
+     "name": "organism_ncbi_taxon",
+     "description": "NCBI Taxonomy ID",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "organism_ncbi_taxon"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/azithromycin_sir",
+     "name": "azithromycin_sir",
+     "description": "Susceptibility to azithromycin (S/I/R)",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "azithromycin_sir"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/amikacin_sir",
+     "name": "amikacin_sir",
+     "description": "Susceptibility to amikacin (S/I/R)",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "amikacin_sir"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/linezolid_sir",
+     "name": "linezolid_sir",
+     "description": "Susceptibility to linezolid (S/I/R)",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "linezolid_sir"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/meropenem_sir",
+     "name": "meropenem_sir",
+     "description": "Susceptibility to meropenem (S/I/R)",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "meropenem_sir"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/penicillin_sir",
+     "name": "penicillin_sir",
+     "description": "Susceptibility to penicillin (S/I/R)",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "penicillin_sir"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/oxacillin_sir",
+     "name": "oxacillin_sir",
+     "description": "Susceptibility to oxacillin (S/I/R)",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "oxacillin_sir"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/norfloxacin_sir",
+     "name": "norfloxacin_sir",
+     "description": "Susceptibility to norfloxacin (S/I/R)",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "norfloxacin_sir"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/rifampicin_sir",
+     "name": "rifampicin_sir",
+     "description": "Susceptibility to rifampicin (S/I/R)",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "rifampicin_sir"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/ceftriaxone_sir",
+     "name": "ceftriaxone_sir",
+     "description": "Susceptibility to ceftriaxone (S/I/R)",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "ceftriaxone_sir"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/erythromycin_sir",
+     "name": "erythromycin_sir",
+     "description": "Susceptibility to erythromycin (S/I/R)",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "erythromycin_sir"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/qc_flags",
+     "name": "qc_flags",
+     "description": "Quality-check flags",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "qc_flags"
+      }
+     }
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+variable,type,label_en,label_ru,label_uz,added_by
+term_id,string,Term ID,ID термина,Termin ID,CORE
+term_uz,string,"Term in Uzbek (Latin), normalised oʻ/gʻ/ʼ","Термин на узбекском (латиница), нормализованы oʻ/gʻ/ʼ","Termin oʻzbek tilida (lotin), oʻ/gʻ/ʼ bir xillashtirilgan",authors + CORE
+words,integer,Number of words,Число слов,Soʻzlar soni,CORE
+category,string,Subject category (9 classes),Тематическая категория (9 классов),Mavzu toifasi (9 sinf),CORE
+category_ru,string,"Category, Russian",Категория по-русски,"Toifa, rus tilida",CORE
+term_ru,string,Russian equivalent,Русский эквивалент,Ruscha muqobili,CORE
+term_en,string,English equivalent,Английский эквивалент,Inglizcha muqobili,CORE
+freq_school,integer,Occurrences in school textbooks (grades 5–11),Употреблений в школьных учебниках (5–11 кл.),Maktab darsliklarida uchrashi (5–11-sinf),CORE
+freq_university,integer,Occurrences in university textbooks,Употреблений в вузовских учебниках,Oliy taʼlim darsliklarida uchrashi,CORE
+first_level,string,"First grade where the term appears (5…10-11, uni)","Класс, где термин впервые встречается",Termin birinchi uchraydigan sinf,CORE
+level_profile,string,School / university / both / not found,Школа / вуз / оба / не найден,Maktab / OTM / ikkalasi / topilmadi,CORE
+spelling_variant_of,string,Other spelling of the same term found in the list,Другое написание того же термина в списке,Roʻyxatdagi shu terminning boshqa yozilishi,CORE
+example_uz,string,Context from the corpus (±70 characters),Контекст из корпуса (±70 знаков),Korpusdan kontekst (±70 belgi),CORE
+example_level,string,Level of the example text,Уровень текста примера,Misol matni darajasi,CORE
+review_status,string,Review status,Статус проверки,Tekshiruv holati,CORE

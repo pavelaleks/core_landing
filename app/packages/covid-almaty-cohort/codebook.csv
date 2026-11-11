@@ -1,0 +1,60 @@
+variable,standard_code,type,values_or_units,label_en,label_ru,label_uz,added_by
+record_id,,string,,Random study record identifier assigned at de-identification (not linkable to hospital records),ID записи,Yozuv ID,authors
+duplicate_record,,integer,0/1,1 = later record of a hospital chart identifier already in the cohort (excluded from the primary analysis; used only in sensitivity analysis 2); 0 = analytic cohort,Повторная госпитализация (1 = да),Takroriy yotqizish (1 = ha),authors
+sex,,string,Male; Female,Sex,Пол,Jins,authors
+age,,numeric,years,"Age at admission, years (one decimal)","Возраст, лет",Yosh,authors
+admission_month,,string,YYYY-MM,Calendar month of admission,Месяц госпитализации,Yotqizilgan oy,authors
+period,,string,Pre-VOC (to 31 Jan 2021); Alpha-dominant (1 Feb-30 Jun 2021); Delta-dominant (1 Jul-31 Dec 2021),Epidemic period assigned by admission date from national genomic surveillance,Период эпидемии (вариант вируса),Epidemiya davri (virus varianti),authors
+days_to_period_boundary,,integer,days,"Days between admission and the nearest period cut-point (31 Jan 2021, 30 Jun 2021, 31 Dec 2021); used for sensitivity analysis 3",Дней до границы периода,Davr chegarasigacha kunlar,authors
+symptom_to_admission_days,,numeric,days,Days from symptom onset to admission (values <0 or >60 set to missing),Дней от симптомов до госпитализации,Belgilardan yotqizishgacha kunlar,authors
+los_days,,numeric,days,Length of hospital stay,"Длительность госпитализации, дней","Kasalxonada yotish muddati, kun",authors
+severity,,integer,1 mild; 2 moderate; 3 severe; 4 extremely severe; 5 critical,"Highest illness severity grade during admission, national protocol scale",Тяжесть (1 лёгкая … 5 критическая),Ogʻirlik darajasi (1 yengil … 5 kritik),authors
+ards,ICD-10 J80,integer,0/1,Acute respiratory distress syndrome (Berlin definition) recorded as complication,ОРДС,OʻRDS,authors
+resp_failure_grade,ICD-10 J96,integer,0-3,Respiratory failure grade,Степень дыхательной недостаточности,Nafas yetishmovchiligi darajasi,authors
+sepsis,ICD-10 A41.9,integer,0/1,Sepsis,Сепсис,Sepsis,authors
+septic_shock,ICD-10 R57.2,integer,0/1,Septic shock,Септический шок,Septik shok,authors
+com_htn,ICD-10 I10–I15,integer,0/1,Hypertension,Гипертония,Gipertoniya,authors
+com_chf,"ICD-10 I50, I20–I25",integer,0/1,Chronic heart failure or coronary artery disease,Сердечная недостаточность или ИБС,Yurak yetishmovchiligi yoki YuIK,authors
+com_dm,ICD-10 E10–E14,integer,0/1,Diabetes mellitus,Сахарный диабет,Qandli diabet,authors
+com_copd,ICD-10 J44,integer,0/1,Chronic obstructive pulmonary disease,ХОБЛ,OʻSOK,authors
+com_ckd,ICD-10 N18,integer,0/1,Chronic kidney disease,Хроническая болезнь почек,Surunkali buyrak kasalligi,authors
+com_obesity,ICD-10 E66,integer,0/1,Obesity,Ожирение,Semizlik,authors
+com_anemia,ICD-10 D50–D64,integer,0/1,Anemia,Анемия,Anemiya,authors
+com_cancer,ICD-10 C00–C97,integer,0/1,Malignancy,Онкология,Onkologiya,authors
+com_asthma_allergy,"ICD-10 J45, T78.4",integer,0/1,Asthma or allergic disease,Астма или аллергия,Astma yoki allergiya,authors
+com_ctd,"ICD-10 M30–M36, E00–E07",integer,0/1,"Autoimmune, connective-tissue or thyroid disease","Аутоиммунные, системные болезни или щитовидная железа","Autoimmun, tizimli kasalliklar yoki qalqonsimon bez",authors
+comorbidity_count,,integer,0-10,Number of the 10 comorbidities above,Число сопутствующих болезней,Hamroh kasalliklar soni,authors
+any_comorbidity,,integer,0/1,At least one comorbidity,Есть сопутствующая болезнь,Hamroh kasallik bor,authors
+vaccination,,string,None; Full course; Incomplete course; blank = unknown,"COVID-19 vaccination status at admission (unknown status: unvaccinated before Feb 2021, missing thereafter)",Вакцинация от COVID-19,COVID-19 ga qarshi emlash,authors
+pcr_positive,LOINC 94500-6,integer,1 positive; 0 negative; blank = not documented,SARS-CoV-2 RT-PCR result,ПЦР положительный,PZR musbat,authors
+hr,LOINC 8867-4,numeric,beats/min,Heart rate at admission,"Пульс, уд/мин","Puls, zarba/daq",authors
+rr,LOINC 9279-1,numeric,breaths/min,Respiratory rate at admission,"Частота дыхания, в мин","Nafas soni, daqiqada",authors
+spo2,LOINC 59408-5,numeric,%,Peripheral oxygen saturation on room air at admission,"Сатурация SpO2, %","Saturatsiya SpO2, %",authors
+hb,LOINC 718-7,numeric,g/L,Hemoglobin,"Гемоглобин, г/л","Gemoglobin, g/l",authors
+wbc,LOINC 6690-2,numeric,x10^9/L,White blood cell count,"Лейкоциты, ×10⁹/л","Leykotsitlar, ×10⁹/l",authors
+lymphocytes,LOINC 736-9,numeric,% of WBC,Lymphocytes,"Лимфоциты, %","Limfotsitlar, %",authors
+platelets,LOINC 777-3,numeric,x10^9/L,Platelet count,"Тромбоциты, ×10⁹/л","Trombotsitlar, ×10⁹/l",authors
+urea,LOINC 22664-7,numeric,mmol/L,Urea,"Мочевина, ммоль/л","Mochevina, mmol/l",authors
+creatinine,LOINC 14682-9,numeric,umol/L,Creatinine,"Креатинин, мкмоль/л","Kreatinin, mkmol/l",authors
+crp,LOINC 1988-5,numeric,mg/L,C-reactive protein,"С-реактивный белок, мг/л","C-reaktiv oqsil, mg/l",authors
+ct_category,,integer,0 none; 1 <25%; 2 25-50%; 3 50-75%; 4 >75%; blank = not recorded,"Chest CT involvement, national protocol visual scale","КТ лёгких, степень поражения","Oʻpka KT, zararlanish darajasi",authors
+outcome,,string,Improved/discharged; Death; ICU transfer,In-hospital outcome of the index admission,Исход,Natija,authors
+death,,integer,0/1,In-hospital death (primary outcome),Смерть в стационаре,Statsionarda oʻlim,authors
+icu_transfer,,integer,0/1,Transfer to intensive care unit,Перевод в реанимацию,Reanimatsiyaga oʻtkazish,authors
+severe_outcome,,integer,0/1,Composite: death or ICU transfer,Смерть или реанимация,Oʻlim yoki reanimatsiya,authors
+organism_raw,,string,,"Organism reported from admission nasopharyngeal/throat swab culture, as recorded (Russian free-text entries such as ""нет роста"" = no growth)",Микроорганизм из мазка (как записано),Surtmadagi mikroorganizm (yozilganidek),authors
+culture_result,,string,,Swab culture result,Результат посева (CORE),Ekma natijasi (CORE),CORE
+organism,,string,,"Organism, standard name","Микроорганизм, стандартное название (CORE)","Mikroorganizm, standart nomi (CORE)",CORE
+organism_group,,string,,Organism group,"Группа: Gram+, Gram−, грибы (CORE)","Guruh: Gram+, Gram−, zamburugʻ (CORE)",CORE
+organism_ncbi_taxon,NCBI Taxonomy,string,,NCBI Taxonomy ID,Код в таксономии NCBI (CORE),NCBI taksonomiya kodi (CORE),CORE
+azithromycin_sir,ATC J01FA10,string,S susceptible; I intermediate; R resistant,Susceptibility to azithromycin (S/I/R),Чувствительность к азитромицину (S/I/R),Azitromitsinga sezgirlik (S/I/R),CORE
+amikacin_sir,ATC J01GB06,string,S susceptible; I intermediate; R resistant,Susceptibility to amikacin (S/I/R),Чувствительность к амикацину (S/I/R),Amikatsinga sezgirlik (S/I/R),CORE
+linezolid_sir,ATC J01XX08,string,S susceptible; I intermediate; R resistant,Susceptibility to linezolid (S/I/R),Чувствительность к линезолиду (S/I/R),Linezolidga sezgirlik (S/I/R),CORE
+meropenem_sir,ATC J01DH02,string,S susceptible; I intermediate; R resistant,Susceptibility to meropenem (S/I/R),Чувствительность к меропенему (S/I/R),Meropenemga sezgirlik (S/I/R),CORE
+penicillin_sir,ATC J01CE01,string,S susceptible; I intermediate; R resistant,Susceptibility to penicillin (S/I/R),Чувствительность к пенициллину (S/I/R),Penitsillinga sezgirlik (S/I/R),CORE
+oxacillin_sir,ATC J01CF04,string,S susceptible; I intermediate; R resistant,Susceptibility to oxacillin (S/I/R),Чувствительность к оксациллину (S/I/R),Oksatsillinga sezgirlik (S/I/R),CORE
+norfloxacin_sir,ATC J01MA06,string,S susceptible; I intermediate; R resistant,Susceptibility to norfloxacin (S/I/R),Чувствительность к норфлоксацину (S/I/R),Norfloksatsinga sezgirlik (S/I/R),CORE
+rifampicin_sir,ATC J04AB02,string,S susceptible; I intermediate; R resistant,Susceptibility to rifampicin (S/I/R),Чувствительность к рифампицину (S/I/R),Rifampitsinga sezgirlik (S/I/R),CORE
+ceftriaxone_sir,ATC J01DD04,string,S susceptible; I intermediate; R resistant,Susceptibility to ceftriaxone (S/I/R),Чувствительность к цефтриаксону (S/I/R),Seftriaksonga sezgirlik (S/I/R),CORE
+erythromycin_sir,ATC J01FA01,string,S susceptible; I intermediate; R resistant,Susceptibility to erythromycin (S/I/R),Чувствительность к эритромицину (S/I/R),Eritromitsinga sezgirlik (S/I/R),CORE
+qc_flags,,string,,Quality-check flags,Флаги проверки качества (CORE),Sifat tekshiruvi belgilari (CORE),CORE

@@ -936,5 +936,6 @@ window.CORE_UZ = {
 "Мне нужны проверенные данные": "Menga tekshirilgan maʼlumotlar kerak",
 "Бизнесу и госорганам: подборки, выгрузки, аналитика": "Biznes va davlat idoralariga: roʻyxatlar, eksportlar, tahlil",
 "местоположение: город": "joylashuv: shahar",
-"Вращайте карту мышью или пальцем · нажмите на вуз, чтобы увидеть его связи · вузы с найденным адресом стоят на своём кампусе, остальные — в центре города · данные: OpenAlex, ROR, Wikidata, OpenStreetMap": "Xaritani sichqoncha yoki barmoq bilan aylantiring · aloqalarini koʻrish uchun universitetni bosing · manzili topilgan universitetlar oʻz kampusida, qolganlari — shahar markazida · maʼlumotlar: OpenAlex, ROR, Wikidata, OpenStreetMap"
+"Вращайте карту мышью или пальцем · нажмите на вуз, чтобы увидеть его связи · вузы с найденным адресом стоят на своём кампусе, остальные — в центре города · данные: OpenAlex, ROR, Wikidata, OpenStreetMap": "Xaritani sichqoncha yoki barmoq bilan aylantiring · aloqalarini koʻrish uchun universitetni bosing · manzili topilgan universitetlar oʻz kampusida, qolganlari — shahar markazida · maʼlumotlar: OpenAlex, ROR, Wikidata, OpenStreetMap",
+"Вход для партнёров (MVP)": "Hamkorlar uchun kirish (MVP)"
 };

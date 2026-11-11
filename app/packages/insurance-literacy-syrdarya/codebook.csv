@@ -1,0 +1,114 @@
+variable,group,type,values,label_en,label_ru,label_uz
+respondent_id,ID,string,,Respondent ID assigned by CORE,ID респондента (присвоен CORE),Respondent ID (CORE tomonidan)
+region,Demographics,string,Sirdaryo viloyati,Region,Регион,Viloyat
+gender,Demographics,string,Male; Female,Gender,Пол,Jins
+age,Demographics,integer,16–76,"Age, years","Возраст, лет",Yosh
+marital_status,Demographics,string,Single; Married,Marital status,Семейное положение,Oilaviy holat
+education,Demographics,string,Secondary school; Diploma/tech; Bachelor; Master; PhD,Education,Образование,Maʼlumot
+avg_monthly_expenses_uzs,Demographics,number,UZS,"Average monthly expenses, UZS","Средние расходы в месяц, сум","Oʻrtacha oylik xarajat, soʻm"
+lang_russian,Languages,0/1,1 = speaks,Speaks Russian,Владеет русским,Rus tilini biladi
+lang_english,Languages,0/1,1 = speaks,Speaks English,Владеет английским,Ingliz tilini biladi
+lang_turkish,Languages,0/1,1 = speaks,Speaks Turkish,Владеет турецким,Turk tilini biladi
+lang_other,Languages,0/1,1 = speaks,Speaks another language,Владеет другим языком,Boshqa tilni biladi
+languages_count,Languages,integer,0–4,Number of foreign languages,Число иностранных языков,Chet tillari soni
+settlement,Demographics,string,Urban; Rural,Urban or rural,Город или село,Shahar yoki qishloq
+DL1,Digital literacy,integer,1 = strongly disagree … 5 = strongly agree,"Digital literacy, item 1","Цифровая грамотность, вопрос 1","Raqamli savodxonlik, savol 1"
+DL2,Digital literacy,integer,1 = strongly disagree … 5 = strongly agree,"Digital literacy, item 2","Цифровая грамотность, вопрос 2","Raqamli savodxonlik, savol 2"
+DL3,Digital literacy,integer,1 = strongly disagree … 5 = strongly agree,"Digital literacy, item 3","Цифровая грамотность, вопрос 3","Raqamli savodxonlik, savol 3"
+DL4,Digital literacy,integer,1 = strongly disagree … 5 = strongly agree,"Digital literacy, item 4","Цифровая грамотность, вопрос 4","Raqamli savodxonlik, savol 4"
+DL5,Digital literacy,integer,1 = strongly disagree … 5 = strongly agree,"Digital literacy, item 5","Цифровая грамотность, вопрос 5","Raqamli savodxonlik, savol 5"
+DL6,Digital literacy,integer,1 = strongly disagree … 5 = strongly agree,"Digital literacy, item 6","Цифровая грамотность, вопрос 6","Raqamli savodxonlik, savol 6"
+DL7,Digital literacy,integer,1 = strongly disagree … 5 = strongly agree,"Digital literacy, item 7","Цифровая грамотность, вопрос 7","Raqamli savodxonlik, savol 7"
+DL8,Digital literacy,integer,1 = strongly disagree … 5 = strongly agree,"Digital literacy, item 8","Цифровая грамотность, вопрос 8","Raqamli savodxonlik, savol 8"
+DL9,Digital literacy,integer,1 = strongly disagree … 5 = strongly agree,"Digital literacy, item 9","Цифровая грамотность, вопрос 9","Raqamli savodxonlik, savol 9"
+DL10,Digital literacy,integer,1 = strongly disagree … 5 = strongly agree,"Digital literacy, item 10","Цифровая грамотность, вопрос 10","Raqamli savodxonlik, savol 10"
+DL11,Digital literacy,integer,1 = strongly disagree … 5 = strongly agree,"Digital literacy, item 11","Цифровая грамотность, вопрос 11","Raqamli savodxonlik, savol 11"
+DL12,Digital literacy,integer,1 = strongly disagree … 5 = strongly agree,"Digital literacy, item 12","Цифровая грамотность, вопрос 12","Raqamli savodxonlik, savol 12"
+DL13,Digital literacy,integer,1 = strongly disagree … 5 = strongly agree,"Digital literacy, item 13","Цифровая грамотность, вопрос 13","Raqamli savodxonlik, savol 13"
+DL14,Digital literacy,integer,1 = strongly disagree … 5 = strongly agree,"Digital literacy, item 14","Цифровая грамотность, вопрос 14","Raqamli savodxonlik, savol 14"
+DL15,Digital literacy,integer,1 = strongly disagree … 5 = strongly agree,"Digital literacy, item 15","Цифровая грамотность, вопрос 15","Raqamli savodxonlik, savol 15"
+DL16,Digital literacy,integer,1 = strongly disagree … 5 = strongly agree,"Digital literacy, item 16","Цифровая грамотность, вопрос 16","Raqamli savodxonlik, savol 16"
+DL17,Digital literacy,integer,1 = strongly disagree … 5 = strongly agree,"Digital literacy, item 17","Цифровая грамотность, вопрос 17","Raqamli savodxonlik, savol 17"
+DL18,Digital literacy,integer,1 = strongly disagree … 5 = strongly agree,"Digital literacy, item 18","Цифровая грамотность, вопрос 18","Raqamli savodxonlik, savol 18"
+DL19,Digital literacy,integer,1 = strongly disagree … 5 = strongly agree,"Digital literacy, item 19","Цифровая грамотность, вопрос 19","Raqamli savodxonlik, savol 19"
+DL20,Digital literacy,integer,1 = strongly disagree … 5 = strongly agree,"Digital literacy, item 20","Цифровая грамотность, вопрос 20","Raqamli savodxonlik, savol 20"
+FL1,Financial literacy,0/1,1 = correct / desirable answer,Financial literacy item 1,"Финансовая грамотность, вопрос 1","Moliyaviy savodxonlik, savol 1"
+FL2,Financial literacy,0/1,1 = correct / desirable answer,Financial literacy item 2,"Финансовая грамотность, вопрос 2","Moliyaviy savodxonlik, savol 2"
+FL3,Financial literacy,0/1,1 = correct / desirable answer,Financial literacy item 3,"Финансовая грамотность, вопрос 3","Moliyaviy savodxonlik, savol 3"
+FL4,Financial literacy,0/1,1 = correct / desirable answer,Financial literacy item 4,"Финансовая грамотность, вопрос 4","Moliyaviy savodxonlik, savol 4"
+FL5,Financial literacy,0/1,1 = correct / desirable answer,Financial literacy item 5,"Финансовая грамотность, вопрос 5","Moliyaviy savodxonlik, savol 5"
+FL6,Financial literacy,0/1,1 = correct / desirable answer,Financial literacy item 6,"Финансовая грамотность, вопрос 6","Moliyaviy savodxonlik, savol 6"
+FL7,Financial literacy,0/1,1 = correct / desirable answer,Financial literacy item 7,"Финансовая грамотность, вопрос 7","Moliyaviy savodxonlik, savol 7"
+fin_knowledge_score,Financial literacy,integer,sum of FL1–FL7,Financial knowledge score,Балл финансовых знаний,Moliyaviy bilim bali
+FL8,Financial literacy,0/1,1 = correct / desirable answer,Financial literacy item 8,"Финансовая грамотность, вопрос 8","Moliyaviy savodxonlik, savol 8"
+FL9,Financial literacy,0/1,1 = correct / desirable answer,Financial literacy item 9,"Финансовая грамотность, вопрос 9","Moliyaviy savodxonlik, savol 9"
+FL10,Financial literacy,0/1,1 = correct / desirable answer,Financial literacy item 10,"Финансовая грамотность, вопрос 10","Moliyaviy savodxonlik, savol 10"
+FL11,Financial literacy,0/1,1 = correct / desirable answer,Financial literacy item 11,"Финансовая грамотность, вопрос 11","Moliyaviy savodxonlik, savol 11"
+FL12,Financial literacy,0/1,1 = correct / desirable answer,Financial literacy item 12,"Финансовая грамотность, вопрос 12","Moliyaviy savodxonlik, savol 12"
+FL13,Financial literacy,0/1,1 = correct / desirable answer,Financial literacy item 13,"Финансовая грамотность, вопрос 13","Moliyaviy savodxonlik, savol 13"
+fin_behavior_score,Financial literacy,integer,sum of FL8–FL13,Financial behaviour score,Балл финансового поведения,Moliyaviy xulq bali
+FL14,Financial literacy,0/1,1 = correct / desirable answer,Financial literacy item 14,"Финансовая грамотность, вопрос 14","Moliyaviy savodxonlik, savol 14"
+FL15,Financial literacy,0/1,1 = correct / desirable answer,Financial literacy item 15,"Финансовая грамотность, вопрос 15","Moliyaviy savodxonlik, savol 15"
+fin_attitude_score,Financial literacy,integer,sum of FL14–FL15,Financial attitude score,Балл финансовых установок,Moliyaviy munosabat bali
+fin_literacy_score,Financial literacy,integer,knowledge + behaviour + attitude,"Financial literacy, total","Финансовая грамотность, итог","Moliyaviy savodxonlik, jami"
+ILit1,Insurance literacy,integer,1 = strongly disagree … 5 = strongly agree,"Insurance literacy, item 1","Страховая грамотность, вопрос 1","Sugʻurta savodxonligi, savol 1"
+ILit2,Insurance literacy,integer,1 = strongly disagree … 5 = strongly agree,"Insurance literacy, item 2","Страховая грамотность, вопрос 2","Sugʻurta savodxonligi, savol 2"
+ILit3,Insurance literacy,integer,1 = strongly disagree … 5 = strongly agree,"Insurance literacy, item 3","Страховая грамотность, вопрос 3","Sugʻurta savodxonligi, savol 3"
+ILit4,Insurance literacy,integer,1 = strongly disagree … 5 = strongly agree,"Insurance literacy, item 4","Страховая грамотность, вопрос 4","Sugʻurta savodxonligi, savol 4"
+ILit5,Insurance literacy,integer,1 = strongly disagree … 5 = strongly agree,"Insurance literacy, item 5","Страховая грамотность, вопрос 5","Sugʻurta savodxonligi, savol 5"
+ILit6,Insurance literacy,integer,1 = strongly disagree … 5 = strongly agree,"Insurance literacy, item 6","Страховая грамотность, вопрос 6","Sugʻurta savodxonligi, savol 6"
+ILit7,Insurance literacy,integer,1 = strongly disagree … 5 = strongly agree,"Insurance literacy, item 7","Страховая грамотность, вопрос 7","Sugʻurta savodxonligi, savol 7"
+ILit8,Insurance literacy,integer,1 = strongly disagree … 5 = strongly agree,"Insurance literacy, item 8","Страховая грамотность, вопрос 8","Sugʻurta savodxonligi, savol 8"
+ILit9,Insurance literacy,integer,1 = strongly disagree … 5 = strongly agree,"Insurance literacy, item 9","Страховая грамотность, вопрос 9","Sugʻurta savodxonligi, savol 9"
+ILit10,Insurance literacy,integer,1 = strongly disagree … 5 = strongly agree,"Insurance literacy, item 10","Страховая грамотность, вопрос 10","Sugʻurta savodxonligi, savol 10"
+ILit11,Insurance literacy,integer,1 = strongly disagree … 5 = strongly agree,"Insurance literacy, item 11","Страховая грамотность, вопрос 11","Sugʻurta savodxonligi, savol 11"
+ILit12,Insurance literacy,integer,1 = strongly disagree … 5 = strongly agree,"Insurance literacy, item 12","Страховая грамотность, вопрос 12","Sugʻurta savodxonligi, savol 12"
+ILit13,Insurance literacy,integer,1 = strongly disagree … 5 = strongly agree,"Insurance literacy, item 13","Страховая грамотность, вопрос 13","Sugʻurta savodxonligi, savol 13"
+Incl1,Insurance inclusion,integer,1 = strongly disagree … 5 = strongly agree,"Insurance inclusion, item 1","Охват страхованием, вопрос 1","Sugʻurta bilan qamrov, savol 1"
+Incl2,Insurance inclusion,integer,1 = strongly disagree … 5 = strongly agree,"Insurance inclusion, item 2","Охват страхованием, вопрос 2","Sugʻurta bilan qamrov, savol 2"
+Incl3,Insurance inclusion,integer,1 = strongly disagree … 5 = strongly agree,"Insurance inclusion, item 3","Охват страхованием, вопрос 3","Sugʻurta bilan qamrov, savol 3"
+Incl4,Insurance inclusion,integer,1 = strongly disagree … 5 = strongly agree,"Insurance inclusion, item 4","Охват страхованием, вопрос 4","Sugʻurta bilan qamrov, savol 4"
+Incl5,Insurance inclusion,integer,1 = strongly disagree … 5 = strongly agree,"Insurance inclusion, item 5","Охват страхованием, вопрос 5","Sugʻurta bilan qamrov, savol 5"
+Incl6,Insurance inclusion,integer,1 = strongly disagree … 5 = strongly agree,"Insurance inclusion, item 6","Охват страхованием, вопрос 6","Sugʻurta bilan qamrov, savol 6"
+Incl7,Insurance inclusion,integer,1 = strongly disagree … 5 = strongly agree,"Insurance inclusion, item 7","Охват страхованием, вопрос 7","Sugʻurta bilan qamrov, savol 7"
+Incl8,Insurance inclusion,integer,1 = strongly disagree … 5 = strongly agree,"Insurance inclusion, item 8","Охват страхованием, вопрос 8","Sugʻurta bilan qamrov, savol 8"
+Incl9,Insurance inclusion,integer,1 = strongly disagree … 5 = strongly agree,"Insurance inclusion, item 9","Охват страхованием, вопрос 9","Sugʻurta bilan qamrov, savol 9"
+Trust1,Trust in insurers,integer,1 = strongly disagree … 5 = strongly agree,"Trust in insurers, item 1","Доверие к страховщикам, вопрос 1","Sugʻurtachilarga ishonch, savol 1"
+Trust2,Trust in insurers,integer,1 = strongly disagree … 5 = strongly agree,"Trust in insurers, item 2","Доверие к страховщикам, вопрос 2","Sugʻurtachilarga ishonch, savol 2"
+Trust3,Trust in insurers,integer,1 = strongly disagree … 5 = strongly agree,"Trust in insurers, item 3","Доверие к страховщикам, вопрос 3","Sugʻurtachilarga ishonch, savol 3"
+Trust4,Trust in insurers,integer,1 = strongly disagree … 5 = strongly agree,"Trust in insurers, item 4","Доверие к страховщикам, вопрос 4","Sugʻurtachilarga ishonch, savol 4"
+Trust5,Trust in insurers,integer,1 = strongly disagree … 5 = strongly agree,"Trust in insurers, item 5","Доверие к страховщикам, вопрос 5","Sugʻurtachilarga ishonch, savol 5"
+Trust6,Trust in insurers,integer,1 = strongly disagree … 5 = strongly agree,"Trust in insurers, item 6","Доверие к страховщикам, вопрос 6","Sugʻurtachilarga ishonch, savol 6"
+Trust7,Trust in insurers,integer,1 = strongly disagree … 5 = strongly agree,"Trust in insurers, item 7","Доверие к страховщикам, вопрос 7","Sugʻurtachilarga ishonch, savol 7"
+Trust8,Trust in insurers,integer,1 = strongly disagree … 5 = strongly agree,"Trust in insurers, item 8","Доверие к страховщикам, вопрос 8","Sugʻurtachilarga ishonch, savol 8"
+Trust9,Trust in insurers,integer,1 = strongly disagree … 5 = strongly agree,"Trust in insurers, item 9","Доверие к страховщикам, вопрос 9","Sugʻurtachilarga ishonch, savol 9"
+Trust10,Trust in insurers,integer,1 = strongly disagree … 5 = strongly agree,"Trust in insurers, item 10","Доверие к страховщикам, вопрос 10","Sugʻurtachilarga ishonch, savol 10"
+Trust11,Trust in insurers,integer,1 = strongly disagree … 5 = strongly agree,"Trust in insurers, item 11","Доверие к страховщикам, вопрос 11","Sugʻurtachilarga ishonch, savol 11"
+Trust12,Trust in insurers,integer,1 = strongly disagree … 5 = strongly agree,"Trust in insurers, item 12","Доверие к страховщикам, вопрос 12","Sugʻurtachilarga ishonch, savol 12"
+Trust13,Trust in insurers,integer,1 = strongly disagree … 5 = strongly agree,"Trust in insurers, item 13","Доверие к страховщикам, вопрос 13","Sugʻurtachilarga ishonch, savol 13"
+ExBen1,Expected benefit,integer,1 = strongly disagree … 5 = strongly agree,"Expected benefit, item 1","Ожидаемая польза, вопрос 1","Kutilayotgan foyda, savol 1"
+ExBen2,Expected benefit,integer,1 = strongly disagree … 5 = strongly agree,"Expected benefit, item 2","Ожидаемая польза, вопрос 2","Kutilayotgan foyda, savol 2"
+ExBen3,Expected benefit,integer,1 = strongly disagree … 5 = strongly agree,"Expected benefit, item 3","Ожидаемая польза, вопрос 3","Kutilayotgan foyda, savol 3"
+ExBen4,Expected benefit,integer,1 = strongly disagree … 5 = strongly agree,"Expected benefit, item 4","Ожидаемая польза, вопрос 4","Kutilayotgan foyda, savol 4"
+ExBen5,Expected benefit,integer,1 = strongly disagree … 5 = strongly agree,"Expected benefit, item 5","Ожидаемая польза, вопрос 5","Kutilayotgan foyda, savol 5"
+ExBen6,Expected benefit,integer,1 = strongly disagree … 5 = strongly agree,"Expected benefit, item 6","Ожидаемая польза, вопрос 6","Kutilayotgan foyda, savol 6"
+AttBuy1,Intention to buy,integer,1 = strongly disagree … 5 = strongly agree,"Intention to buy, item 1","Намерение купить, вопрос 1","Sotib olish niyati, savol 1"
+AttBuy2,Intention to buy,integer,1 = strongly disagree … 5 = strongly agree,"Intention to buy, item 2","Намерение купить, вопрос 2","Sotib olish niyati, savol 2"
+AttBuy3,Intention to buy,integer,1 = strongly disagree … 5 = strongly agree,"Intention to buy, item 3","Намерение купить, вопрос 3","Sotib olish niyati, savol 3"
+AttBuy4,Intention to buy,integer,1 = strongly disagree … 5 = strongly agree,"Intention to buy, item 4","Намерение купить, вопрос 4","Sotib olish niyati, savol 4"
+Risk1,Perceived risk,integer,1 = strongly disagree … 5 = strongly agree,"Perceived risk, item 1","Восприятие риска, вопрос 1","Xavfni idrok etish, savol 1"
+Risk2,Perceived risk,integer,1 = strongly disagree … 5 = strongly agree,"Perceived risk, item 2","Восприятие риска, вопрос 2","Xavfni idrok etish, savol 2"
+Risk3,Perceived risk,integer,1 = strongly disagree … 5 = strongly agree,"Perceived risk, item 3","Восприятие риска, вопрос 3","Xavfni idrok etish, savol 3"
+Risk4,Perceived risk,integer,1 = strongly disagree … 5 = strongly agree,"Perceived risk, item 4","Восприятие риска, вопрос 4","Xavfni idrok etish, savol 4"
+Risk5,Perceived risk,integer,1 = strongly disagree … 5 = strongly agree,"Perceived risk, item 5","Восприятие риска, вопрос 5","Xavfni idrok etish, savol 5"
+PosAtt1,Attitude to insurance,integer,1 = strongly disagree … 5 = strongly agree,"Attitude to insurance, item 1","Отношение к страхованию, вопрос 1","Sugʻurtaga munosabat, savol 1"
+PosAtt2,Attitude to insurance,integer,1 = strongly disagree … 5 = strongly agree,"Attitude to insurance, item 2","Отношение к страхованию, вопрос 2","Sugʻurtaga munosabat, savol 2"
+PosAtt3,Attitude to insurance,integer,1 = strongly disagree … 5 = strongly agree,"Attitude to insurance, item 3","Отношение к страхованию, вопрос 3","Sugʻurtaga munosabat, savol 3"
+dig_literacy_idx,CORE index,number,"1–5, mean of items",Digital literacy — index (CORE),Цифровая грамотность — индекс (CORE),Raqamli savodxonlik — indeks (CORE)
+ins_literacy_idx,CORE index,number,"1–5, mean of items",Insurance literacy — index (CORE),Страховая грамотность — индекс (CORE),Sugʻurta savodxonligi — indeks (CORE)
+ins_inclusion_idx,CORE index,number,"1–5, mean of items",Insurance inclusion — index (CORE),Охват страхованием — индекс (CORE),Sugʻurta bilan qamrov — indeks (CORE)
+trust_idx,CORE index,number,"1–5, mean of items",Trust in insurers — index (CORE),Доверие к страховщикам — индекс (CORE),Sugʻurtachilarga ishonch — indeks (CORE)
+benefit_idx,CORE index,number,"1–5, mean of items",Expected benefit — index (CORE),Ожидаемая польза — индекс (CORE),Kutilayotgan foyda — indeks (CORE)
+intention_idx,CORE index,number,"1–5, mean of items",Intention to buy — index (CORE),Намерение купить — индекс (CORE),Sotib olish niyati — indeks (CORE)
+risk_idx,CORE index,number,"1–5, mean of items",Perceived risk — index (CORE),Восприятие риска — индекс (CORE),Xavfni idrok etish — indeks (CORE)
+attitude_idx,CORE index,number,"1–5, mean of items",Attitude to insurance — index (CORE),Отношение к страхованию — индекс (CORE),Sugʻurtaga munosabat — indeks (CORE)

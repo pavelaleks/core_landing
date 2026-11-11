@@ -1,0 +1,7 @@
+This package is a derivative work of:
+  Eshpulatov, Dostonbek; Xaydarova, Durdona; Ismoilova, Muyassar; Berdiyev, Gayrat; Sherbekova, Kamola (2026). Determinants of Insurance Inclusion in an Emerging Market — Survey Data from the Syrdarya Region, Uzbekistan (n = 353). Zenodo. https://doi.org/10.5281/zenodo.21217677
+  Licence: Creative Commons Attribution 4.0 International (CC BY 4.0) — https://creativecommons.org/licenses/by/4.0/
+
+Changes made by CORE are listed in DATASHEET.md. CORE's additions (annotations, codes, translations,
+indices) are released under the same licence. When you use this package, cite the original authors
+(above) and mention CORE as the preparer.

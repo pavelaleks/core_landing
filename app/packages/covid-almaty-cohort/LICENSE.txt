@@ -1,0 +1,7 @@
+This package is a derivative work of:
+  Nurmatova, Aigerim; Begadilova, Tolkyn; Ramazanova, Bakyt (2026). Data and R code for: Clinical severity and in-hospital outcomes across pre-VOC, Alpha-dominant, and Delta-dominant SARS-CoV-2 periods in Almaty, Kazakhstan: a retrospective cohort study. Zenodo. https://doi.org/10.5281/zenodo.23608062
+  Licence: Creative Commons Attribution 4.0 International (CC BY 4.0) — https://creativecommons.org/licenses/by/4.0/
+
+Changes made by CORE are listed in DATASHEET.md. CORE's additions (annotations, codes, translations,
+indices) are released under the same licence. When you use this package, cite the original authors
+(above) and mention CORE as the preparer.

@@ -1,0 +1,306 @@
+{
+ "@context": {
+  "@language": "en",
+  "@vocab": "https://schema.org/",
+  "cr": "http://mlcommons.org/croissant/",
+  "sc": "https://schema.org/",
+  "dct": "http://purl.org/dc/terms/",
+  "field": "cr:field",
+  "recordSet": "cr:recordSet",
+  "fileObject": "cr:fileObject",
+  "source": "cr:source",
+  "extract": "cr:extract",
+  "column": "cr:column",
+  "dataType": {
+   "@id": "cr:dataType",
+   "@type": "@vocab"
+  },
+  "conformsTo": "dct:conformsTo"
+ },
+ "@type": "sc:Dataset",
+ "conformsTo": "http://mlcommons.org/croissant/1.0",
+ "name": "uzbek-geography-terms",
+ "description": "Uzbek geography terminology, annotated. Spelling normalised to the standard Uzbek Latin alphabet; duplicates removed Frequency in school (grades 5–11) and university textbooks, and the grade where each term first appears Context example from the corpus for every term found Russian and English equivalents and a subject category for the 320 most frequent terms Spelling variants and terms absent from the corpus flagged for the authors",
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "url": "https://pavelaleks.github.io/core_landing/app/",
+ "citeAs": "Matsaidova, Sayyora; Sattarova, Sapura; Ortiqova, Iqbol; Khamraeva, Nargiza; Tajibayeva, Xurshida; Jurayev, Erali; Kurbanazarov, Baxtibek (2026). Dataset of Uzbek Educational Geography Terminology from School and University Corpora. Zenodo. https://doi.org/10.5281/zenodo.22892341",
+ "isBasedOn": "https://doi.org/10.5281/zenodo.22892341",
+ "creator": [
+  {
+   "@type": "Person",
+   "name": "Matsaidova, Sayyora"
+  },
+  {
+   "@type": "Person",
+   "name": "Sattarova, Sapura"
+  },
+  {
+   "@type": "Person",
+   "name": "Ortiqova, Iqbol"
+  },
+  {
+   "@type": "Person",
+   "name": "Khamraeva, Nargiza"
+  },
+  {
+   "@type": "Person",
+   "name": "Tajibayeva, Xurshida"
+  },
+  {
+   "@type": "Person",
+   "name": "Jurayev, Erali"
+  },
+  {
+   "@type": "Person",
+   "name": "Kurbanazarov, Baxtibek"
+  },
+  {
+   "@type": "Organization",
+   "name": "CORE"
+  }
+ ],
+ "distribution": [
+  {
+   "@type": "cr:FileObject",
+   "@id": "data",
+   "name": "uzbek_geography_terms.csv",
+   "contentUrl": "data/uzbek_geography_terms.csv",
+   "encodingFormat": "text/csv",
+   "sha256": "770cc9e896a442620fd37b3531a309fffdfb0912aa3d8e006b049af5e0cfa411"
+  }
+ ],
+ "recordSet": [
+  {
+   "@type": "cr:RecordSet",
+   "@id": "rows",
+   "name": "rows",
+   "field": [
+    {
+     "@type": "cr:Field",
+     "@id": "rows/term_id",
+     "name": "term_id",
+     "description": "Term ID",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "term_id"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/term_uz",
+     "name": "term_uz",
+     "description": "Term in Uzbek (Latin), normalised oʻ/gʻ/ʼ",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "term_uz"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/words",
+     "name": "words",
+     "description": "Number of words",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "words"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/category",
+     "name": "category",
+     "description": "Subject category (9 classes)",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "category"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/category_ru",
+     "name": "category_ru",
+     "description": "Category, Russian",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "category_ru"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/term_ru",
+     "name": "term_ru",
+     "description": "Russian equivalent",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "term_ru"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/term_en",
+     "name": "term_en",
+     "description": "English equivalent",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "term_en"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/freq_school",
+     "name": "freq_school",
+     "description": "Occurrences in school textbooks (grades 5–11)",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "freq_school"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/freq_university",
+     "name": "freq_university",
+     "description": "Occurrences in university textbooks",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "freq_university"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/first_level",
+     "name": "first_level",
+     "description": "First grade where the term appears (5…10-11, uni)",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "first_level"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/level_profile",
+     "name": "level_profile",
+     "description": "School / university / both / not found",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "level_profile"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/spelling_variant_of",
+     "name": "spelling_variant_of",
+     "description": "Other spelling of the same term found in the list",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "spelling_variant_of"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/example_uz",
+     "name": "example_uz",
+     "description": "Context from the corpus (±70 characters)",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "example_uz"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/example_level",
+     "name": "example_level",
+     "description": "Level of the example text",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "example_level"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "rows/review_status",
+     "name": "review_status",
+     "description": "Review status",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "data"
+      },
+      "extract": {
+       "column": "review_status"
+      }
+     }
+    }
+   ]
+  }
+ ]
+}
