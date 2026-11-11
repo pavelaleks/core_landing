@@ -1,0 +1,654 @@
+{
+ "slug": "covid-almaty-cohort",
+ "fields": [
+  {
+   "name": "record_id",
+   "type": "string",
+   "code": "",
+   "values": "",
+   "label": {
+    "en": "Random study record identifier assigned at de-identification (not linkable to hospital records)",
+    "ru": "ID записи",
+    "uz": "Yozuv ID"
+   }
+  },
+  {
+   "name": "duplicate_record",
+   "type": "integer",
+   "code": "",
+   "values": "0/1",
+   "label": {
+    "en": "1 = later record of a hospital chart identifier already in the cohort (excluded from the primary analysis; used only in sensitivity analysis 2); 0 = analytic cohort",
+    "ru": "Повторная госпитализация (1 = да)",
+    "uz": "Takroriy yotqizish (1 = ha)"
+   }
+  },
+  {
+   "name": "sex",
+   "type": "string",
+   "code": "",
+   "values": "Male; Female",
+   "label": {
+    "en": "Sex",
+    "ru": "Пол",
+    "uz": "Jins"
+   }
+  },
+  {
+   "name": "age",
+   "type": "numeric",
+   "code": "",
+   "values": "years",
+   "label": {
+    "en": "Age at admission, years (one decimal)",
+    "ru": "Возраст, лет",
+    "uz": "Yosh"
+   }
+  },
+  {
+   "name": "admission_month",
+   "type": "string",
+   "code": "",
+   "values": "YYYY-MM",
+   "label": {
+    "en": "Calendar month of admission",
+    "ru": "Месяц госпитализации",
+    "uz": "Yotqizilgan oy"
+   }
+  },
+  {
+   "name": "period",
+   "type": "string",
+   "code": "",
+   "values": "Pre-VOC (to 31 Jan 2021); Alpha-dominant (1 Feb-30 Jun 2021); Delta-dominant (1 Jul-31 Dec 2021)",
+   "label": {
+    "en": "Epidemic period assigned by admission date from national genomic surveillance",
+    "ru": "Период эпидемии (вариант вируса)",
+    "uz": "Epidemiya davri (virus varianti)"
+   }
+  },
+  {
+   "name": "days_to_period_boundary",
+   "type": "integer",
+   "code": "",
+   "values": "days",
+   "label": {
+    "en": "Days between admission and the nearest period cut-point (31 Jan 2021, 30 Jun 2021, 31 Dec 2021); used for sensitivity analysis 3",
+    "ru": "Дней до границы периода",
+    "uz": "Davr chegarasigacha kunlar"
+   }
+  },
+  {
+   "name": "symptom_to_admission_days",
+   "type": "numeric",
+   "code": "",
+   "values": "days",
+   "label": {
+    "en": "Days from symptom onset to admission (values <0 or >60 set to missing)",
+    "ru": "Дней от симптомов до госпитализации",
+    "uz": "Belgilardan yotqizishgacha kunlar"
+   }
+  },
+  {
+   "name": "los_days",
+   "type": "numeric",
+   "code": "",
+   "values": "days",
+   "label": {
+    "en": "Length of hospital stay",
+    "ru": "Длительность госпитализации, дней",
+    "uz": "Kasalxonada yotish muddati, kun"
+   }
+  },
+  {
+   "name": "severity",
+   "type": "integer",
+   "code": "",
+   "values": "1 mild; 2 moderate; 3 severe; 4 extremely severe; 5 critical",
+   "label": {
+    "en": "Highest illness severity grade during admission, national protocol scale",
+    "ru": "Тяжесть (1 лёгкая … 5 критическая)",
+    "uz": "Ogʻirlik darajasi (1 yengil … 5 kritik)"
+   }
+  },
+  {
+   "name": "ards",
+   "type": "integer",
+   "code": "ICD-10 J80",
+   "values": "0/1",
+   "label": {
+    "en": "Acute respiratory distress syndrome (Berlin definition) recorded as complication",
+    "ru": "ОРДС",
+    "uz": "OʻRDS"
+   }
+  },
+  {
+   "name": "resp_failure_grade",
+   "type": "integer",
+   "code": "ICD-10 J96",
+   "values": "0-3",
+   "label": {
+    "en": "Respiratory failure grade",
+    "ru": "Степень дыхательной недостаточности",
+    "uz": "Nafas yetishmovchiligi darajasi"
+   }
+  },
+  {
+   "name": "sepsis",
+   "type": "integer",
+   "code": "ICD-10 A41.9",
+   "values": "0/1",
+   "label": {
+    "en": "Sepsis",
+    "ru": "Сепсис",
+    "uz": "Sepsis"
+   }
+  },
+  {
+   "name": "septic_shock",
+   "type": "integer",
+   "code": "ICD-10 R57.2",
+   "values": "0/1",
+   "label": {
+    "en": "Septic shock",
+    "ru": "Септический шок",
+    "uz": "Septik shok"
+   }
+  },
+  {
+   "name": "com_htn",
+   "type": "integer",
+   "code": "ICD-10 I10–I15",
+   "values": "0/1",
+   "label": {
+    "en": "Hypertension",
+    "ru": "Гипертония",
+    "uz": "Gipertoniya"
+   }
+  },
+  {
+   "name": "com_chf",
+   "type": "integer",
+   "code": "ICD-10 I50, I20–I25",
+   "values": "0/1",
+   "label": {
+    "en": "Chronic heart failure or coronary artery disease",
+    "ru": "Сердечная недостаточность или ИБС",
+    "uz": "Yurak yetishmovchiligi yoki YuIK"
+   }
+  },
+  {
+   "name": "com_dm",
+   "type": "integer",
+   "code": "ICD-10 E10–E14",
+   "values": "0/1",
+   "label": {
+    "en": "Diabetes mellitus",
+    "ru": "Сахарный диабет",
+    "uz": "Qandli diabet"
+   }
+  },
+  {
+   "name": "com_copd",
+   "type": "integer",
+   "code": "ICD-10 J44",
+   "values": "0/1",
+   "label": {
+    "en": "Chronic obstructive pulmonary disease",
+    "ru": "ХОБЛ",
+    "uz": "OʻSOK"
+   }
+  },
+  {
+   "name": "com_ckd",
+   "type": "integer",
+   "code": "ICD-10 N18",
+   "values": "0/1",
+   "label": {
+    "en": "Chronic kidney disease",
+    "ru": "Хроническая болезнь почек",
+    "uz": "Surunkali buyrak kasalligi"
+   }
+  },
+  {
+   "name": "com_obesity",
+   "type": "integer",
+   "code": "ICD-10 E66",
+   "values": "0/1",
+   "label": {
+    "en": "Obesity",
+    "ru": "Ожирение",
+    "uz": "Semizlik"
+   }
+  },
+  {
+   "name": "com_anemia",
+   "type": "integer",
+   "code": "ICD-10 D50–D64",
+   "values": "0/1",
+   "label": {
+    "en": "Anemia",
+    "ru": "Анемия",
+    "uz": "Anemiya"
+   }
+  },
+  {
+   "name": "com_cancer",
+   "type": "integer",
+   "code": "ICD-10 C00–C97",
+   "values": "0/1",
+   "label": {
+    "en": "Malignancy",
+    "ru": "Онкология",
+    "uz": "Onkologiya"
+   }
+  },
+  {
+   "name": "com_asthma_allergy",
+   "type": "integer",
+   "code": "ICD-10 J45, T78.4",
+   "values": "0/1",
+   "label": {
+    "en": "Asthma or allergic disease",
+    "ru": "Астма или аллергия",
+    "uz": "Astma yoki allergiya"
+   }
+  },
+  {
+   "name": "com_ctd",
+   "type": "integer",
+   "code": "ICD-10 M30–M36, E00–E07",
+   "values": "0/1",
+   "label": {
+    "en": "Autoimmune, connective-tissue or thyroid disease",
+    "ru": "Аутоиммунные, системные болезни или щитовидная железа",
+    "uz": "Autoimmun, tizimli kasalliklar yoki qalqonsimon bez"
+   }
+  },
+  {
+   "name": "comorbidity_count",
+   "type": "integer",
+   "code": "",
+   "values": "0-10",
+   "label": {
+    "en": "Number of the 10 comorbidities above",
+    "ru": "Число сопутствующих болезней",
+    "uz": "Hamroh kasalliklar soni"
+   }
+  },
+  {
+   "name": "any_comorbidity",
+   "type": "integer",
+   "code": "",
+   "values": "0/1",
+   "label": {
+    "en": "At least one comorbidity",
+    "ru": "Есть сопутствующая болезнь",
+    "uz": "Hamroh kasallik bor"
+   }
+  },
+  {
+   "name": "vaccination",
+   "type": "string",
+   "code": "",
+   "values": "None; Full course; Incomplete course; blank = unknown",
+   "label": {
+    "en": "COVID-19 vaccination status at admission (unknown status: unvaccinated before Feb 2021, missing thereafter)",
+    "ru": "Вакцинация от COVID-19",
+    "uz": "COVID-19 ga qarshi emlash"
+   }
+  },
+  {
+   "name": "pcr_positive",
+   "type": "integer",
+   "code": "LOINC 94500-6",
+   "values": "1 positive; 0 negative; blank = not documented",
+   "label": {
+    "en": "SARS-CoV-2 RT-PCR result",
+    "ru": "ПЦР положительный",
+    "uz": "PZR musbat"
+   }
+  },
+  {
+   "name": "hr",
+   "type": "numeric",
+   "code": "LOINC 8867-4",
+   "values": "beats/min",
+   "label": {
+    "en": "Heart rate at admission",
+    "ru": "Пульс, уд/мин",
+    "uz": "Puls, zarba/daq"
+   }
+  },
+  {
+   "name": "rr",
+   "type": "numeric",
+   "code": "LOINC 9279-1",
+   "values": "breaths/min",
+   "label": {
+    "en": "Respiratory rate at admission",
+    "ru": "Частота дыхания, в мин",
+    "uz": "Nafas soni, daqiqada"
+   }
+  },
+  {
+   "name": "spo2",
+   "type": "numeric",
+   "code": "LOINC 59408-5",
+   "values": "%",
+   "label": {
+    "en": "Peripheral oxygen saturation on room air at admission",
+    "ru": "Сатурация SpO2, %",
+    "uz": "Saturatsiya SpO2, %"
+   }
+  },
+  {
+   "name": "hb",
+   "type": "numeric",
+   "code": "LOINC 718-7",
+   "values": "g/L",
+   "label": {
+    "en": "Hemoglobin",
+    "ru": "Гемоглобин, г/л",
+    "uz": "Gemoglobin, g/l"
+   }
+  },
+  {
+   "name": "wbc",
+   "type": "numeric",
+   "code": "LOINC 6690-2",
+   "values": "x10^9/L",
+   "label": {
+    "en": "White blood cell count",
+    "ru": "Лейкоциты, ×10⁹/л",
+    "uz": "Leykotsitlar, ×10⁹/l"
+   }
+  },
+  {
+   "name": "lymphocytes",
+   "type": "numeric",
+   "code": "LOINC 736-9",
+   "values": "% of WBC",
+   "label": {
+    "en": "Lymphocytes",
+    "ru": "Лимфоциты, %",
+    "uz": "Limfotsitlar, %"
+   }
+  },
+  {
+   "name": "platelets",
+   "type": "numeric",
+   "code": "LOINC 777-3",
+   "values": "x10^9/L",
+   "label": {
+    "en": "Platelet count",
+    "ru": "Тромбоциты, ×10⁹/л",
+    "uz": "Trombotsitlar, ×10⁹/l"
+   }
+  },
+  {
+   "name": "urea",
+   "type": "numeric",
+   "code": "LOINC 22664-7",
+   "values": "mmol/L",
+   "label": {
+    "en": "Urea",
+    "ru": "Мочевина, ммоль/л",
+    "uz": "Mochevina, mmol/l"
+   }
+  },
+  {
+   "name": "creatinine",
+   "type": "numeric",
+   "code": "LOINC 14682-9",
+   "values": "umol/L",
+   "label": {
+    "en": "Creatinine",
+    "ru": "Креатинин, мкмоль/л",
+    "uz": "Kreatinin, mkmol/l"
+   }
+  },
+  {
+   "name": "crp",
+   "type": "numeric",
+   "code": "LOINC 1988-5",
+   "values": "mg/L",
+   "label": {
+    "en": "C-reactive protein",
+    "ru": "С-реактивный белок, мг/л",
+    "uz": "C-reaktiv oqsil, mg/l"
+   }
+  },
+  {
+   "name": "ct_category",
+   "type": "integer",
+   "code": "",
+   "values": "0 none; 1 <25%; 2 25-50%; 3 50-75%; 4 >75%; blank = not recorded",
+   "label": {
+    "en": "Chest CT involvement, national protocol visual scale",
+    "ru": "КТ лёгких, степень поражения",
+    "uz": "Oʻpka KT, zararlanish darajasi"
+   }
+  },
+  {
+   "name": "outcome",
+   "type": "string",
+   "code": "",
+   "values": "Improved/discharged; Death; ICU transfer",
+   "label": {
+    "en": "In-hospital outcome of the index admission",
+    "ru": "Исход",
+    "uz": "Natija"
+   }
+  },
+  {
+   "name": "death",
+   "type": "integer",
+   "code": "",
+   "values": "0/1",
+   "label": {
+    "en": "In-hospital death (primary outcome)",
+    "ru": "Смерть в стационаре",
+    "uz": "Statsionarda oʻlim"
+   }
+  },
+  {
+   "name": "icu_transfer",
+   "type": "integer",
+   "code": "",
+   "values": "0/1",
+   "label": {
+    "en": "Transfer to intensive care unit",
+    "ru": "Перевод в реанимацию",
+    "uz": "Reanimatsiyaga oʻtkazish"
+   }
+  },
+  {
+   "name": "severe_outcome",
+   "type": "integer",
+   "code": "",
+   "values": "0/1",
+   "label": {
+    "en": "Composite: death or ICU transfer",
+    "ru": "Смерть или реанимация",
+    "uz": "Oʻlim yoki reanimatsiya"
+   }
+  },
+  {
+   "name": "organism_raw",
+   "type": "string",
+   "code": "",
+   "values": "",
+   "label": {
+    "en": "Organism reported from admission nasopharyngeal/throat swab culture, as recorded (Russian free-text entries such as \"нет роста\" = no growth)",
+    "ru": "Микроорганизм из мазка (как записано)",
+    "uz": "Surtmadagi mikroorganizm (yozilganidek)"
+   }
+  },
+  {
+   "name": "culture_result",
+   "type": "string",
+   "code": "",
+   "values": "",
+   "label": {
+    "en": "Swab culture result",
+    "ru": "Результат посева (CORE)",
+    "uz": "Ekma natijasi (CORE)"
+   }
+  },
+  {
+   "name": "organism",
+   "type": "string",
+   "code": "",
+   "values": "",
+   "label": {
+    "en": "Organism, standard name",
+    "ru": "Микроорганизм, стандартное название (CORE)",
+    "uz": "Mikroorganizm, standart nomi (CORE)"
+   }
+  },
+  {
+   "name": "organism_group",
+   "type": "string",
+   "code": "",
+   "values": "",
+   "label": {
+    "en": "Organism group",
+    "ru": "Группа: Gram+, Gram−, грибы (CORE)",
+    "uz": "Guruh: Gram+, Gram−, zamburugʻ (CORE)"
+   }
+  },
+  {
+   "name": "organism_ncbi_taxon",
+   "type": "string",
+   "code": "NCBI Taxonomy",
+   "values": "",
+   "label": {
+    "en": "NCBI Taxonomy ID",
+    "ru": "Код в таксономии NCBI (CORE)",
+    "uz": "NCBI taksonomiya kodi (CORE)"
+   }
+  },
+  {
+   "name": "azithromycin_sir",
+   "type": "string",
+   "code": "ATC J01FA10",
+   "values": "S susceptible; I intermediate; R resistant",
+   "label": {
+    "en": "Susceptibility to azithromycin (S/I/R)",
+    "ru": "Чувствительность к азитромицину (S/I/R)",
+    "uz": "Azitromitsinga sezgirlik (S/I/R)"
+   }
+  },
+  {
+   "name": "amikacin_sir",
+   "type": "string",
+   "code": "ATC J01GB06",
+   "values": "S susceptible; I intermediate; R resistant",
+   "label": {
+    "en": "Susceptibility to amikacin (S/I/R)",
+    "ru": "Чувствительность к амикацину (S/I/R)",
+    "uz": "Amikatsinga sezgirlik (S/I/R)"
+   }
+  },
+  {
+   "name": "linezolid_sir",
+   "type": "string",
+   "code": "ATC J01XX08",
+   "values": "S susceptible; I intermediate; R resistant",
+   "label": {
+    "en": "Susceptibility to linezolid (S/I/R)",
+    "ru": "Чувствительность к линезолиду (S/I/R)",
+    "uz": "Linezolidga sezgirlik (S/I/R)"
+   }
+  },
+  {
+   "name": "meropenem_sir",
+   "type": "string",
+   "code": "ATC J01DH02",
+   "values": "S susceptible; I intermediate; R resistant",
+   "label": {
+    "en": "Susceptibility to meropenem (S/I/R)",
+    "ru": "Чувствительность к меропенему (S/I/R)",
+    "uz": "Meropenemga sezgirlik (S/I/R)"
+   }
+  },
+  {
+   "name": "penicillin_sir",
+   "type": "string",
+   "code": "ATC J01CE01",
+   "values": "S susceptible; I intermediate; R resistant",
+   "label": {
+    "en": "Susceptibility to penicillin (S/I/R)",
+    "ru": "Чувствительность к пенициллину (S/I/R)",
+    "uz": "Penitsillinga sezgirlik (S/I/R)"
+   }
+  },
+  {
+   "name": "oxacillin_sir",
+   "type": "string",
+   "code": "ATC J01CF04",
+   "values": "S susceptible; I intermediate; R resistant",
+   "label": {
+    "en": "Susceptibility to oxacillin (S/I/R)",
+    "ru": "Чувствительность к оксациллину (S/I/R)",
+    "uz": "Oksatsillinga sezgirlik (S/I/R)"
+   }
+  },
+  {
+   "name": "norfloxacin_sir",
+   "type": "string",
+   "code": "ATC J01MA06",
+   "values": "S susceptible; I intermediate; R resistant",
+   "label": {
+    "en": "Susceptibility to norfloxacin (S/I/R)",
+    "ru": "Чувствительность к норфлоксацину (S/I/R)",
+    "uz": "Norfloksatsinga sezgirlik (S/I/R)"
+   }
+  },
+  {
+   "name": "rifampicin_sir",
+   "type": "string",
+   "code": "ATC J04AB02",
+   "values": "S susceptible; I intermediate; R resistant",
+   "label": {
+    "en": "Susceptibility to rifampicin (S/I/R)",
+    "ru": "Чувствительность к рифампицину (S/I/R)",
+    "uz": "Rifampitsinga sezgirlik (S/I/R)"
+   }
+  },
+  {
+   "name": "ceftriaxone_sir",
+   "type": "string",
+   "code": "ATC J01DD04",
+   "values": "S susceptible; I intermediate; R resistant",
+   "label": {
+    "en": "Susceptibility to ceftriaxone (S/I/R)",
+    "ru": "Чувствительность к цефтриаксону (S/I/R)",
+    "uz": "Seftriaksonga sezgirlik (S/I/R)"
+   }
+  },
+  {
+   "name": "erythromycin_sir",
+   "type": "string",
+   "code": "ATC J01FA01",
+   "values": "S susceptible; I intermediate; R resistant",
+   "label": {
+    "en": "Susceptibility to erythromycin (S/I/R)",
+    "ru": "Чувствительность к эритромицину (S/I/R)",
+    "uz": "Eritromitsinga sezgirlik (S/I/R)"
+   }
+  },
+  {
+   "name": "qc_flags",
+   "type": "string",
+   "code": "",
+   "values": "",
+   "label": {
+    "en": "Quality-check flags",
+    "ru": "Флаги проверки качества (CORE)",
+    "uz": "Sifat tekshiruvi belgilari (CORE)"
+   }
+  }
+ ]
+}

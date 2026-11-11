@@ -1,0 +1,1248 @@
+{
+ "slug": "insurance-literacy-syrdarya",
+ "fields": [
+  {
+   "name": "respondent_id",
+   "type": "string",
+   "code": "",
+   "values": "",
+   "label": {
+    "en": "Respondent ID assigned by CORE",
+    "ru": "ID респондента (присвоен CORE)",
+    "uz": "Respondent ID (CORE tomonidan)"
+   }
+  },
+  {
+   "name": "region",
+   "type": "string",
+   "code": "",
+   "values": "Sirdaryo viloyati",
+   "label": {
+    "en": "Region",
+    "ru": "Регион",
+    "uz": "Viloyat"
+   }
+  },
+  {
+   "name": "gender",
+   "type": "string",
+   "code": "",
+   "values": "Male; Female",
+   "label": {
+    "en": "Gender",
+    "ru": "Пол",
+    "uz": "Jins"
+   }
+  },
+  {
+   "name": "age",
+   "type": "integer",
+   "code": "",
+   "values": "16–76",
+   "label": {
+    "en": "Age, years",
+    "ru": "Возраст, лет",
+    "uz": "Yosh"
+   }
+  },
+  {
+   "name": "marital_status",
+   "type": "string",
+   "code": "",
+   "values": "Single; Married",
+   "label": {
+    "en": "Marital status",
+    "ru": "Семейное положение",
+    "uz": "Oilaviy holat"
+   }
+  },
+  {
+   "name": "education",
+   "type": "string",
+   "code": "",
+   "values": "Secondary school; Diploma/tech; Bachelor; Master; PhD",
+   "label": {
+    "en": "Education",
+    "ru": "Образование",
+    "uz": "Maʼlumot"
+   }
+  },
+  {
+   "name": "avg_monthly_expenses_uzs",
+   "type": "number",
+   "code": "",
+   "values": "UZS",
+   "label": {
+    "en": "Average monthly expenses, UZS",
+    "ru": "Средние расходы в месяц, сум",
+    "uz": "Oʻrtacha oylik xarajat, soʻm"
+   }
+  },
+  {
+   "name": "lang_russian",
+   "type": "0/1",
+   "code": "",
+   "values": "1 = speaks",
+   "label": {
+    "en": "Speaks Russian",
+    "ru": "Владеет русским",
+    "uz": "Rus tilini biladi"
+   }
+  },
+  {
+   "name": "lang_english",
+   "type": "0/1",
+   "code": "",
+   "values": "1 = speaks",
+   "label": {
+    "en": "Speaks English",
+    "ru": "Владеет английским",
+    "uz": "Ingliz tilini biladi"
+   }
+  },
+  {
+   "name": "lang_turkish",
+   "type": "0/1",
+   "code": "",
+   "values": "1 = speaks",
+   "label": {
+    "en": "Speaks Turkish",
+    "ru": "Владеет турецким",
+    "uz": "Turk tilini biladi"
+   }
+  },
+  {
+   "name": "lang_other",
+   "type": "0/1",
+   "code": "",
+   "values": "1 = speaks",
+   "label": {
+    "en": "Speaks another language",
+    "ru": "Владеет другим языком",
+    "uz": "Boshqa tilni biladi"
+   }
+  },
+  {
+   "name": "languages_count",
+   "type": "integer",
+   "code": "",
+   "values": "0–4",
+   "label": {
+    "en": "Number of foreign languages",
+    "ru": "Число иностранных языков",
+    "uz": "Chet tillari soni"
+   }
+  },
+  {
+   "name": "settlement",
+   "type": "string",
+   "code": "",
+   "values": "Urban; Rural",
+   "label": {
+    "en": "Urban or rural",
+    "ru": "Город или село",
+    "uz": "Shahar yoki qishloq"
+   }
+  },
+  {
+   "name": "DL1",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Digital literacy, item 1",
+    "ru": "Цифровая грамотность, вопрос 1",
+    "uz": "Raqamli savodxonlik, savol 1"
+   }
+  },
+  {
+   "name": "DL2",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Digital literacy, item 2",
+    "ru": "Цифровая грамотность, вопрос 2",
+    "uz": "Raqamli savodxonlik, savol 2"
+   }
+  },
+  {
+   "name": "DL3",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Digital literacy, item 3",
+    "ru": "Цифровая грамотность, вопрос 3",
+    "uz": "Raqamli savodxonlik, savol 3"
+   }
+  },
+  {
+   "name": "DL4",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Digital literacy, item 4",
+    "ru": "Цифровая грамотность, вопрос 4",
+    "uz": "Raqamli savodxonlik, savol 4"
+   }
+  },
+  {
+   "name": "DL5",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Digital literacy, item 5",
+    "ru": "Цифровая грамотность, вопрос 5",
+    "uz": "Raqamli savodxonlik, savol 5"
+   }
+  },
+  {
+   "name": "DL6",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Digital literacy, item 6",
+    "ru": "Цифровая грамотность, вопрос 6",
+    "uz": "Raqamli savodxonlik, savol 6"
+   }
+  },
+  {
+   "name": "DL7",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Digital literacy, item 7",
+    "ru": "Цифровая грамотность, вопрос 7",
+    "uz": "Raqamli savodxonlik, savol 7"
+   }
+  },
+  {
+   "name": "DL8",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Digital literacy, item 8",
+    "ru": "Цифровая грамотность, вопрос 8",
+    "uz": "Raqamli savodxonlik, savol 8"
+   }
+  },
+  {
+   "name": "DL9",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Digital literacy, item 9",
+    "ru": "Цифровая грамотность, вопрос 9",
+    "uz": "Raqamli savodxonlik, savol 9"
+   }
+  },
+  {
+   "name": "DL10",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Digital literacy, item 10",
+    "ru": "Цифровая грамотность, вопрос 10",
+    "uz": "Raqamli savodxonlik, savol 10"
+   }
+  },
+  {
+   "name": "DL11",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Digital literacy, item 11",
+    "ru": "Цифровая грамотность, вопрос 11",
+    "uz": "Raqamli savodxonlik, savol 11"
+   }
+  },
+  {
+   "name": "DL12",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Digital literacy, item 12",
+    "ru": "Цифровая грамотность, вопрос 12",
+    "uz": "Raqamli savodxonlik, savol 12"
+   }
+  },
+  {
+   "name": "DL13",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Digital literacy, item 13",
+    "ru": "Цифровая грамотность, вопрос 13",
+    "uz": "Raqamli savodxonlik, savol 13"
+   }
+  },
+  {
+   "name": "DL14",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Digital literacy, item 14",
+    "ru": "Цифровая грамотность, вопрос 14",
+    "uz": "Raqamli savodxonlik, savol 14"
+   }
+  },
+  {
+   "name": "DL15",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Digital literacy, item 15",
+    "ru": "Цифровая грамотность, вопрос 15",
+    "uz": "Raqamli savodxonlik, savol 15"
+   }
+  },
+  {
+   "name": "DL16",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Digital literacy, item 16",
+    "ru": "Цифровая грамотность, вопрос 16",
+    "uz": "Raqamli savodxonlik, savol 16"
+   }
+  },
+  {
+   "name": "DL17",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Digital literacy, item 17",
+    "ru": "Цифровая грамотность, вопрос 17",
+    "uz": "Raqamli savodxonlik, savol 17"
+   }
+  },
+  {
+   "name": "DL18",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Digital literacy, item 18",
+    "ru": "Цифровая грамотность, вопрос 18",
+    "uz": "Raqamli savodxonlik, savol 18"
+   }
+  },
+  {
+   "name": "DL19",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Digital literacy, item 19",
+    "ru": "Цифровая грамотность, вопрос 19",
+    "uz": "Raqamli savodxonlik, savol 19"
+   }
+  },
+  {
+   "name": "DL20",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Digital literacy, item 20",
+    "ru": "Цифровая грамотность, вопрос 20",
+    "uz": "Raqamli savodxonlik, savol 20"
+   }
+  },
+  {
+   "name": "FL1",
+   "type": "0/1",
+   "code": "",
+   "values": "1 = correct / desirable answer",
+   "label": {
+    "en": "Financial literacy item 1",
+    "ru": "Финансовая грамотность, вопрос 1",
+    "uz": "Moliyaviy savodxonlik, savol 1"
+   }
+  },
+  {
+   "name": "FL2",
+   "type": "0/1",
+   "code": "",
+   "values": "1 = correct / desirable answer",
+   "label": {
+    "en": "Financial literacy item 2",
+    "ru": "Финансовая грамотность, вопрос 2",
+    "uz": "Moliyaviy savodxonlik, savol 2"
+   }
+  },
+  {
+   "name": "FL3",
+   "type": "0/1",
+   "code": "",
+   "values": "1 = correct / desirable answer",
+   "label": {
+    "en": "Financial literacy item 3",
+    "ru": "Финансовая грамотность, вопрос 3",
+    "uz": "Moliyaviy savodxonlik, savol 3"
+   }
+  },
+  {
+   "name": "FL4",
+   "type": "0/1",
+   "code": "",
+   "values": "1 = correct / desirable answer",
+   "label": {
+    "en": "Financial literacy item 4",
+    "ru": "Финансовая грамотность, вопрос 4",
+    "uz": "Moliyaviy savodxonlik, savol 4"
+   }
+  },
+  {
+   "name": "FL5",
+   "type": "0/1",
+   "code": "",
+   "values": "1 = correct / desirable answer",
+   "label": {
+    "en": "Financial literacy item 5",
+    "ru": "Финансовая грамотность, вопрос 5",
+    "uz": "Moliyaviy savodxonlik, savol 5"
+   }
+  },
+  {
+   "name": "FL6",
+   "type": "0/1",
+   "code": "",
+   "values": "1 = correct / desirable answer",
+   "label": {
+    "en": "Financial literacy item 6",
+    "ru": "Финансовая грамотность, вопрос 6",
+    "uz": "Moliyaviy savodxonlik, savol 6"
+   }
+  },
+  {
+   "name": "FL7",
+   "type": "0/1",
+   "code": "",
+   "values": "1 = correct / desirable answer",
+   "label": {
+    "en": "Financial literacy item 7",
+    "ru": "Финансовая грамотность, вопрос 7",
+    "uz": "Moliyaviy savodxonlik, savol 7"
+   }
+  },
+  {
+   "name": "fin_knowledge_score",
+   "type": "integer",
+   "code": "",
+   "values": "sum of FL1–FL7",
+   "label": {
+    "en": "Financial knowledge score",
+    "ru": "Балл финансовых знаний",
+    "uz": "Moliyaviy bilim bali"
+   }
+  },
+  {
+   "name": "FL8",
+   "type": "0/1",
+   "code": "",
+   "values": "1 = correct / desirable answer",
+   "label": {
+    "en": "Financial literacy item 8",
+    "ru": "Финансовая грамотность, вопрос 8",
+    "uz": "Moliyaviy savodxonlik, savol 8"
+   }
+  },
+  {
+   "name": "FL9",
+   "type": "0/1",
+   "code": "",
+   "values": "1 = correct / desirable answer",
+   "label": {
+    "en": "Financial literacy item 9",
+    "ru": "Финансовая грамотность, вопрос 9",
+    "uz": "Moliyaviy savodxonlik, savol 9"
+   }
+  },
+  {
+   "name": "FL10",
+   "type": "0/1",
+   "code": "",
+   "values": "1 = correct / desirable answer",
+   "label": {
+    "en": "Financial literacy item 10",
+    "ru": "Финансовая грамотность, вопрос 10",
+    "uz": "Moliyaviy savodxonlik, savol 10"
+   }
+  },
+  {
+   "name": "FL11",
+   "type": "0/1",
+   "code": "",
+   "values": "1 = correct / desirable answer",
+   "label": {
+    "en": "Financial literacy item 11",
+    "ru": "Финансовая грамотность, вопрос 11",
+    "uz": "Moliyaviy savodxonlik, savol 11"
+   }
+  },
+  {
+   "name": "FL12",
+   "type": "0/1",
+   "code": "",
+   "values": "1 = correct / desirable answer",
+   "label": {
+    "en": "Financial literacy item 12",
+    "ru": "Финансовая грамотность, вопрос 12",
+    "uz": "Moliyaviy savodxonlik, savol 12"
+   }
+  },
+  {
+   "name": "FL13",
+   "type": "0/1",
+   "code": "",
+   "values": "1 = correct / desirable answer",
+   "label": {
+    "en": "Financial literacy item 13",
+    "ru": "Финансовая грамотность, вопрос 13",
+    "uz": "Moliyaviy savodxonlik, savol 13"
+   }
+  },
+  {
+   "name": "fin_behavior_score",
+   "type": "integer",
+   "code": "",
+   "values": "sum of FL8–FL13",
+   "label": {
+    "en": "Financial behaviour score",
+    "ru": "Балл финансового поведения",
+    "uz": "Moliyaviy xulq bali"
+   }
+  },
+  {
+   "name": "FL14",
+   "type": "0/1",
+   "code": "",
+   "values": "1 = correct / desirable answer",
+   "label": {
+    "en": "Financial literacy item 14",
+    "ru": "Финансовая грамотность, вопрос 14",
+    "uz": "Moliyaviy savodxonlik, savol 14"
+   }
+  },
+  {
+   "name": "FL15",
+   "type": "0/1",
+   "code": "",
+   "values": "1 = correct / desirable answer",
+   "label": {
+    "en": "Financial literacy item 15",
+    "ru": "Финансовая грамотность, вопрос 15",
+    "uz": "Moliyaviy savodxonlik, savol 15"
+   }
+  },
+  {
+   "name": "fin_attitude_score",
+   "type": "integer",
+   "code": "",
+   "values": "sum of FL14–FL15",
+   "label": {
+    "en": "Financial attitude score",
+    "ru": "Балл финансовых установок",
+    "uz": "Moliyaviy munosabat bali"
+   }
+  },
+  {
+   "name": "fin_literacy_score",
+   "type": "integer",
+   "code": "",
+   "values": "knowledge + behaviour + attitude",
+   "label": {
+    "en": "Financial literacy, total",
+    "ru": "Финансовая грамотность, итог",
+    "uz": "Moliyaviy savodxonlik, jami"
+   }
+  },
+  {
+   "name": "ILit1",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Insurance literacy, item 1",
+    "ru": "Страховая грамотность, вопрос 1",
+    "uz": "Sugʻurta savodxonligi, savol 1"
+   }
+  },
+  {
+   "name": "ILit2",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Insurance literacy, item 2",
+    "ru": "Страховая грамотность, вопрос 2",
+    "uz": "Sugʻurta savodxonligi, savol 2"
+   }
+  },
+  {
+   "name": "ILit3",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Insurance literacy, item 3",
+    "ru": "Страховая грамотность, вопрос 3",
+    "uz": "Sugʻurta savodxonligi, savol 3"
+   }
+  },
+  {
+   "name": "ILit4",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Insurance literacy, item 4",
+    "ru": "Страховая грамотность, вопрос 4",
+    "uz": "Sugʻurta savodxonligi, savol 4"
+   }
+  },
+  {
+   "name": "ILit5",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Insurance literacy, item 5",
+    "ru": "Страховая грамотность, вопрос 5",
+    "uz": "Sugʻurta savodxonligi, savol 5"
+   }
+  },
+  {
+   "name": "ILit6",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Insurance literacy, item 6",
+    "ru": "Страховая грамотность, вопрос 6",
+    "uz": "Sugʻurta savodxonligi, savol 6"
+   }
+  },
+  {
+   "name": "ILit7",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Insurance literacy, item 7",
+    "ru": "Страховая грамотность, вопрос 7",
+    "uz": "Sugʻurta savodxonligi, savol 7"
+   }
+  },
+  {
+   "name": "ILit8",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Insurance literacy, item 8",
+    "ru": "Страховая грамотность, вопрос 8",
+    "uz": "Sugʻurta savodxonligi, savol 8"
+   }
+  },
+  {
+   "name": "ILit9",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Insurance literacy, item 9",
+    "ru": "Страховая грамотность, вопрос 9",
+    "uz": "Sugʻurta savodxonligi, savol 9"
+   }
+  },
+  {
+   "name": "ILit10",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Insurance literacy, item 10",
+    "ru": "Страховая грамотность, вопрос 10",
+    "uz": "Sugʻurta savodxonligi, savol 10"
+   }
+  },
+  {
+   "name": "ILit11",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Insurance literacy, item 11",
+    "ru": "Страховая грамотность, вопрос 11",
+    "uz": "Sugʻurta savodxonligi, savol 11"
+   }
+  },
+  {
+   "name": "ILit12",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Insurance literacy, item 12",
+    "ru": "Страховая грамотность, вопрос 12",
+    "uz": "Sugʻurta savodxonligi, savol 12"
+   }
+  },
+  {
+   "name": "ILit13",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Insurance literacy, item 13",
+    "ru": "Страховая грамотность, вопрос 13",
+    "uz": "Sugʻurta savodxonligi, savol 13"
+   }
+  },
+  {
+   "name": "Incl1",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Insurance inclusion, item 1",
+    "ru": "Охват страхованием, вопрос 1",
+    "uz": "Sugʻurta bilan qamrov, savol 1"
+   }
+  },
+  {
+   "name": "Incl2",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Insurance inclusion, item 2",
+    "ru": "Охват страхованием, вопрос 2",
+    "uz": "Sugʻurta bilan qamrov, savol 2"
+   }
+  },
+  {
+   "name": "Incl3",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Insurance inclusion, item 3",
+    "ru": "Охват страхованием, вопрос 3",
+    "uz": "Sugʻurta bilan qamrov, savol 3"
+   }
+  },
+  {
+   "name": "Incl4",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Insurance inclusion, item 4",
+    "ru": "Охват страхованием, вопрос 4",
+    "uz": "Sugʻurta bilan qamrov, savol 4"
+   }
+  },
+  {
+   "name": "Incl5",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Insurance inclusion, item 5",
+    "ru": "Охват страхованием, вопрос 5",
+    "uz": "Sugʻurta bilan qamrov, savol 5"
+   }
+  },
+  {
+   "name": "Incl6",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Insurance inclusion, item 6",
+    "ru": "Охват страхованием, вопрос 6",
+    "uz": "Sugʻurta bilan qamrov, savol 6"
+   }
+  },
+  {
+   "name": "Incl7",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Insurance inclusion, item 7",
+    "ru": "Охват страхованием, вопрос 7",
+    "uz": "Sugʻurta bilan qamrov, savol 7"
+   }
+  },
+  {
+   "name": "Incl8",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Insurance inclusion, item 8",
+    "ru": "Охват страхованием, вопрос 8",
+    "uz": "Sugʻurta bilan qamrov, savol 8"
+   }
+  },
+  {
+   "name": "Incl9",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Insurance inclusion, item 9",
+    "ru": "Охват страхованием, вопрос 9",
+    "uz": "Sugʻurta bilan qamrov, savol 9"
+   }
+  },
+  {
+   "name": "Trust1",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Trust in insurers, item 1",
+    "ru": "Доверие к страховщикам, вопрос 1",
+    "uz": "Sugʻurtachilarga ishonch, savol 1"
+   }
+  },
+  {
+   "name": "Trust2",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Trust in insurers, item 2",
+    "ru": "Доверие к страховщикам, вопрос 2",
+    "uz": "Sugʻurtachilarga ishonch, savol 2"
+   }
+  },
+  {
+   "name": "Trust3",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Trust in insurers, item 3",
+    "ru": "Доверие к страховщикам, вопрос 3",
+    "uz": "Sugʻurtachilarga ishonch, savol 3"
+   }
+  },
+  {
+   "name": "Trust4",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Trust in insurers, item 4",
+    "ru": "Доверие к страховщикам, вопрос 4",
+    "uz": "Sugʻurtachilarga ishonch, savol 4"
+   }
+  },
+  {
+   "name": "Trust5",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Trust in insurers, item 5",
+    "ru": "Доверие к страховщикам, вопрос 5",
+    "uz": "Sugʻurtachilarga ishonch, savol 5"
+   }
+  },
+  {
+   "name": "Trust6",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Trust in insurers, item 6",
+    "ru": "Доверие к страховщикам, вопрос 6",
+    "uz": "Sugʻurtachilarga ishonch, savol 6"
+   }
+  },
+  {
+   "name": "Trust7",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Trust in insurers, item 7",
+    "ru": "Доверие к страховщикам, вопрос 7",
+    "uz": "Sugʻurtachilarga ishonch, savol 7"
+   }
+  },
+  {
+   "name": "Trust8",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Trust in insurers, item 8",
+    "ru": "Доверие к страховщикам, вопрос 8",
+    "uz": "Sugʻurtachilarga ishonch, savol 8"
+   }
+  },
+  {
+   "name": "Trust9",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Trust in insurers, item 9",
+    "ru": "Доверие к страховщикам, вопрос 9",
+    "uz": "Sugʻurtachilarga ishonch, savol 9"
+   }
+  },
+  {
+   "name": "Trust10",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Trust in insurers, item 10",
+    "ru": "Доверие к страховщикам, вопрос 10",
+    "uz": "Sugʻurtachilarga ishonch, savol 10"
+   }
+  },
+  {
+   "name": "Trust11",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Trust in insurers, item 11",
+    "ru": "Доверие к страховщикам, вопрос 11",
+    "uz": "Sugʻurtachilarga ishonch, savol 11"
+   }
+  },
+  {
+   "name": "Trust12",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Trust in insurers, item 12",
+    "ru": "Доверие к страховщикам, вопрос 12",
+    "uz": "Sugʻurtachilarga ishonch, savol 12"
+   }
+  },
+  {
+   "name": "Trust13",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Trust in insurers, item 13",
+    "ru": "Доверие к страховщикам, вопрос 13",
+    "uz": "Sugʻurtachilarga ishonch, savol 13"
+   }
+  },
+  {
+   "name": "ExBen1",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Expected benefit, item 1",
+    "ru": "Ожидаемая польза, вопрос 1",
+    "uz": "Kutilayotgan foyda, savol 1"
+   }
+  },
+  {
+   "name": "ExBen2",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Expected benefit, item 2",
+    "ru": "Ожидаемая польза, вопрос 2",
+    "uz": "Kutilayotgan foyda, savol 2"
+   }
+  },
+  {
+   "name": "ExBen3",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Expected benefit, item 3",
+    "ru": "Ожидаемая польза, вопрос 3",
+    "uz": "Kutilayotgan foyda, savol 3"
+   }
+  },
+  {
+   "name": "ExBen4",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Expected benefit, item 4",
+    "ru": "Ожидаемая польза, вопрос 4",
+    "uz": "Kutilayotgan foyda, savol 4"
+   }
+  },
+  {
+   "name": "ExBen5",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Expected benefit, item 5",
+    "ru": "Ожидаемая польза, вопрос 5",
+    "uz": "Kutilayotgan foyda, savol 5"
+   }
+  },
+  {
+   "name": "ExBen6",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Expected benefit, item 6",
+    "ru": "Ожидаемая польза, вопрос 6",
+    "uz": "Kutilayotgan foyda, savol 6"
+   }
+  },
+  {
+   "name": "AttBuy1",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Intention to buy, item 1",
+    "ru": "Намерение купить, вопрос 1",
+    "uz": "Sotib olish niyati, savol 1"
+   }
+  },
+  {
+   "name": "AttBuy2",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Intention to buy, item 2",
+    "ru": "Намерение купить, вопрос 2",
+    "uz": "Sotib olish niyati, savol 2"
+   }
+  },
+  {
+   "name": "AttBuy3",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Intention to buy, item 3",
+    "ru": "Намерение купить, вопрос 3",
+    "uz": "Sotib olish niyati, savol 3"
+   }
+  },
+  {
+   "name": "AttBuy4",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Intention to buy, item 4",
+    "ru": "Намерение купить, вопрос 4",
+    "uz": "Sotib olish niyati, savol 4"
+   }
+  },
+  {
+   "name": "Risk1",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Perceived risk, item 1",
+    "ru": "Восприятие риска, вопрос 1",
+    "uz": "Xavfni idrok etish, savol 1"
+   }
+  },
+  {
+   "name": "Risk2",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Perceived risk, item 2",
+    "ru": "Восприятие риска, вопрос 2",
+    "uz": "Xavfni idrok etish, savol 2"
+   }
+  },
+  {
+   "name": "Risk3",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Perceived risk, item 3",
+    "ru": "Восприятие риска, вопрос 3",
+    "uz": "Xavfni idrok etish, savol 3"
+   }
+  },
+  {
+   "name": "Risk4",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Perceived risk, item 4",
+    "ru": "Восприятие риска, вопрос 4",
+    "uz": "Xavfni idrok etish, savol 4"
+   }
+  },
+  {
+   "name": "Risk5",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Perceived risk, item 5",
+    "ru": "Восприятие риска, вопрос 5",
+    "uz": "Xavfni idrok etish, savol 5"
+   }
+  },
+  {
+   "name": "PosAtt1",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Attitude to insurance, item 1",
+    "ru": "Отношение к страхованию, вопрос 1",
+    "uz": "Sugʻurtaga munosabat, savol 1"
+   }
+  },
+  {
+   "name": "PosAtt2",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Attitude to insurance, item 2",
+    "ru": "Отношение к страхованию, вопрос 2",
+    "uz": "Sugʻurtaga munosabat, savol 2"
+   }
+  },
+  {
+   "name": "PosAtt3",
+   "type": "integer",
+   "code": "",
+   "values": "1 = strongly disagree … 5 = strongly agree",
+   "label": {
+    "en": "Attitude to insurance, item 3",
+    "ru": "Отношение к страхованию, вопрос 3",
+    "uz": "Sugʻurtaga munosabat, savol 3"
+   }
+  },
+  {
+   "name": "dig_literacy_idx",
+   "type": "number",
+   "code": "",
+   "values": "1–5, mean of items",
+   "label": {
+    "en": "Digital literacy — index (CORE)",
+    "ru": "Цифровая грамотность — индекс (CORE)",
+    "uz": "Raqamli savodxonlik — indeks (CORE)"
+   }
+  },
+  {
+   "name": "ins_literacy_idx",
+   "type": "number",
+   "code": "",
+   "values": "1–5, mean of items",
+   "label": {
+    "en": "Insurance literacy — index (CORE)",
+    "ru": "Страховая грамотность — индекс (CORE)",
+    "uz": "Sugʻurta savodxonligi — indeks (CORE)"
+   }
+  },
+  {
+   "name": "ins_inclusion_idx",
+   "type": "number",
+   "code": "",
+   "values": "1–5, mean of items",
+   "label": {
+    "en": "Insurance inclusion — index (CORE)",
+    "ru": "Охват страхованием — индекс (CORE)",
+    "uz": "Sugʻurta bilan qamrov — indeks (CORE)"
+   }
+  },
+  {
+   "name": "trust_idx",
+   "type": "number",
+   "code": "",
+   "values": "1–5, mean of items",
+   "label": {
+    "en": "Trust in insurers — index (CORE)",
+    "ru": "Доверие к страховщикам — индекс (CORE)",
+    "uz": "Sugʻurtachilarga ishonch — indeks (CORE)"
+   }
+  },
+  {
+   "name": "benefit_idx",
+   "type": "number",
+   "code": "",
+   "values": "1–5, mean of items",
+   "label": {
+    "en": "Expected benefit — index (CORE)",
+    "ru": "Ожидаемая польза — индекс (CORE)",
+    "uz": "Kutilayotgan foyda — indeks (CORE)"
+   }
+  },
+  {
+   "name": "intention_idx",
+   "type": "number",
+   "code": "",
+   "values": "1–5, mean of items",
+   "label": {
+    "en": "Intention to buy — index (CORE)",
+    "ru": "Намерение купить — индекс (CORE)",
+    "uz": "Sotib olish niyati — indeks (CORE)"
+   }
+  },
+  {
+   "name": "risk_idx",
+   "type": "number",
+   "code": "",
+   "values": "1–5, mean of items",
+   "label": {
+    "en": "Perceived risk — index (CORE)",
+    "ru": "Восприятие риска — индекс (CORE)",
+    "uz": "Xavfni idrok etish — indeks (CORE)"
+   }
+  },
+  {
+   "name": "attitude_idx",
+   "type": "number",
+   "code": "",
+   "values": "1–5, mean of items",
+   "label": {
+    "en": "Attitude to insurance — index (CORE)",
+    "ru": "Отношение к страхованию — индекс (CORE)",
+    "uz": "Sugʻurtaga munosabat — indeks (CORE)"
+   }
+  }
+ ]
+}

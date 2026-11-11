@@ -1,0 +1,170 @@
+{
+ "slug": "uzbek-geography-terms",
+ "fields": [
+  {
+   "name": "term_id",
+   "type": "string",
+   "code": "",
+   "values": "",
+   "label": {
+    "en": "Term ID",
+    "ru": "ID термина",
+    "uz": "Termin ID"
+   }
+  },
+  {
+   "name": "term_uz",
+   "type": "string",
+   "code": "",
+   "values": "",
+   "label": {
+    "en": "Term in Uzbek (Latin), normalised oʻ/gʻ/ʼ",
+    "ru": "Термин на узбекском (латиница), нормализованы oʻ/gʻ/ʼ",
+    "uz": "Termin oʻzbek tilida (lotin), oʻ/gʻ/ʼ bir xillashtirilgan"
+   }
+  },
+  {
+   "name": "words",
+   "type": "integer",
+   "code": "",
+   "values": "",
+   "label": {
+    "en": "Number of words",
+    "ru": "Число слов",
+    "uz": "Soʻzlar soni"
+   }
+  },
+  {
+   "name": "category",
+   "type": "string",
+   "code": "",
+   "values": "",
+   "label": {
+    "en": "Subject category (9 classes)",
+    "ru": "Тематическая категория (9 классов)",
+    "uz": "Mavzu toifasi (9 sinf)"
+   }
+  },
+  {
+   "name": "category_ru",
+   "type": "string",
+   "code": "",
+   "values": "",
+   "label": {
+    "en": "Category, Russian",
+    "ru": "Категория по-русски",
+    "uz": "Toifa, rus tilida"
+   }
+  },
+  {
+   "name": "term_ru",
+   "type": "string",
+   "code": "",
+   "values": "",
+   "label": {
+    "en": "Russian equivalent",
+    "ru": "Русский эквивалент",
+    "uz": "Ruscha muqobili"
+   }
+  },
+  {
+   "name": "term_en",
+   "type": "string",
+   "code": "",
+   "values": "",
+   "label": {
+    "en": "English equivalent",
+    "ru": "Английский эквивалент",
+    "uz": "Inglizcha muqobili"
+   }
+  },
+  {
+   "name": "freq_school",
+   "type": "integer",
+   "code": "",
+   "values": "",
+   "label": {
+    "en": "Occurrences in school textbooks (grades 5–11)",
+    "ru": "Употреблений в школьных учебниках (5–11 кл.)",
+    "uz": "Maktab darsliklarida uchrashi (5–11-sinf)"
+   }
+  },
+  {
+   "name": "freq_university",
+   "type": "integer",
+   "code": "",
+   "values": "",
+   "label": {
+    "en": "Occurrences in university textbooks",
+    "ru": "Употреблений в вузовских учебниках",
+    "uz": "Oliy taʼlim darsliklarida uchrashi"
+   }
+  },
+  {
+   "name": "first_level",
+   "type": "string",
+   "code": "",
+   "values": "",
+   "label": {
+    "en": "First grade where the term appears (5…10-11, uni)",
+    "ru": "Класс, где термин впервые встречается",
+    "uz": "Termin birinchi uchraydigan sinf"
+   }
+  },
+  {
+   "name": "level_profile",
+   "type": "string",
+   "code": "",
+   "values": "",
+   "label": {
+    "en": "School / university / both / not found",
+    "ru": "Школа / вуз / оба / не найден",
+    "uz": "Maktab / OTM / ikkalasi / topilmadi"
+   }
+  },
+  {
+   "name": "spelling_variant_of",
+   "type": "string",
+   "code": "",
+   "values": "",
+   "label": {
+    "en": "Other spelling of the same term found in the list",
+    "ru": "Другое написание того же термина в списке",
+    "uz": "Roʻyxatdagi shu terminning boshqa yozilishi"
+   }
+  },
+  {
+   "name": "example_uz",
+   "type": "string",
+   "code": "",
+   "values": "",
+   "label": {
+    "en": "Context from the corpus (±70 characters)",
+    "ru": "Контекст из корпуса (±70 знаков)",
+    "uz": "Korpusdan kontekst (±70 belgi)"
+   }
+  },
+  {
+   "name": "example_level",
+   "type": "string",
+   "code": "",
+   "values": "",
+   "label": {
+    "en": "Level of the example text",
+    "ru": "Уровень текста примера",
+    "uz": "Misol matni darajasi"
+   }
+  },
+  {
+   "name": "review_status",
+   "type": "string",
+   "code": "",
+   "values": "",
+   "label": {
+    "en": "Review status",
+    "ru": "Статус проверки",
+    "uz": "Tekshiruv holati"
+   }
+  }
+ ]
+}

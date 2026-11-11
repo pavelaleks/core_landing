@@ -31,7 +31,7 @@ for t in allterms:
         lvl = next(l for k, l in LEVELS if name.startswith(k))
         hits = pat.findall(txt); freq[lvl] += len(hits)
         if hits and ex is None:
-            m = pat.search(txt); a = txt.rfind(" ", 0, max(0, m.start() - 70)); b = txt.find(" ", m.end() + 70)
+            m = pat.search(txt); a = max(0, txt.rfind(" ", 0, max(0, m.start() - 70))); b = txt.find(" ", m.end() + 70)
             ex = (txt[a:b].strip(), lvl)
     school = sum(v for k, v in freq.items() if k != "uni")
     first = next((l for l in ["5", "6", "7", "8", "9", "10-11", "uni"] if freq[l]), "")

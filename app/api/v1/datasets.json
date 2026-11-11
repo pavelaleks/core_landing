@@ -1,0 +1,51 @@
+{
+ "api": "CORE static API v1 (MVP)",
+ "auth": "Demo: send your key in the X-Core-Key header. The static demo does not check it; the production API does.",
+ "datasets": [
+  {
+   "slug": "uzbek-geography-terms",
+   "table": "terms",
+   "title": {
+    "en": "Uzbek geography terminology, annotated",
+    "ru": "Терминология географии на узбекском, размеченная",
+    "uz": "Oʻzbek tilidagi geografiya terminologiyasi, belgilangan"
+   },
+   "university": "Urgench State University",
+   "rows": 1196,
+   "fields": 15,
+   "pages": 3,
+   "license": "CC-BY-4.0",
+   "href": "datasets/uzbek-geography-terms/index.json"
+  },
+  {
+   "slug": "insurance-literacy-syrdarya",
+   "table": "insurance",
+   "title": {
+    "en": "Insurance literacy and inclusion survey, Syrdarya region (n = 353)",
+    "ru": "Опрос о страховой грамотности и охвате, Сырдарьинская область (353 человека)",
+    "uz": "Sugʻurta savodxonligi va qamrovi soʻrovi, Sirdaryo viloyati (353 kishi)"
+   },
+   "university": "Gulistan State University",
+   "rows": 353,
+   "fields": 113,
+   "pages": 1,
+   "license": "CC-BY-4.0",
+   "href": "datasets/insurance-literacy-syrdarya/index.json"
+  },
+  {
+   "slug": "covid-almaty-cohort",
+   "table": "covid",
+   "title": {
+    "en": "Hospitalised COVID-19 patients in Almaty, 2020–2021 (n = 2,313), standardised",
+    "ru": "Госпитализированные пациенты с COVID-19, Алматы, 2020–2021 (2 313 человек), стандартизировано",
+    "uz": "COVID-19 bilan yotqizilgan bemorlar, Almati, 2020–2021 (2 313 kishi), standartlashtirilgan"
+   },
+   "university": "Kazakh National Medical University",
+   "rows": 2395,
+   "fields": 59,
+   "pages": 5,
+   "license": "CC-BY-4.0",
+   "href": "datasets/covid-almaty-cohort/index.json"
+  }
+ ]
+}

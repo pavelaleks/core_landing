@@ -102,3 +102,25 @@ table.t.mono td{font-family:var(--mono);font-size:12px;white-space:nowrap}
   .mvp-who{margin-left:auto}
   .mvp-nav{order:3;flex:0 0 100%}
 }
+/* API and SQL console */
+.api{margin-bottom:8px;border-color:rgba(61,219,193,.35)}
+.api-key{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:6px 0 8px}
+.api-key code{font:500 14px var(--mono);color:var(--teal);background:rgba(61,219,193,.08);padding:6px 10px;border-radius:8px;word-break:break-all}
+.api-eps{display:grid;gap:4px;margin:14px 0;font-size:13px;font-family:var(--mono);word-break:break-word}
+.api-eps .mono{color:var(--teal);margin-right:6px}
+.api-eps .muted{font-family:var(--font)}
+.api-tabs{display:flex;gap:4px;margin-top:6px;flex-wrap:wrap}
+.api-tabs button{padding:6px 12px;border-radius:8px 8px 0 0;font-size:13px;color:var(--muted);background:rgba(255,255,255,.03)}
+.api-tabs button.on{color:var(--text);background:var(--bg)}
+pre.snip,div.snip{margin:0;background:var(--bg);border:1px solid var(--line);border-radius:0 10px 10px 10px;padding:14px;font:12.5px/1.55 var(--mono);color:#c9d3dc;overflow-x:auto;white-space:pre;max-width:100%}
+div.snip{white-space:normal;font-family:var(--font)}
+#tryOut{border-radius:10px;margin-top:8px;max-height:280px}
+.api-try{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:12px}
+.api-try .small{word-break:break-all}
+.sql-ex{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.sql-ex .pill{cursor:pointer}
+.sql-ex .pill:hover{color:var(--text);border-color:var(--teal)}
+textarea.sql{width:100%;min-height:150px;background:var(--bg);color:var(--text);border:1px solid var(--line2);border-radius:10px;padding:12px;font:13px/1.5 var(--mono);resize:vertical}
+textarea.sql:focus{outline:none;border-color:var(--teal)}
+#sqlOut{margin-top:12px}
+.btn-block{width:100%}

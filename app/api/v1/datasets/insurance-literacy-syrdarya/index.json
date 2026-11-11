@@ -1,0 +1,32 @@
+{
+ "slug": "insurance-literacy-syrdarya",
+ "table": "insurance",
+ "title": {
+  "en": "Insurance literacy and inclusion survey, Syrdarya region (n = 353)",
+  "ru": "Опрос о страховой грамотности и охвате, Сырдарьинская область (353 человека)",
+  "uz": "Sugʻurta savodxonligi va qamrovi soʻrovi, Sirdaryo viloyati (353 kishi)"
+ },
+ "university": "Gulistan State University",
+ "authors": [
+  "Eshpulatov, Dostonbek",
+  "Xaydarova, Durdona",
+  "Ismoilova, Muyassar",
+  "Berdiyev, Gayrat",
+  "Sherbekova, Kamola"
+ ],
+ "source": "https://doi.org/10.5281/zenodo.21217677",
+ "license": "CC-BY-4.0",
+ "rows": 353,
+ "fields": 113,
+ "pages": 1,
+ "page_size": 500,
+ "links": {
+  "fields": "fields.json",
+  "rows": [
+   "rows-1.json"
+  ],
+  "csv": "../../../../packages/insurance-literacy-syrdarya/data/insurance_survey_syrdarya.csv",
+  "zip": "../../../../packages/insurance-literacy-syrdarya.zip",
+  "croissant": "../../../../packages/insurance-literacy-syrdarya/croissant.json"
+ }
+}

@@ -15,6 +15,7 @@ python3 -I tools/mvp/terms_build.py out/terms_stage1.json data-src/mvp/terms_glo
 python3 -I tools/mvp/insurance.py $R/21217676/Smart_data_Cleaned2.xlsx out/insurance
 python3 -I tools/mvp/covid.py $R/23608061 out/covid
 python3 -I tools/mvp/package.py out $R app/packages                              # zip + datasheet + Croissant
+python3 -I tools/mvp/build_api.py app                                            # static API v1 + OpenAPI
 ```
 
 `data-src/mvp/terms_gloss.tsv` — Russian/English equivalents and categories for the 320 most frequent
@@ -22,3 +23,6 @@ terms (CORE draft, awaiting review by a geographer).
 
 The cabinet (`app/`) keeps requests and uploads in the browser (localStorage); `store` in
 `app/app.js` is the single place to switch to a shared backend. Invite code: see `INVITE` in `app/app.js`.
+
+Buyers with an approved request see an API key, curl/Python/JS examples, a live request and a SQL console
+(DuckDB-WASM 1.29.0 from jsDelivr, runs in the browser). The static demo does not check the key.

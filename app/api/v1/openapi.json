@@ -1,0 +1,127 @@
+{
+ "openapi": "3.1.0",
+ "info": {
+  "title": "CORE data API (MVP)",
+  "version": "1.0.0",
+  "description": "Prepared research datasets from Central Asian universities. Static demo: the key header is accepted but not checked."
+ },
+ "servers": [
+  {
+   "url": "https://pavelaleks.github.io/core_landing/app/api/v1"
+  }
+ ],
+ "components": {
+  "securitySchemes": {
+   "coreKey": {
+    "type": "apiKey",
+    "in": "header",
+    "name": "X-Core-Key"
+   }
+  }
+ },
+ "security": [
+  {
+   "coreKey": []
+  }
+ ],
+ "paths": {
+  "/datasets.json": {
+   "get": {
+    "operationId": "listDatasets",
+    "summary": "List datasets you can access",
+    "responses": {
+     "200": {
+      "description": "Datasets"
+     }
+    }
+   }
+  },
+  "/datasets/{slug}/index.json": {
+   "get": {
+    "operationId": "getDataset",
+    "summary": "Dataset metadata, row count and page links",
+    "parameters": [
+     {
+      "name": "slug",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "enum": [
+        "uzbek-geography-terms",
+        "insurance-literacy-syrdarya",
+        "covid-almaty-cohort"
+       ]
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Metadata"
+     }
+    }
+   }
+  },
+  "/datasets/{slug}/fields.json": {
+   "get": {
+    "operationId": "getFields",
+    "summary": "Fields with types, standard codes and labels in en/ru/uz",
+    "parameters": [
+     {
+      "name": "slug",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "enum": [
+        "uzbek-geography-terms",
+        "insurance-literacy-syrdarya",
+        "covid-almaty-cohort"
+       ]
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Fields"
+     }
+    }
+   }
+  },
+  "/datasets/{slug}/rows-{page}.json": {
+   "get": {
+    "operationId": "getRows",
+    "summary": "Rows, 500 per page",
+    "parameters": [
+     {
+      "name": "slug",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "enum": [
+        "uzbek-geography-terms",
+        "insurance-literacy-syrdarya",
+        "covid-almaty-cohort"
+       ]
+      }
+     },
+     {
+      "name": "page",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "integer",
+       "minimum": 1
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "A page of rows"
+     }
+    }
+   }
+  }
+ }
+}
