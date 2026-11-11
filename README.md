@@ -113,3 +113,7 @@ python3 -I tools/build_graph.py <capubs>/data/ca_publications.sqlite <core-hub>/
 ```bash
 python3 -I tools/build_regions.py <папка с CSV COD-PS> <папка с geoBoundaries ADM1 GeoJSON>
 ```
+
+## Каталог (catalog.html)
+
+`tools/build_catalog.py` собирает единый индекс `assets/catalog-index.js`: базы CORE (`data-src/catalog.json`), наборы, подготовленные CORE (`app/packages/index.json`), слой регионов (`data-src/regions.json`) и 405 проверенных открытых наборов учёных (`assets/data.js`). Запускать после обновления любого из источников, затем `tools/build_site.py`.

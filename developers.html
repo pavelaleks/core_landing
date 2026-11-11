@@ -36,6 +36,7 @@
       <span>CORE</span>
     </a>
     <nav class="nav-links" aria-label="Main">
+      <a href="catalog.html" data-ru="Каталог">Catalog</a>
       <a href="how.html" data-ru="Как это работает">How it works</a>
       <a href="universities.html" data-ru="Университетам">For universities</a>
       <a href="developers.html" aria-current="page" data-ru="Разработчикам ИИ">For AI developers</a>
@@ -62,7 +63,7 @@
       <div class="state wip"><span class="mono small" data-ru="В разработке">In development</span><p data-ru="Проверка знаний моделей о регионе (бенчмарк), подключение к ИИ-агентам (MCP), общий сервер для кабинетов вузов и покупателей">Model knowledge test (benchmark), AI-agent access (MCP), a shared server for university and buyer cabinets</p></div>
     </div>
     <div class="hero-ctas left">
-      <a href="#catalog" class="btn btn-primary" data-ru="Открыть каталог">Open the catalog</a>
+      <a href="catalog.html" class="btn btn-primary" data-ru="Открыть каталог">Open the catalog</a>
       <a href="app/index.html#demo" class="btn btn-ghost" data-ru="Попробовать кабинет покупателя">Try the buyer cabinet</a>
       <a href="pricing.html" class="btn btn-ghost" data-ru="Цены и пилот">Pricing &amp; pilot</a>
     </div>
@@ -137,7 +138,6 @@
       <button role="tab" class="tab on" data-tab="t-uni"><span class="mono">DS-0001</span> <span data-ru="Вузы ЦА">Universities</span></button>
       <button role="tab" class="tab" data-tab="t-med"><span class="mono">DS-0002</span> <span data-ru="Медучреждения UZ">Medical UZ</span></button>
       <button role="tab" class="tab" data-tab="t-pub"><span class="mono">DS-0003</span> <span data-ru="Публикации">Publications</span></button>
-      <button role="tab" class="tab" data-tab="t-pipe"><span class="mono">PIPELINE</span> <span data-ru="405 проверенных наборов учёных">405 checked scholar datasets</span></button>
     </div>
 
     <!-- DS-0001 -->
@@ -223,36 +223,8 @@
       </div>
     </div>
 
-    <!-- PIPELINE -->
-    <div class="tabpanel" id="t-pipe">
-      <div class="pipe-head">
-        <div>
-          <h3 data-ru="405 открытых наборов данных, которые учёные вузов ЦА опубликовали сами, — каждый проверен">405 open datasets Central Asian scholars have published themselves — each one checked</h3>
-          <p class="muted" data-ru="Из 11 523 записей OpenAlex с 2023 года мы отобрали 548 кандидатов и открыли каждый в его репозитории: Zenodo, GBIF, Mendeley Data, Dataverse и других. Файлы с данными есть у 405. Остальные 143: только статья или документ (63), списки видов, извлечённые из статей (40), удалённые записи и нерабочие ссылки (19), закрытые файлы (17), прочее (4). Это не наш товар — это доказательство, что данные в вузах есть.">From 11,523 OpenAlex records since 2023 we picked 548 candidates and opened each one in its repository — Zenodo, GBIF, Mendeley Data, Dataverse and others. 405 have data files. The other 143: article or document only (63), species lists extracted from articles (40), deleted records and broken links (19), restricted files (17), other (4). Not our inventory — proof the data exists.</p>
-        </div>
-        <div class="pipe-stats" id="pipeStats"></div>
-      </div>
-      <div class="card">
-        <div class="table-tools">
-          <input type="search" id="pipeSearch" placeholder="Search: corpus, wheat, Aral, legal, speech…" data-ru-ph="Поиск: corpus, wheat, Aral, legal, speech…">
-          <select id="pipeField" aria-label="Field"><option value="" data-ru="Все области">All fields</option></select>
-          <div class="seg seg-wrap" id="pipeType">
-            <button class="on" data-m="" data-ru="Все типы">All types</button>
-            <button data-m="tab" data-ru="Таблицы">Tables</button>
-            <button data-m="text" data-ru="Тексты">Text</button>
-            <button data-m="img" data-ru="Изображения и ДЗЗ">Images &amp; EO</button>
-            <button data-m="av" data-ru="Аудио и видео">Audio &amp; video</button>
-            <button data-m="bio" data-ru="Биоразнообразие">Biodiversity</button>
-            <button data-m="code" data-ru="Код и модели">Code &amp; models</button>
-          </div>
-          <div class="seg" id="pipeCheck"><button class="on" data-k="data" data-ru="С данными">With data</button><button data-k="nodata" data-ru="Без данных">No data</button><button data-k="" data-ru="Все записи">All records</button></div>
-          <div class="seg" id="pipeCountry"><button class="on" data-c="">All</button><button data-c="UZ">UZ</button><button data-c="KZ">KZ</button><button data-c="KG">KG</button><button data-c="TJ">TJ</button></div>
-        </div>
-        <div class="tscroll tall"><table id="pipeTable"><thead><tr><th data-ru="Год">Year</th><th data-ru="Датасет">Dataset</th><th data-ru="Вуз">University</th><th data-ru="Область">Field</th><th data-ru="Лицензия">License</th><th data-ru="Проверка">Check</th></tr></thead><tbody></tbody></table></div>
-        <div class="table-foot small muted"><span id="pipeCount"></span> · <span data-ru="Названия — на языке публикации. Метаданные OpenAlex (CC0), авторы скрыты, тип данных определён автоматически по названию. «Проверка» — что мы нашли, открыв запись в репозитории (ноябрь 2026).">Titles are in the language of publication. Metadata via OpenAlex (CC0); authors hidden; data type inferred from the title. “Check” is what we found when we opened the record in its repository (November 2026).</span></div>
-      </div>
+    <div class="cat-link-card card"><b data-ru="Ещё 405 открытых наборов учёных региона — в каталоге">405 more open datasets by the region's scholars — in the catalog</b><span data-ru="Поиск по теме, стране и области, проверка каждой записи, ссылки на источники.">Search by topic, country and field, each record checked, links to sources.</span><a class="btn btn-primary btn-sm" href="catalog.html" data-ru="Открыть каталог">Open the catalog</a></div>
     </div>
-  </div>
 </section>
 
 <!-- ============ AI TEAMS / USE CASES ============ -->
@@ -546,7 +518,7 @@ curl …/api/v0/datasets/<span class="s">universities</span>/croissant.json</cod
       <p class="small muted" data-ru="Научные данные университетов Центральной Азии — для искусственного интеллекта.">Research data from Central Asian universities — for artificial intelligence.</p>
     </div>
     <div class="foot-links">
-      <a href="how.html" data-ru="Как это работает">How it works</a><a href="universities.html" data-ru="Университетам">Universities</a><a href="developers.html" aria-current="page" data-ru="Разработчикам ИИ">AI developers</a><a href="pricing.html" data-ru="Цены">Pricing</a><a href="index.html#team" data-ru="Команда">Team</a><a href="privacy.html" data-ru="Конфиденциальность">Privacy</a><a href="app/index.html" data-ru="Вход для партнёров (MVP)">Partner login (MVP)</a><a class="tg-link foot-tg" href="index.html#" target="_blank" rel="noopener" hidden><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M21.5 4.5 2.9 11.6c-.9.4-.9 1.1 0 1.4l4.7 1.5 1.8 5.6c.2.6.5.7 1 .3l2.6-2.3 4.9 3.6c.6.4 1.1.2 1.3-.6l3.1-14.6c.3-1.2-.4-1.6-1.4-1.2z" fill="currentColor"/></svg><span>Telegram</span></a>
+      <a href="catalog.html" data-ru="Каталог">Catalog</a><a href="how.html" data-ru="Как это работает">How it works</a><a href="universities.html" data-ru="Университетам">Universities</a><a href="developers.html" aria-current="page" data-ru="Разработчикам ИИ">AI developers</a><a href="pricing.html" data-ru="Цены">Pricing</a><a href="index.html#team" data-ru="Команда">Team</a><a href="privacy.html" data-ru="Конфиденциальность">Privacy</a><a href="app/index.html" data-ru="Вход для партнёров (MVP)">Partner login (MVP)</a><a class="tg-link foot-tg" href="index.html#" target="_blank" rel="noopener" hidden><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M21.5 4.5 2.9 11.6c-.9.4-.9 1.1 0 1.4l4.7 1.5 1.8 5.6c.2.6.5.7 1 .3l2.6-2.3 4.9 3.6c.6.4 1.1.2 1.3-.6l3.1-14.6c.3-1.2-.4-1.6-1.4-1.2z" fill="currentColor"/></svg><span>Telegram</span></a>
     </div>
     <p class="small muted attr" data-ru="Данные: © участники OpenStreetMap (ODbL), OpenAlex, ROR, Wikidata (CC0). Границы: Natural Earth.">Data: © OpenStreetMap contributors (ODbL), OpenAlex, ROR, Wikidata (CC0). Boundaries: Natural Earth.</p>
   </div>

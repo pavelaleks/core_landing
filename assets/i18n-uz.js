@@ -1096,5 +1096,10 @@ window.CORE_UZ = {
 "Наверх": "Yuqoriga",
 "Тест знаний модели": "Model bilimlari testi",
 "Что CORE даёт каждому": "CORE har biriga nima beradi",
-"Наборов учёных с данными (проверены)": "Maʼlumotli olimlar toʻplamlari (tekshirilgan)"
+"Наборов учёных с данными (проверены)": "Maʼlumotli olimlar toʻplamlari (tekshirilgan)",
+"Каталог данных Центральной Азии": "Markaziy Osiyo maʼlumotlari katalogi",
+"Наши базы, наборы, подготовленные CORE, слой регионов и 405 открытых наборов учёных — каждый проверен вручную. Ищите по теме, стране и области.": "Bizning bazalarimiz, CORE tayyorlagan toʻplamlar, hududlar qatlami va olimlarning 405 ta ochiq toʻplami — har biri qoʻlda tekshirilgan. Mavzu, mamlakat va soha boʻyicha qidiring.",
+"Открытые наборы учёных принадлежат их авторам и лежат в открытых хранилищах. CORE их не перепродаёт: по запросу мы готовим их к работе вместе с вузом-партнёром.": "Olimlarning ochiq toʻplamlari mualliflariga tegishli va ochiq omborlarda turadi. CORE ularni qayta sotmaydi: soʻrov boʻyicha hamkor universitet bilan birga ularni ishga tayyorlaymiz.",
+"Ещё 405 открытых наборов учёных региона — в каталоге": "Mintaqa olimlarining yana 405 ta ochiq toʻplami — katalogda",
+"Поиск по теме, стране и области, проверка каждой записи, ссылки на источники.": "Mavzu, mamlakat va soha boʻyicha qidiruv, har bir yozuv tekshiruvi, manbalarga havolalar."
 };
