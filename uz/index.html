@@ -71,8 +71,8 @@
         <span class="door-go">→</span>
       </a>
       <a class="door" href="#business">
-        <span class="door-k mono" data-ru="Мне нужны проверенные данные для работы">Menga ish uchun tekshirilgan maʼlumotlar kerak</span>
-        <b data-ru="Бизнесу, госорганам и организациям: подборки, выгрузки, аналитика">Biznes, davlat idoralari va tashkilotlarga: roʻyxatlar, eksportlar, tahlil</b>
+        <span class="door-k mono" data-ru="Мне нужны проверенные данные">Menga tekshirilgan maʼlumotlar kerak</span>
+        <b data-ru="Бизнесу и госорганам: подборки, выгрузки, аналитика">Biznes va davlat idoralariga: roʻyxatlar, eksportlar, tahlil</b>
         <span class="door-go">→</span>
       </a>
     </div>
@@ -348,43 +348,79 @@
 <!-- ============ PRICING ============ -->
 <section class="sec" id="pricing">
   <div class="wrap">
-    <div class="sec-head center">
-      <span class="eyebrow" data-ru="Цены для компаний">Kompaniyalar uchun narxlar</span>
-      <h2 data-ru="Начните с образца. Платите за результат.">Namunadan boshlang. Natija uchun toʻlang.</h2>
-      <p class="sub" data-ru="Для университетов участие бесплатное.">Universitetlar uchun ishtirok bepul.</p>
+    <div class="sec-head">
+      <span class="eyebrow" data-ru="Цены">Narxlar</span>
+      <h2 data-ru="Цена зависит от вида данных">Narx maʼlumot turiga bogʻliq</h2>
+      <p class="sub" data-ru="Справочники продают подпиской, речь — за час записи, научные данные — лицензией на год. Ниже стартовые ориентиры; точную сумму называем после короткого разговора о задаче. Для университетов участие бесплатное.">Maʼlumotnomalar obuna bilan, nutq — yozuv soati uchun, ilmiy maʼlumotlar — bir yillik litsenziya bilan sotiladi. Quyida boshlangʻich moʻljallar; aniq summani vazifa haqida qisqa suhbatdan keyin aytamiz. Universitetlar uchun ishtirok bepul.</p>
     </div>
-    <div class="price-grid">
-      <div class="card price">
-        <h3 data-ru="Знакомство">Tanishuv</h3>
-        <div class="amount">$0</div>
-        <p class="muted" data-ru="Посмотреть, что есть">Nima borligini koʻrish</p>
-        <ul class="checks"><li data-ru="Описание всех наборов данных">Barcha maʼlumotlar toʻplamlari tavsifi</li><li data-ru="Образец до 1 000 записей">1 000 tagacha yozuvdan namuna</li><li data-ru="Открытые справочники — бесплатно">Ochiq maʼlumotnomalar — bepul</li></ul>
-        <a href="#contact" class="btn btn-ghost" data-form="buyer" data-ru="Запросить образец">Namuna soʻrash</a>
+    <div class="pr-free card">
+      <b data-ru="Бесплатно">Bepul</b>
+      <span data-ru="Каталог и описания всех наборов · образец любого набора до 1 000 записей · справочник вузов целиком (CC0)">Barcha toʻplamlar katalogi va tavsifi · istalgan toʻplamdan 1 000 tagacha yozuv namunasi · universitetlar maʼlumotnomasi toʻliq (CC0)</span>
+      <a href="#contact" class="link-cta" data-form="buyer" data-ru="Запросить образец →">Namuna soʻrash →</a>
+    </div>
+    <div class="pr-table card" role="table" aria-label="Prices by kind of data">
+      <div class="pr-row pr-head" role="row">
+        <div data-ru="Что вы покупаете">Nimani sotib olasiz</div>
+        <div data-ru="Как считаем">Qanday hisoblaymiz</div>
+        <div data-ru="Ориентир">Moʻljal</div>
+        <div></div>
       </div>
-      <div class="card price">
-        <h3 data-ru="Проверка модели">Modelni tekshirish</h3>
-        <div class="amount"><small data-ru="от">dan</small> $2,500</div>
-        <p class="muted" data-ru="Где ваш ИИ ошибается о Центральной Азии">SI ingiz Markaziy Osiyo haqida qayerda xato qiladi</p>
-        <ul class="checks"><li data-ru="300–500 вопросов о регионе на 4 языках">Mintaqa haqida 4 tilda 300–500 savol</li><li data-ru="Отчёт об ошибках по темам и языкам">Mavzular va tillar boʻyicha xatolar hisoboti</li><li data-ru="Сравнение с ведущими моделями">Yetakchi modellar bilan taqqoslash</li><li data-ru="Предзаказ: первые отчёты — после запуска теста">Oldindan buyurtma: birinchi hisobotlar — test ishga tushgandan keyin</li></ul>
-        <a href="#contact" class="btn btn-ghost" data-form="bench" data-ru="Предзаказать">Oldindan buyurtma berish</a>
+      <div class="pr-row">
+        <div class="pr-kind"><b data-ru="Справочники и подборки">Maʼlumotnomalar va roʻyxatlar</b><span data-ru="Клиники, страховые, банки, EdTech">Klinikalar, sugʻurta, banklar, EdTech</span></div>
+        <div class="pr-how" data-ru="Разовая выгрузка или подписка с обновлениями">Bir martalik eksport yoki yangilanishli obuna</div>
+        <div class="pr-price" data-ru="от $300 за выгрузку · от $150/мес">eksport uchun $300 dan · oyiga $150 dan</div>
+        <a href="#contact" class="pr-go link-cta" data-form="med" data-ru="Запросить →">Soʻrash →</a>
       </div>
-      <div class="card price featured">
-        <span class="badge" data-ru="Лучший старт">Eng yaxshi boshlanish</span>
-        <h3 data-ru="Пилот">Pilot</h3>
-        <div class="amount">$6,000</div>
-        <p class="muted" data-ru="Фиксированная цена, 4 недели">Qatʼiy narx, 4 hafta</p>
-        <ul class="checks"><li data-ru="Проверка вашей модели">Modelingizni tekshirish</li><li data-ru="Набор данных под вашу задачу — до 5 000 записей">Vazifangizga mos maʼlumotlar toʻplami — 5 000 tagacha yozuv</li><li data-ru="Описание данных и документы на права">Maʼlumotlar tavsifi va huquqiy hujjatlar</li><li data-ru="50% идёт в зачёт следующего заказа">50% keyingi buyurtmaga hisoblanadi</li></ul>
-        <a href="#contact" class="btn btn-primary" data-form="buyer" data-ru="Начать пилот">Pilotni boshlash</a>
+      <div class="pr-row">
+        <div class="pr-kind"><b data-ru="Аналитика и отчёты">Tahlil va hisobotlar</b><span data-ru="Вузы, фонды, инвесторы, госорганы">Universitetlar, fondlar, investorlar, davlat idoralari</span></div>
+        <div class="pr-how" data-ru="За отчёт или мониторинг по подписке">Hisobot uchun yoki obuna boʻyicha monitoring</div>
+        <div class="pr-price" data-ru="от $1 500 за отчёт">hisobot uchun $1 500 dan</div>
+        <a href="#contact" class="pr-go link-cta" data-form="buyer" data-ru="Запросить →">Soʻrash →</a>
       </div>
-      <div class="card price">
-        <h3 data-ru="Данные под заказ">Buyurtma boʻyicha maʼlumotlar</h3>
-        <div class="amount"><small data-ru="от">dan</small> $15,000</div>
-        <p class="muted" data-ru="Соберём и разметим то, чего нет в открытом доступе">Ochiq manbada yoʻq narsani yigʻamiz va belgilaymiz</p>
-        <ul class="checks"><li data-ru="Сбор, оцифровка и разметка под ваше техзадание">Texnik topshirigʻingiz boʻyicha yigʻish, raqamlashtirish va belgilash</li><li data-ru="Пять языков региона и русский">Mintaqaning beshta tili va rus tili</li><li data-ru="Двойная проверка записей входит в работу">Yozuvlarni ikki marta tekshirish ishga kiradi</li><li data-ru="Эксклюзив на время — по запросу">Vaqtinchalik eksklyuziv — soʻrov boʻyicha</li></ul>
-        <a href="#contact" class="btn btn-ghost" data-form="buyer" data-ru="Обсудить">Muhokama qilish</a>
+      <div class="pr-row">
+        <div class="pr-kind"><b data-ru="Научные данные">Ilmiy maʼlumotlar</b><span data-ru="Агро, вода, экология, медицина, ИИ">Agro, suv, ekologiya, tibbiyot, SI</span></div>
+        <div class="pr-how" data-ru="Лицензия на набор данных на год">Maʼlumotlar toʻplamiga bir yillik litsenziya</div>
+        <div class="pr-price" data-ru="от $3 000 за набор в год">toʻplam uchun yiliga $3 000 dan</div>
+        <a href="#contact" class="pr-go link-cta" data-form="buyer" data-ru="Запросить →">Soʻrash →</a>
+      </div>
+      <div class="pr-row">
+        <div class="pr-kind"><b data-ru="Тексты на местных языках">Mahalliy tillardagi matnlar</b><span data-ru="Разработчики ИИ, госпроекты">SI ishlab chiquvchilari, davlat loyihalari</span></div>
+        <div class="pr-how" data-ru="За корпус, по объёму">Korpus uchun, hajmga qarab</div>
+        <div class="pr-price" data-ru="от $3 000 за корпус до 1 млн слов">1 mln soʻzgacha korpus uchun $3 000 dan</div>
+        <a href="#contact" class="pr-go link-cta" data-form="buyer" data-ru="Запросить →">Soʻrash →</a>
+      </div>
+      <div class="pr-row">
+        <div class="pr-kind"><b data-ru="Речь с расшифровкой">Matnga oʻgirilgan nutq</b><span data-ru="Разработчики ИИ, колл-центры, госуслуги">SI ishlab chiquvchilari, call-markazlar, davlat xizmatlari</span></div>
+        <div class="pr-how" data-ru="За час записи">Yozuvning bir soati uchun</div>
+        <div class="pr-price" data-ru="от $80/час готовые · от $180/час запись под заказ">tayyor — soatiga $80 dan · buyurtma — soatiga $180 dan</div>
+        <a href="#contact" class="pr-go link-cta" data-form="buyer" data-ru="Запросить →">Soʻrash →</a>
+      </div>
+      <div class="pr-row">
+        <div class="pr-kind"><b data-ru="Проверка модели">Modelni tekshirish</b><span data-ru="Разработчики ИИ">SI ishlab chiquvchilari</span></div>
+        <div class="pr-how" data-ru="За модель; предзаказ до запуска теста">Model uchun; test ishga tushguncha oldindan buyurtma</div>
+        <div class="pr-price" data-ru="от $2 500 за модель">model uchun $2 500 dan</div>
+        <a href="#contact" class="pr-go link-cta" data-form="bench" data-ru="Запросить →">Soʻrash →</a>
+      </div>
+      <div class="pr-row">
+        <div class="pr-kind"><b data-ru="Пилот">Pilot</b><span data-ru="Всем, кто хочет сначала попробовать">Avval sinab koʻrmoqchi boʻlgan har kimga</span></div>
+        <div class="pr-how" data-ru="Фиксированный объём и цена, 4 недели; 50% в зачёт следующего заказа">Qatʼiy hajm va narx, 4 hafta; 50% keyingi buyurtmaga hisoblanadi</div>
+        <div class="pr-price" data-ru="$6 000">$6 000</div>
+        <a href="#contact" class="pr-go link-cta" data-form="buyer" data-ru="Запросить →">Soʻrash →</a>
+      </div>
+      <div class="pr-row">
+        <div class="pr-kind"><b data-ru="Данные под заказ">Buyurtma boʻyicha maʼlumotlar</b><span data-ru="Всем, кому нужно то, чего нет в открытом доступе">Ochiq manbada yoʻq narsa kerak boʻlganlarga</span></div>
+        <div class="pr-how" data-ru="Проект: сбор, оцифровка, разметка экспертами">Loyiha: yigʻish, raqamlashtirish, ekspertlar belgilashi</div>
+        <div class="pr-price" data-ru="от $15 000 за проект">loyiha uchun $15 000 dan</div>
+        <a href="#contact" class="pr-go link-cta" data-form="buyer" data-ru="Запросить →">Soʻrash →</a>
+      </div>
+      <div class="pr-row">
+        <div class="pr-kind"><b data-ru="Госпроекты и программы развития">Davlat loyihalari va rivojlanish dasturlari</b><span data-ru="Министерства, ведомства, международные программы">Vazirliklar, idoralar, xalqaro dasturlar</span></div>
+        <div class="pr-how" data-ru="По договору или тендеру">Shartnoma yoki tender boʻyicha</div>
+        <div class="pr-price" data-ru="по запросу">soʻrov boʻyicha</div>
+        <a href="#contact" class="pr-go link-cta" data-form="buyer" data-ru="Запросить →">Soʻrash →</a>
       </div>
     </div>
-    <p class="center small muted price-extra" data-ru="Для крупных компаний: постоянный доступ через API, регулярные обновления и индивидуальный договор — по запросу. Цены без НДС. Для некоммерческих научных проектов — скидка до 50%. Оплата в USD или UZS.">Yirik kompaniyalar uchun: API orqali doimiy kirish, muntazam yangilanishlar va individual shartnoma — soʻrov boʻyicha. Narxlar QQS siz. Notijorat ilmiy loyihalar uchun — 50% gacha chegirma. Toʻlov USD yoki UZS da.</p>
+    <p class="small muted price-extra" data-ru="Ориентиры опираются на цены мирового рынка данных — справочников, научных и речевых наборов — и учитывают местный рынок. Итог зависит от объёма, срока, эксклюзивности и способа доставки. Цены без НДС. Для некоммерческих научных проектов — скидка до 50%. Оплата в USD или UZS.">Moʻljallar jahon maʼlumotlar bozori — maʼlumotnomalar, ilmiy va nutq toʻplamlari narxlariga asoslanadi va mahalliy bozorni hisobga oladi. Yakuniy narx hajm, muddat, eksklyuzivlik va yetkazib berish usuliga bogʻliq. Narxlar QQS siz. Notijorat ilmiy loyihalar uchun — 50% gacha chegirma. Toʻlov USD yoki UZS da.</p>
   </div>
 </section>
 
@@ -410,7 +446,7 @@
   <div class="wrap narrow">
     <div class="sec-head center"><span class="eyebrow" data-ru="Вопросы">Savollar</span><h2 data-ru="Частые вопросы">Koʻp beriladigan savollar</h2></div>
     <details class="faq"><summary data-ru="Что такое «размеченные данные»?">«Belgilangan maʼlumotlar» nima?</summary><p data-ru="Это данные, в которых люди отметили важное: где в тексте названия мест, имена, даты, о чём документ. Так ИИ учится понимать текст, а не просто его видеть. Пример — выше, в статье СамГУ о Регистане.">Bu odamlar muhim narsalarni belgilagan maʼlumotlar: matnda joy nomlari, ismlar, sanalar qayerda, hujjat nima haqida. Shunday qilib SI matnni shunchaki koʻrmasdan, tushunishni oʻrganadi. Misol — yuqorida, SamDU ning Registon haqidagi maqolasida.</p></details>
-    <details class="faq"><summary data-ru="Что можно купить уже сейчас?">Hozirning oʻzida nimani sotib olish mumkin?</summary><p data-ru="Пилот, данные под заказ, подборки клиник для медтуризма и предзаказ проверки модели. Готовые наборы данных из архивов вузов появятся по мере подписания договоров с университетами.">Pilot, buyurtma maʼlumotlar, tibbiy turizm uchun klinikalar roʻyxatlari va modelni tekshirishga oldindan buyurtma. Universitet arxivlaridagi tayyor toʻplamlar universitetlar bilan shartnomalar imzolanishi bilan paydo boʻladi.</p></details>
+    <details class="faq"><summary data-ru="Что можно купить уже сейчас?">Hozirning oʻzida nimani sotib olish mumkin?</summary><p data-ru="Справочники и подборки (вузы, клиники), аналитику и отчёты, пилот, данные под заказ и предзаказ проверки модели. Готовые наборы данных из архивов вузов появятся по мере подписания договоров с университетами.">Maʼlumotnomalar va roʻyxatlar (universitetlar, klinikalar), tahlil va hisobotlar, pilot, buyurtma maʼlumotlar va modelni tekshirishga oldindan buyurtma. Universitet arxivlaridagi tayyor toʻplamlar universitetlar bilan shartnomalar imzolanishi bilan paydo boʻladi.</p></details>
     <details class="faq"><summary data-ru="Почему данные дают только университеты, а не отдельные учёные?">Nega maʼlumotni alohida olimlar emas, faqat universitetlar beradi?</summary><p data-ru="Данные, созданные на работе, обычно принадлежат вузу, а исследования с участием людей должен одобрить этический комитет. Когда договор заключает вуз, у покупателя чистые права, а учёные защищены и получают свою долю. Учёный может предложить свои данные через свой вуз.">Ishda yaratilgan maʼlumotlar odatda universitetga tegishli, odamlar ishtirokidagi tadqiqotlarni esa etika qoʻmitasi maʼqullashi kerak. Shartnomani universitet tuzsa, xaridorning huquqlari toza boʻladi, olimlar esa himoyalangan va oʻz ulushini oladi. Olim oʻz maʼlumotlarini universiteti orqali taklif qilishi mumkin.</p></details>
     <details class="faq"><summary data-ru="Чем вы отличаетесь от открытых баз данных в интернете?">Internetdagi ochiq maʼlumotlar bazalaridan nimangiz bilan farq qilasiz?</summary><p data-ru="Открытые базы хранят то, что уже опубликовано. Мы работаем с тем, чего в интернете нет, — с архивами вузов — и добавляем разметку экспертов и проверку прав.">Ochiq bazalar allaqachon eʼlon qilingan narsalarni saqlaydi. Biz internetda yoʻq narsa — universitet arxivlari bilan ishlaymiz va ekspertlar belgilashi hamda huquqlar tekshiruvini qoʻshamiz.</p></details>
     <details class="faq"><summary data-ru="Как вы работаете с личными данными?">Shaxsiy maʼlumotlar bilan qanday ishlaysiz?</summary><p data-ru="Удаляем личные сведения до передачи покупателю. Данные вузов будем хранить по требованиям Закона Узбекистана о персональных данных — на серверах в Узбекистане или там, где это разрешает закон. Покупателю запрещено пытаться узнать людей по данным.">Xaridorga berishdan oldin shaxsiy maʼlumotlarni oʻchiramiz. Universitetlar maʼlumotlarini Oʻzbekistonning shaxsga doir maʼlumotlar toʻgʻrisidagi Qonuni talablariga koʻra — Oʻzbekistondagi serverlarda yoki qonun ruxsat bergan joyda saqlaymiz. Xaridorga maʼlumotlar orqali odamlarni aniqlashga urinish taqiqlangan.</p></details>

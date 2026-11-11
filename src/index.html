@@ -69,8 +69,8 @@
         <span class="door-go">→</span>
       </a>
       <a class="door" href="#business">
-        <span class="door-k mono" data-ru="Мне нужны проверенные данные для работы">I need verified data for my work</span>
-        <b data-ru="Бизнесу, госорганам и организациям: подборки, выгрузки, аналитика">For business, government and organizations: shortlists, exports, analytics</b>
+        <span class="door-k mono" data-ru="Мне нужны проверенные данные">I need verified data</span>
+        <b data-ru="Бизнесу и госорганам: подборки, выгрузки, аналитика">Business and government: shortlists, exports, analytics</b>
         <span class="door-go">→</span>
       </a>
     </div>
@@ -346,43 +346,79 @@
 <!-- ============ PRICING ============ -->
 <section class="sec" id="pricing">
   <div class="wrap">
-    <div class="sec-head center">
-      <span class="eyebrow" data-ru="Цены для компаний">Pricing for companies</span>
-      <h2 data-ru="Начните с образца. Платите за результат.">Start with a sample. Pay for results.</h2>
-      <p class="sub" data-ru="Для университетов участие бесплатное.">Universities join for free.</p>
+    <div class="sec-head">
+      <span class="eyebrow" data-ru="Цены">Pricing</span>
+      <h2 data-ru="Цена зависит от вида данных">The price depends on the kind of data</h2>
+      <p class="sub" data-ru="Справочники продают подпиской, речь — за час записи, научные данные — лицензией на год. Ниже стартовые ориентиры; точную сумму называем после короткого разговора о задаче. Для университетов участие бесплатное.">Registries sell by subscription, speech by the hour, research data by annual licence. Below are starting points; we quote an exact price after a short talk about your task. Universities join for free.</p>
     </div>
-    <div class="price-grid">
-      <div class="card price">
-        <h3 data-ru="Знакомство">Explore</h3>
-        <div class="amount">$0</div>
-        <p class="muted" data-ru="Посмотреть, что есть">See what is available</p>
-        <ul class="checks"><li data-ru="Описание всех наборов данных">Descriptions of all datasets</li><li data-ru="Образец до 1 000 записей">A sample of up to 1,000 records</li><li data-ru="Открытые справочники — бесплатно">Open registries — free</li></ul>
-        <a href="#contact" class="btn btn-ghost" data-form="buyer" data-ru="Запросить образец">Request a sample</a>
+    <div class="pr-free card">
+      <b data-ru="Бесплатно">Free</b>
+      <span data-ru="Каталог и описания всех наборов · образец любого набора до 1 000 записей · справочник вузов целиком (CC0)">Catalog and descriptions of every dataset · a sample of any dataset, up to 1,000 records · the full universities registry (CC0)</span>
+      <a href="#contact" class="link-cta" data-form="buyer" data-ru="Запросить образец →">Request a sample →</a>
+    </div>
+    <div class="pr-table card" role="table" aria-label="Prices by kind of data">
+      <div class="pr-row pr-head" role="row">
+        <div data-ru="Что вы покупаете">What you buy</div>
+        <div data-ru="Как считаем">How it is priced</div>
+        <div data-ru="Ориентир">Starting at</div>
+        <div></div>
       </div>
-      <div class="card price">
-        <h3 data-ru="Проверка модели">Model check</h3>
-        <div class="amount"><small data-ru="от">from</small> $2,500</div>
-        <p class="muted" data-ru="Где ваш ИИ ошибается о Центральной Азии">Where your AI gets Central Asia wrong</p>
-        <ul class="checks"><li data-ru="300–500 вопросов о регионе на 4 языках">300–500 questions about the region in 4 languages</li><li data-ru="Отчёт об ошибках по темам и языкам">Error report by topic and language</li><li data-ru="Сравнение с ведущими моделями">Comparison with leading models</li><li data-ru="Предзаказ: первые отчёты — после запуска теста">Pre-order: first reports when the test launches</li></ul>
-        <a href="#contact" class="btn btn-ghost" data-form="bench" data-ru="Предзаказать">Pre-order</a>
+      <div class="pr-row">
+        <div class="pr-kind"><b data-ru="Справочники и подборки">Registries and shortlists</b><span data-ru="Клиники, страховые, банки, EdTech">Clinics, insurers, banks, EdTech</span></div>
+        <div class="pr-how" data-ru="Разовая выгрузка или подписка с обновлениями">One-off export or subscription with updates</div>
+        <div class="pr-price" data-ru="от $300 за выгрузку · от $150/мес">from $300 per export · from $150/mo</div>
+        <a href="#contact" class="pr-go link-cta" data-form="med" data-ru="Запросить →">Ask →</a>
       </div>
-      <div class="card price featured">
-        <span class="badge" data-ru="Лучший старт">Best way to start</span>
-        <h3 data-ru="Пилот">Pilot</h3>
-        <div class="amount">$6,000</div>
-        <p class="muted" data-ru="Фиксированная цена, 4 недели">Fixed price, 4 weeks</p>
-        <ul class="checks"><li data-ru="Проверка вашей модели">A check of your model</li><li data-ru="Набор данных под вашу задачу — до 5 000 записей">A dataset for your task — up to 5,000 records</li><li data-ru="Описание данных и документы на права">Data description and rights paperwork</li><li data-ru="50% идёт в зачёт следующего заказа">50% credited toward your next order</li></ul>
-        <a href="#contact" class="btn btn-primary" data-form="buyer" data-ru="Начать пилот">Start a pilot</a>
+      <div class="pr-row">
+        <div class="pr-kind"><b data-ru="Аналитика и отчёты">Analytics and reports</b><span data-ru="Вузы, фонды, инвесторы, госорганы">Universities, funds, investors, government</span></div>
+        <div class="pr-how" data-ru="За отчёт или мониторинг по подписке">Per report, or monitoring by subscription</div>
+        <div class="pr-price" data-ru="от $1 500 за отчёт">from $1,500 per report</div>
+        <a href="#contact" class="pr-go link-cta" data-form="buyer" data-ru="Запросить →">Ask →</a>
       </div>
-      <div class="card price">
-        <h3 data-ru="Данные под заказ">Custom data</h3>
-        <div class="amount"><small data-ru="от">from</small> $15,000</div>
-        <p class="muted" data-ru="Соберём и разметим то, чего нет в открытом доступе">We collect and mark up what isn't openly available</p>
-        <ul class="checks"><li data-ru="Сбор, оцифровка и разметка под ваше техзадание">Collection, digitization and mark-up to your spec</li><li data-ru="Пять языков региона и русский">Five regional languages and Russian</li><li data-ru="Двойная проверка записей входит в работу">Double-checking of records is part of the job</li><li data-ru="Эксклюзив на время — по запросу">Time-limited exclusivity on request</li></ul>
-        <a href="#contact" class="btn btn-ghost" data-form="buyer" data-ru="Обсудить">Discuss</a>
+      <div class="pr-row">
+        <div class="pr-kind"><b data-ru="Научные данные">Research data</b><span data-ru="Агро, вода, экология, медицина, ИИ">Agro, water, environment, medicine, AI</span></div>
+        <div class="pr-how" data-ru="Лицензия на набор данных на год">Licence for a dataset, per year</div>
+        <div class="pr-price" data-ru="от $3 000 за набор в год">from $3,000 per dataset per year</div>
+        <a href="#contact" class="pr-go link-cta" data-form="buyer" data-ru="Запросить →">Ask →</a>
+      </div>
+      <div class="pr-row">
+        <div class="pr-kind"><b data-ru="Тексты на местных языках">Texts in local languages</b><span data-ru="Разработчики ИИ, госпроекты">AI developers, public projects</span></div>
+        <div class="pr-how" data-ru="За корпус, по объёму">Per corpus, by volume</div>
+        <div class="pr-price" data-ru="от $3 000 за корпус до 1 млн слов">from $3,000 per corpus of up to 1M words</div>
+        <a href="#contact" class="pr-go link-cta" data-form="buyer" data-ru="Запросить →">Ask →</a>
+      </div>
+      <div class="pr-row">
+        <div class="pr-kind"><b data-ru="Речь с расшифровкой">Speech with transcripts</b><span data-ru="Разработчики ИИ, колл-центры, госуслуги">AI developers, call centres, public services</span></div>
+        <div class="pr-how" data-ru="За час записи">Per hour of recording</div>
+        <div class="pr-price" data-ru="от $80/час готовые · от $180/час запись под заказ">from $80/h ready · from $180/h recorded to order</div>
+        <a href="#contact" class="pr-go link-cta" data-form="buyer" data-ru="Запросить →">Ask →</a>
+      </div>
+      <div class="pr-row">
+        <div class="pr-kind"><b data-ru="Проверка модели">Model check</b><span data-ru="Разработчики ИИ">AI developers</span></div>
+        <div class="pr-how" data-ru="За модель; предзаказ до запуска теста">Per model; pre-order until the test launches</div>
+        <div class="pr-price" data-ru="от $2 500 за модель">from $2,500 per model</div>
+        <a href="#contact" class="pr-go link-cta" data-form="bench" data-ru="Запросить →">Ask →</a>
+      </div>
+      <div class="pr-row">
+        <div class="pr-kind"><b data-ru="Пилот">Pilot</b><span data-ru="Всем, кто хочет сначала попробовать">Anyone who wants to try us first</span></div>
+        <div class="pr-how" data-ru="Фиксированный объём и цена, 4 недели; 50% в зачёт следующего заказа">Fixed scope and price, 4 weeks; 50% credited to the next order</div>
+        <div class="pr-price" data-ru="$6 000">$6,000</div>
+        <a href="#contact" class="pr-go link-cta" data-form="buyer" data-ru="Запросить →">Ask →</a>
+      </div>
+      <div class="pr-row">
+        <div class="pr-kind"><b data-ru="Данные под заказ">Custom data</b><span data-ru="Всем, кому нужно то, чего нет в открытом доступе">Anyone who needs what isn't openly available</span></div>
+        <div class="pr-how" data-ru="Проект: сбор, оцифровка, разметка экспертами">A project: collection, digitization, expert mark-up</div>
+        <div class="pr-price" data-ru="от $15 000 за проект">from $15,000 per project</div>
+        <a href="#contact" class="pr-go link-cta" data-form="buyer" data-ru="Запросить →">Ask →</a>
+      </div>
+      <div class="pr-row">
+        <div class="pr-kind"><b data-ru="Госпроекты и программы развития">Public projects and development programs</b><span data-ru="Министерства, ведомства, международные программы">Ministries, agencies, international programs</span></div>
+        <div class="pr-how" data-ru="По договору или тендеру">By contract or tender</div>
+        <div class="pr-price" data-ru="по запросу">on request</div>
+        <a href="#contact" class="pr-go link-cta" data-form="buyer" data-ru="Запросить →">Ask →</a>
       </div>
     </div>
-    <p class="center small muted price-extra" data-ru="Для крупных компаний: постоянный доступ через API, регулярные обновления и индивидуальный договор — по запросу. Цены без НДС. Для некоммерческих научных проектов — скидка до 50%. Оплата в USD или UZS.">For large companies: ongoing API access, regular updates and a custom contract — on request. Prices exclude VAT. Up to 50% off for non-commercial research. Payment in USD or UZS.</p>
+    <p class="small muted price-extra" data-ru="Ориентиры опираются на цены мирового рынка данных — справочников, научных и речевых наборов — и учитывают местный рынок. Итог зависит от объёма, срока, эксклюзивности и способа доставки. Цены без НДС. Для некоммерческих научных проектов — скидка до 50%. Оплата в USD или UZS.">Starting points are based on world market prices for data — registries, research and speech datasets — adjusted for the local market. The final price depends on volume, term, exclusivity and delivery. Prices exclude VAT. Up to 50% off for non-commercial research. Payment in USD or UZS.</p>
   </div>
 </section>
 
@@ -408,7 +444,7 @@
   <div class="wrap narrow">
     <div class="sec-head center"><span class="eyebrow" data-ru="Вопросы">Questions</span><h2 data-ru="Частые вопросы">Frequently asked</h2></div>
     <details class="faq"><summary data-ru="Что такое «размеченные данные»?">What are “annotated data”?</summary><p data-ru="Это данные, в которых люди отметили важное: где в тексте названия мест, имена, даты, о чём документ. Так ИИ учится понимать текст, а не просто его видеть. Пример — выше, в статье СамГУ о Регистане.">Data in which people have marked what matters: place names, people, dates, what a document is about. That is how AI learns to understand a text rather than just see it. There is an example above — the Samarkand article about the Registan.</p></details>
-    <details class="faq"><summary data-ru="Что можно купить уже сейчас?">What can I buy today?</summary><p data-ru="Пилот, данные под заказ, подборки клиник для медтуризма и предзаказ проверки модели. Готовые наборы данных из архивов вузов появятся по мере подписания договоров с университетами.">A pilot, custom data, clinic shortlists for medical tourism and a pre-order of the model check. Ready datasets from university archives will appear as agreements with universities are signed.</p></details>
+    <details class="faq"><summary data-ru="Что можно купить уже сейчас?">What can I buy today?</summary><p data-ru="Справочники и подборки (вузы, клиники), аналитику и отчёты, пилот, данные под заказ и предзаказ проверки модели. Готовые наборы данных из архивов вузов появятся по мере подписания договоров с университетами.">Registries and shortlists (universities, clinics), analytics and reports, a pilot, custom data and a pre-order of the model check. Ready datasets from university archives will appear as agreements with universities are signed.</p></details>
     <details class="faq"><summary data-ru="Почему данные дают только университеты, а не отдельные учёные?">Why only universities, not individual researchers?</summary><p data-ru="Данные, созданные на работе, обычно принадлежат вузу, а исследования с участием людей должен одобрить этический комитет. Когда договор заключает вуз, у покупателя чистые права, а учёные защищены и получают свою долю. Учёный может предложить свои данные через свой вуз.">Data created at work usually belongs to the university, and research involving people needs ethics approval. When the university signs, the buyer gets clean rights and the researchers are protected and paid their share. A researcher can offer data through their university.</p></details>
     <details class="faq"><summary data-ru="Чем вы отличаетесь от открытых баз данных в интернете?">How are you different from open databases online?</summary><p data-ru="Открытые базы хранят то, что уже опубликовано. Мы работаем с тем, чего в интернете нет, — с архивами вузов — и добавляем разметку экспертов и проверку прав.">Open databases host what is already published. We work with what isn't online — university archives — and add expert mark-up and rights checks.</p></details>
     <details class="faq"><summary data-ru="Как вы работаете с личными данными?">How do you handle personal data?</summary><p data-ru="Удаляем личные сведения до передачи покупателю. Данные вузов будем хранить по требованиям Закона Узбекистана о персональных данных — на серверах в Узбекистане или там, где это разрешает закон. Покупателю запрещено пытаться узнать людей по данным.">We remove personal details before anything reaches a buyer. University data will be stored as Uzbekistan's Personal Data Law requires — on servers in Uzbekistan or where the law allows. Buyers may not try to identify people from the data.</p></details>

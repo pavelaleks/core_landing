@@ -667,3 +667,26 @@ body.g3-lock{overflow:hidden}
 .biz-ways{margin-top:16px;display:grid;grid-template-columns:auto 1fr;gap:12px 32px;align-items:center}
 .biz-ways .checks{margin:0;display:flex;flex-wrap:wrap;gap:8px 28px}
 @media (max-width:700px){.biz-ways{grid-template-columns:1fr}}
+
+/* pricing by kind of data */
+.pr-free{display:flex;flex-wrap:wrap;align-items:center;gap:10px 24px;margin-bottom:16px;border-color:rgba(61,219,193,.35);background:linear-gradient(180deg,rgba(61,219,193,.06),var(--bg2))}
+.pr-free b{color:var(--teal);font-size:16px}
+.pr-free span{color:#c3cbd4;font-size:14.5px;flex:1;min-width:240px}
+.pr-free .link-cta{margin-top:0;color:var(--teal);border-color:rgba(61,219,193,.4)}
+.pr-table{padding:0;overflow:hidden;margin-bottom:16px}
+.pr-row{display:grid;grid-template-columns:1.25fr 1.4fr 1.1fr auto;gap:16px;align-items:center;padding:14px 20px;border-top:1px solid var(--line)}
+.pr-row:first-child{border-top:0}
+.pr-head{font:500 12px var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.06em;background:rgba(255,255,255,.02)}
+.pr-kind b{display:block;font-size:15.5px;font-weight:600}
+.pr-kind span{font-size:13px;color:var(--muted)}
+.pr-how{font-size:14px;color:#c3cbd4}
+.pr-price{font-weight:600;font-size:15px;font-variant-numeric:tabular-nums}
+.pr-go{margin-top:0;white-space:nowrap}
+.price-extra{text-align:left;margin:0;max-width:900px}
+@media (max-width:860px){
+  .pr-head{display:none}
+  .pr-row{grid-template-columns:1fr auto;gap:6px 16px;padding:16px 18px}
+  .pr-kind{grid-column:1/-1}
+  .pr-how{grid-column:1/-1}
+  .pr-price{color:var(--teal)}
+}
