@@ -1077,5 +1077,16 @@ window.CORE_UZ = {
 "Что сделали": "Nima qildik",
 "Цены по видам данных": "Maʼlumot turlari boʻyicha narxlar",
 "Справочники, аналитика, опросы, научные данные, пилот за $6 000 — все ориентиры на одной странице →": "Maʼlumotnomalar, tahlil, soʻrovlar, ilmiy maʼlumotlar, $6 000 lik pilot — barcha moʻljallar bitta sahifada →",
-"Регионы и опросы →": "Hududlar va soʻrovlar →"
+"Регионы и опросы →": "Hududlar va soʻrovlar →",
+"Путь данных: от архива вуза до API": "Maʼlumotlar yoʻli: universitet arxividan API gacha",
+"Пять этапов и три способа, которыми данные попадают в CORE. Выберите способ и свою роль — и посмотрите, что происходит на каждом этапе и что это значит для вас.": "Besh bosqich va maʼlumotlar CORE ga tushadigan uch usul. Usulni va rolingizni tanlang — har bir bosqichda nima sodir boʻlishini va bu siz uchun nimani anglatishini koʻring.",
+"Ничего из данных вуза не публикуется без решения вуза. В каталоге — только паспорт набора.": "Universitet maʼlumotlaridan hech narsa universitet qarorisiz eʼlon qilinmaydi. Katalogda — faqat toʻplam pasporti.",
+"Права и личные данные — до продажи": "Huquqlar va shaxsiy maʼlumotlar — sotishdan oldin",
+"Проверяем права авторов и убираем личные сведения на этапе подготовки. Данные хранятся по закону страны.": "Mualliflar huquqlarini tekshiramiz va shaxsiy maʼlumotlarni tayyorlash bosqichida olib tashlaymiz. Maʼlumotlar mamlakat qonuniga koʻra saqlanadi.",
+"Данные живут, а не лежат": "Maʼlumotlar yashaydi, yotmaydi",
+"Новые версии, журнал изменений, тот же адрес API. Вуз видит, кто и зачем купил его данные.": "Yangi versiyalar, oʻzgarishlar jurnali, oʻsha API manzili. Universitet maʼlumotlarini kim va nima uchun sotib olganini koʻradi.",
+"Дальше — подробно для вашей роли": "Keyingisi — rolingiz uchun batafsil",
+"Открыть демо-кабинет": "Demo-kabinetni ochish",
+"Подробно: путь данных, три модели работы и что это значит для вас": "Batafsil: maʼlumotlar yoʻli, uchta ish modeli va bu siz uchun nimani anglatadi",
+"Интерактивно — для вуза, ИИ-компании, госоргана и бизнеса →": "Interaktiv — universitet, SI kompaniyasi, davlat idorasi va biznes uchun →"
 };

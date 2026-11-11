@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en" data-static-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How CORE works — from a university archive to an API</title>
+<meta name="description" content="The data path in five stages, three ways CORE works (marketplace, provider, processor of open scholar data) and updates — for universities, AI companies, government and business.">
+<meta property="og:title" content="CORE — how it works">
+<meta property="og:description" content="The data path in five stages, three ways CORE works (marketplace, provider, processor of open scholar data) and updates — for universities, AI companies, government and business.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pavelaleks.github.io/core_landing/how.html">
+<meta property="og:image" content="https://pavelaleks.github.io/core_landing/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://pavelaleks.github.io/core_landing/assets/og.png">
+<meta name="theme-color" content="#07090c">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="canonical" href="https://pavelaleks.github.io/core_landing/how.html">
+<link rel="alternate" hreflang="en" href="https://pavelaleks.github.io/core_landing/how.html">
+<link rel="alternate" hreflang="ru" href="https://pavelaleks.github.io/core_landing/ru/how.html">
+<link rel="alternate" hreflang="uz" href="https://pavelaleks.github.io/core_landing/uz/how.html">
+<link rel="alternate" hreflang="x-default" href="https://pavelaleks.github.io/core_landing/how.html">
+</head>
+<body data-page="how" data-form-default="buyer">
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="top">
+  <div class="wrap nav-in">
+    <a href="index.html" class="logo" aria-label="CORE home">
+      <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="2.2" opacity=".35"/><circle cx="16" cy="16" r="8.5" fill="none" stroke="currentColor" stroke-width="2.2" opacity=".7"/><circle cx="16" cy="16" r="3.4" fill="var(--teal)"/></svg>
+      <span>CORE</span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="how.html" aria-current="page" data-ru="Как это работает">How it works</a>
+      <a href="universities.html" data-ru="Университетам">For universities</a>
+      <a href="developers.html" data-ru="Разработчикам ИИ">For AI developers</a>
+      <a href="regions.html" data-ru="Организациям">For organizations</a>
+      <a href="pricing.html" data-ru="Цены">Pricing</a>
+      <a href="index.html#team" data-ru="Команда">Team</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang" role="group" aria-label="Language"><a data-lang="en" href="how.html" hreflang="en" aria-current="true">EN</a><a data-lang="ru" href="ru/how.html" hreflang="ru">RU</a><a data-lang="uz" href="uz/how.html" hreflang="uz">UZ</a></div>
+      <a href="#contact" class="btn btn-primary btn-sm" data-form="university" data-ru="Подключить вуз">Bring my university on board</a>
+      <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="sec sec-first hw-hero">
+  <div class="wrap">
+    <span class="eyebrow" data-ru="Как это работает">How it works</span>
+    <h1 class="rg-h1" data-ru="Путь данных: от архива вуза до API">The data path: from a university archive to an API</h1>
+    <p class="lead" data-ru="Пять этапов и три способа, которыми данные попадают в CORE. Выберите способ и свою роль — и посмотрите, что происходит на каждом этапе и что это значит для вас.">Five stages and three ways data reaches CORE. Pick a way and your role — and see what happens at each stage and what it means for you.</p>
+  </div>
+</section>
+
+<section class="sec sec-alt hw-sec">
+  <div class="wrap" id="howApp"></div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="hw-rules">
+      <div><b data-ru="Закрыто по умолчанию">Closed by default</b><p data-ru="Ничего из данных вуза не публикуется без решения вуза. В каталоге — только паспорт набора.">Nothing from a university's data is published without the university's decision. The catalog shows only the datasheet.</p></div>
+      <div><b data-ru="Права и личные данные — до продажи">Rights and personal data — before any sale</b><p data-ru="Проверяем права авторов и убираем личные сведения на этапе подготовки. Данные хранятся по закону страны.">We check authors' rights and remove personal details during preparation. Data is stored under the country's law.</p></div>
+      <div><b data-ru="Данные живут, а не лежат">Data stays alive</b><p data-ru="Новые версии, журнал изменений, тот же адрес API. Вуз видит, кто и зачем купил его данные.">New versions, a change log, the same API address. The university sees who bought its data and why.</p></div>
+    </div>
+    <div class="hw-next">
+      <span class="hw-lbl" data-ru="Дальше — подробно для вашей роли">Next — details for your role</span>
+      <a class="btn btn-ghost btn-sm" href="universities.html" data-ru="Университетам">For universities</a>
+      <a class="btn btn-ghost btn-sm" href="developers.html" data-ru="Разработчикам ИИ">For AI developers</a>
+      <a class="btn btn-ghost btn-sm" href="regions.html" data-ru="Организациям">For organizations</a>
+      <a class="btn btn-ghost btn-sm" href="pricing.html" data-ru="Цены">Pricing</a>
+      <a class="btn btn-primary btn-sm" href="app/index.html#demo" data-ru="Открыть демо-кабинет">Open the demo cabinet</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="sec sec-alt" id="contact">
+  <div class="wrap contact">
+    <div>
+      <span class="eyebrow" data-ru="Контакт">Get in touch</span>
+      <h2 data-ru="Расскажите, что вам нужно. Ответим за 24 часа.">Tell us what you need. We reply within 24 hours.</h2>
+      <p class="sub" data-ru="Выберите, кто вы, — заявка попадёт к нужному человеку в команде.">Pick who you are — your request goes straight to the right person on the team.</p>
+      <ul class="checks">
+        <li data-ru="Образец данных — в течение 24 часов">Data sample within 24 hours</li>
+        <li data-ru="Встреча с вузом — с проектом меморандума">University meeting comes with a draft MoU</li>
+        <li data-ru="Инвесторам — презентация и комната данных">Investors get the deck and data room</li>
+      </ul>
+      <a class="btn btn-ghost tg-link" href="#" target="_blank" rel="noopener" hidden><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M21.5 4.5 2.9 11.6c-.9.4-.9 1.1 0 1.4l4.7 1.5 1.8 5.6c.2.6.5.7 1 .3l2.6-2.3 4.9 3.6c.6.4 1.1.2 1.3-.6l3.1-14.6c.3-1.2-.4-1.6-1.4-1.2z" fill="currentColor"/></svg><span>Telegram</span></a>
+    </div>
+    <form class="card form" id="leadForm" novalidate>
+      <div class="seg form-type" id="formType">
+        <button type="button" data-t="buyer" data-ru="Нужны данные">I need data</button>
+        <button type="button" data-t="university" data-ru="Вуз">University</button>
+        <button type="button" data-t="researcher" data-ru="Исследователь">Researcher</button>
+        <button type="button" data-t="investor" data-ru="Инвестор">Investor</button>
+      </div>
+      <input type="hidden" name="type" value="buyer">
+      <div class="frow">
+        <label><span data-ru="Имя">Name</span><input name="name" required autocomplete="name"></label>
+        <label><span data-ru="Рабочий email">Work email</span><input name="email" type="email" required autocomplete="email"></label>
+      </div>
+      <div class="frow">
+        <label><span class="org-label" data-ru="Компания">Company</span><input name="org" required autocomplete="organization"></label>
+        <label><span class="role-label" data-ru="Должность">Role</span><input name="role" autocomplete="organization-title"></label>
+      </div>
+      <label class="f-buyer"><span data-ru="Задача">Use case</span>
+        <select name="usecase">
+          <option data-ru="Обучение ИИ: знания о регионе и местные языки">Training AI: regional knowledge and local languages</option>
+          <option data-ru="Проверка знаний модели о регионе">Testing what a model knows about the region</option>
+          <option data-ru="Данные для ассистента или агента">Data for an assistant or agent</option>
+          <option data-ru="Медтуризм / рынок здравоохранения">Medical tourism / healthcare market</option>
+          <option data-ru="Аналитика науки и вузов">Research and university analytics</option>
+          <option data-ru="Данные для бизнеса или госпроекта: подборка, выгрузка, обновления">Data for a business or public project: shortlist, export, updates</option>
+          <option data-ru="Датасет под заказ">Custom dataset</option>
+        </select>
+      </label>
+      <label class="f-researcher" hidden><span data-ru="Ссылка на датасет или публикацию">Link to dataset or paper</span><input name="link" type="url" placeholder="https://doi.org/…"></label>
+      <label><span class="msg-label" data-ru="Что вам нужно?">What do you need?</span><textarea name="message" rows="4"></textarea></label>
+      <label class="consent"><input type="checkbox" name="consent" required> <span data-ru="Согласен(на) на обработку данных для ответа на заявку — <a href='privacy.html'>политика</a>">I agree to the processing of my data to respond to this request — <a href="privacy.html">privacy</a></span></label>
+      <button class="btn btn-primary btn-block" type="submit" data-ru="Отправить">Send request</button>
+      <p class="form-status small" id="formStatus" role="status"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div>
+      <a href="index.html" class="logo"><svg viewBox="0 0 32 32" width="22" height="22" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="2.2" opacity=".35"/><circle cx="16" cy="16" r="8.5" fill="none" stroke="currentColor" stroke-width="2.2" opacity=".7"/><circle cx="16" cy="16" r="3.4" fill="var(--teal)"/></svg><span>CORE</span></a>
+      <p class="small muted" data-ru="Научные данные университетов Центральной Азии — для искусственного интеллекта.">Research data from Central Asian universities — for artificial intelligence.</p>
+    </div>
+    <div class="foot-links">
+      <a href="how.html" data-ru="Как это работает">How it works</a><a href="universities.html" data-ru="Университетам">Universities</a><a href="developers.html" data-ru="Разработчикам ИИ">AI developers</a><a href="pricing.html" data-ru="Цены">Pricing</a><a href="privacy.html" data-ru="Конфиденциальность">Privacy</a><a href="app/index.html" data-ru="Вход для партнёров (MVP)">Partner login (MVP)</a><a class="tg-link foot-tg" href="index.html#" target="_blank" rel="noopener" hidden><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M21.5 4.5 2.9 11.6c-.9.4-.9 1.1 0 1.4l4.7 1.5 1.8 5.6c.2.6.5.7 1 .3l2.6-2.3 4.9 3.6c.6.4 1.1.2 1.3-.6l3.1-14.6c.3-1.2-.4-1.6-1.4-1.2z" fill="currentColor"/></svg><span>Telegram</span></a>
+    </div>
+    <p class="small muted attr" data-ru="Данные: © участники OpenStreetMap (ODbL), OpenAlex, ROR, Wikidata (CC0). Границы: Natural Earth.">Data: © OpenStreetMap contributors (ODbL), OpenAlex, ROR, Wikidata (CC0). Boundaries: Natural Earth.</p>
+  </div>
+</footer>
+<script src="assets/config.js"></script>
+<script src="assets/i18n-uz.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/how-page.js"></script>
+</body>
+</html>
