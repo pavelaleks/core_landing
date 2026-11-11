@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CORE — Licensed Central Asian data for AI</title>
+<meta name="description" content="CORE turns university archives and research data from Uzbekistan, Kazakhstan, Kyrgyzstan and Tajikistan into expert-verified, rights-cleared datasets for AI training, evaluation and RAG.">
+<meta property="og:title" content="CORE — Central Asia's knowledge, licensed for AI">
+<meta property="og:description" content="Expert-verified, rights-cleared datasets from Central Asian universities. For AI teams, and for the universities that own the data.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#07090c">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="top">
+  <div class="wrap nav-in">
+    <a href="#top" class="logo" aria-label="CORE home">
+      <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="2.2" opacity=".35"/><circle cx="16" cy="16" r="8.5" fill="none" stroke="currentColor" stroke-width="2.2" opacity=".7"/><circle cx="16" cy="16" r="3.4" fill="var(--teal)"/></svg>
+      <span>CORE</span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#catalog" data-ru="Каталог">Catalog</a>
+      <a href="#ai-teams" data-ru="ИИ-командам">For AI teams</a>
+      <a href="#universities" data-ru="Университетам">For universities</a>
+      <a href="#trust" data-ru="Доверие">Trust</a>
+      <a href="#pricing" data-ru="Цены">Pricing</a>
+      <a href="#investors" data-ru="Инвесторам">Investors</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang" role="group" aria-label="Language">
+        <button data-lang="en" aria-pressed="true">EN</button><button data-lang="ru" aria-pressed="false">RU</button>
+      </div>
+      <a href="#contact" class="btn btn-primary btn-sm" data-form="buyer" data-ru="Запросить данные">Request data</a>
+      <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <a class="pill" href="#benchmark"><span class="dot"></span><span data-ru="Новое: региональный бенчмарк CORE-CA — лист ожидания">New: CORE-CA regional benchmark — join the waitlist</span><span class="arr">→</span></a>
+      <h1 data-ru="Знания Центральной Азии — <em>с лицензией</em> для ИИ">Central Asia's knowledge, <em>licensed</em> for AI</h1>
+      <p class="lead" data-ru="CORE превращает фонды и научные данные университетов Узбекистана, Казахстана, Кыргызстана и Таджикистана в чистые, проверенные экспертами датасеты с прозрачными правами — для обучения, оценки и RAG.">CORE turns university archives and research data from Uzbekistan, Kazakhstan, Kyrgyzstan and Tajikistan into clean, expert-verified, rights-cleared datasets — ready for training, evaluation and RAG.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary" data-form="buyer" data-ru="Запросить датасет">Request a dataset</a>
+        <a href="#universities" class="btn btn-ghost" data-ru="Стать вузом-партнёром">Partner as a university</a>
+      </div>
+      <ul class="hero-points">
+        <li data-ru="Узбекский, казахский, кыргызский, таджикский, каракалпакский, русский">Uzbek, Kazakh, Kyrgyz, Tajik, Karakalpak, Russian</li>
+        <li data-ru="Цепочка прав и паспорт данных на каждый датасет">Rights chain &amp; datasheet for every dataset</li>
+        <li data-ru="Доход возвращается в университеты и авторам">Revenue flows back to universities &amp; authors</li>
+      </ul>
+    </div>
+    <figure class="hero-map card" aria-label="Map of CORE data in Central Asia">
+      <div class="map-head">
+        <span class="mono small muted">CORE · LIVE CATALOG MAP</span>
+        <div class="map-toggles">
+          <button class="chip on" data-layer="unis"><i style="background:var(--teal)"></i><span data-ru="Вузы">Universities</span></button>
+          <button class="chip on" data-layer="med"><i style="background:var(--amber)"></i><span data-ru="Медучреждения">Medical</span></button>
+        </div>
+      </div>
+      <canvas id="map" width="720" height="460"></canvas>
+      <div class="map-tip" id="mapTip" hidden></div>
+      <figcaption class="map-foot">
+        <div><b id="mUnis">345</b><span data-ru="вузов на карте">universities mapped</span></div>
+        <div><b id="mMed">2,982</b><span data-ru="медучреждений UZ">UZ medical facilities</span></div>
+        <div><b>4</b><span data-ru="страны в каталоге">countries live</span></div>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ PROOF STRIP ============ -->
+<section class="strip">
+  <div class="wrap strip-grid">
+    <div class="stat"><b data-count="397">397</b><span data-ru="университетов в справочнике с постоянными ID CORE">universities with persistent CORE IDs</span></div>
+    <div class="stat"><b data-count="482572">482,572</b><span data-ru="научных работ вузов ЦА, связанных с ID вузов">research works linked to university IDs</span></div>
+    <div class="stat"><b data-count="548">548</b><span data-ru="исследовательских датасетов учёных ЦА уже найдено">research datasets by CA scholars already mapped</span></div>
+    <div class="stat"><b data-count="2982">2,982</b><span data-ru="медучреждений Узбекистана с индексом медтуризма">UZ medical facilities with med-tourism index</span></div>
+  </div>
+</section>
+
+<!-- ============ PROBLEM ============ -->
+<section class="sec" id="problem">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-ru="Проблема">The gap</span>
+      <h2 data-ru="80 млн человек. Пять языков. Почти нет данных, которые можно законно использовать.">80M people. Five languages. Almost no data you can legally train on.</h2>
+      <p class="sub" data-ru="Глобальные модели плохо знают Центральную Азию: малоресурсные языки, региональная история, право и реалии. А лучшие данные региона заперты в университетских архивах — без разметки, без паспорта и без понятных прав.">Global models are weak on Central Asia — low-resource languages, regional history, law and realia. The region's best data is locked inside university archives: unlabelled, undocumented and legally ambiguous.</p>
+    </div>
+    <div class="grid-3">
+      <article class="card feature">
+        <div class="ficon">01</div>
+        <h3 data-ru="Веб-краулинг — тупик">Web scraping is a dead end</h3>
+        <p data-ru="Открытый веб на узбекском и таджикском мал и шумен, а неясные права на краулинг — юридический риск для любой ИИ-компании.">The open web in Uzbek or Tajik is thin and noisy — and scraped data is now a legal liability for any serious AI company.</p>
+      </article>
+      <article class="card feature">
+        <div class="ficon">02</div>
+        <h3 data-ru="Фонды вузов невидимы">University archives are invisible</h3>
+        <p data-ru="Десятилетия наблюдений, корпусов, экспедиций и экспертных знаний лежат в вузах. Поодиночке они не интересны ИИ-лабораториям, а сами вузы не умеют их лицензировать.">Decades of observations, corpora, expeditions and expert knowledge sit in universities — too small to reach AI labs alone, too complex to license without help.</p>
+      </article>
+      <article class="card feature">
+        <div class="ficon">03</div>
+        <h3 data-ru="Нет доверия — нет сделки">No trust, no deal</h3>
+        <p data-ru="Покупателям нужны цепочка прав, обезличивание и паспорт данных. Без этого юристы ИИ-компании не подпишут лицензию.">Buyers need provenance, anonymization and documentation. Without them, no legal team signs off on a license.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATALOG ============ -->
+<section class="sec sec-alt" id="catalog">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-ru="Каталог · живые данные">Catalog · live data</span>
+      <h2 data-ru="Три базы уже работают. Посмотрите на реальные записи.">Three foundation datasets are live. Explore real records.</h2>
+      <p class="sub" data-ru="Всё ниже — фрагменты наших настоящих баз, а не макет. Каждый датасет имеет ID CORE, паспорт, схему полей и лицензию для покупателя.">Everything below is pulled from our actual databases — not a mock-up. Every dataset ships with a CORE ID, datasheet, field schema and buyer license.</p>
+    </div>
+
+    <div class="tabs" role="tablist">
+      <button role="tab" class="tab on" data-tab="t-uni"><span class="mono">DS-0001</span> <span data-ru="Вузы ЦА">Universities</span></button>
+      <button role="tab" class="tab" data-tab="t-med"><span class="mono">DS-0002</span> <span data-ru="Медучреждения UZ">Medical UZ</span></button>
+      <button role="tab" class="tab" data-tab="t-pub"><span class="mono">DS-0003</span> <span data-ru="Публикации">Publications</span></button>
+      <button role="tab" class="tab" data-tab="t-pipe"><span class="mono">PIPELINE</span> <span data-ru="548 датасетов учёных">548 research datasets</span></button>
+    </div>
+
+    <!-- DS-0001 -->
+    <div class="tabpanel on" id="t-uni">
+      <div class="ds-grid">
+        <div class="card ds-meta">
+          <div class="ds-id mono">CORE-DS-0001 · <span class="ok" data-ru="готов">ready</span></div>
+          <h3 data-ru="Вузы Центральной Азии">Universities of Central Asia</h3>
+          <p data-ru="Единый справочник вузов четырёх стран с постоянными ID CORE. Общий ключ, к которому привязаны все остальные датасеты, сайт и API.">One registry of higher-ed institutions across four countries with persistent CORE IDs — the join key for every other dataset, the site and the API.</p>
+          <dl class="kv">
+            <div><dt data-ru="Записей">Records</dt><dd>428</dd></div>
+            <div><dt data-ru="Языки названий">Name languages</dt><dd>7</dd></div>
+            <div><dt data-ru="Лицензия">License</dt><dd>CC0-1.0</dd></div>
+            <div><dt data-ru="Перс. данные">PII</dt><dd data-ru="нет">none</dd></div>
+          </dl>
+          <div class="bars" id="uniBars"></div>
+          <p class="note" data-ru="Источники: Wikidata, ROR, OpenAlex + ручная сверка. Ценность — в постоянных ID и связях, а не в записях.">Sources: Wikidata, ROR, OpenAlex + manual curation. The value is in persistent IDs and links, not rows.</p>
+        </div>
+        <div class="card ds-table">
+          <div class="table-tools">
+            <input type="search" id="uniSearch" placeholder="Search: Samarkand, Almaty, Bishkek…" data-ru-ph="Поиск: Samarkand, Almaty, Bishkek…">
+            <div class="seg" id="uniCountry">
+              <button class="on" data-c="">All</button><button data-c="UZ">UZ</button><button data-c="KZ">KZ</button><button data-c="KG">KG</button><button data-c="TJ">TJ</button>
+            </div>
+          </div>
+          <div class="tscroll"><table id="uniTable"><thead><tr><th>CORE ID</th><th data-ru="Название">Name</th><th data-ru="Город">City</th><th class="r" data-ru="Работ">Works</th></tr></thead><tbody></tbody></table></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DS-0002 -->
+    <div class="tabpanel" id="t-med">
+      <div class="ds-grid">
+        <div class="card ds-meta">
+          <div class="ds-id mono">CORE-DS-0002 · <span class="ok" data-ru="готов">ready</span></div>
+          <h3 data-ru="Медучреждения Узбекистана">Medical facilities of Uzbekistan</h3>
+          <p data-ru="Больницы, клиники, стоматологии и лаборатории всех 14 регионов: координаты, профиль, проверка сайтов, языки и индекс готовности к медтуризму 0–100.">Hospitals, clinics, dental and labs across all 14 regions: coordinates, specialties, website checks, languages and a 0–100 medical-tourism readiness index.</p>
+          <dl class="kv">
+            <div><dt data-ru="Записей">Records</dt><dd>2,982</dd></div>
+            <div><dt data-ru="Полей">Fields</dt><dd>50</dd></div>
+            <div><dt data-ru="Лицензия">License</dt><dd>ODbL-1.0</dd></div>
+            <div><dt data-ru="Кандидатов в медтуризм">Med-tourism ready</dt><dd>50</dd></div>
+          </dl>
+          <div class="bars" id="medBars"></div>
+          <p class="note" data-ru="Основа — OpenStreetMap (© участники OSM, ODbL). Мы продаём не записи OSM, а проверку, обогащение и регулярные обновления.">Base layer © OpenStreetMap contributors (ODbL). We sell verification, enrichment and refresh — not the OSM records themselves.</p>
+        </div>
+        <div class="card ds-table">
+          <div class="table-tools"><span class="small muted" data-ru="Топ-12 по индексу готовности к медтуризму">Top 12 by medical-tourism readiness</span></div>
+          <div class="tscroll"><table id="medTable"><thead><tr><th>ID</th><th data-ru="Учреждение">Facility</th><th data-ru="Регион">Region</th><th data-ru="Направления">Specialties</th><th class="r" data-ru="Индекс">Score</th></tr></thead><tbody></tbody></table></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DS-0003 -->
+    <div class="tabpanel" id="t-pub">
+      <div class="ds-grid">
+        <div class="card ds-meta">
+          <div class="ds-id mono">CORE-DS-0003 · <span class="warn" data-ru="на проверке">in review</span></div>
+          <h3 data-ru="Публикации вузов Центральной Азии">Research output of Central Asian universities</h3>
+          <p data-ru="Вся наука 299 вузов UZ, KZ, KG и TJ из OpenAlex: работы, аннотации, темы, журналы и соавторы. Каждая работа связана с ID вуза CORE — это наш радар источников данных.">All research by 299 universities in UZ, KZ, KG and TJ: works, abstracts, topics, venues and co-authorship — each linked to a CORE university ID. It is our radar for where valuable data lives.</p>
+          <dl class="kv">
+            <div><dt data-ru="Работ">Works</dt><dd>482,572</dd></div>
+            <div><dt data-ru="С аннотацией">With abstract</dt><dd>92%</dd></div>
+            <div><dt data-ru="Авторов">Authors</dt><dd>520K</dd></div>
+            <div><dt data-ru="Записей «датасет»">“Dataset” records</dt><dd>11,871</dd></div>
+          </dl>
+          <p class="note" data-ru="Метаданные — CC0. Аннотации передаются только под открытой лицензией работы. Имена авторов — персональные данные, не публикуются.">Metadata CC0. Abstracts are shared only under each work's open license. Author names are treated as personal data.</p>
+        </div>
+        <div class="card ds-chart">
+          <div class="chart-head"><span class="small muted" data-ru="Работ в год, по странам">Works per year, by country</span>
+            <div class="legend"><span><i style="background:var(--teal)"></i>UZ</span><span><i style="background:var(--violet)"></i>KZ</span><span><i style="background:var(--amber)"></i>KG</span><span><i style="background:#e86a8d"></i>TJ</span></div>
+          </div>
+          <svg id="pubChart" viewBox="0 0 640 260" preserveAspectRatio="none" role="img" aria-label="Works per year chart"></svg>
+          <div class="pub-mini">
+            <div><span class="small muted" data-ru="Языки работ">Languages</span><div id="langBars" class="bars compact"></div></div>
+            <div><span class="small muted" data-ru="Главные страны-соавторы">Top co-author countries</span><div id="partnerList" class="tagrow"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PIPELINE -->
+    <div class="tabpanel" id="t-pipe">
+      <div class="pipe-head">
+        <div>
+          <h3 data-ru="548 исследовательских датасетов от учёных вузов ЦА">548 research datasets published by Central Asian scholars</h3>
+          <p class="muted" data-ru="Отобраны из 11 523 записей OpenAlex с 2023 года: Zenodo, Mendeley Data, Dataverse, GBIF и др. Это не наш товар — это доказательство, что данные в вузах есть. Наша работа: договориться с вузом, проверить, разметить и упаковать для ИИ.">Filtered from 11,523 OpenAlex records since 2023 — Zenodo, Mendeley Data, Dataverse, GBIF and more. Not our inventory: proof the data exists. Our job is to partner with the university, verify, annotate and package it for AI.</p>
+        </div>
+        <div class="pipe-stats" id="pipeStats"></div>
+      </div>
+      <div class="card">
+        <div class="table-tools">
+          <input type="search" id="pipeSearch" placeholder="Search: corpus, wheat, Aral, legal, speech…" data-ru-ph="Поиск: corpus, wheat, Aral, legal, speech…">
+          <select id="pipeField" aria-label="Field"><option value="" data-ru="Все области">All fields</option></select>
+          <div class="seg" id="pipeCountry"><button class="on" data-c="">All</button><button data-c="UZ">UZ</button><button data-c="KZ">KZ</button><button data-c="KG">KG</button><button data-c="TJ">TJ</button></div>
+        </div>
+        <div class="tscroll tall"><table id="pipeTable"><thead><tr><th data-ru="Год">Year</th><th data-ru="Датасет">Dataset</th><th data-ru="Вуз">University</th><th data-ru="Область">Field</th><th data-ru="Лицензия">License</th></tr></thead><tbody></tbody></table></div>
+        <div class="table-foot small muted"><span id="pipeCount"></span> · <span data-ru="Метаданные OpenAlex (CC0). Авторы скрыты.">Metadata via OpenAlex (CC0). Authors hidden.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AI TEAMS / USE CASES ============ -->
+<section class="sec" id="ai-teams">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-ru="Для ИИ-команд и бизнеса">For AI teams &amp; business</span>
+      <h2 data-ru="Данные, которые можно отдать юристам на подпись">Data your legal team will actually sign off on</h2>
+      <p class="sub" data-ru="Мы продаём не «сырые» записи, а готовый результат: очистку, разметку экспертами, юридическую чистоту и обновления.">We don't sell raw rows. We sell outcomes: cleaning, expert annotation, legal clarity and continuous updates.</p>
+    </div>
+    <div class="uc-grid">
+      <article class="card uc">
+        <div class="uc-top"><span class="tag t-teal">LLM</span><span class="mono small muted">SFT · DPO · Eval</span></div>
+        <h3 data-ru="Дообучение моделей на языках ЦА">Fine-tune for Central Asian languages</h3>
+        <p data-ru="Параллельные корпуса, пары «инструкция–ответ» и экспертные Q&amp;A на узбекском, казахском, кыргызском, таджикском и каракалпакском — из академических текстов с понятными правами.">Parallel corpora, instruction pairs and expert Q&amp;A in Uzbek, Kazakh, Kyrgyz, Tajik and Karakalpak — built from rights-cleared academic text.</p>
+        <p class="who" data-ru="Для: ИИ-лабораторий, локальных LLM-команд, банков и телекома">For: AI labs, local LLM teams, banks &amp; telcos</p>
+      </article>
+      <article class="card uc">
+        <div class="uc-top"><span class="tag t-violet">EVAL</span><span class="mono small muted">CORE-CA Bench</span></div>
+        <h3 data-ru="Оценка регионального знания">Evaluate regional knowledge</h3>
+        <p data-ru="Бенчмарк по истории, праву, наследию, географии и реалиям региона с эталонными ответами экспертов. Показывает, где ваша модель галлюцинирует.">A benchmark on regional history, law, heritage, geography and realia with expert reference answers. Shows exactly where your model hallucinates.</p>
+        <p class="who" data-ru="Для: разработчиков моделей, ассистентов и госпроектов">For: model builders, assistant vendors, public-sector AI</p>
+      </article>
+      <article class="card uc">
+        <div class="uc-top"><span class="tag t-teal">RAG</span><span class="mono small muted">API · MCP</span></div>
+        <h3 data-ru="Достоверный контекст для RAG и агентов">Grounded context for RAG &amp; agents</h3>
+        <p data-ru="Справочники с постоянными ID, связанные между собой: вузы, наука, учреждения. Доступ по API и через MCP-сервер для агентов.">Linked reference data with persistent IDs — universities, research, institutions. Delivered via API and an MCP server for agents.</p>
+        <p class="who" data-ru="Для: EdTech, поисковых и ассистентских продуктов">For: EdTech, search &amp; assistant products</p>
+      </article>
+      <article class="card uc">
+        <div class="uc-top"><span class="tag t-amber">MED</span><span class="mono small muted">DS-0002</span></div>
+        <h3 data-ru="Медтуризм и рынок здравоохранения">Medical tourism &amp; healthcare market</h3>
+        <p data-ru="Проверенные подборки клиник по направлениям, языкам и готовности работать с иностранцами; аналитика насыщенности по регионам.">Verified clinic shortlists by specialty, language and readiness for foreign patients; regional market saturation analytics.</p>
+        <p class="who" data-ru="Для: агентств медтуризма, страховых, фармы и поставщиков оборудования">For: med-travel agencies, insurers, pharma &amp; equipment vendors</p>
+      </article>
+      <article class="card uc">
+        <div class="uc-top"><span class="tag t-violet">INTEL</span><span class="mono small muted">DS-0001 × DS-0003</span></div>
+        <h3 data-ru="Научная аналитика и профили вузов">Research intelligence &amp; university profiles</h3>
+        <p data-ru="Профили компетенций вузов, сильные группы, международные связи и «потерянные» публикации — для рейтингов, грантов и партнёрств.">Competence profiles, strongest research groups, international links and “lost” publications — for rankings, grants and partnerships.</p>
+        <p class="who" data-ru="Для: вузов, грантовых фондов, консорциумов, агентств набора">For: universities, funders, consortia, recruitment agencies</p>
+      </article>
+      <article class="card uc">
+        <div class="uc-top"><span class="tag t-amber">STUDIO</span><span class="mono small muted" data-ru="под заказ">custom</span></div>
+        <h3 data-ru="Датасет под вашу задачу">A dataset built for your task</h3>
+        <p data-ru="Сбор, оцифровка и разметка под ТЗ силами предметных экспертов вузов: речь, тексты, изображения, табличные наблюдения. Двойная проверка и метрики согласия разметчиков.">Collection, digitization and annotation to spec by university domain experts — speech, text, images, tabular observations. Dual review with inter-annotator agreement.</p>
+        <p class="who" data-ru="Для: всех, кому нужно то, чего нет в открытом доступе">For: anyone who needs what isn't on the open web</p>
+      </article>
+    </div>
+
+    <!-- how buying works + API -->
+    <div class="how card" id="how">
+      <div class="how-steps">
+        <h3 data-ru="Как это работает для покупателя">How buying works</h3>
+        <ol class="steps">
+          <li><b data-ru="Найдите">Discover</b><span data-ru="Каталог, паспорт данных, схема полей и метрики качества — открыто.">Catalog, datasheet, field schema and quality metrics — all public.</span></li>
+          <li><b data-ru="Проверьте образец">Sample</b><span data-ru="Бесплатный образец до 1 000 записей за 24 часа после заявки.">Free sample of up to 1,000 records within 24 hours.</span></li>
+          <li><b data-ru="Лицензируйте">License</b><span data-ru="Стандартная неисключительная лицензия на срок или индивидуальный договор с DPA.">Standard non-exclusive term license, or a custom MSA with DPA.</span></li>
+          <li><b data-ru="Получите">Deliver</b><span data-ru="API, выгрузка Parquet/JSONL, приватный репозиторий Hugging Face или S3. Обновления по подписке.">API, Parquet/JSONL export, private Hugging Face repo or S3. Updates on subscription.</span></li>
+        </ol>
+      </div>
+      <div class="code">
+        <div class="code-head"><span class="dots"><i></i><i></i><i></i></span><span class="mono small muted">api preview</span><button class="copy mono small" data-copy="codeBlock">copy</button></div>
+<pre id="codeBlock"><code><span class="c"># GET a dataset slice — CORE API (preview)</span>
+curl https://api.core-data.example/v1/datasets/<span class="s">uz_medical_facilities</span>/records \
+  -H <span class="s">"Authorization: Bearer $CORE_KEY"</span> \
+  -G -d region=<span class="s">UZ-SA</span> -d min_readiness=<span class="n">45</span> -d limit=<span class="n">3</span>
+
+<span class="c"># →</span>
+{
+  <span class="k">"dataset"</span>: <span class="s">"CORE-DS-0002"</span>, <span class="k">"license"</span>: <span class="s">"ODbL-1.0"</span>,
+  <span class="k">"records"</span>: [{
+    <span class="k">"id"</span>: <span class="s">"UZM-…"</span>, <span class="k">"facility_type"</span>: <span class="s">"clinic"</span>,
+    <span class="k">"region_code"</span>: <span class="s">"UZ-SA"</span>, <span class="k">"readiness_score"</span>: <span class="n">62</span>,
+    <span class="k">"site_languages"</span>: [<span class="s">"en"</span>,<span class="s">"ru"</span>,<span class="s">"uz"</span>],
+    <span class="k">"provenance"</span>: { <span class="k">"sources"</span>: [<span class="s">"osm"</span>,<span class="s">"site"</span>], <span class="k">"verified"</span>: <span class="s">"2026-11-07"</span> }
+  }]
+}</code></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BENCHMARK ============ -->
+<section class="sec sec-alt" id="benchmark">
+  <div class="wrap bench">
+    <div>
+      <span class="eyebrow" data-ru="Ключевой актив">Flagship asset</span>
+      <h2 data-ru="CORE-CA Bench: насколько ИИ знает Центральную Азию?">CORE-CA Bench: how well does AI know Central Asia?</h2>
+      <p class="sub" data-ru="300–500 вопросов с эталонными ответами экспертов вузов: история, право, наследие, география, экономика и реалии региона на узбекском, казахском, русском и английском. Мы не дублируем лингвистические тесты — мы проверяем знание контекста.">300–500 questions with reference answers from university experts — regional history, law, heritage, geography, economy and realia, in Uzbek, Kazakh, Russian and English. Not another grammar test: a test of contextual knowledge.</p>
+      <ul class="checks">
+        <li data-ru="Прогон по ведущим мировым и локальным моделям">Runs across leading global and local models</li>
+        <li data-ru="Открытая публикация методики и препринт">Open methodology and a preprint</li>
+        <li data-ru="Закрытый тестовый набор — защита от утечки в обучение">Held-out private test split — no training-set leakage</li>
+        <li data-ru="Ранний доступ к результатам для участников листа ожидания">Early access to results for waitlist members</li>
+      </ul>
+      <a href="#contact" class="btn btn-primary" data-form="bench" data-ru="В лист ожидания">Join the waitlist</a>
+    </div>
+    <div class="card bench-card">
+      <div class="bench-top"><span class="mono small muted">CORE-CA-BENCH · SAMPLE ITEM · HERITAGE</span><span class="tag t-violet">uz · ru · en</span></div>
+      <p class="q" data-ru="«Какое учебное заведение XV века на площади Регистан в Самарканде связано с именем Улугбека, и чем оно было известно?»">“Which 15th-century institution on Samarkand's Registan square is associated with Ulugh Beg, and what was it known for?”</p>
+      <div class="ans">
+        <div class="ans-row"><span class="tag t-teal" data-ru="Эталон эксперта">Expert reference</span><span data-ru="Медресе Улугбека (1417–1420) — один из ведущих научных центров эпохи, где преподавали астрономию и математику.">Ulugh Beg Madrasah (1417–1420) — a leading scholarly centre of its era where astronomy and mathematics were taught.</span></div>
+        <div class="ans-row"><span class="tag t-amber" data-ru="Критерии">Rubric</span><span data-ru="Название · датировка · роль в науке · без смешения с обсерваторией Улугбека">Name · dating · scholarly role · not confused with the Ulugh Beg Observatory</span></div>
+      </div>
+      <p class="small muted" data-ru="Пример формата. Реальные вопросы тестового набора не публикуются.">Format example. Real test-split questions are never published.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ UNIVERSITIES ============ -->
+<section class="sec" id="universities">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-ru="Для университетов">For universities</span>
+      <h2 data-ru="Ваши данные работают на вуз — под вашим контролем">Put your data to work — on your terms</h2>
+      <p class="sub" data-ru="Поставщики в CORE — только университеты. Данные остаются собственностью вуза, лицензии — неисключительные и на срок, а большая часть дохода возвращается вузу и авторам.">Only universities supply data to CORE. Your institution keeps ownership, licenses are non-exclusive and time-limited, and most of the revenue returns to the university and its authors.</p>
+    </div>
+
+    <div class="uni-grid">
+      <div class="card portal" aria-label="University partner portal preview">
+        <div class="portal-bar"><span class="dots"><i></i><i></i><i></i></span><span class="mono small muted" data-ru="partners.core · Ваш университет">partners.core · Your university</span></div>
+        <div class="portal-body">
+          <aside class="portal-side">
+            <span class="on" data-ru="Датасеты">Datasets</span><span data-ru="Права и согласия">Rights &amp; consents</span><span data-ru="Покупатели">Licensees</span><span data-ru="Выплаты">Payouts</span><span data-ru="Команда">Team</span>
+          </aside>
+          <div class="portal-main">
+            <div class="portal-kpis">
+              <div><span class="small muted" data-ru="Доход вуза, год">University revenue, YTD</span><b>$—</b></div>
+              <div><span class="small muted" data-ru="Активных лицензий">Active licenses</span><b>—</b></div>
+              <div><span class="small muted" data-ru="Датасетов в работе">Datasets in pipeline</span><b>3</b></div>
+            </div>
+            <table class="portal-table">
+              <thead><tr><th data-ru="Датасет">Dataset</th><th data-ru="Этап">Stage</th></tr></thead>
+              <tbody>
+                <tr><td data-ru="Гидрологические наблюдения Зарафшана">Zarafshan hydrology observations</td><td><span class="stage s3" data-ru="Экспертная проверка">Expert review</span></td></tr>
+                <tr><td data-ru="Корпус текстов по востоковедению">Oriental studies text corpus</td><td><span class="stage s2" data-ru="Обезличивание">Anonymization</span></td></tr>
+                <tr><td data-ru="Диалектологические записи (аудио)">Dialect field recordings (audio)</td><td><span class="stage s1" data-ru="Аудит прав">Rights audit</span></td></tr>
+              </tbody>
+            </table>
+            <p class="small muted" data-ru="Иллюстрация кабинета. Названия датасетов — примеры.">Portal illustration. Dataset names are examples.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="roles">
+        <h3 data-ru="Кто входит в кабинет вуза">Who signs in to the university portal</h3>
+        <p class="muted small" data-ru="Доступ выдаётся только по приказу ректора. Каждое действие записывается в журнал аудита.">Access is granted only by rector's order. Every action is logged to an audit trail.</p>
+        <div class="role"><b data-ru="Уполномоченный подписант">Authorized signatory</b><span data-ru="Ректор или проректор по доверенности. Подписывает рамочный договор и приложения на каждый датасет (ЭЦП / E-IMZO).">Rector or vice-rector under power of attorney. Signs the framework agreement and each dataset schedule (e-signature / E-IMZO).</span></div>
+        <div class="role"><b data-ru="Распорядитель данных">Data steward</b><span data-ru="Назначается приказом. Отбирает фонды, ведёт заявки, приглашает исследователей, утверждает публикацию.">Appointed by order. Selects collections, manages submissions, invites researchers, approves publication.</span></div>
+        <div class="role"><b data-ru="Юрист / этический комитет">Legal &amp; ethics reviewer</b><span data-ru="Подтверждает права, согласия авторов и участников исследований, отсутствие служебной тайны.">Confirms rights, author and participant consents, and absence of restricted information.</span></div>
+        <div class="role"><b data-ru="Исследователь">Researcher</b><span data-ru="Предлагает свой датасет и участвует в подготовке — только по приглашению распорядителя своего вуза.">Nominates their dataset and helps prepare it — by invitation of their university's steward only.</span></div>
+      </div>
+    </div>
+
+    <!-- legal flow -->
+    <div class="flow">
+      <h3 data-ru="Юридический путь: от меморандума до первой выплаты">The legal path: from MoU to first payout</h3>
+      <ol class="flow-steps">
+        <li><span class="fs-n">1</span><b data-ru="Меморандум">MoU</b><span data-ru="Намерения, конфиденциальность, пилотный фонд. Без обязательств по продаже.">Intent, confidentiality, pilot collection. No sales obligations.</span></li>
+        <li><span class="fs-n">2</span><b data-ru="Приказ и доступ">Order &amp; access</b><span data-ru="Приказ ректора о распорядителе данных и подписанте — открываем кабинет.">Rector's order appoints the steward and signatory — portal opens.</span></li>
+        <li><span class="fs-n">3</span><b data-ru="Рамочный договор">Framework agreement</b><span data-ru="Неисключительная лицензия CORE на распространение + раздел дохода. Один раз на вуз.">Non-exclusive distribution license to CORE + revenue share. Signed once.</span></li>
+        <li><span class="fs-n">4</span><b data-ru="Аудит прав и ПДн">Rights &amp; PII audit</b><span data-ru="Служебные произведения, согласия авторов, сторонние материалы; обезличивание по Закону РУз «О персональных данных».">Works-for-hire, author consents, third-party content; anonymization under the Law of Uzbekistan on Personal Data.</span></li>
+        <li><span class="fs-n">5</span><b data-ru="Приложение на датасет">Dataset schedule</b><span data-ru="Паспорт, разрешённые виды использования, запреты, цена — подписывается в кабинете.">Datasheet, permitted uses, exclusions and pricing — signed in the portal.</span></li>
+        <li><span class="fs-n">6</span><b data-ru="Публикация и выплаты">Publish &amp; payouts</b><span data-ru="Ежеквартальные отчёты и выплаты на внебюджетный счёт вуза.">Quarterly reports and payouts to the university's extra-budgetary account.</span></li>
+      </ol>
+    </div>
+
+    <div class="uni-bottom">
+      <div class="card terms">
+        <h3 data-ru="Модельные условия для вуза">Model terms for universities</h3>
+        <ul class="checks">
+          <li data-ru="<b>70%</b> чистой лицензионной выручки — вузу за готовые датасеты из его фондов">University receives <b>70%</b> of net license revenue on datasets from its collections</li>
+          <li data-ru="Рекомендуемая доля авторов — не менее 30% от доли вуза (по внутреннему положению)">Recommended author pool: at least 30% of the university's share (via internal regulation)</li>
+          <li data-ru="Подготовку, разметку и продажи финансирует CORE — вуз ничего не платит">CORE funds preparation, annotation and sales — no cost to the university</li>
+          <li data-ru="Право вето на категории покупателей и виды использования">Veto over buyer categories and use cases</li>
+          <li data-ru="Право остановить новые лицензии на датасет в любой момент">Right to stop new licenses for any dataset at any time</li>
+          <li data-ru="Публичная атрибуция вуза и авторов в каждом датасете">Public attribution of the university and authors on every dataset</li>
+        </ul>
+        <p class="note" data-ru="Условия ориентировочные; окончательные — в договоре с учётом устава вуза и требований министерства.">Indicative terms; final terms are set in the agreement in line with the university charter and ministry requirements.</p>
+      </div>
+      <div class="card calc">
+        <h3 data-ru="Калькулятор дохода вуза">University revenue estimator</h3>
+        <label><span data-ru="Датасетов в каталоге">Datasets listed</span><output id="oDs">5</output><input type="range" id="cDs" min="1" max="40" value="5"></label>
+        <label><span data-ru="Лицензий на датасет в год">Licenses per dataset / year</span><output id="oLic">3</output><input type="range" id="cLic" min="1" max="20" value="3"></label>
+        <label><span data-ru="Средняя цена лицензии, $">Average license price, $</span><output id="oPrice">4,000</output><input type="range" id="cPrice" min="500" max="50000" step="500" value="4000"></label>
+        <div class="calc-out">
+          <div><span class="small muted" data-ru="Вузу в год">To university / yr</span><b id="rUni">$42,000</b></div>
+          <div><span class="small muted" data-ru="из них авторам (≥30%)">of which authors (≥30%)</span><b id="rAuth">$12,600</b></div>
+        </div>
+        <p class="note" data-ru="Иллюстрация модели раздела дохода, не прогноз.">Illustrates the revenue-share model; not a forecast.</p>
+      </div>
+      <div class="card researcher">
+        <h3 data-ru="Вы исследователь?">Are you a researcher?</h3>
+        <p data-ru="Предложите свой датасет. Мы передадим заявку распорядителю данных вашего вуза, а если вуз ещё не партнёр — пригласим его. Вы получаете атрибуцию и долю авторов по положению вуза.">Nominate your dataset. We route it to your university's data steward — and if your university isn't a partner yet, we invite it. You get attribution and an author share under your university's policy.</p>
+        <a href="#contact" class="btn btn-ghost" data-form="researcher" data-ru="Предложить датасет">Nominate a dataset</a>
+        <a href="#contact" class="btn btn-primary" data-form="university" data-ru="Подключить вуз">Onboard my university</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST ============ -->
+<section class="sec sec-alt" id="trust">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-ru="Доверие и комплаенс">Trust &amp; compliance</span>
+      <h2 data-ru="Права — это продукт">Provenance is the product</h2>
+      <p class="sub" data-ru="Урок рынка: скандалы с продажей данных студентов и претензии авторов к издателям. Поэтому в CORE каждая запись прослеживается до источника и основания.">The market's lesson: scandals over selling student data, authors suing publishers. So in CORE, every record traces back to its source and legal basis.</p>
+    </div>
+    <div class="grid-3 trust">
+      <div class="card"><h3 data-ru="Цепочка прав">Rights chain</h3><p data-ru="Основание (договор, согласие, открытая лицензия) хранится для каждого датасета; без него датасет не проходит автоматическую проверку каталога.">The legal basis — contract, consent, open license — is recorded per dataset; without it, our catalog validator rejects the dataset.</p></div>
+      <div class="card"><h3 data-ru="Персональные данные">Personal data</h3><p data-ru="Обезличиваем до публикации. Хранение — по ст. 27¹ Закона РУз «О персональных данных»: чувствительные категории — только на серверах в Узбекистане.">Anonymized before release. Storage follows Art. 27¹ of Uzbekistan's Personal Data Law — sensitive categories stay on servers in Uzbekistan.</p></div>
+      <div class="card"><h3 data-ru="Паспорт данных">Datasheets</h3><p data-ru="Каждый датасет — с паспортом по методике Datasheets for Datasets, схемой Frictionless Data Package и метриками полноты полей.">Every dataset ships with a Datasheets-for-Datasets passport, a Frictionless Data Package schema and field-completeness metrics.</p></div>
+      <div class="card"><h3 data-ru="Открытое остаётся открытым">Open stays open</h3><p data-ru="Данные под CC0 и ODbL мы не «закрываем». Мы берём деньги за проверку, обогащение, единый формат и обновления.">We never enclose CC0 or ODbL data. We charge for verification, enrichment, normalization and refresh.</p></div>
+      <div class="card"><h3 data-ru="Политика использования">Acceptable use</h3><p data-ru="Запрещены повторная идентификация, слежка и перепродажа сырых данных. Вузы могут исключать категории покупателей.">Re-identification, surveillance and resale of raw data are prohibited. Universities can exclude buyer categories.</p></div>
+      <div class="card"><h3 data-ru="Воспроизводимость">Reproducibility</h3><p data-ru="Каждый датасет пересобирается из кода с версиями и контрольными суммами. Покупатель знает, что именно получил.">Every dataset rebuilds from versioned code with checksums. Buyers know exactly what they received.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="sec" id="pricing">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow" data-ru="Цены">Pricing</span>
+      <h2 data-ru="Начните с образца. Платите за результат.">Start with a sample. Pay for outcomes.</h2>
+    </div>
+    <div class="price-grid">
+      <div class="card price">
+        <h3 data-ru="Обзор">Explore</h3>
+        <div class="amount">$0</div>
+        <p class="muted" data-ru="Для оценки и академических исследований">For evaluation and academic research</p>
+        <ul class="checks"><li data-ru="Каталог, паспорта и схемы">Catalog, datasheets &amp; schemas</li><li data-ru="Образец до 1 000 записей">Samples up to 1,000 records</li><li data-ru="Открытые справочники CC0">Open CC0 reference data</li></ul>
+        <a href="#contact" class="btn btn-ghost" data-form="buyer" data-ru="Запросить образец">Request a sample</a>
+      </div>
+      <div class="card price">
+        <h3 data-ru="Лицензия">License</h3>
+        <div class="amount"><small data-ru="от">from</small> $2,400<small data-ru="/датасет/год">/dataset/yr</small></div>
+        <p class="muted" data-ru="Готовый датасет для коммерческого использования">A ready dataset for commercial use</p>
+        <ul class="checks"><li data-ru="Полный датасет, коммерческая лицензия">Full dataset, commercial license</li><li data-ru="Пакет происхождения и прав">Provenance &amp; rights pack</li><li data-ru="Обновления в течение срока">Updates during the term</li><li data-ru="Подборки по медтуризму — от $290/мес">Med-tourism lists — from $290/mo</li></ul>
+        <a href="#contact" class="btn btn-ghost" data-form="buyer" data-ru="Получить предложение">Get a quote</a>
+      </div>
+      <div class="card price featured">
+        <span class="badge" data-ru="Основной продукт">Core offer</span>
+        <h3 data-ru="Студия данных">Data Studio</h3>
+        <div class="amount"><small data-ru="от">from</small> $15,000<small data-ru="/проект">/project</small></div>
+        <p class="muted" data-ru="Датасет под вашу задачу, силами экспертов вузов">A dataset built for your task by university experts</p>
+        <ul class="checks"><li data-ru="Сбор, оцифровка, разметка по ТЗ">Collection, digitization, annotation to spec</li><li data-ru="Пять языков ЦА + русский">Five CA languages + Russian</li><li data-ru="Двойная проверка, метрики согласия">Dual review, agreement metrics</li><li data-ru="Окно эксклюзивности по запросу">Exclusivity window on request</li></ul>
+        <a href="#contact" class="btn btn-primary" data-form="buyer" data-ru="Обсудить проект">Scope a project</a>
+      </div>
+      <div class="card price">
+        <h3 data-ru="Корпоративный">Enterprise</h3>
+        <div class="amount" data-ru="По запросу">Custom</div>
+        <p class="muted" data-ru="Для ИИ-лабораторий и платформ">For AI labs and platforms</p>
+        <ul class="checks"><li data-ru="API и MCP, постоянные обновления">API &amp; MCP, continuous refresh</li><li data-ru="Поставка в Hugging Face / S3 / Snowflake">Delivery to Hugging Face / S3 / Snowflake</li><li data-ru="MSA, DPA, SLA">MSA, DPA, SLA</li><li data-ru="Доступ к бенчмарку">Benchmark access</li></ul>
+        <a href="#contact" class="btn btn-ghost" data-form="buyer" data-ru="Связаться">Talk to us</a>
+      </div>
+    </div>
+    <p class="center small muted" data-ru="Цены без НДС. Для академических некоммерческих проектов — скидка до 50%. Оплата в USD или UZS.">Prices exclude VAT. Up to 50% off for non-commercial academic projects. Invoicing in USD or UZS.</p>
+  </div>
+</section>
+
+<!-- ============ INVESTORS ============ -->
+<section class="sec sec-alt" id="investors">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-ru="Инвесторам">For investors</span>
+      <h2 data-ru="Лицензированные данные — новая инфраструктура ИИ. ЦА — незанятый рынок.">Licensed data is AI's new infrastructure. Central Asia is unclaimed.</h2>
+    </div>
+    <div class="why-grid">
+      <div class="card why"><b>$49M</b><span data-ru="выручка Wiley от лицензирования контента для ИИ за 2026 ф. г. (+23%)">Wiley's AI content licensing revenue, FY2026 (+23%)</span></div>
+      <div class="card why"><b>$65M</b><span data-ru="привлёк Protege (a16z) на модели раздела дохода с поставщиками данных">raised by Protege (a16z) on a revenue-share data model</span></div>
+      <div class="card why"><b>2026</b><span data-ru="Cloudflare покупает Human Native — маркетплейс лицензированных данных">Cloudflare acquires Human Native, a licensed-data marketplace</span></div>
+      <div class="card why"><b>0</b><span data-ru="специализированных игроков по академическим данным ЦА для ИИ — по нашему обзору рынка (ноябрь 2026)">dedicated players in Central Asian academic data for AI, per our market scan (Nov 2026)</span></div>
+    </div>
+
+    <div class="inv-grid">
+      <div class="card">
+        <h3 data-ru="Почему мы выиграем">Why we win</h3>
+        <ul class="checks">
+          <li data-ru="<b>Сеть вузов и договоры.</b> Доступ к фондам, которых нет в интернете, закреплён контрактами — это нельзя скачать.">  <b>University network &amp; contracts.</b> Access to collections that aren't online, locked in by agreements — can't be scraped.</li>
+          <li data-ru="<b>Граф ID CORE.</b> 397 вузов, 482 тыс. работ и учреждения связаны единым ключом — каждый новый датасет дороже предыдущего.">  <b>The CORE ID graph.</b> 397 universities, 482K works and institutions linked by one key — every new dataset compounds the value of the last.</li>
+          <li data-ru="<b>Бенчмарк как стандарт.</b> Тот, кто измеряет региональное знание, задаёт рынок данных для его улучшения.">  <b>Benchmark as a standard.</b> Whoever measures regional knowledge defines the market for data that improves it.</li>
+          <li data-ru="<b>Партнёр государства.</b> Узбекистан строит национальный корпус и Data Lake — CORE может быть исполнителем по академическим данным.">  <b>Aligned with the state.</b> Uzbekistan is building a national language corpus and Data Lake — CORE can be the academic-data contractor.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 data-ru="Бизнес-модель по стадиям">Business model by stage</h3>
+        <div class="stages">
+          <div class="stage-row now"><span class="mono small" data-ru="0–6 мес">0–6 mo</span><b data-ru="Студия данных">Data Studio</b><span data-ru="Заказные датасеты и лицензии. Решает проблему «курицы и яйца».">Custom datasets &amp; licenses. Solves chicken-and-egg.</span></div>
+          <div class="stage-row"><span class="mono small" data-ru="6–12 мес">6–12 mo</span><b data-ru="Курируемый каталог">Curated catalog</b><span data-ru="Датасеты вузов с экспертной проверкой. Комиссия 30% + услуги.">University datasets, expert-verified. 30% take rate + services.</span></div>
+          <div class="stage-row"><span class="mono small" data-ru="12+ мес">12+ mo</span><b data-ru="Маркетплейс и API">Marketplace &amp; API</b><span data-ru="Самообслуживание, подписка на API, выход на облачные витрины, KZ · KG · TJ.">Self-serve, API subscriptions, cloud marketplaces, KZ · KG · TJ.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="team">
+      <h3 data-ru="Команда">Team</h3>
+      <div class="team-grid">
+        <div class="card person"><div class="avatar">ZM</div><div><b data-ru="Зебунисо Мансурова">Zebuniso Mansurova</b><span>CEO</span><p class="small muted" data-ru="Бизнес, продажи и партнёрства">Business, sales &amp; partnerships</p></div></div>
+        <div class="card person"><div class="avatar">PA</div><div><b data-ru="Павел Алексеев">Pavel Alekseev</b><span>CSO</span><p class="small muted" data-ru="Наука о данных, академическая сеть, архитектура каталога">Data science, academic network, catalog architecture</p></div></div>
+        <div class="card person"><div class="avatar">AP</div><div><b data-ru="Александр Печерский">Alexander Pechersky</b><span>CTO</span><p class="small muted" data-ru="Платформа, API, инфраструктура">Platform, API, infrastructure</p></div></div>
+      </div>
+      <p class="small muted" data-ru="Launch Lab 21 (School 21) · Самарканд и Ташкент">Launch Lab 21 (School 21) · Samarkand &amp; Tashkent</p>
+      <a href="#contact" class="btn btn-primary" data-form="investor" data-ru="Запросить презентацию для инвесторов">Request the investor deck</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec" id="faq">
+  <div class="wrap narrow">
+    <div class="sec-head center"><span class="eyebrow">FAQ</span><h2 data-ru="Частые вопросы">Questions, answered</h2></div>
+    <details class="faq"><summary data-ru="Почему поставщики — только университеты, а не отдельные учёные?">Why only universities as suppliers, not individual researchers?</summary><p data-ru="Права на данные, созданные в рамках служебных обязанностей, как правило, принадлежат вузу, а исследования с участием людей требуют одобрения этического комитета. Работа через уполномоченных сотрудников вуза даёт покупателю чистую цепочку прав, а учёным — защиту и долю дохода. Исследователи участвуют через кабинет своего вуза.">Rights to data created in the course of employment generally belong to the university, and human-subjects research needs ethics approval. Working through authorized university staff gives buyers a clean rights chain and gives researchers protection and a revenue share. Researchers take part through their university's portal.</p></details>
+    <details class="faq"><summary data-ru="Чем вы отличаетесь от Hugging Face или открытых порталов?">How are you different from Hugging Face or open data portals?</summary><p data-ru="Открытые платформы хранят то, что уже опубликовано. Мы работаем с тем, чего в интернете нет: фондами вузов, экспертной разметкой и проверкой прав. Образцы и бенчмарк мы сами публикуем на Hugging Face.">Open platforms host what's already published. We work with what isn't online: university collections, expert annotation and rights verification. We publish samples and our benchmark on Hugging Face ourselves.</p></details>
+    <details class="faq"><summary data-ru="Что значит «неисключительная лицензия на срок»?">What does a “non-exclusive term license” mean?</summary><p data-ru="Покупатель получает право использовать датасет для оговорённых целей (обучение, оценка, RAG) в течение срока, а вуз сохраняет собственность и может лицензировать данные другим. Эксклюзивные окна возможны за отдельную плату с согласия вуза.">The buyer may use the dataset for agreed purposes (training, evaluation, RAG) during the term, while the university keeps ownership and can license to others. Exclusivity windows are available for a premium with the university's consent.</p></details>
+    <details class="faq"><summary data-ru="Как вы работаете с персональными данными?">How do you handle personal data?</summary><p data-ru="Обезличиваем до передачи покупателю, храним в соответствии с Законом РУз «О персональных данных», данные с идентифицирующей информацией в публичный каталог не попадают. Покупателю запрещена повторная идентификация.">We anonymize before delivery, store data in line with Uzbekistan's Personal Data Law, and identifying data never enters the public catalog. Re-identification is contractually prohibited.</p></details>
+    <details class="faq"><summary data-ru="Может ли иностранная компания купить данные?">Can a foreign company license data?</summary><p data-ru="Да. Работаем по договору с оплатой в USD; экспорт услуг оформляется в соответствии с валютным законодательством Узбекистана.">Yes. We contract and invoice in USD; cross-border service exports are handled under Uzbekistan's currency regulations.</p></details>
+    <details class="faq"><summary data-ru="Сколько стоит участие для вуза?">What does it cost a university to join?</summary><p data-ru="Ничего. Подготовку, разметку, хранение и продажи финансирует CORE из своей доли дохода.">Nothing. CORE funds preparation, annotation, hosting and sales from its share of revenue.</p></details>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="sec sec-alt" id="contact">
+  <div class="wrap contact">
+    <div>
+      <span class="eyebrow" data-ru="Контакт">Get in touch</span>
+      <h2 data-ru="Расскажите, что вам нужно. Ответим за 24 часа.">Tell us what you need. We reply within 24 hours.</h2>
+      <p class="sub" data-ru="Выберите, кто вы, — заявка попадёт к нужному человеку в команде.">Pick who you are — your request goes straight to the right person on the team.</p>
+      <ul class="checks">
+        <li data-ru="Образец данных — в течение 24 часов">Data sample within 24 hours</li>
+        <li data-ru="Встреча с вузом — с проектом меморандума">University meeting comes with a draft MoU</li>
+        <li data-ru="Инвесторам — презентация и комната данных">Investors get the deck and data room</li>
+      </ul>
+    </div>
+    <form class="card form" id="leadForm" novalidate>
+      <div class="seg form-type" id="formType">
+        <button type="button" class="on" data-t="buyer" data-ru="Нужны данные">I need data</button>
+        <button type="button" data-t="university" data-ru="Вуз">University</button>
+        <button type="button" data-t="researcher" data-ru="Исследователь">Researcher</button>
+        <button type="button" data-t="investor" data-ru="Инвестор">Investor</button>
+      </div>
+      <input type="hidden" name="type" value="buyer">
+      <div class="frow">
+        <label><span data-ru="Имя">Name</span><input name="name" required autocomplete="name"></label>
+        <label><span data-ru="Рабочий email">Work email</span><input name="email" type="email" required autocomplete="email"></label>
+      </div>
+      <div class="frow">
+        <label><span class="org-label" data-ru="Компания">Company</span><input name="org" required autocomplete="organization"></label>
+        <label><span class="role-label" data-ru="Должность">Role</span><input name="role" autocomplete="organization-title"></label>
+      </div>
+      <label class="f-buyer"><span data-ru="Задача">Use case</span>
+        <select name="usecase">
+          <option data-ru="Дообучение LLM на языках ЦА">LLM fine-tuning for CA languages</option>
+          <option data-ru="Оценка / бенчмарк">Evaluation / benchmark</option>
+          <option data-ru="RAG / агенты / API">RAG / agents / API</option>
+          <option data-ru="Медтуризм / рынок здравоохранения">Medical tourism / healthcare market</option>
+          <option data-ru="Научная аналитика">Research intelligence</option>
+          <option data-ru="Датасет под заказ">Custom dataset</option>
+        </select>
+      </label>
+      <label class="f-researcher" hidden><span data-ru="Ссылка на датасет или публикацию">Link to dataset or paper</span><input name="link" type="url" placeholder="https://doi.org/…"></label>
+      <label><span class="msg-label" data-ru="Что вам нужно?">What do you need?</span><textarea name="message" rows="4"></textarea></label>
+      <label class="consent"><input type="checkbox" name="consent" required> <span data-ru="Согласен(на) на обработку данных для ответа на заявку — <a href='privacy.html'>политика</a>">I agree to the processing of my data to respond to this request — <a href="privacy.html">privacy</a></span></label>
+      <button class="btn btn-primary btn-block" type="submit" data-ru="Отправить">Send request</button>
+      <p class="form-status small" id="formStatus" role="status"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div>
+      <a href="#top" class="logo"><svg viewBox="0 0 32 32" width="22" height="22" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="2.2" opacity=".35"/><circle cx="16" cy="16" r="8.5" fill="none" stroke="currentColor" stroke-width="2.2" opacity=".7"/><circle cx="16" cy="16" r="3.4" fill="var(--teal)"/></svg><span>CORE</span></a>
+      <p class="small muted" data-ru="Академические данные Центральной Азии для ИИ.">Central Asian academic data for AI.</p>
+    </div>
+    <div class="foot-links">
+      <a href="#catalog" data-ru="Каталог">Catalog</a><a href="#universities" data-ru="Университетам">Universities</a><a href="#pricing" data-ru="Цены">Pricing</a><a href="privacy.html" data-ru="Конфиденциальность">Privacy</a>
+    </div>
+    <p class="small muted attr" data-ru="Данные: © участники OpenStreetMap (ODbL), OpenAlex, ROR, Wikidata (CC0). Границы: Natural Earth.">Data: © OpenStreetMap contributors (ODbL), OpenAlex, ROR, Wikidata (CC0). Boundaries: Natural Earth.</p>
+  </div>
+</footer>
+
+<script src="assets/config.js"></script>
+<script src="assets/geo.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

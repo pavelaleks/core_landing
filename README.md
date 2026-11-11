@@ -1,0 +1,42 @@
+# CORE — лэндинг
+
+Статический лэндинг CORE: лицензированные академические данные Центральной Азии для ИИ.
+Без сборки: чистые HTML, CSS и JS. Два языка (EN/RU). Язык берётся из браузера, из параметра `?lang=ru|en` или из переключателя на странице.
+
+## Структура
+
+| Путь | Что это |
+|---|---|
+| `index.html` | Весь лэндинг. Английский текст в разметке, русский в атрибутах `data-ru` |
+| `privacy.html` | Политика конфиденциальности (нужна, потому что форма собирает персональные данные) |
+| `assets/styles.css` | Дизайн: токены в `:root`, адаптив от 375 px |
+| `assets/app.js` | i18n, карта на canvas, таблицы каталога, график, калькулятор, форма |
+| `assets/data.js` | Выжимка данных из core-hub (генерируется, руками не правим) |
+| `assets/geo.js` | Границы стран ЦА, Natural Earth через world-atlas (генерируется) |
+| `assets/config.js` | **Заполнить перед запуском:** адрес приёма заявок и email |
+| `tools/` | Скрипты пересборки `data.js` и `geo.js` |
+
+## Перед запуском
+
+1. В `assets/config.js` указать `formEndpoint` (Formspree, вебхук Make/Zapier или свой API, принимающий JSON POST) и/или `contactEmail`.
+2. Проверить цены и модельные условия для вузов (70% вузу, не менее 30% его доли авторам) в `index.html`.
+3. Показать `privacy.html` юристу и после регистрации ООО вписать юрлицо.
+
+## Локальный просмотр
+
+```bash
+python3 -m http.server 8765
+```
+
+## Размещение
+
+Скопировать файлы папки на любой статический хостинг (nginx/Apache, shared-хостинг, Cloudflare Pages, Netlify). Серверный код не нужен.
+
+## Пересборка данных из core-hub
+
+```bash
+python3 tools/build_data.py <core-hub>/db/datasets "<путь>/CORE — настоящие датасеты вузов ЦА (отбор).xlsx" assets/data.js
+python3 tools/build_geo.py countries-50m.json assets/geo.js   # https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-50m.json
+```
+
+В `data.js` нет имён авторов и контактов физических лиц. Атрибуция: © участники OpenStreetMap (ODbL), OpenAlex/ROR/Wikidata (CC0).

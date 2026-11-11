@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CORE — Privacy</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<style>.doc{padding:72px 0 96px}.doc h1{font-size:clamp(32px,4vw,48px);margin-bottom:12px}.doc h2{font-size:21px;margin:36px 0 10px;letter-spacing:-.01em}.doc p,.doc li{color:#c3cbd4;font-size:15.5px}.doc ul{padding-left:20px}.doc .back{display:inline-block;margin-bottom:32px;color:var(--teal)}</style>
+</head>
+<body>
+<main class="wrap narrow doc">
+  <a class="back" href="index.html">← CORE</a>
+  <div class="lang" role="group" aria-label="Language" style="float:right"><button data-l="en" aria-pressed="true">EN</button><button data-l="ru" aria-pressed="false">RU</button></div>
+
+  <section data-lang="en">
+    <h1>Privacy notice</h1>
+    <p class="muted">Draft · last updated 11 November 2026</p>
+    <h2>Who we are</h2>
+    <p>CORE is a project of the founding team (Launch Lab 21, Samarkand &amp; Tashkent). Until our legal entity is registered, the team acts as the data controller for requests sent through this site.</p>
+    <h2>What we collect</h2>
+    <ul><li>Data you submit in the contact form: name, work email, organization, role, message and links.</li><li>Basic technical data your browser sends (no tracking cookies, no ad pixels).</li></ul>
+    <h2>Why</h2>
+    <p>Only to respond to your request, prepare a proposal or partnership, and keep a record of our correspondence. We never sell contact data and never add it to any dataset.</p>
+    <h2>Legal basis &amp; storage</h2>
+    <p>Your consent, given in the form, under the Law of the Republic of Uzbekistan “On Personal Data” and, where applicable, the GDPR. We keep requests for up to 3 years after the last contact, then delete them.</p>
+    <h2>Your rights</h2>
+    <p>You can ask us to access, correct or delete your data, or withdraw consent at any time, by replying to any message from us.</p>
+    <h2>Data in our catalog</h2>
+    <p>Datasets in the CORE catalog are anonymized before release. Re-identification of individuals is prohibited by our license terms.</p>
+  </section>
+
+  <section data-lang="ru" hidden>
+    <h1>Политика конфиденциальности</h1>
+    <p class="muted">Проект · обновлено 11 ноября 2026</p>
+    <h2>Кто мы</h2>
+    <p>CORE — проект команды основателей (Launch Lab 21, Самарканд и Ташкент). До регистрации юридического лица оператором данных заявок с этого сайта выступает команда проекта.</p>
+    <h2>Что мы собираем</h2>
+    <ul><li>Данные из формы заявки: имя, рабочий email, организация, должность, сообщение и ссылки.</li><li>Базовые технические данные браузера (без трекинговых cookie и рекламных пикселей).</li></ul>
+    <h2>Зачем</h2>
+    <p>Только чтобы ответить на заявку, подготовить предложение или партнёрство и сохранить историю переписки. Мы не продаём контакты и никогда не включаем их в датасеты.</p>
+    <h2>Основание и хранение</h2>
+    <p>Ваше согласие, данное в форме, в соответствии с Законом Республики Узбекистан «О персональных данных» и, где применимо, GDPR. Храним заявки не более 3 лет после последнего контакта, затем удаляем.</p>
+    <h2>Ваши права</h2>
+    <p>Вы можете запросить доступ, исправление или удаление своих данных и отозвать согласие в любой момент, ответив на любое наше письмо.</p>
+    <h2>Данные в каталоге</h2>
+    <p>Датасеты каталога CORE обезличиваются до публикации. Повторная идентификация людей запрещена условиями лицензии.</p>
+  </section>
+</main>
+<script>
+(function(){
+  var get=function(){try{return localStorage.getItem("core-lang")}catch(e){return null}};
+  var l=get()||((navigator.language||"en").toLowerCase().indexOf("ru")===0?"ru":"en");
+  function apply(){document.documentElement.lang=l;
+    document.querySelectorAll("[data-lang]").forEach(function(s){s.hidden=s.dataset.lang!==l});
+    document.querySelectorAll("[data-l]").forEach(function(b){b.setAttribute("aria-pressed",String(b.dataset.l===l))});}
+  document.querySelectorAll("[data-l]").forEach(function(b){b.addEventListener("click",function(){l=b.dataset.l;try{localStorage.setItem("core-lang",l)}catch(e){}apply()})});
+  apply();
+})();
+</script>
+</body>
+</html>
