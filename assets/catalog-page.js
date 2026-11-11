@@ -83,7 +83,7 @@
     if (it.fm) facts.push(esc(it.fm));
     var actions = ext
       ? '<a class="btn btn-ghost btn-sm" href="' + esc(it.href) + '" target="_blank" rel="noopener">' + tr("Source", "Источник", "Manba") + ' ↗</a><a class="btn btn-ghost btn-sm" href="#contact" data-form="buyer">' + tr("Prepare via CORE", "Подготовить через CORE", "CORE orqali tayyorlash") + "</a>"
-      : '<a class="btn btn-primary btn-sm" href="' + esc(it.href) + '">' + (it.st === "demo" ? tr("Open in the demo", "Открыть в демо", "Demoda ochish") : tr("Open", "Открыть", "Ochish")) + "</a>";
+      : '<a class="btn btn-primary btn-sm" href="' + esc(/^app\//.test(it.href) && lang !== "en" ? "../" + it.href : it.href) + '">' + (it.st === "demo" ? tr("Open in the demo", "Открыть в демо", "Demoda ochish") : tr("Open", "Открыть", "Ochish")) + "</a>";
     return '<article class="cat-item card' + (ext ? "" : " cat-core") + '"><div class="cat-tags"><span class="tag ' + ty[1] + '">' + ty[0] + '</span><span class="st ' + st[1] + '">' + st[0] + "</span></div>" +
       "<h3>" + esc(L(it.title)) + '</h3><p class="cat-meta">' + meta.filter(Boolean).join(" · ") + "</p>" +
       (it.desc ? '<p class="cat-desc">' + esc(L(it.desc)) + "</p>" : "") +

@@ -531,9 +531,9 @@ def build():
     nav = re.search(r"<!-- ============ NAV ============ -->.*?</header>", src_index, re.S).group(0)
     footer = re.search(r'<footer class="foot">.*?</footer>', src_index, re.S).group(0)
     def up(h):
+        """Nav and footer for pages one folder deep (datasets/): every relative link goes one level up."""
         h = re.sub(r'href="#', 'href="../index.html#', h)
-        h = h.replace('href="index.html"', 'href="../index.html"')
-        h = h.replace('href="universities.html', 'href="../universities.html').replace('href="privacy.html', 'href="../privacy.html').replace('href="developers.html', 'href="../developers.html').replace('href="regions.html', 'href="../regions.html').replace('href="pricing.html', 'href="../pricing.html').replace('href="how.html', 'href="../how.html').replace('href="catalog.html', 'href="../catalog.html')
+        h = re.sub(r'href="(?![a-z]+:|#|\.\./|/)([^"]+)"', r'href="../\1"', h)
         return h
     pages = {"index.html": src_index,
              "universities.html": open(os.path.join(ROOT, "src", "universities.html"), encoding="utf-8").read(),

@@ -92,7 +92,7 @@
         "<dt>" + T("High insurance inclusion", "Высокий охват страхованием") + "</dt><dd>" + i.insurance_high_inclusion_pct + "% (" + T("urban", "в городе") + " " + i.insurance_high_inclusion_pct_urban + "%, " + T("rural", "на селе") + " " + i.insurance_high_inclusion_pct_rural + "%)</dd>" +
         "<dt>" + T("Intention to buy, 1–5", "Намерение купить, 1–5") + "</dt><dd>" + String(i.intention_to_buy_1_5).replace(".", lang === "en" ? "." : ",") + "</dd>" +
         "<dt>" + T("Trust in insurers, 1–5", "Доверие к страховщикам, 1–5") + "</dt><dd>" + String(i.trust_in_insurers_1_5).replace(".", lang === "en" ? "." : ",") + "</dd></dl>" +
-        '<a class="link-cta" href="' + (lang === "en" ? "" : "../") + 'app/index.html#demo">' + T("Open the dataset in the cabinet →", "Открыть набор в кабинете →") + "</a></div>";
+        '<a class="link-cta" href="' + (lang === "en" ? "" : "../") + 'app/index.html#demo/insurance-literacy-syrdarya">' + T("Open the dataset in the cabinet →", "Открыть набор в кабинете →") + "</a></div>";
     } else h += '<p class="small muted" style="margin-top:12px">' + T("No behaviour data for this region yet — we can collect it with a survey through the region's universities.", "Данных о поведении по региону пока нет — соберём опросом через вузы региона.") + "</p>";
     h += '<p class="small muted" style="margin-top:10px">' + T("Demographics source", "Источник демографии") + ": " + esc(d.source || "—") + "</p>";
     document.getElementById("rgDetail").innerHTML = h;

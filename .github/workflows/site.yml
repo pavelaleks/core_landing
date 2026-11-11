@@ -15,7 +15,8 @@ jobs:
           python-version: "3.12"
       - name: Generated pages, API and HF packages are up to date
         run: python3 -I tools/build_site.py --check
+      - name: Every local link resolves
+        run: python3 -I tools/check_links.py
       - name: JavaScript parses
         run: |
-          node --check assets/app.js
-          node --check assets/graph3d.js
+          for f in assets/app.js assets/graph3d.js assets/catalog-page.js assets/regions-page.js assets/how-page.js app/app.js; do node --check "$f"; done
