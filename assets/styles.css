@@ -657,3 +657,13 @@ body.g3-lock{overflow:hidden}
 .of-found p{line-height:1.5}
 @media (max-width:1080px){.ours-found{grid-template-columns:1fr}}
 @media (max-width:700px){.strip-3{grid-template-columns:1fr}.strip-3 .stat{border-left:0;padding-left:0;border-top:1px solid var(--line)}}
+
+/* business: who needs verified data */
+.biz{display:flex;flex-direction:column;gap:10px}
+.biz-top{display:flex;justify-content:space-between;align-items:center}
+.biz-top .ficon{margin-bottom:0}
+.biz-who{font-size:13.5px;color:var(--teal)!important}
+.biz .link-cta{margin-top:auto;align-self:flex-start}
+.biz-ways{margin-top:16px;display:grid;grid-template-columns:auto 1fr;gap:12px 32px;align-items:center}
+.biz-ways .checks{margin:0;display:flex;flex-wrap:wrap;gap:8px 28px}
+@media (max-width:700px){.biz-ways{grid-template-columns:1fr}}
