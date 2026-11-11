@@ -1095,5 +1095,6 @@ window.CORE_UZ = {
 "На странице": "Sahifada",
 "Наверх": "Yuqoriga",
 "Тест знаний модели": "Model bilimlari testi",
-"Что CORE даёт каждому": "CORE har biriga nima beradi"
+"Что CORE даёт каждому": "CORE har biriga nima beradi",
+"Наборов учёных с данными (проверены)": "Maʼlumotli olimlar toʻplamlari (tekshirilgan)"
 };

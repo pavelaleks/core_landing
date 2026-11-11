@@ -598,7 +598,9 @@
   /* ---------------- reveal ---------------- */
   var revealEls = $$(".sec-head, .card, .flow, .team, .strip-grid");
   if ("IntersectionObserver" in window) {
-    revealEls.forEach(function (el) { if (!el.closest(".hero")) el.classList.add("reveal"); });
+    // only below-the-fold blocks fade in; what is visible on open shows at once
+    var fold = window.innerHeight * 0.92;
+    revealEls.forEach(function (el) { if (!el.closest(".hero") && el.getBoundingClientRect().top > fold) el.classList.add("reveal"); });
     var io = new IntersectionObserver(function (ents) {
       ents.forEach(function (en) {
         if (!en.isIntersecting) return;

@@ -882,3 +882,4 @@ html.has-subnav{scroll-padding-top:136px}
 .foot-in .logo{font-size:18px}
 .card p:not(.small):not(.note):not(.muted),.why-grid p,.hw-rules p,.rg-offer p,.entry p,.ex3 .card p,.checks li,.plain-list{font-size:16px;line-height:1.6}
 .uc p:not(.who){font-size:16px}
+.reveal{transition:opacity .45s ease,transform .45s ease;transform:translateY(10px)}
