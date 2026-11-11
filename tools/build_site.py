@@ -13,6 +13,7 @@ usage: python3 -I tools/build_site.py           build
 import csv
 import html
 import io
+import hashlib
 import json
 import os
 import posixpath
@@ -426,7 +427,18 @@ def page_url(lang, page_path):
         p = p[: -len("index.html")]
     return BASE + p
 
+_VER = {}
+def asset_version(m):
+    """Append ?v=<hash of the file> to local assets so a deploy is never hidden by browser cache."""
+    attr, url = m.group(1), m.group(2)
+    rel = url.split("assets/", 1)[1]
+    if rel not in _VER:
+        fp = os.path.join(ROOT, "assets", rel)
+        _VER[rel] = hashlib.sha1(open(fp, "rb").read()).hexdigest()[:8] if os.path.exists(fp) else ""
+    return '%s="%s%s"' % (attr, url, ("?v=" + _VER[rel]) if _VER[rel] else "")
+
 def finalize(text, lang, page_path, meta):
+    text = re.sub(r'\b(src|href)="((?:\.\./)*assets/[^"?#]+\.(?:js|css))"', asset_version, text)
     sw = lang_switch(page_path)(lang)
     text = re.sub(r'<div class="lang" role="group" aria-label="Language">.*?</div>', lambda m: sw, text, count=1, flags=re.S)
     text = re.sub(r'<html lang="[a-z]+">', '<html lang="%s" data-static-lang="%s">' % (lang, lang), text, count=1)
@@ -552,6 +564,10 @@ def build():
             t = relink(t, page_dir, 0 if lang == "en" else 1)
             t = finalize(t, lang, path, META.get(path))
             emit(path if lang == "en" else lang + "/" + path, t)
+    for l in LANGS[1:]:
+        emit(l + "/app/index.html", '<!doctype html><meta charset="utf-8"><meta name="robots" content="noindex">'
+             '<title>CORE</title><script>location.replace("../../app/index.html" + location.hash)</script>'
+             '<a href="../../app/index.html">CORE</a>')
     urls = [page_url(l, p) for p in pages for l in LANGS]
     emit("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
          + "".join("  <url><loc>%s</loc></url>\n" % u for u in urls + [BASE + "privacy.html"]) + "</urlset>\n")
