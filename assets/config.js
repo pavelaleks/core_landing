@@ -4,7 +4,7 @@ window.CORE_CONFIG = {
   // Example: "https://formspree.io/f/xxxxxxx"
   // FormSubmit delivers each lead straight to the inbox. The very first submission sends an
   // activation email to this address — click "Activate Form" in it once.
-  formEndpoint: "https://formsubmit.co/ajax/core@samdu.uz",
+  formEndpoint: "https://formsubmit.co/ajax/pavel.alekseev.gasu@gmail.com",
   // Fallback: if no endpoint is set, the form opens the visitor's mail client addressed here.
-  contactEmail: "core@samdu.uz"
+  contactEmail: "pavel.alekseev.gasu@gmail.com"
 };
