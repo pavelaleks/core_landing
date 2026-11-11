@@ -637,6 +637,18 @@
 
   applyLang();
 
+  /* ---------------- logo = home; on the home page it scrolls to the very top ---------------- */
+  $$("a.logo").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      var here = location.pathname.replace(/index\.html$/, ""), there = new URL(a.href, location.href).pathname.replace(/index\.html$/, "");
+      if (here !== there) return;
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+      var nav = $(".nav"); if (nav) nav.classList.remove("open");
+    });
+  });
+
   /* ---------------- page sub-navigation (long pages) + back to top ---------------- */
   (function () {
     var page = document.body.getAttribute("data-page");
