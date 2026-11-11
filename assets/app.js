@@ -122,6 +122,12 @@
   };
   var LANG_NAME = { en: ["English", "Английский"], uz: ["Uzbek", "Узбекский"], ru: ["Russian", "Русский"], kk: ["Kazakh", "Казахский"], tr: ["Turkish", "Турецкий"], ky: ["Kyrgyz", "Кыргызский"], tg: ["Tajik", "Таджикский"], "?": ["Unknown", "Не указан"] };
   var fieldName = function (f) { return lang === "en" || !FIELD_RU[f] ? f : T(f, FIELD_RU[f]); };
+  var uniName = function (u) {
+    var ru = u[8], nat = u[9], cyr = /[А-Яа-яЁё]/;
+    if (lang === "ru") return ru || (nat && cyr.test(nat) ? nat : "") || u[1];
+    if (lang === "uz") return (u[2] === "UZ" && nat && !cyr.test(nat) ? nat : "") || ru || nat || u[1];
+    return u[1];
+  };
   var pick = function (pair) { return pair ? T(pair[0], pair[1]) : ""; };
   var esc = function (s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); };
 
@@ -251,7 +257,7 @@
       var h;
       if (best.t === "uni") {
         var u = best.d;
-        h = "<b>" + esc(u[1]) + "</b>" + esc(u[5] || "") + " · " + pick(COUNTRY[u[2]]) + "<br><span class='mono' style='color:var(--teal)'>" + u[0] + "</span> · " + nf(u[6]) + " " + T("works", "работ");
+        h = "<b>" + esc(uniName(u)) + "</b>" + esc(u[5] || "") + " · " + pick(COUNTRY[u[2]]) + "<br><span class='mono' style='color:var(--teal)'>" + u[0] + "</span> · " + nf(u[6]) + " " + T("works", "работ");
       } else {
         var m = best.d;
         h = "<b>" + pick(MEDTYPE[m[2]] || MEDTYPE.other) + "</b>" + pick(REGION[m[4]] || ["", ""]) + "<br>" + T("Med-tourism readiness", "Готовность к медтуризму") + ": <span style='color:var(--amber)'>" + m[3] + "/100</span>";
@@ -300,6 +306,22 @@
     }
   }
 
+  /* ---------------- plain example: before / marked / delivered ---------------- */
+  var ex = $("#ex");
+  if (ex) {
+    var exBtns = $$("[data-ex]", ex), exAuto = true, exTimer = null;
+    var setEx = function (i) { ex.dataset.step = String(i); exBtns.forEach(function (b) { b.classList.toggle("on", +b.dataset.ex === i); }); };
+    exBtns.forEach(function (b) { b.addEventListener("click", function () { exAuto = false; clearInterval(exTimer); setEx(+b.dataset.ex); }); });
+    if ("IntersectionObserver" in window && !(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches)) {
+      new IntersectionObserver(function (en) {
+        if (en[0].isIntersecting && exAuto && !exTimer) {
+          var i = 0;
+          exTimer = setInterval(function () { i++; setEx(i); if (i >= 2) { clearInterval(exTimer); exAuto = false; } }, 2400);
+        }
+      }, { threshold: 0.5 }).observe(ex);
+    }
+  }
+
   /* ---------------- counters ---------------- */
   var countersDone = false;
   function runCounters() {
@@ -331,10 +353,10 @@
       if (uniFilter.c && u[2] !== uniFilter.c) return false;
       if (!uniFilter.q) return true;
       var q = uniFilter.q.toLowerCase();
-      return (u[1] + " " + u[5] + " " + u[0]).toLowerCase().indexOf(q) >= 0;
+      return (u[1] + " " + (u[8] || "") + " " + (u[9] || "") + " " + u[5] + " " + u[0]).toLowerCase().indexOf(q) >= 0;
     }).sort(function (a, b) { return b[6] - a[6]; }).slice(0, 150);
     $("#uniTable tbody").innerHTML = rows.map(function (u) {
-      return "<tr><td><span class='id'>" + u[0] + "</span></td><td>" + esc(u[1]) + "</td><td class='muted'>" + esc(u[5]) + "</td><td class='r'>" + nf(u[6]) + "</td></tr>";
+      return "<tr><td><span class='id'>" + u[0] + "</span></td><td>" + esc(uniName(u)) + "</td><td class='muted'>" + esc(u[5]) + "</td><td class='r'>" + nf(u[6]) + "</td></tr>";
     }).join("") || "<tr><td colspan='4' class='muted'>" + T("No matches", "Ничего не найдено") + "</td></tr>";
     var bc = D.uniByCountry || {};
     bars($("#uniBars"), ["UZ", "KZ", "KG", "TJ"].map(function (c) { return [pick(COUNTRY[c]), bc[c] || 0]; }), "var(--teal)");
@@ -348,7 +370,7 @@
   function renderMed() {
     $("#medTable tbody").innerHTML = (D.medTop || []).map(function (m) {
       var spec = m.spec.map(function (s) { return lang === "en" ? (SPEC[s] || s) : T(s, s); }).join(", ");
-      return "<tr><td><span class='id'>" + esc(m.id) + "</span></td><td>" + esc(m.name) + (m.intl ? " <span class='tag t-teal'>intl</span>" : "") + "</td><td class='muted'>" + esc(pick(REGION[m.region])) + "</td><td class='muted'>" + esc(spec) + "</td><td class='r'><span class='score'>" + m.score + "</span></td></tr>";
+      return "<tr><td><span class='id'>" + esc(m.id) + "</span></td><td>" + esc(lang === "en" ? m.name : (m.name_ru || m.name)) + (m.intl ? " <span class='tag t-teal'>intl</span>" : "") + "</td><td class='muted'>" + esc(pick(REGION[m.region])) + "</td><td class='muted'>" + esc(spec) + "</td><td class='r'><span class='score'>" + m.score + "</span></td></tr>";
     }).join("");
     var mt = D.medTypes || {}, other = 0, rows = [];
     Object.keys(mt).forEach(function (k) { if (MEDTYPE[k] && k !== "other") rows.push([pick(MEDTYPE[k]), mt[k]]); else other += mt[k]; });

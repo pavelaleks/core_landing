@@ -8,6 +8,17 @@ const stage = document.getElementById("graph3d");
 const LANG = () => document.documentElement.lang;
 const UZ = window.CORE_UZ || {};
 const T = (en, r) => (LANG() === "en" ? en : LANG() === "uz" ? (UZ[r] != null ? UZ[r] : r) : r);
+const TOPIC_RU = window.CORE_TOPIC_RU || {};
+const topicName = (s) => T(s, TOPIC_RU[s] || s);
+const UNI_NAMES = {};
+((window.CORE_DATA || {}).unis || []).forEach((u) => { UNI_NAMES[u[0]] = u; });
+const uniName = (id, fallback) => {
+  const u = UNI_NAMES[id]; if (!u) return fallback;
+  const lang = LANG(), ru = u[8], nat = u[9], cyr = /[А-Яа-яЁё]/;
+  if (lang === "ru") return ru || (nat && cyr.test(nat) ? nat : "") || u[1];
+  if (lang === "uz") return (u[2] === "UZ" && nat && !cyr.test(nat) ? nat : "") || ru || nat || u[1];
+  return u[1] || fallback;
+};
 const nf = (n) => Number(n).toLocaleString(LANG() === "en" ? "en-US" : "ru-RU");
 
 function webglOK() {
@@ -130,7 +141,7 @@ function init() {
     L.knowledge.add(sp);
     topicById[s] = { s, n, field, dom, pos: sp.position, sprite: sp, unis: [] };
     if (i < (mobile ? 4 : 8)) {
-      const div = document.createElement("div"); div.className = "g3-label g3-topic"; div.textContent = s;
+      const div = document.createElement("div"); div.className = "g3-label g3-topic"; div.dataset.topic = s; div.textContent = topicName(s);
       const lab = new CSS2DObject(div); lab.position.set(0, 0.9, 0); sp.add(lab);
       topicById[s].label = div;
     }
@@ -247,11 +258,11 @@ function init() {
   }
   function renderPanel() {
     const U = selected; if (!U) return;
-    const topT = U.topics.slice(0, 4).map(([s, n]) => `<li><i style="background:#${(DOM[topicById[s]?.dom] || 0xffffff).toString(16).padStart(6, "0")}"></i>${s}<b>${nf(n)}</b></li>`).join("");
+    const topT = U.topics.slice(0, 4).map(([s, n]) => `<li><i style="background:#${(DOM[topicById[s]?.dom] || 0xffffff).toString(16).padStart(6, "0")}"></i>${topicName(s)}<b>${nf(n)}</b></li>`).join("");
     const coN = arcs.filter((a) => a.a === U.id || a.b === U.id).length;
     panel.innerHTML = `<button class="g3-x" aria-label="close">×</button>
       <span class="mono small" style="color:var(--teal)">${U.id}</span>
-      <h4>${U.name}</h4><p class="small muted">${U.city}</p>
+      <h4>${uniName(U.id, U.name)}</h4><p class="small muted">${U.city}</p>
       <div class="g3-kpi"><div><b>${nf(U.w)}</b><span>${T("works", "работ")}</span></div><div><b>${coN}</b><span>${T("strong CA links", "сильных связей в ЦА")}</span></div><div><b>${U.ds}</b><span>${T("datasets", "датасетов")}</span></div></div>
       ${topT ? `<p class="small muted" style="margin-top:12px">${T("Strongest research areas", "Сильные направления")}</p><ul class="g3-topics">${topT}</ul>` : ""}`;
     panel.hidden = false;
@@ -275,8 +286,8 @@ function init() {
     renderer.domElement.style.cursor = p ? "pointer" : "grab";
     if (!p) { tip.hidden = true; return; }
     tip.innerHTML = p.kind === "uni"
-      ? `<b>${p.U.name}</b>${p.U.city} · <span class="mono">${p.U.id}</span><br>${nf(p.U.w)} ${T("works", "работ")} · ${T("click to explore", "нажмите, чтобы открыть")}`
-      : `<b>${p.t.s}</b>${p.t.field} · ${nf(p.t.n)} ${T("works", "работ")}`;
+      ? `<b>${uniName(p.U.id, p.U.name)}</b>${p.U.city} · <span class="mono">${p.U.id}</span><br>${nf(p.U.w)} ${T("works", "работ")} · ${T("click to explore", "нажмите, чтобы открыть")}`
+      : `<b>${topicName(p.t.s)}</b>${topicName(p.t.field)} · ${nf(p.t.n)} ${T("works", "работ")}`;
     tip.style.left = Math.min(p.x + 14, W() - 240) + "px"; tip.style.top = p.y + 14 + "px"; tip.hidden = false;
   });
   let rotateWanted = true;
@@ -351,6 +362,7 @@ function init() {
   /* ---------- language refresh ---------- */
   window.addEventListener("core:lang", () => {
     stage.querySelectorAll(".g3-label[data-en]").forEach((d) => { d.textContent = T(d.dataset.en, d.dataset.ru); });
+    stage.querySelectorAll(".g3-label[data-topic]").forEach((d) => { d.textContent = topicName(d.dataset.topic); });
     renderPanel();
   });
 

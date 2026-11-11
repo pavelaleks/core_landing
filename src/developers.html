@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CORE for AI developers — catalog, API, agents</title>
+<meta name="description" content="CORE turns university archives and research data from Uzbekistan, Kazakhstan, Kyrgyzstan and Tajikistan into expert-verified, rights-cleared datasets for AI training, evaluation and RAG.">
+<meta property="og:title" content="CORE — Central Asia's knowledge, licensed for AI">
+<meta property="og:description" content="Expert-verified, rights-cleared datasets from Central Asian universities — anchored in one knowledge graph.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pavelaleks.github.io/core_landing/">
+<meta property="og:image" content="https://pavelaleks.github.io/core_landing/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://pavelaleks.github.io/core_landing/assets/og.png">
+<link rel="canonical" href="https://pavelaleks.github.io/core_landing/">
+<meta name="theme-color" content="#07090c">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body data-page="developers">
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="top">
+  <div class="wrap nav-in">
+    <a href="index.html" class="logo" aria-label="CORE home">
+      <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="2.2" opacity=".35"/><circle cx="16" cy="16" r="8.5" fill="none" stroke="currentColor" stroke-width="2.2" opacity=".7"/><circle cx="16" cy="16" r="3.4" fill="var(--teal)"/></svg>
+      <span>CORE</span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="index.html#how-it-works" data-ru="Как это работает">How it works</a>
+      <a href="universities.html" data-ru="Университетам">For universities</a>
+      <a href="developers.html" aria-current="page" data-ru="Разработчикам ИИ">For AI developers</a>
+      <a href="index.html#business" data-ru="Бизнесу">For business</a>
+      <a href="index.html#pricing" data-ru="Цены">Pricing</a>
+      <a href="index.html#team" data-ru="Команда">Team</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang" role="group" aria-label="Language">
+        <button data-lang="en" aria-pressed="true">EN</button><button data-lang="ru" aria-pressed="false">RU</button><button data-lang="uz" aria-pressed="false">UZ</button>
+      </div>
+      <a href="#contact" class="btn btn-primary btn-sm" data-form="buyer" data-ru="Связаться">Contact us</a>
+      <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ============ DEV HERO ============ -->
+<section class="sec sec-first dev-hero">
+  <div class="wrap">
+    <span class="eyebrow" data-ru="Для разработчиков ИИ">For AI developers</span>
+    <h1 class="h1-page" data-ru="Данные Центральной Азии для обучения, проверки и <em>агентов</em>">Central Asian data for training, evaluation and <em>agents</em></h1>
+    <p class="sub" data-ru="Тексты, речь и наблюдения на узбекском, казахском, кыргызском, таджикском и каракалпакском из университетов региона — с документами на права, описанием и проверкой экспертов. Ниже — живой каталог, формат данных, API и подключение к агентам.">Text, speech and observations in Uzbek, Kazakh, Kyrgyz, Tajik and Karakalpak from the region's universities — with rights documents, datasheets and expert review. Below: the live catalog, data format, API and agent access.</p>
+    <div class="hero-ctas left">
+      <a href="#catalog" class="btn btn-primary" data-ru="Открыть каталог">Open the catalog</a>
+      <a href="index.html#pricing" class="btn btn-ghost" data-ru="Цены и пилот">Pricing &amp; pilot</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATALOG ============ -->
+<section class="sec sec-alt" id="catalog">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-ru="Каталог · живые данные">Catalog · live data</span>
+      <h2 data-ru="Три базы уже работают. Посмотрите на реальные записи.">Three foundation datasets are live. Explore real records.</h2>
+      <p class="sub" data-ru="Всё ниже — фрагменты наших настоящих баз, а не макет. Каждый датасет имеет ID CORE, паспорт, схему полей и лицензию для покупателя.">Everything below is pulled from our actual databases — not a mock-up. Every dataset ships with a CORE ID, datasheet, field schema and buyer license.</p>
+    </div>
+
+    <div class="tabs" role="tablist">
+      <button role="tab" class="tab on" data-tab="t-uni"><span class="mono">DS-0001</span> <span data-ru="Вузы ЦА">Universities</span></button>
+      <button role="tab" class="tab" data-tab="t-med"><span class="mono">DS-0002</span> <span data-ru="Медучреждения UZ">Medical UZ</span></button>
+      <button role="tab" class="tab" data-tab="t-pub"><span class="mono">DS-0003</span> <span data-ru="Публикации">Publications</span></button>
+      <button role="tab" class="tab" data-tab="t-pipe"><span class="mono">PIPELINE</span> <span data-ru="548 датасетов учёных">548 research datasets</span></button>
+    </div>
+
+    <!-- DS-0001 -->
+    <div class="tabpanel on" id="t-uni">
+      <div class="ds-grid">
+        <div class="card ds-meta">
+          <div class="ds-id mono">CORE-DS-0001 · <span class="ok" data-ru="готов">ready</span></div>
+          <h3 data-ru="Вузы Центральной Азии">Universities of Central Asia</h3>
+          <p data-ru="Единый справочник вузов четырёх стран с постоянными ID CORE. Общий ключ, к которому привязаны все остальные датасеты, сайт и API.">One registry of higher-ed institutions across four countries with persistent CORE IDs — the join key for every other dataset, the site and the API.</p>
+          <dl class="kv">
+            <div><dt data-ru="Записей">Records</dt><dd>428</dd></div>
+            <div><dt data-ru="Языки названий">Name languages</dt><dd>7</dd></div>
+            <div><dt data-ru="Лицензия">License</dt><dd>CC0-1.0</dd></div>
+            <div><dt data-ru="Перс. данные">PII</dt><dd data-ru="нет">none</dd></div>
+          </dl>
+          <div class="bars" id="uniBars"></div>
+          <p class="note" data-ru="Источники: Wikidata, ROR, OpenAlex + ручная сверка. Ценность — в постоянных ID и связях, а не в записях.">Sources: Wikidata, ROR, OpenAlex + manual curation. The value is in persistent IDs and links, not rows.</p>
+          <a class="ds-link" href="datasets/universities.html" data-ru="Страница датасета, образец и Croissant →">Dataset page, sample &amp; Croissant →</a>
+        </div>
+        <div class="card ds-table">
+          <div class="table-tools">
+            <input type="search" id="uniSearch" placeholder="Search: Samarkand, Almaty, Bishkek…" data-ru-ph="Поиск: Samarkand, Almaty, Bishkek…">
+            <div class="seg" id="uniCountry">
+              <button class="on" data-c="">All</button><button data-c="UZ">UZ</button><button data-c="KZ">KZ</button><button data-c="KG">KG</button><button data-c="TJ">TJ</button>
+            </div>
+          </div>
+          <div class="tscroll"><table id="uniTable"><thead><tr><th>CORE ID</th><th data-ru="Название">Name</th><th data-ru="Город">City</th><th class="r" data-ru="Работ">Works</th></tr></thead><tbody></tbody></table></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DS-0002 -->
+    <div class="tabpanel" id="t-med">
+      <div class="ds-grid">
+        <div class="card ds-meta">
+          <div class="ds-id mono">CORE-DS-0002 · <span class="ok" data-ru="готов">ready</span></div>
+          <h3 data-ru="Медучреждения Узбекистана">Medical facilities of Uzbekistan</h3>
+          <p data-ru="Больницы, клиники, стоматологии и лаборатории всех 14 регионов: координаты, профиль, проверка сайтов, языки и индекс готовности к медтуризму 0–100.">Hospitals, clinics, dental and labs across all 14 regions: coordinates, specialties, website checks, languages and a 0–100 medical-tourism readiness index.</p>
+          <dl class="kv">
+            <div><dt data-ru="Записей">Records</dt><dd>2,982</dd></div>
+            <div><dt data-ru="Полей">Fields</dt><dd>50</dd></div>
+            <div><dt data-ru="Лицензия">License</dt><dd>ODbL-1.0</dd></div>
+            <div><dt data-ru="Кандидатов в медтуризм">Med-tourism ready</dt><dd>50</dd></div>
+          </dl>
+          <div class="bars" id="medBars"></div>
+          <p class="note" data-ru="Основа — OpenStreetMap (© участники OSM, ODbL). Мы продаём не записи OSM, а проверку, обогащение и регулярные обновления.">Base layer © OpenStreetMap contributors (ODbL). We sell verification, enrichment and refresh — not the OSM records themselves.</p>
+          <a class="ds-link" href="datasets/uz_medical_facilities.html" data-ru="Страница датасета, образец и Croissant →">Dataset page, sample &amp; Croissant →</a>
+          <a href="#contact" class="link-cta" data-form="med" data-ru="Подборки клиник для медтуризма — по запросу →">Clinic shortlists for medical tourism — on request →</a>
+        </div>
+        <div class="card ds-table">
+          <div class="table-tools"><span class="small muted" data-ru="Топ-12 по индексу готовности к медтуризму">Top 12 by medical-tourism readiness</span></div>
+          <div class="tscroll"><table id="medTable"><thead><tr><th>ID</th><th data-ru="Учреждение">Facility</th><th data-ru="Регион">Region</th><th data-ru="Направления">Specialties</th><th class="r" data-ru="Индекс">Score</th></tr></thead><tbody></tbody></table></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DS-0003 -->
+    <div class="tabpanel" id="t-pub">
+      <div class="ds-grid">
+        <div class="card ds-meta">
+          <div class="ds-id mono">CORE-DS-0003 · <span class="warn" data-ru="на проверке">in review</span></div>
+          <h3 data-ru="Публикации вузов Центральной Азии">Research output of Central Asian universities</h3>
+          <p data-ru="Вся наука 299 вузов UZ, KZ, KG и TJ из OpenAlex: работы, аннотации, темы, журналы и соавторы. Каждая работа связана с ID вуза CORE — это наш радар источников данных.">All research by 299 universities in UZ, KZ, KG and TJ: works, abstracts, topics, venues and co-authorship — each linked to a CORE university ID. It is our radar for where valuable data lives.</p>
+          <dl class="kv">
+            <div><dt data-ru="Работ">Works</dt><dd>482,572</dd></div>
+            <div><dt data-ru="С аннотацией">With abstract</dt><dd>92%</dd></div>
+            <div><dt data-ru="Авторов">Authors</dt><dd>520K</dd></div>
+            <div><dt data-ru="Записей «датасет»">“Dataset” records</dt><dd>11,871</dd></div>
+          </dl>
+          <p class="note" data-ru="Метаданные — CC0. Аннотации передаются только под открытой лицензией работы. Имена авторов — персональные данные, не публикуются.">Metadata CC0. Abstracts are shared only under each work's open license. Author names are treated as personal data.</p>
+          <a class="ds-link" href="datasets/ca_publications.html" data-ru="Страница датасета, образец и Croissant →">Dataset page, sample &amp; Croissant →</a>
+        </div>
+        <div class="card ds-chart">
+          <div class="chart-head"><span class="small muted" data-ru="Работ в год, по странам">Works per year, by country</span>
+            <div class="legend"><span><i style="background:var(--teal)"></i>UZ</span><span><i style="background:var(--violet)"></i>KZ</span><span><i style="background:var(--amber)"></i>KG</span><span><i style="background:#e86a8d"></i>TJ</span></div>
+          </div>
+          <svg id="pubChart" viewBox="0 0 640 260" preserveAspectRatio="none" role="img" aria-label="Works per year chart"></svg>
+          <div class="pub-mini">
+            <div><span class="small muted" data-ru="Языки работ">Languages</span><div id="langBars" class="bars compact"></div></div>
+            <div><span class="small muted" data-ru="Главные страны-соавторы">Top co-author countries</span><div id="partnerList" class="tagrow"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PIPELINE -->
+    <div class="tabpanel" id="t-pipe">
+      <div class="pipe-head">
+        <div>
+          <h3 data-ru="548 исследовательских датасетов от учёных вузов ЦА">548 research datasets published by Central Asian scholars</h3>
+          <p class="muted" data-ru="Отобраны из 11 523 записей OpenAlex с 2023 года: Zenodo, Mendeley Data, Dataverse, GBIF и др. Это не наш товар — это доказательство, что данные в вузах есть. Наша работа: договориться с вузом, проверить, разметить и упаковать для ИИ.">Filtered from 11,523 OpenAlex records since 2023 — Zenodo, Mendeley Data, Dataverse, GBIF and more. Not our inventory: proof the data exists. Our job is to partner with the university, verify, annotate and package it for AI.</p>
+        </div>
+        <div class="pipe-stats" id="pipeStats"></div>
+      </div>
+      <div class="card">
+        <div class="table-tools">
+          <input type="search" id="pipeSearch" placeholder="Search: corpus, wheat, Aral, legal, speech…" data-ru-ph="Поиск: corpus, wheat, Aral, legal, speech…">
+          <select id="pipeField" aria-label="Field"><option value="" data-ru="Все области">All fields</option></select>
+          <div class="seg seg-wrap" id="pipeType">
+            <button class="on" data-m="" data-ru="Все типы">All types</button>
+            <button data-m="tab" data-ru="Таблицы">Tables</button>
+            <button data-m="text" data-ru="Тексты">Text</button>
+            <button data-m="img" data-ru="Изображения и ДЗЗ">Images &amp; EO</button>
+            <button data-m="av" data-ru="Аудио и видео">Audio &amp; video</button>
+            <button data-m="bio" data-ru="Биоразнообразие">Biodiversity</button>
+            <button data-m="code" data-ru="Код и модели">Code &amp; models</button>
+          </div>
+          <div class="seg" id="pipeCountry"><button class="on" data-c="">All</button><button data-c="UZ">UZ</button><button data-c="KZ">KZ</button><button data-c="KG">KG</button><button data-c="TJ">TJ</button></div>
+        </div>
+        <div class="tscroll tall"><table id="pipeTable"><thead><tr><th data-ru="Год">Year</th><th data-ru="Датасет">Dataset</th><th data-ru="Вуз">University</th><th data-ru="Область">Field</th><th data-ru="Лицензия">License</th></tr></thead><tbody></tbody></table></div>
+        <div class="table-foot small muted"><span id="pipeCount"></span> · <span data-ru="Названия — на языке публикации. Метаданные OpenAlex (CC0), авторы скрыты, тип данных определён автоматически по названию.">Titles are in the language of publication. Metadata via OpenAlex (CC0); authors hidden; data type inferred automatically from the title.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AI TEAMS / USE CASES ============ -->
+<section class="sec" id="ai-teams">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-ru="Для ИИ-команд и бизнеса">For AI teams &amp; business</span>
+      <h2 data-ru="Данные, которые можно отдать юристам на подпись">Data your legal team will actually sign off on</h2>
+      <p class="sub" data-ru="Мы продаём не «сырые» записи, а готовый результат: очистку, разметку экспертами, юридическую чистоту и обновления.">We don't sell raw rows. We sell outcomes: cleaning, expert annotation, legal clarity and continuous updates.</p>
+    </div>
+    <div class="uc-grid">
+      <article class="card uc">
+        <div class="uc-top"><span class="tag t-teal">LLM</span><span class="mono small muted">SFT · DPO · Eval</span></div>
+        <h3 data-ru="Дообучение моделей на языках ЦА">Fine-tune for Central Asian languages</h3>
+        <p data-ru="Параллельные корпуса, пары «инструкция–ответ» и экспертные Q&amp;A на узбекском, казахском, кыргызском, таджикском и каракалпакском — из академических текстов с понятными правами.">Parallel corpora, instruction pairs and expert Q&amp;A in Uzbek, Kazakh, Kyrgyz, Tajik and Karakalpak — built from rights-cleared academic text.</p>
+        <p class="who" data-ru="Для: ИИ-лабораторий, локальных LLM-команд, банков и телекома">For: AI labs, local LLM teams, banks &amp; telcos</p>
+      </article>
+      <article class="card uc">
+        <div class="uc-top"><span class="tag t-violet">EVAL</span><span class="mono small muted">CORE-CA Bench</span></div>
+        <h3 data-ru="Отчёт об оценке вашей модели">An evaluation report on your model</h3>
+        <p data-ru="Прогоняем вашу модель на бенчмарке по истории, праву, наследию, географии и реалиям региона и показываем, где и почему она ошибается, — с примерами и рекомендациями, какие данные это исправят.">We run your model on our benchmark of regional history, law, heritage, geography and realia and show where and why it fails — with examples and the data that would fix it.</p>
+        <p class="who" data-ru="Для: разработчиков моделей, ассистентов и госпроектов">For: model builders, assistant vendors, public-sector AI</p>
+      </article>
+      <article class="card uc">
+        <div class="uc-top"><span class="tag t-teal">RAG</span><span class="mono small muted">API · MCP</span></div>
+        <h3 data-ru="Достоверный контекст для RAG и агентов">Grounded context for RAG &amp; agents</h3>
+        <p data-ru="Справочники с постоянными ID, связанные между собой: вузы, наука, учреждения. Доступ по API и через MCP-сервер для агентов.">Linked reference data with persistent IDs — universities, research, institutions. Delivered via API and an MCP server for agents.</p>
+        <p class="who" data-ru="Для: EdTech, поисковых и ассистентских продуктов">For: EdTech, search &amp; assistant products</p>
+      </article>
+      <article class="card uc">
+        <div class="uc-top"><span class="tag t-amber">GOV</span><span class="mono small muted" data-ru="корпуса · Data Lake">corpora · Data Lake</span></div>
+        <h3 data-ru="Национальные корпуса и Data Lake">National corpora &amp; Data Lake</h3>
+        <p data-ru="Подготовка академических текстов и наблюдений для национальных языковых корпусов и государственных платформ данных — с правами, паспортами и разметкой.">Preparing academic texts and observations for national language corpora and public data platforms — with rights, datasheets and annotation.</p>
+        <p class="who" data-ru="Для: министерств, госпрограмм, технопарков">For: ministries, public programs, tech parks</p>
+      </article>
+      <article class="card uc">
+        <div class="uc-top"><span class="tag t-violet">INTEL</span><span class="mono small muted">DS-0001 × DS-0003</span></div>
+        <h3 data-ru="Научная аналитика и профили вузов">Research intelligence &amp; university profiles</h3>
+        <p data-ru="Профили компетенций вузов, сильные группы, международные связи и «потерянные» публикации — для рейтингов, грантов и партнёрств.">Competence profiles, strongest research groups, international links and “lost” publications — for rankings, grants and partnerships.</p>
+        <p class="who" data-ru="Для: вузов, грантовых фондов, консорциумов, агентств набора">For: universities, funders, consortia, recruitment agencies</p>
+      </article>
+      <article class="card uc">
+        <div class="uc-top"><span class="tag t-amber">STUDIO</span><span class="mono small muted" data-ru="под заказ">custom</span></div>
+        <h3 data-ru="Датасет под вашу задачу">A dataset built for your task</h3>
+        <p data-ru="Сбор, оцифровка и разметка под ТЗ силами предметных экспертов вузов: речь, тексты, изображения, табличные наблюдения. Двойная проверка и метрики согласия разметчиков.">Collection, digitization and annotation to spec by university domain experts — speech, text, images, tabular observations. Dual review with inter-annotator agreement.</p>
+        <p class="who" data-ru="Для: всех, кому нужно то, чего нет в открытом доступе">For: anyone who needs what isn't on the open web</p>
+      </article>
+    </div>
+
+    <!-- how buying works + API -->
+    <div class="how card" id="how">
+      <div class="how-steps">
+        <h3 data-ru="Как это работает для покупателя">How buying works</h3>
+        <ol class="steps">
+          <li><b data-ru="Найдите">Discover</b><span data-ru="Каталог, паспорт данных, схема полей и метрики качества — открыто.">Catalog, datasheet, field schema and quality metrics — all public.</span></li>
+          <li><b data-ru="Проверьте образец">Sample</b><span data-ru="Бесплатный образец до 1 000 записей за 24 часа после заявки.">Free sample of up to 1,000 records within 24 hours.</span></li>
+          <li><b data-ru="Лицензируйте">License</b><span data-ru="Стандартная неисключительная лицензия на срок или индивидуальный договор с DPA.">Standard non-exclusive term license, or a custom MSA with DPA.</span></li>
+          <li><b data-ru="Получите">Deliver</b><span data-ru="API, выгрузка Parquet/JSONL, приватный репозиторий Hugging Face или S3. Обновления по подписке.">API, Parquet/JSONL export, private Hugging Face repo or S3. Updates on subscription.</span></li>
+        </ol>
+      </div>
+      <div class="code">
+        <div class="code-head"><span class="dots"><i></i><i></i><i></i></span><span class="mono small muted">api v0 · live</span><button class="copy mono small" data-copy="codeBlock">copy</button></div>
+<pre id="codeBlock"><code><span class="c"># Public API v0 — works right now, no key needed</span>
+curl https://pavelaleks.github.io/core_landing/api/v0/datasets/<span class="s">uz_medical_facilities</span>/sample.json
+
+<span class="c"># →</span>
+{
+  <span class="k">"dataset"</span>: <span class="s">"CORE-DS-0002"</span>, <span class="k">"license"</span>: <span class="s">"ODbL-1.0"</span>, <span class="k">"rows"</span>: <span class="n">50</span>,
+  <span class="k">"records"</span>: [{
+    <span class="k">"uid"</span>: <span class="s">"UZM-3987A2247B"</span>, <span class="k">"facility_type"</span>: <span class="s">"hospital"</span>,
+    <span class="k">"region_code"</span>: <span class="s">"UZ-TK"</span>, <span class="k">"readiness_score"</span>: <span class="n">91</span>,
+    <span class="k">"site_languages"</span>: <span class="s">"en;ru;uz"</span>,
+    <span class="k">"source_url"</span>: <span class="s">"https://www.openstreetmap.org/way/406552830"</span>
+  }, …]
+}
+
+<span class="c"># Catalog · universities · Croissant metadata</span>
+curl …/api/v0/catalog.json
+curl …/api/v0/universities.json
+curl …/api/v0/datasets/<span class="s">universities</span>/croissant.json</code></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AGENTS / MCP ============ -->
+<section class="sec" id="agents">
+  <div class="wrap agents">
+    <div>
+      <span class="eyebrow" data-ru="Для ИИ-агентов · превью">For AI agents · preview</span>
+      <h2 data-ru="Подключите граф CORE к своему <em>агенту</em>">Plug the CORE graph into your <em>agent</em></h2>
+      <p class="sub" data-ru="MCP-сервер CORE отдаёт агенту только те данные, на которые у вас есть лицензия, — и в каждом ответе указывает ID записи, источник и лицензию. Агент цитирует, а не выдумывает.">The CORE MCP server gives your agent only the data you have licensed — and every answer carries the record ID, source and license. Your agent cites instead of inventing.</p>
+      <ul class="checks">
+        <li data-ru="Только лицензированные данные: агент не видит лишнего">Licensed data only — the agent sees nothing else</li>
+        <li data-ru="Каждый факт — с ID записи и ссылкой на источник">Every fact comes with a record ID and a source link</li>
+        <li data-ru="Поиск по графу: вузы, направления, датасеты, регионы">Graph search: universities, research areas, datasets, regions</li>
+        <li data-ru="Работает с Claude, ChatGPT, Cursor и любым клиентом с поддержкой MCP">Works with Claude, ChatGPT, Cursor and any MCP-capable client</li>
+      </ul>
+      <div class="code mcp-conf">
+        <div class="code-head"><span class="dots"><i></i><i></i><i></i></span><span class="mono small muted">mcp.json · preview</span></div>
+<pre><code>{ <span class="k">"mcpServers"</span>: { <span class="k">"core"</span>: {
+    <span class="k">"url"</span>: <span class="s">"https://mcp.core-data.example/v1"</span>,
+    <span class="k">"headers"</span>: { <span class="k">"Authorization"</span>: <span class="s">"Bearer $CORE_KEY"</span> }
+} } }</code></pre>
+      </div>
+    </div>
+    <div class="card chat" aria-label="Agent conversation example">
+      <div class="chat-top mono small"><span class="live"></span><span data-ru="агент + CORE MCP">agent + CORE MCP</span></div>
+      <div class="msg user" data-ru="Какие вузы Узбекистана собирали данные по гидробионтам Зарафшана? Есть ли что лицензировать?">Which Uzbek universities have collected data on Zarafshan hydrobionts? Is there anything to license?</div>
+      <div class="msg tool mono"><span class="tool-name">core.search_datasets</span>(topic=<span class="s">"hydrobionts"</span>, region=<span class="s">"UZ-SA"</span>)
+<span class="tool-out">→ W6962338218 · Middle Zarafshan · UNI-UZ-0138 · public-domain
+→ W7163038795 · Samarkand region · UNI-UZ-0138 · public-domain</span></div>
+      <div class="msg bot"><p data-ru="<b>Самаркандский госуниверситет</b> (UNI-UZ-0138) опубликовал два датасета коллекционных образцов: около 255 экземпляров гидробионтов Самаркандской области и обзор 26 видов моллюсков, 1 вида креветок и 8 видов пиявок Среднего Зарафшана.">
+<b>Samarkand State University</b> (UNI-UZ-0138) has published two specimen datasets: about 255 hydrobiont specimens from Samarkand region, and a survey of 26 mollusc, 1 shrimp and 8 leech species in the Middle Zarafshan.</p>
+        <p data-ru="Оба в открытом доступе. Версия с экспертной разметкой и привязкой к регионам — по запросу через CORE.">Both are public domain. An expert-annotated, region-linked version is available on request via CORE.</p>
+        <div class="cites mono"><span>W6962338218</span><span>W7163038795</span><span>UNI-UZ-0138</span></div>
+      </div>
+      <p class="small muted chat-note" data-ru="Пример ответа на реальных записях OpenAlex. MCP-сервер в разработке — ранний доступ по заявке.">Example answer built on real OpenAlex records. The MCP server is in development — early access on request.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ANNOTATION LAYERS ============ -->
+<section class="sec sec-alt" id="annotation">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-ru="Формат данных">Data format</span>
+      <h2 data-ru="Как выглядит размеченная запись: <em>пять шагов</em>">What an annotated record looks like: <em>five steps</em></h2>
+      <p class="sub" data-ru="От исходного текста до файла, который можно сразу подать модели: отметки в тексте, ссылки на справочники, проверка экспертом и права на каждую запись. Нажимайте на шаги слева.">From source text to a file you can feed a model directly: in-text annotations, links to reference IDs, expert review and rights for every record. Click the steps on the left.</p>
+    </div>
+    <div class="anno card" id="anno" data-layer="0">
+      <div class="anno-steps" role="tablist">
+        <button class="on" data-al="0"><span class="mono">L0</span><b data-ru="Сырой текст">Raw text</b><span data-ru="Как лежит в репозитории">As found in the repository</span></button>
+        <button data-al="1"><span class="mono">L1</span><b data-ru="Сущности">Entities</b><span data-ru="Таксоны, места, методы, типы данных">Taxa, places, methods, data types</span></button>
+        <button data-al="2"><span class="mono">L2</span><b data-ru="Связи">Links</b><span data-ru="Постоянные ID и справочники">Persistent IDs &amp; authorities</span></button>
+        <button data-al="3"><span class="mono">L3</span><b data-ru="Права и проверка">Rights &amp; review</b><span data-ru="Лицензия, основание, эксперт">License, basis, expert</span></button>
+        <button data-al="4"><span class="mono">L4</span><b data-ru="Для ИИ">AI-ready</b><span data-ru="JSONL с разметкой">JSONL with spans</span></button>
+      </div>
+      <div class="anno-doc">
+        <div class="anno-meta mono small">
+          <span class="lk">OpenAlex W7203955937</span><span class="lk">UNI-UZ-0138 · Samarkand State University</span><span>2026</span><span class="lk lic">CC-BY</span>
+        </div>
+        <h3 class="anno-title">Supporting data for “New records and habitat modeling of <span class="e" data-t="taxon" data-l="GBIF taxon">Limnatis paluda</span> (<span class="e" data-t="taxon" data-l="GBIF family">Praobdellidae</span>) in <span class="e" data-t="place" data-l="UZ-SU · UZ-QA ?" data-rev="1">southern Uzbekistan</span>”</h3>
+        <p class="anno-text">This dataset contains supporting data for a study of <span class="e" data-t="taxon" data-l="GBIF taxon">Limnatis paluda</span> in <span class="e" data-t="place" data-l="ISO 3166 · UZ">Uzbekistan</span>, including <span class="e" data-t="data" data-l="Darwin Core">occurrence records</span>, <span class="e" data-t="data" data-l="image">specimen and habitat photographs</span>, <span class="e" data-t="method" data-l="BOLD · COI">COI sequence</span> and <span class="e" data-t="data" data-l="FASTA">alignment data</span>, <span class="e" data-t="data" data-l="network">haplotype-network files</span>, and <span class="e" data-t="method" data-l="MaxEnt">MaxEnt habitat-suitability modeling</span> outputs. The study documents new records from <span class="e" data-t="place" data-l="UZ-SU · UZ-QA ?" data-rev="1">southern Uzbekistan</span> and evaluates current and projected habitat suitability under the <span class="e" data-t="scen" data-l="IPCC AR6">SSP3-7.0 climate scenario</span>.</p>
+        <pre class="anno-json mono" aria-label="AI-ready record"><code>{"id": "CORE:W7203955937", "institution": "UNI-UZ-0138",
+ "license": "CC-BY-4.0", "lang": "en", "region": ["UZ-SU","UZ-QA"],
+ "spans": [
+  {"start": 53, "end": 68, "label": "TAXON", "link": "gbif"},
+  {"start": 72, "end": 82, "label": "PLACE", "link": "iso3166:UZ"},
+  {"start": 94, "end": 112, "label": "DATA_TYPE", "link": "dwc:Occurrence"},
+  {"start": 210, "end": 245, "label": "METHOD", "link": "maxent"},
+  {"start": 378, "end": 403, "label": "SCENARIO", "link": "ipcc:SSP3-7.0"}
+ ],
+ "review": {"annotators": 2, "expert": "zoology", "status": "needs_place_check"},
+ "provenance": ["openalex", "zenodo"], "pii": "none"}</code></pre>
+      </div>
+      <aside class="anno-side">
+        <div class="as as1">
+          <h4 data-ru="Типы сущностей">Entity types</h4>
+          <ul class="legend-list">
+            <li><i class="t-taxon"></i><span data-ru="Таксон">Taxon</span><b>3</b></li>
+            <li><i class="t-place"></i><span data-ru="Место">Place</span><b>3</b></li>
+            <li><i class="t-data"></i><span data-ru="Тип данных">Data type</span><b>4</b></li>
+            <li><i class="t-method"></i><span data-ru="Метод">Method</span><b>2</b></li>
+            <li><i class="t-scen"></i><span data-ru="Климатический сценарий">Climate scenario</span><b>1</b></li>
+          </ul>
+        </div>
+        <div class="as as2">
+          <h4 data-ru="Связи записи">Record links</h4>
+          <ul class="link-list mono small">
+            <li><span>institution</span>UNI-UZ-0138</li>
+            <li><span>work</span>OpenAlex W7203955937</li>
+            <li><span>topic</span>Invertebrate Taxonomy &amp; Ecology</li>
+            <li><span>region</span>UZ-SU · UZ-QA <em data-ru="(кандидаты)">(candidates)</em></li>
+            <li><span>graph</span><span data-ru="→ 2 соседних датасета СамГУ по гидробионтам">→ 2 sibling SamDU hydrobiont datasets</span></li>
+          </ul>
+        </div>
+        <div class="as as3">
+          <h4 data-ru="Права и проверка">Rights &amp; review</h4>
+          <ul class="checks small">
+            <li data-ru="Лицензия CC-BY: коммерческое использование с атрибуцией">CC-BY: commercial use with attribution</li>
+            <li data-ru="Основание: открытая лицензия, Zenodo">Basis: open license, Zenodo</li>
+            <li data-ru="Персональных данных нет; имена авторов в каталог не выводятся">No PII; author names kept out of the catalog</li>
+            <li class="flag" data-ru="«Южный Узбекистан» → какой регион? Отправлено эксперту-зоологу">“Southern Uzbekistan” → which region? Sent to a zoology expert</li>
+          </ul>
+        </div>
+        <div class="as as4">
+          <h4 data-ru="Что получает покупатель">What the buyer gets</h4>
+          <p class="small muted" data-ru="Текст + разметка спанами + связи с ID + лицензия на каждую запись. Можно сразу учить NER, строить RAG с цитированием или собирать бенчмарк.">Text + span annotations + ID links + a per-record license. Train NER, build citable RAG or assemble a benchmark — straight away.</p>
+        </div>
+      </aside>
+    </div>
+    <p class="small muted anno-note" data-ru="Реальная запись СамГУ из OpenAlex (CC-BY). Разметка выполнена CORE для этой страницы как пример формата.">A real Samarkand State University record from OpenAlex (CC-BY). Annotation made by CORE for this page as a format example.</p>
+  </div>
+</section>
+
+<!-- ============ BENCHMARK ============ -->
+<section class="sec sec-alt" id="benchmark">
+  <div class="wrap bench">
+    <div>
+      <span class="eyebrow" data-ru="Ключевой актив">Flagship asset</span>
+      <h2 data-ru="CORE-CA Bench: насколько ИИ знает Центральную Азию?">CORE-CA Bench: how well does AI know Central Asia?</h2>
+      <p class="sub" data-ru="300–500 вопросов с эталонными ответами экспертов вузов: история, право, наследие, география, экономика и реалии региона на узбекском, казахском, русском и английском. Мы не дублируем лингвистические тесты — мы проверяем знание контекста.">300–500 questions with reference answers from university experts — regional history, law, heritage, geography, economy and realia, in Uzbek, Kazakh, Russian and English. Not another grammar test: a test of contextual knowledge.</p>
+      <ul class="checks">
+        <li data-ru="Прогон по ведущим мировым и локальным моделям">Runs across leading global and local models</li>
+        <li data-ru="Открытая публикация методики и препринт">Open methodology and a preprint</li>
+        <li data-ru="Закрытый тестовый набор — защита от утечки в обучение">Held-out private test split — no training-set leakage</li>
+        <li data-ru="Ранний доступ к результатам для участников листа ожидания">Early access to results for waitlist members</li>
+      </ul>
+      <a href="#contact" class="btn btn-primary" data-form="bench" data-ru="В лист ожидания">Join the waitlist</a>
+    </div>
+    <div class="card bench-card">
+      <div class="bench-top"><span class="mono small muted">CORE-CA-BENCH · SAMPLE ITEM · HERITAGE</span><span class="tag t-violet">uz · ru · en</span></div>
+      <p class="q" data-ru="«Какое учебное заведение XV века на площади Регистан в Самарканде связано с именем Улугбека, и чем оно было известно?»">“Which 15th-century institution on Samarkand's Registan square is associated with Ulugh Beg, and what was it known for?”</p>
+      <div class="ans">
+        <div class="ans-row"><span class="tag t-teal" data-ru="Эталон эксперта">Expert reference</span><span data-ru="Медресе Улугбека (1417–1420) — один из ведущих научных центров эпохи, где преподавали астрономию и математику.">Ulugh Beg Madrasah (1417–1420) — a leading scholarly centre of its era where astronomy and mathematics were taught.</span></div>
+        <div class="ans-row"><span class="tag t-amber" data-ru="Критерии">Rubric</span><span data-ru="Название · датировка · роль в науке · без смешения с обсерваторией Улугбека">Name · dating · scholarly role · not confused with the Ulugh Beg Observatory</span></div>
+      </div>
+      <p class="small muted" data-ru="Пример формата. Реальные вопросы тестового набора не публикуются.">Format example. Real test-split questions are never published.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="sec sec-alt" id="contact">
+  <div class="wrap contact">
+    <div>
+      <span class="eyebrow" data-ru="Контакт">Get in touch</span>
+      <h2 data-ru="Расскажите, что вам нужно. Ответим за 24 часа.">Tell us what you need. We reply within 24 hours.</h2>
+      <p class="sub" data-ru="Выберите, кто вы, — заявка попадёт к нужному человеку в команде.">Pick who you are — your request goes straight to the right person on the team.</p>
+      <ul class="checks">
+        <li data-ru="Образец данных — в течение 24 часов">Data sample within 24 hours</li>
+        <li data-ru="Встреча с вузом — с проектом меморандума">University meeting comes with a draft MoU</li>
+        <li data-ru="Инвесторам — презентация и комната данных">Investors get the deck and data room</li>
+      </ul>
+      <a class="btn btn-ghost tg-link" href="#" target="_blank" rel="noopener" hidden><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M21.5 4.5 2.9 11.6c-.9.4-.9 1.1 0 1.4l4.7 1.5 1.8 5.6c.2.6.5.7 1 .3l2.6-2.3 4.9 3.6c.6.4 1.1.2 1.3-.6l3.1-14.6c.3-1.2-.4-1.6-1.4-1.2z" fill="currentColor"/></svg><span>Telegram</span></a>
+    </div>
+    <form class="card form" id="leadForm" novalidate>
+      <div class="seg form-type" id="formType">
+        <button type="button" class="on" data-t="buyer" data-ru="Нужны данные">I need data</button>
+        <button type="button" data-t="university" data-ru="Вуз">University</button>
+        <button type="button" data-t="researcher" data-ru="Исследователь">Researcher</button>
+        <button type="button" data-t="investor" data-ru="Инвестор">Investor</button>
+      </div>
+      <input type="hidden" name="type" value="buyer">
+      <div class="frow">
+        <label><span data-ru="Имя">Name</span><input name="name" required autocomplete="name"></label>
+        <label><span data-ru="Рабочий email">Work email</span><input name="email" type="email" required autocomplete="email"></label>
+      </div>
+      <div class="frow">
+        <label><span class="org-label" data-ru="Компания">Company</span><input name="org" required autocomplete="organization"></label>
+        <label><span class="role-label" data-ru="Должность">Role</span><input name="role" autocomplete="organization-title"></label>
+      </div>
+      <label class="f-buyer"><span data-ru="Задача">Use case</span>
+        <select name="usecase">
+          <option data-ru="Дообучение LLM на языках ЦА">LLM fine-tuning for CA languages</option>
+          <option data-ru="Оценка / бенчмарк">Evaluation / benchmark</option>
+          <option data-ru="RAG / агенты / API">RAG / agents / API</option>
+          <option data-ru="Медтуризм / рынок здравоохранения">Medical tourism / healthcare market</option>
+          <option data-ru="Научная аналитика">Research intelligence</option>
+          <option data-ru="Датасет под заказ">Custom dataset</option>
+        </select>
+      </label>
+      <label class="f-researcher" hidden><span data-ru="Ссылка на датасет или публикацию">Link to dataset or paper</span><input name="link" type="url" placeholder="https://doi.org/…"></label>
+      <label><span class="msg-label" data-ru="Что вам нужно?">What do you need?</span><textarea name="message" rows="4"></textarea></label>
+      <label class="consent"><input type="checkbox" name="consent" required> <span data-ru="Согласен(на) на обработку данных для ответа на заявку — <a href='privacy.html'>политика</a>">I agree to the processing of my data to respond to this request — <a href="privacy.html">privacy</a></span></label>
+      <button class="btn btn-primary btn-block" type="submit" data-ru="Отправить">Send request</button>
+      <p class="form-status small" id="formStatus" role="status"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div>
+      <a href="index.html" class="logo"><svg viewBox="0 0 32 32" width="22" height="22" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="2.2" opacity=".35"/><circle cx="16" cy="16" r="8.5" fill="none" stroke="currentColor" stroke-width="2.2" opacity=".7"/><circle cx="16" cy="16" r="3.4" fill="var(--teal)"/></svg><span>CORE</span></a>
+      <p class="small muted" data-ru="Научные данные университетов Центральной Азии — для искусственного интеллекта.">Research data from Central Asian universities — for artificial intelligence.</p>
+    </div>
+    <div class="foot-links">
+      <a href="index.html#how-it-works" data-ru="Как это работает">How it works</a><a href="universities.html" data-ru="Университетам">Universities</a><a href="developers.html" aria-current="page" data-ru="Разработчикам ИИ">AI developers</a><a href="index.html#pricing" data-ru="Цены">Pricing</a><a href="privacy.html" data-ru="Конфиденциальность">Privacy</a><a class="tg-link foot-tg" href="index.html#" target="_blank" rel="noopener" hidden><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M21.5 4.5 2.9 11.6c-.9.4-.9 1.1 0 1.4l4.7 1.5 1.8 5.6c.2.6.5.7 1 .3l2.6-2.3 4.9 3.6c.6.4 1.1.2 1.3-.6l3.1-14.6c.3-1.2-.4-1.6-1.4-1.2z" fill="currentColor"/></svg><span>Telegram</span></a>
+    </div>
+    <p class="small muted attr" data-ru="Данные: © участники OpenStreetMap (ODbL), OpenAlex, ROR, Wikidata (CC0). Границы: Natural Earth.">Data: © OpenStreetMap contributors (ODbL), OpenAlex, ROR, Wikidata (CC0). Boundaries: Natural Earth.</p>
+  </div>
+</footer>
+
+<script src="assets/config.js"></script>
+<script src="assets/i18n-uz.js"></script>
+<script src="assets/i18n-topics.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

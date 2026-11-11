@@ -9,7 +9,7 @@ for line in open(f"{D}/universities/processed/universities.jsonl"):
     loc=u.get("location") or {}
     if loc.get("lat") is None: continue
     r=u.get("research") or {}
-    unis.append([u["id"],u.get("name_en") or u["name"],u["country"],round(loc["lat"],3),round(loc["lon"],3),u.get("city") or "",r.get("works_count") or 0,u.get("founded") or 0])
+    unis.append([u["id"],u.get("name_en") or u["name"],u["country"],round(loc["lat"],3),round(loc["lon"],3),u.get("city") or "",r.get("works_count") or 0,u.get("founded") or 0,u.get("name_ru") or "",u.get("name_national") or ""])
 out["unis"]=unis
 uni_total=collections.Counter()
 for line in open(f"{D}/universities/processed/universities.jsonl"):
@@ -34,7 +34,7 @@ with open(f"{D}/uz_medical_facilities/processed/uz_medical_facilities.csv",encod
         if r["personal_name_flag"]=="True": continue
         rows.append(r)
 rows.sort(key=lambda r:-int(r["readiness_score"] or 0))
-out["medTop"]=[{"id":r["uid"],"name":r["name_en"] or r["name_latin"] or r["name"],"type":r["facility_type"],"region":r["region_code"],"spec":r["specialties"].split(";")[:4],"langs":r["site_languages"],"score":int(r["readiness_score"] or 0),"intl":bool(r["intl_signals"])} for r in rows[:12]]
+out["medTop"]=[{"id":r["uid"],"name":r["name_en"] or r["name_latin"] or r["name"],"name_ru":r["name_ru"] or r["name"],"type":r["facility_type"],"region":r["region_code"],"spec":r["specialties"].split(";")[:4],"langs":r["site_languages"],"score":int(r["readiness_score"] or 0),"intl":bool(r["intl_signals"])} for r in rows[:12]]
 # publications
 yrs=[]
 for r in csv.reader(open(f"{D}/ca_publications/processed/summary/works_by_year.csv",encoding="utf-8-sig")):

@@ -34,10 +34,16 @@ RD = json.load(open(os.path.join(ROOT, "data-src", "research_datasets.json"), en
 
 META = {
     "index.html": {
-        "title": {"en": "CORE — Licensed Central Asian data for AI", "ru": "CORE — лицензированные данные Центральной Азии для ИИ", "uz": "CORE — SI uchun litsenziyalangan Markaziy Osiyo maʼlumotlari"},
-        "desc": {"en": "CORE turns university archives and research data from Uzbekistan, Kazakhstan, Kyrgyzstan and Tajikistan into expert-verified, rights-cleared datasets for AI training, evaluation and RAG.",
-                 "ru": "CORE превращает фонды и научные данные университетов Узбекистана, Казахстана, Кыргызстана и Таджикистана в проверенные экспертами датасеты с чистыми правами — для обучения, оценки и RAG.",
-                 "uz": "CORE Oʻzbekiston, Qozogʻiston, Qirgʻiziston va Tojikiston universitetlari fondlari va ilmiy maʼlumotlarini SI uchun ekspertlar tekshirgan, huquqlari toza datasetlarga aylantiradi."},
+        "title": {"en": "CORE — research data from Central Asian universities, for AI", "ru": "CORE — научные данные вузов Центральной Азии для искусственного интеллекта", "uz": "CORE — Markaziy Osiyo universitetlarining ilmiy maʼlumotlari sunʼiy intellekt uchun"},
+        "desc": {"en": "We help universities in Central Asia earn from their research data, and help AI developers get it legally: cleaned, checked and with clear rights. Free for universities.",
+                 "ru": "Помогаем университетам Центральной Азии зарабатывать на научных данных, а разработчикам ИИ — получать их законно: очищенными, проверенными и с понятными правами. Для вузов бесплатно.",
+                 "uz": "Markaziy Osiyo universitetlariga ilmiy maʼlumotlardan daromad olishga, SI ishlab chiquvchilariga esa ularni qonuniy olishga yordam beramiz: tozalangan, tekshirilgan va huquqlari aniq. Universitetlar uchun bepul."},
+    },
+    "developers.html": {
+        "title": {"en": "CORE for AI developers — catalog, data format, API, agents", "ru": "CORE для разработчиков ИИ — каталог, формат данных, API, агенты", "uz": "SI ishlab chiquvchilari uchun CORE — katalog, maʼlumotlar formati, API, agentlar"},
+        "desc": {"en": "Text, speech and observations in Central Asian languages from the region's universities, with rights paperwork: live catalog, samples, static API, Croissant metadata and agent access.",
+                 "ru": "Тексты, речь и наблюдения на языках Центральной Азии из университетов региона с документами на права: каталог, образцы, API, метаданные Croissant и подключение к агентам.",
+                 "uz": "Mintaqa universitetlaridan Markaziy Osiyo tillaridagi matnlar, nutq va kuzatuvlar, huquqiy hujjatlari bilan: katalog, namunalar, API, Croissant metamaʼlumotlari va agentlarga ulanish."},
     },
     "universities.html": {
         "title": {"en": "CORE for universities — put your data to work", "ru": "CORE для университетов — данные работают на вуз", "uz": "Universitetlar uchun CORE — maʼlumotlaringiz universitet uchun ishlaydi"},
@@ -223,7 +229,7 @@ def dataset_page(ds, nav, footer):
 <main>
 <section class="sec sec-first ds-page">
   <div class="wrap">
-    <p class="crumbs mono small"><a href="../index.html#catalog" data-ru="Каталог">Catalog</a> / {esc(ds["id"])}</p>
+    <p class="crumbs mono small"><a href="../developers.html#catalog" data-ru="Каталог">Catalog</a> / {esc(ds["id"])}</p>
     <h1 class="h1-page" data-ru="{esc(ds["title_ru"])}">{esc(ds["title_en"])}</h1>
     <div class="tagrow ds-tags">
       <span class="tag t-teal"><span data-ru="{esc(status_ru)}">{esc(ds["status"])}</span></span>
@@ -479,9 +485,11 @@ def build():
     footer = re.search(r'<footer class="foot">.*?</footer>', src_index, re.S).group(0)
     def up(h):
         h = re.sub(r'href="#', 'href="../index.html#', h)
-        h = h.replace('href="universities.html', 'href="../universities.html').replace('href="privacy.html', 'href="../privacy.html')
+        h = h.replace('href="universities.html', 'href="../universities.html').replace('href="privacy.html', 'href="../privacy.html').replace('href="developers.html', 'href="../developers.html')
         return h
-    pages = {"index.html": src_index, "universities.html": open(os.path.join(ROOT, "src", "universities.html"), encoding="utf-8").read()}
+    pages = {"index.html": src_index,
+             "universities.html": open(os.path.join(ROOT, "src", "universities.html"), encoding="utf-8").read(),
+             "developers.html": open(os.path.join(ROOT, "src", "developers.html"), encoding="utf-8").read()}
     for d in CAT:
         pages["datasets/" + d["slug"] + ".html"] = dataset_page(d, up(nav), up(footer))
     LOCAL_PAGES = set(pages.keys()) | {"."}
