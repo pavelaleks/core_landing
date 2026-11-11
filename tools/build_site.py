@@ -41,9 +41,9 @@ META = {
     },
     "developers.html": {
         "title": {"en": "CORE for AI developers — catalog, data format, API, agents", "ru": "CORE для разработчиков ИИ — каталог, формат данных, API, агенты", "uz": "SI ishlab chiquvchilari uchun CORE — katalog, maʼlumotlar formati, API, agentlar"},
-        "desc": {"en": "Text, speech and observations in Central Asian languages from the region's universities, with rights paperwork: live catalog, samples, static API, Croissant metadata and agent access.",
-                 "ru": "Тексты, речь и наблюдения на языках Центральной Азии из университетов региона с документами на права: каталог, образцы, API, метаданные Croissant и подключение к агентам.",
-                 "uz": "Mintaqa universitetlaridan Markaziy Osiyo tillaridagi matnlar, nutq va kuzatuvlar, huquqiy hujjatlari bilan: katalog, namunalar, API, Croissant metamaʼlumotlari va agentlarga ulanish."},
+        "desc": {"en": "Regional knowledge, research data and text in Central Asian languages from the region's universities, with rights paperwork: live catalog, samples, static API, Croissant metadata and agent access.",
+                 "ru": "Знания о регионе, научные данные и тексты на языках Центральной Азии из университетов региона с документами на права: каталог, образцы, API, метаданные Croissant и подключение к агентам.",
+                 "uz": "Mintaqa universitetlaridan mintaqa haqidagi bilimlar, ilmiy maʼlumotlar va Markaziy Osiyo tillaridagi matnlar, huquqiy hujjatlari bilan: katalog, namunalar, API, Croissant metamaʼlumotlari va agentlarga ulanish."},
     },
     "universities.html": {
         "title": {"en": "CORE for universities — put your data to work", "ru": "CORE для университетов — данные работают на вуз", "uz": "Universitetlar uchun CORE — maʼlumotlaringiz universitet uchun ishlaydi"},
