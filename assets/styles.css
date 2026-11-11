@@ -378,7 +378,7 @@ select{padding-right:28px}
 .g3-label{font:500 10.5px var(--mono);letter-spacing:.04em;white-space:nowrap;pointer-events:none;text-shadow:0 1px 6px #000}
 .g3-topic{color:#dfe7ee;background:rgba(7,9,12,.55);border:1px solid rgba(255,255,255,.08);padding:2px 7px;border-radius:6px;transform:translateY(-14px)}
 .g3-country{color:#f5c46b;font-size:11px}
-.g3-land{color:rgba(255,255,255,.32);font-size:10px;letter-spacing:.24em}
+.g3-land{color:rgba(255,255,255,.32);font-size:10px;letter-spacing:.24em;text-transform:uppercase}
 .g3-stage canvas.g3-fallback{display:none}
 .no-webgl .g3-stage canvas.g3-fallback{display:block;height:auto!important;position:absolute;inset:auto 0 0;margin:auto;width:100%;height:auto}
 .no-webgl .g3-steps,.no-webgl .g3-ctrl [data-g3layer],.no-webgl #g3Zoom{display:none}

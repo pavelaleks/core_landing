@@ -5,9 +5,10 @@ import { CSS2DRenderer, CSS2DObject } from "three/addons/renderers/CSS2DRenderer
 
 const GD = window.CORE_GRAPH, D = window.CORE_DATA || {}, GEO = window.CORE_GEO || {};
 const stage = document.getElementById("graph3d");
-const ru = () => document.documentElement.lang === "ru";
-const T = (en, r) => (ru() ? r : en);
-const nf = (n) => Number(n).toLocaleString(ru() ? "ru-RU" : "en-US");
+const LANG = () => document.documentElement.lang;
+const UZ = window.CORE_UZ || {};
+const T = (en, r) => (LANG() === "en" ? en : LANG() === "uz" ? (UZ[r] != null ? UZ[r] : r) : r);
+const nf = (n) => Number(n).toLocaleString(LANG() === "en" ? "en-US" : "ru-RU");
 
 function webglOK() {
   try { const c = document.createElement("canvas"); return !!(window.WebGLRenderingContext && (c.getContext("webgl2") || c.getContext("webgl"))); } catch (e) { return false; }
@@ -201,7 +202,7 @@ function init() {
     sp.position.copy(pos); sp.scale.setScalar(2.5 + 5 * Math.sqrt(n / maxW));
     L.world.add(sp);
     const div = document.createElement("div"); div.className = "g3-label g3-country"; div.dataset.en = meta[2]; div.dataset.ru = meta[3];
-    div.textContent = ru() ? meta[3] : meta[2];
+    div.textContent = T(meta[2], meta[3]);
     const lab = new CSS2DObject(div); lab.position.set(0, 0.8, 0); sp.add(lab);
     worldNode[cc] = { pos, div };
   });
@@ -217,8 +218,8 @@ function init() {
 
   /* ---------- country labels on the land ---------- */
   [["KZ", 67.5, 48.3, "Kazakhstan", "Казахстан"], ["UZ", 62.6, 42.2, "Uzbekistan", "Узбекистан"], ["TM", 58.4, 39.2, "Turkmenistan", "Туркменистан"], ["KG", 75.2, 41.6, "Kyrgyzstan", "Кыргызстан"], ["TJ", 71.6, 38.6, "Tajikistan", "Таджикистан"]].forEach(([c, lon, lat, en, r]) => {
-    const div = document.createElement("div"); div.className = "g3-label g3-land"; div.dataset.en = en.toUpperCase(); div.dataset.ru = r.toUpperCase();
-    div.textContent = ru() ? div.dataset.ru : div.dataset.en;
+    const div = document.createElement("div"); div.className = "g3-label g3-land"; div.dataset.en = en; div.dataset.ru = r;
+    div.textContent = T(en, r);
     const o = new CSS2DObject(div); o.position.copy(P(lon, lat, 0.5)); L.land.add(o);
   });
 
@@ -349,7 +350,7 @@ function init() {
 
   /* ---------- language refresh ---------- */
   window.addEventListener("core:lang", () => {
-    stage.querySelectorAll(".g3-label[data-en]").forEach((d) => { d.textContent = ru() ? d.dataset.ru : d.dataset.en; });
+    stage.querySelectorAll(".g3-label[data-en]").forEach((d) => { d.textContent = T(d.dataset.en, d.dataset.ru); });
     renderPanel();
   });
 

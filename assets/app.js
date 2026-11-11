@@ -14,18 +14,21 @@
   };
   var lang = (function () {
     var q = new URLSearchParams(location.search).get("lang");
-    if (q === "ru" || q === "en") return q;
+    if (q === "ru" || q === "en" || q === "uz") return q;
     var s = store.get("core-lang");
-    if (s === "ru" || s === "en") return s;
+    if (s === "ru" || s === "en" || s === "uz") return s;
     var n = (navigator.language || "en").toLowerCase();
-    return /^(ru|uz|kk|ky|tg|be|uk)/.test(n) ? "ru" : "en";
+    if (/^uz/.test(n)) return "uz";
+    return /^(ru|kk|ky|tg|be|uk)/.test(n) ? "ru" : "en";
   })();
-  var T = function (en, ru) { return lang === "ru" ? ru : en; };
-  var nf = function (n) { return Number(n).toLocaleString(lang === "ru" ? "ru-RU" : "en-US"); };
+  var UZ = window.CORE_UZ || {};
+  var T = function (en, ru) { return lang === "en" ? en : lang === "uz" ? (UZ[ru] != null ? UZ[ru] : ru) : ru; };
+  var nf = function (n) { return Number(n).toLocaleString(lang === "en" ? "en-US" : "ru-RU"); };
   var listeners = [];
   var TITLES = {
     en: "CORE — Licensed Central Asian data for AI",
-    ru: "CORE — лицензированные данные Центральной Азии для ИИ"
+    ru: "CORE — лицензированные данные Центральной Азии для ИИ",
+    uz: "CORE — SI uchun litsenziyalangan Markaziy Osiyo maʼlumotlari"
   };
 
   function applyLang() {
@@ -33,11 +36,11 @@
     document.title = TITLES[lang];
     $$("[data-ru]").forEach(function (el) {
       if (el.dataset.en === undefined) el.dataset.en = el.innerHTML;
-      el.innerHTML = lang === "ru" ? el.dataset.ru : el.dataset.en;
+      el.innerHTML = lang === "en" ? el.dataset.en : T(el.dataset.en, el.dataset.ru);
     });
     $$("[data-ru-ph]").forEach(function (el) {
       if (el.dataset.enPh === undefined) el.dataset.enPh = el.placeholder;
-      el.placeholder = lang === "ru" ? el.dataset.ruPh : el.dataset.enPh;
+      el.placeholder = lang === "en" ? el.dataset.enPh : T(el.dataset.enPh, el.dataset.ruPh);
     });
     $$(".lang button").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.lang === lang)); });
     $$(".seg button[data-c='']").forEach(function (b) { b.textContent = T("All", "Все"); });
@@ -83,7 +86,8 @@
     "Chemical Engineering": "Хим. технологии", "Veterinary": "Ветеринария", "Dentistry": "Стоматология"
   };
   var LANG_NAME = { en: ["English", "Английский"], uz: ["Uzbek", "Узбекский"], ru: ["Russian", "Русский"], kk: ["Kazakh", "Казахский"], tr: ["Turkish", "Турецкий"], ky: ["Kyrgyz", "Кыргызский"], tg: ["Tajik", "Таджикский"], "?": ["Unknown", "Не указан"] };
-  var pick = function (pair) { return pair ? (lang === "ru" ? pair[1] : pair[0]) : ""; };
+  var fieldName = function (f) { return lang === "en" || !FIELD_RU[f] ? f : T(f, FIELD_RU[f]); };
+  var pick = function (pair) { return pair ? T(pair[0], pair[1]) : ""; };
   var esc = function (s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); };
 
   /* ---------------- nav ---------------- */
@@ -149,7 +153,7 @@
     ctx.font = "500 " + Math.max(9, cw / 75) + "px 'Geist Mono', monospace";
     ctx.fillStyle = "rgba(255,255,255,0.28)";
     [["KAZAKHSTAN", 67.5, 48.5], ["UZBEKISTAN", 61.4, 42.6], ["TURKMENISTAN", 56.2, 39.6], ["KYRGYZSTAN", 74.6, 42.25], ["TAJIKISTAN", 71.4, 38.1]].forEach(function (l) {
-      var q = P(l[1], l[2]); var name = lang === "ru" ? pick(COUNTRY[l[0].slice(0, 2) === "KA" ? "KZ" : l[0].slice(0, 2) === "UZ" ? "UZ" : l[0].slice(0, 2) === "TU" ? "TM" : l[0].slice(0, 2) === "KY" ? "KG" : "TJ"]).toUpperCase() : l[0];
+      var q = P(l[1], l[2]); var name = lang !== "en" ? pick(COUNTRY[l[0].slice(0, 2) === "KA" ? "KZ" : l[0].slice(0, 2) === "UZ" ? "UZ" : l[0].slice(0, 2) === "TU" ? "TM" : l[0].slice(0, 2) === "KY" ? "KG" : "TJ"]).toUpperCase() : l[0];
       ctx.textAlign = "center"; ctx.fillText(name, q[0], q[1]);
     });
     // data
@@ -308,7 +312,7 @@
   /* ---------------- DS-0002 medical ---------------- */
   function renderMed() {
     $("#medTable tbody").innerHTML = (D.medTop || []).map(function (m) {
-      var spec = m.spec.map(function (s) { return lang === "ru" ? s : (SPEC[s] || s); }).join(", ");
+      var spec = m.spec.map(function (s) { return lang === "en" ? (SPEC[s] || s) : T(s, s); }).join(", ");
       return "<tr><td><span class='id'>" + esc(m.id) + "</span></td><td>" + esc(m.name) + (m.intl ? " <span class='tag t-teal'>intl</span>" : "") + "</td><td class='muted'>" + esc(pick(REGION[m.region])) + "</td><td class='muted'>" + esc(spec) + "</td><td class='r'><span class='score'>" + m.score + "</span></td></tr>";
     }).join("");
     var mt = D.medTypes || {}, other = 0, rows = [];
@@ -358,7 +362,7 @@
     var keep = fieldSel.value;
     var opts = Object.keys(counts).filter(Boolean).sort(function (a, b) { return counts[b] - counts[a]; });
     fieldSel.innerHTML = "<option value=''>" + T("All fields", "Все области") + "</option>" + opts.map(function (f) {
-      return "<option value='" + esc(f) + "'>" + esc(lang === "ru" ? (FIELD_RU[f] || f) : f) + " (" + counts[f] + ")</option>";
+      return "<option value='" + esc(f) + "'>" + esc(fieldName(f)) + " (" + counts[f] + ")</option>";
     }).join("");
     fieldSel.value = keep;
   }
@@ -372,7 +376,7 @@
     }).sort(function (a, b) { return (b.y || 0) - (a.y || 0); });
     $("#pipeTable tbody").innerHTML = rows.slice(0, 250).map(function (d) {
       var link = d.doi ? "<a href='" + esc(d.doi) + "' target='_blank' rel='noopener'>" + esc(d.t) + "</a>" : esc(d.t);
-      return "<tr><td class='muted'>" + esc(d.y) + "</td><td>" + link + (d.ca ? " <span class='tag t-teal'>CA</span>" : "") + "</td><td class='muted'>" + esc(d.u) + "</td><td class='muted'>" + esc(lang === "ru" ? (FIELD_RU[d.f] || d.f) : d.f) + "</td><td><span class='tag'>" + esc(d.lic || "—") + "</span></td></tr>";
+      return "<tr><td class='muted'>" + esc(d.y) + "</td><td>" + link + (d.ca ? " <span class='tag t-teal'>CA</span>" : "") + "</td><td class='muted'>" + esc(d.u) + "</td><td class='muted'>" + esc(fieldName(d.f)) + "</td><td><span class='tag'>" + esc(d.lic || "—") + "</span></td></tr>";
     }).join("") || "<tr><td colspan='5' class='muted'>" + T("No matches", "Ничего не найдено") + "</td></tr>";
     $("#pipeCount").textContent = T("Showing ", "Показано ") + nf(Math.min(250, rows.length)) + T(" of ", " из ") + nf(rows.length);
     var unis = {}; all.forEach(function (d) { if (d.u) unis[d.u] = 1; });

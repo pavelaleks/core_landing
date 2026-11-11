@@ -12,7 +12,7 @@
 <body>
 <main class="wrap narrow doc">
   <a class="back" href="index.html">← CORE</a>
-  <div class="lang" role="group" aria-label="Language" style="float:right"><button data-l="en" aria-pressed="true">EN</button><button data-l="ru" aria-pressed="false">RU</button></div>
+  <div class="lang" role="group" aria-label="Language" style="float:right"><button data-l="en" aria-pressed="true">EN</button><button data-l="ru" aria-pressed="false">RU</button><button data-l="uz" aria-pressed="false">UZ</button></div>
 
   <section data-lang="en">
     <h1>Privacy notice</h1>
@@ -47,11 +47,29 @@
     <h2>Данные в каталоге</h2>
     <p>Датасеты каталога CORE обезличиваются до публикации. Повторная идентификация людей запрещена условиями лицензии.</p>
   </section>
+
+  <section data-lang="uz" hidden>
+    <h1>Maxfiylik siyosati</h1>
+    <p class="muted">Loyiha · 2026-yil 11-noyabrda yangilangan</p>
+    <h2>Biz kimmiz</h2>
+    <p>CORE — asoschilar jamoasining loyihasi (Launch Lab 21, Samarqand va Toshkent). Yuridik shaxs roʻyxatdan oʻtgunga qadar ushbu saytdagi arizalar boʻyicha maʼlumotlar operatori loyiha jamoasi hisoblanadi.</p>
+    <h2>Nimalarni yigʻamiz</h2>
+    <ul><li>Ariza shaklidagi maʼlumotlar: ism, ish emaili, tashkilot, lavozim, xabar va havolalar.</li><li>Brauzerning asosiy texnik maʼlumotlari (kuzatuv cookie-fayllari va reklama piksellarisiz).</li></ul>
+    <h2>Nima uchun</h2>
+    <p>Faqat arizaga javob berish, taklif yoki hamkorlikni tayyorlash va yozishmalar tarixini saqlash uchun. Biz kontaktlarni sotmaymiz va ularni hech qachon datasetlarga kiritmaymiz.</p>
+    <h2>Asos va saqlash</h2>
+    <p>Oʻzbekiston Respublikasining «Shaxsga doir maʼlumotlar toʻgʻrisida»gi Qonuniga va, qoʻllanilganda, GDPR ga muvofiq shaklda bergan roziligingiz. Arizalarni oxirgi aloqadan keyin koʻpi bilan 3 yil saqlaymiz, soʻng oʻchiramiz.</p>
+    <h2>Huquqlaringiz</h2>
+    <p>Istalgan vaqtda istalgan xatimizga javob berib, maʼlumotlaringizga kirish, ularni tuzatish yoki oʻchirishni soʻrashingiz va roziligingizni qaytarib olishingiz mumkin.</p>
+    <h2>Katalogdagi maʼlumotlar</h2>
+    <p>CORE katalogidagi datasetlar nashrdan oldin anonimlashtiriladi. Odamlarni qayta identifikatsiya qilish litsenziya shartlari bilan taqiqlangan.</p>
+  </section>
 </main>
 <script>
 (function(){
   var get=function(){try{return localStorage.getItem("core-lang")}catch(e){return null}};
-  var l=get()||((navigator.language||"en").toLowerCase().indexOf("ru")===0?"ru":"en");
+  var nl=(navigator.language||"en").toLowerCase();
+  var l=get()||(nl.indexOf("uz")===0?"uz":nl.indexOf("ru")===0?"ru":"en");
   function apply(){document.documentElement.lang=l;
     document.querySelectorAll("[data-lang]").forEach(function(s){s.hidden=s.dataset.lang!==l});
     document.querySelectorAll("[data-l]").forEach(function(b){b.setAttribute("aria-pressed",String(b.dataset.l===l))});}
