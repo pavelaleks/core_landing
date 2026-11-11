@@ -770,3 +770,4 @@ body.g3-lock{overflow:hidden}
 @media (max-width:900px){.entry-grid{grid-template-columns:minmax(0,1fr)}}
 .entry-price{margin-top:16px}
 .mvp-link-inline{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+

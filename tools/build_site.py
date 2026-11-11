@@ -45,6 +45,12 @@ META = {
                  "ru": "Знания о регионе, научные данные и тексты на языках Центральной Азии из университетов региона с документами на права: каталог, образцы, API, метаданные Croissant и подключение к агентам.",
                  "uz": "Mintaqa universitetlaridan mintaqa haqidagi bilimlar, ilmiy maʼlumotlar va Markaziy Osiyo tillaridagi matnlar, huquqiy hujjatlari bilan: katalog, namunalar, API, Croissant metamaʼlumotlari va agentlarga ulanish."},
     },
+    "pricing.html": {
+        "title": {"en": "CORE — pricing by kind of data", "ru": "CORE — цены по видам данных", "uz": "CORE — maʼlumot turlari boʻyicha narxlar"},
+        "desc": {"en": "Starting prices for registries, analytics, research data, texts, speech, model checks, a fixed-price pilot and custom data. Universities join for free.",
+                 "ru": "Ориентиры цен на справочники, аналитику, научные данные, тексты, речь, проверку моделей, пилот с фиксированной ценой и данные под заказ. Для вузов участие бесплатное.",
+                 "uz": "Maʼlumotnomalar, tahlil, ilmiy maʼlumotlar, matnlar, nutq, modellarni tekshirish, qatʼiy narxli pilot va buyurtma maʼlumotlari uchun boshlangʻich narxlar. Universitetlar uchun ishtirok bepul."},
+    },
     "regions.html": {
         "title": {"en": "CORE — regional data for Central Asia", "ru": "CORE — данные по регионам Центральной Азии", "uz": "CORE — Markaziy Osiyo hududlari boʻyicha maʼlumotlar"},
         "desc": {"en": "48 regions of Uzbekistan, Kazakhstan, Kyrgyzstan and Tajikistan in one table: official demographics, universities, research, clinics and survey results, joined by ISO 3166-2 code.",
@@ -514,12 +520,13 @@ def build():
     footer = re.search(r'<footer class="foot">.*?</footer>', src_index, re.S).group(0)
     def up(h):
         h = re.sub(r'href="#', 'href="../index.html#', h)
-        h = h.replace('href="universities.html', 'href="../universities.html').replace('href="privacy.html', 'href="../privacy.html').replace('href="developers.html', 'href="../developers.html').replace('href="regions.html', 'href="../regions.html')
+        h = h.replace('href="universities.html', 'href="../universities.html').replace('href="privacy.html', 'href="../privacy.html').replace('href="developers.html', 'href="../developers.html').replace('href="regions.html', 'href="../regions.html').replace('href="pricing.html', 'href="../pricing.html')
         return h
     pages = {"index.html": src_index,
              "universities.html": open(os.path.join(ROOT, "src", "universities.html"), encoding="utf-8").read(),
              "developers.html": open(os.path.join(ROOT, "src", "developers.html"), encoding="utf-8").read(),
-             "regions.html": open(os.path.join(ROOT, "src", "regions.html"), encoding="utf-8").read()}
+             "regions.html": open(os.path.join(ROOT, "src", "regions.html"), encoding="utf-8").read(),
+             "pricing.html": open(os.path.join(ROOT, "src", "pricing.html"), encoding="utf-8").read()}
     for d in CAT:
         pages["datasets/" + d["slug"] + ".html"] = dataset_page(d, up(nav), up(footer))
     LOCAL_PAGES = set(pages.keys()) | {"."}
