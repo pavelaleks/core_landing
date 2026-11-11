@@ -1088,5 +1088,11 @@ window.CORE_UZ = {
 "Дальше — подробно для вашей роли": "Keyingisi — rolingiz uchun batafsil",
 "Открыть демо-кабинет": "Demo-kabinetni ochish",
 "Подробно: путь данных, три модели работы и что это значит для вас": "Batafsil: maʼlumotlar yoʻli, uchta ish modeli va bu siz uchun nimani anglatadi",
-"Интерактивно — для вуза, ИИ-компании, госоргана и бизнеса →": "Interaktiv — universitet, SI kompaniyasi, davlat idorasi va biznes uchun →"
+"Интерактивно — для вуза, ИИ-компании, госоргана и бизнеса →": "Interaktiv — universitet, SI kompaniyasi, davlat idorasi va biznes uchun →",
+"Маркетплейс данных вузов Центральной Азии": "Markaziy Osiyo universitetlari maʼlumotlari marketpleysi",
+"· для вузов бесплатно": "· universitetlar uchun bepul",
+"На этой странице": "Ushbu sahifada",
+"На странице": "Sahifada",
+"Наверх": "Yuqoriga",
+"Тест знаний модели": "Model bilimlari testi"
 };

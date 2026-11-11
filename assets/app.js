@@ -611,4 +611,46 @@
   } else runCounters();
 
   applyLang();
+
+  /* ---------------- page sub-navigation (long pages) + back to top ---------------- */
+  (function () {
+    var page = document.body.getAttribute("data-page");
+    var navEl = $(".nav");
+    if (navEl && /^(developers|universities|regions)$/.test(page || "")) {
+      var secs = $$("section").filter(function (s) { return (s.querySelector("h2") || s.hasAttribute("data-nav")) && !s.closest(".hero") && s.offsetHeight > 120; });
+      if (secs.length >= 4) {
+        var items = secs.map(function (s, i) {
+          if (!s.id) s.id = "part-" + (i + 1);
+          var eb = s.querySelector(".eyebrow"), h = s.querySelector("h2"), lg = document.documentElement.getAttribute("data-static-lang") || "en";
+          var label = (s.getAttribute(lg === "ru" ? "data-nav" : "data-nav-" + lg) || (eb ? eb.textContent : h ? h.textContent : "")).split("·")[0].trim();
+          if (label.length > 34) label = label.split(" ").slice(0, 4).join(" ") + "…";
+          return { id: s.id, label: label, el: s };
+        });
+        var sn = document.createElement("nav");
+        sn.className = "subnav"; sn.setAttribute("aria-label", T("On this page", "На этой странице"));
+        sn.innerHTML = '<div class="wrap"><span class="sn-k">' + T("On this page", "На странице") + "</span>" +
+          items.map(function (it) { return '<a href="#' + it.id + '">' + it.label.replace(/[<>&]/g, "") + "</a>"; }).join("") + "</div>";
+        navEl.parentNode.insertBefore(sn, navEl.nextSibling);
+        document.documentElement.classList.add("has-subnav");
+        var links = $$("a", sn);
+        var setOn = function (id) {
+          links.forEach(function (a) {
+            var on = a.getAttribute("href") === "#" + id; a.classList.toggle("on", on);
+            if (on && a.scrollIntoView && sn.scrollWidth > sn.clientWidth) a.parentNode.scrollLeft = a.offsetLeft - 40;
+          });
+        };
+        var spy = function () {
+          var y = window.scrollY + 160, cur = items[0].id;
+          items.forEach(function (it) { if (it.el.offsetTop <= y) cur = it.id; });
+          setOn(cur);
+        };
+        window.addEventListener("scroll", spy, { passive: true }); spy();
+      }
+    }
+    var up = document.createElement("button");
+    up.className = "to-top"; up.type = "button"; up.setAttribute("aria-label", T("Back to top", "Наверх")); up.textContent = "↑";
+    up.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: "smooth" }); });
+    document.body.appendChild(up);
+    window.addEventListener("scroll", function () { up.classList.toggle("show", window.scrollY > 900); }, { passive: true });
+  })();
 })();
