@@ -9,7 +9,9 @@
 "countries": "KZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.5281/zenodo.15703054",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv"
 },
 {
 "openalex": "W7172007212",
@@ -21,7 +23,9 @@
 "countries": "KZ",
 "field": "Psychology",
 "url": "https://doi.org/10.5281/zenodo.21717163",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "docx, pdf, xlsx"
 },
 {
 "openalex": "W7202035317",
@@ -33,7 +37,9 @@
 "countries": "KZ",
 "field": "Pharmacology, Toxicology and Pharmaceutics",
 "url": "https://doi.org/10.5281/zenodo.21858253",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W7140087738",
@@ -45,7 +51,9 @@
 "countries": "KZ",
 "field": "Engineering",
 "url": "https://doi.org/10.5281/zenodo.18025502",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "dat, docx, html, ini, jws, png, svg, txt, xlsx, zip"
 },
 {
 "openalex": "W7214169536",
@@ -57,7 +65,9 @@
 "countries": "UZ",
 "field": "Earth and Planetary Sciences",
 "url": "https://doi.org/10.5281/zenodo.22947080",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, geojson, json, md, pdf, png, py, sh, sha256, txt, yml"
 },
 {
 "openalex": "W7204550954",
@@ -69,7 +79,9 @@
 "countries": "KZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.5281/zenodo.22148084",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "cff, csv, geojson, js, md, tif, txt, xlsx"
 },
 {
 "openalex": "W7225575230",
@@ -81,7 +93,9 @@
 "countries": "KZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.5281/zenodo.24056511",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "no_files",
+"formats": ""
 },
 {
 "openalex": "W7225593030",
@@ -93,7 +107,9 @@
 "countries": "KZ",
 "field": "Arts and Humanities",
 "url": "https://doi.org/10.5281/zenodo.24049991",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, r, txt"
 },
 {
 "openalex": "W7225170436",
@@ -105,7 +121,9 @@
 "countries": "KZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.5281/zenodo.23895157",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "csv, geojson, ipynb, js, json, log, md, pdf, png, py, qgz, s"
 },
 {
 "openalex": "W7213621982",
@@ -117,7 +135,9 @@
 "countries": "KZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.5281/zenodo.22850046",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "cff, csv, docx, json, jsonl, md, png, py, sh, tsv, txt"
 },
 {
 "openalex": "W7213596391",
@@ -129,7 +149,9 @@
 "countries": "KZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.22830161",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "png"
 },
 {
 "openalex": "W7168244065",
@@ -141,7 +163,9 @@
 "countries": "KZ",
 "field": "Arts and Humanities",
 "url": "https://doi.org/10.5281/zenodo.21351759",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article",
+"formats": "docx"
 },
 {
 "openalex": "W7164680230",
@@ -153,7 +177,9 @@
 "countries": "KZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.5281/zenodo.20682213",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W6949784907",
@@ -165,7 +191,9 @@
 "countries": "KZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.5281/zenodo.15799043",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "docx"
 },
 {
 "openalex": "W6911724870",
@@ -177,7 +205,9 @@
 "countries": "KZ",
 "field": "Engineering",
 "url": "https://doi.org/10.5281/zenodo.13784501",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "unavailable",
+"formats": ""
 },
 {
 "openalex": "W6893455241",
@@ -189,7 +219,9 @@
 "countries": "KZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.16722602",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "ds_store, ipynb, jpg, txt, xlsx"
 },
 {
 "openalex": "W7161564623",
@@ -201,7 +233,9 @@
 "countries": "KZ",
 "field": "Physics and Astronomy",
 "url": "https://doi.org/10.5281/zenodo.20268072",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, m, md"
 },
 {
 "openalex": "W7213640598",
@@ -213,7 +247,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.22843052",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "no_files",
+"formats": ""
 },
 {
 "openalex": "W7203971353",
@@ -225,7 +261,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.22053794",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "cff, csv, md, txt, xlsx"
 },
 {
 "openalex": "W7164477349",
@@ -237,7 +275,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.20670360",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "ipynb, json, jsonl, md, py, txt"
 },
 {
 "openalex": "W7129453516",
@@ -249,7 +289,9 @@
 "countries": "UZ",
 "field": "Arts and Humanities",
 "url": "https://doi.org/10.5281/zenodo.18667850",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "pdf, xlsx"
 },
 {
 "openalex": "W7125939982",
@@ -261,7 +303,9 @@
 "countries": "UZ",
 "field": "Arts and Humanities",
 "url": "https://doi.org/10.5281/zenodo.18402880",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7167083653",
@@ -273,7 +317,9 @@
 "countries": "KZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.20019794",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "no_files",
+"formats": ""
 },
 {
 "openalex": "W6893307048",
@@ -285,7 +331,9 @@
 "countries": "KZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.15069074",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, png, tsv, txt"
 },
 {
 "openalex": "W7165629528",
@@ -297,7 +345,9 @@
 "countries": "KZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.20816077",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "json, jsonl, md, png, py, txt"
 },
 {
 "openalex": "W7165132452",
@@ -309,7 +359,9 @@
 "countries": "KZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.20752272",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "rar"
 },
 {
 "openalex": "W7204603782",
@@ -321,7 +373,9 @@
 "countries": "UZ",
 "field": "Energy",
 "url": "https://doi.org/10.5281/zenodo.22143390",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "cff, csv, md, png, py, txt"
 },
 {
 "openalex": "W7214456987",
@@ -333,7 +387,9 @@
 "countries": "UZ",
 "field": "Medicine",
 "url": "https://doi.org/10.5281/zenodo.22983971",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7124736698",
@@ -345,7 +401,9 @@
 "countries": "UZ",
 "field": "Arts and Humanities",
 "url": "https://doi.org/10.5281/zenodo.18301333",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7223225568",
@@ -357,7 +415,9 @@
 "countries": "UZ",
 "field": "Decision Sciences",
 "url": "https://doi.org/10.5281/zenodo.23568901",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7214887937",
@@ -369,7 +429,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.5281/zenodo.23031439",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "csv, md, r"
 },
 {
 "openalex": "W7160710933",
@@ -381,7 +443,9 @@
 "countries": "UZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.5281/zenodo.20096054",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7159684713",
@@ -393,7 +457,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.19946549",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7128772295",
@@ -405,7 +471,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.18636008",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7225091966",
@@ -417,7 +485,9 @@
 "countries": "UZ",
 "field": "Energy",
 "url": "https://doi.org/10.5281/zenodo.23882492",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "cff, csv, md, pdf, png, py, txt"
 },
 {
 "openalex": "W7154899679",
@@ -429,7 +499,9 @@
 "countries": "UZ",
 "field": "Arts and Humanities",
 "url": "https://doi.org/10.5281/zenodo.19652080",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7141765569",
@@ -441,7 +513,9 @@
 "countries": "UZ",
 "field": "Arts and Humanities",
 "url": "https://doi.org/10.5281/zenodo.19262235",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7131671448",
@@ -453,7 +527,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.18793676",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7225300557",
@@ -465,7 +541,9 @@
 "countries": "KZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.5281/zenodo.23988458",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "json, parquet"
 },
 {
 "openalex": "W7223656980",
@@ -477,7 +555,9 @@
 "countries": "KZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.5281/zenodo.23675112",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "no_files",
+"formats": ""
 },
 {
 "openalex": "W7172095620",
@@ -489,7 +569,9 @@
 "countries": "KZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.5281/zenodo.21736898",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, parquet"
 },
 {
 "openalex": "W7164741600",
@@ -501,7 +583,9 @@
 "countries": "KZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.5281/zenodo.20692908",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "csv, docx, gitignore, json, md, png, py, txt"
 },
 {
 "openalex": "W7162696536",
@@ -513,7 +597,9 @@
 "countries": "KZ",
 "field": "Materials Science",
 "url": "https://doi.org/10.5281/zenodo.20424977",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "05 v s oc, 05 v s tc, 05 vs tc, asc, docx, mnova, nox, png, "
 },
 {
 "openalex": "W7157270673",
@@ -525,7 +611,9 @@
 "countries": "KZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.5281/zenodo.19855292",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv"
 },
 {
 "openalex": "W7154914078",
@@ -537,7 +625,9 @@
 "countries": "KZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.5281/zenodo.19650551",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "csv"
 },
 {
 "openalex": "W6931114152",
@@ -549,7 +639,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.5281/zenodo.16268298",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv"
 },
 {
 "openalex": "W6893353665",
@@ -561,7 +653,9 @@
 "countries": "KZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.5281/zenodo.15769358",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, txt"
 },
 {
 "openalex": "W6949349291",
@@ -573,7 +667,9 @@
 "countries": "KZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.5281/zenodo.15711295",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "unavailable",
+"formats": ""
 },
 {
 "openalex": "W6892581036",
@@ -585,7 +681,9 @@
 "countries": "KZ",
 "field": "Materials Science",
 "url": "https://doi.org/10.5281/zenodo.10925192",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "nb, txt, xlsx"
 },
 {
 "openalex": "W7169498197",
@@ -597,7 +695,9 @@
 "countries": "KZ",
 "field": "Immunology and Microbiology",
 "url": "https://doi.org/10.5281/zenodo.21417749",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "joblib, json, png, py, tiff, txt, xlsx"
 },
 {
 "openalex": "W6949699104",
@@ -609,7 +709,9 @@
 "countries": "KZ",
 "field": "Medicine",
 "url": "https://doi.org/10.5281/zenodo.16670718",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W6949332964",
@@ -621,7 +723,9 @@
 "countries": "KZ",
 "field": "Biochemistry, Genetics and Molecular Biology",
 "url": "https://doi.org/10.5281/zenodo.15764868",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W7223215020",
@@ -633,7 +737,9 @@
 "countries": "KZ",
 "field": "Medicine",
 "url": "https://doi.org/10.5281/zenodo.23557161",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, md, py, xlsx"
 },
 {
 "openalex": "W7223096719",
@@ -645,7 +751,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.23539019",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "cff, json, jsonl, md, py, sh, tsv, xlsx"
 },
 {
 "openalex": "W6893247769",
@@ -657,7 +765,9 @@
 "countries": "UZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.5281/zenodo.16219694",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "docx"
 },
 {
 "openalex": "W7225225331",
@@ -669,7 +779,9 @@
 "countries": "UZ",
 "field": "Engineering",
 "url": "https://doi.org/10.5281/zenodo.23897653",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, jpg, md, pdf, png, py"
 },
 {
 "openalex": "W7170089888",
@@ -681,7 +793,9 @@
 "countries": "UZ",
 "field": "Mathematics",
 "url": "https://doi.org/10.5281/zenodo.21496294",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W6893350779",
@@ -693,7 +807,9 @@
 "countries": "UZ",
 "field": "Dentistry",
 "url": "https://doi.org/10.5281/zenodo.15882120",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W6967945194",
@@ -705,7 +821,9 @@
 "countries": "UZ",
 "field": "Dentistry",
 "url": "https://doi.org/10.5281/zenodo.15880590",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "docx, xlsx"
 },
 {
 "openalex": "W7220960952",
@@ -717,7 +835,9 @@
 "countries": "KZ",
 "field": "Medicine",
 "url": "https://doi.org/10.5281/zenodo.23223192",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "ipynb, jpg, txt, yaml"
 },
 {
 "openalex": "W7165444882",
@@ -729,7 +849,9 @@
 "countries": "KZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.5281/zenodo.20775195",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "pdf, png, xlsx"
 },
 {
 "openalex": "W7171642763",
@@ -741,7 +863,9 @@
 "countries": "UZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.5281/zenodo.21663899",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "csv, json, md, tif"
 },
 {
 "openalex": "W7127953523",
@@ -753,7 +877,9 @@
 "countries": "UZ",
 "field": "Psychology",
 "url": "https://doi.org/10.5281/zenodo.18510393",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7124291252",
@@ -765,7 +891,9 @@
 "countries": "UZ",
 "field": "Psychology",
 "url": "https://doi.org/10.5281/zenodo.18257663",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7169764329",
@@ -777,7 +905,9 @@
 "countries": "UZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.5281/zenodo.21448730",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "csv, md, py"
 },
 {
 "openalex": "W7160154014",
@@ -789,7 +919,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.20026220",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7125233816",
@@ -801,7 +933,9 @@
 "countries": "UZ",
 "field": "Medicine",
 "url": "https://doi.org/10.5281/zenodo.18329332",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7103978339",
@@ -813,7 +947,9 @@
 "countries": "UZ",
 "field": "Arts and Humanities",
 "url": "https://doi.org/10.5281/zenodo.17520358",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "7z"
 },
 {
 "openalex": "W7201855261",
@@ -825,7 +961,9 @@
 "countries": "UZ",
 "field": "Business, Management and Accounting",
 "url": "https://doi.org/10.5281/zenodo.21832567",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, json, md, png, py, svg, txt, xlsx"
 },
 {
 "openalex": "W7167504494",
@@ -837,7 +975,9 @@
 "countries": "UZ",
 "field": "Economics, Econometrics and Finance",
 "url": "https://doi.org/10.5281/zenodo.21217676",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W7203451640",
@@ -849,7 +989,9 @@
 "countries": "UZ",
 "field": "Business, Management and Accounting",
 "url": "https://doi.org/10.5281/zenodo.21372050",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article",
+"formats": "md"
 },
 {
 "openalex": "W7221829097",
@@ -861,7 +1003,9 @@
 "countries": "KZ",
 "field": "Engineering",
 "url": "https://doi.org/10.5281/zenodo.23378416",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "unavailable",
+"formats": ""
 },
 {
 "openalex": "W7160894393",
@@ -873,7 +1017,9 @@
 "countries": "KZ",
 "field": "Engineering",
 "url": "https://doi.org/10.5281/zenodo.20138416",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "jpg"
 },
 {
 "openalex": "W7203456655",
@@ -885,7 +1031,9 @@
 "countries": "UZ",
 "field": "Energy",
 "url": "https://doi.org/10.5281/zenodo.21932530",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "cff, md, txt, xlsx"
 },
 {
 "openalex": "W7169732050",
@@ -897,7 +1045,9 @@
 "countries": "UZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.5281/zenodo.21438236",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, json, md, png, py, txt"
 },
 {
 "openalex": "W7225184200",
@@ -909,7 +1059,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.5281/zenodo.23918066",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7220662362",
@@ -921,7 +1073,9 @@
 "countries": "KZ",
 "field": "Business, Management and Accounting",
 "url": "https://doi.org/10.5281/zenodo.23180111",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W7142056541",
@@ -933,7 +1087,9 @@
 "countries": "KZ",
 "field": "Arts and Humanities",
 "url": "https://doi.org/10.5281/zenodo.19296761",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W7140776873",
@@ -945,7 +1101,9 @@
 "countries": "KZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.5281/zenodo.19231016",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "md, xlsx"
 },
 {
 "openalex": "W7140302195",
@@ -957,7 +1115,9 @@
 "countries": "KZ",
 "field": "Arts and Humanities",
 "url": "https://doi.org/10.5281/zenodo.19220260",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W7207797726",
@@ -969,7 +1129,9 @@
 "countries": "KZ",
 "field": "Medicine",
 "url": "https://doi.org/10.5281/zenodo.22118252",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "docx, pdf, pptx, tif, xlsx"
 },
 {
 "openalex": "W7168387005",
@@ -981,7 +1143,9 @@
 "countries": "KZ",
 "field": "Medicine",
 "url": "https://doi.org/10.5281/zenodo.21361502",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, md, txt"
 },
 {
 "openalex": "W7168082447",
@@ -993,7 +1157,9 @@
 "countries": "UZ",
 "field": "Materials Science",
 "url": "https://doi.org/10.5281/zenodo.21318690",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "docx"
 },
 {
 "openalex": "W6911935843",
@@ -1005,7 +1171,9 @@
 "countries": "KZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.5281/zenodo.13922835",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "tif"
 },
 {
 "openalex": "W7223464085",
@@ -1017,7 +1185,9 @@
 "countries": "KZ",
 "field": "Medicine",
 "url": "https://doi.org/10.5281/zenodo.23608061",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "csv, r"
 },
 {
 "openalex": "W7203910617",
@@ -1029,7 +1199,9 @@
 "countries": "KZ",
 "field": "Medicine",
 "url": "https://doi.org/10.5281/zenodo.22044661",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W7171432104",
@@ -1041,7 +1213,9 @@
 "countries": "KZ",
 "field": "Medicine",
 "url": "https://doi.org/10.5281/zenodo.21617508",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "csv, ipynb, py, xlsx"
 },
 {
 "openalex": "W7222897517",
@@ -1053,7 +1227,9 @@
 "countries": "KZ",
 "field": "Psychology",
 "url": "https://doi.org/10.5281/zenodo.23452363",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "do, xlsx"
 },
 {
 "openalex": "W7221635566",
@@ -1065,7 +1241,9 @@
 "countries": "KZ",
 "field": "Psychology",
 "url": "https://doi.org/10.5281/zenodo.23349865",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "unavailable",
+"formats": ""
 },
 {
 "openalex": "W7221460017",
@@ -1077,7 +1255,9 @@
 "countries": "KZ",
 "field": "Economics, Econometrics and Finance",
 "url": "https://doi.org/10.5281/zenodo.23295494",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "md, py, r, rds, txt, xlsx"
 },
 {
 "openalex": "W7213508487",
@@ -1089,7 +1269,9 @@
 "countries": "KZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.5281/zenodo.22812625",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "cff, csv.gz, gz, md"
 },
 {
 "openalex": "W7213030573",
@@ -1101,7 +1283,9 @@
 "countries": "KZ",
 "field": "Psychology",
 "url": "https://doi.org/10.5281/zenodo.22753456",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "csv, md, r, txt"
 },
 {
 "openalex": "W7163024154",
@@ -1113,7 +1297,9 @@
 "countries": "KZ",
 "field": "Pharmacology, Toxicology and Pharmaceutics",
 "url": "https://doi.org/10.5281/zenodo.20498882",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W7208835910",
@@ -1125,7 +1311,9 @@
 "countries": "KZ",
 "field": "Economics, Econometrics and Finance",
 "url": "https://doi.org/10.5281/zenodo.22386663",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "csv, md, py, txt, xlsx"
 },
 {
 "openalex": "W7164183611",
@@ -1137,7 +1325,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.20621026",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7162205025",
@@ -1149,7 +1339,9 @@
 "countries": "UZ",
 "field": "",
 "url": "https://doi.org/10.5281/zenodo.20351779",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "docx"
 },
 {
 "openalex": "W7165808859",
@@ -1161,7 +1353,9 @@
 "countries": "KZ",
 "field": "Business, Management and Accounting",
 "url": "https://doi.org/10.5281/zenodo.20828315",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "docx, xlsx"
 },
 {
 "openalex": "W7222936641",
@@ -1173,7 +1367,9 @@
 "countries": "KG",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.5281/zenodo.23477947",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "csv, md, py"
 },
 {
 "openalex": "W7214988777",
@@ -1185,7 +1381,9 @@
 "countries": "KG; KZ",
 "field": "Medicine",
 "url": "https://doi.org/10.5281/zenodo.23055822",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "cff, csv, md, r"
 },
 {
 "openalex": "W7221161640",
@@ -1197,7 +1395,9 @@
 "countries": "KG",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.5281/zenodo.23259682",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "cff, csv, csv.gz, eps, json, log, md, png, py, tif, txt, zip"
 },
 {
 "openalex": "W7218928116",
@@ -1209,7 +1409,9 @@
 "countries": "KG",
 "field": "Decision Sciences",
 "url": "https://doi.org/10.5281/zenodo.23115637",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "bib, bmp, cff, csv, json, md, original, pdf, png, py, sha256"
 },
 {
 "openalex": "W7214755830",
@@ -1221,7 +1423,9 @@
 "countries": "KG",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.5281/zenodo.23016992",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "cff, csv, eps, json, md, npz, pdf, png, py, sha256, txt"
 },
 {
 "openalex": "W6930536871",
@@ -1233,7 +1437,9 @@
 "countries": "KG",
 "field": "",
 "url": "https://doi.org/10.5281/zenodo.16077619",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "docx"
 },
 {
 "openalex": "W7224948859",
@@ -1245,7 +1451,9 @@
 "countries": "KZ",
 "field": "Engineering",
 "url": "https://doi.org/10.5281/zenodo.23800395",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "csv"
 },
 {
 "openalex": "W7223065858",
@@ -1257,7 +1465,9 @@
 "countries": "KZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.5281/zenodo.23496898",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "csv, docx, md, py"
 },
 {
 "openalex": "W7162097405",
@@ -1269,7 +1479,9 @@
 "countries": "KZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.5281/zenodo.20339262",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "csv"
 },
 {
 "openalex": "W7077501510",
@@ -1281,7 +1493,9 @@
 "countries": "KZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.5281/zenodo.16937341",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "sqlite"
 },
 {
 "openalex": "W6893444708",
@@ -1293,7 +1507,9 @@
 "countries": "KZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.5281/zenodo.15305392",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "sqlite"
 },
 {
 "openalex": "W7169498875",
@@ -1305,7 +1521,9 @@
 "countries": "KZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.21409220",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "cff, csv, json, md, pdf, png, txt, xlsx"
 },
 {
 "openalex": "W7213579419",
@@ -1317,7 +1535,9 @@
 "countries": "KZ",
 "field": "Economics, Econometrics and Finance",
 "url": "https://doi.org/10.5281/zenodo.22832570",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "cff, csv, json, md, npz, pdf, png, py, sh, txt, xlsx"
 },
 {
 "openalex": "W7116393792",
@@ -1329,7 +1549,9 @@
 "countries": "KZ",
 "field": "Business, Management and Accounting",
 "url": "https://doi.org/10.5281/zenodo.18001303",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W7106353563",
@@ -1341,7 +1563,9 @@
 "countries": "KZ",
 "field": "Business, Management and Accounting",
 "url": "https://doi.org/10.5281/zenodo.17675070",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "unavailable",
+"formats": ""
 },
 {
 "openalex": "W7106562170",
@@ -1353,7 +1577,9 @@
 "countries": "KZ",
 "field": "Psychology",
 "url": "https://doi.org/10.5281/zenodo.17686325",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "no_files",
+"formats": ""
 },
 {
 "openalex": "W7106255404",
@@ -1365,7 +1591,9 @@
 "countries": "KZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.5281/zenodo.17679460",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "no_files",
+"formats": ""
 },
 {
 "openalex": "W7106222069",
@@ -1377,7 +1605,9 @@
 "countries": "KZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.5281/zenodo.17679614",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "no_files",
+"formats": ""
 },
 {
 "openalex": "W7106294682",
@@ -1389,7 +1619,9 @@
 "countries": "KZ",
 "field": "Psychology",
 "url": "https://doi.org/10.5281/zenodo.17678910",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "no_files",
+"formats": ""
 },
 {
 "openalex": "W7126249804",
@@ -1401,7 +1633,9 @@
 "countries": "UZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.5281/zenodo.18429265",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7212449022",
@@ -1413,7 +1647,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.5281/zenodo.22732453",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "con, csv, docx, log, nex, tree, trees, txt, xml"
 },
 {
 "openalex": "W7221557560",
@@ -1425,7 +1661,9 @@
 "countries": "UZ",
 "field": "Materials Science",
 "url": "https://doi.org/10.5281/zenodo.23307852",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "no_files",
+"formats": ""
 },
 {
 "openalex": "W7212759525",
@@ -1437,7 +1675,9 @@
 "countries": "UZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.5281/zenodo.22728937",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "no_files",
+"formats": ""
 },
 {
 "openalex": "W7170547947",
@@ -1449,7 +1689,9 @@
 "countries": "UZ",
 "field": "Engineering",
 "url": "https://doi.org/10.5281/zenodo.21532461",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "unavailable",
+"formats": ""
 },
 {
 "openalex": "W7223410746",
@@ -1461,7 +1703,9 @@
 "countries": "KZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.5281/zenodo.23606745",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "array, csv, dawg, intdawg, json, jsonl, md, png, py, rst, sv"
 },
 {
 "openalex": "W7219679895",
@@ -1473,7 +1717,9 @@
 "countries": "KZ",
 "field": "Engineering",
 "url": "https://doi.org/10.5281/zenodo.23142892",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, ipynb, md, png, py"
 },
 {
 "openalex": "W7214053583",
@@ -1485,7 +1731,9 @@
 "countries": "KZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.22903321",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, ipynb, md, png"
 },
 {
 "openalex": "W7204118155",
@@ -1497,7 +1745,9 @@
 "countries": "KZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.22079001",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W7148373742",
@@ -1509,7 +1759,9 @@
 "countries": "KZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.5281/zenodo.19388808",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "unavailable",
+"formats": ""
 },
 {
 "openalex": "W7225060712",
@@ -1521,7 +1773,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.23858641",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7225061219",
@@ -1533,7 +1787,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.23858499",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7208754718",
@@ -1545,7 +1801,9 @@
 "countries": "UZ",
 "field": "Energy",
 "url": "https://doi.org/10.5281/zenodo.22304613",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W7203452084",
@@ -1557,7 +1815,9 @@
 "countries": "UZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.5281/zenodo.21930668",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, example, gitattributes, gitignore, json, md, pdf, png, "
 },
 {
 "openalex": "W7202044066",
@@ -1569,7 +1829,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.5281/zenodo.21861556",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, md, py, rar, txt"
 },
 {
 "openalex": "W7196934338",
@@ -1581,7 +1843,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.21822493",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "csv, docx, gitkeep, json, md, png, py, sh, txt, xlsx"
 },
 {
 "openalex": "W6931199633",
@@ -1593,7 +1857,9 @@
 "countries": "UZ",
 "field": "Materials Science",
 "url": "https://doi.org/10.5281/zenodo.16748284",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W7225005662",
@@ -1605,7 +1871,9 @@
 "countries": "KZ",
 "field": "Engineering",
 "url": "https://doi.org/10.5281/zenodo.23561778",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "001, 002, 003, 004, ckt, csv, csv.gz, ds, gbr, hb, json, jso"
 },
 {
 "openalex": "W7223082948",
@@ -1617,7 +1885,9 @@
 "countries": "KZ",
 "field": "Engineering",
 "url": "https://doi.org/10.5281/zenodo.23539747",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, txt"
 },
 {
 "openalex": "W7221562052",
@@ -1629,7 +1899,9 @@
 "countries": "KZ",
 "field": "Engineering",
 "url": "https://doi.org/10.5281/zenodo.23319676",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, md"
 },
 {
 "openalex": "W7221475729",
@@ -1641,7 +1913,9 @@
 "countries": "KZ",
 "field": "Physics and Astronomy",
 "url": "https://doi.org/10.5281/zenodo.23302234",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "no_files",
+"formats": ""
 },
 {
 "openalex": "W7214644441",
@@ -1653,7 +1927,9 @@
 "countries": "KZ",
 "field": "Biochemistry, Genetics and Molecular Biology",
 "url": "https://doi.org/10.5281/zenodo.22863362",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "cff, csv, csv.gz, gz, json, md, pdf, png, tsv"
 },
 {
 "openalex": "W7214587633",
@@ -1665,7 +1941,9 @@
 "countries": "KZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.23020982",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "cff, csv, example, gitignore, json, md, png, py, sha256, txt"
 },
 {
 "openalex": "W7161601397",
@@ -1677,7 +1955,9 @@
 "countries": "KZ",
 "field": "Engineering",
 "url": "https://doi.org/10.5281/zenodo.20268085",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "no_files",
+"formats": ""
 },
 {
 "openalex": "W7154744382",
@@ -1689,7 +1969,9 @@
 "countries": "KZ",
 "field": "Immunology and Microbiology",
 "url": "https://doi.org/10.5281/zenodo.19568002",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W7129012121",
@@ -1701,7 +1983,9 @@
 "countries": "KZ",
 "field": "Engineering",
 "url": "https://doi.org/10.5281/zenodo.18656136",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "csv, ipynb, json, md, npz, pdf, png, svg, txt, xlsx"
 },
 {
 "openalex": "W7090178068",
@@ -1713,7 +1997,9 @@
 "countries": "KZ",
 "field": "Psychology",
 "url": "https://doi.org/10.5281/zenodo.17337737",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "dta"
 },
 {
 "openalex": "W7094946071",
@@ -1725,7 +2011,9 @@
 "countries": "KZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.5281/zenodo.17436939",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "csv, md"
 },
 {
 "openalex": "W7081032615",
@@ -1737,7 +2025,9 @@
 "countries": "KZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.17091185",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "txt"
 },
 {
 "openalex": "W6968237694",
@@ -1749,7 +2039,9 @@
 "countries": "KZ",
 "field": "Engineering",
 "url": "https://doi.org/10.5281/zenodo.15716729",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "txt"
 },
 {
 "openalex": "W6931468956",
@@ -1761,7 +2053,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.5281/zenodo.7887045",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, jpg, json, txt"
 },
 {
 "openalex": "W4393724736",
@@ -1773,7 +2067,9 @@
 "countries": "KZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.10205701",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "no_files",
+"formats": ""
 },
 {
 "openalex": "W7201839295",
@@ -1785,7 +2081,9 @@
 "countries": "UZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.5281/zenodo.21834671",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "cff, json, md, png, txt, xlsx"
 },
 {
 "openalex": "W7168278660",
@@ -1797,7 +2095,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.21363135",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "csv"
 },
 {
 "openalex": "W7218367849",
@@ -1809,7 +2109,9 @@
 "countries": "KZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.5281/zenodo.23120479",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, md, py"
 },
 {
 "openalex": "W7225056570",
@@ -1821,7 +2123,9 @@
 "countries": "UZ",
 "field": "Arts and Humanities",
 "url": "https://doi.org/10.5281/zenodo.23855342",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7225001627",
@@ -1833,7 +2137,9 @@
 "countries": "KG",
 "field": "Environmental Science",
 "url": "https://doi.org/10.5281/zenodo.23767708",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "cff, csv, gpkg, js, md, pdf, png, py, r, tif, txt"
 },
 {
 "openalex": "W7220401192",
@@ -1845,7 +2151,9 @@
 "countries": "KZ",
 "field": "Economics, Econometrics and Finance",
 "url": "https://doi.org/10.5281/zenodo.23155731",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "xls, xlsx"
 },
 {
 "openalex": "W7206153935",
@@ -1857,7 +2165,9 @@
 "countries": "KZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.5281/zenodo.22260937",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "csv, md, py, txt, xlsx, yml"
 },
 {
 "openalex": "W7203569451",
@@ -1869,7 +2179,9 @@
 "countries": "UZ",
 "field": "Arts and Humanities",
 "url": "https://doi.org/10.5281/zenodo.21960593",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "csv, md, png, py, txt"
 },
 {
 "openalex": "W7225240960",
@@ -1881,7 +2193,9 @@
 "countries": "UZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.5281/zenodo.23949314",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7223209992",
@@ -1893,7 +2207,9 @@
 "countries": "UZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.5281/zenodo.23480247",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, ipynb, json, md, py, xlsx"
 },
 {
 "openalex": "W7225468511",
@@ -1905,7 +2221,9 @@
 "countries": "UZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.5281/zenodo.24028718",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, md, py"
 },
 {
 "openalex": "W7153248339",
@@ -1917,7 +2235,9 @@
 "countries": "UZ",
 "field": "Medicine",
 "url": "https://doi.org/10.5281/zenodo.19492876",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7171813277",
@@ -1929,7 +2249,9 @@
 "countries": "UZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.5281/zenodo.21697181",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, png"
 },
 {
 "openalex": "W7203955937",
@@ -1941,7 +2263,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.5281/zenodo.22044205",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "asc, bat, csv, dat, html, jpg, lambdas, log, png, txt"
 },
 {
 "openalex": "W7224105788",
@@ -1953,7 +2277,9 @@
 "countries": "UZ",
 "field": "Mathematics",
 "url": "https://doi.org/10.5281/zenodo.23726965",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, jsonl, md, npz, pt"
 },
 {
 "openalex": "W7215054447",
@@ -1965,7 +2291,9 @@
 "countries": "KZ",
 "field": "Materials Science",
 "url": "https://doi.org/10.5281/zenodo.23077866",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "hap, hbk, heic, hkg, hki, hmw, jpeg, jpg, md, pdf, png, prf"
 },
 {
 "openalex": "W7155354059",
@@ -1977,7 +2305,9 @@
 "countries": "KZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.5281/zenodo.19707420",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "csv, txt"
 },
 {
 "openalex": "W7124300619",
@@ -1989,7 +2319,9 @@
 "countries": "KZ",
 "field": "Earth and Planetary Sciences",
 "url": "https://doi.org/10.5281/zenodo.18242602",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "csv"
 },
 {
 "openalex": "W7077449278",
@@ -2001,7 +2333,9 @@
 "countries": "KZ",
 "field": "Medicine",
 "url": "https://doi.org/10.5281/zenodo.16939443",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "png"
 },
 {
 "openalex": "W7225061369",
@@ -2013,7 +2347,9 @@
 "countries": "KZ",
 "field": "Physics and Astronomy",
 "url": "https://doi.org/10.5281/zenodo.23852705",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, json, md, mp4, npz, py, txt"
 },
 {
 "openalex": "W7223060020",
@@ -2025,7 +2361,9 @@
 "countries": "KZ",
 "field": "Engineering",
 "url": "https://doi.org/10.5281/zenodo.23490983",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "json, jsonl, md, tsv, txt, xlsx"
 },
 {
 "openalex": "W7221868456",
@@ -2037,7 +2375,9 @@
 "countries": "KZ",
 "field": "Physics and Astronomy",
 "url": "https://doi.org/10.5281/zenodo.23392828",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, h5, json, log, py, tsv, txt, yaml"
 },
 {
 "openalex": "W7219727295",
@@ -2049,7 +2389,9 @@
 "countries": "KZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.5281/zenodo.23144256",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "no_files",
+"formats": ""
 },
 {
 "openalex": "W7219737445",
@@ -2061,7 +2403,9 @@
 "countries": "KZ",
 "field": "Biochemistry, Genetics and Molecular Biology",
 "url": "https://doi.org/10.5281/zenodo.23133985",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, md, xlsx"
 },
 {
 "openalex": "W7214067545",
@@ -2073,7 +2417,9 @@
 "countries": "KZ",
 "field": "Economics, Econometrics and Finance",
 "url": "https://doi.org/10.5281/zenodo.22907390",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "py, xlsx"
 },
 {
 "openalex": "W7210288741",
@@ -2085,7 +2431,9 @@
 "countries": "KZ",
 "field": "Engineering",
 "url": "https://doi.org/10.5281/zenodo.22541314",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W7204481071",
@@ -2097,7 +2445,9 @@
 "countries": "KZ",
 "field": "Business, Management and Accounting",
 "url": "https://doi.org/10.5281/zenodo.22129926",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "no_files",
+"formats": ""
 },
 {
 "openalex": "W7212136244",
@@ -2109,7 +2459,9 @@
 "countries": "KZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.22698293",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W7133319678",
@@ -2121,7 +2473,9 @@
 "countries": "KZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.5281/zenodo.18847583",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "unavailable",
+"formats": ""
 },
 {
 "openalex": "W7170037524",
@@ -2133,7 +2487,9 @@
 "countries": "KZ",
 "field": "Materials Science",
 "url": "https://doi.org/10.5281/zenodo.21488306",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W7169789998",
@@ -2145,7 +2501,9 @@
 "countries": "KZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.21451129",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "mseed, py, txt, xlsx"
 },
 {
 "openalex": "W7127593474",
@@ -2157,7 +2515,9 @@
 "countries": "UZ",
 "field": "Arts and Humanities",
 "url": "https://doi.org/10.5281/zenodo.18486195",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7143398414",
@@ -2169,7 +2529,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.5281/zenodo.19337517",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article",
+"formats": "jpg, pdf"
 },
 {
 "openalex": "W7141714196",
@@ -2181,7 +2543,9 @@
 "countries": "UZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.5281/zenodo.19260943",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7128959213",
@@ -2193,7 +2557,9 @@
 "countries": "UZ",
 "field": "Engineering",
 "url": "https://doi.org/10.5281/zenodo.18645995",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7127928197",
@@ -2205,7 +2571,9 @@
 "countries": "UZ",
 "field": "Decision Sciences",
 "url": "https://doi.org/10.5281/zenodo.18503395",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7127610508",
@@ -2217,7 +2585,9 @@
 "countries": "UZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.5281/zenodo.18487532",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7150875093",
@@ -2229,7 +2599,9 @@
 "countries": "UZ",
 "field": "Arts and Humanities",
 "url": "https://doi.org/10.5281/zenodo.19433969",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "pdf, py, txt, xlsx"
 },
 {
 "openalex": "W7225582203",
@@ -2241,7 +2613,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.24058703",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "no_files",
+"formats": ""
 },
 {
 "openalex": "W7225453063",
@@ -2253,7 +2627,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.24044453",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "cff, csv, docx, json, jsonl, md, xlsx"
 },
 {
 "openalex": "W7203677610",
@@ -2265,7 +2641,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.21998688",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "cff, csv, docx, json, log, md, png, py, sha256, txt"
 },
 {
 "openalex": "W7125980747",
@@ -2277,7 +2655,9 @@
 "countries": "UZ",
 "field": "Chemistry",
 "url": "https://doi.org/10.5281/zenodo.18402957",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7225169632",
@@ -2289,7 +2669,9 @@
 "countries": "UZ",
 "field": "Energy",
 "url": "https://doi.org/10.5281/zenodo.23719519",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, json, pdf, png, py, txt, xlsx"
 },
 {
 "openalex": "W7167691230",
@@ -2301,7 +2683,9 @@
 "countries": "UZ",
 "field": "Medicine",
 "url": "https://doi.org/10.5281/zenodo.21261676",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W7141016274",
@@ -2313,7 +2697,9 @@
 "countries": "UZ",
 "field": "Dentistry",
 "url": "https://doi.org/10.5281/zenodo.19256845",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7126017487",
@@ -2325,7 +2711,9 @@
 "countries": "UZ",
 "field": "Medicine",
 "url": "https://doi.org/10.5281/zenodo.18417824",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7225460558",
@@ -2337,7 +2725,9 @@
 "countries": "UZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.5281/zenodo.24028362",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7225166147",
@@ -2349,7 +2739,9 @@
 "countries": "UZ",
 "field": "Engineering",
 "url": "https://doi.org/10.5281/zenodo.23912900",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "cff, csv, log, md, py, txt"
 },
 {
 "openalex": "W7223226165",
@@ -2361,7 +2753,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.23562314",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, txt"
 },
 {
 "openalex": "W7222787379",
@@ -2373,7 +2767,9 @@
 "countries": "UZ",
 "field": "Engineering",
 "url": "https://doi.org/10.5281/zenodo.23432579",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "cff, csv, json, md, png, py, txt, xlsx"
 },
 {
 "openalex": "W7216220233",
@@ -2385,7 +2781,9 @@
 "countries": "UZ",
 "field": "Economics, Econometrics and Finance",
 "url": "https://doi.org/10.5281/zenodo.23102570",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "cff, csv, md, png, py, txt, xlsx"
 },
 {
 "openalex": "W7162136398",
@@ -2397,7 +2795,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.20339102",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7147047567",
@@ -2409,7 +2809,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.19360418",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7147068699",
@@ -2421,7 +2823,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.19360381",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7139041185",
@@ -2433,7 +2837,9 @@
 "countries": "UZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.5281/zenodo.19107752",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "csv"
 },
 {
 "openalex": "W7167338011",
@@ -2445,7 +2851,9 @@
 "countries": "UZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.5281/zenodo.21186794",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7159970524",
@@ -2457,7 +2865,9 @@
 "countries": "UZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.5281/zenodo.20005959",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7159769161",
@@ -2469,7 +2879,9 @@
 "countries": "UZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.5281/zenodo.19982010",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7128301489",
@@ -2481,7 +2893,9 @@
 "countries": "UZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.5281/zenodo.18527021",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7154391626",
@@ -2493,7 +2907,9 @@
 "countries": "UZ",
 "field": "Psychology",
 "url": "https://doi.org/10.5281/zenodo.19574490",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7223146844",
@@ -2505,7 +2921,9 @@
 "countries": "UZ",
 "field": "Decision Sciences",
 "url": "https://doi.org/10.5281/zenodo.23536082",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, txt"
 },
 {
 "openalex": "W7172296671",
@@ -2517,7 +2935,9 @@
 "countries": "UZ",
 "field": "Arts and Humanities",
 "url": "https://doi.org/10.5281/zenodo.21780095",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, png, txt"
 },
 {
 "openalex": "W7148528967",
@@ -2529,7 +2949,9 @@
 "countries": "UZ",
 "field": "Arts and Humanities",
 "url": "https://doi.org/10.5281/zenodo.19389114",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7153987990",
@@ -2541,7 +2963,9 @@
 "countries": "UZ",
 "field": "Arts and Humanities",
 "url": "https://doi.org/10.5281/zenodo.19559137",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7167475727",
@@ -2553,7 +2977,9 @@
 "countries": "KZ",
 "field": "Business, Management and Accounting",
 "url": "https://doi.org/10.5281/zenodo.21212759",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "cff, csv, gitignore, json, md, png, py, txt"
 },
 {
 "openalex": "W7223469651",
@@ -2565,7 +2991,9 @@
 "countries": "KZ",
 "field": "Decision Sciences",
 "url": "https://doi.org/10.5281/zenodo.23613757",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "cff, csv, example, gitattributes, gitignore, json, jsonl, md"
 },
 {
 "openalex": "W7223068762",
@@ -2577,7 +3005,9 @@
 "countries": "KZ",
 "field": "Psychology",
 "url": "https://doi.org/10.5281/zenodo.23493579",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "cff, csv, example, gitattributes, gitignore, json, jsonl, lo"
 },
 {
 "openalex": "W7222890994",
@@ -2589,7 +3019,9 @@
 "countries": "KZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.5281/zenodo.23448773",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "cff, csv, example, gitattributes, gitignore, json, jsonl, lo"
 },
 {
 "openalex": "W7222599446",
@@ -2601,7 +3033,9 @@
 "countries": "KZ",
 "field": "Neuroscience",
 "url": "https://doi.org/10.5281/zenodo.23413642",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "cff, csv, example, gitattributes, gitignore, json, jsonl, lo"
 },
 {
 "openalex": "W7220892133",
@@ -2613,7 +3047,9 @@
 "countries": "KZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.23219633",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "cff, csv, example, gitattributes, gitignore, html, json, jso"
 },
 {
 "openalex": "W7213588902",
@@ -2625,7 +3061,9 @@
 "countries": "KZ",
 "field": "Psychology",
 "url": "https://doi.org/10.5281/zenodo.22829236",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "csv"
 },
 {
 "openalex": "W7167232864",
@@ -2637,7 +3075,9 @@
 "countries": "UZ",
 "field": "Engineering",
 "url": "https://doi.org/10.5281/zenodo.21166931",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, txt"
 },
 {
 "openalex": "W6893439916",
@@ -2649,7 +3089,9 @@
 "countries": "UZ",
 "field": "Energy",
 "url": "https://doi.org/10.5281/zenodo.16782583",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "unavailable",
+"formats": ""
 },
 {
 "openalex": "W7079668065",
@@ -2661,7 +3103,9 @@
 "countries": "UZ",
 "field": "Energy",
 "url": "https://doi.org/10.5281/zenodo.17041787",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "csv, txt"
 },
 {
 "openalex": "W6968268600",
@@ -2673,7 +3117,9 @@
 "countries": "KG; TJ",
 "field": "Earth and Planetary Sciences",
 "url": "https://doi.org/10.5281/zenodo.14287504",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "asv, c, cfe, cfs, cpg, csv, dat, dbf, doc, docx, fcs, gen"
 },
 {
 "openalex": "W7204722649",
@@ -2685,7 +3131,9 @@
 "countries": "KZ",
 "field": "Economics, Econometrics and Finance",
 "url": "https://doi.org/10.5281/zenodo.22182020",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W7225308085",
@@ -2697,7 +3145,9 @@
 "countries": "UZ",
 "field": "Materials Science",
 "url": "https://doi.org/10.5281/zenodo.23957324",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "cif, dat, in, json, md, out, pdos_atm#1(c)_wfc#1(s), pdos_at"
 },
 {
 "openalex": "W7220917399",
@@ -2709,7 +3159,9 @@
 "countries": "UZ",
 "field": "Materials Science",
 "url": "https://doi.org/10.5281/zenodo.23217591",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "in, out, py, txt"
 },
 {
 "openalex": "W7208825729",
@@ -2721,7 +3173,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.22347374",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "txt"
 },
 {
 "openalex": "W7203668181",
@@ -2733,7 +3187,9 @@
 "countries": "UZ",
 "field": "Engineering",
 "url": "https://doi.org/10.5281/zenodo.21992772",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "tif, txt, xlsx"
 },
 {
 "openalex": "W7152503058",
@@ -2745,7 +3201,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.19481030",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "model, npy, py, vec"
 },
 {
 "openalex": "W7151887049",
@@ -2757,7 +3215,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.19466056",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "model, npy, py, vec"
 },
 {
 "openalex": "W7152582413",
@@ -2769,7 +3229,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.19468526",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "model, npy, py, vec"
 },
 {
 "openalex": "W7151504783",
@@ -2781,7 +3243,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.19462611",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "txt"
 },
 {
 "openalex": "W7152065831",
@@ -2793,7 +3257,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.19451909",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "model, npy, py"
 },
 {
 "openalex": "W7147057425",
@@ -2805,7 +3271,9 @@
 "countries": "UZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.5281/zenodo.19358973",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7106654590",
@@ -2817,7 +3285,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.5281/zenodo.17711165",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W7211913010",
@@ -2829,7 +3299,9 @@
 "countries": "UZ",
 "field": "Decision Sciences",
 "url": "https://doi.org/10.5281/zenodo.22643718",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, md, pdf, png, py, xlsx"
 },
 {
 "openalex": "W7171811326",
@@ -2841,7 +3313,9 @@
 "countries": "UZ",
 "field": "Arts and Humanities",
 "url": "https://doi.org/10.5281/zenodo.21704211",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "csv, txt"
 },
 {
 "openalex": "W7220908979",
@@ -2853,7 +3327,9 @@
 "countries": "UZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.5281/zenodo.23202497",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "no_files",
+"formats": ""
 },
 {
 "openalex": "W7214954053",
@@ -2865,7 +3341,9 @@
 "countries": "UZ",
 "field": "Psychology",
 "url": "https://doi.org/10.5281/zenodo.23063563",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7155812872",
@@ -2877,7 +3355,9 @@
 "countries": "UZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.5281/zenodo.19825254",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7138928698",
@@ -2889,7 +3369,9 @@
 "countries": "UZ",
 "field": "Arts and Humanities",
 "url": "https://doi.org/10.5281/zenodo.19090626",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7138076084",
@@ -2901,7 +3383,9 @@
 "countries": "UZ",
 "field": "Arts and Humanities",
 "url": "https://doi.org/10.5281/zenodo.19075790",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7138167848",
@@ -2913,7 +3397,9 @@
 "countries": "UZ",
 "field": "Arts and Humanities",
 "url": "https://doi.org/10.5281/zenodo.19070129",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7211900286",
@@ -2925,7 +3411,9 @@
 "countries": "KZ",
 "field": "Medicine",
 "url": "https://doi.org/10.5281/zenodo.22644384",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, md, xlsx"
 },
 {
 "openalex": "W7126205857",
@@ -2937,7 +3425,9 @@
 "countries": "UZ",
 "field": "Business, Management and Accounting",
 "url": "https://doi.org/10.5281/zenodo.18427069",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7167240684",
@@ -2949,7 +3439,9 @@
 "countries": "UZ",
 "field": "Business, Management and Accounting",
 "url": "https://doi.org/10.5281/zenodo.21177506",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W6887371419",
@@ -2961,7 +3453,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/zs8sqn",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7141318755",
@@ -2973,7 +3467,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/4v3fxk",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7129066508",
@@ -2985,7 +3481,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/dvj9",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W7119530179",
@@ -2997,7 +3495,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/mahbgs",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6906094934",
@@ -3009,7 +3509,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/yc9j7e",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7080125545",
@@ -3021,7 +3523,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/5wxett",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7083003630",
@@ -3033,7 +3537,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/q8nx69",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7128994342",
@@ -3045,7 +3551,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/d77n",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W6887305707",
@@ -3057,7 +3565,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/q2cjh6",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7153255252",
@@ -3069,7 +3579,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/dgxdy",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W7212180386",
@@ -3081,7 +3593,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/4t4axf",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "unavailable",
+"formats": ""
 },
 {
 "openalex": "W7160627735",
@@ -3093,7 +3607,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/dgxqj",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W7164224274",
@@ -3105,7 +3621,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/m75hmd",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7165685617",
@@ -3117,7 +3635,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/w43mvr",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7171317813",
@@ -3129,7 +3649,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/asdru9",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7152467078",
@@ -3141,7 +3663,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/bvj4b8",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6905983072",
@@ -3153,7 +3677,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/pj86q8",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7129088418",
@@ -3165,7 +3691,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/d79y8",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W6924286943",
@@ -3177,7 +3705,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/b9ypdc",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7083830924",
@@ -3189,7 +3719,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/3k2dwd",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6924285416",
@@ -3201,7 +3733,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/3hn7n9",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W4395262849",
@@ -3213,7 +3747,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/c27g3s",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7221750695",
@@ -3225,7 +3761,9 @@
 "countries": "UZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.15468/u977se",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7204259039",
@@ -3237,7 +3775,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/haqhf6",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7119526411",
@@ -3249,7 +3789,9 @@
 "countries": "UZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.15468/82f53w",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6905436244",
@@ -3261,7 +3803,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/8c49ma",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6905598093",
@@ -3273,7 +3817,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/27qaxg",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6906180656",
@@ -3285,7 +3831,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/fmb2yg",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6943385391",
@@ -3297,7 +3845,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/2j3mnd",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7080131220",
@@ -3309,7 +3859,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/y8r9gw",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7089367685",
@@ -3321,7 +3873,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/cegrmm",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7128989270",
@@ -3333,7 +3887,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/d8y5c",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W7129046422",
@@ -3345,7 +3901,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/dc2x",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W6961906724",
@@ -3357,7 +3915,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/6pyr8a",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7129052519",
@@ -3369,7 +3929,9 @@
 "countries": "KG; UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/dgqvc",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W7078840774",
@@ -3381,7 +3943,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/pf35gh",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7119039852",
@@ -3393,7 +3957,9 @@
 "countries": "UZ",
 "field": "Earth and Planetary Sciences",
 "url": "https://doi.org/10.15468/v3frx7",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6924381184",
@@ -3405,7 +3971,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/4k33nf",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7080122055",
@@ -3417,7 +3985,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/6fh3hh",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6887390765",
@@ -3429,7 +3999,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/sscacd",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7223676157",
@@ -3441,7 +4013,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/rse9zq",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7119477442",
@@ -3453,7 +4027,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/ju7pnw",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6962387130",
@@ -3465,7 +4041,9 @@
 "countries": "KZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.15468/fr797t",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6906153999",
@@ -3477,7 +4055,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/hpksxz",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6906216050",
@@ -3489,7 +4069,9 @@
 "countries": "KZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.15468/ruvr34",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6925163855",
@@ -3501,7 +4083,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/zyw4r2",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6943203388",
@@ -3513,7 +4097,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/4pntp2",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7078254048",
@@ -3525,7 +4111,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/nfkcv8",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7078271343",
@@ -3537,7 +4125,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/auhzeu",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7078695552",
@@ -3549,7 +4139,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/d4k8cg",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7082265297",
@@ -3561,7 +4153,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/agfbdb",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7104507071",
@@ -3573,7 +4167,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/3z7x4u",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6906134540",
@@ -3585,7 +4181,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/wwtfde",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7105679692",
@@ -3597,7 +4195,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/7qurj7",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7164376132",
@@ -3609,7 +4209,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/dgy3r",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W7125905682",
@@ -3621,7 +4223,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/h556sz",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7155012067",
@@ -3633,7 +4237,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/53r9fd",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7129052695",
@@ -3645,7 +4251,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/dfrd5",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W7151526321",
@@ -3657,7 +4265,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/gkrxtu",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7154580352",
@@ -3669,7 +4279,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/kacekt",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6886924732",
@@ -3681,7 +4293,9 @@
 "countries": "UZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.15468/42m7bq",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7164861060",
@@ -3693,7 +4307,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/9ts66e",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7129104395",
@@ -3705,7 +4321,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/dgtwk",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W7129034194",
@@ -3717,7 +4335,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/d4f99",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W6887370524",
@@ -3729,7 +4349,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/m2cbrt",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7136074322",
@@ -3741,7 +4363,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/f9r8qq",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7092368916",
@@ -3753,7 +4377,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/hrb39k",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7092684969",
@@ -3765,7 +4391,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/j95r2t",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7103985598",
@@ -3777,7 +4405,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/ctmk23",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7104004184",
@@ -3789,7 +4419,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/quwnan",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7104009570",
@@ -3801,7 +4433,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/gq23d8",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7105698486",
@@ -3813,7 +4447,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/peshvt",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6962237865",
@@ -3825,7 +4461,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/ubzs5t",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7221750366",
@@ -3837,7 +4475,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/wcnu3b",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7221791828",
@@ -3849,7 +4489,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/x5bwz3",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6887296881",
@@ -3861,7 +4503,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/smm5vq",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6887368755",
@@ -3873,7 +4517,9 @@
 "countries": "UZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.15468/gucqh2",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6924625076",
@@ -3885,7 +4531,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/69fs5p",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7129038270",
@@ -3897,7 +4545,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/d9zgc",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W6906323931",
@@ -3909,7 +4559,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/wdg759",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6924304197",
@@ -3921,7 +4573,9 @@
 "countries": "UZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.15468/4vjn85",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6924979056",
@@ -3933,7 +4587,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/wg684r",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7154991367",
@@ -3945,7 +4601,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/t2uppg",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "empty",
+"formats": ""
 },
 {
 "openalex": "W7162111164",
@@ -3957,7 +4615,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/vgd5p3",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6887329481",
@@ -3969,7 +4629,9 @@
 "countries": "UZ",
 "field": "Immunology and Microbiology",
 "url": "https://doi.org/10.15468/ggtfq2",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6906000623",
@@ -3981,7 +4643,9 @@
 "countries": "UZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.15468/z5hvct",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6887359999",
@@ -3993,7 +4657,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/kxpdca",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6943480126",
@@ -4005,7 +4671,9 @@
 "countries": "UZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.15468/vj52d3",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6961944189",
@@ -4017,7 +4685,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/7dj3zu",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6905663093",
@@ -4029,7 +4699,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/6dfec2",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6887300381",
@@ -4041,7 +4713,9 @@
 "countries": "UZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.15468/fcd7n5",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7129083280",
@@ -4053,7 +4727,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/dgntl",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W7222830929",
@@ -4065,7 +4741,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/usxgnn",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7212948447",
@@ -4077,7 +4755,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/dgz65",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W7129034402",
@@ -4089,7 +4769,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/dgwbk",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W7129077270",
@@ -4101,7 +4783,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/dglv5",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W7129105197",
@@ -4113,7 +4797,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/dfpd5",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W7162989993",
@@ -4125,7 +4811,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/zy76h4",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6905717011",
@@ -4137,7 +4825,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/3re3vx",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7086762073",
@@ -4149,7 +4839,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/uteq7p",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7129017830",
@@ -4161,7 +4853,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/dgqjj",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W7129018483",
@@ -4173,7 +4867,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/dfgp9",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W7129038981",
@@ -4185,7 +4881,9 @@
 "countries": "UZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.48580/dgq4k",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W7129063520",
@@ -4197,7 +4895,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/dgmfy",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W7129084140",
@@ -4209,7 +4909,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/dgtds",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W7129089074",
@@ -4221,7 +4923,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/dfh8y",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W7129101091",
@@ -4233,7 +4937,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/dgtqg",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W7129156542",
@@ -4245,7 +4951,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/dgqck",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W6944019732",
@@ -4257,7 +4965,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/jr5969",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6961599342",
@@ -4269,7 +4979,9 @@
 "countries": "UZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.15468/4d9wna",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6962006839",
@@ -4281,7 +4993,9 @@
 "countries": "UZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.15468/veef9v",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7221475116",
@@ -4293,7 +5007,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/dgwqc.v10",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W7214498560",
@@ -4305,7 +5021,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/dgwqc.v9",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W7134231930",
@@ -4317,7 +5035,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/dgwqc.v8",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W7134238150",
@@ -4329,7 +5049,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/dgwqc.v7",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W7131314007",
@@ -4341,7 +5063,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/dgwqc.v6",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W7131083143",
@@ -4353,7 +5077,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/dgwqc.v5",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W7131090022",
@@ -4365,7 +5091,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/dgwqc.v4",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W7130685561",
@@ -4377,7 +5105,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/dgwqc.v2",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W7130715592",
@@ -4389,7 +5119,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/dgwqc.v1",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W7130726560",
@@ -4401,7 +5133,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/dgwqc.v3",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W7163038795",
@@ -4413,7 +5147,9 @@
 "countries": "UZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.15468/yj7hdm",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6962338218",
@@ -4425,7 +5161,9 @@
 "countries": "UZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.15468/q4hp96",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6905569626",
@@ -4437,7 +5175,9 @@
 "countries": "TJ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/d7h489",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6942930923",
@@ -4449,7 +5189,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/apwb7c",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7163012182",
@@ -4461,7 +5203,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/3jdu9h",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "unavailable",
+"formats": ""
 },
 {
 "openalex": "W7203547378",
@@ -4473,7 +5217,9 @@
 "countries": "KZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.15468/xknn3b",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7128994457",
@@ -4485,7 +5231,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/dfg8j",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W7129064981",
@@ -4497,7 +5245,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/dgcsd",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W7212317239",
@@ -4509,7 +5259,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.15468/bpxd4t",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "unavailable",
+"formats": ""
 },
 {
 "openalex": "W7128992419",
@@ -4521,7 +5273,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/dgnv8",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W7129013533",
@@ -4533,7 +5287,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.48580/dfjvb",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article_extract",
+"formats": ""
 },
 {
 "openalex": "W7220443327",
@@ -4545,7 +5301,9 @@
 "countries": "KZ",
 "field": "Engineering",
 "url": "https://doi.org/10.48788/dvua/3bfxpp",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6887946287",
@@ -4557,7 +5315,9 @@
 "countries": "KZ",
 "field": "Physics and Astronomy",
 "url": "https://doi.org/10.18150/yu3id0",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7172352552",
@@ -4569,7 +5329,9 @@
 "countries": "KZ",
 "field": "Physics and Astronomy",
 "url": "https://doi.org/10.26093/cds/vizier/bc-nv/lib",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7225130174",
@@ -4581,7 +5343,9 @@
 "countries": "KZ",
 "field": "Chemistry",
 "url": "https://doi.org/10.17877/resolv-2026-pkwxy1",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7131636842",
@@ -4593,7 +5357,9 @@
 "countries": "KZ",
 "field": "Materials Science",
 "url": "https://doi.org/10.18150/6gnzem",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7212549863",
@@ -4605,7 +5371,9 @@
 "countries": "UZ",
 "field": "Physics and Astronomy",
 "url": "https://doi.org/10.26093/cds/vizier/bc-nz/lbgi",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7212885928",
@@ -4617,7 +5385,9 @@
 "countries": "UZ",
 "field": "Physics and Astronomy",
 "url": "https://doi.org/10.26093/cds/vizier/bc-nz/lcfj",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7167123996",
@@ -4629,7 +5399,9 @@
 "countries": "UZ",
 "field": "Physics and Astronomy",
 "url": "https://doi.org/10.26093/cds/vizier/ba-xn-11",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7222004388",
@@ -4641,7 +5413,9 @@
 "countries": "KZ",
 "field": "Physics and Astronomy",
 "url": "https://doi.org/10.26093/cds/vizier/bc-p7/lbfh",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7161578645",
@@ -4653,7 +5427,9 @@
 "countries": "KZ",
 "field": "Engineering",
 "url": "https://doi.org/10.5291/ill-data.6-07-249",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7090182673",
@@ -4665,7 +5441,9 @@
 "countries": "UZ",
 "field": "Earth and Planetary Sciences",
 "url": "https://doi.org/10.1594/pangaea.983386",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7090325402",
@@ -4677,7 +5455,9 @@
 "countries": "UZ",
 "field": "Earth and Planetary Sciences",
 "url": "https://doi.org/10.1594/pangaea.983391",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7090368377",
@@ -4689,7 +5469,9 @@
 "countries": "UZ",
 "field": "Earth and Planetary Sciences",
 "url": "https://doi.org/10.1594/pangaea.983367",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7090414670",
@@ -4701,7 +5483,9 @@
 "countries": "UZ",
 "field": "Earth and Planetary Sciences",
 "url": "https://doi.org/10.1594/pangaea.983366",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6887478594",
@@ -4713,7 +5497,9 @@
 "countries": "UZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.1594/pangaea.981862",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6887501564",
@@ -4725,7 +5511,9 @@
 "countries": "UZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.1594/pangaea.981859",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6887530991",
@@ -4737,7 +5525,9 @@
 "countries": "UZ",
 "field": "Earth and Planetary Sciences",
 "url": "https://doi.org/10.1594/pangaea.981858",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6887549344",
@@ -4749,7 +5539,9 @@
 "countries": "UZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.1594/pangaea.981865",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6906156895",
@@ -4761,7 +5553,9 @@
 "countries": "UZ",
 "field": "Earth and Planetary Sciences",
 "url": "https://doi.org/10.1594/pangaea.981860",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6924963065",
@@ -4773,7 +5567,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.1594/pangaea.981861",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6943809038",
@@ -4785,7 +5581,9 @@
 "countries": "UZ",
 "field": "Earth and Planetary Sciences",
 "url": "https://doi.org/10.1594/pangaea.981864",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6962431574",
@@ -4797,7 +5595,9 @@
 "countries": "UZ",
 "field": "Earth and Planetary Sciences",
 "url": "https://doi.org/10.1594/pangaea.981863",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6962517297",
@@ -4809,7 +5609,9 @@
 "countries": "UZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.1594/pangaea.981866",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7212939607",
@@ -4821,7 +5623,9 @@
 "countries": "UZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.5281/zenodo.21246010",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, gpkg"
 },
 {
 "openalex": "W6893209328",
@@ -4833,7 +5637,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.5281/zenodo.15672702",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W6926554409",
@@ -4845,7 +5651,9 @@
 "countries": "UZ",
 "field": "Materials Science",
 "url": "https://doi.org/10.24435/materialscloud:b4-9t",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6964177961",
@@ -4857,7 +5665,9 @@
 "countries": "UZ",
 "field": "Materials Science",
 "url": "https://doi.org/10.24435/materialscloud:y7-nj",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "duplicate",
+"formats": ""
 },
 {
 "openalex": "W6920695501",
@@ -4869,7 +5679,9 @@
 "countries": "UZ",
 "field": "Engineering",
 "url": "https://doi.org/10.60756/zjut-vbua37h429",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7212134941",
@@ -4881,7 +5693,9 @@
 "countries": "KZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.7910/dvn/utejgw",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "cpg, dbf, fix, geojson, json, md, pdf, png, prj, py, shp, sh"
 },
 {
 "openalex": "W7165676015",
@@ -4893,7 +5707,9 @@
 "countries": "KZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.7910/dvn/cs49ft",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "mp4"
 },
 {
 "openalex": "W7081937415",
@@ -4905,7 +5721,9 @@
 "countries": "KZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.7910/dvn/vip1j8",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "zip"
 },
 {
 "openalex": "W7172022695",
@@ -4917,7 +5735,9 @@
 "countries": "KZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.7910/dvn/oippl4",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "md, tab, xlsx, zip"
 },
 {
 "openalex": "W7201903618",
@@ -4929,7 +5749,9 @@
 "countries": "KZ",
 "field": "Medicine",
 "url": "https://doi.org/10.7910/dvn/lnxnco",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article",
+"formats": "doc, docx, pdf, rtf"
 },
 {
 "openalex": "W6921589337",
@@ -4941,7 +5763,9 @@
 "countries": "KZ",
 "field": "Economics, Econometrics and Finance",
 "url": "https://doi.org/10.7910/dvn/mrxxfs",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "docx"
 },
 {
 "openalex": "W6921683528",
@@ -4953,7 +5777,9 @@
 "countries": "KZ",
 "field": "Economics, Econometrics and Finance",
 "url": "https://doi.org/10.7910/dvn/dervwr",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "docx, xlsx"
 },
 {
 "openalex": "W6902631543",
@@ -4965,7 +5791,9 @@
 "countries": "KZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.7910/dvn/n5zdcg",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "rdata"
 },
 {
 "openalex": "W6910124348",
@@ -4977,7 +5805,9 @@
 "countries": "KG",
 "field": "",
 "url": "https://doi.org/10.3886/e216141v1",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "unavailable",
+"formats": ""
 },
 {
 "openalex": "W6947556960",
@@ -4989,7 +5819,9 @@
 "countries": "KG",
 "field": "",
 "url": "https://doi.org/10.3886/e216141",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "unavailable",
+"formats": ""
 },
 {
 "openalex": "W6978611433",
@@ -5001,7 +5833,9 @@
 "countries": "KZ",
 "field": "Engineering",
 "url": "https://doi.org/10.7910/dvn/x1htnz",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "docx"
 },
 {
 "openalex": "W7169657915",
@@ -5013,7 +5847,9 @@
 "countries": "UZ",
 "field": "Economics, Econometrics and Finance",
 "url": "https://doi.org/10.7910/dvn/g8nx42",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "do, tab"
 },
 {
 "openalex": "W6958868536",
@@ -5025,7 +5861,9 @@
 "countries": "KZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.7910/dvn/vvhur5",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "unavailable",
+"formats": ""
 },
 {
 "openalex": "W7171304926",
@@ -5037,7 +5875,9 @@
 "countries": "KZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.7910/dvn/dzh8sl",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "do, docx, py, r, tab, txt, xlsx"
 },
 {
 "openalex": "W7170146013",
@@ -5049,7 +5889,9 @@
 "countries": "KZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.7910/dvn/so13ox",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "do, py, r, tab, txt, xlsx"
 },
 {
 "openalex": "W7225109765",
@@ -5061,7 +5903,9 @@
 "countries": "KZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.7910/dvn/uf9kqi",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W7171920478",
@@ -5073,7 +5917,9 @@
 "countries": "KZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.7910/dvn/s003j1",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "md, pdf, png, r, tab"
 },
 {
 "openalex": "W7169558848",
@@ -5085,7 +5931,9 @@
 "countries": "KZ",
 "field": "Business, Management and Accounting",
 "url": "https://doi.org/10.7910/dvn/tlcxo2",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "json, md, png, py, tab, xlsx"
 },
 {
 "openalex": "W7168411589",
@@ -5097,7 +5945,9 @@
 "countries": "KZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.7910/dvn/lyl3gh",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "geojson, md, pdf, r"
 },
 {
 "openalex": "W7086834438",
@@ -5109,7 +5959,9 @@
 "countries": "KZ",
 "field": "Dentistry",
 "url": "https://doi.org/10.48331/scielodata.4ekeii",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7151377741",
@@ -5121,7 +5973,9 @@
 "countries": "KZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.7910/dvn/j2sbzx",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, ds_store, pdf, r, rdata, rds, tab, xlsx"
 },
 {
 "openalex": "W6977719937",
@@ -5133,7 +5987,9 @@
 "countries": "KZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.7910/dvn/hilkid",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W6977769928",
@@ -5145,7 +6001,9 @@
 "countries": "KZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.7910/dvn/0lndky",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "do, docx, dta, pdf, tab"
 },
 {
 "openalex": "W6902713153",
@@ -5157,7 +6015,9 @@
 "countries": "KZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.7910/dvn/gmx9xi",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "do, dta"
 },
 {
 "openalex": "W6958981490",
@@ -5169,7 +6029,9 @@
 "countries": "KZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.7910/dvn/ejbq63",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6958517525",
@@ -5181,7 +6043,9 @@
 "countries": "KZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.7910/dvn/smab6h",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W6921693888",
@@ -5193,7 +6057,9 @@
 "countries": "KZ",
 "field": "Mathematics",
 "url": "https://doi.org/10.7910/dvn/hncn4x",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "do, tab, xls, xlsx"
 },
 {
 "openalex": "W6958987069",
@@ -5205,7 +6071,9 @@
 "countries": "KZ",
 "field": "Mathematics",
 "url": "https://doi.org/10.7910/dvn/enolqv",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "duplicate",
+"formats": "do, tab, xls, xlsx"
 },
 {
 "openalex": "W6958526700",
@@ -5217,7 +6085,9 @@
 "countries": "KZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.7910/dvn/0euakk",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "r, rdata, rds, tab"
 },
 {
 "openalex": "W6977875070",
@@ -5229,7 +6099,9 @@
 "countries": "KZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.7910/dvn/x7naqx",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "r, rdata, rds, txt, zip"
 },
 {
 "openalex": "W6966167085",
@@ -5241,7 +6113,9 @@
 "countries": "KZ",
 "field": "Mathematics",
 "url": "https://doi.org/10.3886/e195081",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7155171091",
@@ -5253,7 +6127,9 @@
 "countries": "KZ",
 "field": "Business, Management and Accounting",
 "url": "https://doi.org/10.7910/dvn/vrq2wq",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "tab"
 },
 {
 "openalex": "W6940505378",
@@ -5265,7 +6141,9 @@
 "countries": "KZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.7910/dvn/o3muli",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "amw, csv, tab"
 },
 {
 "openalex": "W6958980273",
@@ -5277,7 +6155,9 @@
 "countries": "KZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.7910/dvn/phv1i1",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W7138237787",
@@ -5289,7 +6169,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.7910/dvn/ynhgjk",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "unavailable",
+"formats": ""
 },
 {
 "openalex": "W7161602314",
@@ -5301,7 +6183,9 @@
 "countries": "KZ",
 "field": "Medicine",
 "url": "https://doi.org/10.18710/qpsa9m",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7141355317",
@@ -5313,7 +6197,9 @@
 "countries": "UZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.7910/dvn/bxca1t",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "do, docx, tab, xlsx"
 },
 {
 "openalex": "W6940104838",
@@ -5325,7 +6211,9 @@
 "countries": "UZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.7910/dvn/uddcff",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "unavailable",
+"formats": ""
 },
 {
 "openalex": "W6977526656",
@@ -5337,7 +6225,9 @@
 "countries": "UZ",
 "field": "Economics, Econometrics and Finance",
 "url": "https://doi.org/10.7802/2868",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6925758760",
@@ -5349,7 +6239,9 @@
 "countries": "KZ",
 "field": "Engineering",
 "url": "https://doi.org/10.21227/1rpn-h773",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "unavailable",
+"formats": ""
 },
 {
 "openalex": "W7172453108",
@@ -5361,7 +6253,9 @@
 "countries": "KZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.57760/sciencedb.45059",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7162302058",
@@ -5373,7 +6267,9 @@
 "countries": "KZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.57760/sciencedb.37962",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7155498293",
@@ -5385,7 +6281,9 @@
 "countries": "KZ",
 "field": "Psychology",
 "url": "https://doi.org/10.57760/sciencedb.34184",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7148259881",
@@ -5397,7 +6295,9 @@
 "countries": "KZ",
 "field": "Medicine",
 "url": "https://doi.org/10.5061/dryad.6t1g1jxdf",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "md, txt, xlsx, zip"
 },
 {
 "openalex": "W6958632387",
@@ -5409,7 +6309,9 @@
 "countries": "KZ",
 "field": "Biochemistry, Genetics and Molecular Biology",
 "url": "https://doi.org/10.6084/m9.figshare.28775501",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W6977006157",
@@ -5421,7 +6323,9 @@
 "countries": "KZ",
 "field": "Biochemistry, Genetics and Molecular Biology",
 "url": "https://doi.org/10.6084/m9.figshare.28775498",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W6977327847",
@@ -5433,7 +6337,9 @@
 "countries": "KZ",
 "field": "Biochemistry, Genetics and Molecular Biology",
 "url": "https://doi.org/10.6084/m9.figshare.28775504",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W6948056806",
@@ -5445,7 +6351,9 @@
 "countries": "KZ",
 "field": "Biochemistry, Genetics and Molecular Biology",
 "url": "https://doi.org/10.5061/dryad.612jm64cr",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "md, zip"
 },
 {
 "openalex": "W7201863130",
@@ -5457,7 +6365,9 @@
 "countries": "KZ",
 "field": "Biochemistry, Genetics and Molecular Biology",
 "url": "https://doi.org/10.17632/djw6bgb8vc",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W7165187812",
@@ -5469,7 +6379,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.17632/v7m7v3jdn5",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "tsv"
 },
 {
 "openalex": "W7159623878",
@@ -5481,7 +6393,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.17632/jxm9ynjg66",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "tsv, xlsx"
 },
 {
 "openalex": "W7153219868",
@@ -5493,7 +6407,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.17632/th2mkg56m2",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "tsv"
 },
 {
 "openalex": "W7150948022",
@@ -5505,7 +6421,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.17632/6yrswp74pd",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "tsv, xlsx"
 },
 {
 "openalex": "W7167687112",
@@ -5517,7 +6435,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.17632/cyp3mggcb9",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "tsv"
 },
 {
 "openalex": "W7167288047",
@@ -5529,7 +6449,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.17632/7bxcj57xdz",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "tsv"
 },
 {
 "openalex": "W7165664208",
@@ -5541,7 +6463,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.17632/v43nkjzw39",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "tsv"
 },
 {
 "openalex": "W7165668686",
@@ -5553,7 +6477,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.17632/hwv5wzpvpk",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "tsv"
 },
 {
 "openalex": "W7139940700",
@@ -5565,7 +6491,9 @@
 "countries": "UZ",
 "field": "Medicine",
 "url": "https://doi.org/10.17632/hnfmrknzz9",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W6962682367",
@@ -5577,7 +6505,9 @@
 "countries": "KZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.17632/32v9fy62r3",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "png, xlsx"
 },
 {
 "openalex": "W7222248940",
@@ -5589,7 +6519,9 @@
 "countries": "KG",
 "field": "Medicine",
 "url": "https://doi.org/10.57760/sciencedb.015rc",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6892119237",
@@ -5601,7 +6533,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.5061/dryad.1c59zw452",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "fas, md, nex"
 },
 {
 "openalex": "W7225158310",
@@ -5613,7 +6547,9 @@
 "countries": "UZ",
 "field": "Engineering",
 "url": "https://doi.org/10.17632/n2zf9km3jk",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W7204559157",
@@ -5625,7 +6561,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.17632/cvtbwhyrgz",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W7163386687",
@@ -5637,7 +6575,9 @@
 "countries": "KZ",
 "field": "Business, Management and Accounting",
 "url": "https://doi.org/10.17632/3t5wsgrrkh",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv"
 },
 {
 "openalex": "W6910955836",
@@ -5649,7 +6589,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.5061/dryad.k0p2ngfkr",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "fas, md"
 },
 {
 "openalex": "W6925452903",
@@ -5661,7 +6603,9 @@
 "countries": "KZ",
 "field": "Business, Management and Accounting",
 "url": "https://doi.org/10.17632/ty4kz2245h",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W6906830603",
@@ -5673,7 +6617,9 @@
 "countries": "KZ",
 "field": "Business, Management and Accounting",
 "url": "https://doi.org/10.17632/k7hn23h85g",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "pdf"
 },
 {
 "openalex": "W7079545442",
@@ -5685,7 +6631,9 @@
 "countries": "KZ",
 "field": "Medicine",
 "url": "https://doi.org/10.57760/sciencedb.28794",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6936241311",
@@ -5697,7 +6645,9 @@
 "countries": "KZ",
 "field": "Earth and Planetary Sciences",
 "url": "https://doi.org/10.57760/sciencedb.16213",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7131295162",
@@ -5709,7 +6659,9 @@
 "countries": "KG",
 "field": "Social Sciences",
 "url": "https://doi.org/10.57760/sciencedb.27214",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7104398424",
@@ -5721,7 +6673,9 @@
 "countries": "KG",
 "field": "Social Sciences",
 "url": "https://doi.org/10.57760/sciencedb.31201",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7105982186",
@@ -5733,7 +6687,9 @@
 "countries": "KG",
 "field": "Psychology",
 "url": "https://doi.org/10.57760/sciencedb.31190",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6977164413",
@@ -5745,7 +6701,9 @@
 "countries": "KG",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.6084/m9.figshare.26043845",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W7212729424",
@@ -5757,7 +6715,9 @@
 "countries": "KZ",
 "field": "Medicine",
 "url": "https://doi.org/10.17632/2zmj4nr9gb",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "cff, csv, gz, html, json, md, py, txt, xlsx"
 },
 {
 "openalex": "W6958090774",
@@ -5769,7 +6729,9 @@
 "countries": "KZ",
 "field": "Biochemistry, Genetics and Molecular Biology",
 "url": "https://doi.org/10.6084/m9.figshare.26658160",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W6898757610",
@@ -5781,7 +6743,9 @@
 "countries": "KZ",
 "field": "Engineering",
 "url": "https://doi.org/10.57760/sciencedb.12628",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7165784316",
@@ -5793,7 +6757,9 @@
 "countries": "KZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.34620/dadosipb/xlwq0q",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7092974199",
@@ -5805,7 +6771,9 @@
 "countries": "KZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.34620/dadosipb/mzzsn0",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7203866772",
@@ -5817,7 +6785,9 @@
 "countries": "KZ",
 "field": "Medicine",
 "url": "https://doi.org/10.6084/m9.figshare.33304121",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W6917308087",
@@ -5829,7 +6799,9 @@
 "countries": "KZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.57760/sciencedb.22494",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6892206857",
@@ -5841,7 +6813,9 @@
 "countries": "UZ",
 "field": "Agricultural and Biological Sciences",
 "url": "https://doi.org/10.5061/dryad.b5mkkwhq2",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "fas, md, txt, zip"
 },
 {
 "openalex": "W6944672428",
@@ -5853,7 +6827,9 @@
 "countries": "KZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.21227/kpkn-0j05",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7108597352",
@@ -5865,7 +6841,9 @@
 "countries": "UZ",
 "field": "Energy",
 "url": "https://doi.org/10.6084/m9.figshare.30782440",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W7221515066",
@@ -5877,7 +6855,9 @@
 "countries": "UZ",
 "field": "Economics, Econometrics and Finance",
 "url": "https://doi.org/10.17632/6knrzdfgrw",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "zip"
 },
 {
 "openalex": "W7172538244",
@@ -5889,7 +6869,9 @@
 "countries": "UZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.17632/y77grssd62",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "zip"
 },
 {
 "openalex": "W7167726196",
@@ -5901,7 +6883,9 @@
 "countries": "UZ",
 "field": "Mathematics",
 "url": "https://doi.org/10.17632/335s33h9bv",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, md, mplstyle, py, rhistory, txt"
 },
 {
 "openalex": "W7167034478",
@@ -5913,7 +6897,9 @@
 "countries": "UZ",
 "field": "Physics and Astronomy",
 "url": "https://doi.org/10.57760/sciencedb.41781",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7165625153",
@@ -5925,7 +6911,9 @@
 "countries": "UZ",
 "field": "Mathematics",
 "url": "https://doi.org/10.17632/h6rgtvwk52",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "zip"
 },
 {
 "openalex": "W6973824661",
@@ -5937,7 +6925,9 @@
 "countries": "UZ",
 "field": "Energy",
 "url": "https://doi.org/10.57760/sciencedb.16246",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7222530723",
@@ -5949,7 +6939,9 @@
 "countries": "UZ",
 "field": "Mathematics",
 "url": "https://doi.org/10.17632/hsmjmrfn8t",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "zip"
 },
 {
 "openalex": "W7204246132",
@@ -5961,7 +6953,9 @@
 "countries": "UZ",
 "field": "Engineering",
 "url": "https://doi.org/10.17632/h45dw35pft",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "zip"
 },
 {
 "openalex": "W7170198609",
@@ -5973,7 +6967,9 @@
 "countries": "KZ",
 "field": "Neuroscience",
 "url": "https://doi.org/10.17632/gs3j33khbf",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "eeg, json, vhdr, vmrk"
 },
 {
 "openalex": "W7093317510",
@@ -5985,7 +6981,9 @@
 "countries": "KZ",
 "field": "Energy",
 "url": "https://doi.org/10.17632/j3jgycrxc8",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "csv, pdf"
 },
 {
 "openalex": "W7083006795",
@@ -5997,7 +6995,9 @@
 "countries": "KZ",
 "field": "Biochemistry, Genetics and Molecular Biology",
 "url": "https://doi.org/10.5061/dryad.4xgxd25nx",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "csv, eval, evec, geno, gz, ind, snp, txt"
 },
 {
 "openalex": "W6947812871",
@@ -6009,7 +7009,9 @@
 "countries": "KZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.48333/0pjd-bp65",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "unavailable",
+"formats": ""
 },
 {
 "openalex": "W6944173491",
@@ -6021,7 +7023,9 @@
 "countries": "KZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.17632/2642s9pv8d",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "log, txt, xlsx"
 },
 {
 "openalex": "W6944072880",
@@ -6033,7 +7037,9 @@
 "countries": "KZ",
 "field": "Medicine",
 "url": "https://doi.org/10.17632/9ts2bjjrbs",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W6906612878",
@@ -6045,7 +7051,9 @@
 "countries": "KZ",
 "field": "Engineering",
 "url": "https://doi.org/10.17632/x69hyyv3zw",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "pdf, xlsx"
 },
 {
 "openalex": "W7151242506",
@@ -6057,7 +7065,9 @@
 "countries": "KZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.48342/52ae-az27",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6925892734",
@@ -6069,7 +7079,9 @@
 "countries": "KZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.21227/rbqa-yr12",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6939584192",
@@ -6081,7 +7093,9 @@
 "countries": "KZ",
 "field": "Biochemistry, Genetics and Molecular Biology",
 "url": "https://doi.org/10.6084/m9.figshare.26633271",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W6939832515",
@@ -6093,7 +7107,9 @@
 "countries": "KZ",
 "field": "Biochemistry, Genetics and Molecular Biology",
 "url": "https://doi.org/10.6084/m9.figshare.26633262",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W6958149019",
@@ -6105,7 +7121,9 @@
 "countries": "KZ",
 "field": "Biochemistry, Genetics and Molecular Biology",
 "url": "https://doi.org/10.6084/m9.figshare.26633268",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W6958333524",
@@ -6117,7 +7135,9 @@
 "countries": "KZ",
 "field": "Psychology",
 "url": "https://doi.org/10.6084/m9.figshare.26593943",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W6958608192",
@@ -6129,7 +7149,9 @@
 "countries": "KZ",
 "field": "Biochemistry, Genetics and Molecular Biology",
 "url": "https://doi.org/10.6084/m9.figshare.26633265",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W6977092280",
@@ -6141,7 +7163,9 @@
 "countries": "KZ",
 "field": "Biochemistry, Genetics and Molecular Biology",
 "url": "https://doi.org/10.6084/m9.figshare.24452630",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W6977206680",
@@ -6153,7 +7177,9 @@
 "countries": "KZ",
 "field": "Psychology",
 "url": "https://doi.org/10.6084/m9.figshare.26593946",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "code",
+"formats": "r"
 },
 {
 "openalex": "W6977266890",
@@ -6165,7 +7191,9 @@
 "countries": "KZ",
 "field": "Biochemistry, Genetics and Molecular Biology",
 "url": "https://doi.org/10.6084/m9.figshare.26633277",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W6977429573",
@@ -6177,7 +7205,9 @@
 "countries": "KZ",
 "field": "Biochemistry, Genetics and Molecular Biology",
 "url": "https://doi.org/10.6084/m9.figshare.26633274",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W6926229094",
@@ -6189,7 +7219,9 @@
 "countries": "KZ",
 "field": "Engineering",
 "url": "https://doi.org/10.21227/dezj-4h90",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7147158794",
@@ -6201,7 +7233,9 @@
 "countries": "UZ",
 "field": "Engineering",
 "url": "https://doi.org/10.17632/mztgnp8wb6",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W7106798747",
@@ -6213,7 +7247,9 @@
 "countries": "UZ",
 "field": "Medicine",
 "url": "https://doi.org/10.17632/kpg5yz77gj",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "zip"
 },
 {
 "openalex": "W7082148498",
@@ -6225,7 +7261,9 @@
 "countries": "KZ",
 "field": "Materials Science",
 "url": "https://doi.org/10.17632/t45c7kc6gt",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "zip"
 },
 {
 "openalex": "W7085597686",
@@ -6237,7 +7275,9 @@
 "countries": "KG",
 "field": "Biochemistry, Genetics and Molecular Biology",
 "url": "https://doi.org/10.5061/dryad.zpc866tks",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "bed, bim, fam, md"
 },
 {
 "openalex": "W6906661377",
@@ -6249,7 +7289,9 @@
 "countries": "UZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.17632/wn2v86tfzc",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W6892086253",
@@ -6261,7 +7303,9 @@
 "countries": "UZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.5061/dryad.z8w9ghxnp",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "md, xlsx"
 },
 {
 "openalex": "W7155821915",
@@ -6273,7 +7317,9 @@
 "countries": "UZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.17632/kht4h44tnh",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W7211928995",
@@ -6285,7 +7331,9 @@
 "countries": "KZ",
 "field": "Engineering",
 "url": "https://doi.org/10.17632/mzfwpphwfp",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv"
 },
 {
 "openalex": "W7077879896",
@@ -6297,7 +7345,9 @@
 "countries": "KZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.17632/gyw87k93yb",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "csv, jpg, txt"
 },
 {
 "openalex": "W7117245999",
@@ -6309,7 +7359,9 @@
 "countries": "TJ; UZ",
 "field": "Engineering",
 "url": "https://doi.org/10.17632/m3d3vmzwtf",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "article",
+"formats": "docx"
 },
 {
 "openalex": "W6940042571",
@@ -6321,7 +7373,9 @@
 "countries": "KZ; TJ",
 "field": "Medicine",
 "url": "https://doi.org/10.6084/m9.figshare.27314700",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W6962533272",
@@ -6333,7 +7387,9 @@
 "countries": "UZ",
 "field": "Energy",
 "url": "https://doi.org/10.17632/jbpbwtxxk8",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "zip"
 },
 {
 "openalex": "W6936407005",
@@ -6345,7 +7401,9 @@
 "countries": "UZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.57760/sciencedb.28755",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7204147642",
@@ -6357,7 +7415,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.17632/n84592mrwg",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "cff, csv, json, md, py, toml, txt"
 },
 {
 "openalex": "W7202288038",
@@ -6369,7 +7429,9 @@
 "countries": "UZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.17632/xt3gsf89n9",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, json, md, xlsx"
 },
 {
 "openalex": "W7133225682",
@@ -6381,7 +7443,9 @@
 "countries": "KZ; UZ",
 "field": "Environmental Science",
 "url": "https://doi.org/10.57760/sciencedb.agriculture.00309",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7221961312",
@@ -6393,7 +7457,9 @@
 "countries": "UZ",
 "field": "Mathematics",
 "url": "https://doi.org/10.17632/y3xnnd5965",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "md, pdf, py, txt"
 },
 {
 "openalex": "W7221536728",
@@ -6405,7 +7471,9 @@
 "countries": "UZ",
 "field": "Engineering",
 "url": "https://doi.org/10.17632/94cs77bhtd",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "md, pdf, py, txt"
 },
 {
 "openalex": "W7164323465",
@@ -6417,7 +7485,9 @@
 "countries": "UZ",
 "field": "Business, Management and Accounting",
 "url": "https://doi.org/10.57760/sciencedb.39536",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7164364555",
@@ -6429,7 +7499,9 @@
 "countries": "UZ",
 "field": "Business, Management and Accounting",
 "url": "https://doi.org/10.57760/sciencedb.39235",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7115890418",
@@ -6441,7 +7513,9 @@
 "countries": "UZ",
 "field": "Economics, Econometrics and Finance",
 "url": "https://doi.org/10.57760/sciencedb.33738",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7111282353",
@@ -6453,7 +7527,9 @@
 "countries": "UZ",
 "field": "Business, Management and Accounting",
 "url": "https://doi.org/10.57760/sciencedb.33228",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7109218040",
@@ -6465,7 +7541,9 @@
 "countries": "UZ",
 "field": "Business, Management and Accounting",
 "url": "https://doi.org/10.57760/sciencedb.32652",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W6962067750",
@@ -6477,7 +7555,9 @@
 "countries": "UZ",
 "field": "Economics, Econometrics and Finance",
 "url": "https://doi.org/10.15456/jae.2024199.1106946010",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": ""
 },
 {
 "openalex": "W7151828154",
@@ -6489,7 +7569,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.17632/7txp76nrzs",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "rar"
 },
 {
 "openalex": "W7154467473",
@@ -6501,7 +7583,9 @@
 "countries": "UZ",
 "field": "Health Professions",
 "url": "https://doi.org/10.17632/fsb6wdyzpy",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W7154066959",
@@ -6513,7 +7597,9 @@
 "countries": "UZ",
 "field": "Health Professions",
 "url": "https://doi.org/10.17632/xjhrfdzymx",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W7204195502",
@@ -6525,7 +7611,9 @@
 "countries": "UZ",
 "field": "Economics, Econometrics and Finance",
 "url": "https://doi.org/10.17632/xv3n73gwdr",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv, docx, r, xlsx"
 },
 {
 "openalex": "W7165779596",
@@ -6537,7 +7625,9 @@
 "countries": "UZ",
 "field": "Business, Management and Accounting",
 "url": "https://doi.org/10.17632/tm784gh392",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "docx, xlsx"
 },
 {
 "openalex": "W7118092909",
@@ -6549,7 +7639,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.17632/55f889ncnx",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "conllu, jsonl, tsv, txt"
 },
 {
 "openalex": "W6906540446",
@@ -6561,7 +7653,9 @@
 "countries": "UZ",
 "field": "Computer Science",
 "url": "https://doi.org/10.17632/bhmwhh95j3",
-"mentions_central_asia": true
+"mentions_central_asia": true,
+"check": "data",
+"formats": "xlsx"
 },
 {
 "openalex": "W7161592053",
@@ -6573,6 +7667,8 @@
 "countries": "UZ",
 "field": "Social Sciences",
 "url": "https://doi.org/10.17632/w5r6sxd99p",
-"mentions_central_asia": false
+"mentions_central_asia": false,
+"check": "data",
+"formats": "csv"
 }
 ]

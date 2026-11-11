@@ -82,7 +82,7 @@
       <button role="tab" class="tab on" data-tab="t-uni"><span class="mono">DS-0001</span> <span data-ru="Вузы ЦА">Вузы ЦА</span></button>
       <button role="tab" class="tab" data-tab="t-med"><span class="mono">DS-0002</span> <span data-ru="Медучреждения UZ">Медучреждения UZ</span></button>
       <button role="tab" class="tab" data-tab="t-pub"><span class="mono">DS-0003</span> <span data-ru="Публикации">Публикации</span></button>
-      <button role="tab" class="tab" data-tab="t-pipe"><span class="mono">PIPELINE</span> <span data-ru="548 найденных наборов учёных">548 найденных наборов учёных</span></button>
+      <button role="tab" class="tab" data-tab="t-pipe"><span class="mono">PIPELINE</span> <span data-ru="405 проверенных наборов учёных">405 проверенных наборов учёных</span></button>
     </div>
 
     <!-- DS-0001 -->
@@ -172,8 +172,8 @@
     <div class="tabpanel" id="t-pipe">
       <div class="pipe-head">
         <div>
-          <h3 data-ru="548 открытых наборов данных, которые учёные вузов ЦА уже опубликовали сами">548 открытых наборов данных, которые учёные вузов ЦА уже опубликовали сами</h3>
-          <p class="muted" data-ru="Отобраны из 11 523 записей OpenAlex с 2023 года: Zenodo, Mendeley Data, Dataverse, GBIF и др. Это не наш товар — это доказательство, что данные в вузах есть. Наша работа: договориться с вузом, проверить, разметить и упаковать для ИИ.">Отобраны из 11 523 записей OpenAlex с 2023 года: Zenodo, Mendeley Data, Dataverse, GBIF и др. Это не наш товар — это доказательство, что данные в вузах есть. Наша работа: договориться с вузом, проверить, разметить и упаковать для ИИ.</p>
+          <h3 data-ru="405 открытых наборов данных, которые учёные вузов ЦА опубликовали сами, — каждый проверен">405 открытых наборов данных, которые учёные вузов ЦА опубликовали сами, — каждый проверен</h3>
+          <p class="muted" data-ru="Из 11 523 записей OpenAlex с 2023 года мы отобрали 548 кандидатов и открыли каждый в его репозитории: Zenodo, GBIF, Mendeley Data, Dataverse и других. Файлы с данными есть у 405. Остальные 143: только статья или документ (63), списки видов, извлечённые из статей (40), удалённые записи и нерабочие ссылки (19), закрытые файлы (17), прочее (4). Это не наш товар — это доказательство, что данные в вузах есть.">Из 11 523 записей OpenAlex с 2023 года мы отобрали 548 кандидатов и открыли каждый в его репозитории: Zenodo, GBIF, Mendeley Data, Dataverse и других. Файлы с данными есть у 405. Остальные 143: только статья или документ (63), списки видов, извлечённые из статей (40), удалённые записи и нерабочие ссылки (19), закрытые файлы (17), прочее (4). Это не наш товар — это доказательство, что данные в вузах есть.</p>
         </div>
         <div class="pipe-stats" id="pipeStats"></div>
       </div>
@@ -190,10 +190,11 @@
             <button data-m="bio" data-ru="Биоразнообразие">Биоразнообразие</button>
             <button data-m="code" data-ru="Код и модели">Код и модели</button>
           </div>
+          <div class="seg" id="pipeCheck"><button class="on" data-k="data" data-ru="С данными">С данными</button><button data-k="nodata" data-ru="Без данных">Без данных</button><button data-k="" data-ru="Все записи">Все записи</button></div>
           <div class="seg" id="pipeCountry"><button class="on" data-c="">All</button><button data-c="UZ">UZ</button><button data-c="KZ">KZ</button><button data-c="KG">KG</button><button data-c="TJ">TJ</button></div>
         </div>
-        <div class="tscroll tall"><table id="pipeTable"><thead><tr><th data-ru="Год">Год</th><th data-ru="Датасет">Датасет</th><th data-ru="Вуз">Вуз</th><th data-ru="Область">Область</th><th data-ru="Лицензия">Лицензия</th></tr></thead><tbody></tbody></table></div>
-        <div class="table-foot small muted"><span id="pipeCount"></span> · <span data-ru="Названия — на языке публикации. Метаданные OpenAlex (CC0), авторы скрыты, тип данных определён автоматически по названию.">Названия — на языке публикации. Метаданные OpenAlex (CC0), авторы скрыты, тип данных определён автоматически по названию.</span></div>
+        <div class="tscroll tall"><table id="pipeTable"><thead><tr><th data-ru="Год">Год</th><th data-ru="Датасет">Датасет</th><th data-ru="Вуз">Вуз</th><th data-ru="Область">Область</th><th data-ru="Лицензия">Лицензия</th><th data-ru="Проверка">Проверка</th></tr></thead><tbody></tbody></table></div>
+        <div class="table-foot small muted"><span id="pipeCount"></span> · <span data-ru="Названия — на языке публикации. Метаданные OpenAlex (CC0), авторы скрыты, тип данных определён автоматически по названию. «Проверка» — что мы нашли, открыв запись в репозитории (ноябрь 2026).">Названия — на языке публикации. Метаданные OpenAlex (CC0), авторы скрыты, тип данных определён автоматически по названию. «Проверка» — что мы нашли, открыв запись в репозитории (ноябрь 2026).</span></div>
       </div>
     </div>
   </div>

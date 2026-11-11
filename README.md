@@ -34,7 +34,7 @@ python3 -I tools/build_site.py
 | `api/v0/datasets/<slug>/sample.json`, `sample.csv` | Открытый образец |
 | `api/v0/datasets/<slug>/croissant.json` | Метаданные MLCommons Croissant 1.0 |
 | `api/v0/universities.json` | Полный справочник вузов (CC0) |
-| `api/v0/research-datasets.json` | 548 открытых датасетов учёных ЦА (без авторов) |
+| `api/v0/research-datasets.json` | 548 записей о датасетах учёных ЦА, каждая проверена: у 405 есть файлы с данными (поле `check`, без авторов) |
 
 Страницы датасетов `datasets/<slug>.html` содержат разметку schema.org/Dataset — для Google Dataset Search.
 

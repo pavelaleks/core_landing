@@ -166,8 +166,9 @@ def build_api():
         emit("api/v0/datasets/" + s + "/croissant.json", jdump(croissant(d)))
         if s == "universities":
             emit("api/v0/universities.json", jdump({"dataset": d["id"], "license": "CC0-1.0", "count": len(rows), "universities": rows}))
-    emit("api/v0/research-datasets.json", jdump({"about": "Open research datasets by Central Asian university scholars since 2023, from OpenAlex (CC0 metadata). Authors omitted.",
-                                                  "count": len(RD), "datasets": RD}))
+    emit("api/v0/research-datasets.json", jdump({"about": "Open research datasets by Central Asian university scholars since 2023, from OpenAlex (CC0 metadata). Authors omitted. "
+                                                  "Every record was opened in its repository; field `check` says what we found ('data' = data files present).",
+                                                  "count": len(RD), "count_with_data": sum(1 for d in RD if d.get("check") == "data"), "datasets": RD}))
 
 # ================================================================== dataset pages (EN source with data-ru)
 def esc(s):
@@ -469,14 +470,15 @@ configs:
 
 # CORE — Open research datasets by Central Asian scholars
 
-{len(RD)} datasets published since 2023 by researchers of universities in Uzbekistan, Kazakhstan,
-Kyrgyzstan and Tajikistan, selected from 11,523 OpenAlex records typed "dataset": items deposited in
-data repositories (Mendeley Data, Dataverse, GBIF …) or on Zenodo with "data" in the title.
+{sum(1 for d in RD if d.get("check") == "data")} datasets with data files, published since 2023 by researchers of universities in Uzbekistan,
+Kazakhstan, Kyrgyzstan and Tajikistan. We selected {len(RD)} candidates from 11,523 OpenAlex records typed
+"dataset" and opened each one in its repository; field `check` says what we found ('data', or why not:
+document only, extract from an article, restricted, link broken, duplicate).
 
 - **By country:** {", ".join("%s %d" % (k, v) for k, v in sorted(by_country.items(), key=lambda x: -x[1]))}
 - **License of this list:** CC0-1.0 (OpenAlex metadata). Each dataset keeps its own license — see `license`.
 - **Authors are omitted** on purpose.
-- Selection is automatic: some records may not be datasets. Field `mentions_central_asia` marks titles that name the region.
+- Field `formats` lists the file types we saw. Field `mentions_central_asia` marks titles that name the region.
 
 Use it to find data for Central Asian NLP, geoscience, agriculture and social-science work.
 Browse and filter it on {BASE}#catalog.

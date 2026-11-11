@@ -1,0 +1,5220 @@
+{
+"checked": "2026-11-11",
+"method": "Each record opened through its repository API (Zenodo, GBIF, Mendeley Data, Harvard Dataverse, Figshare, Dryad); other repositories through DataCite metadata. 'data' = at least one data file (table, archive, images, sequences, GIS …) or a GBIF dataset with records; 'article' = only PDF/Word/slides; 'code' = only code and documents. Records in data-only repositories without a file API (PANGAEA, Science Data Bank, VizieR, ICPSR, GESIS …) were counted as data after their landing page opened; 11 pages blocked automated access and are counted on the repository's nature.",
+"counts": {
+"data": 405,
+"no_files": 17,
+"article": 63,
+"unavailable": 19,
+"article_extract": 40,
+"empty": 1,
+"duplicate": 2,
+"code": 1
+},
+"records": [
+{
+"openalex": "W6968772322",
+"kind": "data",
+"note": "csv",
+"files": 3,
+"formats": [
+"csv"
+]
+},
+{
+"openalex": "W7172007212",
+"kind": "data",
+"note": "docx, pdf, xlsx",
+"files": 1,
+"formats": [
+"docx",
+"pdf",
+"xlsx"
+]
+},
+{
+"openalex": "W7202035317",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W7140087738",
+"kind": "data",
+"note": "dat, docx, html, ini, jws, png, svg, txt, xlsx, zip",
+"files": 2,
+"formats": [
+"dat",
+"docx",
+"html",
+"ini",
+"jws",
+"png",
+"svg",
+"txt",
+"xlsx",
+"zip"
+]
+},
+{
+"openalex": "W7214169536",
+"kind": "data",
+"note": "csv, geojson, json, md, pdf, png, py, sh, sha256, txt, yml",
+"files": 1,
+"formats": [
+"csv",
+"geojson",
+"json",
+"md",
+"pdf",
+"png",
+"py",
+"sh",
+"sha256",
+"txt",
+"yml"
+]
+},
+{
+"openalex": "W7204550954",
+"kind": "data",
+"note": "cff, csv, geojson, js, md, tif, txt, xlsx",
+"files": 1,
+"formats": [
+"cff",
+"csv",
+"geojson",
+"js",
+"md",
+"tif",
+"txt",
+"xlsx"
+]
+},
+{
+"openalex": "W7225575230",
+"kind": "no_files",
+"note": "zenodo: record has no files (access: restricted)",
+"files": 0,
+"formats": []
+},
+{
+"openalex": "W7225593030",
+"kind": "data",
+"note": "csv, r, txt",
+"files": 3,
+"formats": [
+"csv",
+"r",
+"txt"
+]
+},
+{
+"openalex": "W7225170436",
+"kind": "data",
+"note": "csv, geojson, ipynb, js, json, log, md, pdf, png, py, qgz, sha256, svg, tex, tif, tsv, txt, zip",
+"files": 12,
+"formats": [
+"csv",
+"geojson",
+"ipynb",
+"js",
+"json",
+"log",
+"md",
+"pdf",
+"png",
+"py",
+"qgz",
+"sha256"
+]
+},
+{
+"openalex": "W7213621982",
+"kind": "data",
+"note": "cff, csv, docx, json, jsonl, md, png, py, sh, tsv, txt",
+"files": 1,
+"formats": [
+"cff",
+"csv",
+"docx",
+"json",
+"jsonl",
+"md",
+"png",
+"py",
+"sh",
+"tsv",
+"txt"
+]
+},
+{
+"openalex": "W7213596391",
+"kind": "data",
+"note": "images: 4000 files, png",
+"files": 1,
+"formats": [
+"png"
+]
+},
+{
+"openalex": "W7168244065",
+"kind": "article",
+"note": "only documents: docx",
+"files": 1,
+"formats": [
+"docx"
+]
+},
+{
+"openalex": "W7164680230",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W6949784907",
+"kind": "article",
+"note": "only documents: docx",
+"files": 1,
+"formats": [
+"docx"
+]
+},
+{
+"openalex": "W6911724870",
+"kind": "unavailable",
+"note": "zenodo: 410",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6893455241",
+"kind": "data",
+"note": "ds_store, ipynb, jpg, txt, xlsx",
+"files": 10,
+"formats": [
+"ds_store",
+"ipynb",
+"jpg",
+"txt",
+"xlsx"
+]
+},
+{
+"openalex": "W7161564623",
+"kind": "data",
+"note": "csv, m, md",
+"files": 9,
+"formats": [
+"csv",
+"m",
+"md"
+]
+},
+{
+"openalex": "W7213640598",
+"kind": "no_files",
+"note": "zenodo: record has no files (access: restricted)",
+"files": 0,
+"formats": []
+},
+{
+"openalex": "W7203971353",
+"kind": "data",
+"note": "cff, csv, md, txt, xlsx",
+"files": 1,
+"formats": [
+"cff",
+"csv",
+"md",
+"txt",
+"xlsx"
+]
+},
+{
+"openalex": "W7164477349",
+"kind": "data",
+"note": "ipynb, json, jsonl, md, py, txt",
+"files": 1,
+"formats": [
+"ipynb",
+"json",
+"jsonl",
+"md",
+"py",
+"txt"
+]
+},
+{
+"openalex": "W7129453516",
+"kind": "data",
+"note": "pdf, xlsx",
+"files": 5,
+"formats": [
+"pdf",
+"xlsx"
+]
+},
+{
+"openalex": "W7125939982",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7167083653",
+"kind": "no_files",
+"note": "zenodo: record has no files (access: restricted)",
+"files": 0,
+"formats": []
+},
+{
+"openalex": "W6893307048",
+"kind": "data",
+"note": "csv, png, tsv, txt",
+"files": 1,
+"formats": [
+"csv",
+"png",
+"tsv",
+"txt"
+]
+},
+{
+"openalex": "W7165629528",
+"kind": "data",
+"note": "json, jsonl, md, png, py, txt",
+"files": 1,
+"formats": [
+"json",
+"jsonl",
+"md",
+"png",
+"py",
+"txt"
+]
+},
+{
+"openalex": "W7165132452",
+"kind": "data",
+"note": "rar",
+"files": 1,
+"formats": [
+"rar"
+]
+},
+{
+"openalex": "W7204603782",
+"kind": "data",
+"note": "cff, csv, md, png, py, txt",
+"files": 1,
+"formats": [
+"cff",
+"csv",
+"md",
+"png",
+"py",
+"txt"
+]
+},
+{
+"openalex": "W7214456987",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7124736698",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7223225568",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7214887937",
+"kind": "data",
+"note": "csv, md, r",
+"files": 4,
+"formats": [
+"csv",
+"md",
+"r"
+]
+},
+{
+"openalex": "W7160710933",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7159684713",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7128772295",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7225091966",
+"kind": "data",
+"note": "cff, csv, md, pdf, png, py, txt",
+"files": 4,
+"formats": [
+"cff",
+"csv",
+"md",
+"pdf",
+"png",
+"py",
+"txt"
+]
+},
+{
+"openalex": "W7154899679",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7141765569",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7131671448",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7225300557",
+"kind": "data",
+"note": "json, parquet",
+"files": 2,
+"formats": [
+"json",
+"parquet"
+]
+},
+{
+"openalex": "W7223656980",
+"kind": "no_files",
+"note": "zenodo: record has no files (access: restricted)",
+"files": 0,
+"formats": []
+},
+{
+"openalex": "W7172095620",
+"kind": "data",
+"note": "csv, parquet",
+"files": 4,
+"formats": [
+"csv",
+"parquet"
+]
+},
+{
+"openalex": "W7164741600",
+"kind": "data",
+"note": "csv, docx, gitignore, json, md, png, py, txt",
+"files": 1,
+"formats": [
+"csv",
+"docx",
+"gitignore",
+"json",
+"md",
+"png",
+"py",
+"txt"
+]
+},
+{
+"openalex": "W7162696536",
+"kind": "data",
+"note": "05 v s oc, 05 v s tc, 05 vs tc, asc, docx, mnova, nox, png, tif, txt, xlsx, zip",
+"files": 2,
+"formats": [
+"05 v s oc",
+"05 v s tc",
+"05 vs tc",
+"asc",
+"docx",
+"mnova",
+"nox",
+"png",
+"tif",
+"txt",
+"xlsx",
+"zip"
+]
+},
+{
+"openalex": "W7157270673",
+"kind": "data",
+"note": "csv",
+"files": 2,
+"formats": [
+"csv"
+]
+},
+{
+"openalex": "W7154914078",
+"kind": "data",
+"note": "csv",
+"files": 1,
+"formats": [
+"csv"
+]
+},
+{
+"openalex": "W6931114152",
+"kind": "data",
+"note": "csv",
+"files": 1,
+"formats": [
+"csv"
+]
+},
+{
+"openalex": "W6893353665",
+"kind": "data",
+"note": "csv, txt",
+"files": 3,
+"formats": [
+"csv",
+"txt"
+]
+},
+{
+"openalex": "W6949349291",
+"kind": "unavailable",
+"note": "zenodo: 410",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6892581036",
+"kind": "data",
+"note": "nb, txt, xlsx",
+"files": 1,
+"formats": [
+"nb",
+"txt",
+"xlsx"
+]
+},
+{
+"openalex": "W7169498197",
+"kind": "data",
+"note": "joblib, json, png, py, tiff, txt, xlsx",
+"files": 43,
+"formats": [
+"joblib",
+"json",
+"png",
+"py",
+"tiff",
+"txt",
+"xlsx"
+]
+},
+{
+"openalex": "W6949699104",
+"kind": "data",
+"note": "xlsx",
+"files": 3,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W6949332964",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W7223215020",
+"kind": "data",
+"note": "csv, md, py, xlsx",
+"files": 9,
+"formats": [
+"csv",
+"md",
+"py",
+"xlsx"
+]
+},
+{
+"openalex": "W7223096719",
+"kind": "data",
+"note": "cff, json, jsonl, md, py, sh, tsv, xlsx",
+"files": 1,
+"formats": [
+"cff",
+"json",
+"jsonl",
+"md",
+"py",
+"sh",
+"tsv",
+"xlsx"
+]
+},
+{
+"openalex": "W6893247769",
+"kind": "article",
+"note": "only documents: docx",
+"files": 1,
+"formats": [
+"docx"
+]
+},
+{
+"openalex": "W7225225331",
+"kind": "data",
+"note": "csv, jpg, md, pdf, png, py",
+"files": 1,
+"formats": [
+"csv",
+"jpg",
+"md",
+"pdf",
+"png",
+"py"
+]
+},
+{
+"openalex": "W7170089888",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W6893350779",
+"kind": "data",
+"note": "xlsx",
+"files": 2,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W6967945194",
+"kind": "data",
+"note": "docx, xlsx",
+"files": 3,
+"formats": [
+"docx",
+"xlsx"
+]
+},
+{
+"openalex": "W7220960952",
+"kind": "data",
+"note": "ipynb, jpg, txt, yaml",
+"files": 2,
+"formats": [
+"ipynb",
+"jpg",
+"txt",
+"yaml"
+]
+},
+{
+"openalex": "W7165444882",
+"kind": "data",
+"note": "pdf, png, xlsx",
+"files": 1,
+"formats": [
+"pdf",
+"png",
+"xlsx"
+]
+},
+{
+"openalex": "W7171642763",
+"kind": "data",
+"note": "csv, json, md, tif",
+"files": 7,
+"formats": [
+"csv",
+"json",
+"md",
+"tif"
+]
+},
+{
+"openalex": "W7127953523",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7124291252",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7169764329",
+"kind": "data",
+"note": "csv, md, py",
+"files": 3,
+"formats": [
+"csv",
+"md",
+"py"
+]
+},
+{
+"openalex": "W7160154014",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7125233816",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7103978339",
+"kind": "data",
+"note": "7z",
+"files": 1,
+"formats": [
+"7z"
+]
+},
+{
+"openalex": "W7201855261",
+"kind": "data",
+"note": "csv, json, md, png, py, svg, txt, xlsx",
+"files": 2,
+"formats": [
+"csv",
+"json",
+"md",
+"png",
+"py",
+"svg",
+"txt",
+"xlsx"
+]
+},
+{
+"openalex": "W7167504494",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W7203451640",
+"kind": "article",
+"note": "only documents: md",
+"files": 1,
+"formats": [
+"md"
+]
+},
+{
+"openalex": "W7221829097",
+"kind": "unavailable",
+"note": "zenodo: 410",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7160894393",
+"kind": "data",
+"note": "images: 4000 files, jpg",
+"files": 1,
+"formats": [
+"jpg"
+]
+},
+{
+"openalex": "W7203456655",
+"kind": "data",
+"note": "cff, md, txt, xlsx",
+"files": 1,
+"formats": [
+"cff",
+"md",
+"txt",
+"xlsx"
+]
+},
+{
+"openalex": "W7169732050",
+"kind": "data",
+"note": "csv, json, md, png, py, txt",
+"files": 1,
+"formats": [
+"csv",
+"json",
+"md",
+"png",
+"py",
+"txt"
+]
+},
+{
+"openalex": "W7225184200",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7220662362",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W7142056541",
+"kind": "data",
+"note": "xlsx",
+"files": 2,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W7140776873",
+"kind": "data",
+"note": "md, xlsx",
+"files": 2,
+"formats": [
+"md",
+"xlsx"
+]
+},
+{
+"openalex": "W7140302195",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W7207797726",
+"kind": "data",
+"note": "docx, pdf, pptx, tif, xlsx",
+"files": 60,
+"formats": [
+"docx",
+"pdf",
+"pptx",
+"tif",
+"xlsx"
+]
+},
+{
+"openalex": "W7168387005",
+"kind": "data",
+"note": "csv, md, txt",
+"files": 12,
+"formats": [
+"csv",
+"md",
+"txt"
+]
+},
+{
+"openalex": "W7168082447",
+"kind": "article",
+"note": "only documents: docx",
+"files": 1,
+"formats": [
+"docx"
+]
+},
+{
+"openalex": "W6911935843",
+"kind": "data",
+"note": "tif",
+"files": 1,
+"formats": [
+"tif"
+]
+},
+{
+"openalex": "W7223464085",
+"kind": "data",
+"note": "csv, r",
+"files": 12,
+"formats": [
+"csv",
+"r"
+]
+},
+{
+"openalex": "W7203910617",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W7171432104",
+"kind": "data",
+"note": "csv, ipynb, py, xlsx",
+"files": 10,
+"formats": [
+"csv",
+"ipynb",
+"py",
+"xlsx"
+]
+},
+{
+"openalex": "W7222897517",
+"kind": "data",
+"note": "do, xlsx",
+"files": 2,
+"formats": [
+"do",
+"xlsx"
+]
+},
+{
+"openalex": "W7221635566",
+"kind": "unavailable",
+"note": "zenodo: 410",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7221460017",
+"kind": "data",
+"note": "md, py, r, rds, txt, xlsx",
+"files": 3,
+"formats": [
+"md",
+"py",
+"r",
+"rds",
+"txt",
+"xlsx"
+]
+},
+{
+"openalex": "W7213508487",
+"kind": "data",
+"note": "cff, csv.gz, gz, md",
+"files": 7,
+"formats": [
+"cff",
+"csv.gz",
+"gz",
+"md"
+]
+},
+{
+"openalex": "W7213030573",
+"kind": "data",
+"note": "csv, md, r, txt",
+"files": 7,
+"formats": [
+"csv",
+"md",
+"r",
+"txt"
+]
+},
+{
+"openalex": "W7163024154",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W7208835910",
+"kind": "data",
+"note": "csv, md, py, txt, xlsx",
+"files": 5,
+"formats": [
+"csv",
+"md",
+"py",
+"txt",
+"xlsx"
+]
+},
+{
+"openalex": "W7164183611",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7162205025",
+"kind": "article",
+"note": "only documents: docx",
+"files": 1,
+"formats": [
+"docx"
+]
+},
+{
+"openalex": "W7165808859",
+"kind": "data",
+"note": "docx, xlsx",
+"files": 2,
+"formats": [
+"docx",
+"xlsx"
+]
+},
+{
+"openalex": "W7222936641",
+"kind": "data",
+"note": "csv, md, py",
+"files": 7,
+"formats": [
+"csv",
+"md",
+"py"
+]
+},
+{
+"openalex": "W7214988777",
+"kind": "data",
+"note": "cff, csv, md, r",
+"files": 1,
+"formats": [
+"cff",
+"csv",
+"md",
+"r"
+]
+},
+{
+"openalex": "W7221161640",
+"kind": "data",
+"note": "cff, csv, csv.gz, eps, json, log, md, png, py, tif, txt, zip",
+"files": 1,
+"formats": [
+"cff",
+"csv",
+"csv.gz",
+"eps",
+"json",
+"log",
+"md",
+"png",
+"py",
+"tif",
+"txt",
+"zip"
+]
+},
+{
+"openalex": "W7218928116",
+"kind": "data",
+"note": "bib, bmp, cff, csv, json, md, original, pdf, png, py, sha256, tiff, tsv, txt",
+"files": 9,
+"formats": [
+"bib",
+"bmp",
+"cff",
+"csv",
+"json",
+"md",
+"original",
+"pdf",
+"png",
+"py",
+"sha256",
+"tiff"
+]
+},
+{
+"openalex": "W7214755830",
+"kind": "data",
+"note": "cff, csv, eps, json, md, npz, pdf, png, py, sha256, txt",
+"files": 1,
+"formats": [
+"cff",
+"csv",
+"eps",
+"json",
+"md",
+"npz",
+"pdf",
+"png",
+"py",
+"sha256",
+"txt"
+]
+},
+{
+"openalex": "W6930536871",
+"kind": "article",
+"note": "only documents: docx",
+"files": 1,
+"formats": [
+"docx"
+]
+},
+{
+"openalex": "W7224948859",
+"kind": "data",
+"note": "csv",
+"files": 1,
+"formats": [
+"csv"
+]
+},
+{
+"openalex": "W7223065858",
+"kind": "data",
+"note": "csv, docx, md, py",
+"files": 1,
+"formats": [
+"csv",
+"docx",
+"md",
+"py"
+]
+},
+{
+"openalex": "W7162097405",
+"kind": "data",
+"note": "csv",
+"files": 1,
+"formats": [
+"csv"
+]
+},
+{
+"openalex": "W7077501510",
+"kind": "data",
+"note": "sqlite",
+"files": 1,
+"formats": [
+"sqlite"
+]
+},
+{
+"openalex": "W6893444708",
+"kind": "data",
+"note": "sqlite",
+"files": 1,
+"formats": [
+"sqlite"
+]
+},
+{
+"openalex": "W7169498875",
+"kind": "data",
+"note": "cff, csv, json, md, pdf, png, txt, xlsx",
+"files": 1,
+"formats": [
+"cff",
+"csv",
+"json",
+"md",
+"pdf",
+"png",
+"txt",
+"xlsx"
+]
+},
+{
+"openalex": "W7213579419",
+"kind": "data",
+"note": "cff, csv, json, md, npz, pdf, png, py, sh, txt, xlsx",
+"files": 2,
+"formats": [
+"cff",
+"csv",
+"json",
+"md",
+"npz",
+"pdf",
+"png",
+"py",
+"sh",
+"txt",
+"xlsx"
+]
+},
+{
+"openalex": "W7116393792",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W7106353563",
+"kind": "unavailable",
+"note": "zenodo: 410",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7106562170",
+"kind": "no_files",
+"note": "zenodo: record has no files (access: restricted)",
+"files": 0,
+"formats": []
+},
+{
+"openalex": "W7106255404",
+"kind": "no_files",
+"note": "zenodo: record has no files (access: restricted)",
+"files": 0,
+"formats": []
+},
+{
+"openalex": "W7106222069",
+"kind": "no_files",
+"note": "zenodo: record has no files (access: restricted)",
+"files": 0,
+"formats": []
+},
+{
+"openalex": "W7106294682",
+"kind": "no_files",
+"note": "zenodo: record has no files (access: restricted)",
+"files": 0,
+"formats": []
+},
+{
+"openalex": "W7126249804",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7212449022",
+"kind": "data",
+"note": "con, csv, docx, log, nex, tree, trees, txt, xml",
+"files": 13,
+"formats": [
+"con",
+"csv",
+"docx",
+"log",
+"nex",
+"tree",
+"trees",
+"txt",
+"xml"
+]
+},
+{
+"openalex": "W7221557560",
+"kind": "no_files",
+"note": "zenodo: record has no files (access: embargoed)",
+"files": 0,
+"formats": []
+},
+{
+"openalex": "W7212759525",
+"kind": "no_files",
+"note": "zenodo: record has no files (access: restricted)",
+"files": 0,
+"formats": []
+},
+{
+"openalex": "W7170547947",
+"kind": "unavailable",
+"note": "zenodo: 410",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7223410746",
+"kind": "data",
+"note": "array, csv, dawg, intdawg, json, jsonl, md, png, py, rst, svg, txt, xlsx",
+"files": 1,
+"formats": [
+"array",
+"csv",
+"dawg",
+"intdawg",
+"json",
+"jsonl",
+"md",
+"png",
+"py",
+"rst",
+"svg",
+"txt"
+]
+},
+{
+"openalex": "W7219679895",
+"kind": "data",
+"note": "csv, ipynb, md, png, py",
+"files": 1,
+"formats": [
+"csv",
+"ipynb",
+"md",
+"png",
+"py"
+]
+},
+{
+"openalex": "W7214053583",
+"kind": "data",
+"note": "csv, ipynb, md, png",
+"files": 1,
+"formats": [
+"csv",
+"ipynb",
+"md",
+"png"
+]
+},
+{
+"openalex": "W7204118155",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W7148373742",
+"kind": "unavailable",
+"note": "zenodo: 410",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7225060712",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7225061219",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7208754718",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W7203452084",
+"kind": "data",
+"note": "csv, example, gitattributes, gitignore, json, md, pdf, png, py, sha256, tmpl, toml",
+"files": 1,
+"formats": [
+"csv",
+"example",
+"gitattributes",
+"gitignore",
+"json",
+"md",
+"pdf",
+"png",
+"py",
+"sha256",
+"tmpl",
+"toml"
+]
+},
+{
+"openalex": "W7202044066",
+"kind": "data",
+"note": "csv, md, py, rar, txt",
+"files": 1,
+"formats": [
+"csv",
+"md",
+"py",
+"rar",
+"txt"
+]
+},
+{
+"openalex": "W7196934338",
+"kind": "data",
+"note": "csv, docx, gitkeep, json, md, png, py, sh, txt, xlsx",
+"files": 1,
+"formats": [
+"csv",
+"docx",
+"gitkeep",
+"json",
+"md",
+"png",
+"py",
+"sh",
+"txt",
+"xlsx"
+]
+},
+{
+"openalex": "W6931199633",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W7225005662",
+"kind": "data",
+"note": "001, 002, 003, 004, ckt, csv, csv.gz, ds, gbr, hb, json, jsonl, log, md, npz, pdf, png, py, raw, s12p, s19p, s1p, s2p, s31p, s3p, s4p, s5p, s6p, s7p, svg, tex, txt",
+"files": 25,
+"formats": [
+"001",
+"002",
+"003",
+"004",
+"ckt",
+"csv",
+"csv.gz",
+"ds",
+"gbr",
+"hb",
+"json",
+"jsonl"
+]
+},
+{
+"openalex": "W7223082948",
+"kind": "data",
+"note": "csv, txt",
+"files": 1,
+"formats": [
+"csv",
+"txt"
+]
+},
+{
+"openalex": "W7221562052",
+"kind": "data",
+"note": "csv, md",
+"files": 3,
+"formats": [
+"csv",
+"md"
+]
+},
+{
+"openalex": "W7221475729",
+"kind": "no_files",
+"note": "zenodo: record has no files (access: embargoed)",
+"files": 0,
+"formats": []
+},
+{
+"openalex": "W7214644441",
+"kind": "data",
+"note": "cff, csv, csv.gz, gz, json, md, pdf, png, tsv",
+"files": 1,
+"formats": [
+"cff",
+"csv",
+"csv.gz",
+"gz",
+"json",
+"md",
+"pdf",
+"png",
+"tsv"
+]
+},
+{
+"openalex": "W7214587633",
+"kind": "data",
+"note": "cff, csv, example, gitignore, json, md, png, py, sha256, txt",
+"files": 1,
+"formats": [
+"cff",
+"csv",
+"example",
+"gitignore",
+"json",
+"md",
+"png",
+"py",
+"sha256",
+"txt"
+]
+},
+{
+"openalex": "W7161601397",
+"kind": "no_files",
+"note": "zenodo: record has no files (access: restricted)",
+"files": 0,
+"formats": []
+},
+{
+"openalex": "W7154744382",
+"kind": "data",
+"note": "xlsx",
+"files": 83,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W7129012121",
+"kind": "data",
+"note": "csv, ipynb, json, md, npz, pdf, png, svg, txt, xlsx",
+"files": 3,
+"formats": [
+"csv",
+"ipynb",
+"json",
+"md",
+"npz",
+"pdf",
+"png",
+"svg",
+"txt",
+"xlsx"
+]
+},
+{
+"openalex": "W7090178068",
+"kind": "data",
+"note": "dta",
+"files": 2,
+"formats": [
+"dta"
+]
+},
+{
+"openalex": "W7094946071",
+"kind": "data",
+"note": "csv, md",
+"files": 4,
+"formats": [
+"csv",
+"md"
+]
+},
+{
+"openalex": "W7081032615",
+"kind": "data",
+"note": "txt",
+"files": 2,
+"formats": [
+"txt"
+]
+},
+{
+"openalex": "W6968237694",
+"kind": "data",
+"note": "txt",
+"files": 9,
+"formats": [
+"txt"
+]
+},
+{
+"openalex": "W6931468956",
+"kind": "data",
+"note": "csv, jpg, json, txt",
+"files": 1,
+"formats": [
+"csv",
+"jpg",
+"json",
+"txt"
+]
+},
+{
+"openalex": "W4393724736",
+"kind": "no_files",
+"note": "zenodo: record has no files (access: restricted)",
+"files": 0,
+"formats": []
+},
+{
+"openalex": "W7201839295",
+"kind": "data",
+"note": "cff, json, md, png, txt, xlsx",
+"files": 11,
+"formats": [
+"cff",
+"json",
+"md",
+"png",
+"txt",
+"xlsx"
+]
+},
+{
+"openalex": "W7168278660",
+"kind": "data",
+"note": "csv",
+"files": 1,
+"formats": [
+"csv"
+]
+},
+{
+"openalex": "W7218367849",
+"kind": "data",
+"note": "csv, md, py",
+"files": 6,
+"formats": [
+"csv",
+"md",
+"py"
+]
+},
+{
+"openalex": "W7225056570",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7225001627",
+"kind": "data",
+"note": "cff, csv, gpkg, js, md, pdf, png, py, r, tif, txt",
+"files": 2,
+"formats": [
+"cff",
+"csv",
+"gpkg",
+"js",
+"md",
+"pdf",
+"png",
+"py",
+"r",
+"tif",
+"txt"
+]
+},
+{
+"openalex": "W7220401192",
+"kind": "data",
+"note": "xls, xlsx",
+"files": 22,
+"formats": [
+"xls",
+"xlsx"
+]
+},
+{
+"openalex": "W7206153935",
+"kind": "data",
+"note": "csv, md, py, txt, xlsx, yml",
+"files": 1,
+"formats": [
+"csv",
+"md",
+"py",
+"txt",
+"xlsx",
+"yml"
+]
+},
+{
+"openalex": "W7203569451",
+"kind": "data",
+"note": "csv, md, png, py, txt",
+"files": 1,
+"formats": [
+"csv",
+"md",
+"png",
+"py",
+"txt"
+]
+},
+{
+"openalex": "W7225240960",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7223209992",
+"kind": "data",
+"note": "csv, ipynb, json, md, py, xlsx",
+"files": 1,
+"formats": [
+"csv",
+"ipynb",
+"json",
+"md",
+"py",
+"xlsx"
+]
+},
+{
+"openalex": "W7225468511",
+"kind": "data",
+"note": "csv, md, py",
+"files": 3,
+"formats": [
+"csv",
+"md",
+"py"
+]
+},
+{
+"openalex": "W7153248339",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7171813277",
+"kind": "data",
+"note": "csv, png",
+"files": 12,
+"formats": [
+"csv",
+"png"
+]
+},
+{
+"openalex": "W7203955937",
+"kind": "data",
+"note": "asc, bat, csv, dat, html, jpg, lambdas, log, png, txt",
+"files": 1,
+"formats": [
+"asc",
+"bat",
+"csv",
+"dat",
+"html",
+"jpg",
+"lambdas",
+"log",
+"png",
+"txt"
+]
+},
+{
+"openalex": "W7224105788",
+"kind": "data",
+"note": "csv, jsonl, md, npz, pt",
+"files": 2,
+"formats": [
+"csv",
+"jsonl",
+"md",
+"npz",
+"pt"
+]
+},
+{
+"openalex": "W7215054447",
+"kind": "data",
+"note": "hap, hbk, heic, hkg, hki, hmw, jpeg, jpg, md, pdf, png, prf, rtf, txt, xlsx",
+"files": 9,
+"formats": [
+"hap",
+"hbk",
+"heic",
+"hkg",
+"hki",
+"hmw",
+"jpeg",
+"jpg",
+"md",
+"pdf",
+"png",
+"prf"
+]
+},
+{
+"openalex": "W7155354059",
+"kind": "data",
+"note": "csv, txt",
+"files": 1,
+"formats": [
+"csv",
+"txt"
+]
+},
+{
+"openalex": "W7124300619",
+"kind": "data",
+"note": "csv",
+"files": 1,
+"formats": [
+"csv"
+]
+},
+{
+"openalex": "W7077449278",
+"kind": "data",
+"note": "images: 4000 files, png",
+"files": 1,
+"formats": [
+"png"
+]
+},
+{
+"openalex": "W7225061369",
+"kind": "data",
+"note": "csv, json, md, mp4, npz, py, txt",
+"files": 1,
+"formats": [
+"csv",
+"json",
+"md",
+"mp4",
+"npz",
+"py",
+"txt"
+]
+},
+{
+"openalex": "W7223060020",
+"kind": "data",
+"note": "json, jsonl, md, tsv, txt, xlsx",
+"files": 15,
+"formats": [
+"json",
+"jsonl",
+"md",
+"tsv",
+"txt",
+"xlsx"
+]
+},
+{
+"openalex": "W7221868456",
+"kind": "data",
+"note": "csv, h5, json, log, py, tsv, txt, yaml",
+"files": 1,
+"formats": [
+"csv",
+"h5",
+"json",
+"log",
+"py",
+"tsv",
+"txt",
+"yaml"
+]
+},
+{
+"openalex": "W7219727295",
+"kind": "no_files",
+"note": "zenodo: record has no files (access: restricted)",
+"files": 0,
+"formats": []
+},
+{
+"openalex": "W7219737445",
+"kind": "data",
+"note": "csv, md, xlsx",
+"files": 1,
+"formats": [
+"csv",
+"md",
+"xlsx"
+]
+},
+{
+"openalex": "W7214067545",
+"kind": "data",
+"note": "py, xlsx",
+"files": 12,
+"formats": [
+"py",
+"xlsx"
+]
+},
+{
+"openalex": "W7210288741",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W7204481071",
+"kind": "no_files",
+"note": "zenodo: record has no files (access: restricted)",
+"files": 0,
+"formats": []
+},
+{
+"openalex": "W7212136244",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W7133319678",
+"kind": "unavailable",
+"note": "zenodo: 410",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7170037524",
+"kind": "data",
+"note": "xlsx",
+"files": 2,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W7169789998",
+"kind": "data",
+"note": "mseed, py, txt, xlsx",
+"files": 1,
+"formats": [
+"mseed",
+"py",
+"txt",
+"xlsx"
+]
+},
+{
+"openalex": "W7127593474",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7143398414",
+"kind": "article",
+"note": "only documents: jpg, pdf",
+"files": 7,
+"formats": [
+"jpg",
+"pdf"
+]
+},
+{
+"openalex": "W7141714196",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7128959213",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7127928197",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7127610508",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7150875093",
+"kind": "data",
+"note": "pdf, py, txt, xlsx",
+"files": 4,
+"formats": [
+"pdf",
+"py",
+"txt",
+"xlsx"
+]
+},
+{
+"openalex": "W7225582203",
+"kind": "no_files",
+"note": "zenodo: record has no files (access: restricted)",
+"files": 0,
+"formats": []
+},
+{
+"openalex": "W7225453063",
+"kind": "data",
+"note": "cff, csv, docx, json, jsonl, md, xlsx",
+"files": 1,
+"formats": [
+"cff",
+"csv",
+"docx",
+"json",
+"jsonl",
+"md",
+"xlsx"
+]
+},
+{
+"openalex": "W7203677610",
+"kind": "data",
+"note": "cff, csv, docx, json, log, md, png, py, sha256, txt",
+"files": 1,
+"formats": [
+"cff",
+"csv",
+"docx",
+"json",
+"log",
+"md",
+"png",
+"py",
+"sha256",
+"txt"
+]
+},
+{
+"openalex": "W7125980747",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7225169632",
+"kind": "data",
+"note": "csv, json, pdf, png, py, txt, xlsx",
+"files": 2,
+"formats": [
+"csv",
+"json",
+"pdf",
+"png",
+"py",
+"txt",
+"xlsx"
+]
+},
+{
+"openalex": "W7167691230",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W7141016274",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7126017487",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7225460558",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7225166147",
+"kind": "data",
+"note": "cff, csv, log, md, py, txt",
+"files": 1,
+"formats": [
+"cff",
+"csv",
+"log",
+"md",
+"py",
+"txt"
+]
+},
+{
+"openalex": "W7223226165",
+"kind": "data",
+"note": "csv, txt",
+"files": 4,
+"formats": [
+"csv",
+"txt"
+]
+},
+{
+"openalex": "W7222787379",
+"kind": "data",
+"note": "cff, csv, json, md, png, py, txt, xlsx",
+"files": 3,
+"formats": [
+"cff",
+"csv",
+"json",
+"md",
+"png",
+"py",
+"txt",
+"xlsx"
+]
+},
+{
+"openalex": "W7216220233",
+"kind": "data",
+"note": "cff, csv, md, png, py, txt, xlsx",
+"files": 1,
+"formats": [
+"cff",
+"csv",
+"md",
+"png",
+"py",
+"txt",
+"xlsx"
+]
+},
+{
+"openalex": "W7162136398",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7147047567",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7147068699",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7139041185",
+"kind": "data",
+"note": "csv",
+"files": 6,
+"formats": [
+"csv"
+]
+},
+{
+"openalex": "W7167338011",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7159970524",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7159769161",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7128301489",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7154391626",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7223146844",
+"kind": "data",
+"note": "csv, txt",
+"files": 1,
+"formats": [
+"csv",
+"txt"
+]
+},
+{
+"openalex": "W7172296671",
+"kind": "data",
+"note": "csv, png, txt",
+"files": 21,
+"formats": [
+"csv",
+"png",
+"txt"
+]
+},
+{
+"openalex": "W7148528967",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7153987990",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7167475727",
+"kind": "data",
+"note": "cff, csv, gitignore, json, md, png, py, txt",
+"files": 1,
+"formats": [
+"cff",
+"csv",
+"gitignore",
+"json",
+"md",
+"png",
+"py",
+"txt"
+]
+},
+{
+"openalex": "W7223469651",
+"kind": "data",
+"note": "cff, csv, example, gitattributes, gitignore, json, jsonl, md, pdf, py, r, ris, sha256, tiff, toml, txt, zip",
+"files": 1,
+"formats": [
+"cff",
+"csv",
+"example",
+"gitattributes",
+"gitignore",
+"json",
+"jsonl",
+"md",
+"pdf",
+"py",
+"r",
+"ris"
+]
+},
+{
+"openalex": "W7223068762",
+"kind": "data",
+"note": "cff, csv, example, gitattributes, gitignore, json, jsonl, log, md, pdf, png, py, r, ris, sha256, toml, txt, xlsx, zip",
+"files": 1,
+"formats": [
+"cff",
+"csv",
+"example",
+"gitattributes",
+"gitignore",
+"json",
+"jsonl",
+"log",
+"md",
+"pdf",
+"png",
+"py"
+]
+},
+{
+"openalex": "W7222890994",
+"kind": "data",
+"note": "cff, csv, example, gitattributes, gitignore, json, jsonl, log, md, pdf, png, py, r, ris, sha256, tiff, toml, txt, zip",
+"files": 1,
+"formats": [
+"cff",
+"csv",
+"example",
+"gitattributes",
+"gitignore",
+"json",
+"jsonl",
+"log",
+"md",
+"pdf",
+"png",
+"py"
+]
+},
+{
+"openalex": "W7222599446",
+"kind": "data",
+"note": "cff, csv, example, gitattributes, gitignore, json, jsonl, log, md, pdf, png, py, r, ris, sha256, toml, txt, xlsx, zip",
+"files": 1,
+"formats": [
+"cff",
+"csv",
+"example",
+"gitattributes",
+"gitignore",
+"json",
+"jsonl",
+"log",
+"md",
+"pdf",
+"png",
+"py"
+]
+},
+{
+"openalex": "W7220892133",
+"kind": "data",
+"note": "cff, csv, example, gitattributes, gitignore, html, json, jsonl, md, pdf, png, py, r, tiff, toml, txt, yaml, zip",
+"files": 1,
+"formats": [
+"cff",
+"csv",
+"example",
+"gitattributes",
+"gitignore",
+"html",
+"json",
+"jsonl",
+"md",
+"pdf",
+"png",
+"py"
+]
+},
+{
+"openalex": "W7213588902",
+"kind": "data",
+"note": "csv",
+"files": 2,
+"formats": [
+"csv"
+]
+},
+{
+"openalex": "W7167232864",
+"kind": "data",
+"note": "csv, txt",
+"files": 1,
+"formats": [
+"csv",
+"txt"
+]
+},
+{
+"openalex": "W6893439916",
+"kind": "unavailable",
+"note": "zenodo: 410",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7079668065",
+"kind": "data",
+"note": "csv, txt",
+"files": 1,
+"formats": [
+"csv",
+"txt"
+]
+},
+{
+"openalex": "W6968268600",
+"kind": "data",
+"note": "asv, c, cfe, cfs, cpg, csv, dat, dbf, doc, docx, fcs, gen, gitattributes, gitignore, grd, html, jpg, json, m, mat, md, mexa64, mexmaci64, mlx, ovr, pdf, png, prj, py, qix, qmd, qpj, r, rar, rhistory, sbx, shp, shx, si, tfw, tif, txt, xlsx, xml, zip",
+"files": 9,
+"formats": [
+"asv",
+"c",
+"cfe",
+"cfs",
+"cpg",
+"csv",
+"dat",
+"dbf",
+"doc",
+"docx",
+"fcs",
+"gen"
+]
+},
+{
+"openalex": "W7204722649",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W7225308085",
+"kind": "data",
+"note": "cif, dat, in, json, md, out, pdos_atm#1(c)_wfc#1(s), pdos_atm#1(c)_wfc#2(p), pdos_atm#10(mo)_wfc#1(s), pdos_atm#10(mo)_wfc#2(p), pdos_atm#10(mo)_wfc#3(s), pdos_atm#10(mo)_wfc#4(d), pdos_atm#10(nb)_wfc#1(s), pdos_atm#10(nb)_wfc#2(s), pdos_atm#10(nb)_wfc#3(p), pdos_atm#10(nb)_wfc#4(d), pdos_atm#10(s)_wfc#1(s), pdos_atm#10(s)_wfc#2(p), pdos_atm#10(ti)_wfc#1(s), pdos_atm#10(ti)_wfc#2(p), pdos_atm#10(ti)_wfc#3(s), pdos_atm#10(ti)_wfc#4(d), pdos_atm#11(c)_wfc#1(s), pdos_atm#11(c)_wfc#2(p), pdos_atm#11(nb)_wfc#1(s), pdos_atm#11(nb)_wfc#2(s), pdos_atm#11(nb)_wfc#3(p), pdos_atm#11(nb)_wfc#4(d), pdos_atm#11(s)_wfc#1(s), pdos_atm#11(s)_wfc#2(p), pdos_atm#11(ti)_wfc#1(s), pdos_atm#11(ti)_wfc#2(p), pdos_atm#11(ti)_wfc#3(s), pdos_atm#11(ti)_wfc#4(d), pdos_atm#12(f)_wfc#1(s), pdos_atm#12(f)_wfc#2(p), pdos_atm#12(o)_wfc#1(s), pdos_atm#12(o)_wfc#2(p), pdos_atm#12(s)_wfc#1(s), pdos_atm#12(s)_wfc#2(p), pdos_atm#12(se)_wfc#1(s), pdos_atm#12(se)_wfc#2(p), pdos_atm#12(ti)_wfc#1(s), pdos_atm#12(ti)_wfc#2(p), pdos_atm#12(ti)_wfc#3(s), pdos_atm#12(ti)_wfc#4(d), pdos_atm#13(c)_wfc#1(s), pdos_atm#13(c)_wfc#2(p), pdos_atm#13(f)_wfc#1(s), pdos_atm#13(f)_wfc#2(p), pdos_atm#13(o)_wfc#1(s), pdos_atm#13(o)_wfc#2(p), pdos_atm#13(se)_wfc#1(s), pdos_atm#13(se)_wfc#2(p), pdos_atm#13(ti)_wfc#1(s), pdos_atm#13(ti)_wfc#2(p), pdos_atm#13(ti)_wfc#3(s), pdos_atm#13(ti)_wfc#4(d), pdos_atm#14(mo)_wfc#1(s), pdos_atm#14(mo)_wfc#2(p), pdos_atm#14(mo)_wfc#3(s), pdos_atm#14(mo)_wfc#4(d), pdos_atm#14(nb)_wfc#1(s), pdos_atm#14(nb)_wfc#2(s), pdos_atm#14(nb)_wfc#3(p), pdos_atm#14(nb)_wfc#4(d), pdos_atm#14(o)_wfc#1(s), pdos_atm#14(o)_wfc#2(p), pdos_atm#15(nb)_wfc#1(s), pdos_atm#15(nb)_wfc#2(s), pdos_atm#15(nb)_wfc#3(p), pdos_atm#15(nb)_wfc#4(d), pdos_atm#15(o)_wfc#1(s), pdos_atm#15(o)_wfc#2(p), pdos_atm#15(s)_wfc#1(s), pdos_atm#15(s)_wfc#2(p), pdos_atm#16(h)_wfc#1(s), pdos_atm#16(mo)_wfc#1(s), pdos_atm#16(mo)_wfc#2(p), pdos_atm#16(mo)_wfc#3(s), pdos_atm#16(mo)_wfc#4(d), pdos_atm#16(s)_wfc#1(s), pdos_atm#16(s)_wfc#2(p), pdos_atm#17(c)_wfc#1(s), pdos_atm#17(c)_wfc#2(p), pdos_atm#17(h)_wfc#1(s), pdos_atm#17(s)_wfc#1(s), pdos_atm#17(s)_wfc#2(p), pdos_atm#18(mo)_wfc#1(s), pdos_atm#18(mo)_wfc#2(p), pdos_atm#18(mo)_wfc#3(s), pdos_atm#18(mo)_wfc#4(d), pdos_atm#18(nb)_wfc#1(s), pdos_atm#18(nb)_wfc#2(s), pdos_atm#18(nb)_wfc#3(p), pdos_atm#18(nb)_wfc#4(d), pdos_atm#18(s)_wfc#1(s), pdos_atm#18(s)_wfc#2(p), pdos_atm#18(ti)_wfc#1(s), pdos_atm#18(ti)_wfc#2(p), pdos_atm#18(ti)_wfc#3(s), pdos_atm#18(ti)_wfc#4(d), pdos_atm#19(c)_wfc#1(s), pdos_atm#19(c)_wfc#2(p), pdos_atm#19(nb)_wfc#1(s), pdos_atm#19(nb)_wfc#2(s), pdos_atm#19(nb)_wfc#3(p), pdos_atm#19(nb)_wfc#4(d), pdos_atm#19(s)_wfc#1(s), pdos_atm#19(s)_wfc#2(p), pdos_atm#19(ti)_wfc#1(s), pdos_atm#19(ti)_wfc#2(p), pdos_atm#19(ti)_wfc#3(s), pdos_atm#19(ti)_wfc#4(d), pdos_atm#2(nb)_wfc#1(s), pdos_atm#2(nb)_wfc#2(s), pdos_atm#2(nb)_wfc#3(p), pdos_atm#2(nb)_wfc#4(d), pdos_atm#2(ti)_wfc#1(s), pdos_atm#2(ti)_wfc#2(p), pdos_atm#2(ti)_wfc#3(s), pdos_atm#2(ti)_wfc#4(d), pdos_atm#20(f)_wfc#1(s), pdos_atm#20(f)_wfc#2(p), pdos_atm#20(nb)_wfc#1(s), pdos_atm#20(nb)_wfc#2(s), pdos_atm#20(nb)_wfc#3(p), pdos_atm#20(nb)_wfc#4(d), pdos_atm#20(o)_wfc#1(s), pdos_atm#20(o)_wfc#2(p), pdos_atm#20(s)_wfc#1(s), pdos_atm#20(s)_wfc#2(p), pdos_atm#20(se)_wfc#1(s), pdos_atm#20(se)_wfc#2(p), pdos_atm#21(c)_wfc#1(s), pdos_atm#21(c)_wfc#2(p), pdos_atm#21(f)_wfc#1(s), pdos_atm#21(f)_wfc#2(p), pdos_atm#21(nb)_wfc#1(s), pdos_atm#21(nb)_wfc#2(s), pdos_atm#21(nb)_wfc#3(p), pdos_atm#21(nb)_wfc#4(d), pdos_atm#21(o)_wfc#1(s), pdos_atm#21(o)_wfc#2(p), pdos_atm#21(se)_wfc#1(s), pdos_atm#21(se)_wfc#2(p), pdos_atm#22(mo)_wfc#1(s), pdos_atm#22(mo)_wfc#2(p), pdos_atm#22(mo)_wfc#3(s), pdos_atm#22(mo)_wfc#4(d), pdos_atm#22(ti)_wfc#1(s), pdos_atm#22(ti)_wfc#2(p), pdos_atm#22(ti)_wfc#3(s), pdos_atm#22(ti)_wfc#4(d), pdos_atm#23(s)_wfc#1(s), pdos_atm#23(s)_wfc#2(p), pdos_atm#23(ti)_wfc#1(s), pdos_atm#23(ti)_wfc#2(p), pdos_atm#23(ti)_wfc#3(s), pdos_atm#23(ti)_wfc#4(d), pdos_atm#24(o)_wfc#1(s), pdos_atm#24(o)_wfc#2(p), pdos_atm#24(s)_wfc#1(s), pdos_atm#24(s)_wfc#2(p), pdos_atm#25(c)_wfc#1(s), pdos_atm#25(c)_wfc#2(p), pdos_atm#25(o)_wfc#1(s), pdos_atm#25(o)_wfc#2(p), pdos_atm#26(h)_wfc#1(s), pdos_atm#26(nb)_wfc#1(s), pdos_atm#26(nb)_wfc#2(s), pdos_atm#26(nb)_wfc#3(p), pdos_atm#26(nb)_wfc#4(d), pdos_atm#26(ti)_wfc#1(s), pdos_atm#26(ti)_wfc#2(p), pdos_atm#26(ti)_wfc#3(s), pdos_atm#26(ti)_wfc#4(d), pdos_atm#27(h)_wfc#1(s), pdos_atm#27(nb)_wfc#1(s), pdos_atm#27(nb)_wfc#2(s), pdos_atm#27(nb)_wfc#3(p), pdos_atm#27(nb)_wfc#4(d), pdos_atm#27(ti)_wfc#1(s), pdos_atm#27(ti)_wfc#2(p), pdos_atm#27(ti)_wfc#3(s), pdos_atm#27(ti)_wfc#4(d), pdos_atm#28(f)_wfc#1(s), pdos_atm#28(f)_wfc#2(p), pdos_atm#28(mo)_wfc#1(s), pdos_atm#28(mo)_wfc#2(p), pdos_atm#28(mo)_wfc#3(s), pdos_atm#28(mo)_wfc#4(d), pdos_atm#28(o)_wfc#1(s), pdos_atm#28(o)_wfc#2(p), pdos_atm#28(se)_wfc#1(s), pdos_atm#28(se)_wfc#2(p), pdos_atm#29(f)_wfc#1(s), pdos_atm#29(f)_wfc#2(p), pdos_atm#29(o)_wfc#1(s), pdos_atm#29(o)_wfc#2(p), pdos_atm#29(s)_wfc#1(s), pdos_atm#29(s)_wfc#2(p), pdos_atm#29(se)_wfc#1(s), pdos_atm#29(se)_wfc#2(p), pdos_atm#3(nb)_wfc#1(s), pdos_atm#3(nb)_wfc#2(s), pdos_atm#3(nb)_wfc#3(p), pdos_atm#3(nb)_wfc#4(d), pdos_atm#3(ti)_wfc#1(s), pdos_atm#3(ti)_wfc#2(p), pdos_atm#3(ti)_wfc#3(s), pdos_atm#3(ti)_wfc#4(d), pdos_atm#30(mo)_wfc#1(s), pdos_atm#30(mo)_wfc#2(p), pdos_atm#30(mo)_wfc#3(s), pdos_atm#30(mo)_wfc#4(d), pdos_atm#30(s)_wfc#1(s), pdos_atm#30(s)_wfc#2(p), pdos_atm#31(c)_wfc#1(s), pdos_atm#31(c)_wfc#2(p), pdos_atm#31(s)_wfc#1(s), pdos_atm#31(s)_wfc#2(p), pdos_atm#32(s)_wfc#1(s), pdos_atm#32(s)_wfc#2(p), pdos_atm#32(ti)_wfc#1(s), pdos_atm#32(ti)_wfc#2(p), pdos_atm#32(ti)_wfc#3(s), pdos_atm#32(ti)_wfc#4(d), pdos_atm#33(ti)_wfc#1(s), pdos_atm#33(ti)_wfc#2(p), pdos_atm#33(ti)_wfc#3(s), pdos_atm#33(ti)_wfc#4(d), pdos_atm#34(o)_wfc#1(s), pdos_atm#34(o)_wfc#2(p), pdos_atm#35(o)_wfc#1(s), pdos_atm#35(o)_wfc#2(p), pdos_atm#36(h)_wfc#1(s), pdos_atm#37(h)_wfc#1(s), pdos_atm#38(mo)_wfc#1(s), pdos_atm#38(mo)_wfc#2(p), pdos_atm#38(mo)_wfc#3(s), pdos_atm#38(mo)_wfc#4(d), pdos_atm#39(s)_wfc#1(s), pdos_atm#39(s)_wfc#2(p), pdos_atm#4(f)_wfc#1(s), pdos_atm#4(f)_wfc#2(p), pdos_atm#4(mo)_wfc#1(s), pdos_atm#4(mo)_wfc#2(p), pdos_atm#4(mo)_wfc#3(s), pdos_atm#4(mo)_wfc#4(d), pdos_atm#4(o)_wfc#1(s), pdos_atm#4(o)_wfc#2(p), pdos_atm#4(se)_wfc#1(s), pdos_atm#4(se)_wfc#2(p), pdos_atm#40(s)_wfc#1(s), pdos_atm#40(s)_wfc#2(p), pdos_atm#5(f)_wfc#1(s), pdos_atm#5(f)_wfc#2(p), pdos_atm#5(o)_wfc#1(s), pdos_atm#5(o)_wfc#2(p), pdos_atm#5(s)_wfc#1(s), pdos_atm#5(s)_wfc#2(p), pdos_atm#5(se)_wfc#1(s), pdos_atm#5(se)_wfc#2(p), pdos_atm#6(h)_wfc#1(s), pdos_atm#6(mo)_wfc#1(s), pdos_atm#6(mo)_wfc#2(p), pdos_atm#6(mo)_wfc#3(s), pdos_atm#6(mo)_wfc#4(d), pdos_atm#6(s)_wfc#1(s), pdos_atm#6(s)_wfc#2(p), pdos_atm#7(c)_wfc#1(s), pdos_atm#7(c)_wfc#2(p), pdos_atm#7(h)_wfc#1(s), pdos_atm#7(s)_wfc#1(s), pdos_atm#7(s)_wfc#2(p), pdos_atm#8(mo)_wfc#1(s), pdos_atm#8(mo)_wfc#2(p), pdos_atm#8(mo)_wfc#3(s), pdos_atm#8(mo)_wfc#4(d), pdos_atm#8(nb)_wfc#1(s), pdos_atm#8(nb)_wfc#2(s), pdos_atm#8(nb)_wfc#3(p), pdos_atm#8(nb)_wfc#4(d), pdos_atm#8(s)_wfc#1(s), pdos_atm#8(s)_wfc#2(p), pdos_atm#9(c)_wfc#1(s), pdos_atm#9(c)_wfc#2(p), pdos_atm#9(nb)_wfc#1(s), pdos_atm#9(nb)_wfc#2(s), pdos_atm#9(nb)_wfc#3(p), pdos_atm#9(nb)_wfc#4(d), pdos_atm#9(s)_wfc#1(s), pdos_atm#9(s)_wfc#2(p), py, sh, txt, xml, xyz",
+"files": 1,
+"formats": [
+"cif",
+"dat",
+"in",
+"json",
+"md",
+"out",
+"pdos_atm#1(c)_wfc#1(s)",
+"pdos_atm#1(c)_wfc#2(p)",
+"pdos_atm#10(mo)_wfc#1(s)",
+"pdos_atm#10(mo)_wfc#2(p)",
+"pdos_atm#10(mo)_wfc#3(s)",
+"pdos_atm#10(mo)_wfc#4(d)"
+]
+},
+{
+"openalex": "W7220917399",
+"kind": "data",
+"note": "in, out, py, txt",
+"files": 1,
+"formats": [
+"in",
+"out",
+"py",
+"txt"
+]
+},
+{
+"openalex": "W7208825729",
+"kind": "data",
+"note": "txt",
+"files": 4,
+"formats": [
+"txt"
+]
+},
+{
+"openalex": "W7203668181",
+"kind": "data",
+"note": "tif, txt, xlsx",
+"files": 1,
+"formats": [
+"tif",
+"txt",
+"xlsx"
+]
+},
+{
+"openalex": "W7152503058",
+"kind": "data",
+"note": "model, npy, py, vec",
+"files": 5,
+"formats": [
+"model",
+"npy",
+"py",
+"vec"
+]
+},
+{
+"openalex": "W7151887049",
+"kind": "data",
+"note": "model, npy, py, vec",
+"files": 5,
+"formats": [
+"model",
+"npy",
+"py",
+"vec"
+]
+},
+{
+"openalex": "W7152582413",
+"kind": "data",
+"note": "model, npy, py, vec",
+"files": 5,
+"formats": [
+"model",
+"npy",
+"py",
+"vec"
+]
+},
+{
+"openalex": "W7151504783",
+"kind": "data",
+"note": "txt",
+"files": 3,
+"formats": [
+"txt"
+]
+},
+{
+"openalex": "W7152065831",
+"kind": "data",
+"note": "model, npy, py",
+"files": 5,
+"formats": [
+"model",
+"npy",
+"py"
+]
+},
+{
+"openalex": "W7147057425",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7106654590",
+"kind": "data",
+"note": "xlsx",
+"files": 4,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W7211913010",
+"kind": "data",
+"note": "csv, md, pdf, png, py, xlsx",
+"files": 1,
+"formats": [
+"csv",
+"md",
+"pdf",
+"png",
+"py",
+"xlsx"
+]
+},
+{
+"openalex": "W7171811326",
+"kind": "data",
+"note": "csv, txt",
+"files": 5,
+"formats": [
+"csv",
+"txt"
+]
+},
+{
+"openalex": "W7220908979",
+"kind": "no_files",
+"note": "zenodo: record has no files (access: restricted)",
+"files": 0,
+"formats": []
+},
+{
+"openalex": "W7214954053",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7155812872",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7138928698",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7138076084",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7138167848",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7211900286",
+"kind": "data",
+"note": "csv, md, xlsx",
+"files": 1,
+"formats": [
+"csv",
+"md",
+"xlsx"
+]
+},
+{
+"openalex": "W7126205857",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7167240684",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W6887371419",
+"kind": "data",
+"note": "GBIF occurrence: 28 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7141318755",
+"kind": "data",
+"note": "GBIF sampling_event: 58 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7129066508",
+"kind": "article_extract",
+"note": "ChecklistBank (Pensoft via Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7119530179",
+"kind": "data",
+"note": "GBIF occurrence: 500 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6906094934",
+"kind": "data",
+"note": "GBIF occurrence: 181 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7080125545",
+"kind": "data",
+"note": "GBIF occurrence: 250 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7083003630",
+"kind": "data",
+"note": "GBIF occurrence: 435 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7128994342",
+"kind": "article_extract",
+"note": "ChecklistBank (Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6887305707",
+"kind": "data",
+"note": "GBIF occurrence: 1,205 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7153255252",
+"kind": "article_extract",
+"note": "ChecklistBank (MagnoliaPress via Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7212180386",
+"kind": "unavailable",
+"note": "GBIF: dataset not found",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7160627735",
+"kind": "article_extract",
+"note": "ChecklistBank (Pensoft via Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7164224274",
+"kind": "data",
+"note": "GBIF checklist: 8,863 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7165685617",
+"kind": "data",
+"note": "GBIF checklist: 402 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7171317813",
+"kind": "data",
+"note": "GBIF occurrence: 4,083 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7152467078",
+"kind": "data",
+"note": "GBIF occurrence: 357 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6905983072",
+"kind": "data",
+"note": "GBIF occurrence: 310 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7129088418",
+"kind": "article_extract",
+"note": "ChecklistBank (Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6924286943",
+"kind": "data",
+"note": "GBIF occurrence: 205 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7083830924",
+"kind": "data",
+"note": "GBIF occurrence: 268 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6924285416",
+"kind": "data",
+"note": "GBIF occurrence: 141 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W4395262849",
+"kind": "data",
+"note": "GBIF occurrence: 491 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7221750695",
+"kind": "data",
+"note": "GBIF occurrence: 239 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7204259039",
+"kind": "data",
+"note": "GBIF occurrence: 221 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7119526411",
+"kind": "data",
+"note": "GBIF occurrence: 262 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6905436244",
+"kind": "data",
+"note": "GBIF occurrence: 203 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6905598093",
+"kind": "data",
+"note": "GBIF occurrence: 202 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6906180656",
+"kind": "data",
+"note": "GBIF occurrence: 206 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6943385391",
+"kind": "data",
+"note": "GBIF occurrence: 212 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7080131220",
+"kind": "data",
+"note": "GBIF occurrence: 308 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7089367685",
+"kind": "data",
+"note": "GBIF occurrence: 231 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7128989270",
+"kind": "article_extract",
+"note": "ChecklistBank (Pensoft via Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7129046422",
+"kind": "article_extract",
+"note": "ChecklistBank (Pensoft via Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6961906724",
+"kind": "data",
+"note": "GBIF occurrence: 2,177 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7129052519",
+"kind": "article_extract",
+"note": "ChecklistBank (Pensoft via Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7078840774",
+"kind": "data",
+"note": "GBIF occurrence: 180 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7119039852",
+"kind": "data",
+"note": "GBIF occurrence: 255 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6924381184",
+"kind": "data",
+"note": "GBIF occurrence: 82 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7080122055",
+"kind": "data",
+"note": "GBIF occurrence: 296 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6887390765",
+"kind": "data",
+"note": "GBIF occurrence: 1,001 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7223676157",
+"kind": "data",
+"note": "GBIF sampling_event: 245 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7119477442",
+"kind": "data",
+"note": "GBIF sampling_event: 1,073 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6962387130",
+"kind": "data",
+"note": "GBIF occurrence: 171 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6906153999",
+"kind": "data",
+"note": "GBIF sampling_event: 687 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6906216050",
+"kind": "data",
+"note": "GBIF occurrence: 153 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6925163855",
+"kind": "data",
+"note": "GBIF sampling_event: 264 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6943203388",
+"kind": "data",
+"note": "GBIF sampling_event: 430 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7078254048",
+"kind": "data",
+"note": "GBIF occurrence: 3 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7078271343",
+"kind": "data",
+"note": "GBIF occurrence: 80 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7078695552",
+"kind": "data",
+"note": "GBIF occurrence: 1,791 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7082265297",
+"kind": "data",
+"note": "GBIF occurrence: 7 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7104507071",
+"kind": "data",
+"note": "GBIF occurrence: 61 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6906134540",
+"kind": "data",
+"note": "GBIF sampling_event: 1,033 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7105679692",
+"kind": "data",
+"note": "GBIF occurrence: 578 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7164376132",
+"kind": "article_extract",
+"note": "ChecklistBank (ChecklistBank): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7125905682",
+"kind": "data",
+"note": "GBIF occurrence: 204 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7155012067",
+"kind": "data",
+"note": "GBIF occurrence: 261 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7129052695",
+"kind": "article_extract",
+"note": "ChecklistBank (Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7151526321",
+"kind": "data",
+"note": "GBIF occurrence: 343 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7154580352",
+"kind": "data",
+"note": "GBIF occurrence: 78 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6886924732",
+"kind": "data",
+"note": "GBIF occurrence: 221 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7164861060",
+"kind": "data",
+"note": "GBIF occurrence: 4 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7129104395",
+"kind": "article_extract",
+"note": "ChecklistBank (Pensoft via Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7129034194",
+"kind": "article_extract",
+"note": "ChecklistBank (Pensoft via Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6887370524",
+"kind": "data",
+"note": "GBIF occurrence: 659 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7136074322",
+"kind": "data",
+"note": "GBIF occurrence: 67 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7092368916",
+"kind": "data",
+"note": "GBIF occurrence: 200 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7092684969",
+"kind": "data",
+"note": "GBIF occurrence: 200 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7103985598",
+"kind": "data",
+"note": "GBIF occurrence: 10 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7104004184",
+"kind": "data",
+"note": "GBIF occurrence: 17 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7104009570",
+"kind": "data",
+"note": "GBIF occurrence: 5 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7105698486",
+"kind": "data",
+"note": "GBIF occurrence: 26 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6962237865",
+"kind": "data",
+"note": "GBIF occurrence: 400 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7221750366",
+"kind": "data",
+"note": "GBIF occurrence: 2,309 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7221791828",
+"kind": "data",
+"note": "GBIF occurrence: 270 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6887296881",
+"kind": "data",
+"note": "GBIF occurrence: 4,620 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6887368755",
+"kind": "data",
+"note": "GBIF occurrence: 905 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6924625076",
+"kind": "data",
+"note": "GBIF occurrence: 201 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7129038270",
+"kind": "article_extract",
+"note": "ChecklistBank (Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6906323931",
+"kind": "data",
+"note": "GBIF occurrence: 1,378 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6924304197",
+"kind": "data",
+"note": "GBIF occurrence: 571 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6924979056",
+"kind": "data",
+"note": "GBIF occurrence: 378 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7154991367",
+"kind": "empty",
+"note": "GBIF: 0 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7162111164",
+"kind": "data",
+"note": "GBIF occurrence: 242 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6887329481",
+"kind": "data",
+"note": "GBIF occurrence: 268 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6906000623",
+"kind": "data",
+"note": "GBIF occurrence: 185 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6887359999",
+"kind": "data",
+"note": "GBIF occurrence: 156 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6943480126",
+"kind": "data",
+"note": "GBIF occurrence: 210 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6961944189",
+"kind": "data",
+"note": "GBIF occurrence: 2,225 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6905663093",
+"kind": "data",
+"note": "GBIF occurrence: 125 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6887300381",
+"kind": "data",
+"note": "GBIF occurrence: 350 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7129083280",
+"kind": "article_extract",
+"note": "ChecklistBank (Pensoft via Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7222830929",
+"kind": "data",
+"note": "GBIF occurrence: 244 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7212948447",
+"kind": "article_extract",
+"note": "ChecklistBank (Pensoft via Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7129034402",
+"kind": "article_extract",
+"note": "ChecklistBank (MagnoliaPress via Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7129077270",
+"kind": "article_extract",
+"note": "ChecklistBank (Pensoft via Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7129105197",
+"kind": "article_extract",
+"note": "ChecklistBank (MagnoliaPress via Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7162989993",
+"kind": "data",
+"note": "GBIF occurrence: 300 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6905717011",
+"kind": "data",
+"note": "GBIF occurrence: 150 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7086762073",
+"kind": "data",
+"note": "GBIF occurrence: 350 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7129017830",
+"kind": "article_extract",
+"note": "ChecklistBank (MagnoliaPress via Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7129018483",
+"kind": "article_extract",
+"note": "ChecklistBank (MagnoliaPress via Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7129038981",
+"kind": "article_extract",
+"note": "ChecklistBank (Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7129063520",
+"kind": "article_extract",
+"note": "ChecklistBank (MagnoliaPress via Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7129084140",
+"kind": "article_extract",
+"note": "ChecklistBank (MagnoliaPress via Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7129089074",
+"kind": "article_extract",
+"note": "ChecklistBank (MagnoliaPress via Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7129101091",
+"kind": "article_extract",
+"note": "ChecklistBank (Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7129156542",
+"kind": "article_extract",
+"note": "ChecklistBank (MagnoliaPress via Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6944019732",
+"kind": "data",
+"note": "GBIF occurrence: 143 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6961599342",
+"kind": "data",
+"note": "GBIF occurrence: 250 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6962006839",
+"kind": "data",
+"note": "GBIF occurrence: 224 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7221475116",
+"kind": "article_extract",
+"note": "ChecklistBank (Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7214498560",
+"kind": "article_extract",
+"note": "ChecklistBank (Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7134231930",
+"kind": "article_extract",
+"note": "ChecklistBank (Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7134238150",
+"kind": "article_extract",
+"note": "ChecklistBank (Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7131314007",
+"kind": "article_extract",
+"note": "ChecklistBank (Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7131083143",
+"kind": "article_extract",
+"note": "ChecklistBank (Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7131090022",
+"kind": "article_extract",
+"note": "ChecklistBank (Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7130685561",
+"kind": "article_extract",
+"note": "ChecklistBank (Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7130715592",
+"kind": "article_extract",
+"note": "ChecklistBank (Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7130726560",
+"kind": "article_extract",
+"note": "ChecklistBank (Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7163038795",
+"kind": "data",
+"note": "GBIF occurrence: 255 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6962338218",
+"kind": "data",
+"note": "GBIF occurrence: 130 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6905569626",
+"kind": "data",
+"note": "GBIF occurrence: 161 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6942930923",
+"kind": "data",
+"note": "GBIF occurrence: 202 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7163012182",
+"kind": "unavailable",
+"note": "GBIF: dataset not found",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7203547378",
+"kind": "data",
+"note": "GBIF occurrence: 822 records",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7128994457",
+"kind": "article_extract",
+"note": "ChecklistBank (MagnoliaPress via Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7129064981",
+"kind": "article_extract",
+"note": "ChecklistBank (Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7212317239",
+"kind": "unavailable",
+"note": "GBIF: dataset not found",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7128992419",
+"kind": "article_extract",
+"note": "ChecklistBank (MagnoliaPress via Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7129013533",
+"kind": "article_extract",
+"note": "ChecklistBank (MagnoliaPress via Plazi): species list extracted automatically from a published article",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7220443327",
+"kind": "data",
+"note": "DataverseUA: Dataset (repository for data; data-only repository; its page blocks automated checks, files not listed)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6887946287",
+"kind": "data",
+"note": "RepOD: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7172352552",
+"kind": "data",
+"note": "Centre de Donnees Strasbourg (CDS): Dataset (repository for data; data-only repository; its page blocks automated checks, files not listed)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7225130174",
+"kind": "data",
+"note": "TUDOdata: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7131636842",
+"kind": "data",
+"note": "RepOD: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7212549863",
+"kind": "data",
+"note": "Centre de Donnees Strasbourg (CDS): Dataset (repository for data; data-only repository; its page blocks automated checks, files not listed)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7212885928",
+"kind": "data",
+"note": "Centre de Donnees Strasbourg (CDS): Dataset (repository for data; data-only repository; its page blocks automated checks, files not listed)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7167123996",
+"kind": "data",
+"note": "Centre de Donnees Strasbourg (CDS): Dataset (repository for data; data-only repository; its page blocks automated checks, files not listed)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7222004388",
+"kind": "data",
+"note": "Centre de Donnees Strasbourg (CDS): Dataset (repository for data; data-only repository; its page blocks automated checks, files not listed)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7161578645",
+"kind": "data",
+"note": "Institut Laue-Langevin (ILL): Dataset (repository for data; data-only repository; its page blocks automated checks, files not listed)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7090182673",
+"kind": "data",
+"note": "PANGAEA: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7090325402",
+"kind": "data",
+"note": "PANGAEA: Collection (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7090368377",
+"kind": "data",
+"note": "PANGAEA: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7090414670",
+"kind": "data",
+"note": "PANGAEA: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6887478594",
+"kind": "data",
+"note": "PANGAEA: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6887501564",
+"kind": "data",
+"note": "PANGAEA: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6887530991",
+"kind": "data",
+"note": "PANGAEA: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6887549344",
+"kind": "data",
+"note": "PANGAEA: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6906156895",
+"kind": "data",
+"note": "PANGAEA: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6924963065",
+"kind": "data",
+"note": "PANGAEA: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6943809038",
+"kind": "data",
+"note": "PANGAEA: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6962431574",
+"kind": "data",
+"note": "PANGAEA: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6962517297",
+"kind": "data",
+"note": "PANGAEA: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7212939607",
+"kind": "data",
+"note": "csv, gpkg",
+"files": 3,
+"formats": [
+"csv",
+"gpkg"
+]
+},
+{
+"openalex": "W6893209328",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W6926554409",
+"kind": "data",
+"note": "Materials Cloud: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6964177961",
+"kind": "duplicate",
+"note": "another version of W6926554409",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6920695501",
+"kind": "data",
+"note": "European Centre for Training and Research in Earthquake Engineering: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7212134941",
+"kind": "data",
+"note": "cpg, dbf, fix, geojson, json, md, pdf, png, prj, py, shp, shx, svg, tab, txt, xlsx",
+"files": 94,
+"formats": [
+"cpg",
+"dbf",
+"fix",
+"geojson",
+"json",
+"md",
+"pdf",
+"png",
+"prj",
+"py",
+"shp",
+"shx"
+]
+},
+{
+"openalex": "W7165676015",
+"kind": "data",
+"note": "mp4",
+"files": 514,
+"formats": [
+"mp4"
+]
+},
+{
+"openalex": "W7081937415",
+"kind": "data",
+"note": "zip",
+"files": 4,
+"formats": [
+"zip"
+]
+},
+{
+"openalex": "W7172022695",
+"kind": "data",
+"note": "md, tab, xlsx, zip",
+"files": 6,
+"formats": [
+"md",
+"tab",
+"xlsx",
+"zip"
+]
+},
+{
+"openalex": "W7201903618",
+"kind": "article",
+"note": "only documents: doc, docx, pdf, rtf",
+"files": 25,
+"formats": [
+"doc",
+"docx",
+"pdf",
+"rtf"
+]
+},
+{
+"openalex": "W6921589337",
+"kind": "article",
+"note": "only documents: docx",
+"files": 5,
+"formats": [
+"docx"
+]
+},
+{
+"openalex": "W6921683528",
+"kind": "data",
+"note": "docx, xlsx",
+"files": 7,
+"formats": [
+"docx",
+"xlsx"
+]
+},
+{
+"openalex": "W6902631543",
+"kind": "data",
+"note": "rdata",
+"files": 1,
+"formats": [
+"rdata"
+]
+},
+{
+"openalex": "W6910124348",
+"kind": "unavailable",
+"note": "DOI does not resolve in DataCite",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6947556960",
+"kind": "unavailable",
+"note": "DOI does not resolve in DataCite",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6978611433",
+"kind": "article",
+"note": "only documents: docx",
+"files": 1,
+"formats": [
+"docx"
+]
+},
+{
+"openalex": "W7169657915",
+"kind": "data",
+"note": "do, tab",
+"files": 2,
+"formats": [
+"do",
+"tab"
+]
+},
+{
+"openalex": "W6958868536",
+"kind": "unavailable",
+"note": "None: 'latestVersion'",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7171304926",
+"kind": "data",
+"note": "do, docx, py, r, tab, txt, xlsx",
+"files": 7,
+"formats": [
+"do",
+"docx",
+"py",
+"r",
+"tab",
+"txt",
+"xlsx"
+]
+},
+{
+"openalex": "W7170146013",
+"kind": "data",
+"note": "do, py, r, tab, txt, xlsx",
+"files": 7,
+"formats": [
+"do",
+"py",
+"r",
+"tab",
+"txt",
+"xlsx"
+]
+},
+{
+"openalex": "W7225109765",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W7171920478",
+"kind": "data",
+"note": "md, pdf, png, r, tab",
+"files": 5,
+"formats": [
+"md",
+"pdf",
+"png",
+"r",
+"tab"
+]
+},
+{
+"openalex": "W7169558848",
+"kind": "data",
+"note": "json, md, png, py, tab, xlsx",
+"files": 22,
+"formats": [
+"json",
+"md",
+"png",
+"py",
+"tab",
+"xlsx"
+]
+},
+{
+"openalex": "W7168411589",
+"kind": "data",
+"note": "geojson, md, pdf, r",
+"files": 7,
+"formats": [
+"geojson",
+"md",
+"pdf",
+"r"
+]
+},
+{
+"openalex": "W7086834438",
+"kind": "data",
+"note": "SciELO Data: Dataset (repository for data; data-only repository; its page blocks automated checks, files not listed)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7151377741",
+"kind": "data",
+"note": "csv, ds_store, pdf, r, rdata, rds, tab, xlsx",
+"files": 27,
+"formats": [
+"csv",
+"ds_store",
+"pdf",
+"r",
+"rdata",
+"rds",
+"tab",
+"xlsx"
+]
+},
+{
+"openalex": "W6977719937",
+"kind": "data",
+"note": "xlsx",
+"files": 4,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W6977769928",
+"kind": "data",
+"note": "do, docx, dta, pdf, tab",
+"files": 17,
+"formats": [
+"do",
+"docx",
+"dta",
+"pdf",
+"tab"
+]
+},
+{
+"openalex": "W6902713153",
+"kind": "data",
+"note": "do, dta",
+"files": 4,
+"formats": [
+"do",
+"dta"
+]
+},
+{
+"openalex": "W6958981490",
+"kind": "data",
+"note": "",
+"files": 3,
+"formats": []
+},
+{
+"openalex": "W6958517525",
+"kind": "data",
+"note": "xlsx",
+"files": 2,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W6921693888",
+"kind": "data",
+"note": "do, tab, xls, xlsx",
+"files": 6,
+"formats": [
+"do",
+"tab",
+"xls",
+"xlsx"
+]
+},
+{
+"openalex": "W6958987069",
+"kind": "duplicate",
+"note": "another version of W6921693888",
+"files": 6,
+"formats": [
+"do",
+"tab",
+"xls",
+"xlsx"
+]
+},
+{
+"openalex": "W6958526700",
+"kind": "data",
+"note": "r, rdata, rds, tab",
+"files": 32,
+"formats": [
+"r",
+"rdata",
+"rds",
+"tab"
+]
+},
+{
+"openalex": "W6977875070",
+"kind": "data",
+"note": "r, rdata, rds, txt, zip",
+"files": 10,
+"formats": [
+"r",
+"rdata",
+"rds",
+"txt",
+"zip"
+]
+},
+{
+"openalex": "W6966167085",
+"kind": "data",
+"note": "ICPSR - Interuniversity Consortium for Political and Social Research: Dataset (repository for data; data-only repository; its page blocks automated checks, files not listed)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7155171091",
+"kind": "data",
+"note": "tab",
+"files": 1,
+"formats": [
+"tab"
+]
+},
+{
+"openalex": "W6940505378",
+"kind": "data",
+"note": "amw, csv, tab",
+"files": 5,
+"formats": [
+"amw",
+"csv",
+"tab"
+]
+},
+{
+"openalex": "W6958980273",
+"kind": "data",
+"note": "xlsx",
+"files": 3,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W7138237787",
+"kind": "unavailable",
+"note": "None: 'latestVersion'",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7161602314",
+"kind": "data",
+"note": "DataverseNO: Dataset (repository for data; data-only repository; its page blocks automated checks, files not listed)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7141355317",
+"kind": "data",
+"note": "do, docx, tab, xlsx",
+"files": 4,
+"formats": [
+"do",
+"docx",
+"tab",
+"xlsx"
+]
+},
+{
+"openalex": "W6940104838",
+"kind": "unavailable",
+"note": "None: 'latestVersion'",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6977526656",
+"kind": "data",
+"note": "GESIS Data Archive: Dataset (repository for data; data-only repository; its page blocks automated checks, files not listed)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6925758760",
+"kind": "unavailable",
+"note": "page returns 404",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7172453108",
+"kind": "data",
+"note": "Science Data Bank: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7162302058",
+"kind": "data",
+"note": "Science Data Bank: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7155498293",
+"kind": "data",
+"note": "Science Data Bank: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7148259881",
+"kind": "data",
+"note": "md, txt, xlsx, zip",
+"files": 5,
+"formats": [
+"md",
+"txt",
+"xlsx",
+"zip"
+]
+},
+{
+"openalex": "W6958632387",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W6977006157",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W6977327847",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W6948056806",
+"kind": "data",
+"note": "md, zip",
+"files": 3,
+"formats": [
+"md",
+"zip"
+]
+},
+{
+"openalex": "W7201863130",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W7165187812",
+"kind": "data",
+"note": "tsv",
+"files": 1,
+"formats": [
+"tsv"
+]
+},
+{
+"openalex": "W7159623878",
+"kind": "data",
+"note": "tsv, xlsx",
+"files": 2,
+"formats": [
+"tsv",
+"xlsx"
+]
+},
+{
+"openalex": "W7153219868",
+"kind": "data",
+"note": "tsv",
+"files": 1,
+"formats": [
+"tsv"
+]
+},
+{
+"openalex": "W7150948022",
+"kind": "data",
+"note": "tsv, xlsx",
+"files": 2,
+"formats": [
+"tsv",
+"xlsx"
+]
+},
+{
+"openalex": "W7167687112",
+"kind": "data",
+"note": "tsv",
+"files": 1,
+"formats": [
+"tsv"
+]
+},
+{
+"openalex": "W7167288047",
+"kind": "data",
+"note": "tsv",
+"files": 1,
+"formats": [
+"tsv"
+]
+},
+{
+"openalex": "W7165664208",
+"kind": "data",
+"note": "tsv",
+"files": 1,
+"formats": [
+"tsv"
+]
+},
+{
+"openalex": "W7165668686",
+"kind": "data",
+"note": "tsv",
+"files": 1,
+"formats": [
+"tsv"
+]
+},
+{
+"openalex": "W7139940700",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W6962682367",
+"kind": "data",
+"note": "png, xlsx",
+"files": 14,
+"formats": [
+"png",
+"xlsx"
+]
+},
+{
+"openalex": "W7222248940",
+"kind": "data",
+"note": "Science Data Bank: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6892119237",
+"kind": "data",
+"note": "fas, md, nex",
+"files": 5,
+"formats": [
+"fas",
+"md",
+"nex"
+]
+},
+{
+"openalex": "W7225158310",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W7204559157",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W7163386687",
+"kind": "data",
+"note": "csv",
+"files": 2,
+"formats": [
+"csv"
+]
+},
+{
+"openalex": "W6910955836",
+"kind": "data",
+"note": "fas, md",
+"files": 2,
+"formats": [
+"fas",
+"md"
+]
+},
+{
+"openalex": "W6925452903",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W6906830603",
+"kind": "article",
+"note": "only documents: pdf",
+"files": 1,
+"formats": [
+"pdf"
+]
+},
+{
+"openalex": "W7079545442",
+"kind": "data",
+"note": "Science Data Bank: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6936241311",
+"kind": "data",
+"note": "Science Data Bank: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7131295162",
+"kind": "data",
+"note": "Science Data Bank: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7104398424",
+"kind": "data",
+"note": "Science Data Bank: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7105982186",
+"kind": "data",
+"note": "Science Data Bank: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6977164413",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W7212729424",
+"kind": "data",
+"note": "cff, csv, gz, html, json, md, py, txt, xlsx",
+"files": 50,
+"formats": [
+"cff",
+"csv",
+"gz",
+"html",
+"json",
+"md",
+"py",
+"txt",
+"xlsx"
+]
+},
+{
+"openalex": "W6958090774",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W6898757610",
+"kind": "data",
+"note": "Science Data Bank: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7165784316",
+"kind": "data",
+"note": "Instituto Politecnico de Bragança: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7092974199",
+"kind": "data",
+"note": "Instituto Politecnico de Bragança: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7203866772",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W6917308087",
+"kind": "data",
+"note": "Science Data Bank: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6892206857",
+"kind": "data",
+"note": "fas, md, txt, zip",
+"files": 5,
+"formats": [
+"fas",
+"md",
+"txt",
+"zip"
+]
+},
+{
+"openalex": "W6944672428",
+"kind": "data",
+"note": "IEEE DataPort: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7108597352",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W7221515066",
+"kind": "data",
+"note": "zip",
+"files": 1,
+"formats": [
+"zip"
+]
+},
+{
+"openalex": "W7172538244",
+"kind": "data",
+"note": "zip",
+"files": 1,
+"formats": [
+"zip"
+]
+},
+{
+"openalex": "W7167726196",
+"kind": "data",
+"note": "csv, md, mplstyle, py, rhistory, txt",
+"files": 18,
+"formats": [
+"csv",
+"md",
+"mplstyle",
+"py",
+"rhistory",
+"txt"
+]
+},
+{
+"openalex": "W7167034478",
+"kind": "data",
+"note": "Science Data Bank: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7165625153",
+"kind": "data",
+"note": "zip",
+"files": 1,
+"formats": [
+"zip"
+]
+},
+{
+"openalex": "W6973824661",
+"kind": "data",
+"note": "Science Data Bank: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7222530723",
+"kind": "data",
+"note": "zip",
+"files": 1,
+"formats": [
+"zip"
+]
+},
+{
+"openalex": "W7204246132",
+"kind": "data",
+"note": "zip",
+"files": 1,
+"formats": [
+"zip"
+]
+},
+{
+"openalex": "W7170198609",
+"kind": "data",
+"note": "eeg, json, vhdr, vmrk",
+"files": 816,
+"formats": [
+"eeg",
+"json",
+"vhdr",
+"vmrk"
+]
+},
+{
+"openalex": "W7093317510",
+"kind": "data",
+"note": "csv, pdf",
+"files": 7,
+"formats": [
+"csv",
+"pdf"
+]
+},
+{
+"openalex": "W7083006795",
+"kind": "data",
+"note": "csv, eval, evec, geno, gz, ind, snp, txt",
+"files": 20,
+"formats": [
+"csv",
+"eval",
+"evec",
+"geno",
+"gz",
+"ind",
+"snp",
+"txt"
+]
+},
+{
+"openalex": "W6947812871",
+"kind": "unavailable",
+"note": "page returns 404",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6944173491",
+"kind": "data",
+"note": "log, txt, xlsx",
+"files": 174,
+"formats": [
+"log",
+"txt",
+"xlsx"
+]
+},
+{
+"openalex": "W6944072880",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W6906612878",
+"kind": "data",
+"note": "pdf, xlsx",
+"files": 35,
+"formats": [
+"pdf",
+"xlsx"
+]
+},
+{
+"openalex": "W7151242506",
+"kind": "data",
+"note": "Nazarbayev University: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6925892734",
+"kind": "data",
+"note": "IEEE DataPort: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6939584192",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W6939832515",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W6958149019",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W6958333524",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W6958608192",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W6977092280",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W6977206680",
+"kind": "code",
+"note": "only code and documents: r",
+"files": 1,
+"formats": [
+"r"
+]
+},
+{
+"openalex": "W6977266890",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W6977429573",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W6926229094",
+"kind": "data",
+"note": "IEEE DataPort: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7147158794",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W7106798747",
+"kind": "data",
+"note": "zip",
+"files": 2,
+"formats": [
+"zip"
+]
+},
+{
+"openalex": "W7082148498",
+"kind": "data",
+"note": "zip",
+"files": 1,
+"formats": [
+"zip"
+]
+},
+{
+"openalex": "W7085597686",
+"kind": "data",
+"note": "bed, bim, fam, md",
+"files": 4,
+"formats": [
+"bed",
+"bim",
+"fam",
+"md"
+]
+},
+{
+"openalex": "W6906661377",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W6892086253",
+"kind": "data",
+"note": "md, xlsx",
+"files": 2,
+"formats": [
+"md",
+"xlsx"
+]
+},
+{
+"openalex": "W7155821915",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W7211928995",
+"kind": "data",
+"note": "csv",
+"files": 1,
+"formats": [
+"csv"
+]
+},
+{
+"openalex": "W7077879896",
+"kind": "data",
+"note": "csv, jpg, txt",
+"files": 1836,
+"formats": [
+"csv",
+"jpg",
+"txt"
+]
+},
+{
+"openalex": "W7117245999",
+"kind": "article",
+"note": "only documents: docx",
+"files": 1,
+"formats": [
+"docx"
+]
+},
+{
+"openalex": "W6940042571",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W6962533272",
+"kind": "data",
+"note": "zip",
+"files": 1,
+"formats": [
+"zip"
+]
+},
+{
+"openalex": "W6936407005",
+"kind": "data",
+"note": "Science Data Bank: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7204147642",
+"kind": "data",
+"note": "cff, csv, json, md, py, toml, txt",
+"files": 113,
+"formats": [
+"cff",
+"csv",
+"json",
+"md",
+"py",
+"toml",
+"txt"
+]
+},
+{
+"openalex": "W7202288038",
+"kind": "data",
+"note": "csv, json, md, xlsx",
+"files": 12,
+"formats": [
+"csv",
+"json",
+"md",
+"xlsx"
+]
+},
+{
+"openalex": "W7133225682",
+"kind": "data",
+"note": "Science Data Bank: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7221961312",
+"kind": "data",
+"note": "md, pdf, py, txt",
+"files": 9,
+"formats": [
+"md",
+"pdf",
+"py",
+"txt"
+]
+},
+{
+"openalex": "W7221536728",
+"kind": "data",
+"note": "md, pdf, py, txt",
+"files": 7,
+"formats": [
+"md",
+"pdf",
+"py",
+"txt"
+]
+},
+{
+"openalex": "W7164323465",
+"kind": "data",
+"note": "Science Data Bank: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7164364555",
+"kind": "data",
+"note": "Science Data Bank: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7115890418",
+"kind": "data",
+"note": "Science Data Bank: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7111282353",
+"kind": "data",
+"note": "Science Data Bank: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7109218040",
+"kind": "data",
+"note": "Science Data Bank: Dataset (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W6962067750",
+"kind": "data",
+"note": "ZBW - Leibniz Informationszentrum Wirtschaft: Collection (repository for data; landing page opens; files not listed by API)",
+"files": null,
+"formats": []
+},
+{
+"openalex": "W7151828154",
+"kind": "data",
+"note": "rar",
+"files": 5,
+"formats": [
+"rar"
+]
+},
+{
+"openalex": "W7154467473",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W7154066959",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W7204195502",
+"kind": "data",
+"note": "csv, docx, r, xlsx",
+"files": 7,
+"formats": [
+"csv",
+"docx",
+"r",
+"xlsx"
+]
+},
+{
+"openalex": "W7165779596",
+"kind": "data",
+"note": "docx, xlsx",
+"files": 2,
+"formats": [
+"docx",
+"xlsx"
+]
+},
+{
+"openalex": "W7118092909",
+"kind": "data",
+"note": "conllu, jsonl, tsv, txt",
+"files": 4,
+"formats": [
+"conllu",
+"jsonl",
+"tsv",
+"txt"
+]
+},
+{
+"openalex": "W6906540446",
+"kind": "data",
+"note": "xlsx",
+"files": 1,
+"formats": [
+"xlsx"
+]
+},
+{
+"openalex": "W7161592053",
+"kind": "data",
+"note": "csv",
+"files": 1,
+"formats": [
+"csv"
+]
+}
+]
+}

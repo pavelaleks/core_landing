@@ -155,6 +155,7 @@ json.dump({"source": "core-hub", "datasets": public}, open(os.path.join(OUT, "ca
 # research datasets list (already public on the site; authors never included)
 data = json.loads(open(os.path.join(ROOT, "assets", "data.js"), encoding="utf-8").read().split("=", 1)[1].rstrip().rstrip(";"))
 rd = [{"openalex": d["w"], "title": d["t"], "year": d["y"], "repository_type": d["r"], "license": d["lic"], "university": d["u"],
-       "countries": d["c"], "field": d["f"], "url": d["doi"], "mentions_central_asia": d["ca"]} for d in data["researchDatasets"]]
+       "countries": d["c"], "field": d["f"], "url": d["doi"], "mentions_central_asia": d["ca"],
+       "check": d.get("k", "unchecked"), "formats": d.get("fm", "")} for d in data["researchDatasets"]]
 json.dump(rd, open(os.path.join(OUT, "research_datasets.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=0)
 print("datasets:", [p["slug"] for p in public], "| universities:", len(urows), "| med sample:", len(mrows), "| works sample:", len(wrows), "| research datasets:", len(rd))

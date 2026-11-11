@@ -59,6 +59,9 @@ for row in ws.iter_rows(values_only=True):
     d=dict(zip(hdr,row))
     if not d.get("Название"): continue
     ds.append({"w":d["Ссылка OpenAlex"],"t":d["Название"],"y":d["Год"],"r":d["Тип репозитория"],"lic":d["Лицензия"] or "","u":(d["Вузы ЦА"] or "").split(";")[0].strip(),"c":d["Страны ЦА"] or "","f":d["Область"] or "","doi":d["DOI"] or d["Открытая ссылка"] or "","ca":d["Упоминает ЦА в названии"]=="да"})
+CK={x["openalex"]:x for x in json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),"..","data-src","research_datasets_check.json")))["records"]}
+for d in ds:
+    c=CK.get(d["w"]) or {}; d["k"]=c.get("kind","unchecked"); d["fm"]=", ".join(c.get("formats") or [])[:60]
 out["researchDatasets"]=ds
 js="window.CORE_DATA="+json.dumps(out,ensure_ascii=False,separators=(",",":"))+";"
 open(OUT,"w").write(js)

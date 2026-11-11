@@ -80,7 +80,7 @@
       <button role="tab" class="tab on" data-tab="t-uni"><span class="mono">DS-0001</span> <span data-ru="Вузы ЦА">Universities</span></button>
       <button role="tab" class="tab" data-tab="t-med"><span class="mono">DS-0002</span> <span data-ru="Медучреждения UZ">Medical UZ</span></button>
       <button role="tab" class="tab" data-tab="t-pub"><span class="mono">DS-0003</span> <span data-ru="Публикации">Publications</span></button>
-      <button role="tab" class="tab" data-tab="t-pipe"><span class="mono">PIPELINE</span> <span data-ru="548 найденных наборов учёных">548 found scholar datasets</span></button>
+      <button role="tab" class="tab" data-tab="t-pipe"><span class="mono">PIPELINE</span> <span data-ru="405 проверенных наборов учёных">405 checked scholar datasets</span></button>
     </div>
 
     <!-- DS-0001 -->
@@ -170,8 +170,8 @@
     <div class="tabpanel" id="t-pipe">
       <div class="pipe-head">
         <div>
-          <h3 data-ru="548 открытых наборов данных, которые учёные вузов ЦА уже опубликовали сами">548 open datasets Central Asian scholars have already published themselves</h3>
-          <p class="muted" data-ru="Отобраны из 11 523 записей OpenAlex с 2023 года: Zenodo, Mendeley Data, Dataverse, GBIF и др. Это не наш товар — это доказательство, что данные в вузах есть. Наша работа: договориться с вузом, проверить, разметить и упаковать для ИИ.">Filtered from 11,523 OpenAlex records since 2023 — Zenodo, Mendeley Data, Dataverse, GBIF and more. Not our inventory: proof the data exists. Our job is to partner with the university, verify, annotate and package it for AI.</p>
+          <h3 data-ru="405 открытых наборов данных, которые учёные вузов ЦА опубликовали сами, — каждый проверен">405 open datasets Central Asian scholars have published themselves — each one checked</h3>
+          <p class="muted" data-ru="Из 11 523 записей OpenAlex с 2023 года мы отобрали 548 кандидатов и открыли каждый в его репозитории: Zenodo, GBIF, Mendeley Data, Dataverse и других. Файлы с данными есть у 405. Остальные 143: только статья или документ (63), списки видов, извлечённые из статей (40), удалённые записи и нерабочие ссылки (19), закрытые файлы (17), прочее (4). Это не наш товар — это доказательство, что данные в вузах есть.">From 11,523 OpenAlex records since 2023 we picked 548 candidates and opened each one in its repository — Zenodo, GBIF, Mendeley Data, Dataverse and others. 405 have data files. The other 143: article or document only (63), species lists extracted from articles (40), deleted records and broken links (19), restricted files (17), other (4). Not our inventory — proof the data exists.</p>
         </div>
         <div class="pipe-stats" id="pipeStats"></div>
       </div>
@@ -188,10 +188,11 @@
             <button data-m="bio" data-ru="Биоразнообразие">Biodiversity</button>
             <button data-m="code" data-ru="Код и модели">Code &amp; models</button>
           </div>
+          <div class="seg" id="pipeCheck"><button class="on" data-k="data" data-ru="С данными">With data</button><button data-k="nodata" data-ru="Без данных">No data</button><button data-k="" data-ru="Все записи">All records</button></div>
           <div class="seg" id="pipeCountry"><button class="on" data-c="">All</button><button data-c="UZ">UZ</button><button data-c="KZ">KZ</button><button data-c="KG">KG</button><button data-c="TJ">TJ</button></div>
         </div>
-        <div class="tscroll tall"><table id="pipeTable"><thead><tr><th data-ru="Год">Year</th><th data-ru="Датасет">Dataset</th><th data-ru="Вуз">University</th><th data-ru="Область">Field</th><th data-ru="Лицензия">License</th></tr></thead><tbody></tbody></table></div>
-        <div class="table-foot small muted"><span id="pipeCount"></span> · <span data-ru="Названия — на языке публикации. Метаданные OpenAlex (CC0), авторы скрыты, тип данных определён автоматически по названию.">Titles are in the language of publication. Metadata via OpenAlex (CC0); authors hidden; data type inferred automatically from the title.</span></div>
+        <div class="tscroll tall"><table id="pipeTable"><thead><tr><th data-ru="Год">Year</th><th data-ru="Датасет">Dataset</th><th data-ru="Вуз">University</th><th data-ru="Область">Field</th><th data-ru="Лицензия">License</th><th data-ru="Проверка">Check</th></tr></thead><tbody></tbody></table></div>
+        <div class="table-foot small muted"><span id="pipeCount"></span> · <span data-ru="Названия — на языке публикации. Метаданные OpenAlex (CC0), авторы скрыты, тип данных определён автоматически по названию. «Проверка» — что мы нашли, открыв запись в репозитории (ноябрь 2026).">Titles are in the language of publication. Metadata via OpenAlex (CC0); authors hidden; data type inferred from the title. “Check” is what we found when we opened the record in its repository (November 2026).</span></div>
       </div>
     </div>
   </div>

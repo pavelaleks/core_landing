@@ -410,8 +410,13 @@
     $("#partnerList").innerHTML = (D.partners || []).slice(1, 9).map(function (r) { return "<span class='tag'>" + esc(pick(pc[r[0]] || [r[0], r[0]])) + " · " + nf(r[1]) + "</span>"; }).join("");
   }
 
-  /* ---------------- pipeline (548 datasets) ---------------- */
-  var pf = { q: "", c: "", f: "", m: "" };
+  /* ---------------- pipeline (scholar datasets, each checked in its repository) ---------------- */
+  var pf = { q: "", c: "", f: "", m: "", k: "data" };
+  var KIND = {
+    data: ["Data", "Данные", "t-teal"], article: ["Document only", "Только документ", ""], article_extract: ["Extract from an article", "Выдержка из статьи", ""],
+    no_files: ["Files restricted", "Файлы закрыты", ""], unavailable: ["Link broken", "Ссылка не работает", ""], duplicate: ["Duplicate", "Повтор", ""],
+    empty: ["Empty", "Пустой", ""], code: ["Code only", "Только код", ""]
+  };
   var MODAL = [
     ["bio", /occurrence|checklist|specimen|species|flora|fauna|herbari|taxa|biodiversity|GBIF|Биоразнообраз/i],
     ["img", /image|imagery|photo|sentinel|landsat|satellite|remote sensing|ndvi|uav|drone|microscop|x-ray|segmentation/i],
@@ -428,7 +433,7 @@
   var fieldSel = $("#pipeField");
   function fillFields() {
     var counts = {};
-    (D.researchDatasets || []).forEach(function (d) { counts[d.f] = (counts[d.f] || 0) + 1; });
+    (D.researchDatasets || []).forEach(function (d) { if (!pf.k || (pf.k === "data") === (d.k === "data")) counts[d.f] = (counts[d.f] || 0) + 1; });
     var keep = fieldSel.value;
     var opts = Object.keys(counts).filter(Boolean).sort(function (a, b) { return counts[b] - counts[a]; });
     fieldSel.innerHTML = "<option value=''>" + T("All fields", "Все области") + "</option>" + opts.map(function (f) {
@@ -436,9 +441,15 @@
     }).join("");
     fieldSel.value = keep;
   }
+  function kindCell(d) {
+    var k = KIND[d.k] || ["Not checked", "Не проверено", ""];
+    return "<span class='tag " + k[2] + "'>" + T(k[0], k[1]) + "</span>" + (d.k === "data" && d.fm ? "<div class='small muted mono'>" + esc(d.fm) + "</div>" : "");
+  }
   function renderPipe() {
     var all = D.researchDatasets || [];
     var rows = all.filter(function (d) {
+      if (pf.k === "data" && d.k !== "data") return false;
+      if (pf.k === "nodata" && d.k === "data") return false;
       if (pf.c && d.c.indexOf(pf.c) < 0) return false;
       if (pf.f && d.f !== pf.f) return false;
       if (pf.m && modality(d) !== pf.m) return false;
@@ -447,20 +458,23 @@
     }).sort(function (a, b) { return (b.y || 0) - (a.y || 0); });
     $("#pipeTable tbody").innerHTML = rows.slice(0, 250).map(function (d) {
       var link = d.doi ? "<a href='" + esc(d.doi) + "' target='_blank' rel='noopener'>" + esc(d.t) + "</a>" : esc(d.t);
-      return "<tr><td class='muted'>" + esc(d.y) + "</td><td>" + link + (d.ca ? " <span class='tag t-teal'>CA</span>" : "") + "</td><td class='muted'>" + esc(d.u) + "</td><td class='muted'>" + esc(fieldName(d.f)) + "</td><td><span class='tag'>" + esc(d.lic || "—") + "</span></td></tr>";
-    }).join("") || "<tr><td colspan='5' class='muted'>" + T("No matches", "Ничего не найдено") + "</td></tr>";
+      return "<tr><td class='muted'>" + esc(d.y) + "</td><td>" + link + (d.ca ? " <span class='tag t-teal'>CA</span>" : "") + "</td><td class='muted'>" + esc(d.u) + "</td><td class='muted'>" + esc(fieldName(d.f)) + "</td><td><span class='tag'>" + esc(d.lic || "—") + "</span></td><td>" + kindCell(d) + "</td></tr>";
+    }).join("") || "<tr><td colspan='6' class='muted'>" + T("No matches", "Ничего не найдено") + "</td></tr>";
     $("#pipeCount").textContent = T("Showing ", "Показано ") + nf(Math.min(250, rows.length)) + T(" of ", " из ") + nf(rows.length);
-    var unis = {}; all.forEach(function (d) { if (d.u) unis[d.u] = 1; });
-    var samdu = all.filter(function (d) { return /Samarkand State University/i.test(d.u); }).length;
+    var good = all.filter(function (d) { return d.k === "data"; });
+    var unis = {}; good.forEach(function (d) { if (d.u) unis[d.u] = 1; });
     $("#pipeStats").innerHTML =
-      "<div><b>" + nf(all.length) + "</b><span>" + T("datasets", "датасетов") + "</span></div>" +
+      "<div><b>" + nf(good.length) + "</b><span>" + T("with data", "с данными") + "</span></div>" +
       "<div><b>" + nf(Object.keys(unis).length) + "</b><span>" + T("universities", "вузов") + "</span></div>" +
-      "<div><b>" + nf(samdu) + "</b><span>" + T("at Samarkand State Univ.", "у СамГУ") + "</span></div>";
+      "<div><b>" + nf(all.length - good.length) + "</b><span>" + T("no data", "без данных") + "</span></div>";
   }
   if ($("#pipeSearch")) $("#pipeSearch").addEventListener("input", function () { pf.q = this.value.trim(); renderPipe(); });
   if (fieldSel) fieldSel.addEventListener("change", function () { pf.f = this.value; renderPipe(); });
   $$("#pipeType button").forEach(function (b) {
     b.addEventListener("click", function () { $$("#pipeType button").forEach(function (x) { x.classList.toggle("on", x === b); }); pf.m = b.dataset.m; renderPipe(); });
+  });
+  $$("#pipeCheck button").forEach(function (b) {
+    b.addEventListener("click", function () { $$("#pipeCheck button").forEach(function (x) { x.classList.toggle("on", x === b); }); pf.k = b.dataset.k; fillFields(); renderPipe(); });
   });
   $$("#pipeCountry button").forEach(function (b) {
     b.addEventListener("click", function () { $$("#pipeCountry button").forEach(function (x) { x.classList.toggle("on", x === b); }); pf.c = b.dataset.c; renderPipe(); });

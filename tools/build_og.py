@@ -86,7 +86,7 @@ for line in ("Central Asia's", "knowledge,", "licensed for AI"):
     y += 68 * SS
 d.text((x0, y + 18 * SS), "Expert-verified, rights-cleared data", font=reg, fill=(160, 170, 182))
 d.text((x0, y + 52 * SS), "from universities of UZ · KZ · KG · TJ", font=reg, fill=(160, 170, 182))
-d.text((x0, 560 * SS), "397 universities · 482K works · 548 datasets", font=mono, fill=(110, 120, 132))
+d.text((x0, 560 * SS), "397 universities · 482K works · 405 datasets with files", font=mono, fill=(110, 120, 132))
 
 img = img.resize((W, H), Image.LANCZOS)
 img.save(OUT, optimize=True)

@@ -95,6 +95,7 @@ for u in sorted(active, key=lambda x: -works_by_uni[x])[:60]:
 # --- research datasets → their university
 import openpyxl
 ds = []
+CHECK = {x["openalex"]: x["kind"] for x in json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data-src", "research_datasets_check.json")))["records"]}
 ws = openpyxl.load_workbook(XLSX, read_only=True)["Настоящие данные"]
 hdr = None
 for row in ws.iter_rows(values_only=True):
@@ -102,7 +103,7 @@ for row in ws.iter_rows(values_only=True):
         hdr = row; continue
     d = dict(zip(hdr, row))
     ids = [x.strip() for x in str(d.get("ID вузов CORE") or "").split(";") if x.strip() in unis]
-    if ids and d.get("Название"):
+    if ids and d.get("Название") and CHECK.get(d.get("Ссылка OpenAlex")) == "data":
         ds.append([ids[0], str(d["Название"])[:140], d.get("Область") or "", d.get("Год") or ""])
 
 nodes_u = {u: dict(unis[u], w=works_by_uni.get(u, 0)) for u in unis}
