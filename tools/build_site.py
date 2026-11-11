@@ -45,6 +45,12 @@ META = {
                  "ru": "Знания о регионе, научные данные и тексты на языках Центральной Азии из университетов региона с документами на права: каталог, образцы, API, метаданные Croissant и подключение к агентам.",
                  "uz": "Mintaqa universitetlaridan mintaqa haqidagi bilimlar, ilmiy maʼlumotlar va Markaziy Osiyo tillaridagi matnlar, huquqiy hujjatlari bilan: katalog, namunalar, API, Croissant metamaʼlumotlari va agentlarga ulanish."},
     },
+    "regions.html": {
+        "title": {"en": "CORE — regional data for Central Asia", "ru": "CORE — данные по регионам Центральной Азии", "uz": "CORE — Markaziy Osiyo hududlari boʻyicha maʼlumotlar"},
+        "desc": {"en": "48 regions of Uzbekistan, Kazakhstan, Kyrgyzstan and Tajikistan in one table: official demographics, universities, research, clinics and survey results, joined by ISO 3166-2 code.",
+                 "ru": "48 регионов Узбекистана, Казахстана, Кыргызстана и Таджикистана в одной таблице: официальная демография, вузы, наука, клиники и результаты опросов, связанные кодом ISO 3166-2.",
+                 "uz": "Oʻzbekiston, Qozogʻiston, Qirgʻiziston va Tojikistonning 48 hududi bitta jadvalda: rasmiy demografiya, universitetlar, ilm-fan, klinikalar va soʻrov natijalari, ISO 3166-2 kodi bilan bogʻlangan."},
+    },
     "universities.html": {
         "title": {"en": "CORE for universities — put your data to work", "ru": "CORE для университетов — данные работают на вуз", "uz": "Universitetlar uchun CORE — maʼlumotlaringiz universitet uchun ishlaydi"},
         "desc": {"en": "How Central Asian universities license their research data through CORE: closed by default, rights audit, revenue share, no cost to the university.",
@@ -153,6 +159,7 @@ def build_api():
             "croissant": BASE + "api/v0/datasets/{slug}/croissant.json",
             "universities": BASE + "api/v0/universities.json",
             "research_datasets": BASE + "api/v0/research-datasets.json",
+            "regions": BASE + "api/v0/regions.json",
         },
         "licenses": "Each record set carries its own license: CC0-1.0 (universities, publication metadata), ODbL-1.0 (medical facilities, © OpenStreetMap contributors).",
     }))
@@ -166,6 +173,17 @@ def build_api():
         emit("api/v0/datasets/" + s + "/croissant.json", jdump(croissant(d)))
         if s == "universities":
             emit("api/v0/universities.json", jdump({"dataset": d["id"], "license": "CC0-1.0", "count": len(rows), "universities": rows}))
+    RG = json.load(open(os.path.join(ROOT, "data-src", "regions.json"), encoding="utf-8"))
+    emit("api/v0/regions.json", jdump({**RG["meta"], "count": len(RG["regions"]), "regions": RG["regions"]}))
+    cols = ["iso", "country", "name_en", "name_ru", "population", "population_year", "urban_share", "female_share", "age_0_14", "age_15_64", "age_65_plus",
+            "universities", "research_works", "scholar_datasets", "medical_facilities_uz", "behaviour_surveys", "demographics_source"]
+    lines = [",".join(cols)]
+    for g in RG["regions"]:
+        d, c = g["demographics"], g["core"]
+        vals = [g["iso"], g["country"], g["name"]["en"], g["name"]["ru"], d.get("population"), d.get("year"), d.get("urban_share"), d.get("female_share"), d.get("age_0_14"),
+                d.get("age_15_64"), d.get("age_65_plus"), c["universities"], c["works"], c["open_datasets"], c["clinics"] if g["country"] == "UZ" else "", len(g["behaviour"]), d.get("source", "")]
+        lines.append(",".join('"%s"' % str(v).replace('"', '""') if isinstance(v, str) and ("," in v or '"' in v) else ("" if v is None else str(v)) for v in vals))
+    emit("api/v0/regions.csv", "\n".join(lines) + "\n")
     emit("api/v0/research-datasets.json", jdump({"about": "Open research datasets by Central Asian university scholars since 2023, from OpenAlex (CC0 metadata). Authors omitted. "
                                                   "Every record was opened in its repository; field `check` says what we found ('data' = data files present).",
                                                   "count": len(RD), "count_with_data": sum(1 for d in RD if d.get("check") == "data"), "datasets": RD}))
@@ -496,11 +514,12 @@ def build():
     footer = re.search(r'<footer class="foot">.*?</footer>', src_index, re.S).group(0)
     def up(h):
         h = re.sub(r'href="#', 'href="../index.html#', h)
-        h = h.replace('href="universities.html', 'href="../universities.html').replace('href="privacy.html', 'href="../privacy.html').replace('href="developers.html', 'href="../developers.html')
+        h = h.replace('href="universities.html', 'href="../universities.html').replace('href="privacy.html', 'href="../privacy.html').replace('href="developers.html', 'href="../developers.html').replace('href="regions.html', 'href="../regions.html')
         return h
     pages = {"index.html": src_index,
              "universities.html": open(os.path.join(ROOT, "src", "universities.html"), encoding="utf-8").read(),
-             "developers.html": open(os.path.join(ROOT, "src", "developers.html"), encoding="utf-8").read()}
+             "developers.html": open(os.path.join(ROOT, "src", "developers.html"), encoding="utf-8").read(),
+             "regions.html": open(os.path.join(ROOT, "src", "regions.html"), encoding="utf-8").read()}
     for d in CAT:
         pages["datasets/" + d["slug"] + ".html"] = dataset_page(d, up(nav), up(footer))
     LOCAL_PAGES = set(pages.keys()) | {"."}

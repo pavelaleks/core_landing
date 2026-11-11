@@ -10,7 +10,8 @@
   "sample_csv": "https://pavelaleks.github.io/core_landing/api/v0/datasets/{slug}/sample.csv",
   "croissant": "https://pavelaleks.github.io/core_landing/api/v0/datasets/{slug}/croissant.json",
   "universities": "https://pavelaleks.github.io/core_landing/api/v0/universities.json",
-  "research_datasets": "https://pavelaleks.github.io/core_landing/api/v0/research-datasets.json"
+  "research_datasets": "https://pavelaleks.github.io/core_landing/api/v0/research-datasets.json",
+  "regions": "https://pavelaleks.github.io/core_landing/api/v0/regions.json"
  },
  "licenses": "Each record set carries its own license: CC0-1.0 (universities, publication metadata), ODbL-1.0 (medical facilities, © OpenStreetMap contributors)."
 }

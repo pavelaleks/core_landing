@@ -105,3 +105,11 @@ python3 -I tools/build_graph.py <capubs>/data/ca_publications.sqlite <core-hub>/
 Главная и страница для вузов пишутся для человека без технического образования: что мы делаем, что нужно от вуза, что он получает.
 Технические термины (API, MCP, разметка спанами, Croissant, SFT/DPO) — только на странице для разработчиков.
 В русской и узбекской версиях не должно быть английского, кроме названий статей на языке оригинала и имён собственных.
+
+## Регионы (regions.html)
+
+`tools/build_regions.py` собирает слой регионов: 48 регионов UZ, KZ, KG, TJ по кодам ISO 3166-2, официальная демография (OCHA/UNFPA COD-PS с HDX, CC BY-IGO: UZ 2018, KZ 2023, KG 2018, TJ 2019), вузы (по координатам и границам geoBoundaries ADM1, ODbL; регионы, созданные после 2017 года, — по городу), научные работы, наборы учёных, медучреждения UZ и опросы, подготовленные CORE. Результат: `data-src/regions.json`, `assets/regions.js`, API `api/v0/regions.json` и `regions.csv`.
+
+```bash
+python3 -I tools/build_regions.py <папка с CSV COD-PS> <папка с geoBoundaries ADM1 GeoJSON>
+```
