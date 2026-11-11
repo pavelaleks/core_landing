@@ -39,9 +39,8 @@
       <a href="index.html#how-it-works" data-ru="Как это работает">How it works</a>
       <a href="universities.html" data-ru="Университетам">For universities</a>
       <a href="developers.html" aria-current="page" data-ru="Разработчикам ИИ">For AI developers</a>
-      <a href="index.html#business" data-ru="Организациям">For organizations</a>
-      <a href="regions.html" data-ru="Регионы">Regions</a>
-      <a href="index.html#pricing" data-ru="Цены">Pricing</a>
+      <a href="regions.html" data-ru="Организациям">For organizations</a>
+      <a href="regions.html#pricing" data-ru="Цены">Pricing</a>
       <a href="index.html#team" data-ru="Команда">Team</a>
     </nav>
     <div class="nav-cta">
@@ -66,8 +65,63 @@
     <div class="hero-ctas left">
       <a href="#catalog" class="btn btn-primary" data-ru="Открыть каталог">Open the catalog</a>
       <a href="app/index.html#demo" class="btn btn-ghost" data-ru="Попробовать кабинет покупателя">Try the buyer cabinet</a>
-      <a href="index.html#pricing" class="btn btn-ghost" data-ru="Цены и пилот">Pricing &amp; pilot</a>
+      <a href="regions.html#pricing" class="btn btn-ghost" data-ru="Цены и пилот">Pricing &amp; pilot</a>
     </div>
+  </div>
+</section>
+
+<!-- ============ ALREADY BUILT ============ -->
+<section class="sec sec-alt" id="science-map">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-ru="Что уже собрано">What we have already built</span>
+      <h2 data-ru="Карта науки Центральной Азии — уже работает">A map of Central Asian science — already live</h2>
+      <p class="sub" data-ru="Мы начали с открытых данных: собрали справочник всех вузов региона и связали с ними почти полмиллиона научных работ. Так вуз видит, где его сильные стороны, а покупатель — где искать нужные данные.">We started with open data: a registry of every university in the region, linked to almost half a million research works. A university sees its strengths; a buyer sees where the data is.</p>
+    </div>
+    <div class="g3" aria-label="CORE knowledge graph">
+      <div class="g3-stage" id="graph3d">
+        <canvas id="map" class="g3-fallback" width="720" height="460"></canvas>
+        <div class="map-tip" id="mapTip" hidden></div>
+      </div>
+      <div class="g3-top">
+        <span class="mono small"><span class="live"></span>CORE GRAPH · <span data-ru="живые данные">live data</span></span>
+        <div class="g3-ctrl">
+          <button class="chip on" data-g3layer="places"><i style="background:var(--teal)"></i><span data-ru="Места">Places</span></button>
+          <button class="chip on" data-g3layer="knowledge"><i style="background:#7bd88f"></i><span data-ru="Знания">Knowledge</span></button>
+          <button class="chip on" data-g3layer="collab"><i style="background:var(--violet)"></i><span data-ru="Соавторство">Collaboration</span></button>
+          <button class="chip on" data-g3layer="datasets"><i style="background:#fff"></i><span data-ru="Найденные данные">Found datasets</span></button>
+          <button class="chip on" data-g3layer="world"><i style="background:var(--amber)"></i><span data-ru="Мир">World</span></button>
+          <button class="chip g3-btn" id="g3Zoom" aria-label="Fullscreen"><span data-ru="⤢ На весь экран">⤢ Fullscreen</span></button>
+        </div>
+      </div>
+      <ol class="g3-steps" id="g3Caption">
+        <li data-g3step="0"><b><span class="n">01</span><span data-ru="Места">Places</span></b><span data-ru="Каждый вуз, клиника и архив получает постоянный ID CORE и точку на карте.">Every university, clinic and archive gets a persistent CORE ID and a point on the map.</span></li>
+        <li data-g3step="1"><b><span class="n">02</span><span data-ru="Знания">Knowledge</span></b><span data-ru="Над землёй — направления науки, связанные с вузами, где есть экспертиза.">Above the land float research areas, linked to the universities that hold the expertise.</span></li>
+        <li data-g3step="2"><b><span class="n">03</span><span data-ru="Соавторство">Collaboration</span></b><span data-ru="Дуги показывают, кто с кем работает в регионе — по реальным совместным публикациям.">Arcs show who works with whom across the region — from real co-authored papers.</span></li>
+        <li data-g3step="3"><b><span class="n">04</span><span data-ru="Найденные данные">Found datasets</span></b><span data-ru="Белые точки — открытые наборы данных, которые учёные уже выложили, рядом со своим вузом. Это не наш каталог, а подсказка, где данные уже есть.">White dots are open datasets scholars have already published, next to their university. Not our catalog — a hint where data already exists.</span></li>
+        <li data-g3step="4"><b><span class="n">05</span><span data-ru="Мир">World</span></b><span data-ru="На горизонте — страны-партнёры: как знание региона связано с мировой наукой.">On the horizon, partner countries: how regional knowledge plugs into world science.</span></li>
+        <li class="g3-play-row"><button class="chip g3-btn" id="g3Play"><span data-ru="▶ Показать по шагам">▶ Play the story</span></button></li>
+      </ol>
+      <div class="g3-panel card" id="g3Panel" hidden></div>
+      <div class="map-tip g3-tip" id="g3Tip" hidden></div>
+      <div class="g3-foot" id="g3Foot"></div>
+    </div>
+    <p class="g3-hint small muted" data-ru="Вращайте карту мышью или пальцем · нажмите на вуз, чтобы увидеть его связи · вузы с найденным адресом стоят на своём кампусе, остальные — в центре города · данные: OpenAlex, ROR, Wikidata, OpenStreetMap">Drag to rotate · click a university to see its links · universities with a known address sit on their campus, the rest at the city centre · data: OpenAlex, ROR, Wikidata, OpenStreetMap</p>
+    <div class="ours-found">
+      <div class="of-ours">
+        <span class="of-k mono" data-ru="Собрали мы сами — 3 базы данных">Built by us — 3 databases</span>
+        <div class="strip-grid strip-3">
+          <div class="stat"><b data-count="397">397</b><span data-ru="вузов — справочник всех университетов региона">universities — a registry of every university in the region</span></div>
+          <div class="stat"><b data-count="482572">482,572</b><span data-ru="научные работы — база публикаций этих вузов">research works — a database of these universities' publications</span></div>
+          <div class="stat"><b data-count="2982">2,982</b><span data-ru="медучреждения — база клиник Узбекистана">medical facilities — a database of Uzbekistan's clinics</span></div>
+        </div>
+      </div>
+      <div class="of-found">
+        <span class="of-k mono" data-ru="Нашли у учёных">Found at universities</span>
+        <div class="stat"><b data-count="405">405</b><span data-ru="наборов данных, которые учёные региона с 2023 года выложили в открытый доступ. Мы открыли каждую из 548 найденных записей: у 143 файлов с данными нет — это статьи, закрытые или удалённые записи">datasets the region's scholars have published openly since 2023. We opened each of the 548 records we found: 143 have no data files — they are articles, restricted or deleted records</span></div>
+        <p class="small muted" data-ru="Мы нашли их через свою базу публикаций. Это не наш товар, а подсказка: в каких вузах и у каких групп уже есть данные. С них мы начинаем переговоры.">We found them through our publications database. They are not ours to sell — they show which universities and groups already have data. That is where our talks start.</p>
+      </div>
+</div>
   </div>
 </section>
 
@@ -493,7 +547,7 @@ curl …/api/v0/datasets/<span class="s">universities</span>/croissant.json</cod
       <p class="small muted" data-ru="Научные данные университетов Центральной Азии — для искусственного интеллекта.">Research data from Central Asian universities — for artificial intelligence.</p>
     </div>
     <div class="foot-links">
-      <a href="index.html#how-it-works" data-ru="Как это работает">How it works</a><a href="universities.html" data-ru="Университетам">Universities</a><a href="developers.html" aria-current="page" data-ru="Разработчикам ИИ">AI developers</a><a href="index.html#pricing" data-ru="Цены">Pricing</a><a href="privacy.html" data-ru="Конфиденциальность">Privacy</a><a href="app/index.html" data-ru="Вход для партнёров (MVP)">Partner login (MVP)</a><a class="tg-link foot-tg" href="index.html#" target="_blank" rel="noopener" hidden><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M21.5 4.5 2.9 11.6c-.9.4-.9 1.1 0 1.4l4.7 1.5 1.8 5.6c.2.6.5.7 1 .3l2.6-2.3 4.9 3.6c.6.4 1.1.2 1.3-.6l3.1-14.6c.3-1.2-.4-1.6-1.4-1.2z" fill="currentColor"/></svg><span>Telegram</span></a>
+      <a href="index.html#how-it-works" data-ru="Как это работает">How it works</a><a href="universities.html" data-ru="Университетам">Universities</a><a href="developers.html" aria-current="page" data-ru="Разработчикам ИИ">AI developers</a><a href="regions.html#pricing" data-ru="Цены">Pricing</a><a href="privacy.html" data-ru="Конфиденциальность">Privacy</a><a href="app/index.html" data-ru="Вход для партнёров (MVP)">Partner login (MVP)</a><a class="tg-link foot-tg" href="index.html#" target="_blank" rel="noopener" hidden><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M21.5 4.5 2.9 11.6c-.9.4-.9 1.1 0 1.4l4.7 1.5 1.8 5.6c.2.6.5.7 1 .3l2.6-2.3 4.9 3.6c.6.4 1.1.2 1.3-.6l3.1-14.6c.3-1.2-.4-1.6-1.4-1.2z" fill="currentColor"/></svg><span>Telegram</span></a>
     </div>
     <p class="small muted attr" data-ru="Данные: © участники OpenStreetMap (ODbL), OpenAlex, ROR, Wikidata (CC0). Границы: Natural Earth.">Data: © OpenStreetMap contributors (ODbL), OpenAlex, ROR, Wikidata (CC0). Boundaries: Natural Earth.</p>
   </div>
@@ -502,7 +556,11 @@ curl …/api/v0/datasets/<span class="s">universities</span>/croissant.json</cod
 <script src="assets/config.js"></script>
 <script src="assets/i18n-uz.js"></script>
 <script src="assets/i18n-topics.js"></script>
+<script src="assets/geo.js"></script>
 <script src="assets/data.js"></script>
+<script src="assets/graph.js"></script>
 <script src="assets/app.js"></script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
+<script type="module" src="assets/graph3d.js"></script>
 </body>
 </html>

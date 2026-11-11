@@ -544,9 +544,9 @@
 
   /* ---------------- router ---------------- */
   /* #demo: a visitor from the public site becomes a demo buyer with one dataset already open */
-  function startDemo() {
+  function startDemo(want) {
     try { localStorage.setItem("core-invite", "1"); } catch (e) {}
-    var org = "Demo visitor", slug = "uzbek-geography-terms";
+    var org = "Demo visitor", slug = ds(want) ? want : "uzbek-geography-terms";
     S.user = { role: "buyer", org: org, buyerOrg: org, name: "Demo" };
     if (!S.requests.some(function (r) { return r.org === org && r.ds === slug && r.status === "approved"; }))
       S.requests.push({ id: id("R"), ds: slug, org: org, name: "Demo", purpose: "Демо: знакомство с форматом и API", use: "commercial", status: "approved", created: Date.now(), decided: Date.now() });
@@ -556,7 +556,7 @@
   }
   function render() {
     var h = location.hash || "";
-    if (h === "#demo") { startDemo(); return; }
+    if (h === "#demo" || h.indexOf("#demo/") === 0) { startDemo(h.slice(6)); return; }
     if (!S.user && h !== "#login") { location.hash = "#login"; return; }
     header();
     window.scrollTo(0, 0);

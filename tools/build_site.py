@@ -34,10 +34,10 @@ RD = json.load(open(os.path.join(ROOT, "data-src", "research_datasets.json"), en
 
 META = {
     "index.html": {
-        "title": {"en": "CORE — research data from Central Asian universities, for AI", "ru": "CORE — научные данные вузов Центральной Азии для искусственного интеллекта", "uz": "CORE — Markaziy Osiyo universitetlarining ilmiy maʼlumotlari sunʼiy intellekt uchun"},
-        "desc": {"en": "We help universities in Central Asia earn from their research data, and help AI developers get it legally: cleaned, checked and with clear rights. Free for universities.",
-                 "ru": "Помогаем университетам Центральной Азии зарабатывать на научных данных, а разработчикам ИИ — получать их законно: очищенными, проверенными и с понятными правами. Для вузов бесплатно.",
-                 "uz": "Markaziy Osiyo universitetlariga ilmiy maʼlumotlardan daromad olishga, SI ishlab chiquvchilariga esa ularni qonuniy olishga yordam beramiz: tozalangan, tekshirilgan va huquqlari aniq. Universitetlar uchun bepul."},
+        "title": {"en": "CORE — trusted data on Central Asia from the region's universities", "ru": "CORE — данные о Центральной Азии, которым можно доверять, из вузов региона", "uz": "CORE — mintaqa universitetlaridan Markaziy Osiyo haqidagi ishonchli maʼlumotlar"},
+        "desc": {"en": "Research data from Central Asian universities — cleaned, documented and with the rights to use it. For AI developers, companies and public programmes. Universities join for free and keep up to 70% of the revenue.",
+                 "ru": "Научные данные вузов Центральной Азии — очищенные, описанные и с правами на использование. Для разработчиков ИИ, компаний и госпрограмм. Вузы участвуют бесплатно и получают до 70% дохода.",
+                 "uz": "Markaziy Osiyo universitetlarining ilmiy maʼlumotlari — tozalangan, tavsiflangan va foydalanish huquqi bilan. SI ishlab chiquvchilari, kompaniyalar va davlat dasturlari uchun. Universitetlar bepul ishtirok etadi va daromadning 70% gachasini oladi."},
     },
     "developers.html": {
         "title": {"en": "CORE for AI developers — catalog, data format, API, agents", "ru": "CORE для разработчиков ИИ — каталог, формат данных, API, агенты", "uz": "SI ishlab chiquvchilari uchun CORE — katalog, maʼlumotlar formati, API, agentlar"},
