@@ -1094,5 +1094,6 @@ window.CORE_UZ = {
 "На этой странице": "Ushbu sahifada",
 "На странице": "Sahifada",
 "Наверх": "Yuqoriga",
-"Тест знаний модели": "Model bilimlari testi"
+"Тест знаний модели": "Model bilimlari testi",
+"Что CORE даёт каждому": "CORE har biriga nima beradi"
 };
