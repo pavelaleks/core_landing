@@ -1,0 +1,21 @@
+name: site
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check-generated:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Generated pages, API and HF packages are up to date
+        run: python3 -I tools/build_site.py --check
+      - name: JavaScript parses
+        run: |
+          node --check assets/app.js
+          node --check assets/graph3d.js

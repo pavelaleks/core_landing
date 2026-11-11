@@ -1,16 +1,62 @@
 # CORE — лэндинг
 
-Статический лэндинг CORE: лицензированные академические данные Центральной Азии для ИИ.
-Без сборки: чистые HTML, CSS и JS. Три языка: EN, RU, UZ (латиница). Язык берётся из браузера, из параметра `?lang=en|ru|uz` или из переключателя на странице.
+Статический сайт CORE: лицензированные академические данные Центральной Азии для ИИ.
+Три языка с отдельными адресами: `/` (EN), `/ru/`, `/uz/`. Сборка — один скрипт на стандартном Python, без зависимостей.
 
-Узбекский перевод лежит в `assets/i18n-uz.js`: это словарь «русская строка → узбекская». Если поменяли русский текст в `index.html`, поправьте и ключ в словаре, иначе строка покажется по-русски.
+## Как редактировать (важно)
+
+**Страницы правятся только в `src/`.** Файлы `index.html`, `universities.html`, папки `ru/`, `uz/`, `datasets/`, `api/`, `hf/` и `sitemap.xml` собираются автоматически: ручные правки в них пропадут.
+
+```bash
+# 1. правим src/index.html или src/universities.html (английский текст в разметке, русский — в data-ru)
+# 2. если добавили или изменили русскую строку — добавляем её перевод в assets/i18n-uz.js
+# 3. собираем
+python3 -I tools/build_site.py
+# 4. коммитим всё вместе; GitHub Actions проверяет, что собранные файлы не устарели
+```
+
+Обновить данные из core-hub (нужна локальная копия core-hub):
+
+```bash
+python3 -I tools/sync_from_core_hub.py ../core-hub   # публичный снимок → data-src/
+python3 -I tools/build_site.py
+```
+
+`sync_from_core_hub.py` переносит только публичные поля: без путей к файлам, ответственных, заметок, имён авторов и платных полей (телефоны, сайты и т. п. у медучреждений).
+
+## API v0 (работает сейчас, без ключа)
+
+| Адрес | Что отдаёт |
+|---|---|
+| `api/v0/index.json` | Список адресов |
+| `api/v0/catalog.json` | Карточки датасетов |
+| `api/v0/datasets/<slug>.json` | Карточка, поля, ссылки |
+| `api/v0/datasets/<slug>/sample.json`, `sample.csv` | Открытый образец |
+| `api/v0/datasets/<slug>/croissant.json` | Метаданные MLCommons Croissant 1.0 |
+| `api/v0/universities.json` | Полный справочник вузов (CC0) |
+| `api/v0/research-datasets.json` | 548 открытых датасетов учёных ЦА (без авторов) |
+
+Страницы датасетов `datasets/<slug>.html` содержат разметку schema.org/Dataset — для Google Dataset Search.
+
+## Hugging Face
+
+В `hf/` лежат два готовых пакета с карточками: `core-ca-universities` и `core-ca-research-datasets`. Загрузить:
+
+```bash
+pip install -U huggingface_hub
+huggingface-cli login
+huggingface-cli upload <org>/core-ca-universities hf/core-ca-universities . --repo-type dataset
+huggingface-cli upload <org>/core-ca-research-datasets hf/core-ca-research-datasets . --repo-type dataset
+```
 
 ## Структура
 
 | Путь | Что это |
 |---|---|
-| `index.html` | Весь лэндинг. Английский текст в разметке, русский в атрибутах `data-ru` |
-| `universities.html` | Страница для университетов: условия, кабинет, юридический путь, калькулятор, форма |
+| `src/index.html` | Исходник главной. Английский текст в разметке, русский в атрибутах `data-ru` |
+| `src/universities.html` | Исходник страницы для университетов |
+| `data-src/` | Публичный снимок данных из core-hub — источник для API и страниц датасетов |
+| `tools/build_site.py` | Сборка: языковые версии, страницы датасетов, API, Croissant, пакеты HF, sitemap |
 | `privacy.html` | Политика конфиденциальности (нужна, потому что форма собирает персональные данные) |
 | `assets/styles.css` | Дизайн: токены в `:root`, адаптив от 375 px |
 | `assets/app.js` | i18n, карта на canvas, таблицы каталога, график, калькулятор, форма |

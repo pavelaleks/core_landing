@@ -1,0 +1,16 @@
+{
+ "name": "CORE API v0 (static, read-only)",
+ "version": "0.1",
+ "about": "Public metadata and samples from the CORE catalog. Full datasets, updates and the MCP server are available under license.",
+ "contact": "https://pavelaleks.github.io/core_landing/#contact",
+ "endpoints": {
+  "catalog": "https://pavelaleks.github.io/core_landing/api/v0/catalog.json",
+  "dataset": "https://pavelaleks.github.io/core_landing/api/v0/datasets/{slug}.json",
+  "sample_json": "https://pavelaleks.github.io/core_landing/api/v0/datasets/{slug}/sample.json",
+  "sample_csv": "https://pavelaleks.github.io/core_landing/api/v0/datasets/{slug}/sample.csv",
+  "croissant": "https://pavelaleks.github.io/core_landing/api/v0/datasets/{slug}/croissant.json",
+  "universities": "https://pavelaleks.github.io/core_landing/api/v0/universities.json",
+  "research_datasets": "https://pavelaleks.github.io/core_landing/api/v0/research-datasets.json"
+ },
+ "licenses": "Each record set carries its own license: CC0-1.0 (universities, publication metadata), ODbL-1.0 (medical facilities, © OpenStreetMap contributors)."
+}

@@ -1,0 +1,339 @@
+{
+ "@context": {
+  "@language": "en",
+  "@vocab": "https://schema.org/",
+  "citeAs": "cr:citeAs",
+  "column": "cr:column",
+  "conformsTo": "dct:conformsTo",
+  "cr": "http://mlcommons.org/croissant/",
+  "rai": "http://mlcommons.org/croissant/RAI/",
+  "data": {
+   "@id": "cr:data",
+   "@type": "@json"
+  },
+  "dataType": {
+   "@id": "cr:dataType",
+   "@type": "@vocab"
+  },
+  "dct": "http://purl.org/dc/terms/",
+  "examples": {
+   "@id": "cr:examples",
+   "@type": "@json"
+  },
+  "extract": "cr:extract",
+  "field": "cr:field",
+  "fileProperty": "cr:fileProperty",
+  "fileObject": "cr:fileObject",
+  "fileSet": "cr:fileSet",
+  "format": "cr:format",
+  "includes": "cr:includes",
+  "isLiveDataset": "cr:isLiveDataset",
+  "jsonPath": "cr:jsonPath",
+  "key": "cr:key",
+  "md5": "cr:md5",
+  "parentField": "cr:parentField",
+  "path": "cr:path",
+  "recordSet": "cr:recordSet",
+  "references": "cr:references",
+  "regex": "cr:regex",
+  "repeated": "cr:repeated",
+  "replace": "cr:replace",
+  "sc": "https://schema.org/",
+  "separator": "cr:separator",
+  "source": "cr:source",
+  "subField": "cr:subField",
+  "transform": "cr:transform"
+ },
+ "@type": "sc:Dataset",
+ "conformsTo": "http://mlcommons.org/croissant/1.0",
+ "name": "CORE CORE-DS-0002 — Medical facilities of Uzbekistan (public sample)",
+ "description": "2,982 medical facilities in Uzbekistan (excluding pharmacies) across all 14 regions: type, ownership, ISO 3166-2 region, coordinates, specialties, website languages and a 0–100 medical-tourism readiness index. This Croissant file describes the public sample; the full dataset is available from CORE.",
+ "url": "https://pavelaleks.github.io/core_landing/datasets/uz_medical_facilities.html",
+ "license": "https://opendatacommons.org/licenses/odbl/1-0/",
+ "version": "1.0.0",
+ "dateModified": "2026-11-07",
+ "creator": {
+  "@type": "sc:Organization",
+  "name": "CORE",
+  "url": "https://pavelaleks.github.io/core_landing/"
+ },
+ "keywords": [
+  "Central Asia",
+  "university data",
+  "Uzbekistan"
+ ],
+ "distribution": [
+  {
+   "@type": "cr:FileObject",
+   "@id": "sample-csv",
+   "name": "sample-csv",
+   "contentUrl": "https://pavelaleks.github.io/core_landing/api/v0/datasets/uz_medical_facilities/sample.csv",
+   "encodingFormat": "text/csv",
+   "sha256": "5a8dcd5a91343815659901bf0a542ee5034ab6f3be8cc3c8df1a0d5528dbaed3"
+  }
+ ],
+ "recordSet": [
+  {
+   "@type": "cr:RecordSet",
+   "@id": "uz_medical_facilities",
+   "name": "uz_medical_facilities",
+   "field": [
+    {
+     "@type": "cr:Field",
+     "@id": "uz_medical_facilities/uid",
+     "name": "uid",
+     "description": "Persistent CORE ID (UZM-…)",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "uid"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "uz_medical_facilities/name",
+     "name": "name",
+     "description": "Primary name",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "name"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "uz_medical_facilities/name_ru",
+     "name": "name_ru",
+     "description": "Name in Russian",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "name_ru"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "uz_medical_facilities/name_en",
+     "name": "name_en",
+     "description": "Name in English",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "name_en"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "uz_medical_facilities/name_latin",
+     "name": "name_latin",
+     "description": "Name, Latin script",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "name_latin"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "uz_medical_facilities/facility_type",
+     "name": "facility_type",
+     "description": "Facility type (OSM)",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "facility_type"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "uz_medical_facilities/ownership",
+     "name": "ownership",
+     "description": "Ownership",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "ownership"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "uz_medical_facilities/region_code",
+     "name": "region_code",
+     "description": "Region, ISO 3166-2",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "region_code"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "uz_medical_facilities/district",
+     "name": "district",
+     "description": "District",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "district"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "uz_medical_facilities/city",
+     "name": "city",
+     "description": "City",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "city"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "uz_medical_facilities/lat",
+     "name": "lat",
+     "description": "Latitude, WGS84",
+     "dataType": "sc:Float",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "lat"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "uz_medical_facilities/lon",
+     "name": "lon",
+     "description": "Longitude, WGS84",
+     "dataType": "sc:Float",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "lon"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "uz_medical_facilities/specialties",
+     "name": "specialties",
+     "description": "Specialties, separated by ';'",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "specialties"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "uz_medical_facilities/site_languages",
+     "name": "site_languages",
+     "description": "Languages of the facility website",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "site_languages"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "uz_medical_facilities/readiness_score",
+     "name": "readiness_score",
+     "description": "Medical-tourism readiness index, 0–100",
+     "dataType": "sc:Integer",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "readiness_score"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "uz_medical_facilities/source_url",
+     "name": "source_url",
+     "description": "Link to the OpenStreetMap object",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "source_url"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "uz_medical_facilities/osm_edited",
+     "name": "osm_edited",
+     "description": "Last OSM edit date",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "osm_edited"
+      }
+     }
+    }
+   ]
+  }
+ ]
+}

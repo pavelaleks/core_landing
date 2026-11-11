@@ -1,0 +1,460 @@
+{
+ "source": "core-hub",
+ "datasets": [
+  {
+   "id": "CORE-DS-0001",
+   "slug": "universities",
+   "title_en": "Universities of Central Asia",
+   "title_ru": "Вузы Центральной Азии",
+   "version": "0.1.0",
+   "status": "ready",
+   "kind": "reference",
+   "countries": [
+    "UZ",
+    "KZ",
+    "KG",
+    "TJ"
+   ],
+   "languages": [
+    "uz",
+    "uz-cyrl",
+    "kk",
+    "ky",
+    "tg",
+    "ru",
+    "en"
+   ],
+   "records": 428,
+   "license": "CC0-1.0",
+   "commercial_use": "yes",
+   "pii": "none",
+   "updated": "2026-11-07",
+   "id_prefix": "UNI",
+   "description_en": "Registry of higher-education institutions in Uzbekistan, Kazakhstan, Kyrgyzstan and Tajikistan with persistent CORE IDs, names in national languages, Russian and English, city and coordinates, website, ROR / Wikidata / OpenAlex identifiers and research output. Every other CORE dataset links to these IDs.",
+   "description_ru": "Справочник вузов Узбекистана, Казахстана, Кыргызстана и Таджикистана с постоянными ID CORE, названиями на национальных языках, русском и английском, городом и координатами, сайтом, идентификаторами ROR / Wikidata / OpenAlex и научной продуктивностью. Все остальные датасеты CORE ссылаются на эти ID.",
+   "adds_en": [
+    "Persistent CORE IDs that never change",
+    "Names reconciled across seven languages and scripts",
+    "One record per institution merged from Wikidata, ROR and OpenAlex",
+    "Links to every publication and dataset in the CORE graph"
+   ],
+   "adds_ru": [
+    "Постоянные ID CORE, которые не меняются",
+    "Названия, сведённые на семи языках и письменностях",
+    "Одна запись на вуз, собранная из Wikidata, ROR и OpenAlex",
+    "Связи со всеми публикациями и датасетами графа CORE"
+   ],
+   "withheld_fields": [],
+   "sample": {
+    "file": "samples/universities.csv",
+    "rows": 397,
+    "sha256": "16fe840a27778125bcb8ede1d281b67d58508e536d914e53174e9a0a78661915"
+   },
+   "fields": [
+    {
+     "name": "id",
+     "type": "string",
+     "description": "Persistent CORE ID (UNI-…)"
+    },
+    {
+     "name": "country",
+     "type": "string",
+     "description": "Country, ISO 3166-1 alpha-2"
+    },
+    {
+     "name": "name",
+     "type": "string",
+     "description": "Primary name"
+    },
+    {
+     "name": "name_national",
+     "type": "string",
+     "description": "Name in the national language"
+    },
+    {
+     "name": "name_ru",
+     "type": "string",
+     "description": "Name in Russian"
+    },
+    {
+     "name": "name_en",
+     "type": "string",
+     "description": "Name in English"
+    },
+    {
+     "name": "acronyms",
+     "type": "string",
+     "description": "Acronyms, separated by '; '"
+    },
+    {
+     "name": "city",
+     "type": "string",
+     "description": "City"
+    },
+    {
+     "name": "lat",
+     "type": "number",
+     "description": "Latitude, WGS84"
+    },
+    {
+     "name": "lon",
+     "type": "number",
+     "description": "Longitude, WGS84"
+    },
+    {
+     "name": "website",
+     "type": "string",
+     "description": "Official website"
+    },
+    {
+     "name": "founded",
+     "type": "integer",
+     "description": "Year founded"
+    },
+    {
+     "name": "ror",
+     "type": "string",
+     "description": "ROR ID"
+    },
+    {
+     "name": "wikidata",
+     "type": "string",
+     "description": "Wikidata QID"
+    },
+    {
+     "name": "openalex",
+     "type": "string",
+     "description": "OpenAlex institution ID"
+    },
+    {
+     "name": "works_count",
+     "type": "integer",
+     "description": "Research works in OpenAlex"
+    },
+    {
+     "name": "cited_by_count",
+     "type": "integer",
+     "description": "Citations in OpenAlex"
+    },
+    {
+     "name": "h_index",
+     "type": "integer",
+     "description": "h-index"
+    }
+   ]
+  },
+  {
+   "id": "CORE-DS-0002",
+   "slug": "uz_medical_facilities",
+   "title_en": "Medical facilities of Uzbekistan",
+   "title_ru": "Медучреждения Узбекистана",
+   "version": "1.0.0",
+   "status": "ready",
+   "kind": "geo",
+   "countries": [
+    "UZ"
+   ],
+   "languages": [
+    "ru",
+    "uz",
+    "uz-cyrl",
+    "en"
+   ],
+   "records": 2982,
+   "license": "ODbL-1.0",
+   "commercial_use": "yes",
+   "pii": "none",
+   "updated": "2026-11-07",
+   "id_prefix": "UZM",
+   "description_en": "2,982 medical facilities in Uzbekistan (excluding pharmacies) across all 14 regions: type, ownership, ISO 3166-2 region, coordinates, specialties, website languages and a 0–100 medical-tourism readiness index.",
+   "description_ru": "2 982 медучреждения Узбекистана (без аптек) во всех 14 регионах: тип, форма собственности, регион ISO 3166-2, координаты, специализации, языки сайта и индекс готовности к медтуризму 0–100.",
+   "adds_en": [
+    "Deduplicated and normalized OpenStreetMap records",
+    "Website checks: languages, international-patient signals, accreditation",
+    "Medical-tourism readiness index 0–100",
+    "Regular refresh under subscription"
+   ],
+   "adds_ru": [
+    "Записи OpenStreetMap без дублей и в едином формате",
+    "Проверка сайтов: языки, работа с иностранцами, аккредитация",
+    "Индекс готовности к медтуризму 0–100",
+    "Регулярные обновления по подписке"
+   ],
+   "withheld_fields": [
+    "phones",
+    "website",
+    "email",
+    "telegram",
+    "whatsapp",
+    "instagram",
+    "facebook",
+    "services_site",
+    "intl_signals",
+    "accreditation",
+    "prices_on_site",
+    "site_ok",
+    "site_note",
+    "website_final",
+    "site_phones",
+    "beds",
+    "emergency",
+    "opening_hours",
+    "wheelchair",
+    "license_no",
+    "inn"
+   ],
+   "sample": {
+    "file": "samples/uz_medical_facilities.csv",
+    "rows": 50,
+    "sha256": "5a8dcd5a91343815659901bf0a542ee5034ab6f3be8cc3c8df1a0d5528dbaed3"
+   },
+   "fields": [
+    {
+     "name": "uid",
+     "type": "string",
+     "description": "Persistent CORE ID (UZM-…)"
+    },
+    {
+     "name": "name",
+     "type": "string",
+     "description": "Primary name"
+    },
+    {
+     "name": "name_ru",
+     "type": "string",
+     "description": "Name in Russian"
+    },
+    {
+     "name": "name_en",
+     "type": "string",
+     "description": "Name in English"
+    },
+    {
+     "name": "name_latin",
+     "type": "string",
+     "description": "Name, Latin script"
+    },
+    {
+     "name": "facility_type",
+     "type": "string",
+     "description": "Facility type (OSM)"
+    },
+    {
+     "name": "ownership",
+     "type": "string",
+     "description": "Ownership"
+    },
+    {
+     "name": "region_code",
+     "type": "string",
+     "description": "Region, ISO 3166-2"
+    },
+    {
+     "name": "district",
+     "type": "string",
+     "description": "District"
+    },
+    {
+     "name": "city",
+     "type": "string",
+     "description": "City"
+    },
+    {
+     "name": "lat",
+     "type": "number",
+     "description": "Latitude, WGS84"
+    },
+    {
+     "name": "lon",
+     "type": "number",
+     "description": "Longitude, WGS84"
+    },
+    {
+     "name": "specialties",
+     "type": "string",
+     "description": "Specialties, separated by ';'"
+    },
+    {
+     "name": "site_languages",
+     "type": "string",
+     "description": "Languages of the facility website"
+    },
+    {
+     "name": "readiness_score",
+     "type": "integer",
+     "description": "Medical-tourism readiness index, 0–100"
+    },
+    {
+     "name": "source_url",
+     "type": "string",
+     "description": "Link to the OpenStreetMap object"
+    },
+    {
+     "name": "osm_edited",
+     "type": "string",
+     "description": "Last OSM edit date"
+    }
+   ]
+  },
+  {
+   "id": "CORE-DS-0003",
+   "slug": "ca_publications",
+   "title_en": "Publications of Central Asian universities (OpenAlex)",
+   "title_ru": "Публикации вузов Центральной Азии (OpenAlex)",
+   "version": "1.0.0",
+   "status": "review",
+   "kind": "bibliographic",
+   "countries": [
+    "UZ",
+    "KZ",
+    "KG",
+    "TJ"
+   ],
+   "languages": [
+    "en",
+    "uz",
+    "ru",
+    "kk",
+    "ky",
+    "tg"
+   ],
+   "records": 482572,
+   "license": "LicenseRef-Mixed",
+   "commercial_use": "restricted",
+   "pii": "public_bibliographic",
+   "updated": "2026-11-10",
+   "id_prefix": "PUB",
+   "description_en": "482,572 research works involving 299 universities in UZ, KZ, KG and TJ from OpenAlex: metadata, topics, venues, open-access status, funders and co-authoring countries. Every work is linked to CORE university IDs.",
+   "description_ru": "482 572 научные работы с участием 299 вузов UZ, KZ, KG и TJ из OpenAlex: метаданные, темы, журналы, открытый доступ, фонды и страны соавторов. Каждая работа связана с ID вузов CORE.",
+   "adds_en": [
+    "Every work linked to CORE university IDs, fixing name variants",
+    "Topic, field and SDG classification in one table",
+    "Co-authorship links between universities and countries",
+    "Abstracts and full text only where the work's license allows"
+   ],
+   "adds_ru": [
+    "Каждая работа связана с ID вузов CORE, варианты названий сведены",
+    "Темы, области и цели устойчивого развития в одной таблице",
+    "Связи соавторства между вузами и странами",
+    "Аннотации и тексты — только если это разрешает лицензия работы"
+   ],
+   "withheld_fields": [
+    "abstracts",
+    "author names",
+    "ORCID"
+   ],
+   "sample": {
+    "file": "samples/ca_publications.csv",
+    "rows": 200,
+    "sha256": "599eaf2bbd3d6bce6adf7d3ca3d29f3f03ce97d3026647694df718f81bd15bee"
+   },
+   "fields": [
+    {
+     "name": "id",
+     "type": "string",
+     "description": "Persistent CORE ID (UNI-…)"
+    },
+    {
+     "name": "doi",
+     "type": "string",
+     "description": "DOI"
+    },
+    {
+     "name": "title",
+     "type": "string",
+     "description": "Title"
+    },
+    {
+     "name": "publication_year",
+     "type": "integer",
+     "description": "Publication year"
+    },
+    {
+     "name": "type",
+     "type": "string",
+     "description": "Work type"
+    },
+    {
+     "name": "language",
+     "type": "string",
+     "description": "Language"
+    },
+    {
+     "name": "source_name",
+     "type": "string",
+     "description": "Journal or repository"
+    },
+    {
+     "name": "is_oa",
+     "type": "integer",
+     "description": "Open access (1/0)"
+    },
+    {
+     "name": "oa_status",
+     "type": "string",
+     "description": "Open-access status"
+    },
+    {
+     "name": "license",
+     "type": "string",
+     "description": "License of the work"
+    },
+    {
+     "name": "cited_by_count",
+     "type": "integer",
+     "description": "Citations"
+    },
+    {
+     "name": "primary_topic",
+     "type": "string",
+     "description": "Primary topic"
+    },
+    {
+     "name": "subfield",
+     "type": "string",
+     "description": "Subfield"
+    },
+    {
+     "name": "field",
+     "type": "string",
+     "description": "Field"
+    },
+    {
+     "name": "domain",
+     "type": "string",
+     "description": "Domain"
+    },
+    {
+     "name": "keywords",
+     "type": "string",
+     "description": "Keywords"
+    },
+    {
+     "name": "sdgs",
+     "type": "string",
+     "description": "UN Sustainable Development Goals"
+    },
+    {
+     "name": "n_authors",
+     "type": "integer",
+     "description": "Number of authors"
+    },
+    {
+     "name": "countries",
+     "type": "string",
+     "description": "Co-author countries"
+    },
+    {
+     "name": "is_international",
+     "type": "integer",
+     "description": "Has co-authors outside Central Asia (1/0)"
+    },
+    {
+     "name": "core_ids",
+     "type": "string",
+     "description": "CORE university IDs"
+    }
+   ]
+  }
+ ]
+}

@@ -543,3 +543,26 @@ body.g3-lock{overflow:hidden}
 @media (max-width:700px){.status-line{border-radius:12px}}
 .agents>*,.bench>*,.contact>*,.uni-grid>*,.how>*{min-width:0}
 .msg.tool{overflow-x:auto}
+
+/* ===== dataset pages ===== */
+.ds-page .sub{margin-bottom:28px}
+.crumbs{color:var(--muted);margin-bottom:14px}
+.crumbs a{color:var(--teal)}
+.ds-tags{margin:14px 0 4px}
+.ds-cols{display:grid;grid-template-columns:1.3fr 1fr;gap:16px;margin-bottom:16px}
+.ds-cols .checks{margin:14px 0 18px}
+.ds-get{display:flex;flex-direction:column;gap:14px}
+.dl-list{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.dl{display:flex;flex-direction:column;gap:2px;border:1px solid var(--line2);border-radius:var(--r-sm);padding:12px 14px;transition:border-color .15s,background .15s}
+.dl:hover{border-color:rgba(61,219,193,.5);background:rgba(61,219,193,.05)}
+.dl b{font-weight:500;font-size:14.5px}
+.dl span{color:var(--muted)}
+.ds-page .ds-table{margin-bottom:16px}
+.ds-page .table-tools{justify-content:space-between}
+.ds-link{display:inline-block;margin-top:12px;font-size:13.5px;color:var(--teal);border-bottom:1px solid rgba(61,219,193,.4)}
+.ds-link:hover{border-color:var(--teal)}
+@media (max-width:1080px){.ds-cols{grid-template-columns:1fr}}
+@media (max-width:700px){.dl-list{grid-template-columns:1fr}}
+.lang a{font:500 12px var(--mono);padding:4px 9px;border-radius:999px;color:var(--muted)}
+.lang a:hover{color:var(--text)}
+.lang a[aria-current=true]{background:rgba(255,255,255,.1);color:var(--text)}

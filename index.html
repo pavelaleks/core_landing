@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-static-lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CORE — Licensed Central Asian data for AI</title>
 <meta name="description" content="CORE turns university archives and research data from Uzbekistan, Kazakhstan, Kyrgyzstan and Tajikistan into expert-verified, rights-cleared datasets for AI training, evaluation and RAG.">
 <meta property="og:title" content="CORE — Central Asia's knowledge, licensed for AI">
-<meta property="og:description" content="Expert-verified, rights-cleared datasets from Central Asian universities — anchored in one knowledge graph.">
+<meta property="og:description" content="CORE turns university archives and research data from Uzbekistan, Kazakhstan, Kyrgyzstan and Tajikistan into expert-verified, rights-cleared datasets for AI training, evaluation and RAG.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://pavelaleks.github.io/core_landing/">
 <meta property="og:image" content="https://pavelaleks.github.io/core_landing/assets/og.png">
@@ -14,13 +14,17 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://pavelaleks.github.io/core_landing/assets/og.png">
-<link rel="canonical" href="https://pavelaleks.github.io/core_landing/">
 <meta name="theme-color" content="#07090c">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
+<link rel="canonical" href="https://pavelaleks.github.io/core_landing/">
+<link rel="alternate" hreflang="en" href="https://pavelaleks.github.io/core_landing/">
+<link rel="alternate" hreflang="ru" href="https://pavelaleks.github.io/core_landing/ru/">
+<link rel="alternate" hreflang="uz" href="https://pavelaleks.github.io/core_landing/uz/">
+<link rel="alternate" hreflang="x-default" href="https://pavelaleks.github.io/core_landing/">
 </head>
 <body>
 
@@ -40,9 +44,7 @@
       <a href="#team" data-ru="Команда">Team</a>
     </nav>
     <div class="nav-cta">
-      <div class="lang" role="group" aria-label="Language">
-        <button data-lang="en" aria-pressed="true">EN</button><button data-lang="ru" aria-pressed="false">RU</button><button data-lang="uz" aria-pressed="false">UZ</button>
-      </div>
+      <div class="lang" role="group" aria-label="Language"><a data-lang="en" href="index.html" hreflang="en" aria-current="true">EN</a><a data-lang="ru" href="ru/index.html" hreflang="ru">RU</a><a data-lang="uz" href="uz/index.html" hreflang="uz">UZ</a></div>
       <a href="#contact" class="btn btn-primary btn-sm" data-form="buyer" data-ru="Запросить данные">Request data</a>
       <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
     </div>
@@ -241,6 +243,7 @@
           </dl>
           <div class="bars" id="uniBars"></div>
           <p class="note" data-ru="Источники: Wikidata, ROR, OpenAlex + ручная сверка. Ценность — в постоянных ID и связях, а не в записях.">Sources: Wikidata, ROR, OpenAlex + manual curation. The value is in persistent IDs and links, not rows.</p>
+          <a class="ds-link" href="datasets/universities.html" data-ru="Страница датасета, образец и Croissant →">Dataset page, sample &amp; Croissant →</a>
         </div>
         <div class="card ds-table">
           <div class="table-tools">
@@ -269,6 +272,7 @@
           </dl>
           <div class="bars" id="medBars"></div>
           <p class="note" data-ru="Основа — OpenStreetMap (© участники OSM, ODbL). Мы продаём не записи OSM, а проверку, обогащение и регулярные обновления.">Base layer © OpenStreetMap contributors (ODbL). We sell verification, enrichment and refresh — not the OSM records themselves.</p>
+          <a class="ds-link" href="datasets/uz_medical_facilities.html" data-ru="Страница датасета, образец и Croissant →">Dataset page, sample &amp; Croissant →</a>
           <a href="#contact" class="link-cta" data-form="med" data-ru="Подборки клиник для медтуризма — по запросу →">Clinic shortlists for medical tourism — on request →</a>
         </div>
         <div class="card ds-table">
@@ -292,6 +296,7 @@
             <div><dt data-ru="Записей «датасет»">“Dataset” records</dt><dd>11,871</dd></div>
           </dl>
           <p class="note" data-ru="Метаданные — CC0. Аннотации передаются только под открытой лицензией работы. Имена авторов — персональные данные, не публикуются.">Metadata CC0. Abstracts are shared only under each work's open license. Author names are treated as personal data.</p>
+          <a class="ds-link" href="datasets/ca_publications.html" data-ru="Страница датасета, образец и Croissant →">Dataset page, sample &amp; Croissant →</a>
         </div>
         <div class="card ds-chart">
           <div class="chart-head"><span class="small muted" data-ru="Работ в год, по странам">Works per year, by country</span>
@@ -396,22 +401,25 @@
         </ol>
       </div>
       <div class="code">
-        <div class="code-head"><span class="dots"><i></i><i></i><i></i></span><span class="mono small muted">api preview</span><button class="copy mono small" data-copy="codeBlock">copy</button></div>
-<pre id="codeBlock"><code><span class="c"># GET a dataset slice — CORE API (preview)</span>
-curl https://api.core-data.example/v1/datasets/<span class="s">uz_medical_facilities</span>/records \
-  -H <span class="s">"Authorization: Bearer $CORE_KEY"</span> \
-  -G -d region=<span class="s">UZ-SA</span> -d min_readiness=<span class="n">45</span> -d limit=<span class="n">3</span>
+        <div class="code-head"><span class="dots"><i></i><i></i><i></i></span><span class="mono small muted">api v0 · live</span><button class="copy mono small" data-copy="codeBlock">copy</button></div>
+<pre id="codeBlock"><code><span class="c"># Public API v0 — works right now, no key needed</span>
+curl https://pavelaleks.github.io/core_landing/api/v0/datasets/<span class="s">uz_medical_facilities</span>/sample.json
 
 <span class="c"># →</span>
 {
-  <span class="k">"dataset"</span>: <span class="s">"CORE-DS-0002"</span>, <span class="k">"license"</span>: <span class="s">"ODbL-1.0"</span>,
+  <span class="k">"dataset"</span>: <span class="s">"CORE-DS-0002"</span>, <span class="k">"license"</span>: <span class="s">"ODbL-1.0"</span>, <span class="k">"rows"</span>: <span class="n">50</span>,
   <span class="k">"records"</span>: [{
-    <span class="k">"id"</span>: <span class="s">"UZM-…"</span>, <span class="k">"facility_type"</span>: <span class="s">"clinic"</span>,
-    <span class="k">"region_code"</span>: <span class="s">"UZ-SA"</span>, <span class="k">"readiness_score"</span>: <span class="n">62</span>,
-    <span class="k">"site_languages"</span>: [<span class="s">"en"</span>,<span class="s">"ru"</span>,<span class="s">"uz"</span>],
-    <span class="k">"provenance"</span>: { <span class="k">"sources"</span>: [<span class="s">"osm"</span>,<span class="s">"site"</span>], <span class="k">"verified"</span>: <span class="s">"2026-11-07"</span> }
-  }]
-}</code></pre>
+    <span class="k">"uid"</span>: <span class="s">"UZM-3987A2247B"</span>, <span class="k">"facility_type"</span>: <span class="s">"hospital"</span>,
+    <span class="k">"region_code"</span>: <span class="s">"UZ-TK"</span>, <span class="k">"readiness_score"</span>: <span class="n">91</span>,
+    <span class="k">"site_languages"</span>: <span class="s">"en;ru;uz"</span>,
+    <span class="k">"source_url"</span>: <span class="s">"https://www.openstreetmap.org/way/406552830"</span>
+  }, …]
+}
+
+<span class="c"># Catalog · universities · Croissant metadata</span>
+curl …/api/v0/catalog.json
+curl …/api/v0/universities.json
+curl …/api/v0/datasets/<span class="s">universities</span>/croissant.json</code></pre>
       </div>
     </div>
   </div>

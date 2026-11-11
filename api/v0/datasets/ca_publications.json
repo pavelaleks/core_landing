@@ -1,0 +1,165 @@
+{
+ "id": "CORE-DS-0003",
+ "slug": "ca_publications",
+ "title_en": "Publications of Central Asian universities (OpenAlex)",
+ "title_ru": "Публикации вузов Центральной Азии (OpenAlex)",
+ "version": "1.0.0",
+ "status": "review",
+ "kind": "bibliographic",
+ "countries": [
+  "UZ",
+  "KZ",
+  "KG",
+  "TJ"
+ ],
+ "languages": [
+  "en",
+  "uz",
+  "ru",
+  "kk",
+  "ky",
+  "tg"
+ ],
+ "records": 482572,
+ "license": "LicenseRef-Mixed",
+ "commercial_use": "restricted",
+ "pii": "public_bibliographic",
+ "updated": "2026-11-10",
+ "description_en": "482,572 research works involving 299 universities in UZ, KZ, KG and TJ from OpenAlex: metadata, topics, venues, open-access status, funders and co-authoring countries. Every work is linked to CORE university IDs.",
+ "description_ru": "482 572 научные работы с участием 299 вузов UZ, KZ, KG и TJ из OpenAlex: метаданные, темы, журналы, открытый доступ, фонды и страны соавторов. Каждая работа связана с ID вузов CORE.",
+ "page": "https://pavelaleks.github.io/core_landing/datasets/ca_publications.html",
+ "links": {
+  "card": "https://pavelaleks.github.io/core_landing/api/v0/datasets/ca_publications.json",
+  "sample_json": "https://pavelaleks.github.io/core_landing/api/v0/datasets/ca_publications/sample.json",
+  "sample_csv": "https://pavelaleks.github.io/core_landing/api/v0/datasets/ca_publications/sample.csv",
+  "croissant": "https://pavelaleks.github.io/core_landing/api/v0/datasets/ca_publications/croissant.json"
+ },
+ "what_core_adds_en": [
+  "Every work linked to CORE university IDs, fixing name variants",
+  "Topic, field and SDG classification in one table",
+  "Co-authorship links between universities and countries",
+  "Abstracts and full text only where the work's license allows"
+ ],
+ "what_core_adds_ru": [
+  "Каждая работа связана с ID вузов CORE, варианты названий сведены",
+  "Темы, области и цели устойчивого развития в одной таблице",
+  "Связи соавторства между вузами и странами",
+  "Аннотации и тексты — только если это разрешает лицензия работы"
+ ],
+ "fields": [
+  {
+   "name": "id",
+   "type": "string",
+   "description": "Persistent CORE ID (UNI-…)"
+  },
+  {
+   "name": "doi",
+   "type": "string",
+   "description": "DOI"
+  },
+  {
+   "name": "title",
+   "type": "string",
+   "description": "Title"
+  },
+  {
+   "name": "publication_year",
+   "type": "integer",
+   "description": "Publication year"
+  },
+  {
+   "name": "type",
+   "type": "string",
+   "description": "Work type"
+  },
+  {
+   "name": "language",
+   "type": "string",
+   "description": "Language"
+  },
+  {
+   "name": "source_name",
+   "type": "string",
+   "description": "Journal or repository"
+  },
+  {
+   "name": "is_oa",
+   "type": "integer",
+   "description": "Open access (1/0)"
+  },
+  {
+   "name": "oa_status",
+   "type": "string",
+   "description": "Open-access status"
+  },
+  {
+   "name": "license",
+   "type": "string",
+   "description": "License of the work"
+  },
+  {
+   "name": "cited_by_count",
+   "type": "integer",
+   "description": "Citations"
+  },
+  {
+   "name": "primary_topic",
+   "type": "string",
+   "description": "Primary topic"
+  },
+  {
+   "name": "subfield",
+   "type": "string",
+   "description": "Subfield"
+  },
+  {
+   "name": "field",
+   "type": "string",
+   "description": "Field"
+  },
+  {
+   "name": "domain",
+   "type": "string",
+   "description": "Domain"
+  },
+  {
+   "name": "keywords",
+   "type": "string",
+   "description": "Keywords"
+  },
+  {
+   "name": "sdgs",
+   "type": "string",
+   "description": "UN Sustainable Development Goals"
+  },
+  {
+   "name": "n_authors",
+   "type": "integer",
+   "description": "Number of authors"
+  },
+  {
+   "name": "countries",
+   "type": "string",
+   "description": "Co-author countries"
+  },
+  {
+   "name": "is_international",
+   "type": "integer",
+   "description": "Has co-authors outside Central Asia (1/0)"
+  },
+  {
+   "name": "core_ids",
+   "type": "string",
+   "description": "CORE university IDs"
+  }
+ ],
+ "withheld_fields": [
+  "abstracts",
+  "author names",
+  "ORCID"
+ ],
+ "sample": {
+  "rows": 200,
+  "sha256": "599eaf2bbd3d6bce6adf7d3ca3d29f3f03ce97d3026647694df718f81bd15bee"
+ }
+}

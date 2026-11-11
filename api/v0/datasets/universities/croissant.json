@@ -1,0 +1,357 @@
+{
+ "@context": {
+  "@language": "en",
+  "@vocab": "https://schema.org/",
+  "citeAs": "cr:citeAs",
+  "column": "cr:column",
+  "conformsTo": "dct:conformsTo",
+  "cr": "http://mlcommons.org/croissant/",
+  "rai": "http://mlcommons.org/croissant/RAI/",
+  "data": {
+   "@id": "cr:data",
+   "@type": "@json"
+  },
+  "dataType": {
+   "@id": "cr:dataType",
+   "@type": "@vocab"
+  },
+  "dct": "http://purl.org/dc/terms/",
+  "examples": {
+   "@id": "cr:examples",
+   "@type": "@json"
+  },
+  "extract": "cr:extract",
+  "field": "cr:field",
+  "fileProperty": "cr:fileProperty",
+  "fileObject": "cr:fileObject",
+  "fileSet": "cr:fileSet",
+  "format": "cr:format",
+  "includes": "cr:includes",
+  "isLiveDataset": "cr:isLiveDataset",
+  "jsonPath": "cr:jsonPath",
+  "key": "cr:key",
+  "md5": "cr:md5",
+  "parentField": "cr:parentField",
+  "path": "cr:path",
+  "recordSet": "cr:recordSet",
+  "references": "cr:references",
+  "regex": "cr:regex",
+  "repeated": "cr:repeated",
+  "replace": "cr:replace",
+  "sc": "https://schema.org/",
+  "separator": "cr:separator",
+  "source": "cr:source",
+  "subField": "cr:subField",
+  "transform": "cr:transform"
+ },
+ "@type": "sc:Dataset",
+ "conformsTo": "http://mlcommons.org/croissant/1.0",
+ "name": "CORE CORE-DS-0001 — Universities of Central Asia (public sample)",
+ "description": "Registry of higher-education institutions in Uzbekistan, Kazakhstan, Kyrgyzstan and Tajikistan with persistent CORE IDs, names in national languages, Russian and English, city and coordinates, website, ROR / Wikidata / OpenAlex identifiers and research output. Every other CORE dataset links to these IDs. This Croissant file describes the public sample; the full dataset is available from CORE.",
+ "url": "https://pavelaleks.github.io/core_landing/datasets/universities.html",
+ "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+ "version": "0.1.0",
+ "dateModified": "2026-11-07",
+ "creator": {
+  "@type": "sc:Organization",
+  "name": "CORE",
+  "url": "https://pavelaleks.github.io/core_landing/"
+ },
+ "keywords": [
+  "Central Asia",
+  "university data",
+  "Uzbekistan",
+  "Kazakhstan",
+  "Kyrgyzstan",
+  "Tajikistan"
+ ],
+ "distribution": [
+  {
+   "@type": "cr:FileObject",
+   "@id": "sample-csv",
+   "name": "sample-csv",
+   "contentUrl": "https://pavelaleks.github.io/core_landing/api/v0/datasets/universities/sample.csv",
+   "encodingFormat": "text/csv",
+   "sha256": "16fe840a27778125bcb8ede1d281b67d58508e536d914e53174e9a0a78661915"
+  }
+ ],
+ "recordSet": [
+  {
+   "@type": "cr:RecordSet",
+   "@id": "universities",
+   "name": "universities",
+   "field": [
+    {
+     "@type": "cr:Field",
+     "@id": "universities/id",
+     "name": "id",
+     "description": "Persistent CORE ID (UNI-…)",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "id"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "universities/country",
+     "name": "country",
+     "description": "Country, ISO 3166-1 alpha-2",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "country"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "universities/name",
+     "name": "name",
+     "description": "Primary name",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "name"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "universities/name_national",
+     "name": "name_national",
+     "description": "Name in the national language",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "name_national"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "universities/name_ru",
+     "name": "name_ru",
+     "description": "Name in Russian",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "name_ru"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "universities/name_en",
+     "name": "name_en",
+     "description": "Name in English",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "name_en"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "universities/acronyms",
+     "name": "acronyms",
+     "description": "Acronyms, separated by '; '",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "acronyms"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "universities/city",
+     "name": "city",
+     "description": "City",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "city"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "universities/lat",
+     "name": "lat",
+     "description": "Latitude, WGS84",
+     "dataType": "sc:Float",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "lat"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "universities/lon",
+     "name": "lon",
+     "description": "Longitude, WGS84",
+     "dataType": "sc:Float",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "lon"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "universities/website",
+     "name": "website",
+     "description": "Official website",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "website"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "universities/founded",
+     "name": "founded",
+     "description": "Year founded",
+     "dataType": "sc:Integer",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "founded"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "universities/ror",
+     "name": "ror",
+     "description": "ROR ID",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "ror"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "universities/wikidata",
+     "name": "wikidata",
+     "description": "Wikidata QID",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "wikidata"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "universities/openalex",
+     "name": "openalex",
+     "description": "OpenAlex institution ID",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "openalex"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "universities/works_count",
+     "name": "works_count",
+     "description": "Research works in OpenAlex",
+     "dataType": "sc:Integer",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "works_count"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "universities/cited_by_count",
+     "name": "cited_by_count",
+     "description": "Citations in OpenAlex",
+     "dataType": "sc:Integer",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "cited_by_count"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "universities/h_index",
+     "name": "h_index",
+     "description": "h-index",
+     "dataType": "sc:Integer",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "h_index"
+      }
+     }
+    }
+   ]
+  }
+ ]
+}

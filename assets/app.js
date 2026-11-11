@@ -12,14 +12,36 @@
     get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
     set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
   };
-  var lang = (function () {
-    var q = new URLSearchParams(location.search).get("lang");
-    if (q === "ru" || q === "en" || q === "uz") return q;
-    var s = store.get("core-lang");
-    if (s === "ru" || s === "en" || s === "uz") return s;
+  var detectLang = function () {
     var n = (navigator.language || "en").toLowerCase();
     if (/^uz/.test(n)) return "uz";
     return /^(ru|kk|ky|tg|be|uk)/.test(n) ? "ru" : "en";
+  };
+  var okLang = function (x) { return x === "ru" || x === "en" || x === "uz"; };
+  // Pages built by tools/build_site.py carry their language in the URL (/, /ru/, /uz/).
+  var STATIC = document.documentElement.getAttribute("data-static-lang");
+  if (STATIC) {
+    var qLang = new URLSearchParams(location.search).get("lang");
+    var pref = store.get("core-lang");
+    var want = okLang(qLang) ? qLang
+      : (STATIC === "en" && !/bot|crawl|spider|lighthouse/i.test(navigator.userAgent) ? (okLang(pref) ? pref : detectLang()) : null);
+    if (okLang(qLang)) store.set("core-lang", qLang);
+    if (want && want !== STATIC) {
+      // relative language link, so this works on any domain (local preview, GitHub Pages, own host)
+      var alt = document.querySelector('.lang a[data-lang="' + want + '"]');
+      if (alt) {
+        var params = new URLSearchParams(location.search); params.delete("lang");
+        var qs = params.toString();
+        location.replace(alt.href + (qs ? "?" + qs : "") + location.hash);
+      }
+    }
+  }
+  var lang = STATIC || (function () {
+    var q = new URLSearchParams(location.search).get("lang");
+    if (okLang(q)) return q;
+    var s = store.get("core-lang");
+    if (okLang(s)) return s;
+    return detectLang();
   })();
   var UZ = window.CORE_UZ || {};
   var T = function (en, ru) { return lang === "en" ? en : lang === "uz" ? (UZ[ru] != null ? UZ[ru] : ru) : ru; };
@@ -39,6 +61,13 @@
   };
   function applyLang() {
     document.documentElement.lang = lang;
+    if (!STATIC) translateStatic();
+    $$(".seg button[data-c='']").forEach(function (b) { b.textContent = T("All", "Все"); });
+    listeners.forEach(function (f) { f(); });
+    try { window.dispatchEvent(new Event("core:lang")); } catch (e) {}
+  }
+  // On pages without a built language version, swap texts in place (legacy ?lang mode).
+  function translateStatic() {
     document.title = (PAGE === "universities" ? TITLES_UNI : TITLES)[lang];
     $$("[data-ru]").forEach(function (el) {
       if (el.dataset.en === undefined) el.dataset.en = el.innerHTML;
@@ -49,10 +78,10 @@
       el.placeholder = lang === "en" ? el.dataset.enPh : T(el.dataset.enPh, el.dataset.ruPh);
     });
     $$(".lang button").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.lang === lang)); });
-    $$(".seg button[data-c='']").forEach(function (b) { b.textContent = T("All", "Все"); });
-    listeners.forEach(function (f) { f(); });
-    try { window.dispatchEvent(new Event("core:lang")); } catch (e) {}
   }
+  $$(".lang a[data-lang]").forEach(function (a) {
+    a.addEventListener("click", function () { store.set("core-lang", a.dataset.lang); });
+  });
   $$(".lang button").forEach(function (b) {
     b.addEventListener("click", function () {
       lang = b.dataset.lang; store.set("core-lang", lang); applyLang();

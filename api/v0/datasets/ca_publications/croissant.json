@@ -1,0 +1,402 @@
+{
+ "@context": {
+  "@language": "en",
+  "@vocab": "https://schema.org/",
+  "citeAs": "cr:citeAs",
+  "column": "cr:column",
+  "conformsTo": "dct:conformsTo",
+  "cr": "http://mlcommons.org/croissant/",
+  "rai": "http://mlcommons.org/croissant/RAI/",
+  "data": {
+   "@id": "cr:data",
+   "@type": "@json"
+  },
+  "dataType": {
+   "@id": "cr:dataType",
+   "@type": "@vocab"
+  },
+  "dct": "http://purl.org/dc/terms/",
+  "examples": {
+   "@id": "cr:examples",
+   "@type": "@json"
+  },
+  "extract": "cr:extract",
+  "field": "cr:field",
+  "fileProperty": "cr:fileProperty",
+  "fileObject": "cr:fileObject",
+  "fileSet": "cr:fileSet",
+  "format": "cr:format",
+  "includes": "cr:includes",
+  "isLiveDataset": "cr:isLiveDataset",
+  "jsonPath": "cr:jsonPath",
+  "key": "cr:key",
+  "md5": "cr:md5",
+  "parentField": "cr:parentField",
+  "path": "cr:path",
+  "recordSet": "cr:recordSet",
+  "references": "cr:references",
+  "regex": "cr:regex",
+  "repeated": "cr:repeated",
+  "replace": "cr:replace",
+  "sc": "https://schema.org/",
+  "separator": "cr:separator",
+  "source": "cr:source",
+  "subField": "cr:subField",
+  "transform": "cr:transform"
+ },
+ "@type": "sc:Dataset",
+ "conformsTo": "http://mlcommons.org/croissant/1.0",
+ "name": "CORE CORE-DS-0003 — Publications of Central Asian universities (OpenAlex) (public sample)",
+ "description": "482,572 research works involving 299 universities in UZ, KZ, KG and TJ from OpenAlex: metadata, topics, venues, open-access status, funders and co-authoring countries. Every work is linked to CORE university IDs. This Croissant file describes the public sample; the full dataset is available from CORE.",
+ "url": "https://pavelaleks.github.io/core_landing/datasets/ca_publications.html",
+ "license": "https://pavelaleks.github.io/core_landing/datasets/ca_publications.html#license",
+ "version": "1.0.0",
+ "dateModified": "2026-11-10",
+ "creator": {
+  "@type": "sc:Organization",
+  "name": "CORE",
+  "url": "https://pavelaleks.github.io/core_landing/"
+ },
+ "keywords": [
+  "Central Asia",
+  "university data",
+  "Uzbekistan",
+  "Kazakhstan",
+  "Kyrgyzstan",
+  "Tajikistan"
+ ],
+ "distribution": [
+  {
+   "@type": "cr:FileObject",
+   "@id": "sample-csv",
+   "name": "sample-csv",
+   "contentUrl": "https://pavelaleks.github.io/core_landing/api/v0/datasets/ca_publications/sample.csv",
+   "encodingFormat": "text/csv",
+   "sha256": "599eaf2bbd3d6bce6adf7d3ca3d29f3f03ce97d3026647694df718f81bd15bee"
+  }
+ ],
+ "recordSet": [
+  {
+   "@type": "cr:RecordSet",
+   "@id": "ca_publications",
+   "name": "ca_publications",
+   "field": [
+    {
+     "@type": "cr:Field",
+     "@id": "ca_publications/id",
+     "name": "id",
+     "description": "Persistent CORE ID (UNI-…)",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "id"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "ca_publications/doi",
+     "name": "doi",
+     "description": "DOI",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "doi"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "ca_publications/title",
+     "name": "title",
+     "description": "Title",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "title"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "ca_publications/publication_year",
+     "name": "publication_year",
+     "description": "Publication year",
+     "dataType": "sc:Integer",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "publication_year"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "ca_publications/type",
+     "name": "type",
+     "description": "Work type",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "type"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "ca_publications/language",
+     "name": "language",
+     "description": "Language",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "language"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "ca_publications/source_name",
+     "name": "source_name",
+     "description": "Journal or repository",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "source_name"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "ca_publications/is_oa",
+     "name": "is_oa",
+     "description": "Open access (1/0)",
+     "dataType": "sc:Integer",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "is_oa"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "ca_publications/oa_status",
+     "name": "oa_status",
+     "description": "Open-access status",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "oa_status"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "ca_publications/license",
+     "name": "license",
+     "description": "License of the work",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "license"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "ca_publications/cited_by_count",
+     "name": "cited_by_count",
+     "description": "Citations",
+     "dataType": "sc:Integer",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "cited_by_count"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "ca_publications/primary_topic",
+     "name": "primary_topic",
+     "description": "Primary topic",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "primary_topic"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "ca_publications/subfield",
+     "name": "subfield",
+     "description": "Subfield",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "subfield"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "ca_publications/field",
+     "name": "field",
+     "description": "Field",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "field"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "ca_publications/domain",
+     "name": "domain",
+     "description": "Domain",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "domain"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "ca_publications/keywords",
+     "name": "keywords",
+     "description": "Keywords",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "keywords"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "ca_publications/sdgs",
+     "name": "sdgs",
+     "description": "UN Sustainable Development Goals",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "sdgs"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "ca_publications/n_authors",
+     "name": "n_authors",
+     "description": "Number of authors",
+     "dataType": "sc:Integer",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "n_authors"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "ca_publications/countries",
+     "name": "countries",
+     "description": "Co-author countries",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "countries"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "ca_publications/is_international",
+     "name": "is_international",
+     "description": "Has co-authors outside Central Asia (1/0)",
+     "dataType": "sc:Integer",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "is_international"
+      }
+     }
+    },
+    {
+     "@type": "cr:Field",
+     "@id": "ca_publications/core_ids",
+     "name": "core_ids",
+     "description": "CORE university IDs",
+     "dataType": "sc:Text",
+     "source": {
+      "fileObject": {
+       "@id": "sample-csv"
+      },
+      "extract": {
+       "column": "core_ids"
+      }
+     }
+    }
+   ]
+  }
+ ]
+}

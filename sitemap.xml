@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://pavelaleks.github.io/core_landing/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://pavelaleks.github.io/core_landing/universities.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://pavelaleks.github.io/core_landing/privacy.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://pavelaleks.github.io/core_landing/</loc></url>
+  <url><loc>https://pavelaleks.github.io/core_landing/ru/</loc></url>
+  <url><loc>https://pavelaleks.github.io/core_landing/uz/</loc></url>
+  <url><loc>https://pavelaleks.github.io/core_landing/universities.html</loc></url>
+  <url><loc>https://pavelaleks.github.io/core_landing/ru/universities.html</loc></url>
+  <url><loc>https://pavelaleks.github.io/core_landing/uz/universities.html</loc></url>
+  <url><loc>https://pavelaleks.github.io/core_landing/datasets/universities.html</loc></url>
+  <url><loc>https://pavelaleks.github.io/core_landing/ru/datasets/universities.html</loc></url>
+  <url><loc>https://pavelaleks.github.io/core_landing/uz/datasets/universities.html</loc></url>
+  <url><loc>https://pavelaleks.github.io/core_landing/datasets/uz_medical_facilities.html</loc></url>
+  <url><loc>https://pavelaleks.github.io/core_landing/ru/datasets/uz_medical_facilities.html</loc></url>
+  <url><loc>https://pavelaleks.github.io/core_landing/uz/datasets/uz_medical_facilities.html</loc></url>
+  <url><loc>https://pavelaleks.github.io/core_landing/datasets/ca_publications.html</loc></url>
+  <url><loc>https://pavelaleks.github.io/core_landing/ru/datasets/ca_publications.html</loc></url>
+  <url><loc>https://pavelaleks.github.io/core_landing/uz/datasets/ca_publications.html</loc></url>
+  <url><loc>https://pavelaleks.github.io/core_landing/privacy.html</loc></url>
 </urlset>

@@ -1,0 +1,147 @@
+{
+ "id": "CORE-DS-0001",
+ "slug": "universities",
+ "title_en": "Universities of Central Asia",
+ "title_ru": "Вузы Центральной Азии",
+ "version": "0.1.0",
+ "status": "ready",
+ "kind": "reference",
+ "countries": [
+  "UZ",
+  "KZ",
+  "KG",
+  "TJ"
+ ],
+ "languages": [
+  "uz",
+  "uz-cyrl",
+  "kk",
+  "ky",
+  "tg",
+  "ru",
+  "en"
+ ],
+ "records": 428,
+ "license": "CC0-1.0",
+ "commercial_use": "yes",
+ "pii": "none",
+ "updated": "2026-11-07",
+ "description_en": "Registry of higher-education institutions in Uzbekistan, Kazakhstan, Kyrgyzstan and Tajikistan with persistent CORE IDs, names in national languages, Russian and English, city and coordinates, website, ROR / Wikidata / OpenAlex identifiers and research output. Every other CORE dataset links to these IDs.",
+ "description_ru": "Справочник вузов Узбекистана, Казахстана, Кыргызстана и Таджикистана с постоянными ID CORE, названиями на национальных языках, русском и английском, городом и координатами, сайтом, идентификаторами ROR / Wikidata / OpenAlex и научной продуктивностью. Все остальные датасеты CORE ссылаются на эти ID.",
+ "page": "https://pavelaleks.github.io/core_landing/datasets/universities.html",
+ "links": {
+  "card": "https://pavelaleks.github.io/core_landing/api/v0/datasets/universities.json",
+  "sample_json": "https://pavelaleks.github.io/core_landing/api/v0/datasets/universities/sample.json",
+  "sample_csv": "https://pavelaleks.github.io/core_landing/api/v0/datasets/universities/sample.csv",
+  "croissant": "https://pavelaleks.github.io/core_landing/api/v0/datasets/universities/croissant.json"
+ },
+ "what_core_adds_en": [
+  "Persistent CORE IDs that never change",
+  "Names reconciled across seven languages and scripts",
+  "One record per institution merged from Wikidata, ROR and OpenAlex",
+  "Links to every publication and dataset in the CORE graph"
+ ],
+ "what_core_adds_ru": [
+  "Постоянные ID CORE, которые не меняются",
+  "Названия, сведённые на семи языках и письменностях",
+  "Одна запись на вуз, собранная из Wikidata, ROR и OpenAlex",
+  "Связи со всеми публикациями и датасетами графа CORE"
+ ],
+ "fields": [
+  {
+   "name": "id",
+   "type": "string",
+   "description": "Persistent CORE ID (UNI-…)"
+  },
+  {
+   "name": "country",
+   "type": "string",
+   "description": "Country, ISO 3166-1 alpha-2"
+  },
+  {
+   "name": "name",
+   "type": "string",
+   "description": "Primary name"
+  },
+  {
+   "name": "name_national",
+   "type": "string",
+   "description": "Name in the national language"
+  },
+  {
+   "name": "name_ru",
+   "type": "string",
+   "description": "Name in Russian"
+  },
+  {
+   "name": "name_en",
+   "type": "string",
+   "description": "Name in English"
+  },
+  {
+   "name": "acronyms",
+   "type": "string",
+   "description": "Acronyms, separated by '; '"
+  },
+  {
+   "name": "city",
+   "type": "string",
+   "description": "City"
+  },
+  {
+   "name": "lat",
+   "type": "number",
+   "description": "Latitude, WGS84"
+  },
+  {
+   "name": "lon",
+   "type": "number",
+   "description": "Longitude, WGS84"
+  },
+  {
+   "name": "website",
+   "type": "string",
+   "description": "Official website"
+  },
+  {
+   "name": "founded",
+   "type": "integer",
+   "description": "Year founded"
+  },
+  {
+   "name": "ror",
+   "type": "string",
+   "description": "ROR ID"
+  },
+  {
+   "name": "wikidata",
+   "type": "string",
+   "description": "Wikidata QID"
+  },
+  {
+   "name": "openalex",
+   "type": "string",
+   "description": "OpenAlex institution ID"
+  },
+  {
+   "name": "works_count",
+   "type": "integer",
+   "description": "Research works in OpenAlex"
+  },
+  {
+   "name": "cited_by_count",
+   "type": "integer",
+   "description": "Citations in OpenAlex"
+  },
+  {
+   "name": "h_index",
+   "type": "integer",
+   "description": "h-index"
+  }
+ ],
+ "withheld_fields": [],
+ "sample": {
+  "rows": 397,
+  "sha256": "16fe840a27778125bcb8ede1d281b67d58508e536d914e53174e9a0a78661915"
+ }
+}

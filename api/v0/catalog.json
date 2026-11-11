@@ -1,0 +1,111 @@
+{
+ "datasets": [
+  {
+   "id": "CORE-DS-0001",
+   "slug": "universities",
+   "title_en": "Universities of Central Asia",
+   "title_ru": "Вузы Центральной Азии",
+   "version": "0.1.0",
+   "status": "ready",
+   "kind": "reference",
+   "countries": [
+    "UZ",
+    "KZ",
+    "KG",
+    "TJ"
+   ],
+   "languages": [
+    "uz",
+    "uz-cyrl",
+    "kk",
+    "ky",
+    "tg",
+    "ru",
+    "en"
+   ],
+   "records": 428,
+   "license": "CC0-1.0",
+   "commercial_use": "yes",
+   "pii": "none",
+   "updated": "2026-11-07",
+   "description_en": "Registry of higher-education institutions in Uzbekistan, Kazakhstan, Kyrgyzstan and Tajikistan with persistent CORE IDs, names in national languages, Russian and English, city and coordinates, website, ROR / Wikidata / OpenAlex identifiers and research output. Every other CORE dataset links to these IDs.",
+   "description_ru": "Справочник вузов Узбекистана, Казахстана, Кыргызстана и Таджикистана с постоянными ID CORE, названиями на национальных языках, русском и английском, городом и координатами, сайтом, идентификаторами ROR / Wikidata / OpenAlex и научной продуктивностью. Все остальные датасеты CORE ссылаются на эти ID.",
+   "page": "https://pavelaleks.github.io/core_landing/datasets/universities.html",
+   "links": {
+    "card": "https://pavelaleks.github.io/core_landing/api/v0/datasets/universities.json",
+    "sample_json": "https://pavelaleks.github.io/core_landing/api/v0/datasets/universities/sample.json",
+    "sample_csv": "https://pavelaleks.github.io/core_landing/api/v0/datasets/universities/sample.csv",
+    "croissant": "https://pavelaleks.github.io/core_landing/api/v0/datasets/universities/croissant.json"
+   }
+  },
+  {
+   "id": "CORE-DS-0002",
+   "slug": "uz_medical_facilities",
+   "title_en": "Medical facilities of Uzbekistan",
+   "title_ru": "Медучреждения Узбекистана",
+   "version": "1.0.0",
+   "status": "ready",
+   "kind": "geo",
+   "countries": [
+    "UZ"
+   ],
+   "languages": [
+    "ru",
+    "uz",
+    "uz-cyrl",
+    "en"
+   ],
+   "records": 2982,
+   "license": "ODbL-1.0",
+   "commercial_use": "yes",
+   "pii": "none",
+   "updated": "2026-11-07",
+   "description_en": "2,982 medical facilities in Uzbekistan (excluding pharmacies) across all 14 regions: type, ownership, ISO 3166-2 region, coordinates, specialties, website languages and a 0–100 medical-tourism readiness index.",
+   "description_ru": "2 982 медучреждения Узбекистана (без аптек) во всех 14 регионах: тип, форма собственности, регион ISO 3166-2, координаты, специализации, языки сайта и индекс готовности к медтуризму 0–100.",
+   "page": "https://pavelaleks.github.io/core_landing/datasets/uz_medical_facilities.html",
+   "links": {
+    "card": "https://pavelaleks.github.io/core_landing/api/v0/datasets/uz_medical_facilities.json",
+    "sample_json": "https://pavelaleks.github.io/core_landing/api/v0/datasets/uz_medical_facilities/sample.json",
+    "sample_csv": "https://pavelaleks.github.io/core_landing/api/v0/datasets/uz_medical_facilities/sample.csv",
+    "croissant": "https://pavelaleks.github.io/core_landing/api/v0/datasets/uz_medical_facilities/croissant.json"
+   }
+  },
+  {
+   "id": "CORE-DS-0003",
+   "slug": "ca_publications",
+   "title_en": "Publications of Central Asian universities (OpenAlex)",
+   "title_ru": "Публикации вузов Центральной Азии (OpenAlex)",
+   "version": "1.0.0",
+   "status": "review",
+   "kind": "bibliographic",
+   "countries": [
+    "UZ",
+    "KZ",
+    "KG",
+    "TJ"
+   ],
+   "languages": [
+    "en",
+    "uz",
+    "ru",
+    "kk",
+    "ky",
+    "tg"
+   ],
+   "records": 482572,
+   "license": "LicenseRef-Mixed",
+   "commercial_use": "restricted",
+   "pii": "public_bibliographic",
+   "updated": "2026-11-10",
+   "description_en": "482,572 research works involving 299 universities in UZ, KZ, KG and TJ from OpenAlex: metadata, topics, venues, open-access status, funders and co-authoring countries. Every work is linked to CORE university IDs.",
+   "description_ru": "482 572 научные работы с участием 299 вузов UZ, KZ, KG и TJ из OpenAlex: метаданные, темы, журналы, открытый доступ, фонды и страны соавторов. Каждая работа связана с ID вузов CORE.",
+   "page": "https://pavelaleks.github.io/core_landing/datasets/ca_publications.html",
+   "links": {
+    "card": "https://pavelaleks.github.io/core_landing/api/v0/datasets/ca_publications.json",
+    "sample_json": "https://pavelaleks.github.io/core_landing/api/v0/datasets/ca_publications/sample.json",
+    "sample_csv": "https://pavelaleks.github.io/core_landing/api/v0/datasets/ca_publications/sample.csv",
+    "croissant": "https://pavelaleks.github.io/core_landing/api/v0/datasets/ca_publications/croissant.json"
+   }
+  }
+ ]
+}

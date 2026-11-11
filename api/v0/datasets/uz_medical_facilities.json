@@ -1,0 +1,158 @@
+{
+ "id": "CORE-DS-0002",
+ "slug": "uz_medical_facilities",
+ "title_en": "Medical facilities of Uzbekistan",
+ "title_ru": "Медучреждения Узбекистана",
+ "version": "1.0.0",
+ "status": "ready",
+ "kind": "geo",
+ "countries": [
+  "UZ"
+ ],
+ "languages": [
+  "ru",
+  "uz",
+  "uz-cyrl",
+  "en"
+ ],
+ "records": 2982,
+ "license": "ODbL-1.0",
+ "commercial_use": "yes",
+ "pii": "none",
+ "updated": "2026-11-07",
+ "description_en": "2,982 medical facilities in Uzbekistan (excluding pharmacies) across all 14 regions: type, ownership, ISO 3166-2 region, coordinates, specialties, website languages and a 0–100 medical-tourism readiness index.",
+ "description_ru": "2 982 медучреждения Узбекистана (без аптек) во всех 14 регионах: тип, форма собственности, регион ISO 3166-2, координаты, специализации, языки сайта и индекс готовности к медтуризму 0–100.",
+ "page": "https://pavelaleks.github.io/core_landing/datasets/uz_medical_facilities.html",
+ "links": {
+  "card": "https://pavelaleks.github.io/core_landing/api/v0/datasets/uz_medical_facilities.json",
+  "sample_json": "https://pavelaleks.github.io/core_landing/api/v0/datasets/uz_medical_facilities/sample.json",
+  "sample_csv": "https://pavelaleks.github.io/core_landing/api/v0/datasets/uz_medical_facilities/sample.csv",
+  "croissant": "https://pavelaleks.github.io/core_landing/api/v0/datasets/uz_medical_facilities/croissant.json"
+ },
+ "what_core_adds_en": [
+  "Deduplicated and normalized OpenStreetMap records",
+  "Website checks: languages, international-patient signals, accreditation",
+  "Medical-tourism readiness index 0–100",
+  "Regular refresh under subscription"
+ ],
+ "what_core_adds_ru": [
+  "Записи OpenStreetMap без дублей и в едином формате",
+  "Проверка сайтов: языки, работа с иностранцами, аккредитация",
+  "Индекс готовности к медтуризму 0–100",
+  "Регулярные обновления по подписке"
+ ],
+ "fields": [
+  {
+   "name": "uid",
+   "type": "string",
+   "description": "Persistent CORE ID (UZM-…)"
+  },
+  {
+   "name": "name",
+   "type": "string",
+   "description": "Primary name"
+  },
+  {
+   "name": "name_ru",
+   "type": "string",
+   "description": "Name in Russian"
+  },
+  {
+   "name": "name_en",
+   "type": "string",
+   "description": "Name in English"
+  },
+  {
+   "name": "name_latin",
+   "type": "string",
+   "description": "Name, Latin script"
+  },
+  {
+   "name": "facility_type",
+   "type": "string",
+   "description": "Facility type (OSM)"
+  },
+  {
+   "name": "ownership",
+   "type": "string",
+   "description": "Ownership"
+  },
+  {
+   "name": "region_code",
+   "type": "string",
+   "description": "Region, ISO 3166-2"
+  },
+  {
+   "name": "district",
+   "type": "string",
+   "description": "District"
+  },
+  {
+   "name": "city",
+   "type": "string",
+   "description": "City"
+  },
+  {
+   "name": "lat",
+   "type": "number",
+   "description": "Latitude, WGS84"
+  },
+  {
+   "name": "lon",
+   "type": "number",
+   "description": "Longitude, WGS84"
+  },
+  {
+   "name": "specialties",
+   "type": "string",
+   "description": "Specialties, separated by ';'"
+  },
+  {
+   "name": "site_languages",
+   "type": "string",
+   "description": "Languages of the facility website"
+  },
+  {
+   "name": "readiness_score",
+   "type": "integer",
+   "description": "Medical-tourism readiness index, 0–100"
+  },
+  {
+   "name": "source_url",
+   "type": "string",
+   "description": "Link to the OpenStreetMap object"
+  },
+  {
+   "name": "osm_edited",
+   "type": "string",
+   "description": "Last OSM edit date"
+  }
+ ],
+ "withheld_fields": [
+  "phones",
+  "website",
+  "email",
+  "telegram",
+  "whatsapp",
+  "instagram",
+  "facebook",
+  "services_site",
+  "intl_signals",
+  "accreditation",
+  "prices_on_site",
+  "site_ok",
+  "site_note",
+  "website_final",
+  "site_phones",
+  "beds",
+  "emergency",
+  "opening_hours",
+  "wheelchair",
+  "license_no",
+  "inn"
+ ],
+ "sample": {
+  "rows": 50,
+  "sha256": "5a8dcd5a91343815659901bf0a542ee5034ab6f3be8cc3c8df1a0d5528dbaed3"
+ }
+}
