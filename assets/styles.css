@@ -490,3 +490,37 @@ body.g3-lock{overflow:hidden}
   .anno-doc{padding:20px 18px}
   .anno-text{font-size:15px}
 }
+
+/* ===== closed by default ===== */
+.closed-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:-12px 0 40px}
+.cg{border:1px solid rgba(61,219,193,.22);background:linear-gradient(180deg,rgba(61,219,193,.06),transparent);border-radius:var(--r);padding:20px 22px;display:grid;gap:8px;align-content:start}
+.cg b{font-size:16.5px;font-weight:600}
+.cg p{color:var(--muted);font-size:14.5px}
+.cg-ico{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;color:var(--teal);background:rgba(61,219,193,.1);border:1px solid rgba(61,219,193,.25)}
+
+/* ===== agents / MCP ===== */
+.agents{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:start}
+.mcp-conf{margin-top:28px}
+.mcp-conf pre{font-size:12px}
+.chat{display:grid;gap:12px;padding:22px}
+.chat-top{display:flex;align-items:center;gap:8px;color:var(--muted);margin-bottom:4px}
+.msg{border-radius:14px;padding:12px 14px;font-size:14.5px;line-height:1.55;max-width:92%}
+.msg.user{justify-self:end;background:rgba(255,255,255,.07);border:1px solid var(--line2)}
+.msg.tool{white-space:pre-wrap;font-size:12px;line-height:1.6;background:#05070a;border:1px solid var(--line);color:#c9d2db;max-width:100%}
+.tool-name{color:var(--violet)}
+.msg.tool .s{color:var(--teal)}
+.tool-out{color:var(--muted)}
+.msg.bot{background:rgba(61,219,193,.06);border:1px solid rgba(61,219,193,.22);display:grid;gap:8px}
+.msg.bot b{color:var(--text)}
+.cites{display:flex;flex-wrap:wrap;gap:6px;font-size:11px}
+.cites span{border:1px solid rgba(61,219,193,.35);color:var(--teal);border-radius:6px;padding:2px 7px}
+.chat-note{margin-top:2px}
+
+/* ===== researcher checklist & type filter ===== */
+.sub-check{border-top:1px dashed var(--line);padding-top:12px}
+.sub-check .checks{margin-top:8px;gap:7px}
+.sub-check .checks li{font-size:13.5px}
+.seg-wrap{flex-wrap:wrap}
+
+@media (max-width:1080px){.agents{grid-template-columns:1fr}.closed-grid{grid-template-columns:1fr}}
+@media (max-width:700px){.closed-grid{margin:-20px 0 28px}.msg{max-width:100%}}

@@ -354,7 +354,20 @@
   }
 
   /* ---------------- pipeline (548 datasets) ---------------- */
-  var pf = { q: "", c: "", f: "" };
+  var pf = { q: "", c: "", f: "", m: "" };
+  var MODAL = [
+    ["bio", /occurrence|checklist|specimen|species|flora|fauna|herbari|taxa|biodiversity|GBIF|Биоразнообраз/i],
+    ["img", /image|imagery|photo|sentinel|landsat|satellite|remote sensing|ndvi|uav|drone|microscop|x-ray|segmentation/i],
+    ["av", /audio|speech|voice|video|sign language|acoustic|recording/i],
+    ["text", /corpus|text|language|linguistic|lexic|translation|legal|question|benchmark|dictionar|nlp|sentiment|news|llm/i],
+    ["code", /code|model weights|trained|script|software|notebook/i]
+  ];
+  var modality = function (d) {
+    if (d._m) return d._m;
+    var s = d.t + " " + d.r, m = "tab";
+    for (var i = 0; i < MODAL.length; i++) if (MODAL[i][1].test(s)) { m = MODAL[i][0]; break; }
+    return (d._m = m);
+  };
   var fieldSel = $("#pipeField");
   function fillFields() {
     var counts = {};
@@ -371,6 +384,7 @@
     var rows = all.filter(function (d) {
       if (pf.c && d.c.indexOf(pf.c) < 0) return false;
       if (pf.f && d.f !== pf.f) return false;
+      if (pf.m && modality(d) !== pf.m) return false;
       if (pf.q) { var q = pf.q.toLowerCase(); if ((d.t + " " + d.u + " " + d.f).toLowerCase().indexOf(q) < 0) return false; }
       return true;
     }).sort(function (a, b) { return (b.y || 0) - (a.y || 0); });
@@ -388,6 +402,9 @@
   }
   $("#pipeSearch").addEventListener("input", function () { pf.q = this.value.trim(); renderPipe(); });
   fieldSel.addEventListener("change", function () { pf.f = this.value; renderPipe(); });
+  $$("#pipeType button").forEach(function (b) {
+    b.addEventListener("click", function () { $$("#pipeType button").forEach(function (x) { x.classList.toggle("on", x === b); }); pf.m = b.dataset.m; renderPipe(); });
+  });
   $$("#pipeCountry button").forEach(function (b) {
     b.addEventListener("click", function () { $$("#pipeCountry button").forEach(function (x) { x.classList.toggle("on", x === b); }); pf.c = b.dataset.c; renderPipe(); });
   });

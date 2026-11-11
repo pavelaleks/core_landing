@@ -310,10 +310,19 @@
         <div class="table-tools">
           <input type="search" id="pipeSearch" placeholder="Search: corpus, wheat, Aral, legal, speech…" data-ru-ph="Поиск: corpus, wheat, Aral, legal, speech…">
           <select id="pipeField" aria-label="Field"><option value="" data-ru="Все области">All fields</option></select>
+          <div class="seg seg-wrap" id="pipeType">
+            <button class="on" data-m="" data-ru="Все типы">All types</button>
+            <button data-m="tab" data-ru="Таблицы">Tables</button>
+            <button data-m="text" data-ru="Тексты">Text</button>
+            <button data-m="img" data-ru="Изображения и ДЗЗ">Images &amp; EO</button>
+            <button data-m="av" data-ru="Аудио и видео">Audio &amp; video</button>
+            <button data-m="bio" data-ru="Биоразнообразие">Biodiversity</button>
+            <button data-m="code" data-ru="Код и модели">Code &amp; models</button>
+          </div>
           <div class="seg" id="pipeCountry"><button class="on" data-c="">All</button><button data-c="UZ">UZ</button><button data-c="KZ">KZ</button><button data-c="KG">KG</button><button data-c="TJ">TJ</button></div>
         </div>
         <div class="tscroll tall"><table id="pipeTable"><thead><tr><th data-ru="Год">Year</th><th data-ru="Датасет">Dataset</th><th data-ru="Вуз">University</th><th data-ru="Область">Field</th><th data-ru="Лицензия">License</th></tr></thead><tbody></tbody></table></div>
-        <div class="table-foot small muted"><span id="pipeCount"></span> · <span data-ru="Метаданные OpenAlex (CC0). Авторы скрыты.">Metadata via OpenAlex (CC0). Authors hidden.</span></div>
+        <div class="table-foot small muted"><span id="pipeCount"></span> · <span data-ru="Метаданные OpenAlex (CC0). Авторы скрыты. Тип данных определён автоматически по названию.">Metadata via OpenAlex (CC0). Authors hidden. Data type is inferred automatically from the title.</span></div>
       </div>
     </div>
   </div>
@@ -399,6 +408,43 @@ curl https://api.core-data.example/v1/datasets/<span class="s">uz_medical_facili
   </div>
 </section>
 
+<!-- ============ AGENTS / MCP ============ -->
+<section class="sec" id="agents">
+  <div class="wrap agents">
+    <div>
+      <span class="eyebrow" data-ru="Для ИИ-агентов · превью">For AI agents · preview</span>
+      <h2 data-ru="Подключите граф CORE к своему <em>агенту</em>">Plug the CORE graph into your <em>agent</em></h2>
+      <p class="sub" data-ru="MCP-сервер CORE отдаёт агенту только те данные, на которые у вас есть лицензия, — и в каждом ответе указывает ID записи, источник и лицензию. Агент цитирует, а не выдумывает.">The CORE MCP server gives your agent only the data you have licensed — and every answer carries the record ID, source and license. Your agent cites instead of inventing.</p>
+      <ul class="checks">
+        <li data-ru="Только лицензированные данные: агент не видит лишнего">Licensed data only — the agent sees nothing else</li>
+        <li data-ru="Каждый факт — с ID записи и ссылкой на источник">Every fact comes with a record ID and a source link</li>
+        <li data-ru="Поиск по графу: вузы, направления, датасеты, регионы">Graph search: universities, research areas, datasets, regions</li>
+        <li data-ru="Работает с Claude, ChatGPT, Cursor и любым клиентом с поддержкой MCP">Works with Claude, ChatGPT, Cursor and any MCP-capable client</li>
+      </ul>
+      <div class="code mcp-conf">
+        <div class="code-head"><span class="dots"><i></i><i></i><i></i></span><span class="mono small muted">mcp.json · preview</span></div>
+<pre><code>{ <span class="k">"mcpServers"</span>: { <span class="k">"core"</span>: {
+    <span class="k">"url"</span>: <span class="s">"https://mcp.core-data.example/v1"</span>,
+    <span class="k">"headers"</span>: { <span class="k">"Authorization"</span>: <span class="s">"Bearer $CORE_KEY"</span> }
+} } }</code></pre>
+      </div>
+    </div>
+    <div class="card chat" aria-label="Agent conversation example">
+      <div class="chat-top mono small"><span class="live"></span><span data-ru="агент + CORE MCP">agent + CORE MCP</span></div>
+      <div class="msg user" data-ru="Какие вузы Узбекистана собирали данные по гидробионтам Зарафшана? Есть ли что лицензировать?">Which Uzbek universities have collected data on Zarafshan hydrobionts? Is there anything to license?</div>
+      <div class="msg tool mono"><span class="tool-name">core.search_datasets</span>(topic=<span class="s">"hydrobionts"</span>, region=<span class="s">"UZ-SA"</span>)
+<span class="tool-out">→ W6962338218 · Middle Zarafshan · UNI-UZ-0138 · public-domain
+→ W7163038795 · Samarkand region · UNI-UZ-0138 · public-domain</span></div>
+      <div class="msg bot"><p data-ru="<b>Самаркандский госуниверситет</b> (UNI-UZ-0138) опубликовал два датасета коллекционных образцов: около 255 экземпляров гидробионтов Самаркандской области и обзор 26 видов моллюсков, 1 вида креветок и 8 видов пиявок Среднего Зарафшана.">
+<b>Samarkand State University</b> (UNI-UZ-0138) has published two specimen datasets: about 255 hydrobiont specimens from Samarkand region, and a survey of 26 mollusc, 1 shrimp and 8 leech species in the Middle Zarafshan.</p>
+        <p data-ru="Оба в открытом доступе. Версия с экспертной разметкой и привязкой к регионам — по запросу через CORE.">Both are public domain. An expert-annotated, region-linked version is available on request via CORE.</p>
+        <div class="cites mono"><span>W6962338218</span><span>W7163038795</span><span>UNI-UZ-0138</span></div>
+      </div>
+      <p class="small muted chat-note" data-ru="Пример ответа на реальных записях OpenAlex. MCP-сервер в разработке — ранний доступ по заявке.">Example answer built on real OpenAlex records. The MCP server is in development — early access on request.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ============ BENCHMARK ============ -->
 <section class="sec sec-alt" id="benchmark">
   <div class="wrap bench">
@@ -434,6 +480,12 @@ curl https://api.core-data.example/v1/datasets/<span class="s">uz_medical_facili
       <h2 data-ru="Ваши данные работают на вуз — под вашим контролем">Put your data to work — on your terms</h2>
       <p class="sub" data-ru="Поставщики в CORE — только университеты. Данные остаются собственностью вуза, лицензии — неисключительные и на срок, а большая часть дохода возвращается вузу и авторам.">Only universities supply data to CORE. Your institution keeps ownership, licenses are non-exclusive and time-limited, and most of the revenue returns to the university and its authors.</p>
     </div>
+    <div class="closed-grid">
+      <div class="cg"><span class="cg-ico"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 11V8a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span><b data-ru="Закрыто по умолчанию">Closed by default</b><p data-ru="Загрузка в кабинет не делает данные видимыми. Доступ есть только у вашей команды и специалистов CORE, работающих по договору.">Uploading to the portal makes nothing visible. Only your team and CORE specialists under contract can access the data.</p></div>
+      <div class="cg"><span class="cg-ico"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="8" cy="14" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M11 11l8-8M16 6l2 2M14 8l2 2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span><b data-ru="Публикуете вы">You decide what goes live</b><p data-ru="В каталог попадает только то, что одобрил распорядитель данных и подписал уполномоченный подписант вуза.">Only what your data steward approves and your authorized signatory signs ever reaches the catalog.</p></div>
+      <div class="cg"><span class="cg-ico"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 12s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span><b data-ru="Описание открыто — данные по запросу">Public datasheet, data on request</b><p data-ru="Миру можно показать только паспорт датасета, а сами данные выдавать каждому покупателю после вашего согласования.">Show the world only the datasheet — and release the data to each buyer only after you approve them.</p></div>
+    </div>
+
 
     <div class="uni-grid">
       <div class="card portal" aria-label="University partner portal preview">
@@ -511,6 +563,14 @@ curl https://api.core-data.example/v1/datasets/<span class="s">uz_medical_facili
       <div class="card researcher">
         <h3 data-ru="Вы исследователь?">Are you a researcher?</h3>
         <p data-ru="Предложите свой датасет. Мы передадим заявку распорядителю данных вашего вуза, а если вуз ещё не партнёр — пригласим его. Вы получаете атрибуцию и долю авторов по положению вуза.">Nominate your dataset. We route it to your university's data steward — and if your university isn't a partner yet, we invite it. You get attribution and an author share under your university's policy.</p>
+        <div class="sub-check">
+          <span class="small muted" data-ru="Что подготовить">What to prepare</span>
+          <ul class="checks small">
+            <li data-ru="Состав и происхождение: что в наборе, откуда и в каком формате">Contents and origin: what is in it, where it came from, which format</li>
+            <li data-ru="Образец данных или схему полей">A data sample or the field schema</li>
+            <li data-ru="Кто правообладатель и есть ли согласия участников">Who holds the rights and whether participants consented</li>
+          </ul>
+        </div>
         <a href="#contact" class="btn btn-ghost" data-form="researcher" data-ru="Предложить датасет">Nominate a dataset</a>
         <a href="#contact" class="btn btn-primary" data-form="university" data-ru="Подключить вуз">Onboard my university</a>
       </div>
