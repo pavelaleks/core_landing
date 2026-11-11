@@ -385,12 +385,13 @@
     var W = 640, H = 260, pl = 44, pb = 24, pt = 10, n = rows.length;
     var tot = rows.map(function (r) { return +r[1] + +r[2] + +r[3] + +r[4]; });
     var max = Math.max.apply(null, tot) * 1.08;
-    var bw = (W - pl - 10) / n, colors = ["#3ddbc1", "#9b8cff", "#f5a524", "#e86a8d"];
+    var css = getComputedStyle(document.documentElement), cv = function (v, d) { return (css.getPropertyValue(v) || "").trim() || d; };
+    var bw = (W - pl - 10) / n, colors = [cv("--teal", "#3ddbc1"), cv("--violet", "#9b8cff"), cv("--amber", "#f5a524"), cv("--rose", "#e86a8d")];
     var h = "";
     [0, 25000, 50000, 75000, 100000, 125000].forEach(function (v) {
       if (v > max) return;
       var y = H - pb - (v / max) * (H - pb - pt);
-      h += "<line x1='" + pl + "' x2='" + W + "' y1='" + y + "' y2='" + y + "' stroke='rgba(255,255,255,.06)'/>";
+      h += "<line x1='" + pl + "' x2='" + W + "' y1='" + y + "' y2='" + y + "' stroke='" + cv("--line", "rgba(255,255,255,.06)") + "'/>";
       h += "<text x='" + (pl - 8) + "' y='" + (y + 4) + "' text-anchor='end'>" + (v ? v / 1000 + "k" : "0") + "</text>";
     });
     rows.forEach(function (r, i) {
