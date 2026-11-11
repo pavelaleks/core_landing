@@ -57,11 +57,12 @@
     <h1 class="h1-page" data-ru="Данные Центральной Азии для обучения, проверки и <em>агентов</em>">Central Asian data for training, evaluation and <em>agents</em></h1>
     <p class="sub" data-ru="Знания о регионе, научные наблюдения и измерения, тексты и речь на местных языках — из университетов Центральной Азии, с документами на права, описанием и проверкой экспертов. Ниже — живой каталог, формат данных, API и подключение к агентам.">Regional knowledge, research observations and measurements, text and speech in local languages — from Central Asian universities, with rights documents, datasheets and expert review. Below: the live catalog, data format, API and agent access.</p>
     <div class="state-grid">
-      <div class="state ok"><span class="mono small" data-ru="Работает сейчас">Live now</span><p data-ru="Каталог и описания наборов данных, бесплатные образцы, API v0, метаданные Croissant">Catalog and dataset descriptions, free samples, API v0, Croissant metadata</p></div>
-      <div class="state wip"><span class="mono small" data-ru="В разработке">In development</span><p data-ru="Проверка знаний моделей о регионе (бенчмарк), подключение к ИИ-агентам (MCP), кабинет для вузов">Model knowledge test (benchmark), AI-agent access (MCP), the university portal</p></div>
+      <div class="state ok"><span class="mono small" data-ru="Работает сейчас">Live now</span><p data-ru="Каталог и описания наборов, бесплатные образцы, API v0, метаданные Croissant, демо-кабинет покупателя с ключом API и SQL-запросами">Catalog and dataset descriptions, free samples, API v0, Croissant metadata, a buyer demo cabinet with an API key and SQL queries</p></div>
+      <div class="state wip"><span class="mono small" data-ru="В разработке">In development</span><p data-ru="Проверка знаний моделей о регионе (бенчмарк), подключение к ИИ-агентам (MCP), общий сервер для кабинетов вузов и покупателей">Model knowledge test (benchmark), AI-agent access (MCP), a shared server for university and buyer cabinets</p></div>
     </div>
     <div class="hero-ctas left">
       <a href="#catalog" class="btn btn-primary" data-ru="Открыть каталог">Open the catalog</a>
+      <a href="app/index.html#demo" class="btn btn-ghost" data-ru="Попробовать кабинет покупателя">Try the buyer cabinet</a>
       <a href="index.html#pricing" class="btn btn-ghost" data-ru="Цены и пилот">Pricing &amp; pilot</a>
     </div>
   </div>
@@ -91,7 +92,7 @@
           <h3 data-ru="Вузы Центральной Азии">Universities of Central Asia</h3>
           <p data-ru="Единый справочник вузов четырёх стран с постоянными ID CORE. Общий ключ, к которому привязаны все остальные датасеты, сайт и API.">One registry of higher-ed institutions across four countries with persistent CORE IDs — the join key for every other dataset, the site and the API.</p>
           <dl class="kv">
-            <div><dt data-ru="Записей">Records</dt><dd data-ru="428, из них 397 вузов">428, of them 397 universities</dd></div>
+            <div><dt data-ru="Записей">Records</dt><dd data-ru="428 организаций, из них 397 вузов">428 institutions, of them 397 universities</dd></div>
             <div><dt data-ru="Языки названий">Name languages</dt><dd>7</dd></div>
             <div><dt data-ru="Лицензия">License</dt><dd>CC0-1.0</dd></div>
             <div><dt data-ru="Перс. данные">PII</dt><dd data-ru="нет">none</dd></div>
@@ -148,7 +149,7 @@
             <div><dt data-ru="Работ">Works</dt><dd>482,572</dd></div>
             <div><dt data-ru="С аннотацией">With abstract</dt><dd>92%</dd></div>
             <div><dt data-ru="Авторов">Authors</dt><dd>520K</dd></div>
-            <div><dt data-ru="Записей «датасет»">“Dataset” records</dt><dd>11,871</dd></div>
+            <div><dt data-ru="Записей «датасет», все годы">“Dataset” records, all years</dt><dd>11,871</dd></div>
           </dl>
           <p class="note" data-ru="Метаданные — CC0. Аннотации передаются только под открытой лицензией работы. Имена авторов — персональные данные, не публикуются.">Metadata CC0. Abstracts are shared only under each work's open license. Author names are treated as personal data.</p>
           <a class="ds-link" href="datasets/ca_publications.html" data-ru="Страница датасета, образец и Croissant →">Dataset page, sample &amp; Croissant →</a>
@@ -203,46 +204,51 @@
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow" data-ru="Для ИИ-команд и бизнеса">For AI teams &amp; business</span>
-      <h2 data-ru="Данные, которые можно отдать юристам на подпись">Data your legal team will actually sign off on</h2>
-      <p class="sub" data-ru="Каждый набор — с описанием, документами на права и проверкой. Ниже — что можно получить.">Every dataset comes with a description, rights paperwork and checks. Below is what you can get.</p>
+      <h2 data-ru="Данные с документами на права, которые ваш юрист может проверить">Data with rights paperwork your legal team can check</h2>
+      <p class="sub" data-ru="У каждого продукта указан статус: что есть сейчас, что можно заказать заранее и что мы делаем под вашу задачу.">Each product shows its status: what exists now, what you can pre-order, and what we build for your task.</p>
     </div>
     <div class="uc-grid">
       <article class="card uc">
-        <div class="uc-top"><span class="tag t-teal">LLM</span><span class="mono small muted">SFT · DPO · Eval</span></div>
+        <div class="uc-top"><span class="tag t-teal">LLM</span><span class="mono small muted">SFT · DPO · Eval</span><span class="st st-req" data-ru="Под заказ">On request</span></div>
         <h3 data-ru="Дообучение моделей на языках ЦА">Fine-tune for Central Asian languages</h3>
-        <p data-ru="Параллельные корпуса, пары «инструкция–ответ» и экспертные Q&amp;A на узбекском, казахском, кыргызском, таджикском и каракалпакском — из академических текстов с понятными правами.">Parallel corpora, instruction pairs and expert Q&amp;A in Uzbek, Kazakh, Kyrgyz, Tajik and Karakalpak — built from rights-cleared academic text.</p>
+        <p data-ru="Собираем под ваш запрос параллельные корпуса, пары «инструкция–ответ» и экспертные вопросы-ответы на узбекском, казахском, кыргызском, таджикском и каракалпакском — из текстов вузов с проверенными правами. Готовых корпусов в каталоге пока нет: первый собираем вместе с пилотным заказчиком.">Built to your request: parallel corpora, instruction–response pairs and expert Q&amp;A in Uzbek, Kazakh, Kyrgyz, Tajik and Karakalpak — from university texts with checked rights. There are no ready corpora in the catalog yet: we build the first one together with a pilot customer.</p>
         <p class="who" data-ru="Для: ИИ-лабораторий, локальных LLM-команд, банков и телекома">For: AI labs, local LLM teams, banks &amp; telcos</p>
       </article>
       <article class="card uc">
-        <div class="uc-top"><span class="tag t-violet">EVAL</span><span class="mono small muted">CORE-CA Bench</span></div>
+        <div class="uc-top"><span class="tag t-violet">EVAL</span><span class="mono small muted">CORE-CA Bench</span><span class="st st-pre" data-ru="Предзаказ">Pre-order</span></div>
         <h3 data-ru="Отчёт об оценке вашей модели">An evaluation report on your model</h3>
         <p data-ru="Прогоняем вашу модель на бенчмарке по истории, праву, наследию, географии и реалиям региона и показываем, где и почему она ошибается, — с примерами и рекомендациями, какие данные это исправят.">We run your model on our benchmark of regional history, law, heritage, geography and realia and show where and why it fails — with examples and the data that would fix it.</p>
         <p class="who" data-ru="Для: разработчиков моделей, ассистентов и госпроектов">For: model builders, assistant vendors, public-sector AI</p>
       </article>
       <article class="card uc">
-        <div class="uc-top"><span class="tag t-teal">RAG</span><span class="mono small muted">API · MCP</span></div>
+        <div class="uc-top"><span class="tag t-teal">RAG</span><span class="mono small muted">API · MCP</span><span class="st st-api" data-ru="API работает · MCP в разработке">API live · MCP in development</span></div>
         <h3 data-ru="Достоверный контекст для RAG и агентов">Grounded context for RAG &amp; agents</h3>
         <p data-ru="Справочники с постоянными ID, связанные между собой: вузы, наука, учреждения. Доступ по API и через MCP-сервер для агентов.">Linked reference data with persistent IDs — universities, research, institutions. Delivered via API and an MCP server for agents.</p>
         <p class="who" data-ru="Для: EdTech, поисковых и ассистентских продуктов">For: EdTech, search &amp; assistant products</p>
       </article>
       <article class="card uc">
-        <div class="uc-top"><span class="tag t-amber">GOV</span><span class="mono small muted" data-ru="корпуса · Data Lake">corpora · Data Lake</span></div>
+        <div class="uc-top"><span class="tag t-amber">GOV</span><span class="mono small muted" data-ru="корпуса · Data Lake">corpora · Data Lake</span><span class="st st-req" data-ru="Под заказ">On request</span></div>
         <h3 data-ru="Национальные корпуса и Data Lake">National corpora &amp; Data Lake</h3>
         <p data-ru="Подготовка академических текстов и наблюдений для национальных языковых корпусов и государственных платформ данных — с правами, паспортами и разметкой.">Preparing academic texts and observations for national language corpora and public data platforms — with rights, datasheets and annotation.</p>
         <p class="who" data-ru="Для: министерств, госпрограмм, технопарков">For: ministries, public programs, tech parks</p>
       </article>
       <article class="card uc">
-        <div class="uc-top"><span class="tag t-violet">INTEL</span><span class="mono small muted">DS-0001 × DS-0003</span></div>
+        <div class="uc-top"><span class="tag t-violet">INTEL</span><span class="mono small muted">DS-0001 × DS-0003</span><span class="st st-now" data-ru="Есть сейчас">Available now</span></div>
         <h3 data-ru="Научная аналитика и профили вузов">Research intelligence &amp; university profiles</h3>
         <p data-ru="Профили компетенций вузов, сильные группы, международные связи и «потерянные» публикации — для рейтингов, грантов и партнёрств.">Competence profiles, strongest research groups, international links and “lost” publications — for rankings, grants and partnerships.</p>
         <p class="who" data-ru="Для: вузов, грантовых фондов, консорциумов, агентств набора">For: universities, funders, consortia, recruitment agencies</p>
       </article>
       <article class="card uc">
-        <div class="uc-top"><span class="tag t-amber">STUDIO</span><span class="mono small muted" data-ru="под заказ">custom</span></div>
+        <div class="uc-top"><span class="tag t-amber">STUDIO</span><span class="mono small muted" data-ru="под заказ">custom</span><span class="st st-req" data-ru="Под заказ">On request</span></div>
         <h3 data-ru="Датасет под вашу задачу">A dataset built for your task</h3>
         <p data-ru="Сбор, оцифровка и разметка под ТЗ силами предметных экспертов вузов: речь, тексты, изображения, табличные наблюдения. Двойная проверка и метрики согласия разметчиков.">Collection, digitization and annotation to spec by university domain experts — speech, text, images, tabular observations. Dual review with inter-annotator agreement.</p>
         <p class="who" data-ru="Для: всех, кому нужно то, чего нет в открытом доступе">For: anyone who needs what isn't on the open web</p>
       </article>
+    </div>
+
+    <div class="card why-paid">
+      <h3 data-ru="Почему не скачать бесплатно с Zenodo или Hugging Face?">Why not just download it free from Zenodo or Hugging Face?</h3>
+      <div class="why-grid"><div><b data-ru="Открытое ≠ готовое">Open ≠ usable</b><p data-ru="Из 548 записей учёных ЦА, которые выглядят как датасеты, мы открыли каждую: у 143 (26%) данных нет — только статья в PDF, закрытые файлы или удалённая запись.">We opened each of the 548 Central Asian scholar records that look like datasets: 143 (26%) hold no data — only a PDF article, restricted files or a deleted record.</p></div><div><b data-ru="Сырые форматы">Raw formats</b><p data-ru="В найденных наборах — итоговые баллы формулами Excel, коды чувствительности в шести вариантах, названия микробов свободным текстом по-русски. Мы приводим к стандартам (МКБ-10, LOINC, ATC) и описываем каждое поле на трёх языках.">Found datasets store totals as Excel formulas, susceptibility codes in six spellings, microbe names as free Russian text. We map them to standards (ICD-10, LOINC, ATC) and describe every field in three languages.</p></div><div><b data-ru="Права по каждой записи">Rights for every record</b><p data-ru="Лицензия, основание, авторы и проверка персональных данных — в паспорте набора и в каждой записи, а не «где-то на странице репозитория».">Licence, legal basis, authors and the personal-data check sit in the datasheet and in every record — not somewhere on a repository page.</p></div><div><b data-ru="То, чего нет в сети">What is not online</b><p data-ru="Главное — архивы вузов, которые никогда не публиковались. Их мы открываем по договору с вузом. Хорошие открытые наборы (например, корпус казахской речи ISSAI) мы не перепродаём — подскажем, где взять их бесплатно.">Mostly, university archives that were never published — we open them under a contract with the university. Good open datasets (such as the ISSAI Kazakh speech corpus) we do not resell; we point you to them for free.</p></div></div>
     </div>
 
     <!-- how buying works + API -->
@@ -251,10 +257,11 @@
         <h3 data-ru="Как это работает для покупателя">How buying works</h3>
         <ol class="steps">
           <li><b data-ru="Найдите">Discover</b><span data-ru="Каталог, паспорт данных, схема полей и метрики качества — открыто.">Catalog, datasheet, field schema and quality metrics — all public.</span></li>
-          <li><b data-ru="Проверьте образец">Sample</b><span data-ru="Бесплатный образец до 1 000 записей за 24 часа после заявки.">Free sample of up to 1,000 records within 24 hours.</span></li>
+          <li><b data-ru="Проверьте образец">Sample</b><span data-ru="Бесплатный образец любого набора из каталога (до 1 000 записей) за 24 часа после заявки.">A free sample of any catalog dataset (up to 1,000 records) within 24 hours of your request.</span></li>
           <li><b data-ru="Лицензируйте">License</b><span data-ru="Стандартная неисключительная лицензия на срок или индивидуальный договор с DPA.">Standard non-exclusive term license, or a custom MSA with DPA.</span></li>
           <li><b data-ru="Получите">Deliver</b><span data-ru="API, выгрузка Parquet/JSONL, приватный репозиторий Hugging Face или S3. Обновления по подписке.">API, Parquet/JSONL export, private Hugging Face repo or S3. Updates on subscription.</span></li>
         </ol>
+        <a class="demo-cta" href="app/index.html#demo"><b data-ru="Пройдите путь покупателя сами">Walk the buyer path yourself</b><span data-ru="Демо-кабинет без регистрации: готовый набор, ключ API, запросы SQL прямо в браузере →">A demo cabinet with no sign-up: a prepared dataset, an API key, SQL queries right in your browser →</span></a>
       </div>
       <div class="code">
         <div class="code-head"><span class="dots"><i></i><i></i><i></i></span><span class="mono small muted">api v0 · live</span><button class="copy mono small" data-copy="codeBlock">copy</button></div>
@@ -278,6 +285,12 @@ curl …/api/v0/universities.json
 curl …/api/v0/datasets/<span class="s">universities</span>/croissant.json</code></pre>
       </div>
     </div>
+
+    <div class="card why-paid legal" id="legal">
+      <h3 data-ru="Договор и требования к данным">Contract and compliance</h3>
+      <div class="why-grid"><div><b data-ru="Лицензия">Licence</b><p data-ru="Неисключительная, на срок, для обучения, дообучения и оценки моделей. Нельзя перепродавать данные как есть и пытаться установить личность. Указание источника — по условиям набора.">Non-exclusive, for a term, for training, fine-tuning and evaluating models. No resale of the data as is and no attempts to identify people. Attribution as each dataset requires.</p></div><div><b data-ru="Персональные данные">Personal data</b><p data-ru="Обезличиваем до передачи. Для данных о людях — соглашение об обработке (DPA). Хранение — по закону Узбекистана о персональных данных.">Removed before delivery. For data about people, a data processing agreement (DPA). Storage follows Uzbekistan's Personal Data Law.</p></div><div><b data-ru="Происхождение">Provenance</b><p data-ru="У каждой записи — источник, лицензия, правовое основание и дата; в паспорте — отчёт о качестве и журнал изменений.">Every record carries its source, licence, legal basis and date; the datasheet adds a quality report and a change log.</p></div><div><b data-ru="Документы">Documents</b><p data-ru="Образец лицензии, DPA и реквизиты — по запросу. Тексты проходят проверку юриста; до подписания согласуем их под вашу задачу.">A sample licence, DPA and company details on request. The texts are under legal review; we align them to your use case before signing.</p></div></div>
+      <a href="#contact" class="link-cta" data-form="buyer" data-ru="Запросить образец лицензии →">Request a sample licence →</a>
+    </div>
   </div>
 </section>
 
@@ -297,7 +310,7 @@ curl …/api/v0/datasets/<span class="s">universities</span>/croissant.json</cod
       <div class="code mcp-conf">
         <div class="code-head"><span class="dots"><i></i><i></i><i></i></span><span class="mono small muted" data-ru="mcp.json · макет, адрес появится при запуске">mcp.json · mock-up, the address arrives at launch</span></div>
 <pre><code>{ <span class="k">"mcpServers"</span>: { <span class="k">"core"</span>: {
-    <span class="k">"url"</span>: <span class="s">"https://mcp.core-data.example/v1"</span>,
+    <span class="k">"url"</span>: <span class="s">"&lt;issued with your key&gt;"</span>,
     <span class="k">"headers"</span>: { <span class="k">"Authorization"</span>: <span class="s">"Bearer $CORE_KEY"</span> }
 } } }</code></pre>
       </div>

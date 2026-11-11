@@ -543,8 +543,20 @@
   }
 
   /* ---------------- router ---------------- */
+  /* #demo: a visitor from the public site becomes a demo buyer with one dataset already open */
+  function startDemo() {
+    try { localStorage.setItem("core-invite", "1"); } catch (e) {}
+    var org = "Demo visitor", slug = "uzbek-geography-terms";
+    S.user = { role: "buyer", org: org, buyerOrg: org, name: "Demo" };
+    if (!S.requests.some(function (r) { return r.org === org && r.ds === slug && r.status === "approved"; }))
+      S.requests.push({ id: id("R"), ds: slug, org: org, name: "Demo", purpose: "Демо: знакомство с форматом и API", use: "commercial", status: "approved", created: Date.now(), decided: Date.now() });
+    store.save();
+    location.replace("#ds/" + slug);
+    setTimeout(function () { toast("Демо: доступ к этому набору уже открыт — попробуйте API и SQL ниже. Другие наборы можно запросить и одобрить в роли оператора."); }, 400);
+  }
   function render() {
     var h = location.hash || "";
+    if (h === "#demo") { startDemo(); return; }
     if (!S.user && h !== "#login") { location.hash = "#login"; return; }
     header();
     window.scrollTo(0, 0);

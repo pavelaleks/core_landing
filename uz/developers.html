@@ -59,11 +59,12 @@
     <h1 class="h1-page" data-ru="Данные Центральной Азии для обучения, проверки и <em>агентов</em>">Oʻqitish, tekshirish va <em>agentlar</em> uchun Markaziy Osiyo maʼlumotlari</h1>
     <p class="sub" data-ru="Знания о регионе, научные наблюдения и измерения, тексты и речь на местных языках — из университетов Центральной Азии, с документами на права, описанием и проверкой экспертов. Ниже — живой каталог, формат данных, API и подключение к агентам.">Mintaqa haqidagi bilimlar, ilmiy kuzatuvlar va oʻlchovlar, mahalliy tillardagi matnlar va nutq — Markaziy Osiyo universitetlaridan, huquqiy hujjatlar, tavsif va ekspertlar tekshiruvi bilan. Quyida — jonli katalog, maʼlumotlar formati, API va agentlarga ulanish.</p>
     <div class="state-grid">
-      <div class="state ok"><span class="mono small" data-ru="Работает сейчас">Hozir ishlaydi</span><p data-ru="Каталог и описания наборов данных, бесплатные образцы, API v0, метаданные Croissant">Katalog va maʼlumotlar toʻplamlari tavsifi, bepul namunalar, API v0, Croissant metamaʼlumotlari</p></div>
-      <div class="state wip"><span class="mono small" data-ru="В разработке">Ishlab chiqilmoqda</span><p data-ru="Проверка знаний моделей о регионе (бенчмарк), подключение к ИИ-агентам (MCP), кабинет для вузов">Modellarning mintaqa haqidagi bilimini tekshirish (benchmark), SI agentlariga ulanish (MCP), universitetlar kabineti</p></div>
+      <div class="state ok"><span class="mono small" data-ru="Работает сейчас">Hozir ishlaydi</span><p data-ru="Каталог и описания наборов, бесплатные образцы, API v0, метаданные Croissant, демо-кабинет покупателя с ключом API и SQL-запросами">Katalog va toʻplamlar tavsifi, bepul namunalar, API v0, Croissant metamaʼlumotlari, API kaliti va SQL soʻrovlari bilan xaridorning demo-kabineti</p></div>
+      <div class="state wip"><span class="mono small" data-ru="В разработке">Ishlab chiqilmoqda</span><p data-ru="Проверка знаний моделей о регионе (бенчмарк), подключение к ИИ-агентам (MCP), общий сервер для кабинетов вузов и покупателей">Modellarning mintaqa haqidagi bilimini tekshirish (benchmark), SI-agentlarga ulanish (MCP), universitetlar va xaridorlar kabinetlari uchun umumiy server</p></div>
     </div>
     <div class="hero-ctas left">
       <a href="#catalog" class="btn btn-primary" data-ru="Открыть каталог">Katalogni ochish</a>
+      <a href="../app/index.html#demo" class="btn btn-ghost" data-ru="Попробовать кабинет покупателя">Xaridor kabinetini sinab koʻrish</a>
       <a href="index.html#pricing" class="btn btn-ghost" data-ru="Цены и пилот">Narxlar va pilot</a>
     </div>
   </div>
@@ -93,7 +94,7 @@
           <h3 data-ru="Вузы Центральной Азии">Markaziy Osiyo universitetlari</h3>
           <p data-ru="Единый справочник вузов четырёх стран с постоянными ID CORE. Общий ключ, к которому привязаны все остальные датасеты, сайт и API.">Toʻrt davlat universitetlarining doimiy CORE ID li yagona maʼlumotnomasi. Barcha boshqa datasetlar, sayt va API bogʻlangan umumiy kalit.</p>
           <dl class="kv">
-            <div><dt data-ru="Записей">Yozuvlar</dt><dd data-ru="428, из них 397 вузов">428, shundan 397 tasi universitet</dd></div>
+            <div><dt data-ru="Записей">Yozuvlar</dt><dd data-ru="428 организаций, из них 397 вузов">428 ta tashkilot, shundan 397 tasi universitet</dd></div>
             <div><dt data-ru="Языки названий">Nom tillari</dt><dd>7</dd></div>
             <div><dt data-ru="Лицензия">Litsenziya</dt><dd>CC0-1.0</dd></div>
             <div><dt data-ru="Перс. данные">Shaxsiy maʼlumotlar</dt><dd data-ru="нет">yoʻq</dd></div>
@@ -150,7 +151,7 @@
             <div><dt data-ru="Работ">Ishlar</dt><dd>482,572</dd></div>
             <div><dt data-ru="С аннотацией">Annotatsiya bilan</dt><dd>92%</dd></div>
             <div><dt data-ru="Авторов">Mualliflar</dt><dd>520K</dd></div>
-            <div><dt data-ru="Записей «датасет»">«Dataset» yozuvlari</dt><dd>11,871</dd></div>
+            <div><dt data-ru="Записей «датасет», все годы">«Dataset» yozuvlari, barcha yillar</dt><dd>11,871</dd></div>
           </dl>
           <p class="note" data-ru="Метаданные — CC0. Аннотации передаются только под открытой лицензией работы. Имена авторов — персональные данные, не публикуются.">Metamaʼlumotlar — CC0. Annotatsiyalar faqat ishning ochiq litsenziyasi ostida beriladi. Mualliflar ismlari — shaxsiy maʼlumot, eʼlon qilinmaydi.</p>
           <a class="ds-link" href="datasets/ca_publications.html" data-ru="Страница датасета, образец и Croissant →">Dataset sahifasi, namuna va Croissant →</a>
@@ -205,46 +206,51 @@
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow" data-ru="Для ИИ-команд и бизнеса">SI jamoalari va biznes uchun</span>
-      <h2 data-ru="Данные, которые можно отдать юристам на подпись">Yuristlarga imzoga berish mumkin boʻlgan maʼlumotlar</h2>
-      <p class="sub" data-ru="Каждый набор — с описанием, документами на права и проверкой. Ниже — что можно получить.">Har bir toʻplam — tavsif, huquqiy hujjatlar va tekshiruv bilan. Quyida — nimani olish mumkin.</p>
+      <h2 data-ru="Данные с документами на права, которые ваш юрист может проверить">Yuristingiz tekshira oladigan huquqiy hujjatli maʼlumotlar</h2>
+      <p class="sub" data-ru="У каждого продукта указан статус: что есть сейчас, что можно заказать заранее и что мы делаем под вашу задачу.">Har bir mahsulotning holati koʻrsatilgan: hozir nima bor, nimani oldindan buyurtma qilish mumkin va nimani vazifangizga moslab qilamiz.</p>
     </div>
     <div class="uc-grid">
       <article class="card uc">
-        <div class="uc-top"><span class="tag t-teal">LLM</span><span class="mono small muted">SFT · DPO · Eval</span></div>
+        <div class="uc-top"><span class="tag t-teal">LLM</span><span class="mono small muted">SFT · DPO · Eval</span><span class="st st-req" data-ru="Под заказ">Buyurtma boʻyicha</span></div>
         <h3 data-ru="Дообучение моделей на языках ЦА">Modellarni MO tillarida qoʻshimcha oʻqitish</h3>
-        <p data-ru="Параллельные корпуса, пары «инструкция–ответ» и экспертные Q&amp;A на узбекском, казахском, кыргызском, таджикском и каракалпакском — из академических текстов с понятными правами.">Parallel korpuslar, «koʻrsatma–javob» juftliklari va oʻzbek, qozoq, qirgʻiz, tojik va qoraqalpoq tillaridagi ekspert Q&A — huquqlari aniq akademik matnlardan.</p>
+        <p data-ru="Собираем под ваш запрос параллельные корпуса, пары «инструкция–ответ» и экспертные вопросы-ответы на узбекском, казахском, кыргызском, таджикском и каракалпакском — из текстов вузов с проверенными правами. Готовых корпусов в каталоге пока нет: первый собираем вместе с пилотным заказчиком.">Soʻrovingiz boʻyicha oʻzbek, qozoq, qirgʻiz, tojik va qoraqalpoq tillarida parallel korpuslar, «koʻrsatma–javob» juftliklari va ekspert savol-javoblarini yigʻamiz — huquqlari tekshirilgan universitet matnlaridan. Katalogda tayyor korpuslar hozircha yoʻq: birinchisini pilot buyurtmachi bilan birga yigʻamiz.</p>
         <p class="who" data-ru="Для: ИИ-лабораторий, локальных LLM-команд, банков и телекома">Kimlar uchun: SI laboratoriyalari, mahalliy LLM jamoalari, banklar va telekom</p>
       </article>
       <article class="card uc">
-        <div class="uc-top"><span class="tag t-violet">EVAL</span><span class="mono small muted">CORE-CA Bench</span></div>
+        <div class="uc-top"><span class="tag t-violet">EVAL</span><span class="mono small muted">CORE-CA Bench</span><span class="st st-pre" data-ru="Предзаказ">Oldindan buyurtma</span></div>
         <h3 data-ru="Отчёт об оценке вашей модели">Modelingizni baholash hisoboti</h3>
         <p data-ru="Прогоняем вашу модель на бенчмарке по истории, праву, наследию, географии и реалиям региона и показываем, где и почему она ошибается, — с примерами и рекомендациями, какие данные это исправят.">Modelingizni mintaqa tarixi, huquqi, merosi, geografiyasi va voqeliklari boʻyicha benchmarkda sinaymiz va u qayerda va nima uchun xato qilishini koʻrsatamiz — misollar va buni qanday maʼlumotlar tuzatishi haqida tavsiyalar bilan.</p>
         <p class="who" data-ru="Для: разработчиков моделей, ассистентов и госпроектов">Kimlar uchun: model va assistent ishlab chiquvchilar, davlat loyihalari</p>
       </article>
       <article class="card uc">
-        <div class="uc-top"><span class="tag t-teal">RAG</span><span class="mono small muted">API · MCP</span></div>
+        <div class="uc-top"><span class="tag t-teal">RAG</span><span class="mono small muted">API · MCP</span><span class="st st-api" data-ru="API работает · MCP в разработке">API ishlaydi · MCP ishlab chiqilmoqda</span></div>
         <h3 data-ru="Достоверный контекст для RAG и агентов">RAG va agentlar uchun ishonchli kontekst</h3>
         <p data-ru="Справочники с постоянными ID, связанные между собой: вузы, наука, учреждения. Доступ по API и через MCP-сервер для агентов.">Oʻzaro bogʻlangan doimiy ID li maʼlumotnomalar: universitetlar, ilm, muassasalar. API va agentlar uchun MCP-server orqali kirish.</p>
         <p class="who" data-ru="Для: EdTech, поисковых и ассистентских продуктов">Kimlar uchun: EdTech, qidiruv va assistent mahsulotlari</p>
       </article>
       <article class="card uc">
-        <div class="uc-top"><span class="tag t-amber">GOV</span><span class="mono small muted" data-ru="корпуса · Data Lake">korpuslar · Data Lake</span></div>
+        <div class="uc-top"><span class="tag t-amber">GOV</span><span class="mono small muted" data-ru="корпуса · Data Lake">korpuslar · Data Lake</span><span class="st st-req" data-ru="Под заказ">Buyurtma boʻyicha</span></div>
         <h3 data-ru="Национальные корпуса и Data Lake">Milliy korpuslar va Data Lake</h3>
         <p data-ru="Подготовка академических текстов и наблюдений для национальных языковых корпусов и государственных платформ данных — с правами, паспортами и разметкой.">Milliy til korpuslari va davlat maʼlumotlar platformalari uchun akademik matnlar va kuzatuvlarni tayyorlash — huquqlar, pasportlar va belgilash bilan.</p>
         <p class="who" data-ru="Для: министерств, госпрограмм, технопарков">Kimlar uchun: vazirliklar, davlat dasturlari, texnoparklar</p>
       </article>
       <article class="card uc">
-        <div class="uc-top"><span class="tag t-violet">INTEL</span><span class="mono small muted">DS-0001 × DS-0003</span></div>
+        <div class="uc-top"><span class="tag t-violet">INTEL</span><span class="mono small muted">DS-0001 × DS-0003</span><span class="st st-now" data-ru="Есть сейчас">Hozir bor</span></div>
         <h3 data-ru="Научная аналитика и профили вузов">Ilmiy tahlil va universitet profillari</h3>
         <p data-ru="Профили компетенций вузов, сильные группы, международные связи и «потерянные» публикации — для рейтингов, грантов и партнёрств.">Universitetlarning kompetensiya profillari, kuchli guruhlar, xalqaro aloqalar va «yoʻqolgan» nashrlar — reytinglar, grantlar va hamkorliklar uchun.</p>
         <p class="who" data-ru="Для: вузов, грантовых фондов, консорциумов, агентств набора">Kimlar uchun: universitetlar, grant fondlari, konsorsiumlar, qabul agentliklari</p>
       </article>
       <article class="card uc">
-        <div class="uc-top"><span class="tag t-amber">STUDIO</span><span class="mono small muted" data-ru="под заказ">buyurtma asosida</span></div>
+        <div class="uc-top"><span class="tag t-amber">STUDIO</span><span class="mono small muted" data-ru="под заказ">buyurtma asosida</span><span class="st st-req" data-ru="Под заказ">Buyurtma boʻyicha</span></div>
         <h3 data-ru="Датасет под вашу задачу">Vazifangizga mos dataset</h3>
         <p data-ru="Сбор, оцифровка и разметка под ТЗ силами предметных экспертов вузов: речь, тексты, изображения, табличные наблюдения. Двойная проверка и метрики согласия разметчиков.">Universitetlarning soha ekspertlari tomonidan texnik topshiriq boʻyicha yigʻish, raqamlashtirish va belgilash: nutq, matnlar, tasvirlar, jadval kuzatuvlari. Ikki tomonlama tekshiruv va belgilovchilar kelishuvi metrikalari.</p>
         <p class="who" data-ru="Для: всех, кому нужно то, чего нет в открытом доступе">Kimlar uchun: ochiq manbada yoʻq narsa kerak boʻlgan barcha</p>
       </article>
+    </div>
+
+    <div class="card why-paid">
+      <h3 data-ru="Почему не скачать бесплатно с Zenodo или Hugging Face?">Nega Zenodo yoki Hugging Face dan bepul yuklab olmaslik kerak?</h3>
+      <div class="why-grid"><div><b data-ru="Открытое ≠ готовое">Ochiq ≠ tayyor</b><p data-ru="Из 548 записей учёных ЦА, которые выглядят как датасеты, мы открыли каждую: у 143 (26%) данных нет — только статья в PDF, закрытые файлы или удалённая запись.">MO olimlarining datasetga oʻxshagan 548 ta yozuvining har birini ochdik: 143 tasida (26%) maʼlumot yoʻq — faqat PDF maqola, yopiq fayllar yoki oʻchirilgan yozuv.</p></div><div><b data-ru="Сырые форматы">Xom formatlar</b><p data-ru="В найденных наборах — итоговые баллы формулами Excel, коды чувствительности в шести вариантах, названия микробов свободным текстом по-русски. Мы приводим к стандартам (МКБ-10, LOINC, ATC) и описываем каждое поле на трёх языках.">Topilgan toʻplamlarda — Excel formulalari koʻrinishidagi yakuniy ballar, sezgirlik kodlarining olti varianti, rus tilida erkin matn bilan yozilgan mikrob nomlari. Biz ularni standartlarga (XKT-10, LOINC, ATC) keltiramiz va har bir maydonni uch tilda tavsiflaymiz.</p></div><div><b data-ru="Права по каждой записи">Har bir yozuv boʻyicha huquqlar</b><p data-ru="Лицензия, основание, авторы и проверка персональных данных — в паспорте набора и в каждой записи, а не «где-то на странице репозитория».">Litsenziya, asos, mualliflar va shaxsiy maʼlumotlar tekshiruvi — toʻplam pasportida va har bir yozuvda, «repozitoriy sahifasining qayerdadir» emas.</p></div><div><b data-ru="То, чего нет в сети">Internetda yoʻq narsa</b><p data-ru="Главное — архивы вузов, которые никогда не публиковались. Их мы открываем по договору с вузом. Хорошие открытые наборы (например, корпус казахской речи ISSAI) мы не перепродаём — подскажем, где взять их бесплатно.">Asosiysi — hech qachon eʼlon qilinmagan universitet arxivlari. Ularni universitet bilan shartnoma asosida ochamiz. Yaxshi ochiq toʻplamlarni (masalan, ISSAI qozoq nutq korpusi) qayta sotmaymiz — ularni bepul qayerdan olishni aytamiz.</p></div></div>
     </div>
 
     <!-- how buying works + API -->
@@ -253,10 +259,11 @@
         <h3 data-ru="Как это работает для покупателя">Xaridor uchun bu qanday ishlaydi</h3>
         <ol class="steps">
           <li><b data-ru="Найдите">Toping</b><span data-ru="Каталог, паспорт данных, схема полей и метрики качества — открыто.">Katalog, maʼlumotlar pasporti, maydonlar sxemasi va sifat metrikalari — ochiq.</span></li>
-          <li><b data-ru="Проверьте образец">Namunani tekshiring</b><span data-ru="Бесплатный образец до 1 000 записей за 24 часа после заявки.">Arizadan keyin 24 soat ichida 1 000 tagacha yozuvdan iborat bepul namuna.</span></li>
+          <li><b data-ru="Проверьте образец">Namunani tekshiring</b><span data-ru="Бесплатный образец любого набора из каталога (до 1 000 записей) за 24 часа после заявки.">Katalogdagi istalgan toʻplamdan bepul namuna (1 000 tagacha yozuv) arizadan keyin 24 soat ichida.</span></li>
           <li><b data-ru="Лицензируйте">Litsenziyalang</b><span data-ru="Стандартная неисключительная лицензия на срок или индивидуальный договор с DPA.">Muddatli standart noeksklyuziv litsenziya yoki DPA bilan individual shartnoma.</span></li>
           <li><b data-ru="Получите">Qabul qiling</b><span data-ru="API, выгрузка Parquet/JSONL, приватный репозиторий Hugging Face или S3. Обновления по подписке.">API, Parquet/JSONL eksporti, Hugging Face yoki S3 dagi yopiq repozitoriy. Obuna orqali yangilanishlar.</span></li>
         </ol>
+        <a class="demo-cta" href="../app/index.html#demo"><b data-ru="Пройдите путь покупателя сами">Xaridor yoʻlini oʻzingiz bosib oʻting</b><span data-ru="Демо-кабинет без регистрации: готовый набор, ключ API, запросы SQL прямо в браузере →">Roʻyxatdan oʻtmasdan demo-kabinet: tayyor toʻplam, API kaliti, brauzerda SQL soʻrovlari →</span></a>
       </div>
       <div class="code">
         <div class="code-head"><span class="dots"><i></i><i></i><i></i></span><span class="mono small muted">api v0 · live</span><button class="copy mono small" data-copy="codeBlock">copy</button></div>
@@ -280,6 +287,12 @@ curl …/api/v0/universities.json
 curl …/api/v0/datasets/<span class="s">universities</span>/croissant.json</code></pre>
       </div>
     </div>
+
+    <div class="card why-paid legal" id="legal">
+      <h3 data-ru="Договор и требования к данным">Shartnoma va maʼlumotlarga talablar</h3>
+      <div class="why-grid"><div><b data-ru="Лицензия">Litsenziya</b><p data-ru="Неисключительная, на срок, для обучения, дообучения и оценки моделей. Нельзя перепродавать данные как есть и пытаться установить личность. Указание источника — по условиям набора.">Eksklyuziv boʻlmagan, muddatli, modellarni oʻqitish, qayta oʻqitish va baholash uchun. Maʼlumotlarni oʻz holicha qayta sotish va shaxsni aniqlashga urinish taqiqlanadi. Manbani koʻrsatish — toʻplam shartlariga koʻra.</p></div><div><b data-ru="Персональные данные">Shaxsiy maʼlumotlar</b><p data-ru="Обезличиваем до передачи. Для данных о людях — соглашение об обработке (DPA). Хранение — по закону Узбекистана о персональных данных.">Uzatishdan oldin anonimlashtiramiz. Odamlar haqidagi maʼlumotlar uchun — qayta ishlash kelishuvi (DPA). Saqlash — Oʻzbekistonning shaxsiy maʼlumotlar toʻgʻrisidagi qonuniga koʻra.</p></div><div><b data-ru="Происхождение">Kelib chiqishi</b><p data-ru="У каждой записи — источник, лицензия, правовое основание и дата; в паспорте — отчёт о качестве и журнал изменений.">Har bir yozuvda — manba, litsenziya, huquqiy asos va sana; pasportda — sifat hisoboti va oʻzgarishlar jurnali.</p></div><div><b data-ru="Документы">Hujjatlar</b><p data-ru="Образец лицензии, DPA и реквизиты — по запросу. Тексты проходят проверку юриста; до подписания согласуем их под вашу задачу.">Litsenziya namunasi, DPA va rekvizitlar — soʻrov boʻyicha. Matnlar yurist tekshiruvidan oʻtmoqda; imzolashdan oldin ularni vazifangizga moslashtiramiz.</p></div></div>
+      <a href="#contact" class="link-cta" data-form="buyer" data-ru="Запросить образец лицензии →">Litsenziya namunasini soʻrash →</a>
+    </div>
   </div>
 </section>
 
@@ -299,7 +312,7 @@ curl …/api/v0/datasets/<span class="s">universities</span>/croissant.json</cod
       <div class="code mcp-conf">
         <div class="code-head"><span class="dots"><i></i><i></i><i></i></span><span class="mono small muted" data-ru="mcp.json · макет, адрес появится при запуске">mcp.json · maket, manzil ishga tushganda paydo boʻladi</span></div>
 <pre><code>{ <span class="k">"mcpServers"</span>: { <span class="k">"core"</span>: {
-    <span class="k">"url"</span>: <span class="s">"https://mcp.core-data.example/v1"</span>,
+    <span class="k">"url"</span>: <span class="s">"&lt;issued with your key&gt;"</span>,
     <span class="k">"headers"</span>: { <span class="k">"Authorization"</span>: <span class="s">"Bearer $CORE_KEY"</span> }
 } } }</code></pre>
       </div>

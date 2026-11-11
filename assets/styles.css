@@ -690,3 +690,23 @@ body.g3-lock{overflow:hidden}
   .pr-how{grid-column:1/-1}
   .pr-price{color:var(--teal)}
 }
+
+/* buyer-facing fixes: statuses, why-paid, legal, demo CTA */
+.uc-top{gap:8px;flex-wrap:wrap}
+.st{font:500 11px var(--mono);padding:2px 8px;border-radius:999px;border:1px solid var(--line2);color:var(--muted);margin-left:auto;white-space:nowrap}
+.st-now{color:var(--teal);border-color:rgba(61,219,193,.45)}
+.st-api{color:var(--teal);border-color:rgba(61,219,193,.3)}
+.st-pre{color:var(--violet);border-color:rgba(155,140,255,.45)}
+.st-req{color:var(--amber);border-color:rgba(245,165,36,.45)}
+.why-paid{margin:18px 0}
+.why-paid h3{margin-bottom:14px}
+.why-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.why-grid b{display:block;font-size:15px;margin-bottom:6px}
+.why-grid p{font-size:14px;color:#c3cbd4;line-height:1.55}
+.legal .link-cta{display:inline-block;margin-top:14px}
+@media (max-width:960px){.why-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.why-grid{grid-template-columns:minmax(0,1fr)}}
+.demo-cta{display:block;margin-top:16px;padding:12px 14px;border:1px solid rgba(61,219,193,.4);border-radius:12px;background:rgba(61,219,193,.06)}
+.demo-cta b{display:block;color:var(--teal);font-size:14.5px}
+.demo-cta span{font-size:13.5px;color:#c3cbd4}
+.demo-cta:hover{border-color:var(--teal)}
