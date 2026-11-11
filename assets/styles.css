@@ -876,3 +876,9 @@ html.has-subnav{scroll-padding-top:136px}
 .rg-controls label{min-width:0;max-width:100%}
 .rg-controls select{min-width:0;width:100%}
 @media (max-width:600px){.rg-controls label{flex:1 1 100%}.rg-controls label span{flex:1 1 100%}}
+/* logo and main reading text: closer to common practice (logo ~32px tall, reading text 16–17px) */
+.logo{font-size:20px;letter-spacing:.09em;gap:10px}
+.logo svg{width:34px;height:34px}
+.foot-in .logo{font-size:18px}
+.card p:not(.small):not(.note):not(.muted),.why-grid p,.hw-rules p,.rg-offer p,.entry p,.ex3 .card p,.checks li,.plain-list{font-size:16px;line-height:1.6}
+.uc p:not(.who){font-size:16px}
