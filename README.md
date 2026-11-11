@@ -37,6 +37,13 @@ python3 -m http.server 8765
 ```bash
 python3 tools/build_data.py <core-hub>/db/datasets "<путь>/CORE — настоящие датасеты вузов ЦА (отбор).xlsx" assets/data.js
 python3 tools/build_geo.py countries-50m.json assets/geo.js   # https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-50m.json
+# граф знаний для 3D-сцены (полная база capubs, ~8 минут)
+python3 -I tools/build_graph.py <capubs>/data/ca_publications.sqlite <core-hub>/db/datasets/universities/processed/universities.jsonl "<путь>/CORE — настоящие датасеты вузов ЦА (отбор).xlsx" assets/graph.js
 ```
+
+## 3D-граф (CORE Graph)
+
+`assets/graph3d.js` — сцена на three.js (подключается с jsDelivr через importmap). Слои: места → знания → соавторство → датасеты → мир. Без WebGL показывается 2D-карта.
+Прямая ссылка на подграф вуза: `?uni=UNI-UZ-0138`. Её можно отправить вузу перед встречей.
 
 В `data.js` нет имён авторов и контактов физических лиц. Атрибуция: © участники OpenStreetMap (ODbL), OpenAlex/ROR/Wikidata (CC0).

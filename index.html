@@ -44,41 +44,51 @@
 
 <main>
 <!-- ============ HERO ============ -->
-<section class="hero">
+<section class="hero hero-v2">
   <div class="hero-glow" aria-hidden="true"></div>
-  <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <a class="pill" href="#benchmark"><span class="dot"></span><span data-ru="Новое: региональный бенчмарк CORE-CA — лист ожидания">New: CORE-CA regional benchmark — join the waitlist</span><span class="arr">→</span></a>
-      <h1 data-ru="Знания Центральной Азии — <em>с лицензией</em> для ИИ">Central Asia's knowledge, <em>licensed</em> for AI</h1>
-      <p class="lead" data-ru="CORE превращает фонды и научные данные университетов Узбекистана, Казахстана, Кыргызстана и Таджикистана в чистые, проверенные экспертами датасеты с прозрачными правами — для обучения, оценки и RAG.">CORE turns university archives and research data from Uzbekistan, Kazakhstan, Kyrgyzstan and Tajikistan into clean, expert-verified, rights-cleared datasets — ready for training, evaluation and RAG.</p>
-      <div class="hero-ctas">
-        <a href="#contact" class="btn btn-primary" data-form="buyer" data-ru="Запросить датасет">Request a dataset</a>
-        <a href="#universities" class="btn btn-ghost" data-ru="Стать вузом-партнёром">Partner as a university</a>
-      </div>
-      <ul class="hero-points">
-        <li data-ru="Узбекский, казахский, кыргызский, таджикский, каракалпакский, русский">Uzbek, Kazakh, Kyrgyz, Tajik, Karakalpak, Russian</li>
-        <li data-ru="Цепочка прав и паспорт данных на каждый датасет">Rights chain &amp; datasheet for every dataset</li>
-        <li data-ru="Доход возвращается в университеты и авторам">Revenue flows back to universities &amp; authors</li>
-      </ul>
+  <div class="wrap hero-top">
+    <a class="pill" href="#benchmark"><span class="dot"></span><span data-ru="Новое: региональный бенчмарк CORE-CA — лист ожидания">New: CORE-CA regional benchmark — join the waitlist</span><span class="arr">→</span></a>
+    <h1 data-ru="Знания Центральной Азии — <em>с лицензией</em> для ИИ">Central Asia's knowledge, <em>licensed</em> for AI</h1>
+    <p class="lead" data-ru="CORE связывает фонды и научные данные университетов Узбекистана, Казахстана, Кыргызстана и Таджикистана в единый граф знаний — размеченный экспертами, привязанный к карте и с чистыми правами. Для обучения, оценки и RAG.">CORE links university archives and research data from Uzbekistan, Kazakhstan, Kyrgyzstan and Tajikistan into one knowledge graph — expert-annotated, anchored to the map, rights-cleared. Ready for training, evaluation and RAG.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn btn-primary" data-form="buyer" data-ru="Запросить датасет">Request a dataset</a>
+      <a href="#universities" class="btn btn-ghost" data-ru="Стать вузом-партнёром">Partner as a university</a>
     </div>
-    <figure class="hero-map card" aria-label="Map of CORE data in Central Asia">
-      <div class="map-head">
-        <span class="mono small muted">CORE · LIVE CATALOG MAP</span>
-        <div class="map-toggles">
-          <button class="chip on" data-layer="unis"><i style="background:var(--teal)"></i><span data-ru="Вузы">Universities</span></button>
-          <button class="chip on" data-layer="med"><i style="background:var(--amber)"></i><span data-ru="Медучреждения">Medical</span></button>
+  </div>
+
+  <div class="wrap">
+    <div class="g3" aria-label="CORE knowledge graph">
+      <div class="g3-stage" id="graph3d">
+        <canvas id="map" class="g3-fallback" width="720" height="460"></canvas>
+        <div class="map-tip" id="mapTip" hidden></div>
+      </div>
+      <div class="g3-top">
+        <span class="mono small"><span class="live"></span>CORE GRAPH · <span data-ru="живые данные">live data</span></span>
+        <div class="g3-ctrl">
+          <button class="chip on" data-g3layer="places"><i style="background:var(--teal)"></i><span data-ru="Места">Places</span></button>
+          <button class="chip on" data-g3layer="knowledge"><i style="background:#7bd88f"></i><span data-ru="Знания">Knowledge</span></button>
+          <button class="chip on" data-g3layer="collab"><i style="background:var(--violet)"></i><span data-ru="Соавторство">Collaboration</span></button>
+          <button class="chip on" data-g3layer="datasets"><i style="background:#fff"></i><span data-ru="Датасеты">Datasets</span></button>
+          <button class="chip on" data-g3layer="world"><i style="background:var(--amber)"></i><span data-ru="Мир">World</span></button>
+          <button class="chip g3-btn" id="g3Zoom" aria-label="Fullscreen"><span data-ru="⤢ На весь экран">⤢ Fullscreen</span></button>
         </div>
       </div>
-      <canvas id="map" width="720" height="460"></canvas>
-      <div class="map-tip" id="mapTip" hidden></div>
-      <figcaption class="map-foot">
-        <div><b id="mUnis">345</b><span data-ru="вузов на карте">universities mapped</span></div>
-        <div><b id="mMed">2,982</b><span data-ru="медучреждений UZ">UZ medical facilities</span></div>
-        <div><b>4</b><span data-ru="страны в каталоге">countries live</span></div>
-      </figcaption>
-    </figure>
+      <ol class="g3-steps" id="g3Caption">
+        <li data-g3step="0"><b><span class="n">01</span><span data-ru="Места">Places</span></b><span data-ru="Каждый вуз, клиника и архив получает постоянный ID CORE и точку на карте.">Every university, clinic and archive gets a persistent CORE ID and a point on the map.</span></li>
+        <li data-g3step="1"><b><span class="n">02</span><span data-ru="Знания">Knowledge</span></b><span data-ru="Над землёй — направления науки, связанные с вузами, где есть экспертиза.">Above the land float research areas, linked to the universities that hold the expertise.</span></li>
+        <li data-g3step="2"><b><span class="n">03</span><span data-ru="Соавторство">Collaboration</span></b><span data-ru="Дуги показывают, кто с кем работает в регионе — по реальным совместным публикациям.">Arcs show who works with whom across the region — from real co-authored papers.</span></li>
+        <li data-g3step="3"><b><span class="n">04</span><span data-ru="Датасеты">Datasets</span></b><span data-ru="Исследовательские датасеты привязаны к своему вузу — каждый кандидат в лицензию.">Research datasets orbit their home university — each a licensing candidate.</span></li>
+        <li data-g3step="4"><b><span class="n">05</span><span data-ru="Мир">World</span></b><span data-ru="На горизонте — страны-партнёры: как знание региона связано с мировой наукой.">On the horizon, partner countries: how regional knowledge plugs into world science.</span></li>
+        <li class="g3-play-row"><button class="chip g3-btn" id="g3Play"><span data-ru="▶ Показать по шагам">▶ Play the story</span></button></li>
+      </ol>
+      <div class="g3-panel card" id="g3Panel" hidden></div>
+      <div class="map-tip g3-tip" id="g3Tip" hidden></div>
+      <div class="g3-foot" id="g3Foot"></div>
+    </div>
+    <p class="g3-hint small muted" data-ru="Вращайте мышью или пальцем · нажмите на вуз, чтобы увидеть его подграф · данные: OpenAlex, ROR, Wikidata, OpenStreetMap">Drag to orbit · click a university to see its subgraph · data: OpenAlex, ROR, Wikidata, OpenStreetMap</p>
   </div>
 </section>
+
 
 <!-- ============ PROOF STRIP ============ -->
 <section class="strip">
@@ -115,6 +125,80 @@
         <p data-ru="Покупателям нужны цепочка прав, обезличивание и паспорт данных. Без этого юристы ИИ-компании не подпишут лицензию.">Buyers need provenance, anonymization and documentation. Without them, no legal team signs off on a license.</p>
       </article>
     </div>
+  </div>
+</section>
+
+<!-- ============ ANNOTATION LAYERS ============ -->
+<section class="sec" id="annotation">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-ru="Что значит «размеченные»">What “annotated” means</span>
+      <h2 data-ru="Одна запись — <em>пять слоёв</em> ценности">One record, <em>five layers</em> of value</h2>
+      <p class="sub" data-ru="Сырой текст есть у всех. Мы продаём то, что поверх: сущности, связи с постоянными ID, проверку экспертом, права — и формат, который модель съест без доработки. Переключайте слои.">Anyone can scrape raw text. We sell what sits on top: entities, links to persistent IDs, expert review, rights — in a format a model can consume as is. Step through the layers.</p>
+    </div>
+    <div class="anno card" id="anno" data-layer="0">
+      <div class="anno-steps" role="tablist">
+        <button class="on" data-al="0"><span class="mono">L0</span><b data-ru="Сырой текст">Raw text</b><span data-ru="Как лежит в репозитории">As found in the repository</span></button>
+        <button data-al="1"><span class="mono">L1</span><b data-ru="Сущности">Entities</b><span data-ru="Таксоны, места, методы, типы данных">Taxa, places, methods, data types</span></button>
+        <button data-al="2"><span class="mono">L2</span><b data-ru="Связи">Links</b><span data-ru="Постоянные ID и справочники">Persistent IDs &amp; authorities</span></button>
+        <button data-al="3"><span class="mono">L3</span><b data-ru="Права и проверка">Rights &amp; review</b><span data-ru="Лицензия, основание, эксперт">License, basis, expert</span></button>
+        <button data-al="4"><span class="mono">L4</span><b data-ru="Для ИИ">AI-ready</b><span data-ru="JSONL с разметкой">JSONL with spans</span></button>
+      </div>
+      <div class="anno-doc">
+        <div class="anno-meta mono small">
+          <span class="lk">OpenAlex W7203955937</span><span class="lk">UNI-UZ-0138 · Samarkand State University</span><span>2026</span><span class="lk lic">CC-BY</span>
+        </div>
+        <h3 class="anno-title">Supporting data for “New records and habitat modeling of <span class="e" data-t="taxon" data-l="GBIF taxon">Limnatis paluda</span> (<span class="e" data-t="taxon" data-l="GBIF family">Praobdellidae</span>) in <span class="e" data-t="place" data-l="UZ-SU · UZ-QA ?" data-rev="1">southern Uzbekistan</span>”</h3>
+        <p class="anno-text">This dataset contains supporting data for a study of <span class="e" data-t="taxon" data-l="GBIF taxon">Limnatis paluda</span> in <span class="e" data-t="place" data-l="ISO 3166 · UZ">Uzbekistan</span>, including <span class="e" data-t="data" data-l="Darwin Core">occurrence records</span>, <span class="e" data-t="data" data-l="image">specimen and habitat photographs</span>, <span class="e" data-t="method" data-l="BOLD · COI">COI sequence</span> and <span class="e" data-t="data" data-l="FASTA">alignment data</span>, <span class="e" data-t="data" data-l="network">haplotype-network files</span>, and <span class="e" data-t="method" data-l="MaxEnt">MaxEnt habitat-suitability modeling</span> outputs. The study documents new records from <span class="e" data-t="place" data-l="UZ-SU · UZ-QA ?" data-rev="1">southern Uzbekistan</span> and evaluates current and projected habitat suitability under the <span class="e" data-t="scen" data-l="IPCC AR6">SSP3-7.0 climate scenario</span>.</p>
+        <pre class="anno-json mono" aria-label="AI-ready record"><code>{"id": "CORE:W7203955937", "institution": "UNI-UZ-0138",
+ "license": "CC-BY-4.0", "lang": "en", "region": ["UZ-SU","UZ-QA"],
+ "spans": [
+  {"start": 53, "end": 68, "label": "TAXON", "link": "gbif"},
+  {"start": 72, "end": 82, "label": "PLACE", "link": "iso3166:UZ"},
+  {"start": 94, "end": 112, "label": "DATA_TYPE", "link": "dwc:Occurrence"},
+  {"start": 210, "end": 245, "label": "METHOD", "link": "maxent"},
+  {"start": 378, "end": 403, "label": "SCENARIO", "link": "ipcc:SSP3-7.0"}
+ ],
+ "review": {"annotators": 2, "expert": "zoology", "status": "needs_place_check"},
+ "provenance": ["openalex", "zenodo"], "pii": "none"}</code></pre>
+      </div>
+      <aside class="anno-side">
+        <div class="as as1">
+          <h4 data-ru="Типы сущностей">Entity types</h4>
+          <ul class="legend-list">
+            <li><i class="t-taxon"></i><span data-ru="Таксон">Taxon</span><b>3</b></li>
+            <li><i class="t-place"></i><span data-ru="Место">Place</span><b>3</b></li>
+            <li><i class="t-data"></i><span data-ru="Тип данных">Data type</span><b>4</b></li>
+            <li><i class="t-method"></i><span data-ru="Метод">Method</span><b>2</b></li>
+            <li><i class="t-scen"></i><span data-ru="Климатический сценарий">Climate scenario</span><b>1</b></li>
+          </ul>
+        </div>
+        <div class="as as2">
+          <h4 data-ru="Связи записи">Record links</h4>
+          <ul class="link-list mono small">
+            <li><span>institution</span>UNI-UZ-0138</li>
+            <li><span>work</span>OpenAlex W7203955937</li>
+            <li><span>topic</span>Invertebrate Taxonomy &amp; Ecology</li>
+            <li><span>region</span>UZ-SU · UZ-QA <em data-ru="(кандидаты)">(candidates)</em></li>
+            <li><span>graph</span><span data-ru="→ 2 соседних датасета СамГУ по гидробионтам">→ 2 sibling SamDU hydrobiont datasets</span></li>
+          </ul>
+        </div>
+        <div class="as as3">
+          <h4 data-ru="Права и проверка">Rights &amp; review</h4>
+          <ul class="checks small">
+            <li data-ru="Лицензия CC-BY: коммерческое использование с атрибуцией">CC-BY: commercial use with attribution</li>
+            <li data-ru="Основание: открытая лицензия, Zenodo">Basis: open license, Zenodo</li>
+            <li data-ru="Персональных данных нет; имена авторов в каталог не выводятся">No PII; author names kept out of the catalog</li>
+            <li class="flag" data-ru="«Южный Узбекистан» → какой регион? Отправлено эксперту-зоологу">“Southern Uzbekistan” → which region? Sent to a zoology expert</li>
+          </ul>
+        </div>
+        <div class="as as4">
+          <h4 data-ru="Что получает покупатель">What the buyer gets</h4>
+          <p class="small muted" data-ru="Текст + разметка спанами + связи с ID + лицензия на каждую запись. Можно сразу учить NER, строить RAG с цитированием или собирать бенчмарк.">Text + span annotations + ID links + a per-record license. Train NER, build citable RAG or assemble a benchmark — straight away.</p>
+        </div>
+      </aside>
+    </div>
+    <p class="small muted anno-note" data-ru="Реальная запись СамГУ из OpenAlex (CC-BY). Разметка выполнена CORE для этой страницы как пример формата.">A real Samarkand State University record from OpenAlex (CC-BY). Annotation made by CORE for this page as a format example.</p>
   </div>
 </section>
 
@@ -620,6 +704,9 @@ curl https://api.core-data.example/v1/datasets/<span class="s">uz_medical_facili
 <script src="assets/config.js"></script>
 <script src="assets/geo.js"></script>
 <script src="assets/data.js"></script>
+<script src="assets/graph.js"></script>
 <script src="assets/app.js"></script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
+<script type="module" src="assets/graph3d.js"></script>
 </body>
 </html>

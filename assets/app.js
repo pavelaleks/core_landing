@@ -42,6 +42,7 @@
     $$(".lang button").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.lang === lang)); });
     $$(".seg button[data-c='']").forEach(function (b) { b.textContent = T("All", "Все"); });
     listeners.forEach(function (f) { f(); });
+    try { window.dispatchEvent(new Event("core:lang")); } catch (e) {}
   }
   $$(".lang button").forEach(function (b) {
     b.addEventListener("click", function () {
@@ -222,8 +223,42 @@
       tip.style.left = tx + 16 + "px"; tip.style.top = ty + 40 + "px";
     });
     canvas.addEventListener("mouseleave", function () { tip.hidden = true; });
-    $("#mUnis").textContent = nf((D.unis || []).length);
-    listeners.push(function () { $("#mUnis").textContent = nf((D.unis || []).length); $("#mMed").textContent = nf((D.med || []).length); });
+
+  }
+
+  /* ---------------- graph footer stats ---------------- */
+  var GR = window.CORE_GRAPH;
+  function g3Foot() {
+    var el = $("#g3Foot"); if (!el || !GR) return;
+    var cells = [
+      [GR.unis.length, T("universities", "вузов")],
+      [GR.topics.length, T("research areas", "направлений")],
+      [GR.co.length, T("co-author links", "связей соавторства")],
+      [GR.datasets.length, T("datasets", "датасетов")],
+      [(D.med || []).length, T("clinics", "клиник")]
+    ];
+    el.innerHTML = cells.map(function (c) { return "<div><b>" + nf(c[0]) + "</b>" + c[1] + "</div>"; }).join("");
+  }
+  listeners.push(g3Foot);
+
+  /* ---------------- annotation layers ---------------- */
+  var anno = $("#anno");
+  if (anno) {
+    var abtns = $$("[data-al]", anno), aTimer = null, auto = true;
+    var setAL = function (i) {
+      anno.dataset.layer = String(i);
+      abtns.forEach(function (b) { b.classList.toggle("on", +b.dataset.al === i); });
+    };
+    abtns.forEach(function (b) { b.addEventListener("click", function () { auto = false; clearInterval(aTimer); setAL(+b.dataset.al); }); });
+    if ("IntersectionObserver" in window && !(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches)) {
+      var aio = new IntersectionObserver(function (en) {
+        if (en[0].isIntersecting && auto && !aTimer) {
+          var i = 0;
+          aTimer = setInterval(function () { if (!auto) return; i = (i + 1) % 5; setAL(i); if (i === 4) { clearInterval(aTimer); auto = false; } }, 2600);
+        }
+      }, { threshold: 0.5 });
+      aio.observe(anno);
+    }
   }
 
   /* ---------------- counters ---------------- */
