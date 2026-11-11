@@ -422,6 +422,10 @@
     var data = {};
     new FormData(form).forEach(function (v, k) { data[k] = v; });
     data.lang = lang; data.page = location.href; data.ts = new Date().toISOString();
+    var TYPE_RU = { buyer: "покупатель", bench: "бенчмарк", university: "вуз", researcher: "исследователь", investor: "инвестор" };
+    data._subject = "CORE · заявка: " + (TYPE_RU[data.type] || data.type) + " · " + data.org;
+    data._template = "table"; data._captcha = "false";
+    if (data.email) data._replyto = data.email;
     var btn = $("button[type=submit]", form); btn.disabled = true;
     var ok = function () {
       status.textContent = T("Thank you! We'll get back to you within 24 hours.", "Спасибо! Мы ответим в течение 24 часов.");
