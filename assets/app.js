@@ -276,10 +276,10 @@
   function g3Foot() {
     var el = $("#g3Foot"); if (!el || !GR) return;
     var cells = [
-      [GR.unis.length, T("universities", "вузов")],
+      [GR.unis.length, T("universities on the map", "вузов на карте")],
       [GR.topics.length, T("research areas", "направлений")],
       [GR.co.length, T("co-author links", "связей соавторства")],
-      [GR.datasets.length, T("datasets", "датасетов")],
+      [GR.datasets.length, T("open datasets by scholars", "открытых наборов учёных")],
       [(D.med || []).length, T("clinics", "клиник")]
     ];
     el.innerHTML = cells.map(function (c) { return "<div><b>" + nf(c[0]) + "</b>" + c[1] + "</div>"; }).join("");

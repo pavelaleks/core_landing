@@ -263,7 +263,7 @@ function init() {
     panel.innerHTML = `<button class="g3-x" aria-label="close">×</button>
       <span class="mono small" style="color:var(--teal)">${U.id}</span>
       <h4>${uniName(U.id, U.name)}</h4><p class="small muted">${U.city}</p>
-      <div class="g3-kpi"><div><b>${nf(U.w)}</b><span>${T("works", "работ")}</span></div><div><b>${coN}</b><span>${T("strong CA links", "сильных связей в ЦА")}</span></div><div><b>${U.ds}</b><span>${T("datasets", "датасетов")}</span></div></div>
+      <div class="g3-kpi"><div><b>${nf(U.w)}</b><span>${T("works", "работ")}</span></div><div><b>${coN}</b><span>${T("strong CA links", "сильных связей в ЦА")}</span></div><div><b>${U.ds}</b><span>${T("open datasets by scholars", "открытых наборов учёных")}</span></div></div>
       ${topT ? `<p class="small muted" style="margin-top:12px">${T("Strongest research areas", "Сильные направления")}</p><ul class="g3-topics">${topT}</ul>` : ""}`;
     panel.hidden = false;
     panel.querySelector(".g3-x").onclick = () => select(null);

@@ -173,7 +173,7 @@
           <button class="chip on" data-g3layer="places"><i style="background:var(--teal)"></i><span data-ru="Места">Joylar</span></button>
           <button class="chip on" data-g3layer="knowledge"><i style="background:#7bd88f"></i><span data-ru="Знания">Bilimlar</span></button>
           <button class="chip on" data-g3layer="collab"><i style="background:var(--violet)"></i><span data-ru="Соавторство">Hammualliflik</span></button>
-          <button class="chip on" data-g3layer="datasets"><i style="background:#fff"></i><span data-ru="Датасеты">Datasetlar</span></button>
+          <button class="chip on" data-g3layer="datasets"><i style="background:#fff"></i><span data-ru="Найденные данные">Topilgan maʼlumotlar</span></button>
           <button class="chip on" data-g3layer="world"><i style="background:var(--amber)"></i><span data-ru="Мир">Dunyo</span></button>
           <button class="chip g3-btn" id="g3Zoom" aria-label="Fullscreen"><span data-ru="⤢ На весь экран">⤢ Toʻliq ekran</span></button>
         </div>
@@ -182,7 +182,7 @@
         <li data-g3step="0"><b><span class="n">01</span><span data-ru="Места">Joylar</span></b><span data-ru="Каждый вуз, клиника и архив получает постоянный ID CORE и точку на карте.">Har bir universitet, klinika va arxiv doimiy CORE ID va xaritada nuqta oladi.</span></li>
         <li data-g3step="1"><b><span class="n">02</span><span data-ru="Знания">Bilimlar</span></b><span data-ru="Над землёй — направления науки, связанные с вузами, где есть экспертиза.">Yer ustida — ekspertizaga ega universitetlar bilan bogʻlangan ilmiy yoʻnalishlar.</span></li>
         <li data-g3step="2"><b><span class="n">03</span><span data-ru="Соавторство">Hammualliflik</span></b><span data-ru="Дуги показывают, кто с кем работает в регионе — по реальным совместным публикациям.">Yoylar mintaqada kim kim bilan ishlashini koʻrsatadi — haqiqiy qoʻshma nashrlar asosida.</span></li>
-        <li data-g3step="3"><b><span class="n">04</span><span data-ru="Датасеты">Datasetlar</span></b><span data-ru="Исследовательские датасеты привязаны к своему вузу — каждый кандидат в лицензию.">Tadqiqot datasetlari oʻz universitetiga bogʻlangan — har biri litsenziyaga nomzod.</span></li>
+        <li data-g3step="3"><b><span class="n">04</span><span data-ru="Найденные данные">Topilgan maʼlumotlar</span></b><span data-ru="Белые точки — открытые наборы данных, которые учёные уже выложили, рядом со своим вузом. Это не наш каталог, а подсказка, где данные уже есть.">Oq nuqtalar — olimlar allaqachon joylagan ochiq maʼlumotlar toʻplamlari, oʻz universiteti yonida. Bu bizning katalogimiz emas, balki maʼlumotlar qayerda borligiga ishora.</span></li>
         <li data-g3step="4"><b><span class="n">05</span><span data-ru="Мир">Dunyo</span></b><span data-ru="На горизонте — страны-партнёры: как знание региона связано с мировой наукой.">Ufqda — hamkor davlatlar: mintaqa bilimlari jahon ilmi bilan qanday bogʻlangan.</span></li>
         <li class="g3-play-row"><button class="chip g3-btn" id="g3Play"><span data-ru="▶ Показать по шагам">▶ Bosqichma-bosqich koʻrsatish</span></button></li>
       </ol>
@@ -191,12 +191,21 @@
       <div class="g3-foot" id="g3Foot"></div>
     </div>
     <p class="g3-hint small muted" data-ru="Вращайте карту мышью или пальцем · нажмите на вуз, чтобы увидеть его связи · данные: OpenAlex, ROR, Wikidata, OpenStreetMap">Xaritani sichqoncha yoki barmoq bilan aylantiring · universitetni bosib, uning aloqalarini koʻring · maʼlumotlar: OpenAlex, ROR, Wikidata, OpenStreetMap</p>
-    <div class="strip-grid strip-in">
-      <div class="stat"><b data-count="397">397</b><span data-ru="университетов в справочнике">universitet maʼlumotnomada</span></div>
-      <div class="stat"><b data-count="482572">482,572</b><span data-ru="научных работ, связанных с вузами">universitetlarga bogʻlangan ilmiy ish</span></div>
-      <div class="stat"><b data-count="548">548</b><span data-ru="открытых наборов данных учёных региона с 2023 года">ta mintaqa olimlarining 2023-yildan beri ochiq maʼlumotlar toʻplami</span></div>
-      <div class="stat"><b data-count="2982">2,982</b><span data-ru="медучреждения Узбекистана на карте">Oʻzbekiston tibbiyot muassasasi xaritada</span></div>
-    </div>
+    <div class="ours-found">
+      <div class="of-ours">
+        <span class="of-k mono" data-ru="Собрали мы сами — 3 базы данных">Oʻzimiz yigʻdik — 3 ta maʼlumotlar bazasi</span>
+        <div class="strip-grid strip-3">
+          <div class="stat"><b data-count="397">397</b><span data-ru="вузов — справочник всех университетов региона">universitet — mintaqadagi barcha universitetlar maʼlumotnomasi</span></div>
+          <div class="stat"><b data-count="482572">482,572</b><span data-ru="научные работы — база публикаций этих вузов">ilmiy ish — shu universitetlar nashrlari bazasi</span></div>
+          <div class="stat"><b data-count="2982">2,982</b><span data-ru="медучреждения — база клиник Узбекистана">tibbiyot muassasasi — Oʻzbekiston klinikalari bazasi</span></div>
+        </div>
+      </div>
+      <div class="of-found">
+        <span class="of-k mono" data-ru="Нашли у учёных">Olimlardan topdik</span>
+        <div class="stat"><b data-count="548">548</b><span data-ru="наборов данных, которые учёные региона с 2023 года уже выложили в открытый доступ">ta maʼlumotlar toʻplami — mintaqa olimlari ularni 2023-yildan beri ochiq manbaga joylagan</span></div>
+        <p class="small muted" data-ru="Мы нашли их через свою базу публикаций. Это не наш товар, а подсказка: в каких вузах и у каких групп уже есть данные. С них мы начинаем переговоры.">Ularni oʻz nashrlar bazamiz orqali topdik. Bu bizning mahsulotimiz emas, balki qaysi universitetlar va guruhlarda maʼlumotlar borligiga ishora. Muzokaralarni ulardan boshlaymiz.</p>
+      </div>
+</div>
   </div>
 </section>
 

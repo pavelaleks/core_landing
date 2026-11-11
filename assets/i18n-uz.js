@@ -834,5 +834,18 @@ window.CORE_UZ = {
 "Весь справочник открыт по лицензии CC0: скачивайте и используйте бесплатно, в том числе в коммерческих продуктах. Платно — только регулярные обновления и интеграция.": "Butun maʼlumotnoma CC0 litsenziyasi bilan ochiq: bepul yuklab oling va foydalaning, jumladan tijoriy mahsulotlarda ham. Pullik — faqat muntazam yangilanishlar va integratsiya.",
 "Весь справочник CSV": "Butun maʼlumotnoma CSV",
 "Обсудить обновления и интеграцию": "Yangilanishlar va integratsiyani muhokama qilish",
-"Индекс готовности к медтуризму 0–100 (по лицензии)": "Tibbiy turizmga tayyorlik indeksi 0–100 (litsenziya boʻyicha)"
+"Индекс готовности к медтуризму 0–100 (по лицензии)": "Tibbiy turizmga tayyorlik indeksi 0–100 (litsenziya boʻyicha)",
+"Собрали мы сами — 3 базы данных": "Oʻzimiz yigʻdik — 3 ta maʼlumotlar bazasi",
+"вузов — справочник всех университетов региона": "universitet — mintaqadagi barcha universitetlar maʼlumotnomasi",
+"научные работы — база публикаций этих вузов": "ilmiy ish — shu universitetlar nashrlari bazasi",
+"медучреждения — база клиник Узбекистана": "tibbiyot muassasasi — Oʻzbekiston klinikalari bazasi",
+"Нашли у учёных": "Olimlardan topdik",
+"наборов данных, которые учёные региона с 2023 года уже выложили в открытый доступ": "ta maʼlumotlar toʻplami — mintaqa olimlari ularni 2023-yildan beri ochiq manbaga joylagan",
+"Мы нашли их через свою базу публикаций. Это не наш товар, а подсказка: в каких вузах и у каких групп уже есть данные. С них мы начинаем переговоры.": "Ularni oʻz nashrlar bazamiz orqali topdik. Bu bizning mahsulotimiz emas, balki qaysi universitetlar va guruhlarda maʼlumotlar borligiga ishora. Muzokaralarni ulardan boshlaymiz.",
+"Найденные данные": "Topilgan maʼlumotlar",
+"Белые точки — открытые наборы данных, которые учёные уже выложили, рядом со своим вузом. Это не наш каталог, а подсказка, где данные уже есть.": "Oq nuqtalar — olimlar allaqachon joylagan ochiq maʼlumotlar toʻplamlari, oʻz universiteti yonida. Bu bizning katalogimiz emas, balki maʼlumotlar qayerda borligiga ishora.",
+"548 найденных наборов учёных": "Olimlarning topilgan 548 ta toʻplami",
+"548 открытых наборов данных, которые учёные вузов ЦА уже опубликовали сами": "MO universitetlari olimlari oʻzlari eʼlon qilgan 548 ta ochiq maʼlumotlar toʻplami",
+"открытых наборов учёных": "ta olimlarning ochiq toʻplami",
+"вузов на карте": "universitet xaritada"
 };

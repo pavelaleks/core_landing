@@ -643,3 +643,17 @@ body.g3-lock{overflow:hidden}
 .state.ok span{color:var(--teal)}.state.wip span{color:var(--amber)}
 .state p{font-size:14.5px;color:#c3cbd4}
 @media (max-width:700px){.state-grid{grid-template-columns:1fr}}
+
+/* built by us vs found at universities */
+.ours-found{display:grid;grid-template-columns:3fr 1.25fr;gap:16px;margin-top:28px}
+.of-k{display:block;font-size:12px;letter-spacing:.06em;color:var(--teal);margin-bottom:6px}
+.of-ours{border-top:1px solid var(--line)}
+.of-ours .of-k{margin-top:16px}
+.strip-3{display:grid;grid-template-columns:repeat(3,1fr)}
+.strip-3 .stat:first-child{padding-left:0}
+.of-found{border:1px dashed rgba(245,165,36,.45);border-radius:var(--r);padding:16px 18px;background:rgba(245,165,36,.04)}
+.of-found .of-k{color:var(--amber)}
+.of-found .stat{padding:4px 0 10px;border:0}
+.of-found p{line-height:1.5}
+@media (max-width:1080px){.ours-found{grid-template-columns:1fr}}
+@media (max-width:700px){.strip-3{grid-template-columns:1fr}.strip-3 .stat{border-left:0;padding-left:0;border-top:1px solid var(--line)}}
