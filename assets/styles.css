@@ -637,3 +637,9 @@ body.g3-lock{overflow:hidden}
 .form>*,.frow>*{min-width:0}
 .form-type button{white-space:normal;line-height:1.25}
 .form select,.form input,.form textarea{width:100%;min-width:0;max-width:100%}
+.state-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0 4px;max-width:880px}
+.state{border:1px solid var(--line2);border-radius:var(--r-sm);padding:14px 16px}
+.state span{display:block;margin-bottom:6px}
+.state.ok span{color:var(--teal)}.state.wip span{color:var(--amber)}
+.state p{font-size:14.5px;color:#c3cbd4}
+@media (max-width:700px){.state-grid{grid-template-columns:1fr}}

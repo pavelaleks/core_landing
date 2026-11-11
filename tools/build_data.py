@@ -25,7 +25,7 @@ for f in gj["features"]:
     p=f["properties"];x,y=f["geometry"]["coordinates"]
     t=p.get("facility_type") or "other"
     tc[t]+=1
-    med.append([round(y,3),round(x,3),t,p.get("readiness_score") or 0,p.get("region_code") or ""])
+    med.append([round(y,3),round(x,3),t,0,p.get("region_code") or ""])  # readiness index is a licensed field: not published
 out["med"]=med; out["medTypes"]=tc
 # sample clinics for table (top readiness, no personal-name flag)
 rows=[]
@@ -33,8 +33,10 @@ with open(f"{D}/uz_medical_facilities/processed/uz_medical_facilities.csv",encod
     for r in csv.DictReader(fh):
         if r["personal_name_flag"]=="True": continue
         rows.append(r)
-rows.sort(key=lambda r:-int(r["readiness_score"] or 0))
-out["medTop"]=[{"id":r["uid"],"name":r["name_en"] or r["name_latin"] or r["name"],"name_ru":r["name_ru"] or r["name"],"type":r["facility_type"],"region":r["region_code"],"spec":r["specialties"].split(";")[:4],"langs":r["site_languages"],"score":int(r["readiness_score"] or 0),"intl":bool(r["intl_signals"])} for r in rows[:12]]
+# public sample: no names, no readiness score, no ranking (the index is a paid field)
+rows=[r for r in rows if r["specialties"] and r["site_languages"]]
+rows.sort(key=lambda r:r["uid"])
+out["medTop"]=[{"type":r["facility_type"],"region":r["region_code"],"spec":r["specialties"].split(";")[:4],"langs":r["site_languages"]} for r in rows[:12]]
 # publications
 yrs=[]
 for r in csv.reader(open(f"{D}/ca_publications/processed/summary/works_by_year.csv",encoding="utf-8-sig")):

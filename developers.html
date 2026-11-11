@@ -58,6 +58,10 @@
     <span class="eyebrow" data-ru="Для разработчиков ИИ">For AI developers</span>
     <h1 class="h1-page" data-ru="Данные Центральной Азии для обучения, проверки и <em>агентов</em>">Central Asian data for training, evaluation and <em>agents</em></h1>
     <p class="sub" data-ru="Тексты, речь и наблюдения на узбекском, казахском, кыргызском, таджикском и каракалпакском из университетов региона — с документами на права, описанием и проверкой экспертов. Ниже — живой каталог, формат данных, API и подключение к агентам.">Text, speech and observations in Uzbek, Kazakh, Kyrgyz, Tajik and Karakalpak from the region's universities — with rights documents, datasheets and expert review. Below: the live catalog, data format, API and agent access.</p>
+    <div class="state-grid">
+      <div class="state ok"><span class="mono small" data-ru="Работает сейчас">Live now</span><p data-ru="Каталог и описания наборов данных, бесплатные образцы, API v0, метаданные Croissant">Catalog and dataset descriptions, free samples, API v0, Croissant metadata</p></div>
+      <div class="state wip"><span class="mono small" data-ru="В разработке">In development</span><p data-ru="Проверка знаний моделей о регионе (бенчмарк), подключение к ИИ-агентам (MCP), кабинет для вузов">Model knowledge test (benchmark), AI-agent access (MCP), the university portal</p></div>
+    </div>
     <div class="hero-ctas left">
       <a href="#catalog" class="btn btn-primary" data-ru="Открыть каталог">Open the catalog</a>
       <a href="index.html#pricing" class="btn btn-ghost" data-ru="Цены и пилот">Pricing &amp; pilot</a>
@@ -89,7 +93,7 @@
           <h3 data-ru="Вузы Центральной Азии">Universities of Central Asia</h3>
           <p data-ru="Единый справочник вузов четырёх стран с постоянными ID CORE. Общий ключ, к которому привязаны все остальные датасеты, сайт и API.">One registry of higher-ed institutions across four countries with persistent CORE IDs — the join key for every other dataset, the site and the API.</p>
           <dl class="kv">
-            <div><dt data-ru="Записей">Records</dt><dd>428</dd></div>
+            <div><dt data-ru="Записей">Records</dt><dd data-ru="428, из них 397 вузов">428, of them 397 universities</dd></div>
             <div><dt data-ru="Языки названий">Name languages</dt><dd>7</dd></div>
             <div><dt data-ru="Лицензия">License</dt><dd>CC0-1.0</dd></div>
             <div><dt data-ru="Перс. данные">PII</dt><dd data-ru="нет">none</dd></div>
@@ -129,8 +133,8 @@
           <a href="#contact" class="link-cta" data-form="med" data-ru="Подборки клиник для медтуризма — по запросу →">Clinic shortlists for medical tourism — on request →</a>
         </div>
         <div class="card ds-table">
-          <div class="table-tools"><span class="small muted" data-ru="Топ-12 по индексу готовности к медтуризму">Top 12 by medical-tourism readiness</span></div>
-          <div class="tscroll"><table id="medTable"><thead><tr><th>ID</th><th data-ru="Учреждение">Facility</th><th data-ru="Регион">Region</th><th data-ru="Направления">Specialties</th><th class="r" data-ru="Индекс">Score</th></tr></thead><tbody></tbody></table></div>
+          <div class="table-tools"><span class="small muted" data-ru="Пример записей. Названия клиник и индекс готовности — только по лицензии.">Sample records. Clinic names and the readiness index are available under license only.</span></div>
+          <div class="tscroll"><table id="medTable"><thead><tr><th data-ru="Тип">Type</th><th data-ru="Регион">Region</th><th data-ru="Направления">Specialties</th><th data-ru="Языки сайта">Site languages</th></tr></thead><tbody></tbody></table></div>
         </div>
       </div>
     </div>
@@ -201,7 +205,7 @@
     <div class="sec-head">
       <span class="eyebrow" data-ru="Для ИИ-команд и бизнеса">For AI teams &amp; business</span>
       <h2 data-ru="Данные, которые можно отдать юристам на подпись">Data your legal team will actually sign off on</h2>
-      <p class="sub" data-ru="Мы продаём не «сырые» записи, а готовый результат: очистку, разметку экспертами, юридическую чистоту и обновления.">We don't sell raw rows. We sell outcomes: cleaning, expert annotation, legal clarity and continuous updates.</p>
+      <p class="sub" data-ru="Каждый набор — с описанием, документами на права и проверкой. Ниже — что можно получить.">Every dataset comes with a description, rights paperwork and checks. Below is what you can get.</p>
     </div>
     <div class="uc-grid">
       <article class="card uc">
@@ -262,10 +266,10 @@ curl https://pavelaleks.github.io/core_landing/api/v0/datasets/<span class="s">u
 {
   <span class="k">"dataset"</span>: <span class="s">"CORE-DS-0002"</span>, <span class="k">"license"</span>: <span class="s">"ODbL-1.0"</span>, <span class="k">"rows"</span>: <span class="n">50</span>,
   <span class="k">"records"</span>: [{
-    <span class="k">"uid"</span>: <span class="s">"UZM-3987A2247B"</span>, <span class="k">"facility_type"</span>: <span class="s">"hospital"</span>,
-    <span class="k">"region_code"</span>: <span class="s">"UZ-TK"</span>, <span class="k">"readiness_score"</span>: <span class="n">91</span>,
-    <span class="k">"site_languages"</span>: <span class="s">"en;ru;uz"</span>,
-    <span class="k">"source_url"</span>: <span class="s">"https://www.openstreetmap.org/way/406552830"</span>
+    <span class="k">"uid"</span>: <span class="s">"UZM-…"</span>, <span class="k">"facility_type"</span>: <span class="s">"clinic"</span>,
+    <span class="k">"region_code"</span>: <span class="s">"UZ-SA"</span>, <span class="k">"specialties"</span>: <span class="s">"диагностика;стоматология"</span>,
+    <span class="k">"site_languages"</span>: <span class="s">"ru;uz"</span>,
+    <span class="k">"source_url"</span>: <span class="s">"https://www.openstreetmap.org/…"</span>
   }, …]
 }
 
@@ -289,10 +293,10 @@ curl …/api/v0/datasets/<span class="s">universities</span>/croissant.json</cod
         <li data-ru="Только лицензированные данные: агент не видит лишнего">Licensed data only — the agent sees nothing else</li>
         <li data-ru="Каждый факт — с ID записи и ссылкой на источник">Every fact comes with a record ID and a source link</li>
         <li data-ru="Поиск по графу: вузы, направления, датасеты, регионы">Graph search: universities, research areas, datasets, regions</li>
-        <li data-ru="Работает с Claude, ChatGPT, Cursor и любым клиентом с поддержкой MCP">Works with Claude, ChatGPT, Cursor and any MCP-capable client</li>
+        <li data-ru="Будет работать с любым клиентом, который поддерживает MCP: Claude, ChatGPT, Cursor">Will work with any MCP-capable client: Claude, ChatGPT, Cursor</li>
       </ul>
       <div class="code mcp-conf">
-        <div class="code-head"><span class="dots"><i></i><i></i><i></i></span><span class="mono small muted">mcp.json · preview</span></div>
+        <div class="code-head"><span class="dots"><i></i><i></i><i></i></span><span class="mono small muted" data-ru="mcp.json · макет, адрес появится при запуске">mcp.json · mock-up, the address arrives at launch</span></div>
 <pre><code>{ <span class="k">"mcpServers"</span>: { <span class="k">"core"</span>: {
     <span class="k">"url"</span>: <span class="s">"https://mcp.core-data.example/v1"</span>,
     <span class="k">"headers"</span>: { <span class="k">"Authorization"</span>: <span class="s">"Bearer $CORE_KEY"</span> }
@@ -346,7 +350,7 @@ curl …/api/v0/datasets/<span class="s">universities</span>/croissant.json</cod
   {"start": 210, "end": 245, "label": "METHOD", "link": "maxent"},
   {"start": 378, "end": 403, "label": "SCENARIO", "link": "ipcc:SSP3-7.0"}
  ],
- "review": {"annotators": 2, "expert": "zoology", "status": "needs_place_check"},
+ "review": {"status": "example", "expert_review": "after_agreement"},
  "provenance": ["openalex", "zenodo"], "pii": "none"}</code></pre>
       </div>
       <aside class="anno-side">
@@ -376,7 +380,7 @@ curl …/api/v0/datasets/<span class="s">universities</span>/croissant.json</cod
             <li data-ru="Лицензия CC-BY: коммерческое использование с атрибуцией">CC-BY: commercial use with attribution</li>
             <li data-ru="Основание: открытая лицензия, Zenodo">Basis: open license, Zenodo</li>
             <li data-ru="Персональных данных нет; имена авторов в каталог не выводятся">No PII; author names kept out of the catalog</li>
-            <li class="flag" data-ru="«Южный Узбекистан» → какой регион? Отправлено эксперту-зоологу">“Southern Uzbekistan” → which region? Sent to a zoology expert</li>
+            <li class="flag" data-ru="«Южный Узбекистан» → какой регион? Такие вопросы решает эксперт вуза — после подписания договора">“Southern Uzbekistan” → which region? Questions like this go to a university expert once an agreement is signed</li>
           </ul>
         </div>
         <div class="as as4">
@@ -398,7 +402,7 @@ curl …/api/v0/datasets/<span class="s">universities</span>/croissant.json</cod
       <p class="sub" data-ru="300–500 вопросов с эталонными ответами экспертов вузов: история, право, наследие, география, экономика и реалии региона на узбекском, казахском, русском и английском. Мы не дублируем лингвистические тесты — мы проверяем знание контекста.">300–500 questions with reference answers from university experts — regional history, law, heritage, geography, economy and realia, in Uzbek, Kazakh, Russian and English. Not another grammar test: a test of contextual knowledge.</p>
       <ul class="checks">
         <li data-ru="Прогон по ведущим мировым и локальным моделям">Runs across leading global and local models</li>
-        <li data-ru="Открытая публикация методики и препринт">Open methodology and a preprint</li>
+        <li data-ru="Планируем открыть методику и выпустить препринт">We plan to publish the methodology and a preprint</li>
         <li data-ru="Закрытый тестовый набор — защита от утечки в обучение">Held-out private test split — no training-set leakage</li>
         <li data-ru="Ранний доступ к результатам для участников листа ожидания">Early access to results for waitlist members</li>
       </ul>
@@ -448,11 +452,11 @@ curl …/api/v0/datasets/<span class="s">universities</span>/croissant.json</cod
       </div>
       <label class="f-buyer"><span data-ru="Задача">Use case</span>
         <select name="usecase">
-          <option data-ru="Дообучение LLM на языках ЦА">LLM fine-tuning for CA languages</option>
-          <option data-ru="Оценка / бенчмарк">Evaluation / benchmark</option>
-          <option data-ru="RAG / агенты / API">RAG / agents / API</option>
+          <option data-ru="Обучение ИИ на языках региона">Training AI on the region's languages</option>
+          <option data-ru="Проверка знаний модели о регионе">Testing what a model knows about the region</option>
+          <option data-ru="Данные для ассистента или агента">Data for an assistant or agent</option>
           <option data-ru="Медтуризм / рынок здравоохранения">Medical tourism / healthcare market</option>
-          <option data-ru="Научная аналитика">Research intelligence</option>
+          <option data-ru="Аналитика науки и вузов">Research and university analytics</option>
           <option data-ru="Датасет под заказ">Custom dataset</option>
         </select>
       </label>

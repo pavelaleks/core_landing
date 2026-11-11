@@ -30,9 +30,9 @@ EDITORIAL = {
     "uz_medical_facilities": {
         "description_en": "2,982 medical facilities in Uzbekistan (excluding pharmacies) across all 14 regions: type, ownership, ISO 3166-2 region, coordinates, specialties, website languages and a 0–100 medical-tourism readiness index.",
         "description_ru": "2 982 медучреждения Узбекистана (без аптек) во всех 14 регионах: тип, форма собственности, регион ISO 3166-2, координаты, специализации, языки сайта и индекс готовности к медтуризму 0–100.",
-        "adds_en": ["Deduplicated and normalized OpenStreetMap records", "Website checks: languages, international-patient signals, accreditation", "Medical-tourism readiness index 0–100", "Regular refresh under subscription"],
-        "adds_ru": ["Записи OpenStreetMap без дублей и в едином формате", "Проверка сайтов: языки, работа с иностранцами, аккредитация", "Индекс готовности к медтуризму 0–100", "Регулярные обновления по подписке"],
-        "withheld": ["phones", "website", "email", "telegram", "whatsapp", "instagram", "facebook", "services_site", "intl_signals", "accreditation", "prices_on_site", "site_ok", "site_note", "website_final", "site_phones", "beds", "emergency", "opening_hours", "wheelchair", "license_no", "inn"],
+        "adds_en": ["Deduplicated and normalized OpenStreetMap records", "Website checks: languages, international-patient signals, accreditation", "Medical-tourism readiness index 0–100 (licensed)", "Regular refresh under subscription"],
+        "adds_ru": ["Записи OpenStreetMap без дублей и в едином формате", "Проверка сайтов: языки, работа с иностранцами, аккредитация", "Индекс готовности к медтуризму 0–100 (по лицензии)", "Регулярные обновления по подписке"],
+        "withheld": ["readiness_score", "phones", "website", "email", "telegram", "whatsapp", "instagram", "facebook", "services_site", "intl_signals", "accreditation", "prices_on_site", "site_ok", "site_note", "website_final", "site_phones", "beds", "emergency", "opening_hours", "wheelchair", "license_no", "inn"],
     },
     "ca_publications": {
         "description_en": "482,572 research works involving 299 universities in UZ, KZ, KG and TJ from OpenAlex: metadata, topics, venues, open-access status, funders and co-authoring countries. Every work is linked to CORE university IDs.",
@@ -111,12 +111,12 @@ for line in open(os.path.join(DS, "universities", "processed", "universities.jso
 write_csv(os.path.join(OUT, "samples", "universities.csv"), uf, urows)
 
 # medical: 50 records, public fields only, no records flagged with a personal name
-mf = ["uid", "name", "name_ru", "name_en", "name_latin", "facility_type", "ownership", "region_code", "district", "city", "lat", "lon", "specialties", "site_languages", "readiness_score", "source_url", "osm_edited"]
+mf = ["uid", "name", "name_ru", "name_en", "name_latin", "facility_type", "ownership", "region_code", "district", "city", "lat", "lon", "specialties", "site_languages", "source_url", "osm_edited"]
 mrows = []
 with open(os.path.join(DS, "uz_medical_facilities", "processed", "uz_medical_facilities.csv"), encoding="utf-8-sig") as f:
     rows = [r for r in csv.DictReader(f) if r.get("personal_name_flag") != "True"]
-rows.sort(key=lambda r: (-int(r["readiness_score"] or 0), r["uid"]))
-mrows = rows[:25] + rows[len(rows) // 2: len(rows) // 2 + 25]  # top of the index + a typical slice
+rows.sort(key=lambda r: r["uid"])
+mrows = rows[:50]  # neutral slice by ID — not ranked by the (licensed) readiness index
 write_csv(os.path.join(OUT, "samples", "uz_medical_facilities.csv"), mf, mrows)
 
 # publications: 200 works, CC0 metadata only
@@ -137,7 +137,6 @@ for fn in ("lat", "lon"):
     types["universities"][fn] = "number"; types["uz_medical_facilities"][fn] = "number"
 for fn in ("founded", "works_count", "cited_by_count", "h_index"):
     types["universities"][fn] = "integer"
-types["uz_medical_facilities"]["readiness_score"] = "integer"
 for fn in ("publication_year", "is_oa", "cited_by_count", "n_authors", "is_international"):
     types["ca_publications"][fn] = "integer"
 

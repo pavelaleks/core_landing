@@ -69,7 +69,7 @@
    "name": "sample-csv",
    "contentUrl": "https://pavelaleks.github.io/core_landing/api/v0/datasets/uz_medical_facilities/sample.csv",
    "encodingFormat": "text/csv",
-   "sha256": "5a8dcd5a91343815659901bf0a542ee5034ab6f3be8cc3c8df1a0d5528dbaed3"
+   "sha256": "f4b84c2958f1f9972419453eabbff9d8820ce957df7c8b5b1a4e322afccc73c6"
   }
  ],
  "recordSet": [
@@ -285,21 +285,6 @@
       },
       "extract": {
        "column": "site_languages"
-      }
-     }
-    },
-    {
-     "@type": "cr:Field",
-     "@id": "uz_medical_facilities/readiness_score",
-     "name": "readiness_score",
-     "description": "Medical-tourism readiness index, 0–100",
-     "dataType": "sc:Integer",
-     "source": {
-      "fileObject": {
-       "@id": "sample-csv"
-      },
-      "extract": {
-       "column": "readiness_score"
       }
      }
     },

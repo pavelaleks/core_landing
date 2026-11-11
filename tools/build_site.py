@@ -204,6 +204,15 @@ def dataset_page(ds, nav, footer):
     head_row = "".join("<th>%s</th>" % esc(c) for c in cols)
     body_rows = "".join("<tr>%s</tr>" % "".join("<td>%s</td>" % esc((str(r.get(c)) if r.get(c) is not None else "—")[:60]) for c in cols) for r in rows)
     api = "../api/v0/datasets/" + s
+    is_open = ds["license"] == "CC0-1.0"
+    if is_open:
+        get_lead = '<p class="small muted" data-ru="Весь справочник открыт по лицензии CC0: скачивайте и используйте бесплатно, в том числе в коммерческих продуктах. Платно — только регулярные обновления и интеграция.">The whole registry is open under CC0: download and use it for free, commercial products included. Only regular updates and integration are paid.</p>'
+        csv_label = '<b data-ru="Весь справочник CSV">Full registry CSV</b>'
+        cta = '<a href="../index.html#contact" class="btn btn-primary btn-block" data-ru="Обсудить обновления и интеграцию">Discuss updates and integration</a>'
+    else:
+        get_lead = '<p class="small muted" data-ru="Открытый образец и метаданные — бесплатно, без регистрации. Полный датасет, обновления и API — по лицензии.">Open sample and metadata — free, no sign-up. Full dataset, updates and API — under license.</p>'
+        csv_label = '<b data-ru="Образец CSV">Sample CSV</b>'
+        cta = '<a href="../index.html#contact" class="btn btn-primary btn-block" data-ru="Запросить полный датасет">Request the full dataset</a>'
     page = f'''<!doctype html>
 <html lang="en">
 <head>
@@ -254,14 +263,14 @@ def dataset_page(ds, nav, footer):
       </div>
       <div class="card ds-get">
         <h3 data-ru="Получить данные">Get the data</h3>
-        <p class="small muted" data-ru="Открытый образец и метаданные — бесплатно, без регистрации. Полный датасет, обновления и API — по лицензии.">Open sample and metadata — free, no sign-up. Full dataset, updates and API — under license.</p>
+        {get_lead}
         <div class="dl-list">
-          <a class="dl" href="{api}/sample.csv" download><b data-ru="Образец CSV">Sample CSV</b><span class="mono small">{ds["sample"]["rows"]} rows</span></a>
+          <a class="dl" href="{api}/sample.csv" download>{csv_label}<span class="mono small">{ds["sample"]["rows"]} rows</span></a>
           <a class="dl" href="{api}/sample.json"><b data-ru="Образец JSON">Sample JSON</b><span class="mono small">api/v0</span></a>
           <a class="dl" href="{api}/croissant.json"><b>Croissant</b><span class="mono small">MLCommons 1.0</span></a>
           <a class="dl" href="{api}.json"><b data-ru="Карточка API">API card</b><span class="mono small">JSON</span></a>
         </div>
-        <a href="../index.html#contact" class="btn btn-primary btn-block" data-ru="Запросить полный датасет">Request the full dataset</a>
+        {cta}
       </div>
     </div>
 

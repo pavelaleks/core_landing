@@ -215,8 +215,8 @@
       var nMed = Math.floor(D.med.length * progress);
       for (var i = 0; i < nMed; i++) {
         var m = D.med[i], q = P(m[1], m[0]);
-        ctx.fillStyle = m[3] >= 45 ? "rgba(255,190,70,1)" : "rgba(245,165,36,0.7)";
-        var r = m[3] >= 45 ? 2.4 : 1.3;
+        ctx.fillStyle = "rgba(245,165,36,0.75)";
+        var r = 1.5;
         ctx.beginPath(); ctx.arc(q[0], q[1], r, 0, 6.283); ctx.fill();
         mapPts.push({ x: q[0], y: q[1], t: "med", d: m });
       }
@@ -260,7 +260,7 @@
         h = "<b>" + esc(uniName(u)) + "</b>" + esc(u[5] || "") + " · " + pick(COUNTRY[u[2]]) + "<br><span class='mono' style='color:var(--teal)'>" + u[0] + "</span> · " + nf(u[6]) + " " + T("works", "работ");
       } else {
         var m = best.d;
-        h = "<b>" + pick(MEDTYPE[m[2]] || MEDTYPE.other) + "</b>" + pick(REGION[m[4]] || ["", ""]) + "<br>" + T("Med-tourism readiness", "Готовность к медтуризму") + ": <span style='color:var(--amber)'>" + m[3] + "/100</span>";
+        h = "<b>" + pick(MEDTYPE[m[2]] || MEDTYPE.other) + "</b>" + pick(REGION[m[4]] || ["", ""]);
       }
       tip.innerHTML = h; tip.hidden = false;
       var tx = best.x + 16, ty = best.y + 18;
@@ -370,7 +370,7 @@
   function renderMed() {
     $("#medTable tbody").innerHTML = (D.medTop || []).map(function (m) {
       var spec = m.spec.map(function (s) { return lang === "en" ? (SPEC[s] || s) : T(s, s); }).join(", ");
-      return "<tr><td><span class='id'>" + esc(m.id) + "</span></td><td>" + esc(lang === "en" ? m.name : (m.name_ru || m.name)) + (m.intl ? " <span class='tag t-teal'>intl</span>" : "") + "</td><td class='muted'>" + esc(pick(REGION[m.region])) + "</td><td class='muted'>" + esc(spec) + "</td><td class='r'><span class='score'>" + m.score + "</span></td></tr>";
+      return "<tr><td>" + esc(pick(MEDTYPE[m.type] || MEDTYPE.other)) + "</td><td class='muted'>" + esc(pick(REGION[m.region])) + "</td><td class='muted'>" + esc(spec) + "</td><td class='mono small'>" + esc((m.langs || "").replace(/;/g, " · ")) + "</td></tr>";
     }).join("");
     var mt = D.medTypes || {}, other = 0, rows = [];
     Object.keys(mt).forEach(function (k) { if (MEDTYPE[k] && k !== "other") rows.push([pick(MEDTYPE[k]), mt[k]]); else other += mt[k]; });

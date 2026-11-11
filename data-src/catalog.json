@@ -171,16 +171,17 @@
    "adds_en": [
     "Deduplicated and normalized OpenStreetMap records",
     "Website checks: languages, international-patient signals, accreditation",
-    "Medical-tourism readiness index 0–100",
+    "Medical-tourism readiness index 0–100 (licensed)",
     "Regular refresh under subscription"
    ],
    "adds_ru": [
     "Записи OpenStreetMap без дублей и в едином формате",
     "Проверка сайтов: языки, работа с иностранцами, аккредитация",
-    "Индекс готовности к медтуризму 0–100",
+    "Индекс готовности к медтуризму 0–100 (по лицензии)",
     "Регулярные обновления по подписке"
    ],
    "withheld_fields": [
+    "readiness_score",
     "phones",
     "website",
     "email",
@@ -206,7 +207,7 @@
    "sample": {
     "file": "samples/uz_medical_facilities.csv",
     "rows": 50,
-    "sha256": "5a8dcd5a91343815659901bf0a542ee5034ab6f3be8cc3c8df1a0d5528dbaed3"
+    "sha256": "f4b84c2958f1f9972419453eabbff9d8820ce957df7c8b5b1a4e322afccc73c6"
    },
    "fields": [
     {
@@ -278,11 +279,6 @@
      "name": "site_languages",
      "type": "string",
      "description": "Languages of the facility website"
-    },
-    {
-     "name": "readiness_score",
-     "type": "integer",
-     "description": "Medical-tourism readiness index, 0–100"
     },
     {
      "name": "source_url",
