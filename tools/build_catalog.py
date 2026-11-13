@@ -42,6 +42,15 @@ items.append({"t": "layer", "id": "regions", "title": {"en": "Central Asia's 48 
               "desc": {"en": "Official population structure joined with universities, research, clinics and survey results by ISO region code.", "ru": "Официальная структура населения, связанная с вузами, наукой, клиниками и опросами по коду региона ISO.", "uz": "Rasmiy aholi tarkibi universitetlar, ilm-fan, klinikalar va soʻrovlar bilan ISO hudud kodi orqali bogʻlangan."},
               "org": {"en": "CORE", "ru": "CORE"}, "c": "UZ;KZ;KG;TJ", "f": "Demography", "lic": "CC-BY-IGO + CORE", "st": "buy", "n": len(RG["regions"]), "href": "regions.html"})
 
+# Russian / national names and acronyms from the universities registry, so a search
+# for "Ургенч" or "НУУз" finds a university listed under its English name.
+UNI_ALT = {}
+for u in json.load(open(os.path.join(ROOT, "api", "v0", "universities.json"), encoding="utf-8"))["universities"]:
+    alt = " ".join(x for x in (u.get("name_ru"), u.get("name_national"), u.get("acronyms")) if x)
+    for k in (u.get("name"), u.get("name_en")):
+        if k and alt:
+            UNI_ALT[k.lower()] = alt
+
 D = jsvar("assets/data.js")
 for r in D["researchDatasets"]:
     if r.get("k") != "data":
@@ -49,7 +58,9 @@ for r in D["researchDatasets"]:
     items.append({"t": "open", "id": r["w"], "title": {"en": r["t"]}, "org": {"en": r["u"]}, "c": r["c"], "f": r["f"], "lic": r["lic"] or "", "st": "open",
                   "y": r["y"], "fm": r.get("fm", ""), "href": r["doi"], "ca": 1 if r.get("ca") else 0})
 
-out = "window.CORE_CATALOG=" + json.dumps(items, ensure_ascii=False, separators=(",", ":")) + ";"
+orgs = sorted({i["org"]["en"] for i in items if i["org"]["en"].lower() in UNI_ALT})
+out = ("window.CORE_CATALOG=" + json.dumps(items, ensure_ascii=False, separators=(",", ":")) + ";\n"
+       "window.CORE_UNI_ALT=" + json.dumps({o: UNI_ALT[o.lower()] for o in orgs}, ensure_ascii=False, separators=(",", ":")) + ";")
 open(os.path.join(ROOT, "assets", "catalog-index.js"), "w", encoding="utf-8").write(out)
 from collections import Counter
 print(len(items), Counter(i["t"] for i in items), round(len(out) / 1024), "KB")

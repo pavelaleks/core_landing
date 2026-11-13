@@ -950,3 +950,17 @@ html.has-subnav{scroll-padding-top:136px}
 .foot-in{grid-template-columns:minmax(240px,1fr) minmax(0,2fr)}
 .foot-links{justify-content:flex-end;gap:12px 22px}
 @media (max-width:860px){.foot-in{grid-template-columns:minmax(0,1fr)}.foot-links{justify-content:flex-start}}
+/* catalog: university picker */
+.cat-uni{position:relative;display:flex;align-items:center;gap:16px;margin-bottom:14px}
+.cat-uni input{flex:1;min-width:0;font:inherit;font-size:16px;padding:12px 16px;border-radius:12px;border:1px solid var(--line2);background:var(--surface);color:var(--text)}
+.cat-uni input:focus{outline:0;border-color:var(--teal);box-shadow:0 0 0 3px rgba(var(--teal-rgb),.15)}
+.cat-uni-n{flex:none;color:var(--muted);font-size:14px}
+.cat-uni-list{position:absolute;z-index:15;left:0;right:0;top:calc(100% + 6px);padding:6px;max-height:340px;overflow:auto}
+.cat-uni-opt{display:flex;width:100%;justify-content:space-between;align-items:center;gap:12px;padding:10px 12px;border-radius:8px;text-align:left;font-size:15px;color:var(--text)}
+.cat-uni-opt small{flex:none;color:var(--muted);font-size:13px}
+.cat-uni-opt:hover,.cat-uni-opt.hl{background:rgba(var(--ink),.06)}
+.cat-uni-opt.on{color:var(--teal);font-weight:500}
+.cat-uni-none{padding:10px 12px;color:var(--muted);font-size:15px}
+.cat-org{font:inherit;color:inherit;padding:0;text-decoration:underline;text-decoration-color:var(--line2);text-underline-offset:3px;cursor:pointer}
+.cat-org:hover{color:var(--teal);text-decoration-color:currentColor}
+@media (max-width:600px){.cat-uni{flex-direction:column;align-items:stretch;gap:6px}.cat-uni-n{order:-1}}
