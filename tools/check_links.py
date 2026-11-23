@@ -9,7 +9,8 @@ import re
 import sys
 
 bad = {}
-files = [f for f in glob.glob("**/*.html", recursive=True) if not f.startswith(("src/", "hf/", ".github/"))]
+files = [f.replace(os.sep, "/") for f in glob.glob("**/*.html", recursive=True)]
+files = [f for f in files if not f.startswith(("src/", "hf/", ".github/"))]
 for f in files:
     text = open(f, encoding="utf-8", errors="ignore").read()
     base = posixpath.dirname(f)

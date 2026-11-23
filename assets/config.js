@@ -1,5 +1,10 @@
 /* CORE landing — deployment settings. Fill in before going live. */
 window.CORE_CONFIG = {
+  // Browser-safe configuration. Administrative keys must never be added here.
+  supabase: {
+    url: "https://jjwzntypllcumagzbdcn.supabase.co",
+    publishableKey: "sb_publishable_hKd22un9iwyXlxZhGpR7iw_7t7NqeqH"
+  },
   // POST endpoint that accepts JSON leads (Formspree, Make/Zapier webhook, your own API, Telegram bot relay…).
   // Example: "https://formspree.io/f/xxxxxxx"
   // FormSubmit delivers each lead straight to the inbox. The very first submission sends an

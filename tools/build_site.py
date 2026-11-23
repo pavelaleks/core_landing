@@ -35,10 +35,16 @@ RD = json.load(open(os.path.join(ROOT, "data-src", "research_datasets.json"), en
 
 META = {
     "index.html": {
-        "title": {"en": "CORE — trusted data on Central Asia from the region's universities", "ru": "CORE — данные о Центральной Азии, которым можно доверять, из вузов региона", "uz": "CORE — mintaqa universitetlaridan Markaziy Osiyo haqidagi ishonchli maʼlumotlar"},
-        "desc": {"en": "Research data from Central Asian universities — cleaned, documented and with the rights to use it. For AI developers, companies and public programmes. Universities join for free and keep up to 70% of the revenue.",
-                 "ru": "Научные данные вузов Центральной Азии — очищенные, описанные и с правами на использование. Для разработчиков ИИ, компаний и госпрограмм. Вузы участвуют бесплатно и получают до 70% дохода.",
-                 "uz": "Markaziy Osiyo universitetlarining ilmiy maʼlumotlari — tozalangan, tavsiflangan va foydalanish huquqi bilan. SI ishlab chiquvchilari, kompaniyalar va davlat dasturlari uchun. Universitetlar bepul ishtirok etadi va daromadning 70% gachasini oladi."},
+        "title": {
+            "en": "CORE — a marketplace for research data",
+            "ru": "CORE — маркетплейс научных данных",
+            "uz": "CORE — ilmiy maʼlumotlar marketpleysi"
+        },
+        "desc": {
+            "en": "Bring university datasets and repositories together for new research, business services and grant applications. Explore the catalog and discuss collaboration.",
+            "ru": "Датасеты и репозитории университетов для новых исследований, сервисов для бизнеса и грантовых заявок. Каталог данных и сотрудничество с CORE.",
+            "uz": "Universitetlarning maʼlumotlar toʻplamlari va repozitoriylari — yangi tadqiqotlar, biznes xizmatlari va grant arizalari uchun. Maʼlumotlar katalogi va CORE bilan hamkorlik."
+        }
     },
     "developers.html": {
         "title": {"en": "CORE for AI developers — catalog, data format, API, agents", "ru": "CORE для разработчиков ИИ — каталог, формат данных, API, агенты", "uz": "SI ishlab chiquvchilari uchun CORE — katalog, maʼlumotlar formati, API, agentlar"},
@@ -47,10 +53,16 @@ META = {
                  "uz": "Mintaqa universitetlaridan mintaqa haqidagi bilimlar, ilmiy maʼlumotlar va Markaziy Osiyo tillaridagi matnlar, huquqiy hujjatlari bilan: katalog, namunalar, API, Croissant metamaʼlumotlari va agentlarga ulanish."},
     },
     "catalog.html": {
-        "title": {"en": "CORE — Central Asia data catalog", "ru": "CORE — каталог данных Центральной Азии", "uz": "CORE — Markaziy Osiyo maʼlumotlari katalogi"},
-        "desc": {"en": "Search CORE databases, datasets prepared by CORE, the 48-region layer and 405 checked open datasets by Central Asian scholars.",
-                 "ru": "Поиск по базам CORE, наборам, подготовленным CORE, слою 48 регионов и 405 проверенным открытым наборам учёных Центральной Азии.",
-                 "uz": "CORE bazalari, CORE tayyorlagan toʻplamlar, 48 hudud qatlami va Markaziy Osiyo olimlarining 405 ta tekshirilgan ochiq toʻplami boʻyicha qidiruv."},
+        "title": {
+            "en": "CORE — research data catalog",
+            "ru": "CORE — каталог научных данных",
+            "uz": "CORE — ilmiy maʼlumotlar katalogi"
+        },
+        "desc": {
+            "en": "Find research datasets by topic, country and university. Explore sources and save suitable datasets to your partner account.",
+            "ru": "Находите научные данные по теме, стране и университету. Изучайте источники и сохраняйте подходящие датасеты в избранное.",
+            "uz": "Ilmiy maʼlumotlarni mavzu, mamlakat va universitet boʻyicha toping. Manbalarni oʻrganing va mos toʻplamlarni saralanganlarga saqlang."
+        }
     },
     "how.html": {
         "title": {"en": "How CORE works — from a university archive to an API", "ru": "Как работает CORE — от архива вуза до API", "uz": "CORE qanday ishlaydi — universitet arxividan API gacha"},
@@ -328,7 +340,10 @@ def dataset_page(ds, nav, footer):
 {footer}
 <script src="../assets/config.js"></script>
 <script src="../assets/i18n-uz.js"></script>
+<script src="../assets/account-store.js"></script>
 <script src="../assets/app.js"></script>
+<script src="../assets/vendor/supabase-2.119.2.js"></script>
+<script type="module" src="../assets/account-session.js"></script>
 </body>
 </html>
 '''
@@ -428,14 +443,57 @@ def page_url(lang, page_path):
     return BASE + p
 
 _VER = {}
+def text_asset_hash(path):
+    """Use LF bytes for text assets so Windows and Linux generate the same URLs."""
+    with open(path, "rb") as source:
+        content = source.read().replace(b"\r\n", b"\n")
+    return hashlib.sha1(content).hexdigest()[:8]
+
 def asset_version(m):
     """Append ?v=<hash of the file> to local assets so a deploy is never hidden by browser cache."""
     attr, url = m.group(1), m.group(2)
     rel = url.split("assets/", 1)[1]
     if rel not in _VER:
         fp = os.path.join(ROOT, "assets", rel)
-        _VER[rel] = hashlib.sha1(open(fp, "rb").read()).hexdigest()[:8] if os.path.exists(fp) else ""
+        _VER[rel] = text_asset_hash(fp) if os.path.exists(fp) else ""
     return '%s="%s%s"' % (attr, url, ("?v=" + _VER[rel]) if _VER[rel] else "")
+
+def version_modules(text, page_dir):
+    """Keep native module imports fresh using the existing content-hash mechanism."""
+    text = re.sub(r'<script type="importmap" data-core-modules>.*?</script>\n?', "", text, flags=re.S)
+    pattern = r'<script type="module" src="([^"]+)"></script>'
+    maintained = ("assets/catalog-page.js", "assets/account-session.js", "app/app.js")
+    def target_of(entry):
+        return posixpath.normpath(posixpath.join(page_dir, entry.group(1).split("?", 1)[0]))
+    entries = [entry for entry in re.finditer(pattern, text) if target_of(entry) in maintained]
+    if not entries:
+        return text
+    imports = {}
+    for directory, _, filenames in os.walk(os.path.join(ROOT, "assets", "js")):
+        for filename in sorted(filenames):
+            if not filename.endswith(".js"):
+                continue
+            full = os.path.join(directory, filename)
+            relative = os.path.relpath(full, ROOT).replace(os.sep, "/")
+            url = posixpath.relpath(relative, page_dir or ".")
+            if not url.startswith("."):
+                url = "./" + url
+            version = text_asset_hash(full)
+            imports[url] = url + "?v=" + version
+    mapping = '<script type="importmap" data-core-modules>' + json.dumps(
+        {"imports": imports}, ensure_ascii=False, sort_keys=True, separators=(",", ":")
+    ) + "</script>\n"
+    def version_entry(entry):
+        target = target_of(entry)
+        if target not in maintained:
+            return entry.group(0)
+        src = entry.group(1).split("?", 1)[0]
+        version = text_asset_hash(os.path.join(ROOT, target))
+        return '<script type="module" src="' + src + "?v=" + version + '"></script>'
+    start = entries[0].start()
+    text = re.sub(pattern, version_entry, text)
+    return text[:start] + mapping + text[start:]
+
 
 def finalize(text, lang, page_path, meta):
     text = re.sub(r'\b(src|href)="((?:\.\./)*assets/[^"?#]+\.(?:js|css))"', asset_version, text)
@@ -449,6 +507,8 @@ def finalize(text, lang, page_path, meta):
     text = re.sub(r'<meta property="og:url" content="[^"]*">', '<meta property="og:url" content="%s">' % page_url(lang, page_path), text)
     if meta:
         t, d = meta["title"][lang], meta["desc"][lang]
+        if page_path in ("index.html", "catalog.html"):
+            text = re.sub(r'<meta property="og:title" content="[^"]*">', '<meta property="og:title" content="%s">' % esc(t), text, count=1)
         text = re.sub(r"<title>.*?</title>", "<title>%s</title>" % esc(t), text, count=1, flags=re.S)
         text = re.sub(r'<meta name="description" content="[^"]*">', '<meta name="description" content="%s">' % esc(d), text, count=1)
         text = re.sub(r'<meta property="og:description" content="[^"]*">', '<meta property="og:description" content="%s">' % esc(d), text, count=1)
@@ -457,7 +517,8 @@ def finalize(text, lang, page_path, meta):
         title = T(lang, ds["title_en"], ds["title_ru"])
         text = re.sub(r"<title>.*?</title>", "<title>%s — %s · CORE</title>" % (esc(title), esc(ds["id"])), text, count=1, flags=re.S)
         text = re.sub(r'<meta name="description" content="[^"]*">', '<meta name="description" content="%s">' % esc(T(lang, ds["description_en"], ds["description_ru"])), text, count=1)
-    return text
+    published_path = page_path if lang == "en" else lang + "/" + page_path
+    return version_modules(text, posixpath.dirname(published_path))
 
 
 # ================================================================== Hugging Face packages
@@ -568,6 +629,12 @@ def build():
         emit(l + "/app/index.html", '<!doctype html><meta charset="utf-8"><meta name="robots" content="noindex">'
              '<title>CORE</title><script>location.replace("../../app/index.html" + location.hash)</script>'
              '<a href="../../app/index.html">CORE</a>')
+    with open(os.path.join(ROOT, "app", "index.html"), encoding="utf-8") as source:
+        app_index = source.read()
+    app_index = re.sub(r'\b(src|href)="((?:\.\./)*assets/[^"?#]+\.(?:js|css))(?:\?[^\"]*)?"', asset_version, app_index)
+    css_version = text_asset_hash(os.path.join(ROOT, "app", "app.css"))
+    app_index = re.sub(r'href="app\.css(?:\?[^\"]*)?"', 'href="app.css?v=' + css_version + '"', app_index)
+    emit("app/index.html", version_modules(app_index, "app"))
     urls = [page_url(l, p) for p in pages for l in LANGS]
     emit("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
          + "".join("  <url><loc>%s</loc></url>\n" % u for u in urls + [BASE + "privacy.html"]) + "</urlset>\n")

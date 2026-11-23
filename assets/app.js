@@ -134,10 +134,29 @@
   /* ---------------- nav ---------------- */
   var nav = $(".nav");
   if (nav) window.addEventListener("scroll", function () { nav.classList.toggle("scrolled", window.scrollY > 8); }, { passive: true });
-  $(".burger").addEventListener("click", function () {
+  var burger = $(".burger");
+  if (burger && nav) burger.addEventListener("click", function () {
     var o = nav.classList.toggle("open"); this.setAttribute("aria-expanded", String(o));
   });
-  $$(".nav-links a").forEach(function (a) { a.addEventListener("click", function () { nav.classList.remove("open"); }); });
+  $$(".nav-links a").forEach(function (a) { a.addEventListener("click", function () { if (nav) nav.classList.remove("open"); if (burger) burger.setAttribute("aria-expanded", "false"); }); });
+  function refreshAccountLinks() {
+    if (!window.CORE_ACCOUNT) return;
+    var user = window.CORE_ACCOUNT.load().user;
+    var accountHash = user ? "#account" : "#login";
+    $$("[data-account-link]").forEach(function (a) {
+      a.href = window.CORE_ACCOUNT.cabinetUrl(accountHash);
+      a.textContent = user ? T("My account", "Личный кабинет") : T("Sign in", "Войти");
+    });
+    $$("[data-registration-link]").forEach(function (a) {
+      a.href = window.CORE_ACCOUNT.cabinetUrl(user ? accountHash : "#register");
+      a.textContent = !user ? T("Register", "Зарегистрироваться") : T("My account", "Личный кабинет");
+    });
+  }
+  refreshAccountLinks();
+  window.addEventListener("storage", refreshAccountLinks);
+  window.addEventListener("pageshow", refreshAccountLinks);
+  window.addEventListener("core:account", refreshAccountLinks);
+  listeners.push(refreshAccountLinks);
 
   /* ---------------- bars helper ---------------- */
   function bars(el, rows, color, fmt) {

@@ -18,5 +18,8 @@ jobs:
       - name: Every local link resolves
         run: python3 -I tools/check_links.py
       - name: JavaScript parses
-        run: |
-          for f in assets/app.js assets/graph3d.js assets/catalog-page.js assets/regions-page.js assets/how-page.js app/app.js; do node --check "$f"; done
+        run: node --experimental-vm-modules tools/check_js.mjs
+      - name: JavaScript module behavior
+        run: node --experimental-vm-modules --test tests/modules.test.mjs tests/auth.test.mjs
+      - name: Native module versioning
+        run: python3 -I tests/test_build_modules.py
