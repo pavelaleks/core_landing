@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CORE — mintaqa universitetlaridan Markaziy Osiyo haqidagi ishonchli maʼlumotlar</title>
-<meta name="description" content="Markaziy Osiyo universitetlarining ilmiy maʼlumotlari — tozalangan, tavsiflangan va foydalanish huquqi bilan. SI ishlab chiquvchilari, kompaniyalar va davlat dasturlari uchun. Universitetlar bepul ishtirok etadi va daromadning 70% gachasini oladi.">
-<meta property="og:title" content="CORE — research data from Central Asian universities, for AI">
-<meta property="og:description" content="Markaziy Osiyo universitetlarining ilmiy maʼlumotlari — tozalangan, tavsiflangan va foydalanish huquqi bilan. SI ishlab chiquvchilari, kompaniyalar va davlat dasturlari uchun. Universitetlar bepul ishtirok etadi va daromadning 70% gachasini oladi.">
+<title>CORE — ilmiy maʼlumotlar marketpleysi</title>
+<meta name="description" content="Universitetlarning maʼlumotlar toʻplamlari va repozitoriylari — yangi tadqiqotlar, biznes xizmatlari va grant arizalari uchun. Maʼlumotlar katalogi va CORE bilan hamkorlik.">
+<meta property="og:title" content="CORE — ilmiy maʼlumotlar marketpleysi">
+<meta property="og:description" content="Universitetlarning maʼlumotlar toʻplamlari va repozitoriylari — yangi tadqiqotlar, biznes xizmatlari va grant arizalari uchun. Maʼlumotlar katalogi va CORE bilan hamkorlik.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://pavelaleks.github.io/core_landing/uz/">
 <meta property="og:image" content="https://pavelaleks.github.io/core_landing/assets/og.png">
@@ -19,14 +19,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/styles.css?v=d15a64eb">
+<link rel="stylesheet" href="../assets/styles.css?v=f3fa054e">
 <link rel="canonical" href="https://pavelaleks.github.io/core_landing/uz/">
 <link rel="alternate" hreflang="en" href="https://pavelaleks.github.io/core_landing/">
 <link rel="alternate" hreflang="ru" href="https://pavelaleks.github.io/core_landing/ru/">
 <link rel="alternate" hreflang="uz" href="https://pavelaleks.github.io/core_landing/uz/">
 <link rel="alternate" hreflang="x-default" href="https://pavelaleks.github.io/core_landing/">
 </head>
-<body>
+<body class="campus-landing" data-form-default="university">
 
 <!-- ============ NAV ============ -->
 <header class="nav" id="top">
@@ -36,162 +36,35 @@
       <span>CORE</span>
     </a>
     <nav class="nav-links" aria-label="Main">
+      <a href="index.html#how-it-works" data-ru="Как это работает">Bu qanday ishlaydi</a>
       <a href="catalog.html" data-ru="Каталог">Katalog</a>
-      <a href="how.html" data-ru="Как это работает">Bu qanday ishlaydi</a>
-      <a href="universities.html" data-ru="Университетам">Universitetlarga</a>
-      <a href="developers.html" data-ru="Разработчикам ИИ">SI ishlab chiquvchilariga</a>
-      <a href="regions.html" data-ru="Организациям">Tashkilotlarga</a>
-      <a href="pricing.html" data-ru="Цены">Narxlar</a>
+      <a href="index.html#digests" data-ru="Дайджесты">Dayjestlar</a>
+      <a href="../app/index.html#login" class="nav-account-mobile" data-account-link data-ru="Войти">Kirish</a>
     </nav>
     <div class="nav-cta">
       <div class="lang" role="group" aria-label="Language"><a data-lang="en" href="../index.html" hreflang="en">EN</a><a data-lang="ru" href="../ru/index.html" hreflang="ru">RU</a><a data-lang="uz" href="index.html" hreflang="uz" aria-current="true">UZ</a></div>
-      <a href="#contact" class="btn btn-primary btn-sm" data-form="buyer" data-ru="Связаться">Bogʻlanish</a>
+      <a href="../app/index.html#login" class="btn btn-primary btn-sm" data-account-link data-ru="Войти">Kirish</a>
       <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
     </div>
   </div>
 </header>
 
-<main>
-<!-- ============ HERO ============ -->
-<section class="hero hero-v2 hero-plain">
-  <div class="hero-glow" aria-hidden="true"></div>
-  <div class="wrap hero-top">
-    <a class="pill" href="universities.html"><span class="dot"></span><span><b data-ru="Маркетплейс данных вузов Центральной Азии">Markaziy Osiyo universitetlari maʼlumotlari marketpleysi</b> <span data-ru="· для вузов бесплатно">· universitetlar uchun bepul</span></span><span class="arr">→</span></a>
-    <h1 data-ru="Данные о Центральной Азии, которым можно <em>доверять</em>">Markaziy Osiyo haqidagi <em>ishonchli</em> maʼlumotlar</h1>
-    <p class="lead" data-ru="Из университетов региона — очищенные, описанные и с правами на использование. Для разработчиков ИИ, компаний и госпрограмм. Вузы участвуют бесплатно и получают до 70% дохода.">Mintaqa universitetlaridan — tozalangan, tavsiflangan va foydalanish huquqi bilan. SI ishlab chiquvchilari, kompaniyalar va davlat dasturlari uchun. Universitetlar bepul ishtirok etadi va daromadning 70% gachasini oladi.</p>
-    <div class="doors">
-      <a class="door" href="universities.html"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9.5 12 5l9 4.5M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20h18"/></svg></span>
-        <span class="door-k mono" data-ru="Я из университета">Men universitetdanman</span>
-        <b data-ru="Что нужно от вуза и сколько он заработает">Universitetdan nima kerak va u qancha topadi</b>
-        <span class="door-go">→</span>
-      </a>
-      <a class="door" href="developers.html"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3M10 10h4v4h-4z"/></svg></span>
-        <span class="door-k mono" data-ru="Я разрабатываю ИИ">Men SI ishlab chiqaman</span>
-        <b data-ru="Знания о регионе, тексты на местных языках, проверка модели">Mintaqa haqidagi bilimlar, mahalliy tillardagi matnlar, modelni tekshirish</b>
-        <span class="door-go">→</span>
-      </a>
-      <a class="door" href="regions.html"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>
-        <span class="door-k mono" data-ru="Мне нужны данные для бизнеса">Menga biznes uchun maʼlumotlar kerak</span>
-        <b data-ru="Регионы, справочники, опросы через вузы">Hududlar, maʼlumotnomalar, universitetlar orqali soʻrovlar</b>
-        <span class="door-go">→</span>
-      </a>
-    </div>
-    <p class="status-line mono small"><span class="live"></span><span data-ru="Сейчас: 3 открытые базы и 3 подготовленных набора · демо-кабинет с API · переговоры с первыми вузами-партнёрами">Hozir: 3 ta ochiq baza va 3 ta tayyorlangan toʻplam · API bilan demo-kabinet · birinchi hamkor universitetlar bilan muzokaralar</span></p>
-  </div>
-</section>
-
-<section class="sec home-proof">
-  <div class="wrap">
-    <div class="proof-strip">
-      <a href="catalog.html"><b>397</b><span data-ru="вузов региона в нашем справочнике">mintaqa universiteti maʼlumotnomamizda</span></a>
-      <a href="catalog.html?g=open"><b>405</b><span data-ru="открытых наборов учёных — каждый проверен вручную">olimlarning ochiq toʻplami — har biri qoʻlda tekshirilgan</span></a>
-      <a href="regions.html"><b>48</b><span data-ru="регионов с официальной демографией">rasmiy demografiyali hudud</span></a>
-      <a href="../app/index.html#demo"><b>3</b><span data-ru="подготовленных набора — откройте демо →">tayyorlangan toʻplam — demoni oching →</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ HOW IT WORKS ============ -->
-<section class="sec" id="how-it-works">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow" data-ru="Как это работает">Bu qanday ishlaydi</span>
-      <h2 data-ru="Три шага — от архива кафедры до дохода вуза">Uch qadam — kafedra arxividan universitet daromadigacha</h2>
-    </div>
-    <ol class="how3">
-      <li class="card"><span class="how-n">1</span><h3 data-ru="Университет даёт данные">Universitet maʼlumot beradi</h3><p data-ru="Архивы, сборники текстов, записи речи, результаты экспедиций и наблюдений. Вуз сам решает, что можно предлагать, а что нет.">Arxivlar, matnlar toʻplamlari, nutq yozuvlari, ekspeditsiya va kuzatuv natijalari. Nimani taklif qilish mumkinligini universitetning oʻzi hal qiladi.</p></li>
-      <li class="card"><span class="how-n">2</span><h3 data-ru="Мы готовим их к работе">Biz ularni ishga tayyorlaymiz</h3><p data-ru="Очищаем и оцифровываем, вместе с экспертами вуза отмечаем важное в тексте, проверяем права авторов и убираем личные сведения.">Tozalaymiz va raqamlashtiramiz, universitet ekspertlari bilan matndagi muhim joylarni belgilaymiz, mualliflar huquqlarini tekshiramiz va shaxsiy maʼlumotlarni olib tashlaymiz.</p></li>
-      <li class="card"><span class="how-n">3</span><h3 data-ru="Компании платят — вуз получает доход">Kompaniyalar toʻlaydi — universitet daromad oladi</h3><p data-ru="Вуз остаётся владельцем данных, покупатель получает файлы и право пользоваться ими по договору. Вузу — 70% выручки, если данные уже готовы, или 40–50%, если оцифровку и разметку делаем мы за свой счёт. Часть доли вуза получают авторы.">Maʼlumotlar egasi universitet boʻlib qoladi, xaridor fayllarni va shartnoma boʻyicha ulardan foydalanish huquqini oladi. Maʼlumotlar tayyor boʻlsa, universitetga tushumning 70% i, raqamlashtirish va belgilashni oʻz hisobimizdan qilsak — 40–50% i. Universitet ulushining bir qismini mualliflar oladi.</p></li>
-    </ol>
-    <a class="demo-cta" href="how.html" style="margin-top:18px"><b data-ru="Подробно: путь данных, три модели работы и что это значит для вас">Batafsil: maʼlumotlar yoʻli, uchta ish modeli va bu siz uchun nimani anglatadi</b><span data-ru="Интерактивно — для вуза, ИИ-компании, госоргана и бизнеса →">Interaktiv — universitet, SI kompaniyasi, davlat idorasi va biznes uchun →</span></a>
-  </div>
-</section>
-
-<!-- ============ EXAMPLE ============ -->
-<section class="sec sec-alt" id="example">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow" data-ru="Пример">Misol</span>
-      <h2 data-ru="Одни данные — польза для ИИ и для бизнеса">Bir xil maʼlumotlar — SI va biznes uchun foyda</h2>
-      <p class="sub" data-ru="Обезличенные данные о 2 313 пациентах с COVID-19 из Казахского национального медицинского университета.">Qozogʻiston milliy tibbiyot universitetidan COVID-19 bilan kasallangan 2 313 bemor haqidagi anonimlashtirilgan maʼlumotlar.</p>
-    </div>
-    <div class="ex3">
-      <div class="card"><span class="ex3-k mono" data-ru="Было">Avval</span>
-        <p data-ru="Таблица, в которой микробы записаны свободным текстом, частично по-русски («нет роста», «отрицательно»), чувствительность к антибиотикам — в шести вариантах записи, диагнозы — без кодов.">Mikroblar erkin matn bilan, qisman rus tilida («нет роста», «отрицательно») yozilgan, antibiotiklarga sezgirlik olti xil yozilgan, tashxislar kodsiz boʻlgan jadval.</p></div>
-      <div class="card"><span class="ex3-k mono" data-ru="Что сделали">Nima qildik</span>
-        <p data-ru="Привели к медицинским стандартам — МКБ-10, LOINC, ATC, таксономия NCBI. Проверили диапазоны и логику. Описали каждое из 59 полей на трёх языках. Сохранили авторов и лицензию.">Tibbiyot standartlariga keltirdik — XKT-10, LOINC, ATC, NCBI taksonomiyasi. Diapazonlar va mantiqni tekshirdik. 59 ta maydonning har birini uch tilda tavsifladik. Mualliflar va litsenziyani saqladik.</p></div>
-      <div class="card"><span class="ex3-k mono" data-ru="Кто использует">Kim foydalanadi</span>
-        <p data-ru="<b>Медицинский ИИ</b> — обучает и проверяет модель на пациентах региона. <b>Фарма и страховые</b> — считают исходы: в волну «Дельта» смертность 5,1% против 1,2–1,8% раньше. <b>Вуз</b> — получает долю дохода, авторы указаны."><b>Tibbiy SI</b> — modelni mintaqa bemorlarida oʻqitadi va tekshiradi. <b>Farma va sugʻurta</b> — natijalarni hisoblaydi: «Delta» toʻlqinida oʻlim 5,1%, oldin esa 1,2–1,8%. <b>Universitet</b> — daromad ulushini oladi, mualliflar koʻrsatiladi.</p></div>
-    </div>
-    <div class="ex3-foot">
-      <a class="btn btn-primary" href="../app/index.html#demo/covid-almaty-cohort" data-ru="Открыть этот набор в демо-кабинете">Bu toʻplamni demo-kabinetda ochish</a>
-      <p class="small muted" data-ru="Открытый набор КазНМУ (CC BY 4.0). Договора с вузом по нему пока нет — это демонстрация нашей работы.">QMTU ochiq toʻplami (CC BY 4.0). Bu boʻyicha universitet bilan shartnoma hozircha yoʻq — bu ishimiz namoyishi.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ ENTRY ============ -->
-<section class="sec" id="for-whom">
-  <div class="wrap">
-    <div class="sec-head"><span class="eyebrow" data-ru="Для кого">Kim uchun</span><h2 data-ru="Что CORE даёт каждому">CORE har biriga nima beradi</h2></div>
-    <div class="entry-grid">
-      <a class="card entry" href="universities.html"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9.5 12 5l9 4.5M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20h18"/></svg></span><b data-ru="Университетам">Universitetlarga</b><p data-ru="Данные вуза приносят доход. Вуз остаётся владельцем, решает, что показывать, и получает до 70%. Участие бесплатно.">Universitet maʼlumotlari daromad keltiradi. Universitet egasi boʻlib qoladi, nimani koʻrsatishni hal qiladi va 70% gacha oladi. Ishtirok bepul.</p><span class="link-cta" data-ru="Условия и калькулятор дохода →">Shartlar va daromad kalkulyatori →</span></a>
-      <a class="card entry" href="developers.html"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3M10 10h4v4h-4z"/></svg></span><b data-ru="Разработчикам ИИ">SI ishlab chiquvchilariga</b><p data-ru="Знания о регионе и тексты на местных языках с документами на права. Каталог, API, карта науки, проверка модели.">Mintaqa haqidagi bilimlar va mahalliy tillardagi matnlar, huquqiy hujjatlari bilan. Katalog, API, ilm-fan xaritasi, modelni tekshirish.</p><span class="link-cta" data-ru="Каталог и API →">Katalog va API →</span></a>
-      <a class="card entry" href="regions.html"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><b data-ru="Организациям">Tashkilotlarga</b><p data-ru="48 регионов: демография, учреждения и опросы в одной таблице. Справочники, опросы через вузы, аналитика.">48 hudud: demografiya, muassasalar va soʻrovlar bitta jadvalda. Maʼlumotnomalar, universitetlar orqali soʻrovlar, tahlil.</p><span class="link-cta" data-ru="Регионы и опросы →">Hududlar va soʻrovlar →</span></a>
-    </div>
-    <p class="small muted entry-price"><span data-ru="Пилот — $6 000 за 4 недели, 50% идёт в зачёт следующего заказа. Цены по видам данных —">Pilot — 4 hafta uchun $6 000, 50% keyingi buyurtmaga hisoblanadi. Maʼlumot turlari boʻyicha narxlar —</span> <a class="mvp-link-inline" href="pricing.html" data-ru="здесь">bu yerda</a>.</p>
-  </div>
-</section>
-
-<!-- ============ TEAM ============ -->
-<section class="sec sec-alt" id="team">
-  <div class="wrap">
-    <div class="team">
-      <h2 data-ru="Команда">Jamoa</h2>
-      <div class="team-grid">
-        <div class="card person"><div class="avatar">ZM</div><div><b data-ru="Зебунисо Мансурова">Zebuniso Mansurova</b><span>CEO</span><p class="small muted" data-ru="Бизнес, продажи и партнёрства">Biznes, sotuv va hamkorliklar</p></div></div>
-        <div class="card person"><div class="avatar">PA</div><div><b data-ru="Павел Алексеев">Pavel Alekseev</b><span>CSO</span><p class="small muted" data-ru="Наука о данных, академическая сеть, архитектура каталога">Maʼlumotlar ilmi, akademik tarmoq, katalog arxitekturasi</p></div></div>
-        <div class="card person"><div class="avatar">AP</div><div><b data-ru="Александр Печерский">Aleksandr Pecherskiy</b><span>CTO</span><p class="small muted" data-ru="Платформа, API, инфраструктура">Platforma, API, infratuzilma</p></div></div>
-      </div>
-      <p class="small muted" data-ru="Launch Lab 21 (School 21) · Самарканд и Ташкент">Launch Lab 21 (School 21) · Samarqand va Toshkent</p>
-      <p class="small muted" data-ru="Инвесторам: презентация, финансовая модель и комната данных — по запросу.">Investorlarga: taqdimot, moliyaviy model va maʼlumotlar xonasi — soʻrov boʻyicha.</p>
-      <a href="#contact" class="btn btn-primary" data-form="investor" data-ru="Запросить презентацию для инвесторов">Investorlar uchun taqdimotni soʻrash</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FAQ ============ -->
-<section class="sec" id="faq">
-  <div class="wrap narrow">
-    <div class="sec-head center"><span class="eyebrow" data-ru="Вопросы">Savollar</span><h2 data-ru="Частые вопросы">Koʻp beriladigan savollar</h2></div>
-    <details class="faq"><summary data-ru="Что можно купить уже сейчас?">Hozirning oʻzida nimani sotib olish mumkin?</summary><p data-ru="Данные по регионам и справочники (вузы, клиники), опросы через вузы, аналитику, пилот, данные под заказ и предзаказ проверки модели. Готовые наборы из архивов вузов появятся по мере подписания договоров с университетами.">Hududlar boʻyicha maʼlumotlar va maʼlumotnomalar (universitetlar, klinikalar), universitetlar orqali soʻrovlar, tahlil, pilot, buyurtma boʻyicha maʼlumotlar va modelni tekshirishga oldindan buyurtma. Universitet arxivlaridan tayyor toʻplamlar universitetlar bilan shartnomalar imzolangan sari paydo boʻladi.</p></details>
-    <details class="faq"><summary data-ru="Чем вы отличаетесь от открытых баз данных в интернете?">Internetdagi ochiq maʼlumotlar bazalaridan nimangiz bilan farq qilasiz?</summary><p data-ru="Открытые хранилища показывают то, что уже опубликовано, как есть: мы проверили 548 таких записей учёных региона, и у 143 данных нет вовсе. Мы приводим данные к стандартам, проверяем права и личные сведения — и работаем с тем, чего в сети нет: с архивами вузов.">Ochiq omborlar allaqachon eʼlon qilingan narsani oʻz holicha koʻrsatadi: biz mintaqa olimlarining 548 ta shunday yozuvini tekshirdik, 143 tasida maʼlumot umuman yoʻq. Biz maʼlumotlarni standartlarga keltiramiz, huquqlar va shaxsiy maʼlumotlarni tekshiramiz — va internetda yoʻq narsa bilan: universitet arxivlari bilan ishlaymiz.</p></details>
-    <details class="faq"><summary data-ru="Как вы работаете с личными данными?">Shaxsiy maʼlumotlar bilan qanday ishlaysiz?</summary><p data-ru="Удаляем личные сведения до передачи покупателю. Данные вузов будем хранить по требованиям Закона Узбекистана о персональных данных — на серверах в Узбекистане или там, где это разрешает закон. Покупателю запрещено пытаться узнать людей по данным.">Xaridorga berishdan oldin shaxsiy maʼlumotlarni oʻchiramiz. Universitetlar maʼlumotlarini Oʻzbekistonning shaxsga doir maʼlumotlar toʻgʻrisidagi Qonuni talablariga koʻra — Oʻzbekistondagi serverlarda yoki qonun ruxsat bergan joyda saqlaymiz. Xaridorga maʼlumotlar orqali odamlarni aniqlashga urinish taqiqlangan.</p></details>
-    <details class="faq"><summary data-ru="Может ли иностранная компания купить данные?">Xorijiy kompaniya maʼlumotlarni sotib olishi mumkinmi?</summary><p data-ru="Да — компании из Центральной Азии, России и других стран. Договор на русском или английском, расчёты в USD; валюта и юрисдикция — по согласованию. Личные данные остаются в стране: покупатель получает сводные и обезличенные данные.">Ha — Markaziy Osiyo, Rossiya va boshqa mamlakatlar kompaniyalari. Shartnoma rus yoki ingliz tilida, hisob-kitoblar USD da; valyuta va yurisdiksiya — kelishuv boʻyicha. Shaxsiy maʼlumotlar mamlakatda qoladi: xaridor umumlashtirilgan va anonimlashtirilgan maʼlumotlarni oladi.</p></details>
-  </div>
-</section>
-
-<!-- ============ CONTACT ============ -->
-<section class="sec contact-band" id="contact">
-  <div class="wrap cb-in">
-    <div>
-      <h2 data-ru="Обсудим вашу задачу">Vazifangizni muhokama qilamiz</h2>
-      <p class="sub" data-ru="Короткая заявка — ответим в течение рабочего дня. Образец данных — за 24 часа.">Qisqa ariza — ish kuni davomida javob beramiz. Maʼlumotlar namunasi — 24 soat ichida.</p>
-    </div>
-    <div class="cb-actions"><a href="#contact" class="btn btn-primary" data-form="buyer" data-ru="Нужны данные">Maʼlumot kerak</a><a href="#contact" class="btn btn-ghost" data-form="university" data-ru="Подключить вуз">Universitetni ulash</a><a href="#contact" class="btn btn-ghost" data-form="investor" data-ru="Инвесторам">Investorlarga</a><a class="btn btn-ghost tg-link" href="#" target="_blank" rel="noopener" hidden><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M21.5 4.5 2.9 11.6c-.9.4-.9 1.1 0 1.4l4.7 1.5 1.8 5.6c.2.6.5.7 1 .3l2.6-2.3 4.9 3.6c.6.4 1.1.2 1.3-.6l3.1-14.6c.3-1.2-.4-1.6-1.4-1.2z" fill="currentColor"/></svg><span>Telegram</span></a></div>
-  </div>
-</section>
+<main><section class="campus-hero"><div class="wrap campus-hero-layout"><div class="campus-hero-copy"><p class="campus-label" data-ru="CORE · Университетам и партнёрам">CORE · Universitetlar va hamkorlar uchun</p><h1 data-ru="Маркетплейс научных данных">Ilmiy maʼlumotlar marketpleysi</h1><p class="campus-subtitle" data-ru="Датасеты и репозитории как источник новых знаний">Maʼlumotlar toʻplamlari va repozitoriylar — yangi bilimlar manbai</p><p class="lead" data-ru="Университет собирает результаты исследований в одном месте, чтобы использовать их в новых проектах, сервисах для бизнеса и грантовых заявках.">Universitet tadqiqot natijalarini yangi loyihalar, biznes xizmatlari va grant arizalarida foydalanish uchun bir joyga jamlaydi.</p><div class="campus-actions"><a href="#contact" class="btn btn-primary" data-form="university" data-ru="Обсудить запуск в университете">Universitetda ishga tushirishni muhokama qilish</a><a href="../app/index.html#register" class="btn btn-ghost" data-ru="Создать кабинет">Kabinet yaratish</a></div></div><div class="campus-hero-art" aria-hidden="true"><img src="../assets/illustrations/university-data.svg" width="520" height="480" alt="" fetchpriority="high" decoding="async"></div></div></section>
+<section class="sec campus-section" id="how-it-works"><div class="wrap"><h2 data-ru="Как это работает">Bu qanday ishlaydi</h2><ol class="campus-steps"><li><svg class="campus-step-art" viewBox="0 0 80 80" aria-hidden="true" focusable="false"><use href="../assets/illustrations/data-symbols.svg#collect"></use></svg><h3 data-ru="Собрать результаты">Natijalarni jamlash</h3><p data-ru="Университет объединяет датасеты и репозитории в едином пространстве данных.">Universitet maʼlumotlar toʻplamlari va repozitoriylarni yagona maʼlumotlar makonida birlashtiradi.</p></li><li><svg class="campus-step-art" viewBox="0 0 80 80" aria-hidden="true" focusable="false"><use href="../assets/illustrations/data-symbols.svg#apply"></use></svg><h3 data-ru="Найти новое применение">Yangi qoʻllanishni topish</h3><p data-ru="На основе собранных данных исследователи получают новые знания и создают сервисы для задач бизнеса.">Tadqiqotchilar jamlangan maʼlumotlardan yangi bilimlar olib, biznes vazifalari uchun xizmatlar yaratadi.</p></li><li><svg class="campus-step-art" viewBox="0 0 80 80" aria-hidden="true" focusable="false"><use href="../assets/illustrations/data-symbols.svg#research"></use></svg><h3 data-ru="Продолжить исследования">Tadqiqotlarni davom ettirish</h3><p data-ru="Сотрудники используют новые знания, чтобы получать следующие результаты и подкреплять заявки на гранты.">Xodimlar yangi bilimlardan keyingi natijalarni olish va grant arizalarini asoslash uchun foydalanadi.</p></li></ol></div></section>
+<section class="sec sec-alt campus-section" id="catalog-preview"><div class="wrap"><div class="campus-section-head"><h2 data-ru="Примеры из каталога">Katalogdan namunalar</h2><a href="catalog.html" class="campus-text-link" data-ru="Весь каталог">Toʻliq katalog</a></div><div class="campus-examples"><article class="card campus-example"><svg class="campus-cover" viewBox="0 0 320 176" aria-hidden="true" focusable="false"><use href="../assets/illustrations/data-symbols.svg#geography"></use></svg><p class="small muted" data-ru="Ургенчский государственный университет">Urgench State University</p><h3 data-ru="Термины географии на узбекском">Oʻzbekcha geografiya atamalari</h3><p data-ru="Термины из учебников географии с описаниями и примерами употребления.">Geografiya darsliklaridagi atamalar, tavsiflar va qoʻllanish namunalari bilan.</p><a href="../app/index.html#demo/uzbek-geography-terms" class="btn btn-ghost btn-sm" data-ru="Посмотреть пример">Namunani koʻrish</a></article><article class="card campus-example"><svg class="campus-cover" viewBox="0 0 320 176" aria-hidden="true" focusable="false"><use href="../assets/illustrations/data-symbols.svg#survey"></use></svg><p class="small muted" data-ru="Гулистанский государственный университет">Gulistan State University</p><h3 data-ru="Опрос о страховой грамотности">Sugʻurta savodxonligi soʻrovi</h3><p data-ru="Результаты опроса жителей Сырдарьинской области о страховании и финансовой грамотности.">Sirdaryo viloyati aholisining sugʻurta va moliyaviy savodxonlik haqidagi soʻrov natijalari.</p><a href="../app/index.html#demo/insurance-literacy-syrdarya" class="btn btn-ghost btn-sm" data-ru="Посмотреть пример">Namunani koʻrish</a></article><article class="card campus-example"><svg class="campus-cover" viewBox="0 0 320 176" aria-hidden="true" focusable="false"><use href="../assets/illustrations/data-symbols.svg#medicine"></use></svg><p class="small muted" data-ru="Казахский национальный медицинский университет">Kazakh National Medical University</p><h3 data-ru="Исследование COVID-19 в Алматы">Olmaotadagi COVID-19 tadqiqoti</h3><p data-ru="Обезличенные данные исследования пациентов с COVID-19 в Алматы.">Olmaotadagi COVID-19 bemorlari tadqiqotining shaxssizlantirilgan maʼlumotlari.</p><a href="../app/index.html#demo/covid-almaty-cohort" class="btn btn-ghost btn-sm" data-ru="Посмотреть пример">Namunani koʻrish</a></article></div><p class="small muted campus-caption" data-ru="Примеры подготовки CORE на открытых данных исследователей. Это демонстрационные наборы, а не подтверждение партнёрства с университетами.">CORE tomonidan tadqiqotchilarning ochiq maʼlumotlari asosida tayyorlangan namunalar. Bular universitetlar bilan hamkorlik tasdigʻi emas, namoyish toʻplamlaridir.</p></div></section>
+<section class="sec campus-section" id="applications"><div class="wrap campus-reading"><h2 data-ru="Кому пригодятся данные">Maʼlumotlar kimga kerak boʻladi</h2><ul class="campus-audience"><li data-ru="&lt;b&gt;Образовательным компаниям и отделам обучения&lt;/b&gt; — результаты исследований для подготовки тестов и учебных заданий."><b>Taʼlim kompaniyalari va oʻqitish boʻlimlariga</b> — testlar va oʻquv topshiriqlarini tayyorlash uchun tadqiqot natijalari.</li><li data-ru="&lt;b&gt;Разработчикам языковых моделей&lt;/b&gt; — подготовленные корпуса научных текстов для обучения и оценки моделей."><b>Til modellari ishlab chiquvchilariga</b> — modellarni oʻqitish va baholash uchun tayyorlangan ilmiy matn korpuslari.</li><li data-ru="&lt;b&gt;Разработчикам ИИ&lt;/b&gt; — размеченные изображения для обучения и проверки моделей распознавания."><b>Sunʼiy intellekt ishlab chiquvchilariga</b> — tanib olish modellarini oʻqitish va tekshirish uchun belgilangan tasvirlar.</li><li data-ru="&lt;b&gt;Компаниям&lt;/b&gt; — актуальные данные социологических опросов для изучения аудитории."><b>Kompaniyalarga</b> — auditoriyani oʻrganish uchun dolzarb ijtimoiy soʻrov maʼlumotlari.</li><li data-ru="&lt;b&gt;Исследователям&lt;/b&gt; — сопоставимые данные прошлых исследований, чтобы изучать изменения и проверять новые гипотезы."><b>Tadqiqotchilarga</b> — oʻzgarishlarni oʻrganish va yangi gipotezalarni tekshirish uchun oldingi tadqiqotlarning taqqoslanadigan maʼlumotlari.</li></ul></div></section>
+<section class="sec sec-alt campus-section" id="cooperation"><div class="wrap campus-reading"><h2 data-ru="Как выглядит сотрудничество">Hamkorlik qanday kechadi</h2><ol class="campus-cooperation"><li data-ru="Университет описывает доступные датасеты и репозитории.">Universitet mavjud maʼlumotlar toʻplamlari va repozitoriylarni tavsiflaydi.</li><li data-ru="Партнёр формулирует задачу и нужный объём данных.">Hamkor vazifa va kerakli maʼlumotlar hajmini belgilaydi.</li><li data-ru="Исследовательская команда проверяет, подходят ли данные по содержанию, объёму и актуальности.">Tadqiqot jamoasi maʼlumotlarning mazmuni, hajmi va dolzarbligi mos kelishini tekshiradi.</li><li data-ru="Если данные подходят, стороны согласуют подписку на подборку данных или сервис на их основе.">Maʼlumotlar mos kelsa, tomonlar maʼlumotlar tanlanmasiga obuna yoki ular asosidagi xizmatni kelishadi.</li></ol></div></section>
+<section class="sec campus-section" id="digests"><div class="wrap campus-reading"><div class="campus-section-head"><h2 data-ru="Дайджесты">Dayjestlar</h2></div><p class="muted" data-ru="Содержание раздела готовится.">Boʻlim mazmuni tayyorlanmoqda.</p></div></section>
+<section class="sec contact-band campus-contact" id="contact"><div class="wrap cb-in"><div><h2 data-ru="Обсудить сотрудничество">Hamkorlikni muhokama qilish</h2><p class="sub" data-ru="Расскажите о данных вашего университета или задаче, для которой вы ищете данные.">Universitetingiz maʼlumotlari yoki maʼlumot izlayotgan vazifangiz haqida aytib bering.</p></div><div class="cb-actions"><a href="#contact" class="btn btn-primary" data-form="university" data-ru="Я представляю университет">Men universitet vakiliman</a><a href="#contact" class="btn btn-ghost" data-form="buyer" data-ru="Я ищу данные">Men maʼlumot izlayapman</a></div></div></section>
 <dialog class="dlg" id="contactDlg" aria-labelledby="dlgTitle">
   <div class="dlg-head"><div><h3 id="dlgTitle" data-ru="Расскажите, что вам нужно">Sizga nima kerakligini ayting</h3><p class="small muted" data-ru="Заявка попадёт к нужному человеку в команде.">Ariza jamoadagi kerakli odamga yetib boradi.</p></div>
   <button type="button" class="dlg-x" id="dlgClose" aria-label="Close">×</button></div>
   <form class="form" id="leadForm" novalidate>
       <div class="seg form-type" id="formType">
-        <button type="button" class="on" data-t="buyer" data-ru="Нужны данные">Maʼlumot kerak</button>
+        <button type="button" class="on" data-t="buyer" data-ru="Партнёр">Hamkor</button>
         <button type="button" data-t="university" data-ru="Вуз">Universitet</button>
-        <button type="button" data-t="researcher" data-ru="Исследователь">Tadqiqotchi</button>
-        <button type="button" data-t="investor" data-ru="Инвестор">Investor</button>
       </div>
-      <input type="hidden" name="type" value="buyer">
+      <input type="hidden" name="type" value="university">
       <div class="frow">
         <label><span data-ru="Имя">Ism</span><input name="name" required autocomplete="name"></label>
         <label><span data-ru="Рабочий email">Ish email</span><input name="email" type="email" required autocomplete="email"></label>
@@ -217,24 +90,29 @@
       <button class="btn btn-primary btn-block" type="submit" data-ru="Отправить">Yuborish</button>
       <p class="form-status small" id="formStatus" role="status"></p>
     </form>
-</dialog>
-</main>
+</dialog></main>
 
 <footer class="foot">
   <div class="wrap foot-in">
-    <div>
-      <a href="index.html" class="logo"><svg viewBox="0 0 32 32" width="22" height="22" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="2.2" opacity=".35"/><circle cx="16" cy="16" r="8.5" fill="none" stroke="currentColor" stroke-width="2.2" opacity=".7"/><circle cx="16" cy="16" r="3.4" fill="var(--teal)"/></svg><span>CORE</span></a>
-      <p class="small muted" data-ru="Научные данные университетов Центральной Азии — для искусственного интеллекта.">Markaziy Osiyo universitetlarining ilmiy maʼlumotlari — sunʼiy intellekt uchun.</p>
-    </div>
+    <div><a href="index.html" class="logo" aria-label="CORE home">
+      <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="2.2" opacity=".35"/><circle cx="16" cy="16" r="8.5" fill="none" stroke="currentColor" stroke-width="2.2" opacity=".7"/><circle cx="16" cy="16" r="3.4" fill="var(--teal)"/></svg>
+      <span>CORE</span>
+    </a><p class="small muted" data-ru="Научные данные университетов — для новых исследований и сотрудничества.">Universitetlarning ilmiy maʼlumotlari — yangi tadqiqotlar va hamkorlik uchun.</p></div>
     <div class="foot-links">
-      <a href="catalog.html" data-ru="Каталог">Katalog</a><a href="how.html" data-ru="Как это работает">Bu qanday ishlaydi</a><a href="universities.html" data-ru="Университетам">Universitetlarga</a><a href="developers.html" data-ru="Разработчикам ИИ">SI ishlab chiquvchilariga</a><a href="pricing.html" data-ru="Цены">Narxlar</a><a href="index.html#team" data-ru="Команда">Jamoa</a><a href="../privacy.html" data-ru="Конфиденциальность">Maxfiylik</a><a href="../app/index.html" data-ru="Вход для партнёров (MVP)">Hamkorlar uchun kirish (MVP)</a><a class="tg-link foot-tg" href="#" target="_blank" rel="noopener" hidden><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M21.5 4.5 2.9 11.6c-.9.4-.9 1.1 0 1.4l4.7 1.5 1.8 5.6c.2.6.5.7 1 .3l2.6-2.3 4.9 3.6c.6.4 1.1.2 1.3-.6l3.1-14.6c.3-1.2-.4-1.6-1.4-1.2z" fill="currentColor"/></svg><span>Telegram</span></a>
+      <a href="catalog.html" data-ru="Каталог">Katalog</a>
+      <a href="index.html#how-it-works" data-ru="Как это работает">Bu qanday ishlaydi</a>
+      <a href="index.html#digests" data-ru="Дайджесты">Dayjestlar</a>
+      <a href="index.html#contact" data-ru="Сотрудничество">Hamkorlik</a>
+      <a href="../app/index.html#login" data-account-link data-ru="Личный кабинет">Shaxsiy kabinet</a>
+      <a href="../privacy.html" data-ru="Конфиденциальность">Maxfiylik</a>
     </div>
     <p class="small muted attr" data-ru="Данные: © участники OpenStreetMap (ODbL), OpenAlex, ROR, Wikidata (CC0). Границы: Natural Earth.">Maʼlumotlar: © OpenStreetMap ishtirokchilari (ODbL), OpenAlex, ROR, Wikidata (CC0). Chegaralar: Natural Earth.</p>
   </div>
 </footer>
 
-<script src="../assets/config.js?v=b248834d"></script>
-<script src="../assets/i18n-uz.js?v=9590806e"></script>
-<script src="../assets/app.js?v=cd6fc2c9"></script>
+<script src="../assets/config.js?v=f2a12139"></script>
+<script src="../assets/i18n-uz.js?v=01085db9"></script>
+<script src="../assets/account-store.js?v=19505185"></script>
+<script src="../assets/app.js?v=7eb98db7"></script>
 </body>
 </html>
