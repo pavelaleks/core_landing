@@ -24,7 +24,7 @@ import tempfile
 from html.parser import HTMLParser
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BASE = "https://pavelaleks.github.io/core_landing/"
+BASE = "https://coredata.uz/"
 LANGS = ["en", "ru", "uz"]
 CHECK = "--check" in sys.argv
 

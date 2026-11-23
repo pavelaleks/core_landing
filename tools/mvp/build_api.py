@@ -16,7 +16,7 @@ import shutil
 import sys
 
 APP = sys.argv[1]
-BASE = "https://pavelaleks.github.io/core_landing/app/"
+BASE = "https://coredata.uz/app/"
 PAGE = 500
 NUM = re.compile(r"^-?\d+(\.\d+)?$")
 TABLE = {"uzbek-geography-terms": "terms", "insurance-literacy-syrdarya": "insurance", "covid-almaty-cohort": "covid"}

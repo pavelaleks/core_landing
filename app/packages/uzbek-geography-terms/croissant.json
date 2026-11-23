@@ -22,7 +22,7 @@
  "name": "uzbek-geography-terms",
  "description": "Uzbek geography terminology, annotated. Spelling normalised to the standard Uzbek Latin alphabet; duplicates removed Frequency in school (grades 5–11) and university textbooks, and the grade where each term first appears Context example from the corpus for every term found Russian and English equivalents and a subject category for the 320 most frequent terms Spelling variants and terms absent from the corpus flagged for the authors",
  "license": "https://creativecommons.org/licenses/by/4.0/",
- "url": "https://pavelaleks.github.io/core_landing/app/",
+ "url": "https://coredata.uz/app/",
  "citeAs": "Matsaidova, Sayyora; Sattarova, Sapura; Ortiqova, Iqbol; Khamraeva, Nargiza; Tajibayeva, Xurshida; Jurayev, Erali; Kurbanazarov, Baxtibek (2026). Dataset of Uzbek Educational Geography Terminology from School and University Corpora. Zenodo. https://doi.org/10.5281/zenodo.22892341",
  "isBasedOn": "https://doi.org/10.5281/zenodo.22892341",
  "creator": [

@@ -30,12 +30,12 @@
    "updated": "2026-11-07",
    "description_en": "Registry of higher-education institutions in Uzbekistan, Kazakhstan, Kyrgyzstan and Tajikistan with persistent CORE IDs, names in national languages, Russian and English, city and coordinates, website, ROR / Wikidata / OpenAlex identifiers and research output. Every other CORE dataset links to these IDs.",
    "description_ru": "Справочник вузов Узбекистана, Казахстана, Кыргызстана и Таджикистана с постоянными ID CORE, названиями на национальных языках, русском и английском, городом и координатами, сайтом, идентификаторами ROR / Wikidata / OpenAlex и научной продуктивностью. Все остальные датасеты CORE ссылаются на эти ID.",
-   "page": "https://pavelaleks.github.io/core_landing/datasets/universities.html",
+   "page": "https://coredata.uz/datasets/universities.html",
    "links": {
-    "card": "https://pavelaleks.github.io/core_landing/api/v0/datasets/universities.json",
-    "sample_json": "https://pavelaleks.github.io/core_landing/api/v0/datasets/universities/sample.json",
-    "sample_csv": "https://pavelaleks.github.io/core_landing/api/v0/datasets/universities/sample.csv",
-    "croissant": "https://pavelaleks.github.io/core_landing/api/v0/datasets/universities/croissant.json"
+    "card": "https://coredata.uz/api/v0/datasets/universities.json",
+    "sample_json": "https://coredata.uz/api/v0/datasets/universities/sample.json",
+    "sample_csv": "https://coredata.uz/api/v0/datasets/universities/sample.csv",
+    "croissant": "https://coredata.uz/api/v0/datasets/universities/croissant.json"
    }
   },
   {
@@ -62,12 +62,12 @@
    "updated": "2026-11-07",
    "description_en": "2,982 medical facilities in Uzbekistan (excluding pharmacies) across all 14 regions: type, ownership, ISO 3166-2 region, coordinates, specialties, website languages and a 0–100 medical-tourism readiness index.",
    "description_ru": "2 982 медучреждения Узбекистана (без аптек) во всех 14 регионах: тип, форма собственности, регион ISO 3166-2, координаты, специализации, языки сайта и индекс готовности к медтуризму 0–100.",
-   "page": "https://pavelaleks.github.io/core_landing/datasets/uz_medical_facilities.html",
+   "page": "https://coredata.uz/datasets/uz_medical_facilities.html",
    "links": {
-    "card": "https://pavelaleks.github.io/core_landing/api/v0/datasets/uz_medical_facilities.json",
-    "sample_json": "https://pavelaleks.github.io/core_landing/api/v0/datasets/uz_medical_facilities/sample.json",
-    "sample_csv": "https://pavelaleks.github.io/core_landing/api/v0/datasets/uz_medical_facilities/sample.csv",
-    "croissant": "https://pavelaleks.github.io/core_landing/api/v0/datasets/uz_medical_facilities/croissant.json"
+    "card": "https://coredata.uz/api/v0/datasets/uz_medical_facilities.json",
+    "sample_json": "https://coredata.uz/api/v0/datasets/uz_medical_facilities/sample.json",
+    "sample_csv": "https://coredata.uz/api/v0/datasets/uz_medical_facilities/sample.csv",
+    "croissant": "https://coredata.uz/api/v0/datasets/uz_medical_facilities/croissant.json"
    }
   },
   {
@@ -99,12 +99,12 @@
    "updated": "2026-11-10",
    "description_en": "482,572 research works involving 299 universities in UZ, KZ, KG and TJ from OpenAlex: metadata, topics, venues, open-access status, funders and co-authoring countries. Every work is linked to CORE university IDs.",
    "description_ru": "482 572 научные работы с участием 299 вузов UZ, KZ, KG и TJ из OpenAlex: метаданные, темы, журналы, открытый доступ, фонды и страны соавторов. Каждая работа связана с ID вузов CORE.",
-   "page": "https://pavelaleks.github.io/core_landing/datasets/ca_publications.html",
+   "page": "https://coredata.uz/datasets/ca_publications.html",
    "links": {
-    "card": "https://pavelaleks.github.io/core_landing/api/v0/datasets/ca_publications.json",
-    "sample_json": "https://pavelaleks.github.io/core_landing/api/v0/datasets/ca_publications/sample.json",
-    "sample_csv": "https://pavelaleks.github.io/core_landing/api/v0/datasets/ca_publications/sample.csv",
-    "croissant": "https://pavelaleks.github.io/core_landing/api/v0/datasets/ca_publications/croissant.json"
+    "card": "https://coredata.uz/api/v0/datasets/ca_publications.json",
+    "sample_json": "https://coredata.uz/api/v0/datasets/ca_publications/sample.json",
+    "sample_csv": "https://coredata.uz/api/v0/datasets/ca_publications/sample.csv",
+    "croissant": "https://coredata.uz/api/v0/datasets/ca_publications/croissant.json"
    }
   }
  ]

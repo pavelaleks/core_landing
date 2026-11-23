@@ -17,7 +17,7 @@ Registry of higher-education institutions in Uzbekistan, Kazakhstan, Kyrgyzstan 
 - **License:** CC0-1.0 — free for any use, attribution appreciated
 - **Version:** 0.1.0, updated 2026-11-07
 - **Sources:** Wikidata, ROR, OpenAlex, reconciled and curated by CORE
-- **Website:** https://pavelaleks.github.io/core_landing/datasets/universities.html · **API:** https://pavelaleks.github.io/core_landing/api/v0/universities.json
+- **Website:** https://coredata.uz/datasets/universities.html · **API:** https://coredata.uz/api/v0/universities.json
 
 The `id` column (`UNI-UZ-0138` …) is a persistent CORE identifier: every other CORE dataset —
 research output, research datasets, university collections — links to it.
@@ -48,4 +48,4 @@ research output, research datasets, university collections — links to it.
 ## About CORE
 
 CORE licenses expert-verified, rights-cleared data from Central Asian universities for AI training,
-evaluation and RAG. Full datasets, annotation projects and the CORE-CA benchmark: https://pavelaleks.github.io/core_landing/
+evaluation and RAG. Full datasets, annotation projects and the CORE-CA benchmark: https://coredata.uz/
