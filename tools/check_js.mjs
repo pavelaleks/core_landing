@@ -29,6 +29,7 @@ function check(relative) {
 
 for (const entry of [
   "assets/account-store.js",
+  "assets/account-session.js",
   "assets/app.js",
   "assets/graph3d.js",
   "assets/catalog-page.js",

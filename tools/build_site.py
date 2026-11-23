@@ -342,6 +342,8 @@ def dataset_page(ds, nav, footer):
 <script src="../assets/i18n-uz.js"></script>
 <script src="../assets/account-store.js"></script>
 <script src="../assets/app.js"></script>
+<script src="../assets/vendor/supabase-2.119.2.js"></script>
+<script type="module" src="../assets/account-session.js"></script>
 </body>
 </html>
 '''
@@ -453,12 +455,12 @@ def asset_version(m):
 def version_modules(text, page_dir):
     """Keep native module imports fresh using the existing content-hash mechanism."""
     text = re.sub(r'<script type="importmap" data-core-modules>.*?</script>\n?', "", text, flags=re.S)
-    entry = re.search(r'<script type="module" src="([^"]+)"></script>', text)
-    if not entry:
-        return text
-    src = entry.group(1).split("?", 1)[0]
-    target = posixpath.normpath(posixpath.join(page_dir, src))
-    if target not in ("assets/catalog-page.js", "app/app.js"):
+    pattern = r'<script type="module" src="([^"]+)"></script>'
+    maintained = ("assets/catalog-page.js", "assets/account-session.js", "app/app.js")
+    def target_of(entry):
+        return posixpath.normpath(posixpath.join(page_dir, entry.group(1).split("?", 1)[0]))
+    entries = [entry for entry in re.finditer(pattern, text) if target_of(entry) in maintained]
+    if not entries:
         return text
     imports = {}
     for directory, _, filenames in os.walk(os.path.join(ROOT, "assets", "js")):
@@ -476,10 +478,17 @@ def version_modules(text, page_dir):
     mapping = '<script type="importmap" data-core-modules>' + json.dumps(
         {"imports": imports}, ensure_ascii=False, sort_keys=True, separators=(",", ":")
     ) + "</script>\n"
-    with open(os.path.join(ROOT, target), "rb") as source:
-        version = hashlib.sha1(source.read()).hexdigest()[:8]
-    script = '<script type="module" src="' + src + "?v=" + version + '"></script>'
-    return text[:entry.start()] + mapping + script + text[entry.end():]
+    def version_entry(entry):
+        target = target_of(entry)
+        if target not in maintained:
+            return entry.group(0)
+        src = entry.group(1).split("?", 1)[0]
+        with open(os.path.join(ROOT, target), "rb") as source:
+            version = hashlib.sha1(source.read()).hexdigest()[:8]
+        return '<script type="module" src="' + src + "?v=" + version + '"></script>'
+    start = entries[0].start()
+    text = re.sub(pattern, version_entry, text)
+    return text[:start] + mapping + text[start:]
 
 
 def finalize(text, lang, page_path, meta):
@@ -618,6 +627,10 @@ def build():
              '<a href="../../app/index.html">CORE</a>')
     with open(os.path.join(ROOT, "app", "index.html"), encoding="utf-8") as source:
         app_index = source.read()
+    app_index = re.sub(r'\b(src|href)="((?:\.\./)*assets/[^"?#]+\.(?:js|css))(?:\?[^\"]*)?"', asset_version, app_index)
+    with open(os.path.join(ROOT, "app", "app.css"), "rb") as source:
+        css_version = hashlib.sha1(source.read()).hexdigest()[:8]
+    app_index = re.sub(r'href="app\.css(?:\?[^\"]*)?"', 'href="app.css?v=' + css_version + '"', app_index)
     emit("app/index.html", version_modules(app_index, "app"))
     urls = [page_url(l, p) for p in pages for l in LANGS]
     emit("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'

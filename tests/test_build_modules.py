@@ -32,6 +32,9 @@ class ModuleVersionTests(unittest.TestCase):
         (self.root / "app" / "app.js").write_text(
             'import "../assets/js/pages/catalog.js";', encoding="utf-8"
         )
+        (self.root / "assets" / "account-session.js").write_text(
+            'import "./js/pages/catalog.js";', encoding="utf-8"
+        )
 
     def tearDown(self):
         BUILD.ROOT = self.original_root
@@ -72,6 +75,21 @@ class ModuleVersionTests(unittest.TestCase):
         self.assertIn(vendor, output)
         self.assertIn("../assets/js/pages/catalog.js", self.mapping(output))
         self.assertNotIn("app.js?v=old", output)
+
+    def test_auth_bootstrap_and_catalog_entries_share_one_map(self):
+        html = '<script type="module" src="../assets/catalog-page.js"></script>\n' + \
+               '<script type="module" src="../assets/account-session.js"></script>'
+        output = BUILD.version_modules(html, "ru")
+        self.assertEqual(output.count("data-core-modules"), 1)
+        self.assertRegex(output, r'catalog-page\.js\?v=[a-f0-9]{8}')
+        self.assertRegex(output, r'account-session\.js\?v=[a-f0-9]{8}')
+        self.assertEqual(BUILD.version_modules(output, "ru"), output)
+
+    def test_auth_bootstrap_resolves_on_dataset_pages(self):
+        html = '<script type="module" src="../../assets/account-session.js"></script>'
+        output = BUILD.version_modules(html, "ru/datasets")
+        self.assertIn("../../assets/js/pages/catalog.js", self.mapping(output))
+        self.assertRegex(output, r'account-session\.js\?v=[a-f0-9]{8}')
 
 
 if __name__ == "__main__":

@@ -22,7 +22,7 @@ function demoEnvironment(initial) {
     },
   });
   vm.runInContext(fs.readFileSync(path.join(root, "assets/account-store.js"), "utf8"), context);
-  return { context, storage, events, store: window.CORE_ACCOUNT };
+  return { context, storage, events, store: window.CORE_ACCOUNT.demoStore(), accountStore: window.CORE_ACCOUNT };
 }
 
 async function loadModule(relative, context) {
@@ -81,7 +81,7 @@ test("shared account store preserves legacy data, identity and isolated favorite
 test("demo registration and login retain validation and existing account identity", async () => {
   const env = demoEnvironment();
   env.store.load();
-  const { authenticateDemo, signOutDemo } = await loadModule("assets/js/api/auth.js", env.context);
+  const { authenticateDemo, signOutDemo } = await loadModule("assets/js/api/demo-auth.js", env.context);
   assert.match(authenticateDemo({ email: "missing@example.test" }, []).error, /не найден/);
   const input = { register: true, email: " PARTNER@EXAMPLE.TEST ", name: " Test Partner ", role: "buyer", org: " Example Org ", university: "" };
   const first = authenticateDemo(input, []);

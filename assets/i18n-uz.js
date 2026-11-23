@@ -1162,5 +1162,6 @@ window.CORE_UZ = {
 "Обсудить запуск": "Ishga tushirishni muhokama qilish",
 "Зарегистрироваться": "Roʻyxatdan oʻtish",
 "Мои датасеты": "Mening maʼlumotlar toʻplamlarim",
-"Избранное": "Saralanganlar"
+"Избранное": "Saralanganlar",
+"Маркетплейс <span class='campus-title-topic'>научных данных</span>": "Ilmiy maʼlumotlar <span class='campus-title-topic'>marketpleysi</span>"
 };

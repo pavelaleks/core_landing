@@ -1,92 +1,69 @@
-import { getAccountStore, signOutDemo } from "../api/auth.js";
-import { seed, id } from "../api/demo-data.js";
-import { loadCabinetData } from "../api/datasets.js";
-import { esc, toast } from "../ui/format.js";
+import { getAccountStore, getAuth, initAuth, authErrorMessage } from "../api/auth.js";
+import { createAuthAccountPages } from "./auth-account.js";
+import { initDemoCabinet } from "./demo-cabinet.js";
 import { createAccountPages } from "./account.js";
-import { createLegacyAuth } from "./legacy-auth.js";
-import { createAccessPages } from "./access.js";
-import { createDatasetPage } from "./dataset.js";
-import { createSubmissionPages } from "./submissions.js";
-import { createOperatorPage } from "./operator.js";
+import { getCatalog } from "../api/datasets.js";
+import { esc } from "../ui/format.js";
 
 export function initCabinet() {
-  var store = getAccountStore(), KEY = store.key, view = document.getElementById("view");
-  var DS = [], UNIS = [];
-  store.load(seed);
-
-  function go(h) { if (location.hash === h) render(); else location.hash = h; }
-
-  var { legacyHeader, switchRole, vLegacyLogin } = createLegacyAuth({ store, view, UNIS, go });
-  var { vLogin, vFavorites, vUni } = createAccountPages({ store, view, DS, UNIS, go, home });
-  var { vCatalog, vMy } = createAccessPages({ store, view, DS, ds, myReq });
-  var { vDataset } = createDatasetPage({ store, view, ds, myReq, go, render, switchRole });
-  var { vLegacyUni, vUniNew } = createSubmissionPages({ store, view, DS, ds, go });
-  var { vOps } = createOperatorPage({ store, view, ds, render });
-
-  function ds(slug) { return DS.filter(function (d) { return d.slug === slug; })[0]; }
-
-  function myReq(slug) {
-    var S = store.s;
-    return S.requests.filter(function (r) { return r.ds === slug && S.user && r.org === S.user.org; }).sort(function (a, b) { return b.created - a.created; })[0];
+  if (/^#demo(?:\/|$)/.test(location.hash)) { initDemoCabinet(); return; }
+  const store = getAccountStore(), auth = getAuth(), view = document.getElementById("view");
+  const callback = new URLSearchParams(location.hash.slice(1));
+  if (callback.has("error")) {
+    store.auth.notice = authErrorMessage({ code: callback.get("error_code") || callback.get("error") });
+    history.replaceState(null, "", location.pathname + location.search + "#login");
   }
-
-  function home() {
-    var S = store.s;
-    return S.user && S.user.role === "university" ? "#uni" : S.user && S.user.role === "operator" ? "#ops" : "#favorites";
+  let favorite = "";
+  try { favorite = decodeURIComponent(location.hash.split("/favorite/")[1] || ""); } catch (error) {}
+  const go = hash => { if (location.hash === hash) render(); else location.hash = hash; };
+  function onLogin() {
+    if (favorite && store.load().user && (getCatalog() || []).some(item => item.id === favorite) && !store.favoriteIds().includes(favorite)) store.toggleFavorite(favorite);
+    const destination = favorite ? "#favorites" : "#account";
+    favorite = "";
+    go(destination);
   }
+  const pages = createAuthAccountPages({ store, auth, view, go, onLogin });
+  const { vFavorites } = createAccountPages({ store, view, DS: [], UNIS: [], go, home: () => "#account" });
 
   function header() {
-    var S = store.s;
-    if (S.user && S.user.role === "operator") { legacyHeader(); return; }
-    var nav = document.getElementById("nav"), who = document.getElementById("who");
-    nav.hidden = who.hidden = !S.user;
-    if (!S.user) return;
-    var university = S.user.role === "university";
-    nav.innerHTML = '<a href="' + home() + '" class="on">' + (university ? "Мои датасеты" : "Избранное") + '</a><a href="' + store.catalogUrl("ru") + '">Общий каталог</a>';
-    who.innerHTML = '<span class="lbl">' + esc(S.user.org) + '</span><a href="#login" id="logout" class="mvp-link">Выйти</a>';
-    document.getElementById("logout").onclick = function (e) { e.preventDefault(); signOutDemo(); go("#login"); };
-  }
-
-  function startDemo(want) {
-    var S = store.s;
-    if (S.user) { go("#ds/" + (ds(want) ? want : "uzbek-geography-terms")); return; }
-    try { localStorage.setItem("core-invite", "1"); } catch (e) {}
-    var org = "Demo visitor", slug = ds(want) ? want : "uzbek-geography-terms";
-    S.user = { role: "buyer", org: org, buyerOrg: org, name: "Demo" };
-    if (!S.requests.some(function (r) { return r.org === org && r.ds === slug && r.status === "approved"; }))
-      S.requests.push({ id: id("R"), ds: slug, org: org, name: "Demo", purpose: "Демо: знакомство с форматом и API", use: "commercial", status: "approved", created: Date.now(), decided: Date.now() });
-    store.save();
-    location.replace("#ds/" + slug);
-    setTimeout(function () { toast("Демо: доступ к этому набору уже открыт — попробуйте API и SQL ниже. Другие наборы можно запросить и одобрить в роли оператора."); }, 400);
+    const user = store.load().user, nav = document.getElementById("nav"), who = document.getElementById("who");
+    nav.hidden = who.hidden = !user;
+    if (!user) { nav.innerHTML = who.innerHTML = ""; return; }
+    nav.innerHTML = '<a href="#account"' + (location.hash === "#account" ? ' class="on"' : "") + '>Мой аккаунт</a>' +
+      (user.role === "buyer" ? '<a href="#favorites">Избранное</a>' : "") + '<a href="' + esc(store.catalogUrl("ru")) + '">Общий каталог</a>';
+    who.innerHTML = '<span class="lbl">' + esc(user.org || user.email) + '</span><button type="button" id="logout" class="mvp-link">Выйти</button>';
+    document.getElementById("logout").onclick = async event => {
+      event.currentTarget.disabled = true;
+      try { await auth.signOut(); go("#login"); }
+      catch (error) { store.auth.notice = authErrorMessage(error); go("#account"); }
+    };
   }
 
   function render() {
-    var S = store.s;
-    var h = location.hash || "";
-    if (h === "#demo" || h.indexOf("#demo/") === 0) { startDemo(h.slice(6)); return; }
-    if (!S.user && !/^#(?:login|register)(?:\/|$)/.test(h) && h !== "#legacy") { go("#login"); return; }
     header();
-    window.scrollTo(0, 0);
-    if (/^#(?:login|register)(?:\/|$)/.test(h)) vLogin();
-    else if (h === "#legacy") vLegacyLogin();
-    else if (h === "#favorites") S.user.role === "buyer" ? vFavorites() : go(home());
-    else if (h === "#catalog") vCatalog();
-    else if (h.indexOf("#ds/") === 0) vDataset(h.slice(4));
-    else if (h === "#my") vMy();
-    else if (h === "#uni") S.user.role === "university" ? vUni() : go(home());
-    else if (h === "#uni/new") S.user.role === "university" ? vUniNew() : go(home());
-    else if (h === "#uni/legacy") S.user.role === "university" ? vLegacyUni() : go(home());
-    else if (h === "#ops") S.user.role === "operator" ? vOps() : go("#catalog");
-    else go(home());
+    if (store.auth.status === "loading") { pages.vLoading(); return; }
+    if (store.auth.status === "error") { pages.vConnectionError(() => initAuth().catch(() => {})); return; }
+    const hash = location.hash, user = store.load().user;
+    if (/^#demo(?:\/|$)/.test(hash)) {
+      const url = new URL(store.cabinetUrl(hash));
+      url.searchParams.set("demo", "1");
+      location.href = url.href;
+      return;
+    }
+    if (user && store.auth.recovery && hash !== "#password") { go("#password"); return; }
+    if (!user) {
+      if (/^#(?:login|register)(?:\/|$)/.test(hash)) pages.vLogin(hash.startsWith("#register"));
+      else go("#login");
+      return;
+    }
+    if (hash === "#password") pages.vPassword();
+    else if (hash === "#favorites" && user.role === "buyer") vFavorites();
+    else if (hash === "#account") pages.vProfile();
+    else go("#account");
   }
 
-  document.getElementById("reset").onclick = function (e) { e.preventDefault(); store.reset(seed); toast("Демо сброшено"); go("#login"); };
   window.addEventListener("hashchange", render);
-  window.addEventListener("storage", function (e) { if (e.key === KEY) { store.load(); render(); } });
-
-  loadCabinetData().then(function (data) {
-    DS.push(...data.datasets);
-    UNIS.push(...data.universities);
-    render();
-  }).catch(function () { view.innerHTML = '<p class="err">Не удалось загрузить каталог. Обновите страницу.</p>'; });
+  window.addEventListener("core:account", render);
+  render();
+  initAuth().catch(() => {});
 }

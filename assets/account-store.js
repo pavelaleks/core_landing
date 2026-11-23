@@ -1,11 +1,15 @@
-/* Browser-only demo state shared by the public catalog and the existing cabinet.
-   This is not authentication or server storage. Keep the legacy key and records. */
+/* Shared UI state. Supabase owns authentication; local storage holds only
+   existing browser preferences and the explicitly separate demo scenarios. */
 (function () {
   "use strict";
   var KEY = "core-mvp-v1";
+  var rootUrl = new URL("../", document.currentScript.src).href;
+  var verifiedUser = null, demo = null;
+  function makeStore(isDemo) {
   var memory = null;
   var store = {
     key: KEY,
+    isDemo: isDemo,
     s: null,
     load: function (seed) {
       var state = memory;
@@ -19,6 +23,7 @@
       if (!state.favorites || typeof state.favorites !== "object" || Array.isArray(state.favorites)) state.favorites = {};
       if (!state.downloads) state.downloads = 0;
       if (!state.user) state.user = null;
+      if (!isDemo) state.user = verifiedUser;
       if (this.s && this.s !== state) {
         var current = this.s;
         Object.keys(current).forEach(function (key) { if (!(key in state)) delete current[key]; });
@@ -30,7 +35,8 @@
     },
     save: function () {
       memory = this.s;
-      try { localStorage.setItem(KEY, JSON.stringify(this.s)); return true; } catch (e) { return false; }
+      var snapshot = isDemo ? this.s : Object.assign({}, this.s, { user: null });
+      try { localStorage.setItem(KEY, JSON.stringify(snapshot)); return true; } catch (e) { return false; }
     },
     reset: function (seed) {
       try { localStorage.removeItem(KEY); } catch (e) {}
@@ -56,8 +62,19 @@
       return true;
     }
   };
-  window.CORE_ACCOUNT = store;
-  store.rootUrl = new URL("../", document.currentScript.src).href;
+  store.rootUrl = rootUrl;
   store.catalogUrl = function (lang) { return new URL((lang === "en" ? "" : (lang || "ru") + "/") + "catalog.html", store.rootUrl).href; };
   store.cabinetUrl = function (hash) { return new URL("app/index.html" + (hash || ""), store.rootUrl).href; };
+  return store;
+  }
+  var store = makeStore(false);
+  store.auth = { status: "loading", error: null, recovery: false, event: null };
+  store.setAuthState = function (update) {
+    if (Object.prototype.hasOwnProperty.call(update, "user")) verifiedUser = update.user;
+    Object.keys(update).forEach(function (key) { if (key !== "user") store.auth[key] = update[key]; });
+    store.load();
+    window.dispatchEvent(new Event("core:account"));
+  };
+  store.demoStore = function () { if (!demo) demo = makeStore(true); return demo; };
+  window.CORE_ACCOUNT = store;
 })();

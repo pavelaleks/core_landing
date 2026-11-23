@@ -118,6 +118,7 @@ export function initCatalog({ symbolsUrl }) {
   });
   window.addEventListener("storage", function (e) { if (account && e.key === account.key) render(); });
   window.addEventListener("pageshow", function () { render(); });
+  window.addEventListener("core:account", function () { render(); });
   /* University picker */
   var uIn = document.getElementById("catU"), uList = document.getElementById("catUL"), uSel = -1, uRows = [];
   function syncUrl() {

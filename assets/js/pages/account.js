@@ -1,4 +1,4 @@
-import { authenticateDemo } from "../api/auth.js";
+import { authenticateDemo } from "../api/demo-auth.js";
 import { getCatalog } from "../api/datasets.js";
 import { STEPS, DS_UNI } from "../api/demo-data.js";
 import { esc, date } from "../ui/format.js";
@@ -60,11 +60,11 @@ export function createAccountPages({ store, view, DS, UNIS, go, home }) {
     view.innerHTML = '<div class="cabinet-heading"><div><span class="kicker">Кабинет партнёра</span><h1>Избранные датасеты</h1><p class="lead">Ваша подборка для будущих проектов и сотрудничества.</p></div><a class="btn btn-primary" href="' + store.catalogUrl("ru") + '">Найти данные</a></div>' +
       (favorites.length ? '<div class="saved-grid">' + favorites.map(function (d) {
         var url = /^https?:/.test(d.href) ? d.href : new URL(d.href, store.rootUrl).href;
-        if (d.t === "prep") url = "#ds/" + d.id;
+        if (d.t === "prep") url = store.cabinetUrl("#demo/" + d.id);
         return '<article class="card saved-card"><p class="small muted">' + esc(d.org.ru || d.org.en) + '</p><h2>' + esc(d.title.ru || d.title.en) + '</h2>' +
           (d.desc ? '<p>' + esc(d.desc.ru || d.desc.en) + '</p>' : "") + '<div class="saved-actions"><a class="btn btn-ghost btn-sm" href="' + esc(url) + '"' + (/^https?:/.test(d.href) ? ' target="_blank" rel="noopener"' : "") + '>Открыть</a><button class="remove-favorite" data-remove-favorite="' + esc(d.id) + '">Убрать из избранного</button></div></article>';
       }).join("") + '</div>' : '<div class="card cabinet-empty"><h2>Сохраните первый датасет</h2><p>Откройте общий каталог и нажмите «В избранное» на подходящей карточке. Здесь появится ваша подборка.</p><a class="btn btn-ghost" href="' + store.catalogUrl("ru") + '">Перейти в каталог</a></div>') +
-      '<p class="cabinet-secondary"><a class="mvp-link" href="#my">Мои заявки на доступ</a></p>';
+      (store.isDemo ? '<p class="cabinet-secondary"><a class="mvp-link" href="#my">Мои заявки на доступ</a></p>' : '<p class="cabinet-secondary">Избранное сохраняется только в этом браузере.</p>');
     Array.prototype.forEach.call(view.querySelectorAll("[data-remove-favorite]"), function (b) { b.onclick = function () { store.toggleFavorite(b.getAttribute("data-remove-favorite")); S = store.s; vFavorites(); }; });
   }
 
