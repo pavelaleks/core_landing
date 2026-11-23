@@ -142,9 +142,14 @@
   function refreshAccountLinks() {
     if (!window.CORE_ACCOUNT) return;
     var user = window.CORE_ACCOUNT.load().user;
+    var accountHash = user ? (user.role === "university" ? "#uni" : user.role === "operator" ? "#ops" : "#favorites") : "#login";
     $$("[data-account-link]").forEach(function (a) {
-      a.href = window.CORE_ACCOUNT.cabinetUrl(user ? (user.role === "university" ? "#uni" : user.role === "operator" ? "#ops" : "#favorites") : "#login");
+      a.href = window.CORE_ACCOUNT.cabinetUrl(accountHash);
       a.textContent = user ? T("My account", "Личный кабинет") : T("Sign in", "Войти");
+    });
+    $$("[data-registration-link]").forEach(function (a) {
+      a.href = window.CORE_ACCOUNT.cabinetUrl(user ? accountHash : "#register");
+      a.textContent = !user ? T("Register", "Зарегистрироваться") : user.role === "university" ? T("My datasets", "Мои датасеты") : user.role === "buyer" ? T("Favorites", "Избранное") : T("My account", "Личный кабинет");
     });
   }
   refreshAccountLinks();

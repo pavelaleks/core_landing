@@ -977,6 +977,8 @@ html.has-subnav{scroll-padding-top:136px}
 .campus-subtitle{font-size:clamp(20px,1.9vw,23px);line-height:1.4;max-width:580px;margin-top:22px;letter-spacing:-.015em}
 .campus-hero .lead{max-width:560px;font-size:17px;line-height:1.65;margin:18px 0 28px}
 .campus-actions{display:flex;flex-wrap:wrap;gap:12px}
+.campus-intro-mobile{display:none}
+.campus-registration{display:inline-flex;align-items:center;min-height:44px;padding:0 8px;color:var(--teal-d);font-size:16px;text-decoration:underline;text-underline-offset:4px}
 .campus-landing .btn{height:auto;min-height:46px;padding:11px 20px;white-space:normal;text-align:center}
 .campus-landing .btn-sm,.campus-landing .nav .btn{min-height:36px;padding:7px 14px}
 .campus-section{padding:72px 0}
@@ -1013,9 +1015,27 @@ html.has-subnav{scroll-padding-top:136px}
 .favorite-button:hover{border-color:var(--teal)}
 .favorite-status{font-size:14px;color:var(--muted);min-height:24px;margin-bottom:12px}
 a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--teal);outline-offset:4px}
-@media(max-width:800px){.campus-hero{padding:40px 0 48px}.campus-hero-layout{grid-template-columns:1fr;gap:28px}.campus-hero-art img{max-width:340px}.campus-section,.campus-contact{padding:48px 0}.campus-steps,.campus-examples{grid-template-columns:1fr;gap:28px}.campus-example{padding:24px}.campus-example h3,.campus-example .small{min-height:0}.campus-cover{max-height:200px}.campus-section-head{align-items:start;flex-direction:column;gap:16px}.campus-audience li{font-size:16px}.campus-cooperation{font-size:17px}}
+@media(max-width:800px){.campus-hero{padding:32px 0 36px}.campus-hero-layout{grid-template-columns:1fr;gap:28px}.campus-hero-art img{max-width:340px}.campus-section,.campus-contact{padding:36px 0}.campus-steps,.campus-examples{grid-template-columns:1fr;gap:28px}.campus-example{padding:24px}.campus-example h3,.campus-example .small{min-height:0}.campus-cover{max-height:200px}.campus-section-head{align-items:start;flex-direction:column;gap:16px}.campus-audience li{font-size:16px}.campus-cooperation{font-size:17px}}
 @media(max-width:480px){.cat-card-title{gap:12px}.cat-art{width:76px}.campus-hero-art img{max-width:300px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.campus-landing .reveal{opacity:1;transform:none;transition:none}}
 
 .nav-links .nav-account-mobile{display:none}
 @media(max-width:1180px){.nav-links .nav-account-mobile{display:inline-flex}}
+
+/* Compact mobile introduction and sequential steps. */
+@media(max-width:800px){
+  .campus-hero-art,.campus-subtitle,.campus-hero .campus-intro-desktop{display:none}
+  .campus-hero-layout{display:block}
+  .campus-label{margin-bottom:16px}
+  .campus-hero h1{font-size:32px;line-height:1.12;letter-spacing:-.025em;text-wrap:balance}
+  .campus-hero .campus-intro-mobile{display:block;font-size:16px;line-height:1.6;margin:16px 0 24px;max-width:540px}
+  .campus-actions{flex-direction:column;align-items:stretch;gap:8px}
+  .campus-actions>.btn{width:100%}
+  .campus-registration{align-self:center;padding:0 8px;font-size:15px}
+  .campus-steps{counter-reset:campus-step;gap:24px;margin-top:24px}
+  .campus-steps li{counter-increment:campus-step;display:grid;grid-template-columns:28px minmax(0,1fr);column-gap:12px;row-gap:8px}
+  .campus-step-art{display:none}
+  .campus-steps li::before{content:counter(campus-step);grid-column:1;grid-row:1;display:grid;place-items:center;align-self:start;width:28px;height:28px;border:1px solid var(--line2);border-radius:50%;background:var(--surface);color:var(--teal);font-size:14px;font-weight:600;line-height:1}
+  .campus-steps h3{grid-column:2;grid-row:1;align-self:center;font-size:19px;line-height:1.4;margin:0}
+  .campus-steps p{grid-column:2;grid-row:2;font-size:16px;line-height:1.6;margin:0}
+}

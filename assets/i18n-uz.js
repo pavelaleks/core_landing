@@ -1157,5 +1157,10 @@ window.CORE_UZ = {
 "Я ищу данные": "Men maʼlumot izlayapman",
 "Термины географии на узбекском": "Oʻzbekcha geografiya atamalari",
 "Опрос о страховой грамотности": "Sugʻurta savodxonligi soʻrovi",
-"Исследование COVID-19 в Алматы": "Olmaotadagi COVID-19 tadqiqoti"
+"Исследование COVID-19 в Алматы": "Olmaotadagi COVID-19 tadqiqoti",
+"Результаты исследований в одном месте — для новых проектов, бизнеса и грантов.": "Tadqiqot natijalari bir joyda — yangi loyihalar, biznes va grantlar uchun.",
+"Обсудить запуск": "Ishga tushirishni muhokama qilish",
+"Зарегистрироваться": "Roʻyxatdan oʻtish",
+"Мои датасеты": "Mening maʼlumotlar toʻplamlarim",
+"Избранное": "Saralanganlar"
 };
