@@ -1,12 +1,15 @@
 """Native module versions must work under language and GitHub Pages prefixes."""
 import importlib.util
+import io
 import json
+import os
 from pathlib import Path
 import re
 import shutil
 import tempfile
 import unittest
 import uuid
+from unittest.mock import patch
 
 
 PROJECT = Path(__file__).resolve().parents[1]
@@ -90,6 +93,36 @@ class ModuleVersionTests(unittest.TestCase):
         output = BUILD.version_modules(html, "ru/datasets")
         self.assertIn("../../assets/js/pages/catalog.js", self.mapping(output))
         self.assertRegex(output, r'account-session\.js\?v=[a-f0-9]{8}')
+
+
+class BuildLineEndingTests(unittest.TestCase):
+    def test_windows_and_linux_text_assets_generate_identical_files(self):
+        real_open = open
+
+        def build_with_line_endings(newline):
+            def asset_open(file, mode="r", *args, **kwargs):
+                with real_open(file, mode, *args, **kwargs) as source:
+                    data = source.read()
+                text_asset = isinstance(file, (str, os.PathLike)) and Path(file).suffix in (".js", ".css")
+                if "b" in mode:
+                    if text_asset:
+                        data = data.replace(b"\r\n", b"\n").replace(b"\n", newline)
+                    return io.BytesIO(data)
+                return io.StringIO(data)
+
+            BUILD._VER.clear()
+            with patch("builtins.open", asset_open):
+                BUILD.build()
+            return dict(BUILD.OUT)
+
+        try:
+            linux = build_with_line_endings(b"\n")
+            windows = build_with_line_endings(b"\r\n")
+            different = sorted(path for path in linux if linux[path] != windows[path])
+            self.assertEqual(different, [], "Generated files depend on CSS/JavaScript line endings")
+        finally:
+            BUILD._VER.clear()
+            BUILD.OUT.clear()
 
 
 if __name__ == "__main__":

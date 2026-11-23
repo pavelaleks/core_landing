@@ -443,13 +443,19 @@ def page_url(lang, page_path):
     return BASE + p
 
 _VER = {}
+def text_asset_hash(path):
+    """Use LF bytes for text assets so Windows and Linux generate the same URLs."""
+    with open(path, "rb") as source:
+        content = source.read().replace(b"\r\n", b"\n")
+    return hashlib.sha1(content).hexdigest()[:8]
+
 def asset_version(m):
     """Append ?v=<hash of the file> to local assets so a deploy is never hidden by browser cache."""
     attr, url = m.group(1), m.group(2)
     rel = url.split("assets/", 1)[1]
     if rel not in _VER:
         fp = os.path.join(ROOT, "assets", rel)
-        _VER[rel] = hashlib.sha1(open(fp, "rb").read()).hexdigest()[:8] if os.path.exists(fp) else ""
+        _VER[rel] = text_asset_hash(fp) if os.path.exists(fp) else ""
     return '%s="%s%s"' % (attr, url, ("?v=" + _VER[rel]) if _VER[rel] else "")
 
 def version_modules(text, page_dir):
@@ -472,8 +478,7 @@ def version_modules(text, page_dir):
             url = posixpath.relpath(relative, page_dir or ".")
             if not url.startswith("."):
                 url = "./" + url
-            with open(full, "rb") as source:
-                version = hashlib.sha1(source.read()).hexdigest()[:8]
+            version = text_asset_hash(full)
             imports[url] = url + "?v=" + version
     mapping = '<script type="importmap" data-core-modules>' + json.dumps(
         {"imports": imports}, ensure_ascii=False, sort_keys=True, separators=(",", ":")
@@ -483,8 +488,7 @@ def version_modules(text, page_dir):
         if target not in maintained:
             return entry.group(0)
         src = entry.group(1).split("?", 1)[0]
-        with open(os.path.join(ROOT, target), "rb") as source:
-            version = hashlib.sha1(source.read()).hexdigest()[:8]
+        version = text_asset_hash(os.path.join(ROOT, target))
         return '<script type="module" src="' + src + "?v=" + version + '"></script>'
     start = entries[0].start()
     text = re.sub(pattern, version_entry, text)
@@ -628,8 +632,7 @@ def build():
     with open(os.path.join(ROOT, "app", "index.html"), encoding="utf-8") as source:
         app_index = source.read()
     app_index = re.sub(r'\b(src|href)="((?:\.\./)*assets/[^"?#]+\.(?:js|css))(?:\?[^\"]*)?"', asset_version, app_index)
-    with open(os.path.join(ROOT, "app", "app.css"), "rb") as source:
-        css_version = hashlib.sha1(source.read()).hexdigest()[:8]
+    css_version = text_asset_hash(os.path.join(ROOT, "app", "app.css"))
     app_index = re.sub(r'href="app\.css(?:\?[^\"]*)?"', 'href="app.css?v=' + css_version + '"', app_index)
     emit("app/index.html", version_modules(app_index, "app"))
     urls = [page_url(l, p) for p in pages for l in LANGS]
