@@ -3,6 +3,7 @@ from collections import Counter, defaultdict
 import json
 from pathlib import Path
 from string import Template
+from urllib.parse import quote
 
 from public_data import ROOT, esc, tr
 
@@ -88,8 +89,9 @@ def render(snapshot, lang, uz, *, full):
     rows = []
     for row in first:
         label = labels[row["id"]]
+        href = "organization.html?id=" + quote(row["id"], safe="")
         value = format(row["value"], ",").replace(",", "," if lang == "en" else "\u202f")
-        rows.append(f'<tr><td>{row["place"]}</td><td><strong>{esc(label["name"])}</strong>'
+        rows.append(f'<tr><td>{row["place"]}</td><td><strong><a href="{href}">{esc(label["name"])}</a></strong>'
                     f'<small>{esc(label["country"])}</small></td><td>{value}</td></tr>')
     empty = t("No universities found.", "Вузы не найдены.", "Universitetlar topilmadi.")
     search = ""

@@ -5,6 +5,7 @@ from pathlib import Path
 import re
 import unittest
 from unittest.mock import patch
+from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parents[1]
 SPEC = importlib.util.spec_from_file_location("core_public_build", ROOT / "tools" / "build_site.py")
@@ -27,14 +28,18 @@ class PublicRecordTests(unittest.TestCase):
         self.assertEqual(positions(result["open"][""]), [("A", 2, 1), ("D", 1, 2)])
         self.assertEqual(positions(result["open"]["Medicine"]), [("A", 1, 1), ("D", 1, 1)])
 
-    def test_landing_uses_first_three_of_each_full_ranking_in_all_languages(self):
+    def test_rankings_link_to_universities_and_preview_the_first_three_in_all_languages(self):
         BUILD.build()
-        def payload(path):
+        def payload(path, limit):
             page = BUILD.OUT[path].decode("utf-8")
-            return json.loads(re.search(r'<script type="application/json" data-ranking-lists>(.*?)</script>', page, re.S)[1])
+            data = json.loads(re.search(r'<script type="application/json" data-ranking-lists>(.*?)</script>', page, re.S)[1])
+            table = re.search(r'<table class="rank-table".*?</table>', page, re.S)[0]
+            expected_urls = ["organization.html?id=" + quote(row["id"], safe="") for row in data["open"][""][:limit]]
+            self.assertEqual(re.findall(r'href="([^"]+)"', table), expected_urls)
+            return data
         for prefix in ("", "ru/", "uz/"):
-            full = payload(prefix + "rankings.html")
-            preview = payload(prefix + "index.html")
+            full = payload(prefix + "rankings.html", 5)
+            preview = payload(prefix + "index.html", 3)
             self.assertEqual(preview["works"], full["works"][:3])
             self.assertEqual(preview["open"], {key: rows[:3] for key, rows in full["open"].items()})
 

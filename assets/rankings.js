@@ -88,7 +88,10 @@
       const tr = body.insertRow();
       tr.insertCell().textContent = row.place;
       const name = document.createElement("strong");
-      name.textContent = university.name;
+      const link = document.createElement("a");
+      link.href = "organization.html?id=" + encodeURIComponent(row.id);
+      link.textContent = university.name;
+      name.append(link);
       const country = document.createElement("small");
       country.textContent = university.country;
       tr.insertCell().append(name, country);
