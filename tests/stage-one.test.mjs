@@ -28,6 +28,18 @@ test("catalog pagination follows actual rows returned when the server caps the p
   assert.deepEqual(calls, [0, 2, 4]);
 });
 
+test("record labels agree with the count and dataset topics use the page language", async () => {
+  const labels = await moduleAt("assets/js/ui/data-labels.js");
+  for (const [count, word] of [[1, "запись"], [2, "записи"], [5, "записей"], [11, "записей"], [21, "запись"], [112, "записей"], [2982, "записи"]]) {
+    assert.equal(labels.recordUnit(count, "ru"), word);
+  }
+  assert.equal(labels.recordUnit(1, "en"), "record");
+  assert.equal(labels.recordUnit(21, "en"), "records");
+  assert.equal(labels.recordUnit(3, "uz"), "yozuv");
+  assert.equal(labels.datasetTopicName("Language and knowledge", "ru"), "Язык и знания");
+  assert.equal(labels.datasetTopicName("Sociology and finance", "uz"), "Sotsiologiya va moliya");
+});
+
 test("an incomplete response cannot silently shorten the catalog", async () => {
   const client = { from: () => ({ select: () => ({ range: async () => ({ data: [], count: 3, error: null }) }) }) };
   const api = await moduleAt("assets/js/api/query.js", { window: { CORE_CONFIG: { supabase: { url: "https://example.test", publishableKey: "sb_publishable_test" } } }, supabase: { createClient: () => client } });

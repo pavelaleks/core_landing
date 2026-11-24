@@ -3,7 +3,7 @@ import html
 import json
 import os
 import re
-from urllib.parse import urlparse
+from urllib.parse import quote, urlparse
 from pathlib import Path
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -60,6 +60,58 @@ def catalog_index():
     return "window.CORE_CATALOG=" + json.dumps(items, ensure_ascii=False, separators=(",", ":")) + ";\nwindow.CORE_UNI_ALT=" + json.dumps(aliases, ensure_ascii=False, separators=(",", ":")) + ";"
 
 
+def catalog_metrics():
+    rows = [row for row in SNAPSHOT["datasets"] if row.get("publication_status") == "published"]
+    sizes = [row["record_count"] for row in rows if isinstance(row.get("record_count"), int) and row["record_count"] >= 0]
+    return {"datasets": len(rows), "organizations": len({row["organization_id"] for row in rows if row.get("organization_id")}),
+            "records": sum(sizes), "sized_datasets": len(sizes)}
+
+
+def metrics_html(lang):
+    metrics = catalog_metrics()
+    def number(value):
+        return format(value, ",").replace(",", "\u202f" if lang != "en" else ",")
+    scope = tr(lang, "Reported volume in {known} of {total} datasets", "Объём указан для {known} из {total} наборов", "Hajm {total} toʻplamdan {known} tasida koʻrsatilgan").format(known=number(metrics["sized_datasets"]), total=number(metrics["datasets"]))
+    values = [(metrics["datasets"], tr(lang, "Datasets", "Датасеты", "Toʻplamlar"),
+               tr(lang, "CORE materials and researchers’ open datasets", "Материалы CORE и открытые наборы исследователей", "CORE materiallari va tadqiqotchilarning ochiq toʻplamlari")),
+              (metrics["organizations"], tr(lang, "Organizations", "Организации", "Tashkilotlar"),
+               tr(lang, "Universities and companies in the catalog", "Университеты и компании в каталоге", "Katalogdagi universitetlar va kompaniyalar")),
+              (metrics["records"] if metrics["sized_datasets"] else "—", tr(lang, "Data records", "Записи в наборах", "Toʻplamlardagi yozuvlar"), scope)]
+    items = []
+    for value, label, note in values:
+        formatted = number(value) if isinstance(value, int) else value
+        items.append(f'''<div class="catalog-scale-item">
+          <dt>{esc(label)}</dt>
+          <dd class="catalog-scale-value">{formatted}</dd>
+          <dd class="catalog-scale-note">{esc(note)}</dd>
+        </div>''')
+    title = tr(lang, "Inside the catalog", "Масштаб каталога", "Katalog koʻlami")
+    action = tr(lang, "Explore the datasets", "Посмотреть датасеты", "Toʻplamlarni koʻrish")
+    return f'''<section class="catalog-scale" aria-labelledby="catalog-scale-title">
+      <div class="wrap">
+        <div class="catalog-scale-heading">
+          <h2 id="catalog-scale-title">{title}</h2>
+          <a class="campus-text-link" href="catalog.html">{action} ↗</a>
+        </div>
+        <dl class="catalog-scale-grid">{"".join(items)}</dl>
+      </div>
+    </section>'''
+
+
+def provenance_html(row, lang):
+    if not row:
+        return ""
+    organization = row.get("organization") or {}
+    organization_id = row.get("organization_id")
+    if not organization_id:
+        return ""
+    name = organization.get("name_" + lang) or organization.get("name") or organization_id
+    label = tr(lang, "Source", "Источник", "Manba") if row["kind"] in ("open", "prep") else tr(lang, "Organization", "Организация", "Tashkilot")
+    link = '<a href="../organization.html?id=%s">%s</a>' % (quote(organization_id, safe=""), esc(name))
+    prepared = '<span>%s <a href="../organization.html?id=ORG-CORE">CORE</a></span>' % tr(lang, "Prepared by", "Подготовлено", "Tayyorlagan") if row["kind"] == "prep" else ""
+    return '<div class="dataset-provenance"><span>%s · %s</span>%s</div>' % (label, link, prepared)
+
+
 def usage_html(dataset_id, lang):
     groups = {}
     for row in SNAPSHOT["usage"]:
@@ -107,8 +159,8 @@ def record_html(row, lang):
     link_html = "".join('<li><a href="%s" target="_blank" rel="noopener">%s</a></li>' % (esc(link["url"]), esc(link.get("title") or link.get("type") or link["url"])) for link in links if safe_url(link.get("url")))
     if document:
         link_html += '<li><a href="%s">%s</a></li>' % (("../../" if lang != "en" else "../") + document, tr(lang, "Read the license", "Посмотреть выбранную лицензию", "Tanlangan litsenziyani koʻrish"))
-    return '<h1 class="h1-page">%s</h1><p class="sub dataset-description">%s</p><section class="card"><dl class="kv">%s</dl>%s%s</section>%s' % (
-        esc(local(row["title"], lang)), esc(local(row["description"], lang)), "".join('<div><dt>%s</dt><dd>%s</dd></div>' % (esc(label), esc(value)) for label, value in labels),
+    return '<h1 class="h1-page">%s</h1>%s<p class="sub dataset-description">%s</p><section class="card"><dl class="kv">%s</dl>%s%s</section>%s' % (
+        esc(local(row["title"], lang)), provenance_html(row, lang), esc(local(row["description"], lang)), "".join('<div><dt>%s</dt><dd>%s</dd></div>' % (esc(label), esc(value)) for label, value in labels),
         '<p class="dataset-description">%s</p>' % esc(terms) if terms else "",
         '<ul class="dataset-links">%s</ul>' % link_html if link_html else "", usage_html(row["id"], lang))
 
@@ -128,4 +180,6 @@ def new_dataset_page(row, nav, footer, base_url):
 
 def inject(text, lang):
     text = re.sub(r"<!--CORE_USAGE:([^>]+)-->", lambda match: usage_html(match[1], lang), text)
+    text = re.sub(r"<!--CORE_PROVENANCE:([^>]+)-->", lambda match: provenance_html(RECORDS.get(match[1]), lang), text)
+    text = text.replace("<!--CORE_CATALOG_METRICS-->", metrics_html(lang))
     return re.sub(r"<!--CORE_RECORD:([^>]+)-->", lambda match: record_html(RECORDS[match[1]], lang), text)

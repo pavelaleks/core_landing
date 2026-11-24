@@ -1,5 +1,6 @@
 /* Uzbek (Latin) translations, keyed by the Russian source string. Missing keys fall back to Russian. */
 window.CORE_UZ = {
+"строк": "qator",
 "Каталог": "Katalog",
 "ИИ-командам": "SI jamoalariga",
 "Университетам": "Universitetlarga",

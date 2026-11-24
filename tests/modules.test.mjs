@@ -141,7 +141,7 @@ test("unavailable universities remain optional while package loading errors prop
 });
 
 test("catalog card links, artwork and favorite controls retain their language and role behavior", async () => {
-  const { createCatalogCard } = await loadModule("assets/js/ui/catalog-card.js", vm.createContext({}));
+  const { createCatalogCard } = await loadModule("assets/js/ui/catalog-card.js", vm.createContext({ URL }));
   const esc = value => String(value ?? "").replaceAll("&", "&amp;").replaceAll('"', "&quot;");
   const options = {
     lang: "ru", L: value => value.ru || value.en,
@@ -150,13 +150,16 @@ test("catalog card links, artwork and favorite controls retain their language an
   };
   const render = createCatalogCard(options);
   const item = {
-    id: "uzbek-geography-terms", t: "prep", st: "demo", org: { en: "University" },
+    id: "uzbek-geography-terms", t: "prep", st: "demo", org: { en: "University" }, organizationId: "UNI-UZ-0180",
     title: { en: "English", ru: "Русский" }, href: "app/index.html#demo/uzbek-geography-terms", f: "Research", c: "UZ",
   };
   const guest = render(item, null, []);
   assert.match(guest, /href="\.\.\/app\/index.html#demo\/uzbek-geography-terms"/);
   assert.match(guest, /data-symbols.svg#geography/);
   assert.match(guest, /Русский/);
+  assert.match(guest, /organization\.html\?id=UNI-UZ-0180/);
+  assert.match(guest, /organization\.html\?id=ORG-CORE/);
+  assert.match(guest, /Источник/);
   assert.match(guest, /data-favorite=/);
   assert.match(render(item, { role: "buyer" }, [item.id]), /aria-pressed="true"/);
   assert.doesNotMatch(render(item, { role: "university" }, []), /data-favorite=/);
@@ -164,6 +167,10 @@ test("catalog card links, artwork and favorite controls retain their language an
   const licensed = render({ ...item, t: "dataset", lic: "Legacy source license", license: { id: "by-agreement", name: { ru: "Доступ по соглашению" } }, href: "app/index.html#dataset/DS-example" }, null, []);
   assert.match(licensed, /Доступ по соглашению/);
   assert.doesNotMatch(licensed, /\[object Object\]|Legacy source license|Доступ по условиям набора/);
+  const uzRender = createCatalogCard({ ...options, lang: "uz", tr: (en, ru, uz) => uz });
+  const uzCard = uzRender({ ...item, org: { en: "English name", ru: "Русское имя", uz: "Oʻzbekcha nom" } }, null, []);
+  assert.match(uzCard, /Oʻzbekcha nom/);
+  assert.doesNotMatch(uzCard, /Русское имя/);
 });
 
 test("CSV preview retains delimiter, empty-cell and personal-data detection behavior", async () => {

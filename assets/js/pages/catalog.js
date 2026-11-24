@@ -1,12 +1,12 @@
 import { getAccountStore } from "../api/auth.js";
 import { getCatalog, getUniversityAliases, fetchCatalog, fetchDatasetUsage } from "../api/datasets.js";
 import { createCatalogCard } from "../ui/catalog-card.js";
+import { datasetTopicName } from "../ui/data-labels.js";
 
 export async function initCatalog({ symbolsUrl }) {
   var previousItems = getCatalog() || [], ALL, root = document.getElementById("cat");
   if (!root) return;
   var lang = document.documentElement.getAttribute("data-static-lang") || "en";
-  var UZD = window.CORE_UZ || {}, TOP = window.CORE_TOPIC_RU || {};
   var L = function (o) { return o ? (o[lang] || o.ru || o.en || "") : ""; };
   var tr = function (en, ru, uz) { return lang === "en" ? en : lang === "uz" ? uz : ru; };
   var esc = function (s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
@@ -18,12 +18,7 @@ export async function initCatalog({ symbolsUrl }) {
     document.getElementById("retryCatalog").onclick = () => initCatalog({ symbolsUrl });
     return;
   }
-  var FIELD_LOCAL = { Education: ["Education", "Образование", "Taʼlim"], Medicine: ["Medicine", "Медицина", "Tibbiyot"], Research: ["Research", "Наука", "Ilm-fan"], Demography: ["Demography", "Демография", "Demografiya"] };
-  var fieldName = function (f) {
-    if (FIELD_LOCAL[f]) return tr.apply(null, FIELD_LOCAL[f]);
-    if (lang === "en") return f;
-    var ru = TOP[f] || f; return lang === "uz" ? (UZD[ru] || ru) : ru;
-  };
+  var fieldName = value => datasetTopicName(value, lang);
   var GROUPS = [["", tr("Everything", "Всё", "Hammasi")], ["core", tr("From CORE", "От CORE", "CORE dan")], ["open", tr("Scholars' open datasets", "Открытые наборы учёных", "Olimlarning ochiq toʻplamlari")]];
   var state = { q: "", g: "", c: "", f: "", u: "", sort: "rel", shown: 24 };
   var account = getAccountStore(), currentUser = null, favoriteIds = [];
@@ -53,9 +48,9 @@ export async function initCatalog({ symbolsUrl }) {
   root.innerHTML =
     '<div class="cat-search"><input type="search" id="catQ" autocomplete="off" placeholder="' + esc(tr("Search: corpus, wheat, Aral, clinics, survey, speech…", "Поиск: корпус, пшеница, Арал, клиники, опрос, речь…", "Qidiruv: korpus, bugʻdoy, Orol, klinikalar, soʻrov, nutq…")) + '" value="' + esc(state.q) + '">' +
     '<span class="cat-count" id="catN"></span></div>' +
-    '<div class="cat-uni"><input type="search" id="catU" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="catUL" aria-label="' + esc(tr("University", "Университет", "Universitet")) + '" placeholder="' +
-    esc(tr("University: e.g. Nazarbayev, Urgench, Samarkand…", "Университет: например, Назарбаев, Ургенч, Самарканд…", "Universitet: masalan, Nazarboyev, Urganch, Samarqand…")) + '" value="' + esc(state.u ? UNI[state.u].label : "") + '">' +
-    '<span class="cat-uni-n">' + tr(UNIS.length + " universities", UNIS.length + " вузов", UNIS.length + " ta OTM") + '</span>' +
+    '<div class="cat-uni"><input type="search" id="catU" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="catUL" aria-label="' + esc(tr("Organization", "Организация", "Tashkilot")) + '" placeholder="' +
+    esc(tr("University or company: name…", "Университет или компания: название…", "Universitet yoki kompaniya nomi…")) + '" value="' + esc(state.u ? UNI[state.u].label : "") + '">' +
+    '<span class="cat-uni-n">' + tr(UNIS.length + " organizations", UNIS.length + " организаций", UNIS.length + " ta tashkilot") + '</span>' +
     '<div class="cat-uni-list card" id="catUL" role="listbox" hidden></div></div>' +
     '<div class="cat-filters"><div class="seg" id="catG">' + GROUPS.map(function (g) { return '<button data-g="' + g[0] + '">' + g[1] + "</button>"; }).join("") + "</div>" +
     '<div class="seg" id="catC"><button data-c="">' + tr("All countries", "Все страны", "Barcha mamlakatlar") + '</button><button data-c="UZ">UZ</button><button data-c="KZ">KZ</button><button data-c="KG">KG</button><button data-c="TJ">TJ</button></div>' +
@@ -154,11 +149,11 @@ export async function initCatalog({ symbolsUrl }) {
     if (state.u && uIn.value === UNI[state.u].label) v = "";
     var words = v.split(/\s+/).filter(Boolean);
     uRows = UNIS.filter(function (u) { return words.every(function (w) { return u.hay.indexOf(w) >= 0 || u.hay.replace(/h/g, "").indexOf(lat(w).replace(/h/g, "")) >= 0; }); }).slice(0, 8);
-    if (state.u && !words.length) uRows.unshift({ k: "", label: tr("All universities", "Все вузы", "Barcha OTMlar"), n: ALL.length });
+    if (state.u && !words.length) uRows.unshift({ k: "", label: tr("All organizations", "Все организации", "Barcha tashkilotlar"), n: ALL.length });
     uSel = -1;
     uList.innerHTML = uRows.length ? uRows.map(function (u, i) {
       return '<button type="button" role="option" class="cat-uni-opt' + (u.k === state.u ? " on" : "") + '" data-i="' + i + '"><span>' + esc(u.label) + "</span><small>" + nf(u.n) + "</small></button>";
-    }).join("") : '<p class="cat-uni-none">' + tr("No such university in the catalog yet.", "Такого вуза в каталоге пока нет.", "Bunday OTM katalogda hozircha yoʻq.") + "</p>";
+    }).join("") : '<p class="cat-uni-none">' + tr("No such organization in the catalog yet.", "Такой организации в каталоге пока нет.", "Bunday tashkilot katalogda hozircha yoʻq.") + "</p>";
     uList.hidden = false; uIn.setAttribute("aria-expanded", "true");
   }
   function hl() { Array.prototype.forEach.call(uList.querySelectorAll(".cat-uni-opt"), function (b, i) { b.classList.toggle("hl", i === uSel); if (i === uSel) b.scrollIntoView({ block: "nearest" }); }); }
