@@ -104,6 +104,12 @@ META["digests.html"] = {
     "title": {"en": "CORE — research data digests", "ru": "CORE — дайджесты научных данных", "uz": "CORE — ilmiy maʼlumotlar sharhlari"},
     "desc": {"en": "Thematic selections of Central Asian research datasets: languages, water, agriculture and examples of data preparation.", "ru": "Тематические подборки научных данных Центральной Азии: языки, вода, сельское хозяйство и примеры подготовки наборов.", "uz": "Markaziy Osiyo ilmiy maʼlumotlarining mavzuli tanlovlari: tillar, suv, qishloq xoʻjaligi va toʻplamlarni tayyorlash misollari."},
 }
+META["organization.html"] = {
+    "title": {"en": "Organization — CORE", "ru": "Организация — CORE", "uz": "Tashkilot — CORE"},
+    "desc": {"en": "An organization and its related research datasets, sources and data preparation.",
+             "ru": "Организация и связанные с ней научные датасеты, источники и подготовленные материалы.",
+             "uz": "Tashkilot va unga bogʻliq ilmiy toʻplamlar, manbalar hamda tayyorlangan materiallar."},
+}
 LICENSE_URL = {"CC0-1.0": "https://creativecommons.org/publicdomain/zero/1.0/", "ODbL-1.0": "https://opendatacommons.org/licenses/odbl/1-0/"}
 COUNTRY_EN = {"UZ": "Uzbekistan", "KZ": "Kazakhstan", "KG": "Kyrgyzstan", "TJ": "Tajikistan"}
 
@@ -305,6 +311,7 @@ def dataset_page(ds, nav, footer):
   <div class="wrap">
     <p class="crumbs mono small"><a href="../developers.html#catalog" data-ru="Каталог">Catalog</a> / {esc(ds["id"])}</p>
     <h1 class="h1-page" data-ru="{esc(ds["title_ru"])}">{esc(ds["title_en"])}</h1>
+    <!--CORE_PROVENANCE:{esc(ds["id"])}-->
     <div class="tagrow ds-tags">
       <span class="tag t-teal"><span data-ru="{esc(status_ru)}">{esc(ds["status"])}</span></span>
       <span class="tag"><span data-ru="{esc(kind_ru)}">{esc(kind_en)}</span></span>
@@ -330,7 +337,7 @@ def dataset_page(ds, nav, footer):
         <h3 data-ru="Получить данные">Get the data</h3>
         {get_lead}
         <div class="dl-list">
-          <a class="dl" href="{api}/sample.csv" download>{csv_label}<span class="mono small">{ds["sample"]["rows"]} rows</span></a>
+          <a class="dl" href="{api}/sample.csv" download>{csv_label}<span class="mono small">{ds["sample"]["rows"]} <span data-ru="строк">rows</span></span></a>
           <a class="dl" href="{api}/sample.json"><b data-ru="Образец JSON">Sample JSON</b><span class="mono small">api/v0</span></a>
           <a class="dl" href="{api}/croissant.json"><b>Croissant</b><span class="mono small">MLCommons 1.0</span></a>
           <a class="dl" href="{api}.json"><b data-ru="Карточка API">API card</b><span class="mono small">JSON</span></a>
@@ -482,7 +489,7 @@ def version_modules(text, page_dir):
     """Keep native module imports fresh using the existing content-hash mechanism."""
     text = re.sub(r'<script type="importmap" data-core-modules>.*?</script>\n?', "", text, flags=re.S)
     pattern = r'<script type="module" src="([^"]+)"></script>'
-    maintained = ("assets/catalog-page.js", "assets/account-session.js", "app/app.js")
+    maintained = ("assets/catalog-page.js", "assets/organization-page.js", "assets/account-session.js", "app/app.js")
     def target_of(entry):
         return posixpath.normpath(posixpath.join(page_dir, entry.group(1).split("?", 1)[0]))
     entries = [entry for entry in re.finditer(pattern, text) if target_of(entry) in maintained]
@@ -527,7 +534,7 @@ def finalize(text, lang, page_path, meta):
     text = re.sub(r'<meta property="og:url" content="[^"]*">', '<meta property="og:url" content="%s">' % page_url(lang, page_path), text)
     if meta:
         t, d = meta["title"][lang], meta["desc"][lang]
-        if page_path in ("index.html", "catalog.html", "digests.html"):
+        if page_path in ("index.html", "catalog.html", "digests.html", "organization.html"):
             text = re.sub(r'<meta property="og:title" content="[^"]*">', '<meta property="og:title" content="%s">' % esc(t), text, count=1)
         text = re.sub(r"<title>.*?</title>", "<title>%s</title>" % esc(t), text, count=1, flags=re.S)
         text = re.sub(r'<meta name="description" content="[^"]*">', '<meta name="description" content="%s">' % esc(d), text, count=1)
@@ -729,6 +736,7 @@ def build():
              "pricing.html": open(os.path.join(ROOT, "src", "pricing.html"), encoding="utf-8").read(),
              "how.html": open(os.path.join(ROOT, "src", "how.html"), encoding="utf-8").read(),
              "catalog.html": open(os.path.join(ROOT, "src", "catalog.html"), encoding="utf-8").read(),
+             "organization.html": open(os.path.join(ROOT, "src", "organization.html"), encoding="utf-8").read(),
              "documents.html": open(os.path.join(ROOT, "src", "documents.html"), encoding="utf-8").read()}
     for d in CAT:
         pages["datasets/" + d["slug"] + ".html"] = dataset_page(d, up(nav), up(footer))

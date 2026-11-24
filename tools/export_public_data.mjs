@@ -24,10 +24,11 @@ async function read(table, select, filter = {}) {
   } while (total == null || rows.length < total);
   return rows;
 }
-const columns = "id,organization_id,kind,title,description,category,countries,languages,license,license_url,usage_terms,links,record_count,token_count,tokenizer,token_method,token_material,data_version,publication_status,access_type,source_url,formats,publication_year,mentions_central_asia,updated_at,organization:organizations(id,name,name_ru,name_en,name_uz,country)";
+const columns = "id,organization_id,kind,title,description,category,countries,languages,license_id,license,license_url,usage_terms,links,record_count,token_count,tokenizer,token_method,token_material,data_version,publication_status,access_type,source_url,formats,publication_year,mentions_central_asia,updated_at,organization:organizations(id,name,name_ru,name_en,name_uz,country),license_info:licenses(id,name,description,document_path,version)";
 const datasets = await read("datasets", columns, { publication_status: "eq.published" });
 const usage = await read("dataset_usage", "dataset_id,consumer_id,usage_scope,purpose,result_url,is_demo,consumer:consumers(id,name,type,description,url,is_demo,organization:organizations(id,name,name_ru,name_en,name_uz))");
 if (datasets.some(d => d.publication_status !== "published")) throw new Error("Private record in public export");
-const snapshot = { version: 1, datasets, usage };
+const licenses = await read("licenses", "id,name,description,document_path,version");
+const snapshot = { version: 1, licenses, datasets, usage };
 fs.writeFileSync(path.join(root, "data-src/public-catalog.json"), JSON.stringify(snapshot, null, 1) + "\n");
-console.log(JSON.stringify({ publishedDatasets: datasets.length, usage: usage.length }));
+console.log(JSON.stringify({ publishedDatasets: datasets.length, licenses: licenses.length, usage: usage.length }));

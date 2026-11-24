@@ -1,5 +1,7 @@
 import { BA, PRICE, ROLES, id } from "../api/demo-data.js";
-import { fetchDatasetUsage } from "../api/datasets.js";
+import { fetchDatasetUsage, getCatalog } from "../api/datasets.js";
+import { organizationUrl } from "../api/organizations.js";
+import { recordUnit } from "../ui/data-labels.js";
 import { renderDatasetUsage } from "../ui/dataset-usage.js";
 import { esc, nf, date, pill, toast } from "../ui/format.js";
 import { createDatasetApi } from "./dataset-api.js";
@@ -71,10 +73,12 @@ export function createDatasetPage({ store, view, ds, myReq, go, render, switchRo
   function vDataset(slug) {
     var S = store.s;
     var d = ds(slug); if (!d) { go("#catalog"); return; }
+    const sourceOrganization = (getCatalog() || []).find(item => item.id === slug)?.organizationId;
+    const organization = sourceOrganization ? '<a class="mvp-link" href="' + esc(organizationUrl(sourceOrganization, "ru")) + '">' + esc(d.uni_ru) + '</a>' : esc(d.uni_ru);
     var s = d.summary, p = d.preview, show = Math.min(p[0].length, 9);
     view.innerHTML = '<a class="back" href="#catalog">← Каталог</a><span class="kicker">' + esc(d.field_ru) + " · " + d.country + "</span><h1>" + esc(d.title_ru) + "</h1>" +
-      '<p class="lead">' + esc(d.uni_ru) + ". Авторы: " + esc(d.authors.join(", ")) + '. Исходный набор: <a class="mvp-link" href="https://doi.org/' + esc(d.doi) + '" target="_blank" rel="noopener">doi.org/' + esc(d.doi) + "</a></p>" +
-      '<div class="facts"><div><b>' + nf(d.rows) + "</b><span>записей</span></div><div><b>" + d.columns + "</b><span>полей</span></div><div><b>" + s.issues.length + "</b><span>находок в отчёте о качестве</span></div><div><b>3</b><span>языка описания</span></div></div>" +
+      '<p class="lead">Источник · ' + organization + ". Авторы: " + esc(d.authors.join(", ")) + '. Исходный набор: <a class="mvp-link" href="https://doi.org/' + esc(d.doi) + '" target="_blank" rel="noopener">doi.org/' + esc(d.doi) + '</a></p><p class="dataset-provenance"><a href="' + esc(organizationUrl("ORG-CORE", "ru")) + '">Подготовлено CORE</a></p>' +
+      '<div class="facts"><div><b>' + nf(d.rows) + '</b><span>' + recordUnit(d.rows, "ru") + "</span></div><div><b>" + d.columns + "</b><span>полей</span></div><div><b>" + s.issues.length + "</b><span>находок в отчёте о качестве</span></div><div><b>3</b><span>языка описания</span></div></div>" +
       '<div class="cols"><div>' + apiSection(d) +
       "<h2 style=\"margin-top:0\">Что сделал CORE</h2><ul class=\"added\">" + d.added_ru.map(function (a) { return "<li>" + esc(a) + "</li>"; }).join("") + "</ul>" +
       "<h2>До и после</h2><div class=\"card\" style=\"padding:8px 20px\">" + (BA[slug] || []).map(function (x) { return '<div class="ba"><div class="b">' + esc(x[0]) + '</div><div class="arr">→</div><div class="a">' + esc(x[1]) + "</div></div>"; }).join("") + "</div>" +

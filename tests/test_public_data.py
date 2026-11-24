@@ -12,6 +12,47 @@ PUBLIC = BUILD.public_data
 
 
 class PublicRecordTests(unittest.TestCase):
+    def test_catalog_metrics_count_public_datasets_unique_organizations_and_known_sizes(self):
+        rows = [
+            {"id": "one", "organization_id": "ORG-A", "publication_status": "published", "record_count": 10},
+            {"id": "two", "organization_id": "ORG-A", "publication_status": "published", "record_count": None},
+            {"id": "three", "organization_id": "ORG-B", "publication_status": "published", "record_count": 0},
+            {"id": "private", "organization_id": "ORG-C", "publication_status": "draft", "record_count": 999},
+        ]
+        with patch.object(PUBLIC, "SNAPSHOT", {"datasets": rows}):
+            self.assertEqual(PUBLIC.catalog_metrics(), {"datasets": 3, "organizations": 2, "records": 10, "sized_datasets": 2})
+            for lang in ["en", "ru", "uz"]:
+                rendered = PUBLIC.metrics_html(lang)
+                self.assertEqual(rendered.count('class="catalog-scale-item"'), 3)
+                self.assertNotIn("data-count", rendered)
+                self.assertNotIn("999", rendered)
+        with patch.object(PUBLIC, "SNAPSHOT", {"datasets": [rows[1]]}):
+            self.assertIn('class="catalog-scale-value">—', PUBLIC.metrics_html("ru"))
+
+    def test_source_and_preparation_links_keep_the_existing_organization_id(self):
+        row = {"organization_id": "UNI-UZ-0180", "organization": {"name": "University <source>"}, "kind": "prep"}
+        for lang in ["en", "ru", "uz"]:
+            rendered = PUBLIC.provenance_html(row, lang)
+            self.assertIn("organization.html?id=UNI-UZ-0180", rendered)
+            self.assertIn("organization.html?id=ORG-CORE", rendered)
+            self.assertIn("University &lt;source&gt;", rendered)
+
+    def test_shared_license_is_rendered_in_each_language_without_rewriting_source_licenses(self):
+        row = dict(PUBLIC.SNAPSHOT["datasets"][0])
+        source_license = row["license"]
+        license = {"id": "metadata-only", "version": "1.2", "document_path": "documents/metadata-only.html",
+                   "name": {"en": "Metadata only", "ru": "Только метаданные", "uz": "Faqat metamaʼlumotlar"},
+                   "description": {"en": "Description only", "ru": "Только описание", "uz": "Faqat tavsif"}}
+        row.update(license_id=license["id"], license_info=license)
+        for lang in ["en", "ru", "uz"]:
+            page = PUBLIC.record_html(row, lang)
+            self.assertIn(license["name"][lang], page)
+            self.assertIn(license["description"][lang], page)
+            self.assertIn(("../" if lang == "en" else "../../") + license["document_path"], page)
+        self.assertEqual(PUBLIC.catalog_item(row)["license"], license)
+        self.assertEqual(row["license"], source_license)
+        self.assertIn('"license": "https://example.org/documents/metadata-only.html"', PUBLIC.new_dataset_page(row, "", "", "https://example.org/"))
+
     def test_published_user_record_has_pages_schema_and_catalog_from_the_same_snapshot(self):
         row = dict(PUBLIC.SNAPSHOT["datasets"][0])
         row.update(id="DS-static-test", kind="dataset", source_url=None,

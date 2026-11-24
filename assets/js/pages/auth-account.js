@@ -1,7 +1,7 @@
 import { authErrorMessage } from "../api/auth.js";
 import { esc } from "../ui/format.js";
 import { createProfile, ORGANIZATION_ROLES } from "../api/profiles.js";
-import { organizationName } from "../api/organizations.js";
+import { organizationName, organizationUrl } from "../api/organizations.js";
 import { databaseMessage } from "../api/query.js";
 import { organizationFields, bindOrganizationFields } from "../ui/organization-fields.js";
 
@@ -116,9 +116,9 @@ export function createAuthAccountPages({ store, auth, view, go, onLogin, getProf
     const user = store.load().user;
     const profile = getProfileState().data, organization = profile.organization;
     view.innerHTML = '<div class="cabinet-heading"><div><span class="kicker">Личный кабинет CORE</span><h1>' + esc(user.name || "Мой аккаунт") + '</h1><p class="lead">Данные вашего аккаунта.</p></div></div>' +
-      '<div class="account-summary"><section class="card auth-profile"><div class="profile-status ' + (profile.is_verified ? 'is-verified' : '') + '">' + (profile.is_verified ? "Аккаунт подтверждён" : "Ожидает подтверждения CORE") + '</div><dl><dt>Email</dt><dd>' + esc(user.email) + '</dd><dt>Имя</dt><dd>' + esc(profile.name || "Не указано") + '</dd><dt>Роль</dt><dd>' + esc(ORGANIZATION_ROLES[profile.role]) + '</dd></dl>' +
+      '<div class="account-summary"><section class="card auth-profile"><div class="profile-status ' + (profile.is_verified ? 'is-verified' : '') + '">' + (profile.is_verified ? "Аккаунт подтверждён" : "Ожидает подтверждения CORE") + '</div><dl><dt>Email</dt><dd>' + esc(user.email) + '</dd><dt>Имя</dt><dd>' + esc(profile.name || "Не указано") + '</dd><dt>Роль в организации</dt><dd>' + esc(ORGANIZATION_ROLES[profile.role]) + '</dd></dl>' +
       '<p class="small muted">' + (profile.is_verified ? "Можно создавать и публиковать собственные датасеты." : "Можно создавать и сохранять собственные черновики. Публикация станет доступна после подтверждения CORE.") + '</p><button type="button" class="mvp-link" id="refreshProfile">Обновить статус</button></section>' +
-      '<section class="card auth-profile"><span class="kicker">' + (organization.type === "university" ? "Университет" : "Компания") + '</span><h2>' + esc(organizationName(organization)) + '</h2><p class="profile-status ' + (organization.is_verified ? 'is-verified' : '') + '">' + (organization.is_verified ? "Организация подтверждена · демо" : "Организация не подтверждена") + '</p><p class="small muted">Подтверждение организации и вашего аккаунта показывается отдельно.</p></section></div>' +
+      '<section class="card auth-profile"><span class="kicker">' + (organization.type === "university" ? "Университет" : "Компания") + '</span><h2>' + esc(organizationName(organization)) + '</h2><p class="profile-status ' + (organization.is_verified ? 'is-verified' : '') + '">' + (organization.is_verified ? "Организация подтверждена · демо" : "Организация не подтверждена") + '</p><p class="small muted">Подтверждение организации и вашего аккаунта показывается отдельно.</p><a class="mvp-link" href="' + esc(organizationUrl(organization.id, "ru")) + '">Страница организации →</a></section></div>' +
       '<div class="saved-actions"><a class="btn btn-primary" href="#datasets/new">Добавить датасет</a><a class="btn btn-ghost" href="#datasets">Мои датасеты</a><a class="btn btn-ghost btn-sm" href="#password">Изменить пароль</a><a class="btn btn-ghost btn-sm" href="' + esc(store.catalogUrl("ru")) + '">Открыть каталог</a></div>' +
       '<p id="accountMessage" class="auth-message" role="status">' + esc(store.auth.notice || "") + '</p>';
     document.getElementById("refreshProfile").onclick = onProfileSaved;
