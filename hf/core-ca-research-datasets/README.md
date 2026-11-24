@@ -22,4 +22,4 @@ document only, extract from an article, restricted, link broken, duplicate).
 - Field `formats` lists the file types we saw. Field `mentions_central_asia` marks titles that name the region.
 
 Use it to find data for Central Asian NLP, geoscience, agriculture and social-science work.
-Browse and filter it on https://pavelaleks.github.io/core_landing/#catalog.
+Browse and filter it on https://coredata.uz/#catalog.

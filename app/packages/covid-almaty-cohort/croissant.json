@@ -22,7 +22,7 @@
  "name": "covid-almaty-cohort",
  "description": "Hospitalised COVID-19 patients in Almaty, 2020–2021 (n = 2,313), standardised. Free-text organism names (partly Russian) mapped to standard species names and NCBI taxon IDs Mixed susceptibility codes unified to S/I/R; antibiotics coded with ATC Diagnoses coded with ICD-10, lab tests with LOINC Range and logic checks with flags per record Codebook in English, Russian and Uzbek",
  "license": "https://creativecommons.org/licenses/by/4.0/",
- "url": "https://pavelaleks.github.io/core_landing/app/",
+ "url": "https://coredata.uz/app/",
  "citeAs": "Nurmatova, Aigerim; Begadilova, Tolkyn; Ramazanova, Bakyt (2026). Data and R code for: Clinical severity and in-hospital outcomes across pre-VOC, Alpha-dominant, and Delta-dominant SARS-CoV-2 periods in Almaty, Kazakhstan: a retrospective cohort study. Zenodo. https://doi.org/10.5281/zenodo.23608062",
  "isBasedOn": "https://doi.org/10.5281/zenodo.23608062",
  "creator": [

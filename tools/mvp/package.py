@@ -1,7 +1,7 @@
 """Turn the processed folders into download packages: data + codebook + datasheet + licence + Croissant + zip."""
 import json, os, sys, zipfile, hashlib, csv, shutil, datetime
 SRC, RAW, OUT = sys.argv[1:4]
-BASE = "https://pavelaleks.github.io/core_landing/"
+BASE = "https://coredata.uz/"
 META = {
  "terms": dict(slug="uzbek-geography-terms", file="uzbek_geography_terms.csv", zenodo="21704211",
    title_en="Uzbek geography terminology, annotated", title_ru="Терминология географии на узбекском, размеченная", title_uz="Oʻzbek tilidagi geografiya terminologiyasi, belgilangan",

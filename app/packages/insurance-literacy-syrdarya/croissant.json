@@ -22,7 +22,7 @@
  "name": "insurance-literacy-syrdarya",
  "description": "Insurance literacy and inclusion survey, Syrdarya region (n = 353). Composite scores stored as Excel formulas evaluated into values Columns renamed to readable names; a respondent ID added Invalid values (age 0) cleared; blank language answers coded Codebook in English, Russian and Uzbek 8 construct indices (trust, benefit, intention to buy …) and a segment summary for business",
  "license": "https://creativecommons.org/licenses/by/4.0/",
- "url": "https://pavelaleks.github.io/core_landing/app/",
+ "url": "https://coredata.uz/app/",
  "citeAs": "Eshpulatov, Dostonbek; Xaydarova, Durdona; Ismoilova, Muyassar; Berdiyev, Gayrat; Sherbekova, Kamola (2026). Determinants of Insurance Inclusion in an Emerging Market — Survey Data from the Syrdarya Region, Uzbekistan (n = 353). Zenodo. https://doi.org/10.5281/zenodo.21217677",
  "isBasedOn": "https://doi.org/10.5281/zenodo.21217677",
  "creator": [

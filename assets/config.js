@@ -14,6 +14,6 @@ window.CORE_CONFIG = {
   contactEmail: "pavel.alekseev.gasu@gmail.com",
   // Telegram username or channel for the "Telegram" buttons (e.g. "core_data"). Empty = buttons hidden.
   telegram: "",
-  // Plausible analytics domain (e.g. "pavelaleks.github.io/core_landing"). Empty = no analytics.
+  // Plausible analytics domain (e.g. "coredata.uz"). Empty = no analytics.
   plausibleDomain: ""
 };

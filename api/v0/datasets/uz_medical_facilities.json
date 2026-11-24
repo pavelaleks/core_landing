@@ -22,12 +22,12 @@
  "updated": "2026-11-07",
  "description_en": "2,982 medical facilities in Uzbekistan (excluding pharmacies) across all 14 regions: type, ownership, ISO 3166-2 region, coordinates, specialties, website languages and a 0–100 medical-tourism readiness index.",
  "description_ru": "2 982 медучреждения Узбекистана (без аптек) во всех 14 регионах: тип, форма собственности, регион ISO 3166-2, координаты, специализации, языки сайта и индекс готовности к медтуризму 0–100.",
- "page": "https://pavelaleks.github.io/core_landing/datasets/uz_medical_facilities.html",
+ "page": "https://coredata.uz/datasets/uz_medical_facilities.html",
  "links": {
-  "card": "https://pavelaleks.github.io/core_landing/api/v0/datasets/uz_medical_facilities.json",
-  "sample_json": "https://pavelaleks.github.io/core_landing/api/v0/datasets/uz_medical_facilities/sample.json",
-  "sample_csv": "https://pavelaleks.github.io/core_landing/api/v0/datasets/uz_medical_facilities/sample.csv",
-  "croissant": "https://pavelaleks.github.io/core_landing/api/v0/datasets/uz_medical_facilities/croissant.json"
+  "card": "https://coredata.uz/api/v0/datasets/uz_medical_facilities.json",
+  "sample_json": "https://coredata.uz/api/v0/datasets/uz_medical_facilities/sample.json",
+  "sample_csv": "https://coredata.uz/api/v0/datasets/uz_medical_facilities/sample.csv",
+  "croissant": "https://coredata.uz/api/v0/datasets/uz_medical_facilities/croissant.json"
  },
  "what_core_adds_en": [
   "Deduplicated and normalized OpenStreetMap records",

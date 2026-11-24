@@ -48,14 +48,14 @@
  "conformsTo": "http://mlcommons.org/croissant/1.0",
  "name": "CORE CORE-DS-0002 — Medical facilities of Uzbekistan (public sample)",
  "description": "2,982 medical facilities in Uzbekistan (excluding pharmacies) across all 14 regions: type, ownership, ISO 3166-2 region, coordinates, specialties, website languages and a 0–100 medical-tourism readiness index. This Croissant file describes the public sample; the full dataset is available from CORE.",
- "url": "https://pavelaleks.github.io/core_landing/datasets/uz_medical_facilities.html",
+ "url": "https://coredata.uz/datasets/uz_medical_facilities.html",
  "license": "https://opendatacommons.org/licenses/odbl/1-0/",
  "version": "1.0.0",
  "dateModified": "2026-11-07",
  "creator": {
   "@type": "sc:Organization",
   "name": "CORE",
-  "url": "https://pavelaleks.github.io/core_landing/"
+  "url": "https://coredata.uz/"
  },
  "keywords": [
   "Central Asia",
@@ -67,7 +67,7 @@
    "@type": "cr:FileObject",
    "@id": "sample-csv",
    "name": "sample-csv",
-   "contentUrl": "https://pavelaleks.github.io/core_landing/api/v0/datasets/uz_medical_facilities/sample.csv",
+   "contentUrl": "https://coredata.uz/api/v0/datasets/uz_medical_facilities/sample.csv",
    "encodingFormat": "text/csv",
    "sha256": "f4b84c2958f1f9972419453eabbff9d8820ce957df7c8b5b1a4e322afccc73c6"
   }
