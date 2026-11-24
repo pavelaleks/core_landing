@@ -38,6 +38,6 @@ export function renderDatasetUsage(rows, lang = "ru", compact = false) {
   }).join("");
   const detail = groups.length ? '<ul class="usage-list">' + body + '</ul>' : empty;
   if (!compact) return '<section class="dataset-usage"><h2>' + tr("Where the data is used", "Где используются данные", "Maʼlumotlar qayerda ishlatiladi") + '</h2>' + detail + '</section>';
-  return '<details class="usage-compact"><summary>' + tr("Consumers", "Потребители", "Foydalanuvchilar") + ': ' + groups.length +
+  return '<details class="usage-compact"><summary>' + tr("Who uses the data", "Кто использует данные", "Maʼlumotlardan kim foydalanadi") + ': ' + groups.length +
     (groups.length ? ' · ' + groups.slice(0, 2).map(group => esc(local(group.consumer.name))).join(", ") : '') + '</summary>' + detail + '</details>';
 }

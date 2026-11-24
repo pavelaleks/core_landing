@@ -1,6 +1,7 @@
 import { getSupabaseClient } from "./supabase-client.js";
 import { allRows } from "./query.js";
 import { safeLink } from "../url.js";
+import { LICENSE_COLUMNS } from "./licenses.js";
 export { safeLink } from "../url.js";
 
 /* The synchronous getter remains for existing demo and favorites consumers. */
@@ -11,7 +12,7 @@ export function getCatalog() { return window.CORE_CATALOG; }
 export function getUniversityAliases() { return window.CORE_UNI_ALT || {}; }
 export function apiBase() { return appUrl("api/v1/"); }
 
-const recordColumns = "*,organization:organizations(id,type,name,name_ru,name_en,name_uz,country)";
+const recordColumns = "*,organization:organizations(id,type,name,name_ru,name_en,name_uz,country),license_info:licenses(" + LICENSE_COLUMNS + ")";
 
 export function toCatalogItem(record) {
   const organization = record.organization || {};
@@ -19,7 +20,7 @@ export function toCatalogItem(record) {
     id: record.id, t: record.kind, title: record.title, desc: record.description,
     org: { en: organization.name_en || organization.name || "", ru: organization.name_ru || organization.name || "", uz: organization.name_uz || organization.name || "" },
     organizationId: record.organization_id, c: (record.countries || []).join(";"), f: record.category,
-    lic: record.license, st: record.access_type, n: record.record_count, y: record.publication_year,
+    lic: record.license, license: record.license_info || null, st: record.access_type, n: record.record_count, y: record.publication_year,
     href: record.source_url || "app/index.html#dataset/" + encodeURIComponent(record.id),
     fm: record.formats, ca: record.mentions_central_asia ? 1 : 0,
     tokens: record.token_count, tokenizer: record.tokenizer, tokenMethod: record.token_method,
@@ -89,16 +90,13 @@ export function datasetFields(input, language = "ru", original = {}) {
     const type = parts.length > 1 ? parts.shift() : "documentation";
     return { type, title: parts[0] && parts[0] !== url ? parts[0] : "", url };
   });
-  const licenseUrl = text("license_url");
-  if (licenseUrl && !safeLink(licenseUrl)) throw new Error("Проверьте ссылку на лицензию.");
   const tokenCount = integer("token_count");
   if (tokenCount != null && (!text("tokenizer") || !text("token_method") || !text("token_material") || !text("data_version"))) throw new Error("Для токенов укажите токенизатор, метод, материал и версию данных.");
   return {
     title: { ...(original.title || {}), [language]: text("title") },
     description: { ...(original.description || {}), [language]: text("description") },
-    usage_terms: { ...(original.usage_terms || {}), [language]: text("usage_terms") },
     category: text("category"), countries: text("countries").toUpperCase().split(/[;,\s]+/).filter(Boolean),
-    languages: text("languages").split(/[;,\s]+/).filter(Boolean), license: text("license"), license_url: licenseUrl || null,
+    languages: text("languages").split(/[;,\s]+/).filter(Boolean), license_id: text("license_id") || null,
     links, record_count: integer("record_count"), token_count: tokenCount,
     tokenizer: tokenCount == null ? null : text("tokenizer"), token_method: tokenCount == null ? null : text("token_method"),
     token_material: tokenCount == null ? null : text("token_material"), data_version: text("data_version") || null,

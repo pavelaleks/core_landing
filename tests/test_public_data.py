@@ -12,6 +12,22 @@ PUBLIC = BUILD.public_data
 
 
 class PublicRecordTests(unittest.TestCase):
+    def test_shared_license_is_rendered_in_each_language_without_rewriting_source_licenses(self):
+        row = dict(PUBLIC.SNAPSHOT["datasets"][0])
+        source_license = row["license"]
+        license = {"id": "metadata-only", "version": "1.2", "document_path": "documents/metadata-only.html",
+                   "name": {"en": "Metadata only", "ru": "Только метаданные", "uz": "Faqat metamaʼlumotlar"},
+                   "description": {"en": "Description only", "ru": "Только описание", "uz": "Faqat tavsif"}}
+        row.update(license_id=license["id"], license_info=license)
+        for lang in ["en", "ru", "uz"]:
+            page = PUBLIC.record_html(row, lang)
+            self.assertIn(license["name"][lang], page)
+            self.assertIn(license["description"][lang], page)
+            self.assertIn(("../" if lang == "en" else "../../") + license["document_path"], page)
+        self.assertEqual(PUBLIC.catalog_item(row)["license"], license)
+        self.assertEqual(row["license"], source_license)
+        self.assertIn('"license": "https://example.org/documents/metadata-only.html"', PUBLIC.new_dataset_page(row, "", "", "https://example.org/"))
+
     def test_published_user_record_has_pages_schema_and_catalog_from_the_same_snapshot(self):
         row = dict(PUBLIC.SNAPSHOT["datasets"][0])
         row.update(id="DS-static-test", kind="dataset", source_url=None,

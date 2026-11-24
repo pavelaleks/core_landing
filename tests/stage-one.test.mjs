@@ -61,10 +61,37 @@ test("one consumer using metadata and data is counted once and demo evidence sta
   const rows = ["metadata", "data"].map(usage_scope => ({ consumer_id: "one", consumer, usage_scope, purpose: { ru: "Проверка" }, is_demo: true }));
   assert.equal(api.groupUsage(rows).length, 1);
   const html = api.renderDatasetUsage(rows, "ru", true);
-  assert.match(html, /Потребители: 1/);
+  assert.match(html, /Кто использует данные: 1/);
   assert.match(html, /Метаданные/);
   assert.match(html, /Содержимое/);
   assert.match(html, /Демо/);
   assert.match(html, /&lt;Помощник&gt;/);
   assert(!html.includes("javascript:"));
+});
+
+test("dataset writes use the selected license ID without copying editable license terms", async () => {
+  const api = await moduleAt("assets/js/api/datasets.js");
+  const fields = api.datasetFields({ title: "Dataset", description: "Description", license_id: "by-agreement", license: "Uncontrolled text", license_url: "https://example.org/other", usage_terms: "Different terms" });
+  assert.equal(fields.license_id, "by-agreement");
+  for (const key of ["license", "license_url", "usage_terms"]) assert.equal(Object.hasOwn(fields, key), false);
+});
+
+test("license publication rules distinguish data files from examples of application", async () => {
+  const api = await moduleAt("assets/js/api/licenses.js");
+  assert.match(api.publicationLicenseMessage({}), /Выберите лицензию/);
+  for (const license_id of ["metadata-only", "by-agreement"]) {
+    assert.equal(api.publicationLicenseMessage({ license_id, links: [{ type: "example", url: "https://example.org/research" }] }), "");
+    assert.match(api.publicationLicenseMessage({ license_id, links: [{ type: "data", url: "https://example.org/data.csv" }] }), /файлы данных/);
+  }
+  assert.equal(api.publicationLicenseMessage({ license_id: "open-cc-by-4-0", links: [{ type: "data" }] }), "");
+});
+
+test("license labels are localized and full texts resolve only to installed documents", async () => {
+  const api = await moduleAt("assets/js/api/licenses.js");
+  const license = { name: { ru: "Только метаданные", en: "Metadata only", uz: "Faqat metamaʼlumotlar" }, document_path: "documents/metadata-only.html" };
+  assert.equal(api.licenseName(license, "en"), "Metadata only");
+  assert.equal(api.licenseName(license, "ru"), "Только метаданные");
+  assert.match(api.licenseUrl(license), /\/documents\/metadata-only\.html$/);
+  assert.equal(api.licenseUrl({ document_path: "https://example.org/other" }), "");
+  assert.equal(api.licenseUrl({ document_path: "documents/../private.html" }), "");
 });

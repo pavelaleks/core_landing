@@ -57,7 +57,7 @@ export function createAccountPages({ store, view, DS, UNIS, go, home }) {
     var S = store.s;
     var ids = store.favoriteIds(), catalog = getCatalog() || [];
     var favorites = ids.map(function (id) { return catalog.filter(function (d) { return d.id === id; })[0]; }).filter(Boolean);
-    view.innerHTML = '<div class="cabinet-heading"><div><span class="kicker">Кабинет партнёра</span><h1>Избранные датасеты</h1><p class="lead">Ваша подборка для будущих проектов и сотрудничества.</p></div><a class="btn btn-primary" href="' + store.catalogUrl("ru") + '">Найти данные</a></div>' +
+    view.innerHTML = '<div class="cabinet-heading"><div><span class="kicker">Личный кабинет</span><h1>Избранные датасеты</h1><p class="lead">Ваша подборка для будущих проектов и сотрудничества.</p></div><a class="btn btn-primary" href="' + store.catalogUrl("ru") + '">Найти данные</a></div>' +
       (favorites.length ? '<div class="saved-grid">' + favorites.map(function (d) {
         var url = /^https?:/.test(d.href) ? d.href : new URL(d.href, store.rootUrl).href;
         if (d.t === "prep") url = store.cabinetUrl("#demo/" + d.id);

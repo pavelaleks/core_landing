@@ -1,4 +1,5 @@
 import { renderDatasetUsage } from "./dataset-usage.js";
+import { licenseName } from "../api/licenses.js";
 
 export function createCatalogCard({ lang, L, tr, esc, nf, fieldName, UNI, state, account, symbolsUrl, usageResource }) {
   var TYPE = {
@@ -25,6 +26,7 @@ export function createCatalogCard({ lang, L, tr, esc, nf, fieldName, UNI, state,
 
   function card(it, currentUser, favoriteIds) {
     var ty = TYPE[it.t] || TYPE.dataset, st = STATUS[it.st] || STATUS.request, ext = it.t === "open";
+    if (it.license) st = [licenseName(it.license, lang), it.license.id === "open-cc-by-4-0" ? "st-now" : "st-req"];
     var href = it.t === "dataset" ? it.href.replace("app/index.html#dataset/", "app/index.html?lang=" + lang + "#dataset/") : it.href;
     var orgName = esc(lang === "en" ? it.org.en : (it.org.ru || it.org.en));
     var meta = [UNI[it.org.en] && state.u !== it.org.en ? '<button type="button" class="cat-org" data-u="' + esc(it.org.en) + '" title="' + esc(tr("All datasets of this university", "Все наборы этого вуза", "Shu OTMning barcha toʻplamlari")) + '">' + orgName + "</button>" : orgName, esc((it.c || "").replace(/;\s*/g, " · ")), esc(fieldName(it.f))];
@@ -32,7 +34,7 @@ export function createCatalogCard({ lang, L, tr, esc, nf, fieldName, UNI, state,
     var facts = [];
     if (it.n != null) facts.push(nf(it.n) + " " + tr("records", "записей", "yozuv"));
     if (it.tokens != null) facts.push(nf(it.tokens) + " " + tr("tokens", "токенов", "token"));
-    if (it.lic) facts.push(esc(it.lic));
+    if (it.lic && !it.license) facts.push(esc(it.lic));
     if (it.fm) facts.push(esc(it.fm));
     var actions = ext
       ? '<a class="btn btn-ghost btn-sm" href="' + esc(it.href) + '" target="_blank" rel="noopener">' + tr("Source", "Источник", "Manba") + ' ↗</a><a class="btn btn-ghost btn-sm" href="#contact" data-form="buyer">' + tr("Prepare via CORE", "Подготовить через CORE", "CORE orqali tayyorlash") + "</a>"

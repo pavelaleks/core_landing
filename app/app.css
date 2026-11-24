@@ -195,12 +195,18 @@ textarea.sql:focus{outline:none;border-color:var(--teal)}
 .dataset-editor .f{margin:0;min-width:0}
 .dataset-editor input,.dataset-editor select,.dataset-editor textarea,.dataset-link-row input,.dataset-link-row select{width:100%;min-width:0}
 .dataset-editor textarea{min-height:130px}
-.dataset-form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.dataset-form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:20px}
 .dataset-link-row{display:grid;grid-template-columns:minmax(120px,1fr) minmax(100px,1fr) minmax(180px,2fr) auto;align-items:center;gap:12px;margin-bottom:12px}
 .dataset-link-row input,.dataset-link-row select{background:var(--bg);border:1px solid var(--line2);border-radius:8px;padding:12px;color:var(--text);font:inherit}
 .token-fields{border-top:1px solid var(--line);padding-top:20px;display:grid;gap:16px}
 .token-fields>summary{cursor:pointer;margin-bottom:16px}
 .token-fields[open]>.f{margin-top:16px}
+.dataset-materials{border-top:1px solid var(--line);padding-top:20px}
+.dataset-materials>summary{cursor:pointer;font-weight:600}
+.dataset-materials[open]>p{margin:16px 0}
+.dataset-editor select[multiple]{min-height:160px;padding:8px}
+.dataset-editor select[multiple] option{padding:5px 8px}
+.dataset-editor #licenseDescription:empty,.dataset-editor p:has(>#selectedLicenseDocument[hidden]){display:none}
 .dataset-description{white-space:pre-wrap;overflow-wrap:anywhere}
 .dataset-links{list-style:none;padding:0;display:grid;gap:14px}
 .dataset-links li{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}

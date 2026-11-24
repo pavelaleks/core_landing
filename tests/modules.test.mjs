@@ -161,6 +161,9 @@ test("catalog card links, artwork and favorite controls retain their language an
   assert.match(render(item, { role: "buyer" }, [item.id]), /aria-pressed="true"/);
   assert.doesNotMatch(render(item, { role: "university" }, []), /data-favorite=/);
   assert.match(render({ ...item, t: "open", st: "open", href: "https://doi.org/example" }, null, []), /href="https:\/\/doi.org\/example" target="_blank" rel="noopener"/);
+  const licensed = render({ ...item, t: "dataset", lic: "Legacy source license", license: { id: "by-agreement", name: { ru: "Доступ по соглашению" } }, href: "app/index.html#dataset/DS-example" }, null, []);
+  assert.match(licensed, /Доступ по соглашению/);
+  assert.doesNotMatch(licensed, /\[object Object\]|Legacy source license|Доступ по условиям набора/);
 });
 
 test("CSV preview retains delimiter, empty-cell and personal-data detection behavior", async () => {

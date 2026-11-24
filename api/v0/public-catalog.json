@@ -1,5 +1,52 @@
 {
  "version": 1,
+ "licenses": [
+  {
+   "id": "by-agreement",
+   "name": {
+    "en": "Access by agreement",
+    "ru": "Доступ по соглашению",
+    "uz": "Kelishuv asosida kirish"
+   },
+   "description": {
+    "en": "Publish the description. Data is provided under a separate agreement with the rights holder.",
+    "ru": "Публикуется описание. Данные предоставляются получателю по отдельному соглашению с правообладателем.",
+    "uz": "Tavsif eʼlon qilinadi. Maʼlumotlar huquq egasi bilan alohida kelishuv asosida taqdim etiladi."
+   },
+   "document_path": "documents/by-agreement.html",
+   "version": "1.2"
+  },
+  {
+   "id": "metadata-only",
+   "name": {
+    "en": "Metadata only",
+    "ru": "Только метаданные",
+    "uz": "Faqat metamaʼlumotlar"
+   },
+   "description": {
+    "en": "Publish the dataset description. The data and samples are not provided.",
+    "ru": "Публикуется описание датасета. Сами данные и образцы не предоставляются.",
+    "uz": "Toʻplam tavsifi eʼlon qilinadi. Maʼlumotlar va namunalar taqdim etilmaydi."
+   },
+   "document_path": "documents/metadata-only.html",
+   "version": "1.2"
+  },
+  {
+   "id": "open-cc-by-4-0",
+   "name": {
+    "en": "Open data — CC BY 4.0",
+    "ru": "Открытые данные — CC BY 4.0",
+    "uz": "Ochiq maʼlumotlar — CC BY 4.0"
+   },
+   "description": {
+    "en": "Data may be used, adapted and shared, including commercially, with attribution under CC BY 4.0.",
+    "ru": "Данные можно использовать, изменять и распространять, в том числе коммерчески, с указанием авторства по CC BY 4.0.",
+    "uz": "Maʼlumotlardan CC BY 4.0 asosida muallifni koʻrsatib, jumladan tijoriy maqsadlarda foydalanish, ularni oʻzgartirish va tarqatish mumkin."
+   },
+   "document_path": "documents/open-cc-by-4-0.html",
+   "version": "1.2"
+  }
+ ],
  "datasets": [
   {
    "id": "CORE-DS-0001",
@@ -31,6 +78,7 @@
     "ru",
     "en"
    ],
+   "license_id": null,
    "license": "CC0-1.0",
    "license_url": null,
    "usage_terms": {},
@@ -55,7 +103,8 @@
     "name_en": "CORE",
     "name_ru": "CORE",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "CORE-DS-0002",
@@ -81,6 +130,7 @@
     "uz-cyrl",
     "en"
    ],
+   "license_id": null,
    "license": "ODbL-1.0",
    "license_url": null,
    "usage_terms": {},
@@ -105,7 +155,8 @@
     "name_en": "CORE",
     "name_ru": "CORE",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "CORE-DS-0003",
@@ -136,6 +187,7 @@
     "ky",
     "tg"
    ],
+   "license_id": null,
    "license": "LicenseRef-Mixed",
    "license_url": null,
    "usage_terms": {},
@@ -160,7 +212,8 @@
     "name_en": "CORE",
     "name_ru": "CORE",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "covid-almaty-cohort",
@@ -181,6 +234,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "CC-BY-4.0",
    "license_url": null,
    "usage_terms": {},
@@ -205,7 +259,8 @@
     "name_en": "Kazakh National Medical University",
     "name_ru": "Казахский национальный медицинский университет имени С. Д. Асфендиярова",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "insurance-literacy-syrdarya",
@@ -226,6 +281,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "CC-BY-4.0",
    "license_url": null,
    "usage_terms": {},
@@ -250,7 +306,8 @@
     "name_en": "Gulistan State University",
     "name_ru": null,
     "name_uz": "Guliston universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "regions",
@@ -274,6 +331,7 @@
     "TJ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "CC-BY-IGO + CORE",
    "license_url": null,
    "usage_terms": {},
@@ -298,7 +356,8 @@
     "name_en": "CORE",
     "name_ru": "CORE",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "uzbek-geography-terms",
@@ -319,6 +378,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "CC-BY-4.0",
    "license_url": null,
    "usage_terms": {},
@@ -343,7 +403,8 @@
     "name_en": "Urgench State University",
     "name_ru": "Ургенчский государственный университет имени Аль-Бируни",
     "name_uz": "Urganch Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W4395262849",
@@ -358,6 +419,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -388,7 +450,8 @@
     "name_en": "Fergana Medical Institute of Public Health",
     "name_ru": "Ферганский медицинский институт общественного здоровья",
     "name_uz": "Farg‘ona jamoat salomatligi tibbiyot instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6886924732",
@@ -403,6 +466,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -433,7 +497,8 @@
     "name_en": "Kokand State University",
     "name_ru": null,
     "name_uz": "Qoʻqon Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6887296881",
@@ -448,6 +513,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -478,7 +544,8 @@
     "name_en": "Namangan State University",
     "name_ru": "Наманганский государственный университет",
     "name_uz": "Namangan Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6887300381",
@@ -493,6 +560,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -523,7 +591,8 @@
     "name_en": "Navoi State Pedagogical Institute",
     "name_ru": null,
     "name_uz": "Navoiy davlat pedagogika instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6887305707",
@@ -538,6 +607,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -568,7 +638,8 @@
     "name_en": "Andijan State University",
     "name_ru": "Андижанский государственный университет имени З.М. Бабура",
     "name_uz": "Andijon davlat universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6887329481",
@@ -583,6 +654,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -613,7 +685,8 @@
     "name_en": "National University of Uzbekistan",
     "name_ru": "Национальный университет Узбекистана",
     "name_uz": "Oʻzbekiston Milliy Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6887359999",
@@ -628,6 +701,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -658,7 +732,8 @@
     "name_en": "National University of Uzbekistan",
     "name_ru": "Национальный университет Узбекистана",
     "name_uz": "Oʻzbekiston Milliy Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6887368755",
@@ -673,6 +748,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -703,7 +779,8 @@
     "name_en": "Namangan State University",
     "name_ru": "Наманганский государственный университет",
     "name_uz": "Namangan Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6887370524",
@@ -718,6 +795,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "",
    "license_url": null,
    "usage_terms": {},
@@ -748,7 +826,8 @@
     "name_en": "Mahambet Otemiusly West Kazakhstan University",
     "name_ru": "Западно-Казахстанский государственный университет имени М. Утемисова",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6887371419",
@@ -763,6 +842,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -793,7 +873,8 @@
     "name_en": "A. Baitursynov Kostanay Regional University",
     "name_ru": "Костанайский региональный университет имени Ахмет Байтұрсынұлы",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6887390765",
@@ -808,6 +889,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -838,7 +920,8 @@
     "name_en": "Jizzakh State Pedagogical Institute",
     "name_ru": "Джизакский Государственный Педагогический Университет",
     "name_uz": "Abdulla Qodiriy nomidagi Jizzax davlat pedagogika universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6887478594",
@@ -853,6 +936,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -883,7 +967,8 @@
     "name_en": "Tashkent Institute of Irrigation and Agricultural Mechanization Engineers",
     "name_ru": "Ташкентский институт инженеров ирригации и механизации сельского хозяйства",
     "name_uz": "Uzbe ikromjon alijonov Mexanizatsiyalash Muhandislari Instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6887501564",
@@ -898,6 +983,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -928,7 +1014,8 @@
     "name_en": "Tashkent Institute of Irrigation and Agricultural Mechanization Engineers",
     "name_ru": "Ташкентский институт инженеров ирригации и механизации сельского хозяйства",
     "name_uz": "Uzbe ikromjon alijonov Mexanizatsiyalash Muhandislari Instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6887530991",
@@ -943,6 +1030,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -973,7 +1061,8 @@
     "name_en": "Tashkent Institute of Irrigation and Agricultural Mechanization Engineers",
     "name_ru": "Ташкентский институт инженеров ирригации и механизации сельского хозяйства",
     "name_uz": "Uzbe ikromjon alijonov Mexanizatsiyalash Muhandislari Instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6887549344",
@@ -988,6 +1077,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -1018,7 +1108,8 @@
     "name_en": "Tashkent Institute of Irrigation and Agricultural Mechanization Engineers",
     "name_ru": "Ташкентский институт инженеров ирригации и механизации сельского хозяйства",
     "name_uz": "Uzbe ikromjon alijonov Mexanizatsiyalash Muhandislari Instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6887946287",
@@ -1033,6 +1124,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "",
    "license_url": null,
    "usage_terms": {},
@@ -1063,7 +1155,8 @@
     "name_en": "Aktobe Regional State University named after K.Zhubanov",
     "name_ru": "Актюбинский государственный университет имени К. Жубанова",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6892086253",
@@ -1078,6 +1171,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -1108,7 +1202,8 @@
     "name_en": "Samarkand State University",
     "name_ru": "Самаркандский государственный университет",
     "name_uz": "Alisher Navoiy nomidagi Samarqand Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6892119237",
@@ -1123,6 +1218,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -1153,7 +1249,8 @@
     "name_en": "Andijan State University",
     "name_ru": "Андижанский государственный университет имени З.М. Бабура",
     "name_uz": "Andijon davlat universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6892206857",
@@ -1168,6 +1265,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -1198,7 +1296,8 @@
     "name_en": "Namangan State University",
     "name_ru": "Наманганский государственный университет",
     "name_uz": "Namangan Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6892581036",
@@ -1213,6 +1312,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -1243,7 +1343,8 @@
     "name_en": "Astana IT University",
     "name_ru": null,
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6893209328",
@@ -1258,6 +1359,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "other-oa",
    "license_url": null,
    "usage_terms": {},
@@ -1288,7 +1390,8 @@
     "name_en": "Tashkent Institute of Agriculture",
     "name_ru": "Ташкентский государственный аграрный университет",
     "name_uz": "Toshkent agrar universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6893307048",
@@ -1303,6 +1406,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -1333,7 +1437,8 @@
     "name_en": "Alma-Ata School of Managers",
     "name_ru": "Международная академия бизнеса",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6893350779",
@@ -1348,6 +1453,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -1378,7 +1484,8 @@
     "name_en": "Akfa University",
     "name_ru": null,
     "name_uz": "Akfa universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6893353665",
@@ -1393,6 +1500,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -1423,7 +1531,8 @@
     "name_en": "Astana IT University",
     "name_ru": null,
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6893444708",
@@ -1438,6 +1547,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -1468,7 +1578,8 @@
     "name_en": "L. N. Gumilyov Eurasian National University",
     "name_ru": "Евразийский национальный университет имени Л. Н. Гумилёва",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6893455241",
@@ -1483,6 +1594,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -1513,7 +1625,8 @@
     "name_en": "Al-Farabi Kazakh National University",
     "name_ru": "Казахский национальный университет имени аль-Фараби",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6898757610",
@@ -1528,6 +1641,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "",
    "license_url": null,
    "usage_terms": {},
@@ -1558,7 +1672,8 @@
     "name_en": "L. N. Gumilyov Eurasian National University",
     "name_ru": "Евразийский национальный университет имени Л. Н. Гумилёва",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6902631543",
@@ -1573,6 +1688,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -1603,7 +1719,8 @@
     "name_en": "KIMEP University",
     "name_ru": "Казахстанский институт менеджмента, экономики и прогнозирования",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6902713153",
@@ -1618,6 +1735,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -1648,7 +1766,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6905436244",
@@ -1663,6 +1782,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -1693,7 +1813,8 @@
     "name_en": "Fergana State University",
     "name_ru": "Ферганский государственный университет",
     "name_uz": "Farg`ona davlat universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6905569626",
@@ -1708,6 +1829,7 @@
     "TJ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -1738,7 +1860,8 @@
     "name_en": "Tajik National University",
     "name_ru": "Таджикский национальный университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6905598093",
@@ -1753,6 +1876,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -1783,7 +1907,8 @@
     "name_en": "Fergana State University",
     "name_ru": "Ферганский государственный университет",
     "name_uz": "Farg`ona davlat universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6905663093",
@@ -1798,6 +1923,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -1828,7 +1954,8 @@
     "name_en": "Navoi State Pedagogical Institute",
     "name_ru": null,
     "name_uz": "Navoiy davlat pedagogika instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6905717011",
@@ -1843,6 +1970,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -1873,7 +2001,8 @@
     "name_en": "Samarkand State University",
     "name_ru": "Самаркандский государственный университет",
     "name_uz": "Alisher Navoiy nomidagi Samarqand Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6905983072",
@@ -1888,6 +2017,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -1918,7 +2048,8 @@
     "name_en": "Bukhara State University",
     "name_ru": "Бухарский государственный университет",
     "name_uz": "Buxoro davlat universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6906000623",
@@ -1933,6 +2064,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -1963,7 +2095,8 @@
     "name_en": "National University of Uzbekistan",
     "name_ru": "Национальный университет Узбекистана",
     "name_uz": "Oʻzbekiston Milliy Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6906094934",
@@ -1978,6 +2111,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -2008,7 +2142,8 @@
     "name_en": "Andijan State University",
     "name_ru": "Андижанский государственный университет имени З.М. Бабура",
     "name_uz": "Andijon davlat universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6906134540",
@@ -2023,6 +2158,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -2053,7 +2189,8 @@
     "name_en": "Buketov Karaganda National Research University",
     "name_ru": "Академик Е.А. Бөкетов атындағы Қарағанды Ұлттық Зерттеу университеті",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6906153999",
@@ -2068,6 +2205,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -2098,7 +2236,8 @@
     "name_en": "Buketov Karaganda National Research University",
     "name_ru": "Академик Е.А. Бөкетов атындағы Қарағанды Ұлттық Зерттеу университеті",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6906156895",
@@ -2113,6 +2252,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -2143,7 +2283,8 @@
     "name_en": "Tashkent Institute of Irrigation and Agricultural Mechanization Engineers",
     "name_ru": "Ташкентский институт инженеров ирригации и механизации сельского хозяйства",
     "name_uz": "Uzbe ikromjon alijonov Mexanizatsiyalash Muhandislari Instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6906180656",
@@ -2158,6 +2299,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -2188,7 +2330,8 @@
     "name_en": "Fergana State University",
     "name_ru": "Ферганский государственный университет",
     "name_uz": "Farg`ona davlat universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6906216050",
@@ -2203,6 +2346,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -2233,7 +2377,8 @@
     "name_en": "Buketov Karaganda National Research University",
     "name_ru": "Академик Е.А. Бөкетов атындағы Қарағанды Ұлттық Зерттеу университеті",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6906323931",
@@ -2248,6 +2393,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -2278,7 +2424,8 @@
     "name_en": "Namangan State University",
     "name_ru": "Наманганский государственный университет",
     "name_uz": "Namangan Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6906540446",
@@ -2293,6 +2440,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -2323,7 +2471,8 @@
     "name_en": "Urgench State University",
     "name_ru": "Ургенчский государственный университет имени Аль-Бируни",
     "name_uz": "Urganch Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6906612878",
@@ -2338,6 +2487,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -2368,7 +2518,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6906661377",
@@ -2383,6 +2534,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -2413,7 +2565,8 @@
     "name_en": "Samarkand State Institute of Foreign Languages",
     "name_ru": "Самаркандский государственный институт иностранных языков",
     "name_uz": "Samarqand davlat chet tillar instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6910955836",
@@ -2428,6 +2581,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -2458,7 +2612,8 @@
     "name_en": "Qarshi davlat universiteti",
     "name_ru": null,
     "name_uz": "Qarshi Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6911935843",
@@ -2473,6 +2628,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -2503,7 +2659,8 @@
     "name_en": "Kazakh National Agrarian Research University",
     "name_ru": "Казахский национальный аграрный исследовательский университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6917308087",
@@ -2518,6 +2675,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "",
    "license_url": null,
    "usage_terms": {},
@@ -2548,7 +2706,8 @@
     "name_en": "ALT University",
     "name_ru": "ALT Университет имени Мухамеджана Тынышпаева",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6920695501",
@@ -2563,6 +2722,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -2593,7 +2753,8 @@
     "name_en": "Turin Polytechnic University",
     "name_ru": "Туринский политехнический университет в городе Ташкенте",
     "name_uz": "Туринский политехнический университет"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6921683528",
@@ -2608,6 +2769,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -2638,7 +2800,8 @@
     "name_en": "Esil University",
     "name_ru": "Есильский университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6921693888",
@@ -2653,6 +2816,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -2683,7 +2847,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6924285416",
@@ -2698,6 +2863,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -2728,7 +2894,8 @@
     "name_en": "Denau Institute of Entrepreneurship and Pedagogy",
     "name_ru": "Институт предпринимательства и педагогики имени Денова",
     "name_uz": "Denov tadbirkorlik va pedagogika instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6924286943",
@@ -2743,6 +2910,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -2773,7 +2941,8 @@
     "name_en": "Denau Institute of Entrepreneurship and Pedagogy",
     "name_ru": "Институт предпринимательства и педагогики имени Денова",
     "name_uz": "Denov tadbirkorlik va pedagogika instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6924304197",
@@ -2788,6 +2957,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -2818,7 +2988,8 @@
     "name_en": "Namangan State University",
     "name_ru": "Наманганский государственный университет",
     "name_uz": "Namangan Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6924381184",
@@ -2833,6 +3004,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -2863,7 +3035,8 @@
     "name_en": "Jizzakh State Pedagogical Institute",
     "name_ru": "Джизакский Государственный Педагогический Университет",
     "name_uz": "Abdulla Qodiriy nomidagi Jizzax davlat pedagogika universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6924625076",
@@ -2878,6 +3051,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -2908,7 +3082,8 @@
     "name_en": "Namangan State University",
     "name_ru": "Наманганский государственный университет",
     "name_uz": "Namangan Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6924963065",
@@ -2923,6 +3098,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -2953,7 +3129,8 @@
     "name_en": "Tashkent Institute of Irrigation and Agricultural Mechanization Engineers",
     "name_ru": "Ташкентский институт инженеров ирригации и механизации сельского хозяйства",
     "name_uz": "Uzbe ikromjon alijonov Mexanizatsiyalash Muhandislari Instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6924979056",
@@ -2968,6 +3145,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -2998,7 +3176,8 @@
     "name_en": "Namangan State University",
     "name_ru": "Наманганский государственный университет",
     "name_uz": "Namangan Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6925163855",
@@ -3013,6 +3192,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -3043,7 +3223,8 @@
     "name_en": "Buketov Karaganda National Research University",
     "name_ru": "Академик Е.А. Бөкетов атындағы Қарағанды Ұлттық Зерттеу университеті",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6925892734",
@@ -3058,6 +3239,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -3088,7 +3270,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6926229094",
@@ -3103,6 +3286,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -3133,7 +3317,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6926554409",
@@ -3148,6 +3333,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -3178,7 +3364,8 @@
     "name_en": "Turin Polytechnic University",
     "name_ru": "Туринский политехнический университет в городе Ташкенте",
     "name_uz": "Туринский политехнический университет"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6931114152",
@@ -3193,6 +3380,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -3223,7 +3411,8 @@
     "name_en": "Astana IT University",
     "name_ru": null,
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6931199633",
@@ -3238,6 +3427,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -3268,7 +3458,8 @@
     "name_en": "National University of Uzbekistan",
     "name_ru": "Национальный университет Узбекистана",
     "name_uz": "Oʻzbekiston Milliy Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6931468956",
@@ -3283,6 +3474,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "",
    "license_url": null,
    "usage_terms": {},
@@ -3313,7 +3505,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6936241311",
@@ -3328,6 +3521,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "",
    "license_url": null,
    "usage_terms": {},
@@ -3358,7 +3552,8 @@
     "name_en": "Kazakh-British Technical University",
     "name_ru": "Казахстанско-Британский технический университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6936407005",
@@ -3373,6 +3568,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -3403,7 +3599,8 @@
     "name_en": "Tashkent Institute of Irrigation and Agricultural Mechanization Engineers",
     "name_ru": "Ташкентский институт инженеров ирригации и механизации сельского хозяйства",
     "name_uz": "Uzbe ikromjon alijonov Mexanizatsiyalash Muhandislari Instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6939584192",
@@ -3418,6 +3615,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -3448,7 +3646,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6939832515",
@@ -3463,6 +3662,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -3493,7 +3693,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6940042571",
@@ -3509,6 +3710,7 @@
     "TJ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -3539,7 +3741,8 @@
     "name_en": "Tajik State Medical University",
     "name_ru": "Таджикский государственный медицинский университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6940505378",
@@ -3554,6 +3757,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -3584,7 +3788,8 @@
     "name_en": "Rudny Industrial Institute",
     "name_ru": null,
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6942930923",
@@ -3599,6 +3804,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -3629,7 +3835,8 @@
     "name_en": "Tashkent Institute of Agriculture",
     "name_ru": "Ташкентский государственный аграрный университет",
     "name_uz": "Toshkent agrar universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6943203388",
@@ -3644,6 +3851,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -3674,7 +3882,8 @@
     "name_en": "Buketov Karaganda National Research University",
     "name_ru": "Академик Е.А. Бөкетов атындағы Қарағанды Ұлттық Зерттеу университеті",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6943385391",
@@ -3689,6 +3898,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -3719,7 +3929,8 @@
     "name_en": "Fergana State University",
     "name_ru": "Ферганский государственный университет",
     "name_uz": "Farg`ona davlat universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6943480126",
@@ -3734,6 +3945,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -3764,7 +3976,8 @@
     "name_en": "National University of Uzbekistan",
     "name_ru": "Национальный университет Узбекистана",
     "name_uz": "Oʻzbekiston Milliy Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6943809038",
@@ -3779,6 +3992,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -3809,7 +4023,8 @@
     "name_en": "Tashkent Institute of Irrigation and Agricultural Mechanization Engineers",
     "name_ru": "Ташкентский институт инженеров ирригации и механизации сельского хозяйства",
     "name_uz": "Uzbe ikromjon alijonov Mexanizatsiyalash Muhandislari Instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6944019732",
@@ -3824,6 +4039,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -3854,7 +4070,8 @@
     "name_en": "Samarkand State University",
     "name_ru": "Самаркандский государственный университет",
     "name_uz": "Alisher Navoiy nomidagi Samarqand Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6944072880",
@@ -3869,6 +4086,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -3899,7 +4117,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6944173491",
@@ -3914,6 +4133,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -3944,7 +4164,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6944672428",
@@ -3959,6 +4180,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -3989,7 +4211,8 @@
     "name_en": "Almaty Institute of National Economy",
     "name_ru": "Казахский экономический университет имени Т. Рыскулова",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6948056806",
@@ -4004,6 +4227,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -4034,7 +4258,8 @@
     "name_en": "Al-Farabi Kazakh National University",
     "name_ru": "Казахский национальный университет имени аль-Фараби",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6949332964",
@@ -4049,6 +4274,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -4079,7 +4305,8 @@
     "name_en": "Astana Medical University",
     "name_ru": "Медицинский университет Астаны",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6949699104",
@@ -4094,6 +4321,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -4124,7 +4352,8 @@
     "name_en": "Astana Medical University",
     "name_ru": "Медицинский университет Астаны",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6958090774",
@@ -4139,6 +4368,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -4169,7 +4399,8 @@
     "name_en": "L. N. Gumilyov Eurasian National University",
     "name_ru": "Евразийский национальный университет имени Л. Н. Гумилёва",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6958149019",
@@ -4184,6 +4415,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -4214,7 +4446,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6958333524",
@@ -4229,6 +4462,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -4259,7 +4493,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6958517525",
@@ -4274,6 +4509,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -4304,7 +4540,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6958526700",
@@ -4319,6 +4556,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -4349,7 +4587,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6958608192",
@@ -4364,6 +4603,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -4394,7 +4634,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6958632387",
@@ -4409,6 +4650,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -4439,7 +4681,8 @@
     "name_en": "Al-Farabi Kazakh National University",
     "name_ru": "Казахский национальный университет имени аль-Фараби",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6958980273",
@@ -4454,6 +4697,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -4484,7 +4728,8 @@
     "name_en": "South Kazakhstan Medical Academy",
     "name_ru": null,
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6958981490",
@@ -4499,6 +4744,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -4529,7 +4775,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6961599342",
@@ -4544,6 +4791,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -4574,7 +4822,8 @@
     "name_en": "Samarkand State University",
     "name_ru": "Самаркандский государственный университет",
     "name_uz": "Alisher Navoiy nomidagi Samarqand Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6961906724",
@@ -4589,6 +4838,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -4619,7 +4869,8 @@
     "name_en": "Fergana State University",
     "name_ru": "Ферганский государственный университет",
     "name_uz": "Farg`ona davlat universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6961944189",
@@ -4634,6 +4885,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -4664,7 +4916,8 @@
     "name_en": "National University of Uzbekistan",
     "name_ru": "Национальный университет Узбекистана",
     "name_uz": "Oʻzbekiston Milliy Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6962006839",
@@ -4679,6 +4932,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -4709,7 +4963,8 @@
     "name_en": "Samarkand State University",
     "name_ru": "Самаркандский государственный университет",
     "name_uz": "Alisher Navoiy nomidagi Samarqand Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6962067750",
@@ -4724,6 +4979,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -4754,7 +5010,8 @@
     "name_en": "Tashkent State University of Economics",
     "name_ru": "Ташкентский государственный экономический университет",
     "name_uz": "Toshkent Davlat Iqtisodiyot Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6962237865",
@@ -4769,6 +5026,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -4799,7 +5057,8 @@
     "name_en": "Kozybayev University",
     "name_ru": "Северо-Казахстанский государственный университет имени М.Козыбаева",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6962338218",
@@ -4814,6 +5073,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -4844,7 +5104,8 @@
     "name_en": "Samarkand State University",
     "name_ru": "Самаркандский государственный университет",
     "name_uz": "Alisher Navoiy nomidagi Samarqand Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6962387130",
@@ -4859,6 +5120,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -4889,7 +5151,8 @@
     "name_en": "Buketov Karaganda National Research University",
     "name_ru": "Академик Е.А. Бөкетов атындағы Қарағанды Ұлттық Зерттеу университеті",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6962431574",
@@ -4904,6 +5167,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -4934,7 +5198,8 @@
     "name_en": "Tashkent Institute of Irrigation and Agricultural Mechanization Engineers",
     "name_ru": "Ташкентский институт инженеров ирригации и механизации сельского хозяйства",
     "name_uz": "Uzbe ikromjon alijonov Mexanizatsiyalash Muhandislari Instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6962517297",
@@ -4949,6 +5214,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -4979,7 +5245,8 @@
     "name_en": "Tashkent Institute of Irrigation and Agricultural Mechanization Engineers",
     "name_ru": "Ташкентский институт инженеров ирригации и механизации сельского хозяйства",
     "name_uz": "Uzbe ikromjon alijonov Mexanizatsiyalash Muhandislari Instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6962533272",
@@ -4994,6 +5261,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -5024,7 +5292,8 @@
     "name_en": "Tashkent Chemical-Technological Institute",
     "name_ru": "Ташкентский химико-технологический институт",
     "name_uz": "Toshkent Kimyo-Texnologiya Instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6962682367",
@@ -5039,6 +5308,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -5069,7 +5339,8 @@
     "name_en": "Alma-Ata School of Managers",
     "name_ru": "Международная академия бизнеса",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6966167085",
@@ -5084,6 +5355,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "",
    "license_url": null,
    "usage_terms": {},
@@ -5114,7 +5386,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6967945194",
@@ -5129,6 +5402,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -5159,7 +5433,8 @@
     "name_en": "Akfa University",
     "name_ru": null,
     "name_uz": "Akfa universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6968237694",
@@ -5174,6 +5449,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -5204,7 +5480,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6968268600",
@@ -5220,6 +5497,7 @@
     "TJ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -5250,7 +5528,8 @@
     "name_en": "University of Central Asia",
     "name_ru": "Университет Центральной Азии",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6968772322",
@@ -5265,6 +5544,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -5295,7 +5575,8 @@
     "name_en": "Abai Kazakh National Pedagogical University",
     "name_ru": "Казахский национальный педагогический университет имени Абая",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6973824661",
@@ -5310,6 +5591,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -5340,7 +5622,8 @@
     "name_en": "National University of Uzbekistan",
     "name_ru": "Национальный университет Узбекистана",
     "name_uz": "Oʻzbekiston Milliy Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6977006157",
@@ -5355,6 +5638,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -5385,7 +5669,8 @@
     "name_en": "Al-Farabi Kazakh National University",
     "name_ru": "Казахский национальный университет имени аль-Фараби",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6977092280",
@@ -5400,6 +5685,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -5430,7 +5716,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6977164413",
@@ -5445,6 +5732,7 @@
     "KG"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -5475,7 +5763,8 @@
     "name_en": "Kyrgyz-Turkish Manas University",
     "name_ru": "Кыргызско-Турецкий университет «Манас»",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6977266890",
@@ -5490,6 +5779,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -5520,7 +5810,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6977327847",
@@ -5535,6 +5826,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -5565,7 +5857,8 @@
     "name_en": "Al-Farabi Kazakh National University",
     "name_ru": "Казахский национальный университет имени аль-Фараби",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6977429573",
@@ -5580,6 +5873,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -5610,7 +5904,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6977526656",
@@ -5625,6 +5920,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "",
    "license_url": null,
    "usage_terms": {},
@@ -5655,7 +5951,8 @@
     "name_en": "Westminster International University in Tashkent",
     "name_ru": "Международный Вестминстерский Университет в Ташкенте",
     "name_uz": "Toshkent Xalqaro Vestminster Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6977719937",
@@ -5670,6 +5967,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -5700,7 +5998,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6977769928",
@@ -5715,6 +6014,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -5745,7 +6045,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W6977875070",
@@ -5760,6 +6061,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -5790,7 +6092,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7077449278",
@@ -5805,6 +6108,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -5835,7 +6139,8 @@
     "name_en": "Sarsen Amanzholov East Kazakhstan State University",
     "name_ru": "ВОСТОЧНО-КАЗАХСТАНСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ ИМЕНИ САРСЕНА АМАНЖОЛОВА",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7077501510",
@@ -5850,6 +6155,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -5880,7 +6186,8 @@
     "name_en": "L. N. Gumilyov Eurasian National University",
     "name_ru": "Евразийский национальный университет имени Л. Н. Гумилёва",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7077879896",
@@ -5895,6 +6202,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -5925,7 +6233,8 @@
     "name_en": "Suleyman Demirel University",
     "name_ru": "SDU University",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7078254048",
@@ -5940,6 +6249,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -5970,7 +6280,8 @@
     "name_en": "Buketov Karaganda National Research University",
     "name_ru": "Академик Е.А. Бөкетов атындағы Қарағанды Ұлттық Зерттеу университеті",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7078271343",
@@ -5985,6 +6296,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -6015,7 +6327,8 @@
     "name_en": "Buketov Karaganda National Research University",
     "name_ru": "Академик Е.А. Бөкетов атындағы Қарағанды Ұлттық Зерттеу университеті",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7078695552",
@@ -6030,6 +6343,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -6060,7 +6374,8 @@
     "name_en": "Buketov Karaganda National Research University",
     "name_ru": "Академик Е.А. Бөкетов атындағы Қарағанды Ұлттық Зерттеу университеті",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7078840774",
@@ -6075,6 +6390,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -6105,7 +6421,8 @@
     "name_en": "Institute of Agriculture and Agrotechnologies of Karakalpakstan",
     "name_ru": "Институт сельского хозяйства и агротехнологий Каракалпакстана",
     "name_uz": "Qoraqalpog'iston qishloq xo'jaligi va agrotexnologiyalar instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7079545442",
@@ -6120,6 +6437,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -6150,7 +6468,8 @@
     "name_en": "Kazakh National Agrarian Research University",
     "name_ru": "Казахский национальный аграрный исследовательский университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7079668065",
@@ -6165,6 +6484,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "",
    "license_url": null,
    "usage_terms": {},
@@ -6195,7 +6515,8 @@
     "name_en": "Turin Polytechnic University",
     "name_ru": "Туринский политехнический университет в городе Ташкенте",
     "name_uz": "Туринский политехнический университет"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7080122055",
@@ -6210,6 +6531,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -6240,7 +6562,8 @@
     "name_en": "Jizzakh State Pedagogical Institute",
     "name_ru": "Джизакский Государственный Педагогический Университет",
     "name_uz": "Abdulla Qodiriy nomidagi Jizzax davlat pedagogika universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7080125545",
@@ -6255,6 +6578,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -6285,7 +6609,8 @@
     "name_en": "Andijan State University",
     "name_ru": "Андижанский государственный университет имени З.М. Бабура",
     "name_uz": "Andijon davlat universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7080131220",
@@ -6300,6 +6625,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -6330,7 +6656,8 @@
     "name_en": "Fergana State University",
     "name_ru": "Ферганский государственный университет",
     "name_uz": "Farg`ona davlat universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7081032615",
@@ -6345,6 +6672,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -6375,7 +6703,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7081937415",
@@ -6390,6 +6719,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -6420,7 +6750,8 @@
     "name_en": "Astana IT University",
     "name_ru": null,
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7082148498",
@@ -6435,6 +6766,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "other-oa",
    "license_url": null,
    "usage_terms": {},
@@ -6465,7 +6797,8 @@
     "name_en": "Rudny Industrial Institute",
     "name_ru": null,
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7082265297",
@@ -6480,6 +6813,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -6510,7 +6844,8 @@
     "name_en": "Buketov Karaganda National Research University",
     "name_ru": "Академик Е.А. Бөкетов атындағы Қарағанды Ұлттық Зерттеу университеті",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7083003630",
@@ -6525,6 +6860,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -6555,7 +6891,8 @@
     "name_en": "Andijan State University",
     "name_ru": "Андижанский государственный университет имени З.М. Бабура",
     "name_uz": "Andijon davlat universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7083006795",
@@ -6570,6 +6907,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -6600,7 +6938,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7083830924",
@@ -6615,6 +6954,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -6645,7 +6985,8 @@
     "name_en": "Denau Institute of Entrepreneurship and Pedagogy",
     "name_ru": "Институт предпринимательства и педагогики имени Денова",
     "name_uz": "Denov tadbirkorlik va pedagogika instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7085597686",
@@ -6660,6 +7001,7 @@
     "KG"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -6690,7 +7032,8 @@
     "name_en": "Salymbekov University",
     "name_ru": null,
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7086762073",
@@ -6705,6 +7048,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -6735,7 +7079,8 @@
     "name_en": "Samarkand State University",
     "name_ru": "Самаркандский государственный университет",
     "name_uz": "Alisher Navoiy nomidagi Samarqand Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7086834438",
@@ -6750,6 +7095,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -6780,7 +7126,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7089367685",
@@ -6795,6 +7142,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -6825,7 +7173,8 @@
     "name_en": "Fergana State University",
     "name_ru": "Ферганский государственный университет",
     "name_uz": "Farg`ona davlat universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7090178068",
@@ -6840,6 +7189,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -6870,7 +7220,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7090182673",
@@ -6885,6 +7236,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -6915,7 +7267,8 @@
     "name_en": "Tashkent Institute of Irrigation and Agricultural Mechanization Engineers",
     "name_ru": "Ташкентский институт инженеров ирригации и механизации сельского хозяйства",
     "name_uz": "Uzbe ikromjon alijonov Mexanizatsiyalash Muhandislari Instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7090325402",
@@ -6930,6 +7283,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -6960,7 +7314,8 @@
     "name_en": "Tashkent Institute of Irrigation and Agricultural Mechanization Engineers",
     "name_ru": "Ташкентский институт инженеров ирригации и механизации сельского хозяйства",
     "name_uz": "Uzbe ikromjon alijonov Mexanizatsiyalash Muhandislari Instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7090368377",
@@ -6975,6 +7330,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -7005,7 +7361,8 @@
     "name_en": "Tashkent Institute of Irrigation and Agricultural Mechanization Engineers",
     "name_ru": "Ташкентский институт инженеров ирригации и механизации сельского хозяйства",
     "name_uz": "Uzbe ikromjon alijonov Mexanizatsiyalash Muhandislari Instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7090414670",
@@ -7020,6 +7377,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -7050,7 +7408,8 @@
     "name_en": "Tashkent Institute of Irrigation and Agricultural Mechanization Engineers",
     "name_ru": "Ташкентский институт инженеров ирригации и механизации сельского хозяйства",
     "name_uz": "Uzbe ikromjon alijonov Mexanizatsiyalash Muhandislari Instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7092368916",
@@ -7065,6 +7424,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -7095,7 +7455,8 @@
     "name_en": "Kozybayev University",
     "name_ru": "Северо-Казахстанский государственный университет имени М.Козыбаева",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7092684969",
@@ -7110,6 +7471,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -7140,7 +7502,8 @@
     "name_en": "Kozybayev University",
     "name_ru": "Северо-Казахстанский государственный университет имени М.Козыбаева",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7092974199",
@@ -7155,6 +7518,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "",
    "license_url": null,
    "usage_terms": {},
@@ -7185,7 +7549,8 @@
     "name_en": "Dulaty University",
     "name_ru": "Таразский государственный университет имени М. Х. Дулати",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7093317510",
@@ -7200,6 +7565,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -7230,7 +7596,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7094946071",
@@ -7245,6 +7612,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -7275,7 +7643,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7103978339",
@@ -7290,6 +7659,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -7320,7 +7690,8 @@
     "name_en": "Fergana State University",
     "name_ru": "Ферганский государственный университет",
     "name_uz": "Farg`ona davlat universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7103985598",
@@ -7335,6 +7706,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -7365,7 +7737,8 @@
     "name_en": "Kozybayev University",
     "name_ru": "Северо-Казахстанский государственный университет имени М.Козыбаева",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7104004184",
@@ -7380,6 +7753,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -7410,7 +7784,8 @@
     "name_en": "Kozybayev University",
     "name_ru": "Северо-Казахстанский государственный университет имени М.Козыбаева",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7104009570",
@@ -7425,6 +7800,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -7455,7 +7831,8 @@
     "name_en": "Kozybayev University",
     "name_ru": "Северо-Казахстанский государственный университет имени М.Козыбаева",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7104398424",
@@ -7470,6 +7847,7 @@
     "KG"
    ],
    "languages": [],
+   "license_id": null,
    "license": "",
    "license_url": null,
    "usage_terms": {},
@@ -7500,7 +7878,8 @@
     "name_en": "I. Arabaev Kyrgyz State University",
     "name_ru": "Киргизский государственный университет имени И. Арабаева",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7104507071",
@@ -7515,6 +7894,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -7545,7 +7925,8 @@
     "name_en": "Buketov Karaganda National Research University",
     "name_ru": "Академик Е.А. Бөкетов атындағы Қарағанды Ұлттық Зерттеу университеті",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7105679692",
@@ -7560,6 +7941,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -7590,7 +7972,8 @@
     "name_en": "Buketov Karaganda National Research University",
     "name_ru": "Академик Е.А. Бөкетов атындағы Қарағанды Ұлттық Зерттеу университеті",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7105698486",
@@ -7605,6 +7988,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -7635,7 +8019,8 @@
     "name_en": "Kozybayev University",
     "name_ru": "Северо-Казахстанский государственный университет имени М.Козыбаева",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7105982186",
@@ -7650,6 +8035,7 @@
     "KG"
    ],
    "languages": [],
+   "license_id": null,
    "license": "",
    "license_url": null,
    "usage_terms": {},
@@ -7680,7 +8066,8 @@
     "name_en": "I. Arabaev Kyrgyz State University",
     "name_ru": "Киргизский государственный университет имени И. Арабаева",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7106654590",
@@ -7695,6 +8082,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -7725,7 +8113,8 @@
     "name_en": "Urgench State University",
     "name_ru": "Ургенчский государственный университет имени Аль-Бируни",
     "name_uz": "Urganch Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7106798747",
@@ -7740,6 +8129,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -7770,7 +8160,8 @@
     "name_en": "Oriental University",
     "name_ru": null,
     "name_uz": "Oriental Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7108597352",
@@ -7785,6 +8176,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -7815,7 +8207,8 @@
     "name_en": "National Pedagogical University of Uzbekistan",
     "name_ru": "Национальный педагогический университет Узбекистана",
     "name_uz": "Nizomiy Nomidagi Toshkent Davlat Pedagogika Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7109218040",
@@ -7830,6 +8223,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -7860,7 +8254,8 @@
     "name_en": "Tashkent State University of Economics",
     "name_ru": "Ташкентский государственный экономический университет",
     "name_uz": "Toshkent Davlat Iqtisodiyot Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7111282353",
@@ -7875,6 +8270,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -7905,7 +8301,8 @@
     "name_en": "Tashkent State University of Economics",
     "name_ru": "Ташкентский государственный экономический университет",
     "name_uz": "Toshkent Davlat Iqtisodiyot Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7115890418",
@@ -7920,6 +8317,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "",
    "license_url": null,
    "usage_terms": {},
@@ -7950,7 +8348,8 @@
     "name_en": "Tashkent State University of Economics",
     "name_ru": "Ташкентский государственный экономический университет",
     "name_uz": "Toshkent Davlat Iqtisodiyot Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7116393792",
@@ -7965,6 +8364,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -7995,7 +8395,8 @@
     "name_en": "Maqsut Narikbayev University",
     "name_ru": "Университет КАЗГЮУ",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7118092909",
@@ -8010,6 +8411,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "",
    "license_url": null,
    "usage_terms": {},
@@ -8040,7 +8442,8 @@
     "name_en": "Urgench State University",
     "name_ru": "Ургенчский государственный университет имени Аль-Бируни",
     "name_uz": "Urganch Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7119039852",
@@ -8055,6 +8458,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -8085,7 +8489,8 @@
     "name_en": "Jizzakh State Pedagogical Institute",
     "name_ru": "Джизакский Государственный Педагогический Университет",
     "name_uz": "Abdulla Qodiriy nomidagi Jizzax davlat pedagogika universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7119477442",
@@ -8100,6 +8505,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -8130,7 +8536,8 @@
     "name_en": "Buketov Karaganda National Research University",
     "name_ru": "Академик Е.А. Бөкетов атындағы Қарағанды Ұлттық Зерттеу университеті",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7119526411",
@@ -8145,6 +8552,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -8175,7 +8583,8 @@
     "name_en": "Fergana State University",
     "name_ru": "Ферганский государственный университет",
     "name_uz": "Farg`ona davlat universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7119530179",
@@ -8190,6 +8599,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -8220,7 +8630,8 @@
     "name_en": "Andijan State University",
     "name_ru": "Андижанский государственный университет имени З.М. Бабура",
     "name_uz": "Andijon davlat universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7124300619",
@@ -8235,6 +8646,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -8265,7 +8677,8 @@
     "name_en": "Sarsen Amanzholov East Kazakhstan State University",
     "name_ru": "ВОСТОЧНО-КАЗАХСТАНСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ ИМЕНИ САРСЕНА АМАНЖОЛОВА",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7125905682",
@@ -8280,6 +8693,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -8310,7 +8724,8 @@
     "name_en": "Karakalpak State University",
     "name_ru": "Каракалпакский государственный университет",
     "name_uz": "Qoraqalpoq universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7129012121",
@@ -8325,6 +8740,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -8355,7 +8771,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7129453516",
@@ -8370,6 +8787,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -8400,7 +8818,8 @@
     "name_en": "Alisher Navo'i Tashkent State University of Uzbek Language and Literature",
     "name_ru": "Ташкентский государственный университет узбекского языка и литературы имени Алишера Навои",
     "name_uz": "Alisher Navoiy nomidagi Til va adabiyot instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7131295162",
@@ -8415,6 +8834,7 @@
     "KG"
    ],
    "languages": [],
+   "license_id": null,
    "license": "",
    "license_url": null,
    "usage_terms": {},
@@ -8445,7 +8865,8 @@
     "name_en": "I. Arabaev Kyrgyz State University",
     "name_ru": "Киргизский государственный университет имени И. Арабаева",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7131636842",
@@ -8460,6 +8881,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "",
    "license_url": null,
    "usage_terms": {},
@@ -8490,7 +8912,8 @@
     "name_en": "L. N. Gumilyov Eurasian National University",
     "name_ru": "Евразийский национальный университет имени Л. Н. Гумилёва",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7133225682",
@@ -8506,6 +8929,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "",
    "license_url": null,
    "usage_terms": {},
@@ -8536,7 +8960,8 @@
     "name_en": "Tashkent Institute of Irrigation and Agricultural Mechanization Engineers",
     "name_ru": "Ташкентский институт инженеров ирригации и механизации сельского хозяйства",
     "name_uz": "Uzbe ikromjon alijonov Mexanizatsiyalash Muhandislari Instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7136074322",
@@ -8551,6 +8976,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -8581,7 +9007,8 @@
     "name_en": "Kozybayev University",
     "name_ru": "Северо-Казахстанский государственный университет имени М.Козыбаева",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7139041185",
@@ -8596,6 +9023,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -8626,7 +9054,8 @@
     "name_en": "Tashkent State University of Economics",
     "name_ru": "Ташкентский государственный экономический университет",
     "name_uz": "Toshkent Davlat Iqtisodiyot Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7139940700",
@@ -8641,6 +9070,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -8671,7 +9101,8 @@
     "name_en": "Alisher Navo'i Tashkent State University of Uzbek Language and Literature",
     "name_ru": "Ташкентский государственный университет узбекского языка и литературы имени Алишера Навои",
     "name_uz": "Alisher Navoiy nomidagi Til va adabiyot instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7140087738",
@@ -8686,6 +9117,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -8716,7 +9148,8 @@
     "name_en": "Ahmet Yesevi University",
     "name_ru": "Международный казахско-турецкий университет имени Х. А. Яссави",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7140302195",
@@ -8731,6 +9164,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -8761,7 +9195,8 @@
     "name_en": "Buketov Karaganda National Research University",
     "name_ru": "Академик Е.А. Бөкетов атындағы Қарағанды Ұлттық Зерттеу университеті",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7140776873",
@@ -8776,6 +9211,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -8806,7 +9242,8 @@
     "name_en": "Buketov Karaganda National Research University",
     "name_ru": "Академик Е.А. Бөкетов атындағы Қарағанды Ұлттық Зерттеу университеті",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7141318755",
@@ -8821,6 +9258,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "",
    "license_url": null,
    "usage_terms": {},
@@ -8851,7 +9289,8 @@
     "name_en": "Al-Farabi Kazakh National University",
     "name_ru": "Казахский национальный университет имени аль-Фараби",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7141355317",
@@ -8866,6 +9305,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -8896,7 +9336,8 @@
     "name_en": "Westminster International University in Tashkent",
     "name_ru": "Международный Вестминстерский Университет в Ташкенте",
     "name_uz": "Toshkent Xalqaro Vestminster Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7142056541",
@@ -8911,6 +9352,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -8941,7 +9383,8 @@
     "name_en": "Buketov Karaganda National Research University",
     "name_ru": "Академик Е.А. Бөкетов атындағы Қарағанды Ұлттық Зерттеу университеті",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7147158794",
@@ -8956,6 +9399,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -8986,7 +9430,8 @@
     "name_en": "New Uzbekistan University",
     "name_ru": null,
     "name_uz": "Yangi O'zbekiston Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7148259881",
@@ -9001,6 +9446,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -9031,7 +9477,8 @@
     "name_en": "Al-Farabi Kazakh National University",
     "name_ru": "Казахский национальный университет имени аль-Фараби",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7150875093",
@@ -9046,6 +9493,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -9076,7 +9524,8 @@
     "name_en": "Tashkent Institute of Irrigation and Agricultural Mechanization Engineers",
     "name_ru": "Ташкентский институт инженеров ирригации и механизации сельского хозяйства",
     "name_uz": "Uzbe ikromjon alijonov Mexanizatsiyalash Muhandislari Instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7150948022",
@@ -9091,6 +9540,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -9121,7 +9571,8 @@
     "name_en": "Alisher Navo'i Tashkent State University of Uzbek Language and Literature",
     "name_ru": "Ташкентский государственный университет узбекского языка и литературы имени Алишера Навои",
     "name_uz": "Alisher Navoiy nomidagi Til va adabiyot instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7151242506",
@@ -9136,6 +9587,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -9166,7 +9618,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7151377741",
@@ -9181,6 +9634,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -9211,7 +9665,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7151504783",
@@ -9226,6 +9681,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -9256,7 +9712,8 @@
     "name_en": "Urgench State University",
     "name_ru": "Ургенчский государственный университет имени Аль-Бируни",
     "name_uz": "Urganch Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7151526321",
@@ -9271,6 +9728,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -9301,7 +9759,8 @@
     "name_en": "Kokand State University",
     "name_ru": null,
     "name_uz": "Qoʻqon Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7151828154",
@@ -9316,6 +9775,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -9346,7 +9806,8 @@
     "name_en": "Tashkent University of Information Technologies",
     "name_ru": "Ташкентский университет информационных технологий",
     "name_uz": "Toshkent Axborot Texnologiyalari Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7151887049",
@@ -9361,6 +9822,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -9391,7 +9853,8 @@
     "name_en": "Urgench State University",
     "name_ru": "Ургенчский государственный университет имени Аль-Бируни",
     "name_uz": "Urganch Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7152065831",
@@ -9406,6 +9869,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -9436,7 +9900,8 @@
     "name_en": "Urgench State University",
     "name_ru": "Ургенчский государственный университет имени Аль-Бируни",
     "name_uz": "Urganch Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7152467078",
@@ -9451,6 +9916,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -9481,7 +9947,8 @@
     "name_en": "Bukhara State University",
     "name_ru": "Бухарский государственный университет",
     "name_uz": "Buxoro davlat universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7152503058",
@@ -9496,6 +9963,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -9526,7 +9994,8 @@
     "name_en": "Urgench State University",
     "name_ru": "Ургенчский государственный университет имени Аль-Бируни",
     "name_uz": "Urganch Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7152582413",
@@ -9541,6 +10010,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -9571,7 +10041,8 @@
     "name_en": "Urgench State University",
     "name_ru": "Ургенчский государственный университет имени Аль-Бируни",
     "name_uz": "Urganch Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7153219868",
@@ -9586,6 +10057,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -9616,7 +10088,8 @@
     "name_en": "Alisher Navo'i Tashkent State University of Uzbek Language and Literature",
     "name_ru": "Ташкентский государственный университет узбекского языка и литературы имени Алишера Навои",
     "name_uz": "Alisher Navoiy nomidagi Til va adabiyot instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7154066959",
@@ -9631,6 +10104,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -9661,7 +10135,8 @@
     "name_en": "Tashkent University of Information Technologies",
     "name_ru": "Ташкентский университет информационных технологий",
     "name_uz": "Toshkent Axborot Texnologiyalari Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7154467473",
@@ -9676,6 +10151,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -9706,7 +10182,8 @@
     "name_en": "Tashkent University of Information Technologies",
     "name_ru": "Ташкентский университет информационных технологий",
     "name_uz": "Toshkent Axborot Texnologiyalari Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7154580352",
@@ -9721,6 +10198,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -9751,7 +10229,8 @@
     "name_en": "Kokand State University",
     "name_ru": null,
     "name_uz": "Qoʻqon Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7154744382",
@@ -9766,6 +10245,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -9796,7 +10276,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7154914078",
@@ -9811,6 +10292,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -9841,7 +10323,8 @@
     "name_en": "Astana IT University",
     "name_ru": null,
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7155012067",
@@ -9856,6 +10339,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -9886,7 +10370,8 @@
     "name_en": "Qarshi davlat universiteti",
     "name_ru": null,
     "name_uz": "Qarshi Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7155171091",
@@ -9901,6 +10386,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -9931,7 +10417,8 @@
     "name_en": "Rudny Industrial Institute",
     "name_ru": null,
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7155354059",
@@ -9946,6 +10433,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -9976,7 +10464,8 @@
     "name_en": "Sarsen Amanzholov East Kazakhstan State University",
     "name_ru": "ВОСТОЧНО-КАЗАХСТАНСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ ИМЕНИ САРСЕНА АМАНЖОЛОВА",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7155498293",
@@ -9991,6 +10480,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "",
    "license_url": null,
    "usage_terms": {},
@@ -10021,7 +10511,8 @@
     "name_en": "Al-Farabi Kazakh National University",
     "name_ru": "Казахский национальный университет имени аль-Фараби",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7155821915",
@@ -10036,6 +10527,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -10066,7 +10558,8 @@
     "name_en": "Samarkand branch of Tashkent State University of Economics",
     "name_ru": "Филиал Ташкентского Государственного Экономического Университета",
     "name_uz": "Toshkent davlat iqtisodiyot universiteti samarqand filiali"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7157270673",
@@ -10081,6 +10574,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -10111,7 +10605,8 @@
     "name_en": "Astana IT University",
     "name_ru": null,
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7159623878",
@@ -10126,6 +10621,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -10156,7 +10652,8 @@
     "name_en": "Alisher Navo'i Tashkent State University of Uzbek Language and Literature",
     "name_ru": "Ташкентский государственный университет узбекского языка и литературы имени Алишера Навои",
     "name_uz": "Alisher Navoiy nomidagi Til va adabiyot instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7160894393",
@@ -10171,6 +10668,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -10201,7 +10699,8 @@
     "name_en": "International IT University",
     "name_ru": "Международный университет информационных технологий",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7161564623",
@@ -10216,6 +10715,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -10246,7 +10746,8 @@
     "name_en": "Al-Farabi Kazakh National University",
     "name_ru": "Казахский национальный университет имени аль-Фараби",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7161578645",
@@ -10261,6 +10762,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "",
    "license_url": null,
    "usage_terms": {},
@@ -10291,7 +10793,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7161592053",
@@ -10306,6 +10809,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -10336,7 +10840,8 @@
     "name_en": "Westminster International University in Tashkent",
     "name_ru": "Международный Вестминстерский Университет в Ташкенте",
     "name_uz": "Toshkent Xalqaro Vestminster Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7161602314",
@@ -10351,6 +10856,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -10381,7 +10887,8 @@
     "name_en": "University of International Business",
     "name_ru": "Университет международного бизнеса",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7162097405",
@@ -10396,6 +10903,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -10426,7 +10934,8 @@
     "name_en": "L. N. Gumilyov Eurasian National University",
     "name_ru": "Евразийский национальный университет имени Л. Н. Гумилёва",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7162111164",
@@ -10441,6 +10950,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -10471,7 +10981,8 @@
     "name_en": "National University of Uzbekistan",
     "name_ru": "Национальный университет Узбекистана",
     "name_uz": "Oʻzbekiston Milliy Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7162302058",
@@ -10486,6 +10997,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "",
    "license_url": null,
    "usage_terms": {},
@@ -10516,7 +11028,8 @@
     "name_en": "Al-Farabi Kazakh National University",
     "name_ru": "Казахский национальный университет имени аль-Фараби",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7162696536",
@@ -10531,6 +11044,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -10561,7 +11075,8 @@
     "name_en": "Astana IT University",
     "name_ru": null,
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7162989993",
@@ -10576,6 +11091,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -10606,7 +11122,8 @@
     "name_en": "Samarkand State University",
     "name_ru": "Самаркандский государственный университет",
     "name_uz": "Alisher Navoiy nomidagi Samarqand Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7163024154",
@@ -10621,6 +11138,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -10651,7 +11169,8 @@
     "name_en": "Kazakh-Russian Medical University",
     "name_ru": "Казахско-Российский Медицинский Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7163038795",
@@ -10666,6 +11185,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -10696,7 +11216,8 @@
     "name_en": "Samarkand State University",
     "name_ru": "Самаркандский государственный университет",
     "name_uz": "Alisher Navoiy nomidagi Samarqand Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7163386687",
@@ -10711,6 +11232,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -10741,7 +11263,8 @@
     "name_en": "KIMEP University",
     "name_ru": "Казахстанский институт менеджмента, экономики и прогнозирования",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7164224274",
@@ -10756,6 +11279,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -10786,7 +11310,8 @@
     "name_en": "Astana International University",
     "name_ru": null,
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7164323465",
@@ -10801,6 +11326,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -10831,7 +11357,8 @@
     "name_en": "Tashkent State University of Economics",
     "name_ru": "Ташкентский государственный экономический университет",
     "name_uz": "Toshkent Davlat Iqtisodiyot Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7164364555",
@@ -10846,6 +11373,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "",
    "license_url": null,
    "usage_terms": {},
@@ -10876,7 +11404,8 @@
     "name_en": "Tashkent State University of Economics",
     "name_ru": "Ташкентский государственный экономический университет",
     "name_uz": "Toshkent Davlat Iqtisodiyot Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7164477349",
@@ -10891,6 +11420,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -10921,7 +11451,8 @@
     "name_en": "Alfraganus University",
     "name_ru": null,
     "name_uz": "Alfraganus Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7164680230",
@@ -10936,6 +11467,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -10966,7 +11498,8 @@
     "name_en": "Al-Farabi Kazakh National University",
     "name_ru": "Казахский национальный университет имени аль-Фараби",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7164741600",
@@ -10981,6 +11514,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -11011,7 +11545,8 @@
     "name_en": "Astana IT University",
     "name_ru": null,
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7164861060",
@@ -11026,6 +11561,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -11056,7 +11592,8 @@
     "name_en": "L. N. Gumilyov Eurasian National University",
     "name_ru": "Евразийский национальный университет имени Л. Н. Гумилёва",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7165132452",
@@ -11071,6 +11608,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -11101,7 +11639,8 @@
     "name_en": "Alma-Ata School of Managers",
     "name_ru": "Международная академия бизнеса",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7165187812",
@@ -11116,6 +11655,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -11146,7 +11686,8 @@
     "name_en": "Alisher Navo'i Tashkent State University of Uzbek Language and Literature",
     "name_ru": "Ташкентский государственный университет узбекского языка и литературы имени Алишера Навои",
     "name_uz": "Alisher Navoiy nomidagi Til va adabiyot instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7165444882",
@@ -11161,6 +11702,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -11191,7 +11733,8 @@
     "name_en": "Esil University",
     "name_ru": "Есильский университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7165625153",
@@ -11206,6 +11749,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -11236,7 +11780,8 @@
     "name_en": "National University of Uzbekistan",
     "name_ru": "Национальный университет Узбекистана",
     "name_uz": "Oʻzbekiston Milliy Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7165629528",
@@ -11251,6 +11796,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -11281,7 +11827,8 @@
     "name_en": "Alma-Ata School of Managers",
     "name_ru": "Международная академия бизнеса",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7165664208",
@@ -11296,6 +11843,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -11326,7 +11874,8 @@
     "name_en": "Alisher Navo'i Tashkent State University of Uzbek Language and Literature",
     "name_ru": "Ташкентский государственный университет узбекского языка и литературы имени Алишера Навои",
     "name_uz": "Alisher Navoiy nomidagi Til va adabiyot instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7165668686",
@@ -11341,6 +11890,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -11371,7 +11921,8 @@
     "name_en": "Alisher Navo'i Tashkent State University of Uzbek Language and Literature",
     "name_ru": "Ташкентский государственный университет узбекского языка и литературы имени Алишера Навои",
     "name_uz": "Alisher Navoiy nomidagi Til va adabiyot instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7165676015",
@@ -11386,6 +11937,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -11416,7 +11968,8 @@
     "name_en": "Astana IT University",
     "name_ru": null,
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7165685617",
@@ -11431,6 +11984,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -11461,7 +12015,8 @@
     "name_en": "Astana International University",
     "name_ru": null,
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7165779596",
@@ -11476,6 +12031,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -11506,7 +12062,8 @@
     "name_en": "Urgench State University",
     "name_ru": "Ургенчский государственный университет имени Аль-Бируни",
     "name_uz": "Urganch Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7165784316",
@@ -11521,6 +12078,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "",
    "license_url": null,
    "usage_terms": {},
@@ -11551,7 +12109,8 @@
     "name_en": "Dulaty University",
     "name_ru": "Таразский государственный университет имени М. Х. Дулати",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7165808859",
@@ -11566,6 +12125,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -11596,7 +12156,8 @@
     "name_en": "Kokshetau State University",
     "name_ru": "Кокшетауский государственный университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7167034478",
@@ -11611,6 +12172,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -11641,7 +12203,8 @@
     "name_en": "National University of Uzbekistan",
     "name_ru": "Национальный университет Узбекистана",
     "name_uz": "Oʻzbekiston Milliy Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7167123996",
@@ -11656,6 +12219,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "",
    "license_url": null,
    "usage_terms": {},
@@ -11686,7 +12250,8 @@
     "name_en": "National University of Uzbekistan",
     "name_ru": "Национальный университет Узбекистана",
     "name_uz": "Oʻzbekiston Milliy Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7167232864",
@@ -11701,6 +12266,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -11731,7 +12297,8 @@
     "name_en": "Turin Polytechnic University",
     "name_ru": "Туринский политехнический университет в городе Ташкенте",
     "name_uz": "Туринский политехнический университет"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7167288047",
@@ -11746,6 +12313,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -11776,7 +12344,8 @@
     "name_en": "Alisher Navo'i Tashkent State University of Uzbek Language and Literature",
     "name_ru": "Ташкентский государственный университет узбекского языка и литературы имени Алишера Навои",
     "name_uz": "Alisher Navoiy nomidagi Til va adabiyot instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7167475727",
@@ -11791,6 +12360,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -11821,7 +12391,8 @@
     "name_en": "Pavlodar Industrial Institute",
     "name_ru": "Торайгыров университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7167504494",
@@ -11836,6 +12407,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -11866,7 +12438,8 @@
     "name_en": "Gulistan State University",
     "name_ru": null,
     "name_uz": "Guliston universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7167687112",
@@ -11881,6 +12454,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -11911,7 +12485,8 @@
     "name_en": "Alisher Navo'i Tashkent State University of Uzbek Language and Literature",
     "name_ru": "Ташкентский государственный университет узбекского языка и литературы имени Алишера Навои",
     "name_uz": "Alisher Navoiy nomidagi Til va adabiyot instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7167691230",
@@ -11926,6 +12501,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -11956,7 +12532,8 @@
     "name_en": "Tashkent State Medical University",
     "name_ru": null,
     "name_uz": "Toshkent davlat tibbiyot universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7167726196",
@@ -11971,6 +12548,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -12001,7 +12579,8 @@
     "name_en": "National University of Uzbekistan",
     "name_ru": "Национальный университет Узбекистана",
     "name_uz": "Oʻzbekiston Milliy Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7168278660",
@@ -12016,6 +12595,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "",
    "license_url": null,
    "usage_terms": {},
@@ -12046,7 +12626,8 @@
     "name_en": "Nukus State Technical University",
     "name_ru": null,
     "name_uz": "Nukus davlat texnika universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7168387005",
@@ -12061,6 +12642,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -12091,7 +12673,8 @@
     "name_en": "Karaganda Medical University",
     "name_ru": "Медицинский Университет Караганды",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7168411589",
@@ -12106,6 +12689,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -12136,7 +12720,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7169498197",
@@ -12151,6 +12736,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -12181,7 +12767,8 @@
     "name_en": "Astana Medical University",
     "name_ru": "Медицинский университет Астаны",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7169498875",
@@ -12196,6 +12783,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -12226,7 +12814,8 @@
     "name_en": "L. N. Gumilyov Eurasian National University",
     "name_ru": "Евразийский национальный университет имени Л. Н. Гумилёва",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7169558848",
@@ -12241,6 +12830,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -12271,7 +12861,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7169657915",
@@ -12286,6 +12877,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -12316,7 +12908,8 @@
     "name_en": "Mamun University",
     "name_ru": "Мамун Университет",
     "name_uz": "Ma’mun Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7169732050",
@@ -12331,6 +12924,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -12361,7 +12955,8 @@
     "name_en": "Jizzakh State Pedagogical Institute",
     "name_ru": "Джизакский Государственный Педагогический Университет",
     "name_uz": "Abdulla Qodiriy nomidagi Jizzax davlat pedagogika universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7169764329",
@@ -12376,6 +12971,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -12406,7 +13002,8 @@
     "name_en": "Fergana State University",
     "name_ru": "Ферганский государственный университет",
     "name_uz": "Farg`ona davlat universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7169789998",
@@ -12421,6 +13018,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -12451,7 +13049,8 @@
     "name_en": "Satbayev University",
     "name_ru": "Казахский национальный технический университет имени К. И. Сатпаева",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7170037524",
@@ -12466,6 +13065,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -12496,7 +13096,8 @@
     "name_en": "Satbayev University",
     "name_ru": "Казахский национальный технический университет имени К. И. Сатпаева",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7170089888",
@@ -12511,6 +13112,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -12541,7 +13143,8 @@
     "name_en": "BukhSPI",
     "name_ru": "Бухарский государственный педагогический институт",
     "name_uz": "Buxoro davlat pedagogika instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7170146013",
@@ -12556,6 +13159,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "",
    "license_url": null,
    "usage_terms": {},
@@ -12586,7 +13190,8 @@
     "name_en": "Almaty Institute of National Economy",
     "name_ru": "Казахский экономический университет имени Т. Рыскулова",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7170198609",
@@ -12601,6 +13206,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -12631,7 +13237,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7171304926",
@@ -12646,6 +13253,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "",
    "license_url": null,
    "usage_terms": {},
@@ -12676,7 +13284,8 @@
     "name_en": "Almaty Institute of National Economy",
     "name_ru": "Казахский экономический университет имени Т. Рыскулова",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7171317813",
@@ -12691,6 +13300,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -12721,7 +13331,8 @@
     "name_en": "Bukhara State University",
     "name_ru": "Бухарский государственный университет",
     "name_uz": "Buxoro davlat universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7171432104",
@@ -12736,6 +13347,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -12766,7 +13378,8 @@
     "name_en": "Kazakh National Medical University",
     "name_ru": "Казахский национальный медицинский университет имени С. Д. Асфендиярова",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7171642763",
@@ -12781,6 +13394,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -12811,7 +13425,8 @@
     "name_en": "Fergana State Technical University",
     "name_ru": null,
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7171811326",
@@ -12826,6 +13441,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -12856,7 +13472,8 @@
     "name_en": "Urgench State University",
     "name_ru": "Ургенчский государственный университет имени Аль-Бируни",
     "name_uz": "Urganch Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7171813277",
@@ -12871,6 +13488,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -12901,7 +13519,8 @@
     "name_en": "Samarkand State University",
     "name_ru": "Самаркандский государственный университет",
     "name_uz": "Alisher Navoiy nomidagi Samarqand Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7171920478",
@@ -12916,6 +13535,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -12946,7 +13566,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7172007212",
@@ -12961,6 +13582,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -12991,7 +13613,8 @@
     "name_en": "Abai Kazakh National Pedagogical University",
     "name_ru": "Казахский национальный педагогический университет имени Абая",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7172022695",
@@ -13006,6 +13629,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "other-oa",
    "license_url": null,
    "usage_terms": {},
@@ -13036,7 +13660,8 @@
     "name_en": "Astana IT University",
     "name_ru": null,
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7172095620",
@@ -13051,6 +13676,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -13081,7 +13707,8 @@
     "name_en": "Astana IT University",
     "name_ru": null,
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7172296671",
@@ -13096,6 +13723,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -13126,7 +13754,8 @@
     "name_en": "Termez State Pedagogical Institute",
     "name_ru": "Термезский государственный педагогический институт",
     "name_uz": "Termez Davlat Pedagogika Instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7172352552",
@@ -13141,6 +13770,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "",
    "license_url": null,
    "usage_terms": {},
@@ -13171,7 +13801,8 @@
     "name_en": "Al-Farabi Kazakh National University",
     "name_ru": "Казахский национальный университет имени аль-Фараби",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7172453108",
@@ -13186,6 +13817,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "",
    "license_url": null,
    "usage_terms": {},
@@ -13216,7 +13848,8 @@
     "name_en": "Al-Farabi Kazakh National University",
     "name_ru": "Казахский национальный университет имени аль-Фараби",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7172538244",
@@ -13231,6 +13864,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -13261,7 +13895,8 @@
     "name_en": "National University of Uzbekistan",
     "name_ru": "Национальный университет Узбекистана",
     "name_uz": "Oʻzbekiston Milliy Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7196934338",
@@ -13276,6 +13911,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "",
    "license_url": null,
    "usage_terms": {},
@@ -13306,7 +13942,8 @@
     "name_en": "National University of Uzbekistan",
     "name_ru": "Национальный университет Узбекистана",
     "name_uz": "Oʻzbekiston Milliy Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7201839295",
@@ -13321,6 +13958,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -13351,7 +13989,8 @@
     "name_en": "Nordic International University",
     "name_ru": "Международный Университет Нордик",
     "name_uz": "Xalqaro Nordik universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7201855261",
@@ -13366,6 +14005,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -13396,7 +14036,8 @@
     "name_en": "Fergana State University",
     "name_ru": "Ферганский государственный университет",
     "name_uz": "Farg`ona davlat universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7201863130",
@@ -13411,6 +14052,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -13441,7 +14083,8 @@
     "name_en": "Al-Farabi Kazakh National University",
     "name_ru": "Казахский национальный университет имени аль-Фараби",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7202035317",
@@ -13456,6 +14099,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -13486,7 +14130,8 @@
     "name_en": "Ahmet Yesevi University",
     "name_ru": "Международный казахско-турецкий университет имени Х. А. Яссави",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7202044066",
@@ -13501,6 +14146,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -13531,7 +14177,8 @@
     "name_en": "National University of Uzbekistan",
     "name_ru": "Национальный университет Узбекистана",
     "name_uz": "Oʻzbekiston Milliy Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7202288038",
@@ -13546,6 +14193,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -13576,7 +14224,8 @@
     "name_en": "Tashkent Institute of Irrigation and Agricultural Mechanization Engineers",
     "name_ru": "Ташкентский институт инженеров ирригации и механизации сельского хозяйства",
     "name_uz": "Uzbe ikromjon alijonov Mexanizatsiyalash Muhandislari Instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7203452084",
@@ -13591,6 +14240,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -13621,7 +14271,8 @@
     "name_en": "National University of Uzbekistan",
     "name_ru": "Национальный университет Узбекистана",
     "name_uz": "Oʻzbekiston Milliy Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7203456655",
@@ -13636,6 +14287,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -13666,7 +14318,8 @@
     "name_en": "Jizzakh Polytechnic Institute",
     "name_ru": "Джизакский политехнический институт",
     "name_uz": "Jizzax Poltexnika Instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7203547378",
@@ -13681,6 +14334,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -13711,7 +14365,8 @@
     "name_en": "Pavlodar Industrial Institute",
     "name_ru": "Торайгыров университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7203569451",
@@ -13726,6 +14381,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -13756,7 +14412,8 @@
     "name_en": "Samarkand Institute of Economics and Service",
     "name_ru": "Самаркандский институт экономики и сервиса",
     "name_uz": "Samarqand iqtisodiyot va servis instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7203668181",
@@ -13771,6 +14428,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -13801,7 +14459,8 @@
     "name_en": "Urgench State University",
     "name_ru": "Ургенчский государственный университет имени Аль-Бируни",
     "name_uz": "Urganch Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7203677610",
@@ -13816,6 +14475,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -13846,7 +14506,8 @@
     "name_en": "Tashkent Institute of Textile and Light Industry",
     "name_ru": "ТАШКЕНТСКИЙ ИНСТИТУТ ТЕКСТИЛЬНОЙ И ЛЕГКОЙ ПРОМЫШЛЕННОСТИ",
     "name_uz": "TOSHKENT TO'QIMACHILIK VA YENGIL SANOAT INSTITUTI"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7203866772",
@@ -13861,6 +14522,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -13891,7 +14553,8 @@
     "name_en": "Mahambet Otemiusly West Kazakhstan University",
     "name_ru": "Западно-Казахстанский государственный университет имени М. Утемисова",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7203910617",
@@ -13906,6 +14569,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -13936,7 +14600,8 @@
     "name_en": "Kazakh National Medical University",
     "name_ru": "Казахский национальный медицинский университет имени С. Д. Асфендиярова",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7203955937",
@@ -13951,6 +14616,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -13981,7 +14647,8 @@
     "name_en": "Samarkand State University",
     "name_ru": "Самаркандский государственный университет",
     "name_uz": "Alisher Navoiy nomidagi Samarqand Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7203971353",
@@ -13996,6 +14663,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -14026,7 +14694,8 @@
     "name_en": "Alfraganus University",
     "name_ru": null,
     "name_uz": "Alfraganus Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7204118155",
@@ -14041,6 +14710,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -14071,7 +14741,8 @@
     "name_en": "Almaty Institute of National Economy",
     "name_ru": "Казахский экономический университет имени Т. Рыскулова",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7204147642",
@@ -14086,6 +14757,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -14116,7 +14788,8 @@
     "name_en": "Tashkent Institute of Irrigation and Agricultural Mechanization Engineers",
     "name_ru": "Ташкентский институт инженеров ирригации и механизации сельского хозяйства",
     "name_uz": "Uzbe ikromjon alijonov Mexanizatsiyalash Muhandislari Instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7204195502",
@@ -14131,6 +14804,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -14161,7 +14835,8 @@
     "name_en": "Urgench State University",
     "name_ru": "Ургенчский государственный университет имени Аль-Бируни",
     "name_uz": "Urganch Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7204246132",
@@ -14176,6 +14851,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -14206,7 +14882,8 @@
     "name_en": "Navoi State Mining Institute",
     "name_ru": "Навоийский государственный горно-технологический университет",
     "name_uz": "Navoiy davlat konchilik va texnologiyalar universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7204259039",
@@ -14221,6 +14898,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -14251,7 +14929,8 @@
     "name_en": "Fergana State University",
     "name_ru": "Ферганский государственный университет",
     "name_uz": "Farg`ona davlat universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7204550954",
@@ -14266,6 +14945,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -14296,7 +14976,8 @@
     "name_en": "A. Baitursynov Kostanay Regional University",
     "name_ru": "Костанайский региональный университет имени Ахмет Байтұрсынұлы",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7204559157",
@@ -14311,6 +14992,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -14341,7 +15023,8 @@
     "name_en": "Institute of Genetics and Plant Experimental Biology of the Academy Sciences of Uzbekistan",
     "name_ru": null,
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7204603782",
@@ -14356,6 +15039,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -14386,7 +15070,8 @@
     "name_en": "Andijan Machine-building Institute",
     "name_ru": "Андижанский машиностроительный институт",
     "name_uz": "Andijon muhandislik-iqtisodiyot instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7204722649",
@@ -14401,6 +15086,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -14431,7 +15117,8 @@
     "name_en": "University of International Business",
     "name_ru": "Университет международного бизнеса",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7206153935",
@@ -14446,6 +15133,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -14476,7 +15164,8 @@
     "name_en": "Akmola Agricultural institute",
     "name_ru": "Казахский агротехнический университет имени Сакена Сейфуллина",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7207797726",
@@ -14491,6 +15180,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -14521,7 +15211,8 @@
     "name_en": "Karaganda Medical University",
     "name_ru": "Медицинский Университет Караганды",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7208754718",
@@ -14536,6 +15227,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -14566,7 +15258,8 @@
     "name_en": "National University of Uzbekistan",
     "name_ru": "Национальный университет Узбекистана",
     "name_uz": "Oʻzbekiston Milliy Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7208825729",
@@ -14581,6 +15274,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -14611,7 +15305,8 @@
     "name_en": "Urgench State University",
     "name_ru": "Ургенчский государственный университет имени Аль-Бируни",
     "name_uz": "Urganch Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7208835910",
@@ -14626,6 +15321,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -14656,7 +15352,8 @@
     "name_en": "Atyrau State University named of Kh.Dosmukhamedova",
     "name_ru": "Атырауский государственный университет имени Х. Досмухамедова",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7210288741",
@@ -14671,6 +15368,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -14701,7 +15399,8 @@
     "name_en": "Satbayev University",
     "name_ru": "Казахский национальный технический университет имени К. И. Сатпаева",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7211900286",
@@ -14716,6 +15415,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -14746,7 +15446,8 @@
     "name_en": "West Kazakhstan Marat Ospanov State Medical University",
     "name_ru": "Западно-Казахстанский государственный медицинский университет имени Марата Оспанова",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7211913010",
@@ -14761,6 +15462,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -14791,7 +15493,8 @@
     "name_en": "Urgench State University",
     "name_ru": "Ургенчский государственный университет имени Аль-Бируни",
     "name_uz": "Urganch Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7211928995",
@@ -14806,6 +15509,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -14836,7 +15540,8 @@
     "name_en": "Satbayev University",
     "name_ru": "Казахский национальный технический университет имени К. И. Сатпаева",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7212134941",
@@ -14851,6 +15556,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -14881,7 +15587,8 @@
     "name_en": "Astana IT University",
     "name_ru": null,
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7212136244",
@@ -14896,6 +15603,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -14926,7 +15634,8 @@
     "name_en": "Satbayev University",
     "name_ru": "Казахский национальный технический университет имени К. И. Сатпаева",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7212449022",
@@ -14941,6 +15650,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -14971,7 +15681,8 @@
     "name_en": "Namangan State University",
     "name_ru": "Наманганский государственный университет",
     "name_uz": "Namangan Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7212549863",
@@ -14986,6 +15697,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "",
    "license_url": null,
    "usage_terms": {},
@@ -15016,7 +15728,8 @@
     "name_en": "National University of Uzbekistan",
     "name_ru": "Национальный университет Узбекистана",
     "name_uz": "Oʻzbekiston Milliy Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7212729424",
@@ -15031,6 +15744,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -15061,7 +15775,8 @@
     "name_en": "L. N. Gumilyov Eurasian National University",
     "name_ru": "Евразийский национальный университет имени Л. Н. Гумилёва",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7212885928",
@@ -15076,6 +15791,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "",
    "license_url": null,
    "usage_terms": {},
@@ -15106,7 +15822,8 @@
     "name_en": "National University of Uzbekistan",
     "name_ru": "Национальный университет Узбекистана",
     "name_uz": "Oʻzbekiston Milliy Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7212939607",
@@ -15121,6 +15838,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "other-oa",
    "license_url": null,
    "usage_terms": {},
@@ -15151,7 +15869,8 @@
     "name_en": "Tashkent Institute of Agriculture",
     "name_ru": "Ташкентский государственный аграрный университет",
     "name_uz": "Toshkent agrar universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7213030573",
@@ -15166,6 +15885,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -15196,7 +15916,8 @@
     "name_en": "Kazakhstan Medical University",
     "name_ru": null,
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7213508487",
@@ -15211,6 +15932,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -15241,7 +15963,8 @@
     "name_en": "Kazakh-British Technical University",
     "name_ru": "Казахстанско-Британский технический университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7213579419",
@@ -15256,6 +15979,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -15286,7 +16010,8 @@
     "name_en": "M.Auezov South Kazakhstan State University",
     "name_ru": "Южно-Казахстанском педагогическом университете имени Өзбекәлі Жәнібеков",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7213588902",
@@ -15301,6 +16026,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -15331,7 +16057,8 @@
     "name_en": "Turan University",
     "name_ru": "Университет Туран",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7213596391",
@@ -15346,6 +16073,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -15376,7 +16104,8 @@
     "name_en": "Al-Farabi Kazakh National University",
     "name_ru": "Казахский национальный университет имени аль-Фараби",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7213621982",
@@ -15391,6 +16120,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -15421,7 +16151,8 @@
     "name_en": "Al-Farabi Kazakh National University",
     "name_ru": "Казахский национальный университет имени аль-Фараби",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7214053583",
@@ -15436,6 +16167,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -15466,7 +16198,8 @@
     "name_en": "Almaty Institute of National Economy",
     "name_ru": "Казахский экономический университет имени Т. Рыскулова",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7214067545",
@@ -15481,6 +16214,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -15511,7 +16245,8 @@
     "name_en": "Satbayev University",
     "name_ru": "Казахский национальный технический университет имени К. И. Сатпаева",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7214169536",
@@ -15526,6 +16261,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -15556,7 +16292,8 @@
     "name_en": "Ajou University in Tashkent",
     "name_ru": null,
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7214587633",
@@ -15571,6 +16308,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -15601,7 +16339,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7214644441",
@@ -15616,6 +16355,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -15646,7 +16386,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7214755830",
@@ -15661,6 +16402,7 @@
     "KG"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -15691,7 +16433,8 @@
     "name_en": "Kyrgyz State Technical University",
     "name_ru": "Кыргызский государственный технический университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7214887937",
@@ -15706,6 +16449,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -15736,7 +16480,8 @@
     "name_en": "Andijan State University",
     "name_ru": "Андижанский государственный университет имени З.М. Бабура",
     "name_uz": "Andijon davlat universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7214988777",
@@ -15752,6 +16497,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by-nc-sa",
    "license_url": null,
    "usage_terms": {},
@@ -15782,7 +16528,8 @@
     "name_en": "Kyrgyz State Medical Academy",
     "name_ru": "Кыргызская государственная медицинская академия имени И. К. Ахунбаева",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7215054447",
@@ -15797,6 +16544,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -15827,7 +16575,8 @@
     "name_en": "Sarsen Amanzholov East Kazakhstan State University",
     "name_ru": "ВОСТОЧНО-КАЗАХСТАНСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ ИМЕНИ САРСЕНА АМАНЖОЛОВА",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7216220233",
@@ -15842,6 +16591,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -15872,7 +16622,8 @@
     "name_en": "Central Asian Institute of Railway Engineers",
     "name_ru": "Ташкентский институт инженеров железнодорожного транспорта",
     "name_uz": "Toshkent temir yoʻl muhandislari instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7218367849",
@@ -15887,6 +16638,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -15917,7 +16669,8 @@
     "name_en": "Egyptian University of Islamic Cultute Nur-Mubarak",
     "name_ru": null,
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7218928116",
@@ -15932,6 +16685,7 @@
     "KG"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -15962,7 +16716,8 @@
     "name_en": "Kyrgyz State Technical University",
     "name_ru": "Кыргызский государственный технический университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7219679895",
@@ -15977,6 +16732,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "",
    "license_url": null,
    "usage_terms": {},
@@ -16007,7 +16763,8 @@
     "name_en": "Almaty Institute of National Economy",
     "name_ru": "Казахский экономический университет имени Т. Рыскулова",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7219737445",
@@ -16022,6 +16779,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -16052,7 +16810,8 @@
     "name_en": "Satbayev University",
     "name_ru": "Казахский национальный технический университет имени К. И. Сатпаева",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7220401192",
@@ -16067,6 +16826,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -16097,7 +16857,8 @@
     "name_en": "Akmola Agricultural institute",
     "name_ru": "Казахский агротехнический университет имени Сакена Сейфуллина",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7220443327",
@@ -16112,6 +16873,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "",
    "license_url": null,
    "usage_terms": {},
@@ -16142,7 +16904,8 @@
     "name_en": "Abylkas Saginov Karaganda Technical University",
     "name_ru": "Карагандинский государственный технический университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7220662362",
@@ -16157,6 +16920,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -16187,7 +16951,8 @@
     "name_en": "KIMEP University",
     "name_ru": "Казахстанский институт менеджмента, экономики и прогнозирования",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7220892133",
@@ -16202,6 +16967,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -16232,7 +16998,8 @@
     "name_en": "Turan University",
     "name_ru": "Университет Туран",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7220917399",
@@ -16247,6 +17014,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -16277,7 +17045,8 @@
     "name_en": "Urgench State University",
     "name_ru": "Ургенчский государственный университет имени Аль-Бируни",
     "name_uz": "Urganch Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7220960952",
@@ -16292,6 +17061,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -16322,7 +17092,8 @@
     "name_en": "D. Serikbayev East Kazakhstan State Technical University",
     "name_ru": "Восточно-Казахстанский государственный технический университет имени Д. Серикбаева",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7221161640",
@@ -16337,6 +17108,7 @@
     "KG"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -16367,7 +17139,8 @@
     "name_en": "Kyrgyz State Technical University",
     "name_ru": "Кыргызский государственный технический университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7221460017",
@@ -16382,6 +17155,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -16412,7 +17186,8 @@
     "name_en": "Kazakh-British Technical University",
     "name_ru": "Казахстанско-Британский технический университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7221515066",
@@ -16427,6 +17202,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -16457,7 +17233,8 @@
     "name_en": "National University of Uzbekistan",
     "name_ru": "Национальный университет Узбекистана",
     "name_uz": "Oʻzbekiston Milliy Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7221536728",
@@ -16472,6 +17249,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "other-oa",
    "license_url": null,
    "usage_terms": {},
@@ -16502,7 +17280,8 @@
     "name_en": "Tashkent State Technical University",
     "name_ru": "Ташкентский государственный технический университет",
     "name_uz": "Islom Karimov nomidagi Toshkent davlat texnika universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7221562052",
@@ -16517,6 +17296,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -16547,7 +17327,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7221750366",
@@ -16562,6 +17343,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -16592,7 +17374,8 @@
     "name_en": "Namangan State University",
     "name_ru": "Наманганский государственный университет",
     "name_uz": "Namangan Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7221750695",
@@ -16607,6 +17390,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -16637,7 +17421,8 @@
     "name_en": "Fergana State University",
     "name_ru": "Ферганский государственный университет",
     "name_uz": "Farg`ona davlat universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7221791828",
@@ -16652,6 +17437,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -16682,7 +17468,8 @@
     "name_en": "Namangan State University",
     "name_ru": "Наманганский государственный университет",
     "name_uz": "Namangan Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7221868456",
@@ -16697,6 +17484,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -16727,7 +17515,8 @@
     "name_en": "Satbayev University",
     "name_ru": "Казахский национальный технический университет имени К. И. Сатпаева",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7221961312",
@@ -16742,6 +17531,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "other-oa",
    "license_url": null,
    "usage_terms": {},
@@ -16772,7 +17562,8 @@
     "name_en": "Tashkent State Technical University",
     "name_ru": "Ташкентский государственный технический университет",
     "name_uz": "Islom Karimov nomidagi Toshkent davlat texnika universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7222004388",
@@ -16787,6 +17578,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -16817,7 +17609,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7222248940",
@@ -16832,6 +17625,7 @@
     "KG"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -16862,7 +17656,8 @@
     "name_en": "American University of Central Asia",
     "name_ru": "Американский университет в Центральной Азии",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7222530723",
@@ -16877,6 +17672,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -16907,7 +17703,8 @@
     "name_en": "National University of Uzbekistan",
     "name_ru": "Национальный университет Узбекистана",
     "name_uz": "Oʻzbekiston Milliy Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7222599446",
@@ -16922,6 +17719,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -16952,7 +17750,8 @@
     "name_en": "Turan University",
     "name_ru": "Университет Туран",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7222787379",
@@ -16967,6 +17766,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -16997,7 +17797,8 @@
     "name_en": "Central Asian Institute of Railway Engineers",
     "name_ru": "Ташкентский институт инженеров железнодорожного транспорта",
     "name_uz": "Toshkent temir yoʻl muhandislari instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7222830929",
@@ -17012,6 +17813,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -17042,7 +17844,8 @@
     "name_en": "Samarkand State University",
     "name_ru": "Самаркандский государственный университет",
     "name_uz": "Alisher Navoiy nomidagi Samarqand Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7222890994",
@@ -17057,6 +17860,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -17087,7 +17891,8 @@
     "name_en": "Turan University",
     "name_ru": "Университет Туран",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7222897517",
@@ -17102,6 +17907,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -17132,7 +17938,8 @@
     "name_en": "Kazakh-British Technical University",
     "name_ru": "Казахстанско-Британский технический университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7222936641",
@@ -17147,6 +17954,7 @@
     "KG"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -17177,7 +17985,8 @@
     "name_en": "Kyrgyz Economic University",
     "name_ru": "Кыргызский экономический университет им. М. Рыскулбекова",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7223060020",
@@ -17192,6 +18001,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -17222,7 +18032,8 @@
     "name_en": "Satbayev University",
     "name_ru": "Казахский национальный технический университет имени К. И. Сатпаева",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7223065858",
@@ -17237,6 +18048,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -17267,7 +18079,8 @@
     "name_en": "L. N. Gumilyov Eurasian National University",
     "name_ru": "Евразийский национальный университет имени Л. Н. Гумилёва",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7223068762",
@@ -17282,6 +18095,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -17312,7 +18126,8 @@
     "name_en": "Turan University",
     "name_ru": "Университет Туран",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7223082948",
@@ -17327,6 +18142,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -17357,7 +18173,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7223096719",
@@ -17372,6 +18189,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -17402,7 +18220,8 @@
     "name_en": "Bukhara State University",
     "name_ru": "Бухарский государственный университет",
     "name_uz": "Buxoro davlat universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7223146844",
@@ -17417,6 +18236,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -17447,7 +18267,8 @@
     "name_en": "Tashkent University of Information Technologies",
     "name_ru": "Ташкентский университет информационных технологий",
     "name_uz": "Toshkent Axborot Texnologiyalari Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7223209992",
@@ -17462,6 +18283,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -17492,7 +18314,8 @@
     "name_en": "Samarkand State Institute of Foreign Languages",
     "name_ru": "Самаркандский государственный институт иностранных языков",
     "name_uz": "Samarqand davlat chet tillar instituti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7223215020",
@@ -17507,6 +18330,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -17537,7 +18361,8 @@
     "name_en": "Astana Medical University",
     "name_ru": "Медицинский университет Астаны",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7223226165",
@@ -17552,6 +18377,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -17582,7 +18408,8 @@
     "name_en": "Tashkent State Technical University",
     "name_ru": "Ташкентский государственный технический университет",
     "name_uz": "Islom Karimov nomidagi Toshkent davlat texnika universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7223410746",
@@ -17597,6 +18424,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -17627,7 +18455,8 @@
     "name_en": "Almaty Institute of National Economy",
     "name_ru": "Казахский экономический университет имени Т. Рыскулова",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7223464085",
@@ -17642,6 +18471,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -17672,7 +18502,8 @@
     "name_en": "Kazakh National Medical University",
     "name_ru": "Казахский национальный медицинский университет имени С. Д. Асфендиярова",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7223469651",
@@ -17687,6 +18518,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -17717,7 +18549,8 @@
     "name_en": "Turan University",
     "name_ru": "Университет Туран",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7223676157",
@@ -17732,6 +18565,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -17762,7 +18596,8 @@
     "name_en": "Buketov Karaganda National Research University",
     "name_ru": "Академик Е.А. Бөкетов атындағы Қарағанды Ұлттық Зерттеу университеті",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7224105788",
@@ -17777,6 +18612,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -17807,7 +18643,8 @@
     "name_en": "Samarkand State University",
     "name_ru": "Самаркандский государственный университет",
     "name_uz": "Alisher Navoiy nomidagi Samarqand Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7224948859",
@@ -17822,6 +18659,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -17852,7 +18690,8 @@
     "name_en": "L. N. Gumilyov Eurasian National University",
     "name_ru": "Евразийский национальный университет имени Л. Н. Гумилёва",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7225001627",
@@ -17867,6 +18706,7 @@
     "KG"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -17897,7 +18737,8 @@
     "name_en": "Asian Medical Institute, Kyrgyzstan",
     "name_ru": "Азиатский медицинский институт имени Саткынбая Тентышева",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7225005662",
@@ -17912,6 +18753,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -17942,7 +18784,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7225061369",
@@ -17957,6 +18800,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -17987,7 +18831,8 @@
     "name_en": "Satbayev University",
     "name_ru": "Казахский национальный технический университет имени К. И. Сатпаева",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7225091966",
@@ -18002,6 +18847,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -18032,7 +18878,8 @@
     "name_en": "Asia International University",
     "name_ru": "Азиатский Международный Университет",
     "name_uz": "Osiyo xalqaro universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7225109765",
@@ -18047,6 +18894,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "public-domain",
    "license_url": null,
    "usage_terms": {},
@@ -18077,7 +18925,8 @@
     "name_en": "Nazarbayev University",
     "name_ru": "Назарбаев Университет",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7225130174",
@@ -18092,6 +18941,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -18122,7 +18972,8 @@
     "name_en": "Al-Farabi Kazakh National University",
     "name_ru": "Казахский национальный университет имени аль-Фараби",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7225158310",
@@ -18137,6 +18988,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -18167,7 +19019,8 @@
     "name_en": "Bukhara State University",
     "name_ru": "Бухарский государственный университет",
     "name_uz": "Buxoro davlat universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7225166147",
@@ -18182,6 +19035,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -18212,7 +19066,8 @@
     "name_en": "Tashkent State Technical University",
     "name_ru": "Ташкентский государственный технический университет",
     "name_uz": "Islom Karimov nomidagi Toshkent davlat texnika universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7225169632",
@@ -18227,6 +19082,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -18257,7 +19113,8 @@
     "name_en": "Tashkent Institute of Agriculture",
     "name_ru": "Ташкентский государственный аграрный университет",
     "name_uz": "Toshkent agrar universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7225170436",
@@ -18272,6 +19129,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -18302,7 +19160,8 @@
     "name_en": "Al-Farabi Kazakh National University",
     "name_ru": "Казахский национальный университет имени аль-Фараби",
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7225225331",
@@ -18317,6 +19176,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -18347,7 +19207,8 @@
     "name_en": "Bukhara State University",
     "name_ru": "Бухарский государственный университет",
     "name_uz": "Buxoro davlat universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7225300557",
@@ -18362,6 +19223,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "",
    "license_url": null,
    "usage_terms": {},
@@ -18392,7 +19254,8 @@
     "name_en": "Astana IT University",
     "name_ru": null,
     "name_uz": null
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7225308085",
@@ -18407,6 +19270,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -18437,7 +19301,8 @@
     "name_en": "Urgench State University",
     "name_ru": "Ургенчский государственный университет имени Аль-Бируни",
     "name_uz": "Urganch Davlat Universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7225453063",
@@ -18452,6 +19317,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by-nc-sa",
    "license_url": null,
    "usage_terms": {},
@@ -18482,7 +19348,8 @@
     "name_en": "Tashkent Institute of Textile and Light Industry",
     "name_ru": "ТАШКЕНТСКИЙ ИНСТИТУТ ТЕКСТИЛЬНОЙ И ЛЕГКОЙ ПРОМЫШЛЕННОСТИ",
     "name_uz": "TOSHKENT TO'QIMACHILIK VA YENGIL SANOAT INSTITUTI"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7225468511",
@@ -18497,6 +19364,7 @@
     "UZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -18527,7 +19395,8 @@
     "name_en": "Samarkand State Medical University",
     "name_ru": "Самаркандский государственный медицинский университет",
     "name_uz": "Samarqand davlat tibbiyot universiteti"
-   }
+   },
+   "license_info": null
   },
   {
    "id": "W7225593030",
@@ -18542,6 +19411,7 @@
     "KZ"
    ],
    "languages": [],
+   "license_id": null,
    "license": "cc-by",
    "license_url": null,
    "usage_terms": {},
@@ -18572,7 +19442,8 @@
     "name_en": "Al-Farabi Kazakh National University",
     "name_ru": "Казахский национальный университет имени аль-Фараби",
     "name_uz": null
-   }
+   },
+   "license_info": null
   }
  ],
  "usage": [

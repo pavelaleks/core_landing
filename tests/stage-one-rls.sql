@@ -10,8 +10,8 @@ insert into public.profiles (user_id, organization_id, role, is_verified)
 select current_setting('core_test.a')::uuid, id, 'contributor', false from public.organizations where type = 'university' order by id limit 1;
 insert into public.profiles (user_id, organization_id, role, is_verified)
 select current_setting('core_test.b')::uuid, organization_id, 'management', true from public.profiles where user_id = current_setting('core_test.a')::uuid;
-insert into public.datasets (id, owner_id, organization_id, title)
-select current_setting('core_test.dataset'), user_id, organization_id, '{"ru":"RLS fixture"}'::jsonb from public.profiles where user_id = current_setting('core_test.a')::uuid;
+insert into public.datasets (id, owner_id, organization_id, title, license_id)
+select current_setting('core_test.dataset'), user_id, organization_id, '{"ru":"RLS fixture"}'::jsonb, 'metadata-only' from public.profiles where user_id = current_setting('core_test.a')::uuid;
 
 set local role authenticated;
 select set_config('request.jwt.claims', jsonb_build_object('sub',current_setting('core_test.a'),'role','authenticated')::text, true);

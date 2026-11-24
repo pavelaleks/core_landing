@@ -28,12 +28,23 @@ def safe_url(value):
     return value if value and urlparse(value).scheme in ("https", "http") else ""
 
 
+def license_path(row):
+    path = (row.get("license_info") or {}).get("document_path") or ""
+    return path if re.fullmatch(r"documents/[a-z0-9-]+\.html", path) else ""
+
+
+def token_method(value, lang):
+    return {"calculated": tr(lang, "Counted", "Подсчитано", "Hisoblangan"),
+            "estimated": tr(lang, "Estimated", "Оценка", "Taxminiy"),
+            "declared": tr(lang, "Reported by the author", "Указано автором", "Muallif koʻrsatgan")}.get(value, "")
+
+
 def catalog_item(row):
     organization = row.get("organization") or {}
     return {"id": row["id"], "t": row["kind"], "title": row["title"], "desc": row["description"],
             "org": {lang: organization.get("name_" + lang) or organization.get("name") or "" for lang in ("en", "ru", "uz")},
             "organizationId": row["organization_id"], "c": ";".join(row["countries"]), "f": row["category"],
-            "lic": row["license"], "st": row["access_type"], "n": row["record_count"], "y": row["publication_year"],
+            "lic": row["license"], "license": row.get("license_info"), "st": row["access_type"], "n": row["record_count"], "y": row["publication_year"],
             "href": row["source_url"] or "app/index.html#dataset/" + row["id"], "fm": row["formats"],
             "ca": int(row["mentions_central_asia"]), "tokens": row["token_count"], "tokenizer": row["tokenizer"], "tokenMethod": row["token_method"]}
 
@@ -73,28 +84,32 @@ def usage_html(dataset_id, lang):
     if not body:
         body = '<p class="small muted">%s</p>' % tr(lang, "Information about use has not been added yet.", "Сведения об использовании пока не добавлены.", "Foydalanish haqida maʼlumot hali qoʻshilmagan.")
     else:
-        body = '<p class="small muted">%s: %d</p><ul class="usage-list">%s</ul>' % (tr(lang, "Consumers", "Потребители", "Foydalanuvchilar"), len(groups), body)
+        body = '<p class="small muted">%s: %d</p><ul class="usage-list">%s</ul>' % (tr(lang, "Who uses the data", "Кто использует данные", "Maʼlumotlardan kim foydalanadi"), len(groups), body)
     return '<section class="card dataset-usage"><h2>%s</h2>%s</section>' % (title, body)
 
 
 def record_html(row, lang):
     organization = row.get("organization") or {}
+    license = row.get("license_info") or {}
     labels = [(tr(lang, "Organization", "Организация", "Tashkilot"), organization.get("name_" + lang) or organization.get("name") or ""),
-              (tr(lang, "License", "Лицензия", "Litsenziya"), row["license"] or "—"),
-              (tr(lang, "Countries", "Страны", "Mamlakatlar"), ", ".join(row["countries"])),
-              (tr(lang, "Languages", "Языки", "Tillar"), ", ".join(row["languages"])),
-              (tr(lang, "Records", "Записи", "Yozuvlar"), row["record_count"] if row["record_count"] is not None else "—"),
-              (tr(lang, "Tokens", "Токены", "Tokenlar"), row["token_count"] if row["token_count"] is not None else tr(lang, "No data", "Нет данных", "Maʼlumot yoʻq"))]
+              (tr(lang, "License", "Лицензия", "Litsenziya"), local(license.get("name"), lang) or row["license"] or "—"),
+              (tr(lang, "Countries covered", "Страны данных", "Maʼlumotlar mamlakatlari"), ", ".join(row["countries"])),
+              (tr(lang, "Data languages", "Языки данных", "Maʼlumotlar tillari"), ", ".join(row["languages"])),
+              (tr(lang, "Records", "Количество записей", "Yozuvlar soni"), row["record_count"] if row["record_count"] is not None else "—"),
+              (tr(lang, "Token count", "Количество токенов", "Tokenlar soni"), row["token_count"] if row["token_count"] is not None else tr(lang, "No data", "Нет данных", "Maʼlumot yoʻq"))]
     if row["token_count"] is not None:
-        labels.append((tr(lang, "Counting method", "Метод подсчёта", "Hisoblash usuli"), " · ".join(str(row.get(key) or "") for key in ("tokenizer", "token_method", "token_material", "data_version"))))
-    terms = local(row["usage_terms"], lang)
+        labels.append((tr(lang, "How the token count was obtained", "Как получено количество токенов", "Tokenlar soni qanday olingan"), " · ".join([row.get("tokenizer") or "", token_method(row["token_method"], lang), row.get("token_material") or "", row.get("data_version") or ""])))
+    terms = local(license.get("description"), lang) if license else local(row["usage_terms"], lang)
     links = list(row["links"])
-    if row["license_url"]:
+    document = license_path(row)
+    if not license and row["license_url"]:
         links.append({"title": tr(lang, "License text", "Текст лицензии", "Litsenziya matni"), "url": row["license_url"]})
     link_html = "".join('<li><a href="%s" target="_blank" rel="noopener">%s</a></li>' % (esc(link["url"]), esc(link.get("title") or link.get("type") or link["url"])) for link in links if safe_url(link.get("url")))
+    if document:
+        link_html += '<li><a href="%s">%s</a></li>' % (("../../" if lang != "en" else "../") + document, tr(lang, "Read the license", "Посмотреть выбранную лицензию", "Tanlangan litsenziyani koʻrish"))
     return '<h1 class="h1-page">%s</h1><p class="sub dataset-description">%s</p><section class="card"><dl class="kv">%s</dl>%s%s</section>%s' % (
         esc(local(row["title"], lang)), esc(local(row["description"], lang)), "".join('<div><dt>%s</dt><dd>%s</dd></div>' % (esc(label), esc(value)) for label, value in labels),
-        '<h2>%s</h2><p class="dataset-description">%s</p>' % (tr(lang, "Terms of use", "Условия использования", "Foydalanish shartlari"), esc(terms)) if terms else "",
+        '<p class="dataset-description">%s</p>' % esc(terms) if terms else "",
         '<ul class="dataset-links">%s</ul>' % link_html if link_html else "", usage_html(row["id"], lang))
 
 
@@ -103,7 +118,9 @@ def new_dataset_page(row, nav, footer, base_url):
         raise ValueError("Invalid public dataset ID")
     schema = {"@context": "https://schema.org", "@type": "Dataset", "identifier": row["id"], "name": local(row["title"], "en"),
               "description": local(row["description"], "en"), "dateModified": row["updated_at"], "url": base_url + "datasets/" + row["id"] + ".html"}
-    if safe_url(row["license_url"]):
+    if license_path(row):
+        schema["license"] = base_url + license_path(row)
+    elif safe_url(row["license_url"]):
         schema["license"] = row["license_url"]
     encoded = json.dumps(schema, ensure_ascii=False).replace("<", "\\u003c")
     return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>%s — CORE</title><link rel="stylesheet" href="../assets/styles.css"><script type="application/ld+json">%s</script></head><body data-page="dataset">%s<main><section class="sec sec-first ds-page"><div class="wrap"><!--CORE_RECORD:%s--></div></section></main>%s<script src="../assets/config.js"></script><script src="../assets/account-store.js"></script><script src="../assets/vendor/supabase-2.119.2.js"></script><script src="../assets/app.js"></script><script type="module" src="../assets/account-session.js"></script></body></html>' % (esc(local(row["title"], "en")), encoded, nav, row["id"], footer)
