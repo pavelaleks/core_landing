@@ -109,12 +109,16 @@ export function createAuthService({ store = getAccountStore(), getClient = getSu
       if (!user) throw Object.assign(new Error("Session is no longer valid"), { code: "session_not_found" });
       return data;
     },
-    async signUp({ email, password, name = "", org = "", accountType }) {
+    async signUp({ email, password, name = "", org = "", accountType, organizationId, organizationRole }) {
       const client = await getClient();
       const { data, error } = await client.auth.signUp({
         email: email.trim().toLowerCase(), password,
         options: {
-          data: { name: name.trim(), organization: org.trim(), account_type: accountType === "university" ? "university" : "buyer" },
+          data: {
+            name: name.trim(), organization: org.trim(), account_type: accountType === "university" ? "university" : "buyer",
+            ...(organizationId ? { organization_id: organizationId } : {}),
+            ...(organizationRole ? { organization_role: organizationRole } : {}),
+          },
         },
       });
       if (error) throw error;
@@ -136,6 +140,12 @@ export function createAuthService({ store = getAccountStore(), getClient = getSu
       const { error } = await client.auth.updateUser({ password });
       if (error) throw error;
       apply({ recovery: false });
+    },
+    async requestPasswordReset(email) {
+      const client = await getClient();
+      const redirectTo = new URL("app/index.html", store.rootUrl).href;
+      const { error } = await client.auth.resetPasswordForEmail(email.trim().toLowerCase(), { redirectTo });
+      if (error) throw error;
     },
   };
   return service;

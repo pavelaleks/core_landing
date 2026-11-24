@@ -22,6 +22,9 @@ import shutil
 import sys
 import tempfile
 from html.parser import HTMLParser
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import public_data
+import digests
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = "https://pavelaleks.github.io/core_landing/"
@@ -96,6 +99,10 @@ META = {
                  "ru": "Как университеты Центральной Азии лицензируют свои научные данные через CORE: закрыто по умолчанию, аудит прав, раздел дохода, без затрат для вуза.",
                  "uz": "Markaziy Osiyo universitetlari ilmiy maʼlumotlarini CORE orqali qanday litsenziyalaydi: sukut boʻyicha yopiq, huquqlar auditi, daromad taqsimoti, universitet uchun xarajatsiz."},
     },
+}
+META["digests.html"] = {
+    "title": {"en": "CORE — research data digests", "ru": "CORE — дайджесты научных данных", "uz": "CORE — ilmiy maʼlumotlar sharhlari"},
+    "desc": {"en": "Thematic selections of Central Asian research datasets: languages, water, agriculture and examples of data preparation.", "ru": "Тематические подборки научных данных Центральной Азии: языки, вода, сельское хозяйство и примеры подготовки наборов.", "uz": "Markaziy Osiyo ilmiy maʼlumotlarining mavzuli tanlovlari: tillar, suv, qishloq xoʻjaligi va toʻplamlarni tayyorlash misollari."},
 }
 LICENSE_URL = {"CC0-1.0": "https://creativecommons.org/publicdomain/zero/1.0/", "ODbL-1.0": "https://opendatacommons.org/licenses/odbl/1-0/"}
 COUNTRY_EN = {"UZ": "Uzbekistan", "KZ": "Kazakhstan", "KG": "Kyrgyzstan", "TJ": "Tajikistan"}
@@ -342,6 +349,7 @@ def dataset_page(ds, nav, footer):
       <div class="tscroll tall"><table><thead><tr><th data-ru="Поле">Field</th><th data-ru="Тип">Type</th><th data-ru="Описание">Description</th></tr></thead><tbody>{fields}</tbody></table></div>
       <div class="table-foot">{withheld}</div>
     </div>
+    <!--CORE_USAGE:{esc(ds["id"])}-->
   </div>
 </section>
 </main>
@@ -453,8 +461,12 @@ def page_url(lang, page_path):
 _VER = {}
 def text_asset_hash(path):
     """Use LF bytes for text assets so Windows and Linux generate the same URLs."""
-    with open(path, "rb") as source:
-        content = source.read().replace(b"\r\n", b"\n")
+    relative = os.path.relpath(path, ROOT).replace(os.sep, "/")
+    if relative in OUT:
+        content = OUT[relative].replace(b"\r\n", b"\n")
+    else:
+        with open(path, "rb") as source:
+            content = source.read().replace(b"\r\n", b"\n")
     return hashlib.sha1(content).hexdigest()[:8]
 
 def asset_version(m):
@@ -515,7 +527,7 @@ def finalize(text, lang, page_path, meta):
     text = re.sub(r'<meta property="og:url" content="[^"]*">', '<meta property="og:url" content="%s">' % page_url(lang, page_path), text)
     if meta:
         t, d = meta["title"][lang], meta["desc"][lang]
-        if page_path in ("index.html", "catalog.html"):
+        if page_path in ("index.html", "catalog.html", "digests.html"):
             text = re.sub(r'<meta property="og:title" content="[^"]*">', '<meta property="og:title" content="%s">' % esc(t), text, count=1)
         text = re.sub(r"<title>.*?</title>", "<title>%s</title>" % esc(t), text, count=1, flags=re.S)
         text = re.sub(r'<meta name="description" content="[^"]*">', '<meta name="description" content="%s">' % esc(d), text, count=1)
@@ -695,6 +707,10 @@ def build_legal_documents():
 def build():
     global LOCAL_PAGES
     OUT.clear()
+    _VER.clear()
+    if os.path.exists(public_data.PATH):
+        emit("assets/catalog-index.js", public_data.catalog_index())
+        emit("api/v0/public-catalog.json", jdump(public_data.SNAPSHOT))
     build_api()
     build_hf()
     src_index = open(os.path.join(ROOT, "src", "index.html"), encoding="utf-8").read()
@@ -706,6 +722,7 @@ def build():
         h = re.sub(r'href="(?![a-z]+:|#|\.\./|/)([^"]+)"', r'href="../\1"', h)
         return h
     pages = {"index.html": src_index,
+             "digests.html": open(os.path.join(ROOT, "src", "digests.html"), encoding="utf-8").read(),
              "universities.html": open(os.path.join(ROOT, "src", "universities.html"), encoding="utf-8").read(),
              "developers.html": open(os.path.join(ROOT, "src", "developers.html"), encoding="utf-8").read(),
              "regions.html": open(os.path.join(ROOT, "src", "regions.html"), encoding="utf-8").read(),
@@ -715,11 +732,18 @@ def build():
              "documents.html": open(os.path.join(ROOT, "src", "documents.html"), encoding="utf-8").read()}
     for d in CAT:
         pages["datasets/" + d["slug"] + ".html"] = dataset_page(d, up(nav), up(footer))
+    for row in public_data.SNAPSHOT["datasets"]:
+        if row["kind"] == "dataset":
+            page_path = "datasets/" + row["id"] + ".html"
+            pages[page_path] = public_data.new_dataset_page(row, up(nav), up(footer), BASE)
+            META[page_path] = {"title": {lang: public_data.local(row["title"], lang) + " — CORE" for lang in LANGS}, "desc": {lang: public_data.local(row["description"], lang) for lang in LANGS}}
     LOCAL_PAGES = set(pages.keys()) | {"."}
     for path, text in pages.items():
         page_dir = posixpath.dirname(path)
         for lang in LANGS:
             t = localize(text, lang)
+            t = public_data.inject(t, lang)
+            t = t.replace("<!--CORE_DIGEST_PREVIEW-->", digests.render(lang, preview=True)).replace("<!--CORE_DIGESTS-->", digests.render(lang))
             t = relink(t, page_dir, 0 if lang == "en" else 1)
             t = finalize(t, lang, path, META.get(path))
             emit(path if lang == "en" else lang + "/" + path, t)

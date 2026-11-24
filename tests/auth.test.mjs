@@ -107,6 +107,18 @@ test("signup immediately verifies the new session without email or redirect opti
   assert(!env.storage.get("core-mvp-v1").includes("new-password"));
 });
 
+test("password reset uses the existing cabinet URL and preserves the current session", async () => {
+  const env = await environment();
+  let request;
+  const client = fakeClient({ resetPasswordForEmail: async (email, options) => { request = { email, options }; return { error: null }; } });
+  const auth = env.api.createAuthService({ store: env.store, getClient: async () => client });
+  await auth.initialize();
+  await auth.requestPasswordReset(" CLIENT@EXAMPLE.TEST ");
+  assert.equal(request.email, user.email);
+  assert.equal(request.options.redirectTo, "https://example.test/core_landing/app/index.html");
+  assert.equal(env.store.load().user, null);
+});
+
 test("signup accepts email and password without a name or organization", async () => {
   for (const profile of [{}, { name: "   ", org: "   " }]) {
     const env = await environment();

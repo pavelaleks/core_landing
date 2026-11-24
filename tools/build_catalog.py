@@ -9,8 +9,17 @@ usage: python3 -I tools/build_catalog.py
 """
 import json
 import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import public_data
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
+
+if os.path.exists(public_data.PATH):
+    result = public_data.catalog_index()
+    open(os.path.join(ROOT, "assets", "catalog-index.js"), "w", encoding="utf-8").write(result)
+    print(len(public_data.RECORDS), "published datasets from Supabase snapshot")
+    raise SystemExit(0)
 
 
 def jsvar(path):

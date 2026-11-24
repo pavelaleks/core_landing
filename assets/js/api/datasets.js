@@ -1,10 +1,109 @@
-/* Current public snapshots. This module is the boundary for future database calls. */
+import { getSupabaseClient } from "./supabase-client.js";
+import { allRows } from "./query.js";
+import { safeLink } from "../url.js";
+export { safeLink } from "../url.js";
+
+/* The synchronous getter remains for existing demo and favorites consumers. */
 const rootUrl = new URL("../../../", import.meta.url);
 const appUrl = value => new URL("app/" + value, rootUrl).href;
 
 export function getCatalog() { return window.CORE_CATALOG; }
 export function getUniversityAliases() { return window.CORE_UNI_ALT || {}; }
 export function apiBase() { return appUrl("api/v1/"); }
+
+const recordColumns = "*,organization:organizations(id,type,name,name_ru,name_en,name_uz,country)";
+
+export function toCatalogItem(record) {
+  const organization = record.organization || {};
+  return {
+    id: record.id, t: record.kind, title: record.title, desc: record.description,
+    org: { en: organization.name_en || organization.name || "", ru: organization.name_ru || organization.name || "", uz: organization.name_uz || organization.name || "" },
+    organizationId: record.organization_id, c: (record.countries || []).join(";"), f: record.category,
+    lic: record.license, st: record.access_type, n: record.record_count, y: record.publication_year,
+    href: record.source_url || "app/index.html#dataset/" + encodeURIComponent(record.id),
+    fm: record.formats, ca: record.mentions_central_asia ? 1 : 0,
+    tokens: record.token_count, tokenizer: record.tokenizer, tokenMethod: record.token_method,
+  };
+}
+
+export async function fetchCatalog() {
+  const rows = await allRows("datasets", recordColumns, query => query.eq("publication_status", "published").order("id"));
+  const items = rows.map(toCatalogItem);
+  window.CORE_CATALOG = items;
+  return items;
+}
+
+export function listOwnDatasets(userId) {
+  return allRows("datasets", recordColumns, query => query.eq("owner_id", userId).order("updated_at", { ascending: false }).order("id"));
+}
+
+export async function getDataset(id) {
+  const client = await getSupabaseClient();
+  const { data, error } = await client.from("datasets").select(recordColumns).eq("id", id).maybeSingle();
+  if (error) throw error;
+  return data;
+}
+
+export async function saveDataset(id, fields, userId, organizationId) {
+  const client = await getSupabaseClient();
+  const query = id
+    ? client.from("datasets").update({ ...fields, updated_at: new Date().toISOString() }).eq("id", id).eq("owner_id", userId)
+    : client.from("datasets").insert({ ...fields, owner_id: userId, organization_id: organizationId });
+  const { data, error } = await query.select(recordColumns).single();
+  if (error) throw error;
+  return data;
+}
+
+export async function setPublicationStatus(id, status, userId) {
+  const client = await getSupabaseClient();
+  const { data, error } = await client.from("datasets").update({ publication_status: status, updated_at: new Date().toISOString() }).eq("id", id).eq("owner_id", userId).select(recordColumns).single();
+  if (error) throw error;
+  return data;
+}
+
+export function fetchDatasetUsage(datasetId) {
+  const columns = "dataset_id,consumer_id,usage_scope,purpose,result_url,is_demo,consumer:consumers(id,name,type,description,url,is_demo,organization:organizations(id,name,name_ru,name_en,name_uz))";
+  return allRows("dataset_usage", columns, query => {
+    if (datasetId) query = query.eq("dataset_id", datasetId);
+    return query.order("dataset_id").order("consumer_id").order("usage_scope");
+  });
+}
+
+export function datasetFields(input, language = "ru", original = {}) {
+  const text = key => String(input[key] || "").trim();
+  const integer = key => {
+    if (input[key] == null || String(input[key]).trim() === "") return null;
+    const value = Number(input[key]);
+    if (!Number.isSafeInteger(value) || value < 0) throw new Error("Укажите целое неотрицательное число.");
+    return value;
+  };
+  if (!text("title") || !text("description")) throw new Error("Заполните название и описание.");
+  const links = Array.isArray(input.links) ? input.links.map(link => {
+    const url = safeLink(link.url);
+    if (!url) throw new Error("В ссылках используйте полный адрес https:// или http://.");
+    return { type: String(link.type || "documentation"), title: String(link.title || "").trim(), url };
+  }) : String(input.links || "").split(/\r?\n/).filter(line => line.trim()).map(line => {
+    const parts = line.split("|").map(part => part.trim());
+    const url = safeLink(parts.length > 1 ? parts.pop() : parts[0]);
+    if (!url) throw new Error("В ссылках используйте полный адрес https:// или http://.");
+    const type = parts.length > 1 ? parts.shift() : "documentation";
+    return { type, title: parts[0] && parts[0] !== url ? parts[0] : "", url };
+  });
+  const licenseUrl = text("license_url");
+  if (licenseUrl && !safeLink(licenseUrl)) throw new Error("Проверьте ссылку на лицензию.");
+  const tokenCount = integer("token_count");
+  if (tokenCount != null && (!text("tokenizer") || !text("token_method") || !text("token_material") || !text("data_version"))) throw new Error("Для токенов укажите токенизатор, метод, материал и версию данных.");
+  return {
+    title: { ...(original.title || {}), [language]: text("title") },
+    description: { ...(original.description || {}), [language]: text("description") },
+    usage_terms: { ...(original.usage_terms || {}), [language]: text("usage_terms") },
+    category: text("category"), countries: text("countries").toUpperCase().split(/[;,\s]+/).filter(Boolean),
+    languages: text("languages").split(/[;,\s]+/).filter(Boolean), license: text("license"), license_url: licenseUrl || null,
+    links, record_count: integer("record_count"), token_count: tokenCount,
+    tokenizer: tokenCount == null ? null : text("tokenizer"), token_method: tokenCount == null ? null : text("token_method"),
+    token_material: tokenCount == null ? null : text("token_material"), data_version: text("data_version") || null,
+  };
+}
 
 export function loadCabinetData() {
   return Promise.all([

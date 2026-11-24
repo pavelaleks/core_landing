@@ -1,0 +1,26 @@
+{
+ "source_checked": "2026-11-11",
+ "editions": [
+  {
+   "id": "languages-and-ai", "date": "2026-11-24",
+   "title": {"en":"Language resources for AI and education","ru":"Языковые ресурсы для ИИ и образования","uz":"SI va taʼlim uchun til resurslari"},
+   "summary": {"en":"Uzbek lexical resources, an archival text corpus and Kazakh fingerspelling: a starting point for choosing data for a concrete task.","ru":"Узбекская лексика, корпус архивных текстов и казахская дактилология: отправная точка для подбора данных под конкретную задачу.","uz":"Oʻzbek leksikasi, arxiv matnlari korpusi va qozoq daktilologiyasi: aniq vazifa uchun maʼlumot tanlashning boshlangʻich nuqtasi."},
+   "note": {"en":"The titles and file availability were checked in the catalog snapshot. Examine the original documentation, language coverage and license before use; this selection is not a quality ranking.","ru":"Подборка основана на названиях и проверке наличия файлов в снимке каталога. До использования изучите документацию, состав языков и лицензию первоисточника. Это подборка, а не рейтинг качества.","uz":"Tanlov katalogdagi nomlar va fayllar mavjudligi tekshiruviga asoslangan. Foydalanishdan oldin asl hujjatlar, tillar qamrovi va litsenziyani tekshiring. Bu sifat reytingi emas."},
+   "datasets": ["W7203971353","W7164477349","W7213596391","uzbek-geography-terms"]
+  },
+  {
+   "id": "water-agriculture-environment", "date": "2026-11-24",
+   "title": {"en":"Water, agriculture and environmental observations","ru":"Вода, сельское хозяйство и наблюдения за средой","uz":"Suv, qishloq xoʻjaligi va atrof-muhit kuzatuvlari"},
+   "summary": {"en":"Water monitoring, agricultural imagery and snow observations in Kazakhstan: three datasets to explore for regional research.","ru":"Мониторинг воды, сельскохозяйственные изображения и наблюдения за снегом в Казахстане: три набора для знакомства с региональными исследованиями.","uz":"Suv monitoringi, qishloq xoʻjaligi tasvirlari va Qozogʻistondagi qor kuzatuvlari: mintaqaviy tadqiqotlar bilan tanishish uchun uchta toʻplam."},
+   "note": {"en":"Compare the observation period, geography, units and collection method before combining these sources. The datasets have not been merged into a common time series.","ru":"Перед объединением источников сравните период наблюдений, географию, единицы и метод сбора. Эти наборы не объединены в общий временной ряд.","uz":"Manbalarni birlashtirishdan oldin kuzatuv davri, geografiya, oʻlchov birliklari va yigʻish usulini solishtiring. Toʻplamlar yagona vaqt qatoriga birlashtirilmagan."},
+   "datasets": ["W7157270673","W7172095620","W7124300619"]
+  },
+  {
+   "id": "preparing-research-data", "date": "2026-11-24",
+   "title": {"en":"What data preparation adds","ru":"Что добавляет подготовка данных","uz":"Maʼlumotlarni tayyorlash nima qoʻshadi"},
+   "summary": {"en":"Three CORE demonstration packages show spelling normalization, calculated survey values and standardization of medical research fields. Each includes a codebook and quality notes.","ru":"Три демонстрационных пакета CORE показывают нормализацию написания, расчёт значений опроса и стандартизацию полей медицинского исследования. У каждого есть описание полей и замечания о качестве.","uz":"CORE ning uchta namoyish paketi imloni meʼyorlashtirish, soʻrov qiymatlarini hisoblash va tibbiy tadqiqot maydonlarini standartlashtirishni koʻrsatadi. Har birida maydonlar tavsifi va sifat izohlari bor."},
+   "note": {"en":"These are demonstrations prepared from open research data. They do not confirm university partnerships; additions marked as drafts still require expert review.","ru":"Это демонстрации подготовки на открытых данных исследователей. Они не подтверждают партнёрство с вузами; добавления со статусом черновика ещё требуют экспертной проверки.","uz":"Bular tadqiqotchilarning ochiq maʼlumotlaridan tayyorlangan namoyishlardir. Ular universitetlar bilan hamkorlikni tasdiqlamaydi; qoralama qoʻshimchalar hali ekspert tekshiruvini talab qiladi."},
+   "datasets": ["uzbek-geography-terms","insurance-literacy-syrdarya","covid-almaty-cohort"]
+  }
+ ]
+}
