@@ -64,6 +64,14 @@ META = {
             "uz": "Ilmiy maʼlumotlarni mavzu, mamlakat va universitet boʻyicha toping. Manbalarni oʻrganing va mos toʻplamlarni saralanganlarga saqlang."
         }
     },
+    "documents.html": {
+        "title": {"en": "CORE — documents", "ru": "CORE — документы", "uz": "CORE — hujjatlar"},
+        "desc": {
+            "en": "Dataset publication terms, a data use agreement template, privacy notice and a personal data consent template.",
+            "ru": "Условия публикации датасетов, шаблон соглашения, политика конфиденциальности и типовой проект согласия на обработку персональных данных.",
+            "uz": "Maʼlumotlar toʻplamlarini eʼlon qilish shartlari, kelishuv namunasi, maxfiylik siyosati va shaxsga doir maʼlumotlarni qayta ishlashga rozilik namunasi."
+        }
+    },
     "how.html": {
         "title": {"en": "How CORE works — from a university archive to an API", "ru": "Как работает CORE — от архива вуза до API", "uz": "CORE qanday ishlaydi — universitet arxividan API gacha"},
         "desc": {"en": "The data path in five stages, three ways CORE works (marketplace, provider, processor of open scholar data) and updates — for universities, AI companies, government and business.",
@@ -594,6 +602,95 @@ Browse and filter it on {BASE}#catalog.
 """)
     emit("hf/core-ca-research-datasets/data/research_datasets.jsonl", "".join(json.dumps(d, ensure_ascii=False) + "\n" for d in RD))
 
+# ================================================================== documents
+LEGAL_DOCUMENTS = {
+    "metadata-only": "dataset-licenses/01_METADATA_ONLY.md",
+    "by-agreement": "dataset-licenses/02_BY_AGREEMENT.md",
+    "open-cc-by-4-0": "dataset-licenses/03_OPEN_CC_BY_4_0.md",
+    "data-use-agreement": "dataset-licenses/05_DATA_USE_AGREEMENT_TEMPLATE.md",
+    "personal-data-consent": "personal-data-consent.md",
+}
+
+def document_inline(text):
+    """Render the inline syntax used by the supplied documents, escaping all HTML."""
+    tokens = re.split(r'(\[[^\]\n]+\]\([^\s)]+\)|\*\*[^*\n]+\*\*|`[^`\n]+`|https?://[^\s<>]+)', text)
+    result = []
+    for token in tokens:
+        link = re.fullmatch(r'\[([^\]]+)\]\(([^\s)]+)\)', token)
+        if link:
+            label, url = link.groups()
+            if not re.match(r'^(?:https?://|mailto:)', url):
+                raise ValueError("Unsupported document link: " + url)
+            result.append('<a href="%s">%s</a>' % (esc(url), esc(label)))
+        elif token.startswith("**") and token.endswith("**"):
+            result.append("<strong>%s</strong>" % esc(token[2:-2]))
+        elif token.startswith("`") and token.endswith("`"):
+            result.append("<code>%s</code>" % esc(token[1:-1]))
+        elif token.startswith(("https://", "http://")):
+            url = token.rstrip(".,;:!?")
+            result.append('<a href="%s">%s</a>%s' % (esc(url), esc(url), esc(token[len(url):])))
+        else:
+            result.append(esc(token))
+    return "".join(result)
+
+def document_markdown(text):
+    """The source set uses headings, paragraphs, lists, quotations and simple tables."""
+    lines = text.splitlines()
+    result, index = [], 0
+    while index < len(lines):
+        line = lines[index].strip()
+        index += 1
+        if not line:
+            continue
+        heading = re.fullmatch(r'(#{1,3})\s+(.+)', line)
+        if heading:
+            level, label = len(heading[1]), heading[2]
+            result.append('<h%d>%s</h%d>' % (level, document_inline(label), level))
+        elif line.startswith("|") and index < len(lines) and re.fullmatch(r'\|[\s:|\-]+\|', lines[index].strip()):
+            cells = lambda row: row.strip().strip("|").split("|")
+            header = ''.join('<th scope="col">%s</th>' % document_inline(cell.strip()) for cell in cells(line))
+            index += 1
+            rows = []
+            while index < len(lines) and lines[index].strip().startswith("|"):
+                rows.append('<tr>' + ''.join('<td>%s</td>' % document_inline(cell.strip()) for cell in cells(lines[index])) + '</tr>')
+                index += 1
+            result.append('<div class="document-table"><table><thead><tr>' + header + '</tr></thead><tbody>' + ''.join(rows) + '</tbody></table></div>')
+        elif line.startswith("> "):
+            quote = [line[2:]]
+            while index < len(lines) and lines[index].strip().startswith("> "):
+                quote.append(lines[index].strip()[2:])
+                index += 1
+            result.append('<blockquote><p>%s</p></blockquote>' % document_inline(" ".join(quote)))
+        elif re.match(r'^-\s', line):
+            items = [line[2:]]
+            while index < len(lines) and re.match(r'^-\s', lines[index].strip()):
+                items.append(lines[index].strip()[2:])
+                index += 1
+            result.append('<ul>' + ''.join('<li>%s</li>' % document_inline(item) for item in items) + '</ul>')
+        else:
+            paragraph = [line]
+            while index < len(lines) and lines[index].strip():
+                paragraph.append(lines[index].strip())
+                index += 1
+            result.append('<p>%s</p>' % document_inline(" ".join(paragraph)))
+    return "\n".join(result)
+
+def build_legal_documents():
+    with open(os.path.join(ROOT, "src", "document.html"), encoding="utf-8") as source:
+        template = source.read()
+    source_root = os.path.join(ROOT, "data-src", "documents")
+    for slug, source_path in LEGAL_DOCUMENTS.items():
+        with open(os.path.join(source_root, source_path), "rb") as source:
+            raw = source.read()
+        text = raw.decode("utf-8")
+        title = text.splitlines()[0].removeprefix("# ")
+        page = template.replace("{{TITLE}}", esc(title)).replace("{{CONTENT}}", document_markdown(text))
+        page = page.replace("{{SOURCE_URL}}", "files/" + source_path)
+        page = page.replace("{{CANONICAL}}", BASE + "documents/" + slug + ".html")
+        page = re.sub(r'\b(src|href)="((?:\.\./)*assets/[^"?#]+\.(?:js|css))"', asset_version, page)
+        emit("documents/" + slug + ".html", page)
+        emit("documents/files/" + source_path, raw)
+
 # ================================================================== main
 def build():
     global LOCAL_PAGES
@@ -614,7 +711,8 @@ def build():
              "regions.html": open(os.path.join(ROOT, "src", "regions.html"), encoding="utf-8").read(),
              "pricing.html": open(os.path.join(ROOT, "src", "pricing.html"), encoding="utf-8").read(),
              "how.html": open(os.path.join(ROOT, "src", "how.html"), encoding="utf-8").read(),
-             "catalog.html": open(os.path.join(ROOT, "src", "catalog.html"), encoding="utf-8").read()}
+             "catalog.html": open(os.path.join(ROOT, "src", "catalog.html"), encoding="utf-8").read(),
+             "documents.html": open(os.path.join(ROOT, "src", "documents.html"), encoding="utf-8").read()}
     for d in CAT:
         pages["datasets/" + d["slug"] + ".html"] = dataset_page(d, up(nav), up(footer))
     LOCAL_PAGES = set(pages.keys()) | {"."}
@@ -625,6 +723,7 @@ def build():
             t = relink(t, page_dir, 0 if lang == "en" else 1)
             t = finalize(t, lang, path, META.get(path))
             emit(path if lang == "en" else lang + "/" + path, t)
+    build_legal_documents()
     for l in LANGS[1:]:
         emit(l + "/app/index.html", '<!doctype html><meta charset="utf-8"><meta name="robots" content="noindex">'
              '<title>CORE</title><script>location.replace("../../app/index.html" + location.hash)</script>'
@@ -637,11 +736,11 @@ def build():
     emit("app/index.html", version_modules(app_index, "app"))
     urls = [page_url(l, p) for p in pages for l in LANGS]
     emit("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-         + "".join("  <url><loc>%s</loc></url>\n" % u for u in urls + [BASE + "privacy.html"]) + "</urlset>\n")
+         + "".join("  <url><loc>%s</loc></url>\n" % u for u in urls + [BASE + "privacy.html"] + [BASE + "documents/" + slug + ".html" for slug in LEGAL_DOCUMENTS]) + "</urlset>\n")
 
 def main():
     build()
-    generated_dirs = ["api", "ru", "uz", "datasets", "hf"]
+    generated_dirs = ["api", "ru", "uz", "datasets", "hf", "documents"]
     if CHECK:
         stale = []
         for path, data in OUT.items():

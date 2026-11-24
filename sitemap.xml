@@ -21,6 +21,9 @@
   <url><loc>https://pavelaleks.github.io/core_landing/catalog.html</loc></url>
   <url><loc>https://pavelaleks.github.io/core_landing/ru/catalog.html</loc></url>
   <url><loc>https://pavelaleks.github.io/core_landing/uz/catalog.html</loc></url>
+  <url><loc>https://pavelaleks.github.io/core_landing/documents.html</loc></url>
+  <url><loc>https://pavelaleks.github.io/core_landing/ru/documents.html</loc></url>
+  <url><loc>https://pavelaleks.github.io/core_landing/uz/documents.html</loc></url>
   <url><loc>https://pavelaleks.github.io/core_landing/datasets/universities.html</loc></url>
   <url><loc>https://pavelaleks.github.io/core_landing/ru/datasets/universities.html</loc></url>
   <url><loc>https://pavelaleks.github.io/core_landing/uz/datasets/universities.html</loc></url>
@@ -31,4 +34,9 @@
   <url><loc>https://pavelaleks.github.io/core_landing/ru/datasets/ca_publications.html</loc></url>
   <url><loc>https://pavelaleks.github.io/core_landing/uz/datasets/ca_publications.html</loc></url>
   <url><loc>https://pavelaleks.github.io/core_landing/privacy.html</loc></url>
+  <url><loc>https://pavelaleks.github.io/core_landing/documents/metadata-only.html</loc></url>
+  <url><loc>https://pavelaleks.github.io/core_landing/documents/by-agreement.html</loc></url>
+  <url><loc>https://pavelaleks.github.io/core_landing/documents/open-cc-by-4-0.html</loc></url>
+  <url><loc>https://pavelaleks.github.io/core_landing/documents/data-use-agreement.html</loc></url>
+  <url><loc>https://pavelaleks.github.io/core_landing/documents/personal-data-consent.html</loc></url>
 </urlset>
