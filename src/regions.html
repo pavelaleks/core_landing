@@ -21,6 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/dataset-card.css">
 </head>
 <body data-page="regions" data-form-default="buyer">
 
@@ -48,17 +49,15 @@
 </header>
 
 <main>
-<section class="sec rg-hero">
-  <div class="wrap">
-    <span class="eyebrow" data-ru="Для бизнеса, государства и организаций">For business, government and organizations</span>
-    <h1 class="rg-h1" data-ru="Регионы Центральной Азии в одной таблице">Central Asia's regions in one table</h1>
-    <p class="lead" data-ru="48 регионов четырёх стран: население и его структура из официальной статистики, вузы, наука, клиники и результаты опросов — связаны общим кодом региона (ISO 3166-2). Это основа, к которой мы подключаем данные под вашу задачу.">48 regions of four countries: population and its structure from official statistics, universities, research, clinics and survey results — joined by one region code (ISO 3166-2). It is the base we connect data to for your task.</p>
-    <div class="rg-stats" id="rgStats"></div>
-  </div>
-</section>
-
-<section class="sec sec-alt" id="map-table" data-nav="Карта и таблица" data-nav-en="Map and table" data-nav-uz="Xarita va jadval">
-  <div class="wrap">
+<section class="sec rg-hero" data-nav="Регионы" data-nav-en="Regions" data-nav-uz="Hududlar">
+  <div class="wrap"><div class="sheet-wrap">
+    <p class="crumbs mono small"><a href="catalog.html" data-ru="Каталог">Catalog</a> / ISO 3166-2</p>
+    <!--CORE_REGION_CARD-->
+    <template data-region-part="title"><span data-ru="Регионы Центральной Азии в одной таблице">Central Asia's regions in one table</span></template>
+    <template data-region-part="description"><p class="sheet-intro" data-ru="48 регионов четырёх стран: население и его структура из официальной статистики, вузы, наука, клиники и результаты опросов — связаны общим кодом региона (ISO 3166-2). Это основа, к которой мы подключаем данные под вашу задачу.">48 regions of four countries: population and its structure from official statistics, universities, research, clinics and survey results — joined by one region code (ISO 3166-2). It is the base we connect data to for your task.</p></template>
+    <template data-region-part="data">
+      <div id="map-table">
+        <div class="rg-stats" id="rgStats"></div>
     <div class="rg-controls">
       <label><span data-ru="Показать на карте">Show on the map</span>
         <select id="rgInd">
@@ -83,19 +82,23 @@
       <th data-k="works" class="r" data-ru="Научные работы">Research works</th><th data-k="open_datasets" class="r" data-ru="Наборы учёных">Scholar datasets</th>
       <th data-k="clinics" class="r" data-ru="Медучреждения">Medical facilities</th><th data-k="behaviour" data-ru="Поведение">Behaviour</th>
     </tr></thead><tbody></tbody></table></div></div>
+      </div>
+    </template>
+    <template data-region-part="api">
+      <p><a href="api/v0/regions.json" data-ru="API (JSON)">API (JSON)</a></p>
+      <p class="sheet-caption" data-ru="Опрос Гулистанского госуниверситета (353 человека) о страховании лежит в той же сетке регионов, что и официальная демография. Поэтому ответы можно сравнить со структурой населения области, а выборку для нового опроса — построить по квотам из этой же таблицы.">Gulistan State University's insurance survey (353 people) sits on the same region grid as the official demographics. So answers can be compared with the region's population structure — and the sample for a new survey can be built from quotas in this very table.</p>
+      <div class="rg-join card"><pre id="rgJoin"></pre></div>
+    </template>
+    <template data-region-part="passport">
     <p class="small muted rg-note" data-ru="Годы демографии: Узбекистан и Кыргызстан — 2018, Таджикистан — 2019, Казахстан — 2023. Возрастная структура по Узбекистану и доля городского населения по Казахстану и Таджикистану в источнике не даны. Медучреждения — только Узбекистан, по нашей базе на основе OpenStreetMap.">Demography years: Uzbekistan and Kyrgyzstan 2018, Tajikistan 2019, Kazakhstan 2023. The source gives no age structure for Uzbekistan and no urban share for Kazakhstan and Tajikistan. Medical facilities: Uzbekistan only, from our OpenStreetMap-based database.</p>
-  </div>
-</section>
-
-<section class="sec" data-nav="Демография + поведение" data-nav-en="Demographics + behaviour" data-nav-uz="Demografiya + xulq">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow" data-ru="Демография + поведение">Demographics + behaviour</span>
-      <h2 data-ru="Как связываются данные: пример Сырдарьи">How the data joins: the Syrdarya example</h2>
-      <p class="sub" data-ru="Опрос Гулистанского госуниверситета (353 человека) о страховании лежит в той же сетке регионов, что и официальная демография. Поэтому ответы можно сравнить со структурой населения области, а выборку для нового опроса — построить по квотам из этой же таблицы.">Gulistan State University's insurance survey (353 people) sits on the same region grid as the official demographics. So answers can be compared with the region's population structure — and the sample for a new survey can be built from quotas in this very table.</p>
-    </div>
-    <div class="rg-join card"><pre id="rgJoin"></pre></div>
-  </div>
+    <p class="small muted rg-note" data-ru="Источники: демография — Common Operational Datasets ООН (OCHA, UNFPA) на основе данных национальных статистических ведомств, CC BY-IGO; границы для привязки вузов — geoBoundaries (OpenStreetMap, ODbL); вузы и научные работы — CORE (CC0, OpenAlex); медучреждения — CORE на основе OpenStreetMap (ODbL); опрос — Гулистанский госуниверситет (CC BY 4.0), подготовка CORE.">Sources: demographics — UN Common Operational Datasets (OCHA, UNFPA) from national statistics offices, CC BY-IGO; boundaries for placing universities — geoBoundaries (OpenStreetMap, ODbL); universities and research works — CORE (CC0, OpenAlex); medical facilities — CORE from OpenStreetMap (ODbL); survey — Gulistan State University (CC BY 4.0), prepared by CORE.</p>
+    </template>
+    <template data-region-part="access">
+      <p><a href="api/v0/regions.csv" download data-ru="Скачать таблицу (CSV)">Download the table (CSV)</a></p>
+      <p><a href="#contact" data-form="buyer" data-ru="Обсудить задачу">Discuss your task</a></p>
+    </template>
+    <!--/CORE_REGION_CARD-->
+  </div></div>
 </section>
 
 <section class="sec sec-alt" data-nav="Опросы под задачу" data-nav-en="Surveys to order" data-nav-uz="Buyurtma soʻrovlari">
@@ -114,7 +117,6 @@
       <a class="btn btn-ghost" href="api/v0/regions.csv" download data-ru="Скачать таблицу (CSV)">Download the table (CSV)</a>
       <a class="btn btn-ghost" href="api/v0/regions.json" data-ru="API (JSON)">API (JSON)</a>
     </div>
-    <p class="small muted rg-note" data-ru="Источники: демография — Common Operational Datasets ООН (OCHA, UNFPA) на основе данных национальных статистических ведомств, CC BY-IGO; границы для привязки вузов — geoBoundaries (OpenStreetMap, ODbL); вузы и научные работы — CORE (CC0, OpenAlex); медучреждения — CORE на основе OpenStreetMap (ODbL); опрос — Гулистанский госуниверситет (CC BY 4.0), подготовка CORE.">Sources: demographics — UN Common Operational Datasets (OCHA, UNFPA) from national statistics offices, CC BY-IGO; boundaries for placing universities — geoBoundaries (OpenStreetMap, ODbL); universities and research works — CORE (CC0, OpenAlex); medical facilities — CORE from OpenStreetMap (ODbL); survey — Gulistan State University (CC BY 4.0), prepared by CORE.</p>
   </div>
 </section>
 

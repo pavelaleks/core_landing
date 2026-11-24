@@ -2,8 +2,10 @@ import { listOwnDatasets, getDataset, saveDataset, setPublicationStatus, dataset
 import { databaseMessage } from "../api/query.js";
 import { organizationName, organizationUrl } from "../api/organizations.js";
 import { renderDatasetUsage } from "../ui/dataset-usage.js";
+import { datasetSheet, sheetFacts, sheetMeta, sheetSection, wireSheetActions } from "../ui/dataset-sheet.js";
+import { preparedApiExample, preparedData, preparedPassport } from "../ui/prepared-dataset.js";
 import { listLicenses, licenseName, licenseDescription, licenseUrl, publicationLicenseMessage } from "../api/licenses.js";
-import { COUNTRY_CODES, countryName, languageName, tokenMethodName, datasetTopicName } from "../ui/data-labels.js";
+import { COUNTRY_CODES, countryName, languageName, tokenMethodName, datasetTopicName, recordUnit } from "../ui/data-labels.js";
 import { esc, nf, toast } from "../ui/format.js";
 
 export function createDatasetRecords({ view, store, go, getProfileState }) {
@@ -108,25 +110,91 @@ export function createDatasetRecords({ view, store, go, getProfileState }) {
       const record = await getDataset(id);
       if (ticket !== revision) return;
       if (!record) { view.innerHTML = '<h1>' + tr("Dataset not found or unavailable", "Карточка не найдена или недоступна", "Toʻplam topilmadi yoki mavjud emas") + '</h1><a href="' + esc(store.catalogUrl(lang)) + '">' + tr("Catalog", "Каталог", "Katalog") + '</a>'; return; }
-      const owner = store.load().user?.id === record.owner_id;
+      const userId = store.load().user?.id;
+      const owner = Boolean(userId && userId === record.owner_id);
       const profile = getProfileState().data;
       const published = record.publication_status === "published";
       const selectedLicense = record.license_info;
       const documentUrl = licenseUrl(selectedLicense) || safeLink(record.license_url);
       const linkTypes = { source: tr("Source", "Источник", "Manba"), publication: tr("Publication", "Публикация", "Nashr"), code: tr("Code", "Код", "Kod"), documentation: tr("Documentation", "Документация", "Hujjatlar"), license: tr("License", "Лицензия", "Litsenziya"), terms: tr("Terms", "Условия", "Shartlar"), example: tr("Example", "Пример", "Misol"), data: tr("Data", "Данные", "Maʼlumotlar") };
       const links = (record.links || []).filter(link => safeLink(link.url));
-      const source = record.source_url ? new URL(record.source_url, new URL("../../../", import.meta.url)).href : "";
-      const sourceLabel = record.kind === "prep" || record.kind === "open" ? tr("Source", "Источник", "Manba") + ' · ' : '';
-      view.innerHTML = '<a class="back" href="' + (owner ? '#datasets' : esc(store.catalogUrl(lang))) + '">' + (owner ? 'Мои датасеты' : tr("Catalog", "Каталог", "Katalog")) + '</a>' +
-        '<div class="cabinet-heading"><div><a class="kicker" href="' + esc(organizationUrl(record.organization_id, lang)) + '">' + sourceLabel + esc(organizationName(record.organization, lang)) + '</a><h1>' + esc(local(record.title)) + '</h1></div>' + (owner ? '<span class="dataset-status">' + statusName(record.publication_status) + '</span>' : '') + '</div>' +
-        (record.kind === "prep" ? '<p class="dataset-provenance"><a href="' + esc(organizationUrl("ORG-CORE", lang)) + '">' + tr("Prepared by CORE", "Подготовлено CORE", "CORE tayyorlagan") + '</a></p>' : '') +
-        '<p class="lead dataset-description">' + esc(local(record.description)) + '</p>' +
-        '<section class="card auth-profile"><dl><dt>' + tr("Dataset topic", "Тематика датасета", "Toʻplam mavzusi") + '</dt><dd>' + esc(datasetTopicName(record.category, lang) || '—') + '</dd><dt>' + tr("Countries covered", "Страны данных", "Maʼlumotlar mamlakatlari") + '</dt><dd>' + esc(record.countries.map(code => countryName(code, lang)).join(", ") || '—') + '</dd><dt>' + tr("Data languages", "Языки данных", "Maʼlumotlar tillari") + '</dt><dd>' + esc(record.languages.map(code => languageName(code, lang)).join(", ") || '—') + '</dd><dt>' + tr("Records", "Количество записей", "Yozuvlar soni") + '</dt><dd>' + (record.record_count == null ? '—' : nf(record.record_count)) + '</dd><dt>' + tr("License", "Лицензия", "Litsenziya") + '</dt><dd>' + esc(licenseName(selectedLicense, lang) || record.license || tr("Not specified", "Не указана", "Koʻrsatilmagan")) + '</dd><dt>' + tr("Token count", "Количество токенов", "Tokenlar soni") + '</dt><dd>' + (record.token_count == null ? tr("No data", "Нет данных", "Maʼlumot yoʻq") : nf(record.token_count) + ' · ' + esc(record.tokenizer) + ' · ' + esc(tokenMethodName(record.token_method, lang)) + '<br>' + esc(record.token_material) + ' · v' + esc(record.data_version)) + '</dd></dl>' +
-        (selectedLicense ? '<p class="dataset-description">' + esc(licenseDescription(selectedLicense, lang)) + '</p>' : local(record.usage_terms) ? '<h2>' + tr("Terms of use", "Условия использования", "Foydalanish shartlari") + '</h2><p class="dataset-description">' + esc(local(record.usage_terms)) + '</p>' : '') +
-        (documentUrl ? '<p><a href="' + esc(documentUrl) + '" target="_blank" rel="noopener">' + tr("Read the license", "Посмотреть выбранную лицензию", "Tanlangan litsenziyani koʻrish") + '</a></p>' : '') + '</section>' +
-        (links.length || source ? '<section class="card"><h2>' + tr("Additional materials", "Дополнительные материалы", "Qoʻshimcha materiallar") + '</h2><ul class="dataset-links">' + links.map(link => '<li><a href="' + esc(safeLink(link.url)) + '" target="_blank" rel="noopener">' + esc(link.title || linkTypes[link.type] || linkTypes.documentation) + '</a><span class="small muted">' + esc(linkTypes[link.type] || '') + '</span></li>').join("") + (source && !links.some(link => link.url === source) ? '<li><a href="' + esc(source) + '">' + tr("Source page", "Страница источника", "Manba sahifasi") + '</a></li>' : '') + '</ul></section>' : '') +
-        '<section class="card" id="recordUsage"><p class="small muted" role="status">' + tr("Loading information about use…", "Загружаем сведения об использовании…", "Foydalanish maʼlumoti yuklanmoqda…") + '</p></section>' +
-        (owner ? '<div class="saved-actions"><a class="btn btn-ghost" href="#datasets/edit/' + encodeURIComponent(id) + '">Редактировать</a><button type="button" class="btn btn-primary" id="publishDataset"' + (!profile?.is_verified ? ' disabled' : '') + '>' + (published ? 'Снять с публикации' : 'Опубликовать') + '</button></div><p class="small muted">' + (!profile?.is_verified ? 'Публикация станет доступна после подтверждения CORE.' : published ? 'Публична карточка с описанием и ссылками. Собственные файлы в CORE пока не загружаются.' : 'Карточка пока доступна только вам. Публикация откроет описание и указанные ссылки.') + '</p><p id="publicationMessage" class="auth-message" role="status"></p>' : '');
+      const root = new URL("../../../", import.meta.url);
+      const internalSource = /^(?:datasets\/[\w-]+\.html|regions\.html|app\/index\.html#demo\/[\w-]+)$/.test(record.source_url || "");
+      const source = internalSource ? new URL((lang !== "en" && !record.source_url.startsWith("app/") ? lang + "/" : "") + record.source_url, root).href : safeLink(record.source_url);
+      const restricted = ["metadata-only", "by-agreement"].includes(record.license_id);
+      const materials = links.filter(link => !restricted || link.type !== "data");
+      const dataLink = materials.find(link => link.type === "data");
+      const original = source || safeLink(materials.find(link => link.type === "source")?.url);
+      const org = organizationName(record.organization, lang);
+      const orgLink = org && record.organization_id ? '<a href="' + esc(organizationUrl(record.organization_id, lang)) + '">' + esc(org) + '</a>' : esc(org);
+      const sourceLabel = ["prep", "open"].includes(record.kind) ? tr("Source", "Источник", "Manba") : tr("Organization", "Организация", "Tashkilot");
+      const license = licenseName(selectedLicense, lang) || record.license || tr("License unspecified", "Лицензия не указана", "Litsenziya koʻrsatilmagan");
+      const countries = (record.countries || []).map(code => countryName(code, lang)).join(", ");
+      const languages = (record.languages || []).map(code => languageName(code, lang)).join(", ");
+      const topic = datasetTopicName(record.category, lang);
+      const permittedPrep = !restricted && record.kind === "prep" && internalSource && record.source_url === "app/index.html#demo/" + record.id;
+      const curatedPage = !restricted && internalSource && (record.kind === "base" && record.source_url.startsWith("datasets/") || record.kind === "layer" && record.source_url === "regions.html");
+      let prepared;
+      if (permittedPrep) {
+        try {
+          const response = await fetch(new URL("app/packages/index.json", root));
+          if (response.ok) prepared = (await response.json()).find(item => item.slug === record.id);
+        } catch { /* The source link still opens the original demo. */ }
+        if (ticket !== revision) return;
+      }
+      const label = record.kind === "open" ? tr("Open at source", "Открыть у авторов", "Manbani ochish") : tr("Open source page", "Страница источника", "Manba sahifasi");
+      const primary = dataLink ? '<a class="sheet-primary" href="' + esc(safeLink(dataLink.url)) + '">' + tr("Open data files", "Открыть файлы", "Fayllarni ochish") + '</a>' :
+        original && !permittedPrep ? '<a class="sheet-primary" href="' + esc(original) + '">' + label + '</a>' :
+        '<button type="button" class="sheet-primary" data-sheet-open="access">' + tr("Access and terms", "Доступ и условия", "Kirish va shartlar") + '</button>';
+      const list = items => items.length ? '<ul class="dataset-links">' + items.map(link => '<li><a href="' + esc(safeLink(link.url)) + '" target="_blank" rel="noopener">' + esc(link.title || linkTypes[link.type] || linkTypes.documentation) + '</a>' + (link.title && linkTypes[link.type] ? '<span class="small muted">' + esc(linkTypes[link.type]) + '</span>' : '') + '</li>').join("") + '</ul>' : '';
+      const tokenRows = [
+        [tr("Token count", "Количество токенов", "Tokenlar soni"), record.token_count == null ? tr("No data", "Нет данных", "Maʼlumot yoʻq") : nf(record.token_count)],
+        [tr("Tokenizer", "Токенизатор", "Tokenizator"), record.tokenizer],
+        [tr("Counting method", "Метод подсчёта", "Hisoblash usuli"), tokenMethodName(record.token_method, lang)],
+        [tr("Material counted", "Посчитанный материал", "Hisoblangan material"), record.token_material],
+      ];
+      const info = [[tr("Topic", "Тематика датасета", "Mavzu"), topic], [tr("Countries", "Страны данных", "Mamlakatlar"), countries],
+        [tr("Data languages", "Языки данных", "Maʼlumotlar tillari"), languages], [tr("Version", "Версия данных", "Maʼlumotlar versiyasi"), record.data_version],
+        [tr("Formats", "Форматы", "Formatlar"), record.formats], [tr("Publication year", "Год публикации", "Nashr yili"), record.publication_year]];
+      const sourceLink = source && !materials.some(link => safeLink(link.url) === source)
+        ? '<p><a href="' + esc(source) + '">' + tr("Source page", "Страница источника", "Manba sahifasi") + '</a></p>' : '';
+      const passport = sheetMeta(info) + (record.token_count == null ? sheetMeta(tokenRows.slice(0, 1)) : "") + sourceLink +
+        list(materials.filter(link => !["data", "license", "terms", "example"].includes(link.type))) +
+        (prepared ? '<div class="sheet-body" lang="ru">' + preparedPassport(prepared) + '</div>' : '');
+      const access = '<b>' + esc(license) + '</b>' + (selectedLicense || local(record.usage_terms) ? '<p class="dataset-description">' + esc(licenseDescription(selectedLicense, lang) || local(record.usage_terms)) + '</p>' : '') +
+        (documentUrl ? '<p><a href="' + esc(documentUrl) + '" target="_blank" rel="noopener">' + tr("Read the license", "Посмотреть выбранную лицензию", "Tanlangan litsenziyani koʻrish") + '</a></p>' : '') +
+        list(materials.filter(link => ["data", "license", "terms"].includes(link.type))) +
+        (original && record.kind === "open" ? '<p><a href="' + esc(original) + '">' + label + '</a></p>' : '') +
+        (permittedPrep ? '<p><a href="' + esc(original) + '">' + tr("Open the demo package", "Открыть демо-пакет", "Namoyish paketini ochish") + '</a></p>' : '');
+      const data = (prepared ? '<div class="sheet-body" lang="ru">' + preparedData(prepared) + '</div>' : '') +
+        (record.token_count != null ? sheetMeta([...tokenRows, [tr("Data version", "Версия данных", "Maʼlumotlar versiyasi"), record.data_version]]) : '') +
+        list(materials.filter(link => link.type === "example")) +
+        (curatedPage ? '<p><a href="' + esc(original + "#sheet-data") + '">' + tr("View the data and charts", "Посмотреть данные и инфографику", "Maʼlumotlar va infografikani koʻrish") + '</a></p>' : '');
+      let api = '', apiAction = '';
+      if (permittedPrep) {
+        apiAction = '<a class="sheet-text-action" href="' + esc(original) + '">' + tr("Try the API · demo", "Попробовать API · демо", "APIʼni sinash · namoyish") + '</a>';
+        api = '<p>' + tr("Try a request on this dataset and run the SQL examples in the demo.", "В демо можно выполнить запрос к этому набору и запустить примеры SQL.", "Namoyishda ushbu toʻplamga soʻrov yuborish va SQL misollarini ishga tushirish mumkin.") + '</p>';
+        if (prepared) api += preparedApiExample(prepared, lang);
+        api += apiAction;
+      } else if (curatedPage) {
+        apiAction = '<a class="sheet-text-action" href="' + esc(original + "#sheet-api") + '">' + tr("Try the API", "Попробовать API", "APIʼni sinash") + '</a>';
+        api = apiAction;
+      }
+      const type = { open: tr("Researchers’ open dataset", "Открытый набор авторов", "Mualliflarning ochiq toʻplami"), prep: tr("CORE demo package", "Демо-пакет CORE", "CORE namoyish paketi") }[record.kind];
+      const kicker = [type, topic, countries, owner && statusName(record.publication_status)].filter(Boolean).map(esc).join(" · ");
+      view.innerHTML = '<div class="sheet-wrap"><a class="back" href="' + (owner ? '#datasets' : esc(store.catalogUrl(lang))) + '">' + (owner ? 'Мои датасеты' : tr("Catalog", "Каталог", "Katalog")) + '</a>' + datasetSheet({
+        eyebrow: kicker ? '<p class="sheet-kicker">' + kicker + '</p>' : '',
+        title: esc(local(record.title)), description: local(record.description) ? '<p class="sheet-intro">' + esc(local(record.description)) + '</p>' : '',
+        source: orgLink ? '<p class="sheet-by">' + sourceLabel + ' · ' + orgLink + (record.kind === "prep" ? ' · <a href="' + esc(organizationUrl("ORG-CORE", lang)) + '">' + tr("Prepared by CORE", "Подготовлено CORE", "CORE tayyorlagan") + '</a>' : '') + '</p>' : '',
+        facts: sheetFacts([record.record_count == null ? null : nf(record.record_count) + " " + recordUnit(record.record_count, lang), record.formats, license]),
+        actions: '<div class="sheet-actions">' + primary + apiAction + '</div>',
+        data: sheetSection("data", data, lang),
+        api: sheetSection("api", api, lang),
+        passport: sheetSection("passport", passport, lang), access: sheetSection("access", access, lang),
+        usage: '<div id="recordUsage" aria-live="polite"></div>',
+      }) +
+        (owner ? '<div class="saved-actions"><a class="btn btn-ghost" href="#datasets/edit/' + encodeURIComponent(id) + '">Редактировать</a><button type="button" class="btn btn-primary" id="publishDataset"' + (!profile?.is_verified ? ' disabled' : '') + '>' + (published ? 'Снять с публикации' : 'Опубликовать') + '</button></div><p class="small muted">' + (!profile?.is_verified ? 'Публикация станет доступна после подтверждения CORE.' : published ? 'Публична карточка с описанием и ссылками. Собственные файлы в CORE пока не загружаются.' : 'Карточка пока доступна только вам. Публикация откроет описание и указанные ссылки.') + '</p><p id="publicationMessage" class="auth-message" role="status"></p>' : '') + '</div>';
+      wireSheetActions(view);
       if (owner) document.getElementById("publishDataset").onclick = async event => {
         const problem = !published && publicationLicenseMessage(record, lang);
         if (problem) { document.getElementById("publicationMessage").textContent = problem; return; }
