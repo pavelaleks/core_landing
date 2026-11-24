@@ -1,6 +1,8 @@
 """New database records must survive static generation in every language."""
 import importlib.util
+import json
 from pathlib import Path
+import re
 import unittest
 from unittest.mock import patch
 
@@ -12,6 +14,30 @@ PUBLIC = BUILD.public_data
 
 
 class PublicRecordTests(unittest.TestCase):
+    def test_university_rankings_count_published_external_cards_and_known_work_counts(self):
+        universities = [{"id": uid, "works_count": n} for uid, n in [("A", 1), ("B", 1), ("C", 0), ("D", None)]]
+        card = {"id": "one", "organization_id": "A", "category": "Medicine", "kind": "open", "publication_status": "published"}
+        records = [card, card, dict(card, id="two", category="Computer Science"), dict(card, id="three", organization_id="D"),
+                   dict(card, id="demo", kind="prep"), dict(card, id="private", publication_status="draft"),
+                   dict(card, id="unknown", organization_id="other")]
+        result = BUILD.rankings.collect(universities, records, None)
+        def positions(rows):
+            return [(row["id"], row["value"], row["place"]) for row in rows]
+        self.assertEqual(positions(result["works"]), [("A", 1, 1), ("B", 1, 1), ("C", 0, 3)])
+        self.assertEqual(positions(result["open"][""]), [("A", 2, 1), ("D", 1, 2)])
+        self.assertEqual(positions(result["open"]["Medicine"]), [("A", 1, 1), ("D", 1, 1)])
+
+    def test_landing_uses_first_three_of_each_full_ranking_in_all_languages(self):
+        BUILD.build()
+        def payload(path):
+            page = BUILD.OUT[path].decode("utf-8")
+            return json.loads(re.search(r'<script type="application/json" data-ranking-lists>(.*?)</script>', page, re.S)[1])
+        for prefix in ("", "ru/", "uz/"):
+            full = payload(prefix + "rankings.html")
+            preview = payload(prefix + "index.html")
+            self.assertEqual(preview["works"], full["works"][:3])
+            self.assertEqual(preview["open"], {key: rows[:3] for key, rows in full["open"].items()})
+
     def test_catalog_metrics_count_public_datasets_unique_organizations_and_known_sizes(self):
         rows = [
             {"id": "one", "organization_id": "ORG-A", "publication_status": "published", "record_count": 10},

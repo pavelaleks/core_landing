@@ -34,6 +34,7 @@ for (const entry of [
   "assets/graph3d.js",
   "assets/catalog-page.js",
   "assets/regions-page.js",
+  "assets/rankings.js",
   "assets/how-page.js",
   "app/app.js",
 ]) {

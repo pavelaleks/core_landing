@@ -26,6 +26,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import public_data
 import digests
 import dataset_card
+import rankings
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = "https://coredata.uz/"
@@ -110,6 +111,18 @@ META["organization.html"] = {
     "desc": {"en": "An organization and its related research datasets, sources and data preparation.",
              "ru": "Организация и связанные с ней научные датасеты, источники и подготовленные материалы.",
              "uz": "Tashkilot va unga bogʻliq ilmiy toʻplamlar, manbalar hamda tayyorlangan materiallar."},
+}
+META["rankings.html"] = {
+    "title": {"en": "University rankings — CORE", "ru": "Рейтинги вузов — CORE", "uz": "Universitetlar reytinglari — CORE"},
+    "desc": {"en": "Find Central Asian universities by the number of open datasets in the CORE catalog and research works in OpenAlex.",
+             "ru": "Вузы Центральной Азии по числу открытых наборов в каталоге CORE и научных работ в OpenAlex.",
+             "uz": "Markaziy Osiyo universitetlarining CORE katalogidagi ochiq toʻplamlari va OpenAlex tizimidagi ilmiy ishlari soni boʻyicha reytinglar."},
+}
+META["agents.html"] = {
+    "title": {"en": "CORE agents and services", "ru": "Агенты и сервисы CORE", "uz": "CORE agentlari va xizmatlari"},
+    "desc": {"en": "MCP tools, CORE agents and data services for external agents. Tasks, connections, outputs and current readiness for nine capabilities.",
+             "ru": "MCP-инструменты, агенты CORE и сервисы данных для чужих агентов. Задачи, подключение, результаты и фактическая готовность девяти возможностей.",
+             "uz": "MCP vositalari, CORE agentlari va boshqa agentlar uchun maʼlumotlar xizmatlari. Toʻqqiz imkoniyatning vazifalari, ulanishi, natijalari va joriy tayyorligi."},
 }
 LICENSE_URL = {"CC0-1.0": "https://creativecommons.org/publicdomain/zero/1.0/", "ODbL-1.0": "https://opendatacommons.org/licenses/odbl/1-0/"}
 COUNTRY_EN = {"UZ": "Uzbekistan", "KZ": "Kazakhstan", "KG": "Kyrgyzstan", "TJ": "Tajikistan"}
@@ -538,7 +551,7 @@ def finalize(text, lang, page_path, meta):
     text = re.sub(r'<meta property="og:url" content="[^"]*">', '<meta property="og:url" content="%s">' % page_url(lang, page_path), text)
     if meta:
         t, d = meta["title"][lang], meta["desc"][lang]
-        if page_path in ("index.html", "catalog.html", "digests.html", "organization.html"):
+        if page_path in ("index.html", "catalog.html", "digests.html", "organization.html", "rankings.html", "agents.html"):
             text = re.sub(r'<meta property="og:title" content="[^"]*">', '<meta property="og:title" content="%s">' % esc(t), text, count=1)
         text = re.sub(r"<title>.*?</title>", "<title>%s</title>" % esc(t), text, count=1, flags=re.S)
         text = re.sub(r'<meta name="description" content="[^"]*">', '<meta name="description" content="%s">' % esc(d), text, count=1)
@@ -724,15 +737,25 @@ def build():
         emit("api/v0/public-catalog.json", jdump(public_data.SNAPSHOT))
     build_api()
     build_hf()
+    registry = json.loads(OUT["api/v0/universities.json"])["universities"]
+    registry_date = next(ds["updated"] for ds in CAT if ds["slug"] == "universities")
+    ranking_data = rankings.collect(registry, public_data.SNAPSHOT["datasets"], registry_date)
     src_index = open(os.path.join(ROOT, "src", "index.html"), encoding="utf-8").read()
     nav = re.search(r"<!-- ============ NAV ============ -->.*?</header>", src_index, re.S).group(0)
     footer = re.search(r'<footer class="foot">.*?</footer>', src_index, re.S).group(0)
+    with open(os.path.join(ROOT, "src", "rankings.html"), encoding="utf-8") as source:
+        rankings_page = source.read().replace("<!--CORE_SITE_NAV-->", nav).replace("<!--CORE_SITE_FOOTER-->", footer)
+    with open(os.path.join(ROOT, "src", "agents.html"), encoding="utf-8") as source:
+        agents_nav = nav.replace('href="agents.html"', 'href="agents.html" aria-current="page"', 1)
+        agents_page = source.read().replace("<!--CORE_SITE_NAV-->", agents_nav).replace("<!--CORE_SITE_FOOTER-->", footer)
     def up(h):
         """Nav and footer for pages one folder deep (datasets/): every relative link goes one level up."""
         h = re.sub(r'href="#', 'href="../index.html#', h)
         h = re.sub(r'href="(?![a-z]+:|#|\.\./|/)([^"]+)"', r'href="../\1"', h)
         return h
     pages = {"index.html": src_index,
+             "rankings.html": rankings_page,
+             "agents.html": agents_page,
              "digests.html": open(os.path.join(ROOT, "src", "digests.html"), encoding="utf-8").read(),
              "universities.html": open(os.path.join(ROOT, "src", "universities.html"), encoding="utf-8").read(),
              "developers.html": open(os.path.join(ROOT, "src", "developers.html"), encoding="utf-8").read(),
@@ -760,6 +783,10 @@ def build():
             if path == "regions.html":
                 t = re.sub(r"<!--CORE_REGION_CARD-->(.*?)<!--/CORE_REGION_CARD-->", lambda m: region_card(m, lang), t, flags=re.S)
             t = public_data.inject(t, lang)
+            if path in ("index.html", "rankings.html"):
+                full = path == "rankings.html"
+                marker = "<!--CORE_RANKINGS-->" if full else "<!--CORE_RANKINGS_PREVIEW-->"
+                t = t.replace(marker, rankings.render(ranking_data, lang, UZ, full=full))
             t = t.replace("<!--CORE_DIGEST_PREVIEW-->", digests.render(lang, preview=True)).replace("<!--CORE_DIGESTS-->", digests.render(lang))
             t = relink(t, page_dir, 0 if lang == "en" else 1)
             t = finalize(t, lang, path, META.get(path))
