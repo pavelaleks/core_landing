@@ -9,6 +9,7 @@ import shutil
 import tempfile
 import unittest
 import uuid
+from html.parser import HTMLParser
 from unittest.mock import patch
 
 
@@ -93,6 +94,76 @@ class ModuleVersionTests(unittest.TestCase):
         output = BUILD.version_modules(html, "ru/datasets")
         self.assertIn("../../assets/js/pages/catalog.js", self.mapping(output))
         self.assertRegex(output, r'account-session\.js\?v=[a-f0-9]{8}')
+
+
+class DocumentBuildTests(unittest.TestCase):
+    def tearDown(self):
+        BUILD.OUT.clear()
+        BUILD._VER.clear()
+
+    def test_every_source_clause_and_placeholder_survives_html_rendering(self):
+        class Text(HTMLParser):
+            def __init__(self):
+                super().__init__(convert_charrefs=True)
+                self.parts = []
+
+            def handle_data(self, value):
+                self.parts.append(value)
+
+        normalize = lambda value: " ".join(value.split())
+        for source in BUILD.LEGAL_DOCUMENTS.values():
+            content = (PROJECT / "data-src/documents" / source).read_text(encoding="utf-8")
+            parsed = Text()
+            parsed.feed(BUILD.document_markdown(content))
+            rendered = normalize("".join(parsed.parts))
+            for line in content.splitlines():
+                line = re.sub(r"^(?:#{1,3}|>|-)\s+", "", line).strip()
+                if not line or re.fullmatch(r"\|[\s:|\-]+\|", line):
+                    continue
+                line = re.sub(r"\[([^\]]+)\]\([^\s)]+\)", r"\1", line).replace("**", "")
+                for segment in line.strip("|").split("|"):
+                    self.assertIn(normalize(segment), rendered, source + ": " + segment)
+
+    def test_document_downloads_match_sources_and_legal_links_remain_intact(self):
+        BUILD.build_legal_documents()
+        for slug, source in BUILD.LEGAL_DOCUMENTS.items():
+            raw = (PROJECT / "data-src/documents" / source).read_bytes()
+            self.assertEqual(BUILD.OUT["documents/files/" + source], raw)
+            page = BUILD.OUT["documents/" + slug + ".html"].decode("utf-8")
+            self.assertEqual(page.count("<h1>"), 1)
+            self.assertIn('lang="ru"', page)
+            self.assertIn('href="../ru/documents.html"', page)
+            self.assertNotIn("{{", page)
+        agreement = BUILD.OUT["documents/data-use-agreement.html"].decode("utf-8")
+        self.assertIn('<th scope="col">Согласованные условия</th>', agreement)
+        cc = BUILD.OUT["documents/open-cc-by-4-0.html"].decode("utf-8")
+        self.assertIn('href="https://creativecommons.org/licenses/by/4.0/legalcode.ru#s6"', cc)
+
+    def test_footer_routes_and_document_language_labels_work_in_all_site_languages(self):
+        BUILD.build()
+        for lang in BUILD.LANGS:
+            prefix = "" if lang == "en" else lang + "/"
+            hub = BUILD.OUT[prefix + "documents.html"].decode("utf-8")
+            up = "" if lang == "en" else "../"
+            for slug in BUILD.LEGAL_DOCUMENTS:
+                self.assertIn('href="' + up + 'documents/' + slug + '.html"', hub)
+            self.assertIn('href="' + up + 'privacy.html"', hub)
+            self.assertIn('class="document-meta"', hub)
+            for path in ["index.html", "catalog.html", "datasets/universities.html"]:
+                page = BUILD.OUT[prefix + path].decode("utf-8")
+                header = re.search(r'<header\b.*?</header>', page, re.S).group()
+                footer = re.search(r'<footer\b.*?</footer>', page, re.S).group()
+                self.assertNotIn('href="documents.html"', header)
+                self.assertNotIn('href="../documents.html"', header)
+                link = 'href="../documents.html"' if path.startswith("datasets/") else 'href="documents.html"'
+                self.assertIn(link, footer)
+                self.assertNotIn('class="foot-documents"', footer)
+                self.assertEqual(re.findall(r'<a href="([^"]+)" data-ru="Конфиденциальность">', footer), [link[6:-1]])
+
+    def test_document_markup_is_escaped_and_unsupported_link_schemes_fail(self):
+        self.assertIn("&lt;script&gt;", BUILD.document_markdown("<script>alert(1)</script>"))
+        with self.assertRaises(ValueError):
+            BUILD.document_inline("[link](javascript:alert)")
 
 
 class BuildLineEndingTests(unittest.TestCase):

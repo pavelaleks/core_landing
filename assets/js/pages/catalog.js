@@ -1,16 +1,23 @@
 import { getAccountStore } from "../api/auth.js";
-import { getCatalog, getUniversityAliases } from "../api/datasets.js";
+import { getCatalog, getUniversityAliases, fetchCatalog, fetchDatasetUsage } from "../api/datasets.js";
 import { createCatalogCard } from "../ui/catalog-card.js";
 
-export function initCatalog({ symbolsUrl }) {
-  var ALL = getCatalog(), root = document.getElementById("cat");
-  if (!ALL || !root) return;
+export async function initCatalog({ symbolsUrl }) {
+  var previousItems = getCatalog() || [], ALL, root = document.getElementById("cat");
+  if (!root) return;
   var lang = document.documentElement.getAttribute("data-static-lang") || "en";
   var UZD = window.CORE_UZ || {}, TOP = window.CORE_TOPIC_RU || {};
   var L = function (o) { return o ? (o[lang] || o.ru || o.en || "") : ""; };
   var tr = function (en, ru, uz) { return lang === "en" ? en : lang === "uz" ? uz : ru; };
   var esc = function (s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
   var nf = function (n) { return Number(n).toLocaleString(lang === "en" ? "en-US" : "ru-RU"); };
+  root.innerHTML = '<p class="lead" role="status">' + tr("Loading the catalog…", "Загружаем каталог…", "Katalog yuklanmoqda…") + '</p>';
+  try { ALL = await fetchCatalog(); }
+  catch (error) {
+    root.innerHTML = '<div class="card"><p role="alert">' + tr("The catalog could not be loaded. Check your connection and try again.", "Не удалось загрузить каталог. Проверьте соединение и попробуйте снова.", "Katalogni yuklab boʻlmadi. Ulanishni tekshirib, qayta urinib koʻring.") + '</p><button type="button" class="btn btn-primary" id="retryCatalog">' + tr("Retry", "Повторить", "Qayta urinish") + '</button></div>';
+    document.getElementById("retryCatalog").onclick = () => initCatalog({ symbolsUrl });
+    return;
+  }
   var FIELD_LOCAL = { Education: ["Education", "Образование", "Taʼlim"], Medicine: ["Medicine", "Медицина", "Tibbiyot"], Research: ["Research", "Наука", "Ilm-fan"], Demography: ["Demography", "Демография", "Demografiya"] };
   var fieldName = function (f) {
     if (FIELD_LOCAL[f]) return tr.apply(null, FIELD_LOCAL[f]);
@@ -33,6 +40,11 @@ export function initCatalog({ symbolsUrl }) {
   });
   UNIS.sort(function (a, b) { return b.n - a.n || a.label.localeCompare(b.label); });
   if (q0.get("u") && UNI[q0.get("u")]) state.u = q0.get("u");
+  else if (q0.get("u")) {
+    const old = previousItems.find(item => item.org.en === q0.get("u"));
+    const current = old && ALL.find(item => item.id === old.id);
+    if (current && UNI[current.org.en]) state.u = current.org.en;
+  }
 
   var fields = {};
   ALL.forEach(function (it) { if (it.f) fields[it.f] = (fields[it.f] || 0) + 1; });
@@ -50,10 +62,11 @@ export function initCatalog({ symbolsUrl }) {
     '<select id="catF" aria-label="' + tr("Field", "Область", "Soha") + '"><option value="">' + tr("All fields", "Все области", "Barcha sohalar") + "</option>" +
     fieldOpts.map(function (f) { return '<option value="' + esc(f) + '">' + esc(fieldName(f)) + " (" + fields[f] + ")</option>"; }).join("") + "</select>" +
     '<select id="catS" aria-label="' + tr("Sort", "Сортировка", "Saralash") + '"><option value="rel">' + tr("CORE first", "Сначала CORE", "Avval CORE") + '</option><option value="new">' + tr("Newest first", "Сначала новые", "Avval yangilari") + "</option></select></div>" +
-    '<p class="favorite-status" id="favoriteStatus" role="status"></p><div class="cat-list" id="catList"></div><div class="cat-more"><button class="btn btn-ghost" id="catMore">' + tr("Show more", "Показать ещё", "Yana koʻrsatish") + "</button></div>";
+    '<p class="favorite-status" id="favoriteStatus" role="status"></p><p class="small muted" id="usageStatus" role="status"></p><div class="cat-list" id="catList"></div><div class="cat-more"><button class="btn btn-ghost" id="catMore">' + tr("Show more", "Показать ещё", "Yana koʻrsatish") + "</button></div>";
 
   var list = document.getElementById("catList");
-  var card = createCatalogCard({ lang, L, tr, esc, nf, fieldName, UNI, state, account, symbolsUrl });
+  var usageResource = { ready: false, rows: {} };
+  var card = createCatalogCard({ lang, L, tr, esc, nf, fieldName, UNI, state, account, symbolsUrl, usageResource });
   function match(it) {
     if (state.g === "core" && it.t === "open") return false;
     if (state.g === "open" && it.t !== "open") return false;
@@ -70,7 +83,7 @@ export function initCatalog({ symbolsUrl }) {
     }
     return true;
   }
-  var rank = { base: 0, layer: 1, prep: 2, open: 3 };
+  var rank = { base: 0, layer: 1, prep: 2, dataset: 3, open: 4 };
   /* Russian and Uzbek stems -> English words, so a search in RU/UZ finds English titles */
   var SYN = [["пшениц", "wheat"], ["bugʻdoy", "wheat"], ["хлопок", "cotton"], ["хлопч", "cotton"], ["paxta", "cotton"], ["вод", "water"], ["suv", "water"], ["почв", "soil"], ["tuproq", "soil"],
     ["климат", "climat"], ["iqlim", "climat"], ["засух", "drought"], ["арал", "aral"], ["orol", "aral"], ["урож", "yield"], ["сельск", "agricult"], ["qishloq", "agricult"], ["растен", "plant"], ["флор", "flora"],
@@ -163,4 +176,20 @@ export function initCatalog({ symbolsUrl }) {
   document.getElementById("catF").addEventListener("change", function () { state.f = this.value; state.shown = 24; render(); });
   document.getElementById("catS").addEventListener("change", function () { state.sort = this.value; render(); });
   render();
+  async function loadUsage() {
+    const message = document.getElementById("usageStatus");
+    message.textContent = tr("Loading information about use…", "Загружаем сведения об использовании…", "Foydalanish maʼlumoti yuklanmoqda…");
+    try {
+      const rows = await fetchDatasetUsage();
+      usageResource.rows = {};
+      rows.forEach(row => { (usageResource.rows[row.dataset_id] ||= []).push(row); });
+      usageResource.ready = true;
+      message.textContent = tr("Demo examples of use are marked in the dataset cards.", "Демонстрационные примеры использования отмечены в карточках.", "Foydalanishning namoyish misollari toʻplam kartalarida belgilangan.");
+      render();
+    } catch (error) {
+      message.innerHTML = tr("Information about use could not be loaded.", "Сведения об использовании не удалось загрузить.", "Foydalanish maʼlumotini yuklab boʻlmadi.") + ' <button type="button" class="mvp-link" id="retryCatalogUsage">' + tr("Retry", "Повторить", "Qayta urinish") + '</button>';
+      document.getElementById("retryCatalogUsage").onclick = loadUsage;
+    }
+  }
+  loadUsage();
 }

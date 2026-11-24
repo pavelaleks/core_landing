@@ -1,4 +1,6 @@
 import { BA, PRICE, ROLES, id } from "../api/demo-data.js";
+import { fetchDatasetUsage } from "../api/datasets.js";
+import { renderDatasetUsage } from "../ui/dataset-usage.js";
 import { esc, nf, date, pill, toast } from "../ui/format.js";
 import { createDatasetApi } from "./dataset-api.js";
 export function createDatasetPage({ store, view, ds, myReq, go, render, switchRole }) {
@@ -83,7 +85,20 @@ export function createDatasetPage({ store, view, ds, myReq, go, render, switchRo
       "<h2>Отчёт о качестве</h2><div class=\"tbl-wrap\"><table class=\"t\"><tr><th>Что</th><th>Где</th><th>Что нашли и сделали</th></tr>" +
       s.issues.map(function (i) { return "<tr><td>" + esc({ formula: "формула", naming: "названия", missing: "пропуски", invalid: "ошибка", check: "проверка", normalised: "стандарт", added: "добавлено" }[i.type] || i.type) + "</td><td class=\"mono small\">" + esc(i.column) + "</td><td>" + esc(i.detail) + "</td></tr>"; }).join("") + "</table></div>" +
       '<p class="small muted" style="margin-top:10px">Статус: демонстрация процесса CORE на открытых данных. Договор с вузом по этому набору ещё не подписан; CORE не продаёт исходные данные, только их подготовку. Разметка с пометкой «CORE draft» ждёт проверки экспертом вуза.</p>' +
+      '<section class="card" id="demoDatasetUsage"><p class="small muted" role="status">Загружаем сведения об использовании…</p></section>' +
       '</div><aside class="sticky" id="acc">' + (S.user.role === "buyer" ? '<button type="button" class="favorite-button" id="saveDataset" aria-pressed="' + (store.favoriteIds().indexOf(d.slug) >= 0) + '">' + (store.favoriteIds().indexOf(d.slug) >= 0 ? "В избранном" : "В избранное") + '</button>' : "") + accessBox(d) + "</aside></div>";
+    const usageBox = document.getElementById("demoDatasetUsage");
+    async function loadUsage() {
+      try {
+        const rows = await fetchDatasetUsage(d.slug);
+        if (usageBox.isConnected) usageBox.innerHTML = renderDatasetUsage(rows, "ru");
+      } catch (error) {
+        if (!usageBox.isConnected) return;
+        usageBox.innerHTML = '<p class="err">Не удалось загрузить сведения об использовании.</p><button type="button" class="btn btn-ghost btn-sm">Повторить</button>';
+        usageBox.querySelector("button").onclick = loadUsage;
+      }
+    }
+    loadUsage();
     var favorite = document.getElementById("saveDataset");
     if (favorite) favorite.onclick = function () { store.toggleFavorite(d.slug); S = store.s; vDataset(d.slug); };
     wireAccess(d);

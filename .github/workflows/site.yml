@@ -20,6 +20,8 @@ jobs:
       - name: JavaScript parses
         run: node --experimental-vm-modules tools/check_js.mjs
       - name: JavaScript module behavior
-        run: node --experimental-vm-modules --test tests/modules.test.mjs tests/auth.test.mjs
+        run: node --experimental-vm-modules --test tests/modules.test.mjs tests/auth.test.mjs tests/stage-one.test.mjs
       - name: Native module versioning
         run: python3 -I tests/test_build_modules.py
+      - name: Public database records render in all languages
+        run: python3 -I tests/test_public_data.py

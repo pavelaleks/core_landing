@@ -3,6 +3,9 @@
   <url><loc>https://coredata.uz/</loc></url>
   <url><loc>https://coredata.uz/ru/</loc></url>
   <url><loc>https://coredata.uz/uz/</loc></url>
+  <url><loc>https://coredata.uz/digests.html</loc></url>
+  <url><loc>https://coredata.uz/ru/digests.html</loc></url>
+  <url><loc>https://coredata.uz/uz/digests.html</loc></url>
   <url><loc>https://coredata.uz/universities.html</loc></url>
   <url><loc>https://coredata.uz/ru/universities.html</loc></url>
   <url><loc>https://coredata.uz/uz/universities.html</loc></url>
@@ -21,6 +24,9 @@
   <url><loc>https://coredata.uz/catalog.html</loc></url>
   <url><loc>https://coredata.uz/ru/catalog.html</loc></url>
   <url><loc>https://coredata.uz/uz/catalog.html</loc></url>
+  <url><loc>https://coredata.uz/documents.html</loc></url>
+  <url><loc>https://coredata.uz/ru/documents.html</loc></url>
+  <url><loc>https://coredata.uz/uz/documents.html</loc></url>
   <url><loc>https://coredata.uz/datasets/universities.html</loc></url>
   <url><loc>https://coredata.uz/ru/datasets/universities.html</loc></url>
   <url><loc>https://coredata.uz/uz/datasets/universities.html</loc></url>
@@ -31,4 +37,9 @@
   <url><loc>https://coredata.uz/ru/datasets/ca_publications.html</loc></url>
   <url><loc>https://coredata.uz/uz/datasets/ca_publications.html</loc></url>
   <url><loc>https://coredata.uz/privacy.html</loc></url>
+  <url><loc>https://coredata.uz/documents/metadata-only.html</loc></url>
+  <url><loc>https://coredata.uz/documents/by-agreement.html</loc></url>
+  <url><loc>https://coredata.uz/documents/open-cc-by-4-0.html</loc></url>
+  <url><loc>https://coredata.uz/documents/data-use-agreement.html</loc></url>
+  <url><loc>https://coredata.uz/documents/personal-data-consent.html</loc></url>
 </urlset>
