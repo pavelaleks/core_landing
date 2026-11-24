@@ -22,6 +22,7 @@
 .rank-table td:last-child { font-size: 19px; font-weight: 600; color: var(--teal-d); }
 .rank-table strong, .rank-table small { display: block; }
 .rank-table strong { font-size: 16px; font-weight: 550; color: var(--text); }
+.rank-table a { color: var(--teal-d); text-decoration: underline; text-underline-offset: .18em; }
 .rank-table small { color: var(--muted); font-size: 13px; }
 .rank-table td[colspan] { text-align: center; padding: 24px 0; font-size: 15px; color: var(--muted); font-weight: 400; }
 .rank-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px 18px; margin-top: 16px; }

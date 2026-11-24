@@ -743,19 +743,14 @@ def build():
     src_index = open(os.path.join(ROOT, "src", "index.html"), encoding="utf-8").read()
     nav = re.search(r"<!-- ============ NAV ============ -->.*?</header>", src_index, re.S).group(0)
     footer = re.search(r'<footer class="foot">.*?</footer>', src_index, re.S).group(0)
-    with open(os.path.join(ROOT, "src", "rankings.html"), encoding="utf-8") as source:
-        rankings_page = source.read().replace("<!--CORE_SITE_NAV-->", nav).replace("<!--CORE_SITE_FOOTER-->", footer)
-    with open(os.path.join(ROOT, "src", "agents.html"), encoding="utf-8") as source:
-        agents_nav = nav.replace('href="agents.html"', 'href="agents.html" aria-current="page"', 1)
-        agents_page = source.read().replace("<!--CORE_SITE_NAV-->", agents_nav).replace("<!--CORE_SITE_FOOTER-->", footer)
     def up(h):
         """Nav and footer for pages one folder deep (datasets/): every relative link goes one level up."""
         h = re.sub(r'href="#', 'href="../index.html#', h)
         h = re.sub(r'href="(?![a-z]+:|#|\.\./|/)([^"]+)"', r'href="../\1"', h)
         return h
     pages = {"index.html": src_index,
-             "rankings.html": rankings_page,
-             "agents.html": agents_page,
+             "rankings.html": open(os.path.join(ROOT, "src", "rankings.html"), encoding="utf-8").read(),
+             "agents.html": open(os.path.join(ROOT, "src", "agents.html"), encoding="utf-8").read(),
              "digests.html": open(os.path.join(ROOT, "src", "digests.html"), encoding="utf-8").read(),
              "universities.html": open(os.path.join(ROOT, "src", "universities.html"), encoding="utf-8").read(),
              "developers.html": open(os.path.join(ROOT, "src", "developers.html"), encoding="utf-8").read(),
@@ -775,6 +770,9 @@ def build():
     LOCAL_PAGES = set(pages.keys()) | {"."}
     for path, text in pages.items():
         page_dir = posixpath.dirname(path)
+        nav_target = {"digests.html": "index.html#digests"}.get(path, path)
+        page_nav = nav.replace('href="%s"' % nav_target, 'href="%s" aria-current="page"' % nav_target, 1)
+        text = text.replace("<!--CORE_SITE_NAV-->", page_nav).replace("<!--CORE_SITE_FOOTER-->", footer)
         for lang in LANGS:
             t = localize(text, lang)
             if "<!--CORE_BASE:" in t:

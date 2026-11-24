@@ -75,4 +75,30 @@
       <path d="M79 83h54l14 13h74v44H86a7 7 0 0 1-7-7V83Z" fill="#D1E2D3"/>
     </g>
   </symbol>
+  <symbol id="audience-education" viewBox="0 0 32 32">
+    <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 6h6a8 8 0 0 1 6 3 8 8 0 0 1 6-3h6v20h-6a8 8 0 0 0-6 3 8 8 0 0 0-6-3H4V6ZM16 9v20"/>
+    </g>
+  </symbol>
+  <symbol id="audience-language" viewBox="0 0 32 32">
+    <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 7h17M11 3v4M7 11c2 5 5 8 10 11M17 7C15 15 10 21 4 25M18 28l6-16 6 16M20 23h8"/>
+    </g>
+  </symbol>
+  <symbol id="audience-vision" viewBox="0 0 32 32">
+    <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M11 4H5a1 1 0 0 0-1 1v6M21 4h6a1 1 0 0 1 1 1v6M28 21v6a1 1 0 0 1-1 1h-6M11 28H5a1 1 0 0 1-1-1v-6M7 16s4-6 9-6 9 6 9 6-4 6-9 6-9-6-9-6Z"/>
+      <circle cx="16" cy="16" r="2.5"/>
+    </g>
+  </symbol>
+  <symbol id="audience-business" viewBox="0 0 32 32">
+    <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 4v24h24M10 22v-6M17 22V9M24 22V4"/>
+    </g>
+  </symbol>
+  <symbol id="audience-research" viewBox="0 0 32 32">
+    <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M11 4h10M13 4v9L5 25a2 2 0 0 0 2 3h18a2 2 0 0 0 2-3l-8-12V4M9 20h14M13 24h.1M18 17h.1"/>
+    </g>
+  </symbol>
 </svg>

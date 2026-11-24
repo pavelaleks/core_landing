@@ -1284,5 +1284,21 @@ window.CORE_UZ = {
   "Вебхуки": "Vebhuklar",
   "Доставка событий о новых версиях данных. Предлагаемый интерфейс.": "Maʼlumotlarning yangi versiyalari haqidagi hodisalarni yetkazish. Taklif etilayotgan interfeys.",
   "Оценка готовности основана на текущей реализации CORE. Ссылки в карточках ведут к существующим данным и демонстрациям.": "Tayyorlik joriy CORE yechimiga asoslanib baholangan. Kartochkalardagi havolalar mavjud maʼlumotlar va namoyishlarga olib boradi.",
-  "Агенты и сервисы": "Agentlar va xizmatlar"
+  "Агенты и сервисы": "Agentlar va xizmatlar",
+  "Образовательным компаниям и отделам обучения": "Taʼlim kompaniyalari va oʻqitish boʻlimlariga",
+  "Результаты исследований для тестов и учебных заданий.": "Testlar va oʻquv topshiriqlari uchun tadqiqot natijalari.",
+  "Разработчикам языковых моделей": "Til modellarini ishlab chiquvchilarga",
+  "Подготовленные корпуса научных текстов для обучения и оценки моделей.": "Modellarni oʻqitish va baholash uchun tayyorlangan ilmiy matn korpuslari.",
+  "Размеченные изображения для обучения и проверки моделей распознавания.": "Tanib olish modellarini oʻqitish va tekshirish uchun belgilangan tasvirlar.",
+  "Компаниям": "Kompaniyalarga",
+  "Актуальные данные социологических опросов для изучения аудитории.": "Auditoriyani oʻrganish uchun dolzarb ijtimoiy soʻrov maʼlumotlari.",
+  "Исследователям": "Tadqiqotchilarga",
+  "Сопоставимые данные прошлых исследований для изучения изменений и проверки новых гипотез.": "Oʻzgarishlarni oʻrganish va yangi gipotezalarni tekshirish uchun oldingi tadqiqotlarning taqqoslanadigan maʼlumotlari.",
+  "С чего начнём?": "Nimadan boshlaymiz?",
+  "У вашего университета есть данные": "Universitetingizda maʼlumotlar bor",
+  "Расскажите о датасетах и репозиториях. Вместе обсудим, для каких исследований и практических задач они могут пригодиться.": "Maʼlumotlar toʻplamlari va repozitoriylar haqida aytib bering. Ular qaysi tadqiqotlar va amaliy vazifalar uchun foydali boʻlishini birgalikda muhokama qilamiz.",
+  "Обсудить данные университета": "Universitet maʼlumotlarini muhokama qilish",
+  "Вы ищете данные для проекта": "Loyiha uchun maʼlumot izlayapsiz",
+  "Опишите задачу. Проверим, какие наборы подходят и на каких условиях их можно использовать.": "Vazifani tavsiflang. Qaysi toʻplamlar mos kelishini va ulardan qanday shartlarda foydalanish mumkinligini tekshiramiz.",
+  "Рассказать о задаче": "Vazifa haqida aytib berish"
 };
