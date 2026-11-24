@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CORE agents and services</title>
+<meta name="description" content="MCP tools, CORE agents and data services for external agents. Tasks, connections, outputs and current readiness for nine capabilities.">
+<meta property="og:title" content="CORE agents and services">
+<meta property="og:description" content="MCP tools, CORE agents and data services for external agents. Tasks, connections, outputs and current readiness for nine capabilities.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://coredata.uz/agents.html">
+<meta property="og:image" content="https://coredata.uz/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#faf7f2">
+<link rel="canonical" href="https://coredata.uz/agents.html">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/agents.css">
+</head>
+<body class="agents-page" data-page="agents">
+<!--CORE_SITE_NAV-->
+<main>
+  <div class="wrap">
+    <section class="agents-hero" aria-labelledby="agents-title">
+      <h1 id="agents-title" data-ru="Агенты и сервисы CORE">CORE agents and services</h1>
+      <p class="agents-intro" data-ru="Подключение вашего агента к данным CORE и выполнение поручений нашими агентами.">Connecting your agent to CORE data and delegating tasks to our agents.</p>
+      <div class="agents-routes">
+        <section class="agents-route" aria-labelledby="connect-agent-title">
+          <h2 id="connect-agent-title" data-ru="Подключить своего агента">Connect your agent</h2>
+          <p data-ru="Ваш агент выбирает шаги. CORE выполняет запросы к данным, поиск и вычисления.">Your agent chooses the steps. CORE handles data requests, search and computation.</p>
+          <div class="agents-route-links">
+            <a href="#mcp-tools" data-ru="MCP-инструменты ↓">MCP tools ↓</a>
+            <a href="#agent-services" data-ru="Сервисы данных ↓">Data services ↓</a>
+          </div>
+        </section>
+        <section class="agents-route" aria-labelledby="delegate-task-title">
+          <h2 id="delegate-task-title" data-ru="Поручить задачу CORE">Delegate a task to CORE</h2>
+          <p data-ru="Агент CORE выбирает шаги, выполняет поручение и возвращает результат с отчётом.">A CORE agent chooses the steps, carries out the task and returns the result with a report.</p>
+          <div class="agents-route-links"><a href="#core-agents" data-ru="Агенты CORE ↓">CORE agents ↓</a></div>
+        </section>
+      </div>
+      <p class="agents-readiness-note">
+        <span class="agents-checked"><span data-ru="Готовность по текущей реализации">Readiness based on the current implementation</span> · <time datetime="2026-11-25" data-ru="25 ноября 2026">25 November 2026</time></span>
+        <span data-ru="Девять возможностей находятся на стадии концепции. Для каждой указаны предлагаемый интерфейс и уже подготовленные данные, скрипты или демонстрации.">The nine capabilities are at the concept stage. Each lists its proposed interface and the data, scripts or demonstrations already available.</span>
+      </p>
+    </section>
+
+    <section class="agents-section" id="mcp-tools" aria-labelledby="mcp-tools-title">
+      <div class="agents-section-heading">
+        <div><h2 id="mcp-tools-title" data-ru="MCP-инструменты для вашего агента">MCP tools for your agent</h2><p data-ru="Ваш агент выбирает запросы и использует структурированные ответы.">Your agent chooses the requests and uses the structured responses.</p></div>
+        <span class="agents-protocol">MCP</span>
+      </div>
+      <div class="agents-grid">
+        <article class="agents-service" aria-labelledby="university-tool-title">
+          <h3 id="university-tool-title" data-ru="Справочник вузов">University directory</h3>
+          <dl class="agents-fields">
+            <div><dt data-ru="Задача">Task</dt><dd data-ru="Определить вуз по названию с учётом языка и вариантов написания.">Identify a university by name, accounting for language and spelling variants.</dd></div>
+            <div><dt data-ru="Подключение">Connection</dt><dd data-ru="MCP. Агент передаёт название, страну, город или внешний ID.">MCP. The agent provides a name, country, city or external ID.</dd></div>
+            <div><dt data-ru="Результат">Output</dt><dd data-ru="Кандидаты, постоянные ID CORE, сведения об организациях и источники.">Candidates, persistent CORE IDs, organization details and sources.</dd></div>
+            <div class="agents-status-field"><dt data-ru="Готовность">Readiness</dt><dd><span class="agents-status" data-ru="MCP — концепция">MCP — concept</span><p data-ru="Есть справочник с постоянными ID и публичный JSON API.">A directory with persistent IDs and a public JSON API is available.</p><a class="agents-foundation-link" href="datasets/universities.html" data-ru="Открыть справочник →">Open the directory →</a></dd></div>
+          </dl>
+        </article>
+        <article class="agents-service" aria-labelledby="research-tool-title">
+          <h3 id="research-tool-title" data-ru="Поиск публикаций и связей">Research and relationship search</h3>
+          <dl class="agents-fields">
+            <div><dt data-ru="Задача">Task</dt><dd data-ru="Найти работы и датасеты по теме, проследить связи с вузами и источниками.">Find papers and datasets by topic and trace their relationships to universities and sources.</dd></div>
+            <div><dt data-ru="Подключение">Connection</dt><dd data-ru="MCP. Агент передаёт тему, фильтры или ID исходного объекта.">MCP. The agent provides a topic, filters or the ID of a starting object.</dd></div>
+            <div><dt data-ru="Результат">Output</dt><dd data-ru="Объекты, типы связей и их основания. Вычисленное сходство отмечается явно.">Objects, relationship types and supporting evidence. Computed similarity is explicitly labeled.</dd></div>
+            <div class="agents-status-field"><dt data-ru="Готовность">Readiness</dt><dd><span class="agents-status" data-ru="MCP — концепция">MCP — concept</span><p data-ru="Есть граф вузов, направлений, соавторства и наборов. Семантический поиск предложен.">A graph of universities, research areas, co-authorship and datasets exists. Semantic search is proposed.</p><a class="agents-foundation-link" href="developers.html#science-map" data-ru="Посмотреть существующие связи →">Explore existing relationships →</a></dd></div>
+          </dl>
+        </article>
+        <article class="agents-service" aria-labelledby="dataset-tool-title">
+          <h3 id="dataset-tool-title" data-ru="Изучение датасета">Dataset inspection</h3>
+          <dl class="agents-fields">
+            <div><dt data-ru="Задача">Task</dt><dd data-ru="Проверить состав набора и пригодность для задачи перед обработкой.">Inspect a dataset and assess its suitability before processing.</dd></div>
+            <div><dt data-ru="Подключение">Connection</dt><dd data-ru="MCP. Агент передаёт ID набора и запрашивает описание, поля или образец.">MCP. The agent provides a dataset ID and requests its description, fields or a sample.</dd></div>
+            <div><dt data-ru="Результат">Output</dt><dd data-ru="Схема, словарь переменных, образец записей, сведения о качестве и лицензии.">Schema, variable dictionary, sample records, quality information and license.</dd></div>
+            <div class="agents-status-field"><dt data-ru="Готовность">Readiness</dt><dd><span class="agents-status" data-ru="MCP — концепция">MCP — concept</span><p data-ru="Есть статический API трёх подготовленных наборов. JSON доступен без проверки ключа.">A static API covers three prepared datasets. JSON is accessible without key verification.</p><a class="agents-foundation-link" href="app/api/v1/openapi.json" data-ru="Открыть описание API →">Open the API description →</a></dd></div>
+          </dl>
+        </article>
+      </div>
+    </section>
+
+    <section class="agents-section" id="core-agents" aria-labelledby="core-agents-title">
+      <div class="agents-section-heading">
+        <div><h2 id="core-agents-title" data-ru="Агенты CORE">CORE agents</h2><p data-ru="Вы задаёте цель. Агент CORE выбирает действия, выполняет работу и собирает результат.">You set the goal. A CORE agent chooses actions, performs the work and assembles the result.</p></div>
+        <span class="agents-protocol" data-ru="Сайт · API · A2A">Website · API · A2A</span>
+      </div>
+      <div class="agents-grid">
+        <article class="agents-service" aria-labelledby="discovery-agent-title">
+          <h3 id="discovery-agent-title" data-ru="Агент подбора данных">Data discovery agent</h3>
+          <dl class="agents-fields">
+            <div><dt data-ru="Задача">Task</dt><dd data-ru="Подобрать данные под исследовательский вопрос и проверить соответствие требованиям.">Find data for a research question and check it against the requirements.</dd></div>
+            <div><dt data-ru="Подключение">Connection</dt><dd data-ru="Задание через сайт или API. Делегирование от чужого агента можно добавить через A2A.">Submit a task through the website or API. Delegation from an external agent could be added through A2A.</dd></div>
+            <div><dt data-ru="Результат">Output</dt><dd data-ru="Подборка с обоснованием, наличием файлов, условиями доступа и пробелами в данных.">A justified selection with file availability, access terms and data gaps.</dd></div>
+            <div class="agents-status-field"><dt data-ru="Готовность">Readiness</dt><dd><span class="agents-status" data-ru="Агент — концепция">Agent — concept</span><p data-ru="Есть каталог и скрипты проверки файлов в научных репозиториях.">A catalog and scripts for checking files in research repositories are available.</p><a class="agents-foundation-link" href="catalog.html" data-ru="Открыть каталог →">Open the catalog →</a></dd></div>
+          </dl>
+        </article>
+        <article class="agents-service" aria-labelledby="preparation-agent-title">
+          <h3 id="preparation-agent-title" data-ru="Агент подготовки данных">Data preparation agent</h3>
+          <dl class="agents-fields">
+            <div><dt data-ru="Задача">Task</dt><dd data-ru="Разобрать файлы, сопоставить поля и преобразовать данные под заданную схему.">Inspect files, map fields and transform the data into a specified schema.</dd></div>
+            <div><dt data-ru="Подключение">Connection</dt><dd data-ru="Файлы, целевая схема и правила через сайт или API. В ответе — ID задачи.">Provide files, a target schema and rules through the website or API. Receive a task ID.</dd></div>
+            <div><dt data-ru="Результат">Output</dt><dd data-ru="Подготовленные файлы, словарь полей и отчёт о преобразованиях, качестве и нерешённых вопросах.">Prepared files, a field dictionary and a report on transformations, quality and unresolved questions.</dd></div>
+            <div class="agents-status-field"><dt data-ru="Готовность">Readiness</dt><dd><span class="agents-status" data-ru="Агент — концепция">Agent — concept</span><p data-ru="Есть скрипты подготовки и готовые демонстрационные пакеты для трёх наборов.">Preparation scripts and demonstration packages for three datasets are available.</p><a class="agents-foundation-link" href="app/index.html#demo/uzbek-geography-terms" data-ru="Посмотреть подготовленный набор →">View a prepared dataset →</a></dd></div>
+          </dl>
+        </article>
+        <article class="agents-service" aria-labelledby="analysis-agent-title">
+          <h3 id="analysis-agent-title" data-ru="Агент анализа данных">Data analysis agent</h3>
+          <dl class="agents-fields">
+            <div><dt data-ru="Задача">Task</dt><dd data-ru="Проверить сопоставимость данных, составить план анализа и выполнить расчёты.">Check data comparability, plan the analysis and run calculations.</dd></div>
+            <div><dt data-ru="Подключение">Connection</dt><dd data-ru="Вопрос и выбранные наборы через сайт или API. Дальнейший обмен — по ID задачи.">Provide a question and selected datasets through the website or API. Use the task ID for subsequent requests.</dd></div>
+            <div><dt data-ru="Результат">Output</dt><dd data-ru="Расчёты, воспроизводимый код, источники и ограничения выводов.">Calculations, reproducible code, sources and limitations of the findings.</dd></div>
+            <div class="agents-status-field"><dt data-ru="Готовность">Readiness</dt><dd><span class="agents-status" data-ru="Агент — концепция">Agent — concept</span><p data-ru="Есть расчёты для отдельных наборов и SQL-демо в браузере.">Calculations for individual datasets and an in-browser SQL demonstration are available.</p><a class="agents-foundation-link" href="app/index.html#demo/insurance-literacy-syrdarya" data-ru="Открыть демонстрационный набор →">Open a demonstration dataset →</a></dd></div>
+          </dl>
+        </article>
+      </div>
+    </section>
+
+    <section class="agents-section" id="agent-services" aria-labelledby="agent-services-title">
+      <div class="agents-section-heading">
+        <div><h2 id="agent-services-title" data-ru="Сервисы данных для ваших агентов">Data services for your agents</h2><p data-ru="Ваш агент передаёт конкретную операцию CORE и получает результат для следующего шага.">Your agent delegates a specific operation to CORE and receives a result for its next step.</p></div>
+        <span class="agents-protocol">HTTP API</span>
+      </div>
+      <div class="agents-grid">
+        <article class="agents-service" aria-labelledby="corpus-service-title">
+          <h3 id="corpus-service-title" data-ru="Индексирование корпусов">Corpus indexing</h3>
+          <dl class="agents-fields">
+            <div><dt data-ru="Задача">Task</dt><dd data-ru="Подготовить корпус заказчика для поиска по смыслу и фильтрации по метаданным.">Prepare a customer's corpus for semantic search and metadata filtering.</dd></div>
+            <div><dt data-ru="Подключение">Connection</dt><dd data-ru="API. Агент передаёт документы или ссылки и получает ID индекса.">API. The agent provides documents or links and receives an index ID.</dd></div>
+            <div><dt data-ru="Результат">Output</dt><dd data-ru="Поисковый индекс. По запросу — подходящие фрагменты с привязкой к источникам.">A search index. Queries return relevant passages linked to their sources.</dd></div>
+            <div class="agents-status-field"><dt data-ru="Готовность">Readiness</dt><dd><span class="agents-status" data-ru="Сервис — концепция">Service — concept</span><p data-ru="Описан сценарий индексации корпуса заказчика и поиска по его содержимому.">A scenario for indexing and searching a customer's corpus has been outlined.</p></dd></div>
+          </dl>
+        </article>
+        <article class="agents-service" aria-labelledby="computation-service-title">
+          <h3 id="computation-service-title" data-ru="Вычисления над данными">Data computation</h3>
+          <dl class="agents-fields">
+            <div><dt data-ru="Задача">Task</dt><dd data-ru="Выполнить SQL-фильтрацию, объединение и агрегацию рядом с большими наборами.">Run SQL filtering, joins and aggregation close to large datasets.</dd></div>
+            <div><dt data-ru="Подключение">Connection</dt><dd data-ru="API. Агент передаёт запрос к выбранным версиям наборов и получает ID задачи.">API. The agent sends a query against selected dataset versions and receives a task ID.</dd></div>
+            <div><dt data-ru="Результат">Output</dt><dd data-ru="Статус выполнения, таблица результата или ссылка на файл, параметры расчёта.">Execution status, a result table or file link, and calculation parameters.</dd></div>
+            <div class="agents-status-field"><dt data-ru="Готовность">Readiness</dt><dd><span class="agents-status" data-ru="Сервис — концепция">Service — concept</span><p data-ru="Есть локальное SQL-демо в браузере. Серверный API вычислений предложен.">A local in-browser SQL demonstration exists. A server-side computation API is proposed.</p><a class="agents-foundation-link" href="app/index.html#demo/insurance-literacy-syrdarya" data-ru="Открыть демонстрационный набор →">Open a demonstration dataset →</a></dd></div>
+          </dl>
+        </article>
+        <article class="agents-service" aria-labelledby="updates-service-title">
+          <h3 id="updates-service-title" data-ru="Подписки на изменения">Dataset change subscriptions</h3>
+          <dl class="agents-fields">
+            <div><dt data-ru="Задача">Task</dt><dd data-ru="Сообщать агенту о новых версиях наборов, которые он использует.">Notify an agent about new versions of datasets it uses.</dd></div>
+            <div><dt data-ru="Подключение">Connection</dt><dd data-ru="API. Агент регистрирует подписку на набор и адрес вебхука.">API. The agent registers a dataset subscription and a webhook URL.</dd></div>
+            <div><dt data-ru="Результат">Output</dt><dd data-ru="События с ID набора, версиями и описанием изменений.">Events containing the dataset ID, versions and a description of changes.</dd></div>
+            <div class="agents-status-field"><dt data-ru="Готовность">Readiness</dt><dd><span class="agents-status" data-ru="Сервис — концепция">Service — concept</span><p data-ru="Описан сценарий уведомлений о новых версиях через вебхуки.">A scenario for webhook notifications about new versions has been outlined.</p></dd></div>
+          </dl>
+        </article>
+      </div>
+    </section>
+
+    <section class="agents-section" id="workflow" aria-labelledby="agents-workflow-title">
+      <div class="agents-section-heading"><div><h2 id="agents-workflow-title" data-ru="Пример взаимодействия">Example workflow</h2><p data-ru="Предлагаемый сценарий подготовки данных для анализа или обучения модели.">A proposed workflow for preparing data for analysis or model training.</p></div></div>
+      <ol class="agents-flow">
+        <li><span class="agents-owner" data-ru="Ваш агент">Your agent</span><h3 data-ru="Находит исходные данные">Finds source data</h3><p data-ru="Через MCP определяет вуз, находит наборы и изучает их схемы. Выбирает материалы для задачи.">Uses MCP to identify a university, find datasets and inspect their schemas. Selects materials for the task.</p></li>
+        <li><span class="agents-owner" data-ru="Агент CORE">CORE agent</span><h3 data-ru="Выполняет подготовку">Prepares the data</h3><p data-ru="Получает поручение и целевую схему, выбирает преобразования и проверяет результат.">Receives the task and target schema, chooses transformations and checks the result.</p></li>
+        <li><span class="agents-owner" data-ru="Ваш агент">Your agent</span><h3 data-ru="Использует результат">Uses the result</h3><p data-ru="Получает файлы и отчёт по ID задачи. Продолжает анализ или передаёт набор в процесс обучения.">Retrieves files and a report using the task ID. Continues the analysis or passes the dataset to a training process.</p></li>
+      </ol>
+    </section>
+
+    <section class="agents-section" id="connections" aria-labelledby="agents-connections-title">
+      <div class="agents-section-heading"><div><h2 id="agents-connections-title" data-ru="Способы подключения">Connection methods</h2><p data-ru="Интерфейс выбирается под операцию и возможности программы заказчика.">Choose an interface based on the operation and the customer's application.</p></div></div>
+      <div class="agents-interfaces">
+        <div><h3>MCP</h3><p data-ru="Вызов инструментов из программы агента. Подключение CORE описано как концепция.">Call tools from an agent application. The CORE connection is at the concept stage.</p></div>
+        <div><h3>HTTP API</h3><p data-ru="Прямые запросы и клиентские библиотеки. Сейчас есть статический JSON API и описание OpenAPI.">Direct requests and client libraries. A static JSON API and an OpenAPI description are currently available.</p></div>
+        <div><h3>A2A</h3><p data-ru="Передача поручений агентам CORE и обмен статусами. Предлагаемый интерфейс.">Delegate tasks to CORE agents and exchange status updates. A proposed interface.</p></div>
+        <div><h3 data-ru="Вебхуки">Webhooks</h3><p data-ru="Доставка событий о новых версиях данных. Предлагаемый интерфейс.">Receive events about new data versions. A proposed interface.</p></div>
+      </div>
+    </section>
+    <p class="agents-scope" data-ru="Оценка готовности основана на текущей реализации CORE. Ссылки в карточках ведут к существующим данным и демонстрациям.">Readiness is based on the current CORE implementation. Links in the cards lead to existing data and demonstrations.</p>
+  </div>
+</main>
+<!--CORE_SITE_FOOTER-->
+<script src="assets/config.js"></script>
+<script src="assets/i18n-uz.js"></script>
+<script src="assets/account-store.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/vendor/supabase-2.119.2.js"></script>
+<script type="module" src="assets/account-session.js"></script>
+</body>
+</html>

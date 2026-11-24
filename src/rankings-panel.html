@@ -1,0 +1,26 @@
+<section class="university-rankings" id="rankings" aria-labelledby="rankings-title" data-mode="$mode" data-limit="$limit">
+  <div class="wrap">$back
+    <$heading id="rankings-title">$title</$heading>
+    <p class="rank-scope">$scope</p>
+    <div class="rank-tabs" role="tablist" aria-labelledby="rankings-title">
+      <button id="rank-open" role="tab" type="button" aria-controls="rank-panel" aria-selected="true" data-metric="open">$open_tab</button>
+      <button id="rank-works" role="tab" type="button" aria-controls="rank-panel" aria-selected="false" tabindex="-1" data-metric="works">$works_tab</button>
+    </div>
+    <div id="rank-panel" role="tabpanel" aria-labelledby="rank-open">
+      <div class="rank-filters">$search
+        <label class="rank-field">$field_label
+          <select><option value="">$all_fields</option>$fields</select>
+        </label>
+      </div>
+      <table class="rank-table" aria-labelledby="rankings-title rank-open">
+        <thead><tr><th scope="col">$rank</th><th scope="col">$university</th><th scope="col" data-open="$datasets" data-works="$works">$datasets</th></tr></thead>
+        <tbody data-empty="$empty">$rows</tbody>
+      </table>
+      <div class="rank-footer" data-of="$of">
+        <p class="rank-source"><span data-source="open">$open_source</span><span data-source="works" hidden>$works_source</span></p>
+        $actions
+      </div>
+    </div>
+    <script type="application/json" data-ranking-lists>$payload</script>
+  </div>
+</section>

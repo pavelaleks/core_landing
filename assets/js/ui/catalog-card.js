@@ -30,6 +30,10 @@ export function createCatalogCard({ lang, L, tr, esc, nf, fieldName, account, sy
     var ty = TYPE[it.t] || TYPE.dataset, st = STATUS[it.st] || STATUS.request, ext = it.t === "open";
     if (it.license) st = [licenseName(it.license, lang), it.license.id === "open-cc-by-4-0" ? "st-now" : "st-req"];
     var href = it.t === "dataset" ? it.href.replace("app/index.html#dataset/", "app/index.html?lang=" + lang + "#dataset/") : it.href;
+    var actionHref = /^app\//.test(href) && lang !== "en" ? "../" + href : href;
+    var detailHref = ext || it.t === "dataset"
+      ? (lang === "en" ? "" : "../") + "app/index.html?lang=" + lang + "#dataset/" + encodeURIComponent(it.id)
+      : actionHref;
     var orgName = esc(it.org[lang] || it.org.ru || it.org.en || it.org.uz || "");
     var organization = it.organizationId ? '<a class="cat-org" href="' + esc(organizationUrl(it.organizationId, lang)) + '">' + orgName + '</a>' : orgName;
     if (it.t === "prep" || ext) organization = tr("Source", "Источник", "Manba") + ' · ' + organization;
@@ -42,7 +46,7 @@ export function createCatalogCard({ lang, L, tr, esc, nf, fieldName, account, sy
     if (it.fm) facts.push(esc(it.fm));
     var actions = ext
       ? '<a class="btn btn-ghost btn-sm" href="' + esc(it.href) + '" target="_blank" rel="noopener">' + tr("Source", "Источник", "Manba") + ' ↗</a><a class="btn btn-ghost btn-sm" href="#contact" data-form="buyer">' + tr("Prepare via CORE", "Подготовить через CORE", "CORE orqali tayyorlash") + "</a>"
-      : '<a class="btn btn-primary btn-sm" href="' + esc(/^app\//.test(href) && lang !== "en" ? "../" + href : href) + '">' + (it.st === "demo" ? tr("Open in the demo", "Открыть в демо", "Demoda ochish") : tr("Open", "Открыть", "Ochish")) + "</a>";
+      : '<a class="btn btn-primary btn-sm" href="' + esc(actionHref) + '">' + (it.st === "demo" ? tr("Open in the demo", "Открыть в демо", "Demoda ochish") : tr("Open", "Открыть", "Ochish")) + "</a>";
     if (account && (!currentUser || currentUser.role === "buyer")) {
       var saved = favoriteIds.indexOf(it.id) >= 0;
       actions += '<button type="button" class="favorite-button" data-favorite="' + esc(it.id) + '" aria-pressed="' + saved + '">' +
@@ -50,7 +54,7 @@ export function createCatalogCard({ lang, L, tr, esc, nf, fieldName, account, sy
     }
     var typeTag = it.t === "prep" ? '<a class="tag ' + ty[1] + '" href="' + esc(organizationUrl("ORG-CORE", lang)) + '">' + ty[0] + '</a>' : '<span class="tag ' + ty[1] + '">' + ty[0] + '</span>';
     return '<article class="cat-item card' + (ext ? "" : " cat-core") + '"><div class="cat-tags">' + typeTag + '<span class="st ' + st[1] + '">' + st[0] + "</span></div>" +
-      '<div class="cat-card-title">' + cardArt(it) + "<h3>" + esc(L(it.title)) + '</h3></div><p class="cat-meta">' + meta.filter(Boolean).join(" · ") + "</p>" +
+      '<div class="cat-card-title">' + cardArt(it) + '<h3><a class="mvp-link-inline" href="' + esc(detailHref) + '">' + esc(L(it.title)) + '</a></h3></div><p class="cat-meta">' + meta.filter(Boolean).join(" · ") + "</p>" +
       (it.desc ? '<p class="cat-desc">' + esc(L(it.desc)) + "</p>" : "") +
       (usageResource?.ready ? renderDatasetUsage(usageResource.rows[it.id] || [], lang, true) : "") +
       '<div class="cat-foot"><span class="cat-facts">' + facts.join(" · ") + '</span><span class="cat-act">' + actions + "</span></div></article>";

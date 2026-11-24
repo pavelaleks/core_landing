@@ -1,0 +1,70 @@
+/* Shared by the published dataset pages and the cabinet detail view. */
+.sheet-wrap { width: min(100%, 1040px); margin-inline: auto; }
+.dataset-sheet {
+  min-width: 0;
+  margin-inline: auto;
+  padding: clamp(18px, 3.5vw, 42px);
+  color: var(--text);
+  background: #fcfaf6;
+  border: 1px solid var(--line2);
+  border-radius: 16px;
+  overflow-wrap: anywhere;
+}
+.sheet-head { display: grid; gap: 11px; align-items: start; padding-bottom: 22px; }
+.dataset-sheet .sheet-head h1 { max-width: 34ch; margin: 0; font-size: clamp(27px, 3.4vw, 43px); line-height: 1.12; }
+.sheet-kicker { color: var(--teal-d); font-weight: 600; font-size: 14px; }
+.sheet-intro { max-width: 80ch; margin: 0; color: var(--body); white-space: pre-line; }
+.sheet-by, .sheet-head .dataset-provenance { margin: 0; color: var(--muted); font-size: 14px; }
+.sheet-by a, .sheet-body a:not(.btn):not(.dl), .sheet-text-action { color: var(--teal-d); text-decoration: underline; text-underline-offset: 3px; }
+.sheet-facts { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 0; margin: 1px 0; font-weight: 600; font-variant-numeric: tabular-nums; }
+.sheet-facts > span + span::before { content: "·"; padding-inline: 9px; color: var(--muted); }
+.sheet-actions { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; margin-top: 4px; }
+.dataset-sheet .sheet-primary, .dataset-sheet .sheet-text-action {
+  display: inline-flex; align-items: center; min-height: 42px; max-width: 100%; font: inherit; font-weight: 600; line-height: 1.35;
+}
+.dataset-sheet .sheet-primary { padding: 8px 15px; border-radius: 7px; background: var(--teal-d); color: white; text-align: center; text-decoration: none; }
+.dataset-sheet .sheet-primary:hover { background: var(--teal); }
+.sheet-text-action { padding: 4px 0; }
+.sheet-section { min-width: 0; border-top: 1px solid var(--line2); }
+.sheet-section > summary, .sheet-extra > summary {
+  display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 10px 0;
+  font-weight: 600; color: var(--text); cursor: pointer; list-style: none;
+}
+.sheet-section > summary::-webkit-details-marker, .sheet-extra > summary::-webkit-details-marker { display: none; }
+.sheet-section > summary::before, .sheet-extra > summary::before {
+  content: ""; flex: 0 0 auto; width: 0; height: 0; border: 5px solid transparent; border-right: 0;
+  border-left: 7px solid var(--teal-d); transition: transform .15s;
+}
+.sheet-section[open] > summary::before, .sheet-extra[open] > summary::before { transform: rotate(90deg); }
+.sheet-body { display: grid; gap: 14px; min-width: 0; padding: 0 0 20px; scroll-margin-top: 95px; }
+.sheet-body > *, .sheet-body .grid2 > * { min-width: 0; max-width: 100%; }
+.dataset-sheet .sheet-body :is(h2,h3) { margin: 6px 0 0; font-size: 19px; line-height: 1.35; }
+.sheet-body p, .sheet-body ul, .sheet-body dl, .sheet-body pre { margin-block: 0; }
+.sheet-body .card { margin: 0; }
+.sheet-meta { display: grid; grid-template-columns: minmax(9em, 1fr) minmax(0, 3fr); gap: 8px 20px; }
+.sheet-meta dt { color: var(--muted); }
+.sheet-meta dd { margin: 0; }
+.sheet-body .tbl-wrap, .sheet-body .tscroll { width: 100%; overflow-x: auto; }
+.sheet-body .sheet-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.sheet-table :is(th,td) { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+.sheet-table th { color: var(--muted); font-weight: 500; }
+.sheet-extra > summary { min-height: 42px; color: var(--teal-d); font-size: 15px; }
+.sheet-code { max-width: 100%; padding: 12px 14px; background: var(--bg2); border-radius: 8px; white-space: pre-wrap; overflow-wrap: anywhere; font: 14px/1.6 var(--mono); }
+.sheet-chart { display: grid; gap: 12px; min-width: 0; margin: 4px 0; }
+.sheet-chart table { overflow-wrap: normal; }
+.sheet-chart table.t th { white-space: normal; }
+.sheet-chart .bar { display: block; min-width: 3.5rem; margin-top: 4px; }
+.sheet-caption { color: var(--muted); font-size: 14px; }
+.sheet-body .dl-list, .sheet-body .dl { max-width: 640px; }
+.sheet-foot { margin-top: 20px; }
+.sheet-body .rg-grid { align-items: start; }
+@media (max-width: 600px) {
+  .dataset-sheet { padding: 16px; }
+  .sheet-meta { grid-template-columns: minmax(0,1fr); gap: 2px; }
+  .sheet-meta dd + dt { margin-top: 7px; }
+  .sheet-body .grid2 { grid-template-columns: minmax(0, 1fr); }
+  .sheet-actions > :is(button,a), .sheet-extra > summary { min-height: 44px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sheet-section > summary::before, .sheet-extra > summary::before { transition: none; }
+}

@@ -18,15 +18,15 @@ export function createDatasetApi({ store, myReq }) {
     var py = 'import requests\n\nBASE = "' + base + '"\nH = {"X-Core-Key": "' + key + '"}\n\nmeta = requests.get(BASE + "datasets/' + d.slug + '/index.json", headers=H).json()\nrows = [row for page in meta["links"]["rows"]\n        for row in requests.get(BASE + "datasets/' + d.slug + '/" + page, headers=H).json()["rows"]]\nprint(len(rows), "rows")';
     var js = 'const BASE = "' + base + '";\nconst H = { "X-Core-Key": "' + key + '" };\nconst meta = await fetch(BASE + "datasets/' + d.slug + '/index.json", { headers: H }).then(r => r.json());\nconst page1 = await fetch(BASE + "datasets/' + d.slug + '/rows-1.json", { headers: H }).then(r => r.json());';
     var ex = EXAMPLES[d.slug] || [];
-    return '<section class="api card" id="api"><span class="kicker">Ваш доступ · API и запросы</span>' +
-      '<div class="api-key"><span class="muted small">Ключ API</span><code id="apiKey">' + key + '</code><button class="btn btn-ghost btn-sm" data-copy="apiKey">Скопировать</button></div>' +
-      '<p class="small muted">Прототип: ключ передаётся в заголовке X-Core-Key, но статическая демо-версия его не проверяет. В рабочей версии ключ работает только для одобренных наборов, а вуз видит число запросов.</p>' +
+    return '<section class="api card" id="api"><span class="kicker">Демо-API</span>' +
+      '<div class="api-key"><span class="muted small">Демонстрационный ключ</span><code id="apiKey">' + key + '</code><button class="btn btn-ghost btn-sm" data-copy="apiKey">Скопировать</button></div>' +
+      '<p class="small muted">Примеры показывают, как передать ключ в заголовке X-Core-Key. В демо запрос читает опубликованный JSON-файл, проверка ключа отключена.</p>' +
       '<div class="api-eps"><div><span class="mono">GET</span> datasets/' + d.slug + '/index.json <span class="muted">— описание, число строк, ссылки</span></div>' +
       '<div><span class="mono">GET</span> datasets/' + d.slug + '/fields.json <span class="muted">— поля, коды стандартов, подписи на 3 языках</span></div>' +
       '<div><span class="mono">GET</span> datasets/' + d.slug + '/rows-{n}.json <span class="muted">— данные, по 500 строк</span></div></div>' +
       '<div class="api-tabs" role="tablist"><button class="on" data-snip="s-curl">curl</button><button data-snip="s-py">Python</button><button data-snip="s-js">JavaScript</button><button data-snip="s-agent">ИИ-агент</button></div>' +
       '<pre class="snip" id="s-curl">' + esc(curl) + '</pre><pre class="snip" id="s-py" hidden>' + esc(py) + '</pre><pre class="snip" id="s-js" hidden>' + esc(js) + "</pre>" +
-      '<div class="snip" id="s-agent" hidden><p class="small" style="color:#c3cbd4">Дайте агенту описание API в формате OpenAPI — он сам найдёт наборы, поля и страницы с данными. Подходит для GPT Actions, LangChain, LlamaIndex и MCP-адаптеров OpenAPI.</p>' +
+      '<div class="snip" id="s-agent" hidden><p class="small">Дайте агенту описание API в формате OpenAPI — он сам найдёт наборы, поля и страницы с данными. Подходит для GPT Actions, LangChain, LlamaIndex и MCP-адаптеров OpenAPI.</p>' +
       '<a class="mvp-link small" href="' + base + 'openapi.json" target="_blank" rel="noopener">' + esc(base) + "openapi.json</a></div>" +
       '<div class="api-try"><button class="btn btn-ghost btn-sm" id="tryApi">Выполнить запрос</button><span class="small muted" id="tryNote"></span></div><pre class="snip" id="tryOut" hidden></pre>' +
       '<h3 style="margin-top:22px">Запросы SQL прямо в браузере</h3><p class="small muted" style="margin-bottom:10px">Таблица <code>' + t + "</code> — все " + nf(d.rows) + " строк. Запрос выполняется у вас в браузере (DuckDB), ничего не отправляется на сервер.</p>" +

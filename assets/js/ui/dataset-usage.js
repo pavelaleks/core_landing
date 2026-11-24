@@ -37,7 +37,7 @@ export function renderDatasetUsage(rows, lang = "ru", compact = false) {
       results.map(result => '<a class="small" href="' + esc(result) + '" target="_blank" rel="noopener">' + tr("Result", "Результат", "Natija") + '</a>').join(" ") + '</li>';
   }).join("");
   const detail = groups.length ? '<ul class="usage-list">' + body + '</ul>' : empty;
-  if (!compact) return '<section class="dataset-usage"><h2>' + tr("Where the data is used", "Где используются данные", "Maʼlumotlar qayerda ishlatiladi") + '</h2>' + detail + '</section>';
+  if (!compact) return groups.length ? '<details class="sheet-section dataset-usage"><summary>' + tr("Where the data is used", "Где используется", "Qayerda ishlatiladi") + '</summary><div class="sheet-body">' + detail + '</div></details>' : "";
   return '<details class="usage-compact"><summary>' + tr("Who uses the data", "Кто использует данные", "Maʼlumotlardan kim foydalanadi") + ': ' + groups.length +
     (groups.length ? ' · ' + groups.slice(0, 2).map(group => esc(local(group.consumer.name))).join(", ") : '') + '</summary>' + detail + '</details>';
 }

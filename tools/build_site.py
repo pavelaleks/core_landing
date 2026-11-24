@@ -25,6 +25,8 @@ from html.parser import HTMLParser
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import public_data
 import digests
+import dataset_card
+import rankings
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = "https://coredata.uz/"
@@ -109,6 +111,18 @@ META["organization.html"] = {
     "desc": {"en": "An organization and its related research datasets, sources and data preparation.",
              "ru": "Организация и связанные с ней научные датасеты, источники и подготовленные материалы.",
              "uz": "Tashkilot va unga bogʻliq ilmiy toʻplamlar, manbalar hamda tayyorlangan materiallar."},
+}
+META["rankings.html"] = {
+    "title": {"en": "University rankings — CORE", "ru": "Рейтинги вузов — CORE", "uz": "Universitetlar reytinglari — CORE"},
+    "desc": {"en": "Find Central Asian universities by the number of open datasets in the CORE catalog and research works in OpenAlex.",
+             "ru": "Вузы Центральной Азии по числу открытых наборов в каталоге CORE и научных работ в OpenAlex.",
+             "uz": "Markaziy Osiyo universitetlarining CORE katalogidagi ochiq toʻplamlari va OpenAlex tizimidagi ilmiy ishlari soni boʻyicha reytinglar."},
+}
+META["agents.html"] = {
+    "title": {"en": "CORE agents and services", "ru": "Агенты и сервисы CORE", "uz": "CORE agentlari va xizmatlari"},
+    "desc": {"en": "MCP tools, CORE agents and data services for external agents. Tasks, connections, outputs and current readiness for nine capabilities.",
+             "ru": "MCP-инструменты, агенты CORE и сервисы данных для чужих агентов. Задачи, подключение, результаты и фактическая готовность девяти возможностей.",
+             "uz": "MCP vositalari, CORE agentlari va boshqa agentlar uchun maʼlumotlar xizmatlari. Toʻqqiz imkoniyatning vazifalari, ulanishi, natijalari va joriy tayyorligi."},
 }
 LICENSE_URL = {"CC0-1.0": "https://creativecommons.org/publicdomain/zero/1.0/", "ODbL-1.0": "https://opendatacommons.org/licenses/odbl/1-0/"}
 COUNTRY_EN = {"UZ": "Uzbekistan", "KZ": "Kazakhstan", "KG": "Kyrgyzstan", "TJ": "Tajikistan"}
@@ -244,17 +258,80 @@ def build_api():
 def esc(s):
     return html.escape(str(s if s is not None else ""), quote=True)
 
+def base_details(ds, lang):
+    def l(en, ru, uz):
+        return public_data.tr(lang, en, ru, uz)
+
+    slug = ds["slug"]
+    api = "../api/v0/datasets/" + slug
+    record = public_data.RECORDS.get(ds["id"], {})
+    title = public_data.local(record.get("title"), lang) or T(lang, ds["title_en"], ds["title_ru"])
+    description = public_data.local(record.get("description"), lang) or T(lang, ds["description_en"], ds["description_ru"])
+    countries = record.get("countries") or ds["countries"]
+    volume = record.get("record_count") if record.get("record_count") is not None else ds["records"]
+    fmt = lambda number: format(number, ",").replace(",", "," if lang == "en" else "\u202f")
+    count = ds["sample"]["rows"]
+    full = ds["license"] == "CC0-1.0" and count == ds["records"]
+    license_name = record.get("license") or ds["license"]
+    license_text = l("CC0 for metadata. Texts follow the license of each work.", "Метаданные — CC0. Для текстов действуют лицензии отдельных работ.", "Metamaʼlumotlar — CC0. Matnlar uchun har bir ish litsenziyasi amal qiladi.") if license_name == "LicenseRef-Mixed" else license_name
+    kind = {"reference": l("Registry", "Справочник", "Maʼlumotnoma"), "geo": l("Geodata", "Геоданные", "Geomaʼlumotlar"), "bibliographic": l("Bibliography", "Библиография", "Bibliografiya")}[ds["kind"]]
+    units = {"universities": l("universities", "вузов", "universitet"), "uz_medical_facilities": l("facilities", "медучреждения", "muassasa"), "ca_publications": l("works", "публикации", "nashr")}[slug]
+    rows = typed_rows(ds)
+    columns = [f["name"] for f in ds["fields"]][:6]
+    sample_table = dataset_card.table(columns, [[row.get(col) for col in columns] for row in rows[:8]])
+    fields = dataset_card.table([l("Field", "Поле", "Maydon"), l("Type", "Тип", "Tur"), l("Description", "Описание", "Tavsif")],
+                                [[f["name"], f["type"], f["description"]] for f in ds["fields"]])
+    hidden_fields = ""
+    if ds["withheld_fields"]:
+        hidden_fields = '<p class="sheet-caption">' + l("Fields outside the public sample", "Поля за пределами открытого образца", "Ochiq namunaga kiritilmagan maydonlar") + ' · ' + esc(", ".join(ds["withheld_fields"])) + '</p>'
+    scope = l("Full registry", "Весь справочник", "Toʻliq maʼlumotnoma") if full else l("Public sample", "Открытый образец", "Ochiq namuna")
+    data = '<p class="sheet-caption">' + scope + ' · ' + fmt(count) + ' / ' + fmt(ds["records"]) + '</p>' + dataset_card.base_preview(slug, rows, lang)
+    data += dataset_card.base_charts(slug, lang)
+    data += '<details class="sheet-extra"><summary>' + l("First rows of the source table", "Первые строки исходной таблицы", "Asl jadvalning ilk qatorlari") + '</summary>' + sample_table + '</details>'
+    data += '<details class="sheet-extra"><summary>' + l("Field dictionary", "Словарь полей", "Maydonlar lugʻati") + ' · ' + str(len(ds["fields"])) + '</summary>' + fields + hidden_fields + '</details>'
+    response = {"dataset": ds["id"], "license": ds["license"], "rows": count, "records": [{key: rows[0][key] for key in columns[:3]}] if rows else []}
+    endpoint = BASE + "api/v0/datasets/" + slug + "/sample.json"
+    api_body = '<p>' + l("Public API v0 · no key required", "Открытый API v0 · без ключа", "Ochiq API v0 · kalitsiz") + '</p><pre class="sheet-code">curl ' + esc(endpoint) + '</pre><p class="sheet-caption">' + l("Response excerpt", "Фрагмент ответа", "Javobdan parcha") + '</p><pre class="sheet-code">' + esc(json.dumps(response, ensure_ascii=False, indent=2)) + '</pre><p><a href="' + api + '/sample.json">' + l("Open JSON response", "Открыть ответ JSON", "JSON javobini ochish") + '</a></p><p><a href="' + api + '.json">' + l("Dataset metadata (JSON)", "Карточка API (JSON)", "Toʻplam metamaʼlumoti (JSON)") + '</a></p>'
+    status = l("Ready", "Готов", "Tayyor") if ds["status"] == "ready" else l("In review", "На проверке", "Tekshiruvda")
+    pii = l("None", "Нет", "Yoʻq") if ds["pii"] == "none" else l("Author names outside the public sample", "Имена авторов исключены из образца", "Muallif ismlari namunaga kiritilmagan")
+    passport = dataset_card.metadata([(l("Dataset ID", "ID набора", "Toʻplam ID"), ds["id"]), (l("Version", "Версия", "Versiya"), ds["version"]), (l("Updated", "Обновлено", "Yangilangan"), ds["updated"]),
+        (l("Preparation status", "Статус подготовки", "Tayyorlash holati"), status), (l("Personal data", "Персональные данные", "Shaxsiy maʼlumotlar"), pii), (l("ID prefix", "Префикс ID", "ID prefiksi"), ds["id_prefix"]),
+        (l("Data languages", "Языки данных", "Maʼlumot tillari"), ", ".join(ds["languages"]))])
+    full_description = T(lang, ds["description_en"], ds["description_ru"])
+    if full_description != description:
+        passport = '<p>' + esc(full_description) + '</p>' + passport
+    passport += '<h3>' + l("What CORE added", "Что добавил CORE", "CORE nima qoʻshdi") + '</h3><ul class="checks">' + "".join('<li>' + esc(T(lang, en, ru)) + '</li>' for en, ru in zip(ds["adds_en"], ds["adds_ru"])) + '</ul>'
+    csv = l("Download registry (CSV)", "Скачать справочник (CSV)", "Maʼlumotnomani yuklab olish (CSV)") if full else l("Download sample (CSV)", "Скачать образец (CSV)", "Namunani yuklab olish (CSV)")
+    request = l("Discuss updates and integration", "Обсудить обновления и интеграцию", "Yangilash va integratsiyani muhokama qilish") if full else l("Request the full dataset", "Запросить полный набор", "Toʻliq toʻplamni soʻrash")
+    primary = f'<a class="sheet-primary" href="{api}/sample.csv" download>{csv}</a>' if full else f'<a class="sheet-primary" href="../index.html#contact">{request}</a>'
+    scope_note = l("The full registry is free to download and use, including commercially. Regular updates and integration are paid services.", "Весь справочник можно бесплатно скачать и использовать, в том числе в коммерческих продуктах. Регулярные обновления и интеграция оплачиваются отдельно.", "Toʻliq maʼlumotnomani bepul yuklab olish va tijorat maqsadida ham ishlatish mumkin. Muntazam yangilanish va integratsiya pullik xizmatlardir.") if full else l("The sample and metadata are free without registration. The full dataset, updates and full API are available under license.", "Образец и метаданные доступны бесплатно без регистрации. Полный набор, обновления и доступ к нему по API предоставляются по лицензии.", "Namuna va metamaʼlumotlar roʻyxatdan oʻtmasdan bepul. Toʻliq toʻplam, yangilanishlar va toʻliq API litsenziya asosida beriladi.")
+    access = f'<p id="license">{esc(license_text)}</p><p>{scope_note}</p><p><a href="{api}/sample.csv" download>{csv}</a> · <a href="{api}/croissant.json">Croissant (JSON)</a></p><p><a href="../index.html#contact">{request}</a></p>'
+    return dataset_card.sheet(eyebrow='<p class="sheet-kicker">' + esc(kind + " · " + " · ".join(countries)) + '</p>',
+        title=esc(title), description='<p class="sheet-intro">' + esc(description) + '</p>', source=public_data.provenance_html(record, lang),
+        facts=dataset_card.facts(fmt(volume) + " " + units, license_text, "v" + ds["version"]),
+        actions='<div class="sheet-actions">' + primary + '<a class="sheet-text-action" href="#sheet-api">' + l("Try the API", "Попробовать API", "APIʼni sinash") + '</a></div>',
+        data=dataset_card.section("data", lang, data), api=dataset_card.section("api", lang, api_body),
+        passport=dataset_card.section("passport", lang, passport), access=dataset_card.section("access", lang, access), usage=public_data.usage_html(ds["id"], lang))
+
+
+def region_card(match, lang):
+    parts = dict(re.findall(r'<template data-region-part="(\w+)">(.*?)</template>', match[1], re.S))
+    row = public_data.RECORDS.get("regions", {})
+    def l(en, ru, uz):
+        return public_data.tr(lang, en, ru, uz)
+    organization = row.get("organization") or {}
+    org_name = organization.get("name_" + lang) or organization.get("name") or "CORE"
+    source = '<p class="sheet-by"><a href="organization.html?id=' + esc(row.get("organization_id") or "ORG-CORE") + '">' + esc(org_name) + '</a></p>'
+    return dataset_card.sheet(title=parts["title"], description=parts["description"], source=source,
+        eyebrow='<p class="sheet-kicker">' + l("Regional data", "Региональные данные", "Hududiy maʼlumotlar") + ' · ISO 3166-2</p>',
+        facts=dataset_card.facts(str(row.get("record_count") or 48) + " " + l("regions", "регионов", "hudud"), l("4 countries", "4 страны", "4 mamlakat"), row.get("license")),
+        actions='<div class="sheet-actions"><a class="sheet-primary" href="api/v0/regions.csv" download>' + l("Download the table (CSV)", "Скачать таблицу (CSV)", "Jadvalni yuklab olish (CSV)") + '</a><a class="sheet-text-action" href="#sheet-api">' + l("Try the API", "Попробовать API", "APIʼni sinash") + '</a></div>',
+        **{key: dataset_card.section(key, lang, parts[key]) for key in dataset_card.SECTIONS},
+        usage=public_data.usage_html("regions", lang))
+
+
 def dataset_page(ds, nav, footer):
     s = ds["slug"]
-    rows = typed_rows(ds)[:8]
-    cols = [f["name"] for f in ds["fields"]][:6]
-    status_ru = {"ready": "готов", "review": "на проверке"}.get(ds["status"], ds["status"])
-    kind_en = {"reference": "reference", "geo": "geodata", "bibliographic": "bibliography"}.get(ds["kind"], ds["kind"])
-    kind_ru = {"reference": "справочник", "geo": "геоданные", "bibliographic": "библиография"}.get(ds["kind"], ds["kind"])
-    pii_en = {"none": "none", "public_bibliographic": "author names (not published)"}.get(ds["pii"], ds["pii"])
-    pii_ru = {"none": "нет", "public_bibliographic": "имена авторов (не публикуются)"}.get(ds["pii"], ds["pii"])
-    lic_en = ds["license"] if ds["license"] != "LicenseRef-Mixed" else "Mixed: metadata CC0, texts per work"
-    lic_ru = ds["license"] if ds["license"] != "LicenseRef-Mixed" else "Смешанная: метаданные CC0, тексты — по лицензии работы"
     jsonld = {
         "@context": "https://schema.org", "@type": "Dataset", "name": ds["title_en"], "alternateName": ds["title_ru"],
         "description": ds["description_en"], "url": BASE + "datasets/" + s + ".html", "identifier": ds["id"], "version": ds["version"],
@@ -267,23 +344,7 @@ def dataset_page(ds, nav, footer):
         "distribution": [{"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": BASE + "api/v0/datasets/" + s + "/sample.csv"},
                          {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": BASE + "api/v0/datasets/" + s + "/sample.json"}],
     }
-    adds = "".join('<li data-ru="%s">%s</li>' % (esc(r), esc(e)) for e, r in zip(ds["adds_en"], ds["adds_ru"]))
-    fields = "".join("<tr><td class='mono small'>%s</td><td class='muted small'>%s</td><td class='small'>%s</td></tr>" % (esc(f["name"]), esc(f["type"]), esc(f["description"])) for f in ds["fields"])
-    withheld = ""
-    if ds["withheld_fields"]:
-        withheld = '<p class="note"><span data-ru="Не входят в открытый образец, доступны по лицензии:">Not in the public sample, available under license:</span> <span class="mono">%s</span></p>' % esc(", ".join(ds["withheld_fields"]))
-    head_row = "".join("<th>%s</th>" % esc(c) for c in cols)
-    body_rows = "".join("<tr>%s</tr>" % "".join("<td>%s</td>" % esc((str(r.get(c)) if r.get(c) is not None else "—")[:60]) for c in cols) for r in rows)
-    api = "../api/v0/datasets/" + s
-    is_open = ds["license"] == "CC0-1.0"
-    if is_open:
-        get_lead = '<p class="small muted" data-ru="Весь справочник открыт по лицензии CC0: скачивайте и используйте бесплатно, в том числе в коммерческих продуктах. Платно — только регулярные обновления и интеграция.">The whole registry is open under CC0: download and use it for free, commercial products included. Only regular updates and integration are paid.</p>'
-        csv_label = '<b data-ru="Весь справочник CSV">Full registry CSV</b>'
-        cta = '<a href="../index.html#contact" class="btn btn-primary btn-block" data-ru="Обсудить обновления и интеграцию">Discuss updates and integration</a>'
-    else:
-        get_lead = '<p class="small muted" data-ru="Открытый образец и метаданные — бесплатно, без регистрации. Полный датасет, обновления и API — по лицензии.">Open sample and metadata — free, no sign-up. Full dataset, updates and API — under license.</p>'
-        csv_label = '<b data-ru="Образец CSV">Sample CSV</b>'
-        cta = '<a href="../index.html#contact" class="btn btn-primary btn-block" data-ru="Запросить полный датасет">Request the full dataset</a>'
+    chart_data = dataset_card.base_chart_source(s, typed_rows(ds))
     page = f'''<!doctype html>
 <html lang="en">
 <head>
@@ -302,61 +363,17 @@ def dataset_page(ds, nav, footer):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="../assets/dataset-card.css">
 <script type="application/ld+json">{json.dumps(jsonld, ensure_ascii=False)}</script>
+<script>window.CORE_DATA={chart_data};</script>
 </head>
 <body data-page="dataset">
 {nav}
 <main>
 <section class="sec sec-first ds-page">
   <div class="wrap">
-    <p class="crumbs mono small"><a href="../developers.html#catalog" data-ru="Каталог">Catalog</a> / {esc(ds["id"])}</p>
-    <h1 class="h1-page" data-ru="{esc(ds["title_ru"])}">{esc(ds["title_en"])}</h1>
-    <!--CORE_PROVENANCE:{esc(ds["id"])}-->
-    <div class="tagrow ds-tags">
-      <span class="tag t-teal"><span data-ru="{esc(status_ru)}">{esc(ds["status"])}</span></span>
-      <span class="tag"><span data-ru="{esc(kind_ru)}">{esc(kind_en)}</span></span>
-      <span class="tag">{esc(ds["license"])}</span>
-      <span class="tag">v{esc(ds["version"])}</span>
-    </div>
-    <p class="sub" data-ru="{esc(ds["description_ru"])}">{esc(ds["description_en"])}</p>
-
-    <div class="ds-cols">
-      <div class="card">
-        <h3 data-ru="Что добавляет CORE">What CORE adds</h3>
-        <ul class="checks">{adds}</ul>
-        <dl class="kv">
-          <div><dt data-ru="Записей">Records</dt><dd>{ds["records"]:,}</dd></div>
-          <div><dt data-ru="Страны">Countries</dt><dd>{esc(" · ".join(ds["countries"]))}</dd></div>
-          <div id="license"><dt data-ru="Лицензия">License</dt><dd data-ru="{esc(lic_ru)}">{esc(lic_en)}</dd></div>
-          <div><dt data-ru="Перс. данные">PII</dt><dd data-ru="{esc(pii_ru)}">{esc(pii_en)}</dd></div>
-          <div><dt data-ru="Обновлено">Updated</dt><dd>{esc(ds["updated"])}</dd></div>
-          <div><dt data-ru="Префикс ID">ID prefix</dt><dd class="mono">{esc(ds["id_prefix"])}-…</dd></div>
-        </dl>
-      </div>
-      <div class="card ds-get">
-        <h3 data-ru="Получить данные">Get the data</h3>
-        {get_lead}
-        <div class="dl-list">
-          <a class="dl" href="{api}/sample.csv" download>{csv_label}<span class="mono small">{ds["sample"]["rows"]} <span data-ru="строк">rows</span></span></a>
-          <a class="dl" href="{api}/sample.json"><b data-ru="Образец JSON">Sample JSON</b><span class="mono small">api/v0</span></a>
-          <a class="dl" href="{api}/croissant.json"><b>Croissant</b><span class="mono small">MLCommons 1.0</span></a>
-          <a class="dl" href="{api}.json"><b data-ru="Карточка API">API card</b><span class="mono small">JSON</span></a>
-        </div>
-        {cta}
-      </div>
-    </div>
-
-    <div class="card ds-table">
-      <div class="table-tools"><b data-ru="Образец записей">Sample records</b><span class="small muted" data-ru="первые 8 строк открытого образца">first 8 rows of the open sample</span></div>
-      <div class="tscroll"><table><thead><tr>{head_row}</tr></thead><tbody>{body_rows}</tbody></table></div>
-    </div>
-
-    <div class="card ds-table">
-      <div class="table-tools"><b data-ru="Поля">Fields</b><span class="small muted">{len(ds["fields"])}</span></div>
-      <div class="tscroll tall"><table><thead><tr><th data-ru="Поле">Field</th><th data-ru="Тип">Type</th><th data-ru="Описание">Description</th></tr></thead><tbody>{fields}</tbody></table></div>
-      <div class="table-foot">{withheld}</div>
-    </div>
-    <!--CORE_USAGE:{esc(ds["id"])}-->
+    <div class="sheet-wrap"><p class="crumbs mono small"><a href="../catalog.html" data-ru="Каталог">Catalog</a> / {esc(ds["id"])}</p>
+    <!--CORE_BASE:{esc(s)}--></div>
   </div>
 </section>
 </main>
@@ -534,7 +551,7 @@ def finalize(text, lang, page_path, meta):
     text = re.sub(r'<meta property="og:url" content="[^"]*">', '<meta property="og:url" content="%s">' % page_url(lang, page_path), text)
     if meta:
         t, d = meta["title"][lang], meta["desc"][lang]
-        if page_path in ("index.html", "catalog.html", "digests.html", "organization.html"):
+        if page_path in ("index.html", "catalog.html", "digests.html", "organization.html", "rankings.html", "agents.html"):
             text = re.sub(r'<meta property="og:title" content="[^"]*">', '<meta property="og:title" content="%s">' % esc(t), text, count=1)
         text = re.sub(r"<title>.*?</title>", "<title>%s</title>" % esc(t), text, count=1, flags=re.S)
         text = re.sub(r'<meta name="description" content="[^"]*">', '<meta name="description" content="%s">' % esc(d), text, count=1)
@@ -720,15 +737,25 @@ def build():
         emit("api/v0/public-catalog.json", jdump(public_data.SNAPSHOT))
     build_api()
     build_hf()
+    registry = json.loads(OUT["api/v0/universities.json"])["universities"]
+    registry_date = next(ds["updated"] for ds in CAT if ds["slug"] == "universities")
+    ranking_data = rankings.collect(registry, public_data.SNAPSHOT["datasets"], registry_date)
     src_index = open(os.path.join(ROOT, "src", "index.html"), encoding="utf-8").read()
     nav = re.search(r"<!-- ============ NAV ============ -->.*?</header>", src_index, re.S).group(0)
     footer = re.search(r'<footer class="foot">.*?</footer>', src_index, re.S).group(0)
+    with open(os.path.join(ROOT, "src", "rankings.html"), encoding="utf-8") as source:
+        rankings_page = source.read().replace("<!--CORE_SITE_NAV-->", nav).replace("<!--CORE_SITE_FOOTER-->", footer)
+    with open(os.path.join(ROOT, "src", "agents.html"), encoding="utf-8") as source:
+        agents_nav = nav.replace('href="agents.html"', 'href="agents.html" aria-current="page"', 1)
+        agents_page = source.read().replace("<!--CORE_SITE_NAV-->", agents_nav).replace("<!--CORE_SITE_FOOTER-->", footer)
     def up(h):
         """Nav and footer for pages one folder deep (datasets/): every relative link goes one level up."""
         h = re.sub(r'href="#', 'href="../index.html#', h)
         h = re.sub(r'href="(?![a-z]+:|#|\.\./|/)([^"]+)"', r'href="../\1"', h)
         return h
     pages = {"index.html": src_index,
+             "rankings.html": rankings_page,
+             "agents.html": agents_page,
              "digests.html": open(os.path.join(ROOT, "src", "digests.html"), encoding="utf-8").read(),
              "universities.html": open(os.path.join(ROOT, "src", "universities.html"), encoding="utf-8").read(),
              "developers.html": open(os.path.join(ROOT, "src", "developers.html"), encoding="utf-8").read(),
@@ -750,7 +777,16 @@ def build():
         page_dir = posixpath.dirname(path)
         for lang in LANGS:
             t = localize(text, lang)
+            if "<!--CORE_BASE:" in t:
+                ds = next(item for item in CAT if path == "datasets/" + item["slug"] + ".html")
+                t = t.replace("<!--CORE_BASE:" + ds["slug"] + "-->", base_details(ds, lang))
+            if path == "regions.html":
+                t = re.sub(r"<!--CORE_REGION_CARD-->(.*?)<!--/CORE_REGION_CARD-->", lambda m: region_card(m, lang), t, flags=re.S)
             t = public_data.inject(t, lang)
+            if path in ("index.html", "rankings.html"):
+                full = path == "rankings.html"
+                marker = "<!--CORE_RANKINGS-->" if full else "<!--CORE_RANKINGS_PREVIEW-->"
+                t = t.replace(marker, rankings.render(ranking_data, lang, UZ, full=full))
             t = t.replace("<!--CORE_DIGEST_PREVIEW-->", digests.render(lang, preview=True)).replace("<!--CORE_DIGESTS-->", digests.render(lang))
             t = relink(t, page_dir, 0 if lang == "en" else 1)
             t = finalize(t, lang, path, META.get(path))
@@ -762,6 +798,7 @@ def build():
              '<a href="../../app/index.html">CORE</a>')
     with open(os.path.join(ROOT, "app", "index.html"), encoding="utf-8") as source:
         app_index = source.read()
+    app_index = re.sub(r'<template id="dataset-card-template">.*?</template>', lambda _: '<template id="dataset-card-template">' + dataset_card.TEMPLATE + '</template>', app_index, flags=re.S)
     app_index = re.sub(r'\b(src|href)="((?:\.\./)*assets/[^"?#]+\.(?:js|css))(?:\?[^\"]*)?"', asset_version, app_index)
     css_version = text_asset_hash(os.path.join(ROOT, "app", "app.css"))
     app_index = re.sub(r'href="app\.css(?:\?[^\"]*)?"', 'href="app.css?v=' + css_version + '"', app_index)
