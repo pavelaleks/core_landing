@@ -1416,5 +1416,9 @@ window.CORE_UZ = {
   "Перед публикацией убедитесь, что у вас есть право разместить материалы. Проверьте описание и файлы по ссылкам на персональные и конфиденциальные сведения.": "Eʼlon qilishdan oldin materiallarni joylashtirish huquqingiz borligiga ishonch hosil qiling. Tavsif va havolalardagi fayllarda shaxsiy va maxfiy maʼlumotlar bor-yoʻqligini tekshiring.",
   "Университет собирает результаты исследований в одном месте, чтобы использовать их в новых научных проектах, сервисах для бизнеса и грантовых заявках.": "Universitet tadqiqot natijalarini yangi ilmiy loyihalar, biznes xizmatlari va grant arizalarida foydalanish uchun bir joyga jamlaydi.",
   "Результаты исследований в одном месте — для новых научных проектов, бизнеса и грантов.": "Tadqiqot natijalari bir joyda — yangi ilmiy loyihalar, biznes va grantlar uchun.",
-  "Подключиться": "Qoʻshilish"
+  "Подключиться": "Qoʻshilish",
+  "Новости CORE раз в месяц": "CORE yangiliklari oyiga bir marta",
+  "Подписаться": "Obuna boʻlish",
+  "Готово! Вы подписаны.": "Tayyor! Siz obuna boʻldingiz.",
+  "Не удалось подписаться. Попробуйте позже.": "Obuna boʻlib boʻlmadi. Keyinroq urinib koʻring."
 };

@@ -56,3 +56,63 @@ python -I tests/test_build_modules.py
 По решению пользователя от 24 ноября 2026 года подключение почты отложено. Форма запроса восстановления пароля вызывает Auth, обработка recovery-сессии проверяется тестами. Полный почтовый сценарий, доставку реального письма и адрес возврата проверяют после отдельного подключения почты. Текущий запуск охватывает регистрацию, вход и работу с карточками.
 
 Советник Supabase повторно сообщил о прежних настройках проекта: правах вызова `rls_auto_enable()` и отключённой проверке скомпрометированных паролей. Эти настройки не менялись миграциями приложения; они отделены от проверенных прав шести таблиц. Справка: [права функций](https://supabase.com/docs/guides/database/database-linter?lint=0028_anon_security_definer_function_executable), [защита паролей](https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection).
+
+## Почта, админка и подписка на новости
+
+Миграция [20261125150000_admin_newsletter_mail.sql](migrations/20261125150000_admin_newsletter_mail.sql) добавляет:
+
+- таблицу `newsletter_subscribers` (форма «Подписаться» в подвале сайта; посетитель может только добавить адрес);
+- статус и заметку команды у `contact_requests`;
+- таблицу `admins` и функции `admin_list` / `admin_update` для страницы [app/admin.html](../app/admin.html). Существующие права таблиц не меняются: админка работает только через эти функции, которые сначала проверяют `is_admin()`;
+- письма команде о новой регистрации, заявке и подписке (через Resend API из базы, `pg_net`). Пока не заданы секреты, письма не отправляются, а ошибка письма никогда не мешает действию пользователя.
+
+Миграцию применяют в SQL Editor Supabase или через `supabase db push`.
+
+### 1. Корпоративный адрес
+
+1. Ящик для команды, например `team@coredata.uz`: Яндекс 360, Zoho Mail или Google Workspace — тот, что удобнее. Провайдер сам подскажет MX-записи для DNS домена.
+2. Если нужен только приём писем без отдельного ящика, хватит пересылки на личную почту (например, через ImprovMX или пересылку у регистратора домена).
+
+### 2. Отправка писем (Resend)
+
+1. Зарегистрироваться на [resend.com](https://resend.com), добавить домен `coredata.uz` и внести в DNS показанные записи SPF, DKIM и MX для поддомена отправки. Дождаться статуса Verified.
+2. Создать API-ключ с правом Sending access.
+
+### 3. Письма пользователям: восстановление пароля
+
+В Supabase → Authentication → Emails → SMTP Settings включить Custom SMTP:
+
+| Поле | Значение |
+| --- | --- |
+| Host | `smtp.resend.com` |
+| Port | `465` |
+| Username | `resend` |
+| Password | API-ключ Resend |
+| Sender email | `noreply@coredata.uz` |
+| Sender name | `CORE` |
+
+Authentication → URL Configuration: Site URL `https://coredata.uz`, в Redirect URLs добавить `https://coredata.uz/app/index.html`. Authentication → Emails → Templates → Reset Password: перевести письмо на русский. Ссылку `{{ .ConfirmationURL }}` оставить.
+
+Кнопка «Забыли пароль?» на странице входа уже есть: она отправляет письмо, ссылка из письма открывает в кабинете форму нового пароля. Подтверждение email при регистрации не включать — текущая регистрация рассчитана на вход сразу.
+
+### 4. Уведомления команде
+
+В SQL Editor:
+
+```sql
+select vault.create_secret('re_ВАШ_КЛЮЧ', 'resend_api_key');
+select vault.create_secret('pavel@coredata.uz, sasha@coredata.uz', 'admin_email');
+select vault.create_secret('CORE <noreply@coredata.uz>', 'mail_from'); -- необязательно
+```
+
+Проверка: `select public.notify_admin('Тест', 'Проверка почты');`, затем посмотреть `select * from net._http_response order by created desc limit 5;`.
+
+### 5. Админка
+
+Назначить администратора (аккаунт должен быть зарегистрирован):
+
+```sql
+insert into public.admins (user_id) select id from auth.users where email = 'pavel@coredata.uz';
+```
+
+Затем войти в кабинет и открыть `https://coredata.uz/app/admin.html`. Разделы: заявки (статус, заметка), пользователи (подтверждение, имя, роль, организация), организации, датасеты (статус публикации, названия, описание, доступ, лицензия), подписчики. Удаления в админке нет: при необходимости — через панель Supabase.

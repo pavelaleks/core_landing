@@ -139,6 +139,31 @@
     var o = nav.classList.toggle("open"); this.setAttribute("aria-expanded", String(o));
   });
   $$(".nav-links a").forEach(function (a) { a.addEventListener("click", function () { if (nav) nav.classList.remove("open"); if (burger) burger.setAttribute("aria-expanded", "false"); }); });
+  /* Newsletter: one insert into Supabase, a repeated email counts as success. */
+  $$("[data-newsletter-form]").forEach(function (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var cfg = (window.CORE_CONFIG || {}).supabase || {}, out = form.querySelector("[role=status]"), btn = form.querySelector("button");
+      btn.disabled = true; out.textContent = "";
+      fetch(cfg.url + "/rest/v1/newsletter_subscribers", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", apikey: cfg.publishableKey, Prefer: "return=minimal" },
+        body: JSON.stringify({ email: form.elements.email.value.trim().toLowerCase(), language: ["en", "ru", "uz"].indexOf(lang) >= 0 ? lang : "ru", page_url: location.href.slice(0, 2048) })
+      }).then(function (r) {
+        if (!r.ok && r.status !== 409) throw new Error(r.status);
+        form.reset();
+        out.textContent = T("Done! You are subscribed.", "Готово! Вы подписаны.");
+      }).catch(function () {
+        out.textContent = T("Could not subscribe. Please try again later.", "Не удалось подписаться. Попробуйте позже.");
+      }).then(function () { btn.disabled = false; });
+    });
+  });
+
+  /* Mobile header is only logo + burger: the language switch moves into the dropdown. */
+  var langBox = $(".nav-cta .lang"), navLinks = $(".nav-links"), navCta = $(".nav-cta"), mobile = window.matchMedia("(max-width:980px)");
+  function placeLang() { if (langBox && navLinks) (mobile.matches ? navLinks.appendChild(langBox) : navCta.insertBefore(langBox, navCta.firstChild)); }
+  placeLang();
+  if (mobile.addEventListener) mobile.addEventListener("change", placeLang);
   function refreshAccountLinks() {
     if (!window.CORE_ACCOUNT) return;
     var user = window.CORE_ACCOUNT.load().user;

@@ -905,7 +905,7 @@ h3{font-size:20px}
 .nav-links a:hover{color:var(--text);background:rgba(var(--ink),.05)}
 .nav-links a[aria-current=page]{color:var(--teal);background:rgba(var(--teal-rgb),.09)}
 @media (min-width:981px){.nav-links{display:flex}.burger{display:none}}
-@media (max-width:980px){.nav-links{display:none}.burger{display:block}.nav.open .nav-links{display:flex;top:68px}}
+@media (max-width:980px){.nav-links{display:none}.burger{display:block}.nav.open .nav-links{display:flex;top:68px}.nav.open .nav-links .lang{align-self:flex-start;margin:8px 12px 0}.nav.open .nav-links .lang a{padding:4px 9px;font-size:13px}}
 :focus-visible{outline:2px solid var(--teal);outline-offset:2px;border-radius:6px}
 html{scroll-padding-top:90px}
 html.has-subnav{scroll-padding-top:136px}
@@ -1245,3 +1245,9 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 .participation-form { margin-top: 28px; }
 .public-dataset-tools { display: flex; flex-wrap: wrap; gap: 12px; margin: 18px 0; }
 .dataset-contact { margin-top: 28px; padding: 24px 0; border-top: 1px solid var(--line2); }
+/* Newsletter form in the footer */
+.news-form{grid-column:1/-1;display:grid;gap:8px;max-width:460px}
+.news-form label{font-size:15px;color:var(--text)}
+.news-form div{display:flex;gap:8px}
+.news-form input{flex:1;min-width:0;height:36px;padding:0 12px;border:1px solid var(--line2);border-radius:8px;background:var(--surface);color:var(--text);font:inherit;font-size:15px}
+.news-form p:empty{display:none}

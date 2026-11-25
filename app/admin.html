@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>CORE — админка</title>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="app.css">
+<style>
+.adm-tabs{display:flex;gap:4px;flex-wrap:wrap;margin:20px 0 16px}
+.adm-tabs a{padding:7px 14px;border-radius:999px;color:var(--muted);font-size:15px}
+.adm-tabs a.on,.adm-tabs a:hover{color:var(--text);background:rgba(var(--ink),.06)}
+.adm-tabs b{font:500 12.5px var(--mono);margin-left:6px;color:var(--teal)}
+.adm-search{width:100%;max-width:420px;height:38px;padding:0 12px;border:1px solid var(--line2);border-radius:8px;background:var(--surface);color:var(--text);font:inherit;margin-bottom:12px}
+.adm-table{width:100%;border-collapse:collapse;font-size:14.5px}
+.adm-table th{text-align:left;color:var(--muted);font-weight:500;padding:8px;border-bottom:1px solid var(--line2);white-space:nowrap}
+.adm-table td{padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top;max-width:340px;overflow:hidden;text-overflow:ellipsis}
+.adm-table tbody tr{cursor:pointer}
+.adm-table tbody tr:hover{background:rgba(var(--ink),.04)}
+.adm-wrap{overflow-x:auto}
+dialog.adm-dialog{border:1px solid var(--line2);border-radius:14px;padding:0;width:min(640px,94vw);background:var(--bg);color:var(--text)}
+dialog.adm-dialog::backdrop{background:rgba(0,0,0,.35)}
+.adm-dialog form{padding:24px;display:grid;gap:12px}
+.adm-dialog label{display:grid;gap:4px;font-size:14px;color:var(--muted)}
+.adm-dialog input,.adm-dialog select,.adm-dialog textarea{font:inherit;font-size:15px;color:var(--text);background:var(--surface);border:1px solid var(--line2);border-radius:8px;padding:8px 10px}
+.adm-dialog label.check{display:flex;align-items:center;gap:8px;color:var(--text)}
+.adm-dialog pre{font:12.5px/1.5 var(--mono);white-space:pre-wrap;word-break:break-word;background:var(--surface);padding:10px;border-radius:8px;max-height:260px;overflow:auto}
+.adm-actions{display:flex;gap:8px;justify-content:flex-end}
+</style>
+</head>
+<body class="mvp">
+<header class="mvp-top">
+  <div class="wrap mvp-top-in">
+    <a class="mvp-logo" href="index.html#account">CORE <span class="mvp-badge">Админка</span></a>
+  </div>
+</header>
+<main id="view" class="wrap mvp-main"><p class="lead" role="status">Загрузка…</p></main>
+<script src="../assets/config.js"></script>
+<script src="../assets/vendor/supabase-2.119.2.js"></script>
+<script type="module" src="../assets/js/pages/admin.js"></script>
+</body>
+</html>

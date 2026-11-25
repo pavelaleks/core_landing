@@ -216,3 +216,19 @@ textarea.sql:focus{outline:none;border-color:var(--teal)}
 @media(max-width:900px){.saved-grid{grid-template-columns:1fr}.university-dataset{flex-direction:column}.university-dataset details{max-width:100%}}
 @media(max-width:600px){.cabinet-heading{align-items:start;flex-direction:column;gap:20px}.cabinet-empty{padding:28px}.auth-layout{padding-top:0;gap:20px}.auth-card{padding:24px 20px}.auth-tabs{gap:16px}.auth-tabs a{font-size:15px}.account-roles label{font-size:15px}.mvp-logo{font-size:15px}.mvp-main{padding-top:32px}}
 @media(max-width:1100px){.mvp-top-in{flex-wrap:wrap;row-gap:8px}.mvp-who{margin-left:auto}.mvp-nav{order:3;flex:0 0 100%;flex-wrap:wrap;overflow:visible}}
+
+/* Mobile header: logo + name + burger, menu in a dropdown (same as the site). */
+.mvp-top .burger{display:none;margin-left:auto}
+.mvp-top.open .burger span:first-child{transform:translateY(3.5px) rotate(45deg)}
+.mvp-top.open .burger span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+@media (max-width:980px){
+  .mvp-top-in{flex-wrap:wrap;min-height:64px;padding-top:14px;padding-bottom:14px;row-gap:0}
+  .mvp-badge{display:none}
+  .mvp-top .mvp-logo{gap:9px;font-weight:700;letter-spacing:.08em;font-size:16px}
+  .mvp-top:has(#nav:not([hidden])) .burger{display:block}
+  .mvp-top:not(.open) .mvp-nav,.mvp-top:not(.open) .mvp-who{display:none}
+  .mvp-top.open .mvp-nav{order:3;flex:0 0 100%;flex-direction:column;flex-wrap:nowrap;gap:2px;margin-top:10px}
+  .mvp-top.open .mvp-nav a{padding:12px;font-size:16px;border-radius:8px}
+  .mvp-top.open .mvp-who{order:4;flex:0 0 100%;margin:0;padding:8px 12px 4px;gap:16px}
+  .mvp-top.open .mvp-who .lbl{display:block;max-width:60vw}
+}

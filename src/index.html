@@ -95,13 +95,13 @@
         <svg class="campus-start-art" viewBox="0 0 80 80" aria-hidden="true" focusable="false"><use href="assets/illustrations/data-symbols.svg#collect"></use></svg>
         <h3 data-ru="У вашего университета есть данные">Your university has data</h3>
         <p data-ru="Расскажите о данных университета. Обсудим, для каких исследований и проектов они могут пригодиться.">Tell us about your university’s data. We can discuss which research and projects it could support.</p>
-        <a href="#contact" class="btn btn-primary" data-form="university" data-ru="Подключиться">Join CORE</a>
+        <a href="#participate" class="btn btn-primary" data-request-type="university" data-ru="Подключиться">Join CORE</a>
       </article>
       <article class="campus-start-card">
         <svg class="campus-start-art" viewBox="0 0 80 80" aria-hidden="true" focusable="false"><use href="assets/illustrations/data-symbols.svg#research"></use></svg>
         <h3 data-ru="Вы ищете данные для проекта">You need data for a project</h3>
         <p data-ru="Опишите задачу. Проверим, какие наборы подходят и на каких условиях их можно использовать.">Describe your task. We will check which datasets fit and the terms for using them.</p>
-        <a href="#contact" class="btn btn-ghost" data-form="buyer" data-ru="Рассказать о задаче">Tell us about your task</a>
+        <a href="#participate" class="btn btn-ghost" data-request-type="buyer" data-ru="Рассказать о задаче">Tell us about your task</a>
       </article>
     </div>
     <div class="participation-form" id="participate" data-guest-only><h3 data-ru="Подключение к CORE">Join CORE</h3><div data-quick-contact></div></div>
@@ -230,6 +230,11 @@
       <a href="app/index.html#login" data-account-link data-ru="Личный кабинет">My account</a>
       <a href="documents.html" data-ru="Конфиденциальность">Privacy</a>
     </div>
+    <form class="news-form" data-newsletter-form>
+      <label for="newsEmail" data-ru="Новости CORE раз в месяц">CORE news once a month</label>
+      <div><input id="newsEmail" name="email" type="email" required maxlength="254" autocomplete="email" placeholder="you@example.com"><button class="btn btn-primary btn-sm" type="submit" data-ru="Подписаться">Subscribe</button></div>
+      <p class="small muted" role="status" aria-live="polite"></p>
+    </form>
     <p class="small muted attr" data-ru="Данные: © участники OpenStreetMap (ODbL), OpenAlex, ROR, Wikidata (CC0). Границы: Natural Earth.">Data: © OpenStreetMap contributors (ODbL), OpenAlex, ROR, Wikidata (CC0). Boundaries: Natural Earth.</p>
   </div>
 </footer>
