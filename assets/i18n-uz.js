@@ -1420,5 +1420,13 @@ window.CORE_UZ = {
   "Новости CORE раз в месяц": "CORE yangiliklari oyiga bir marta",
   "Подписаться": "Obuna boʻlish",
   "Готово! Вы подписаны.": "Tayyor! Siz obuna boʻldingiz.",
-  "Не удалось подписаться. Попробуйте позже.": "Obuna boʻlib boʻlmadi. Keyinroq urinib koʻring."
+  "Не удалось подписаться. Попробуйте позже.": "Obuna boʻlib boʻlmadi. Keyinroq urinib koʻring.",
+  "Здесь описаны сценарии работы CORE. MCP-сервер CORE уже работает: вузы, учёные, публикации и датасеты. Агенты и серверные сервисы находятся на стадии концепции. Ссылки ведут к существующим данным и демонстрационным материалам.": "Bu yerda CORE ish ssenariylari tasvirlangan. CORE MCP serveri allaqachon ishlamoqda: universitetlar, olimlar, nashrlar va maʼlumotlar toʻplamlari. Agentlar va server xizmatlari konsepsiya bosqichida. Havolalar mavjud maʼlumotlar va namoyish materiallariga olib boradi.",
+  "MCP — работает": "MCP — ishlamoqda",
+  "Инструменты search_universities и get_university: поиск по любому названию или аббревиатуре (СамГУ, НУУз, КазНУ) и полный профиль вуза.": "search_universities va get_university vositalari: istalgan nom yoki qisqartma boʻyicha qidiruv (SamDU, OʻzMU, KazNU) va universitetning toʻliq profili.",
+  "Инструменты search_researchers, get_researcher и search_works: учёные, работы и соавторы из OpenAlex, краткие пересказы статей из Semantic Scholar.": "search_researchers, get_researcher va search_works vositalari: OpenAlex’dan olimlar, ishlar va hammualliflar, Semantic Scholar’dan maqolalarning qisqacha mazmuni.",
+  "Инструменты search_datasets и get_dataset: описание, лицензия, поля и образец записей для наборов каталога CORE.": "search_datasets va get_dataset vositalari: CORE katalogidagi toʻplamlar uchun tavsif, litsenziya, maydonlar va yozuvlar namunasi.",
+  "Публичный сервер CORE: вузы, учёные, публикации и датасеты. Транспорт Streamable HTTP, ключ не нужен.": "CORE ochiq serveri: universitetlar, olimlar, nashrlar va maʼlumotlar toʻplamlari. Streamable HTTP transporti, kalit kerak emas.",
+  "Claude Code:": "Claude Code:",
+  "Claude Desktop и claude.ai: Settings → Connectors → Add custom connector, тот же URL. Другие клиенты подключают этот URL как MCP-сервер.": "Claude Desktop va claude.ai: Settings → Connectors → Add custom connector, oʻsha URL. Boshqa mijozlar bu URL’ni MCP server sifatida ulaydi."
 };

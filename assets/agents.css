@@ -30,6 +30,7 @@
 .agents-fields dd{margin:0;color:var(--body);font-size:15.5px;line-height:1.65}
 .agents-status-field{padding-top:18px;border-top:1px solid var(--line)}
 .agents-status{display:inline-block;max-width:100%;padding:3px 9px;border-radius:6px;background:rgba(var(--amber-rgb),.09);color:var(--amber);font-size:12px;font-weight:500;line-height:1.6}
+.agents-status.is-live{background:rgba(var(--green-rgb),.12);color:var(--green)}
 .agents-status-field p{margin-top:10px;color:var(--body);font-size:13px;line-height:1.65}
 .agents-foundation-link{display:inline-block;margin-top:12px;font-size:13px;text-wrap:balance}
 .agents-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;list-style:none;padding:0;margin:0}

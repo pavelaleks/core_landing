@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/styles.css?v=d2b1904a">
-<link rel="stylesheet" href="../assets/agents.css?v=6b4113fb">
+<link rel="stylesheet" href="../assets/agents.css?v=8bee9bad">
 <link rel="canonical" href="https://coredata.uz/uz/agents.html">
 <link rel="alternate" hreflang="en" href="https://coredata.uz/agents.html">
 <link rel="alternate" hreflang="ru" href="https://coredata.uz/ru/agents.html">
@@ -55,7 +55,7 @@
       <p class="agents-intro" data-ru="Подключение вашего агента к данным CORE и выполнение поручений нашими агентами.">Agentingizni CORE maʼlumotlariga ulash va vazifalarni agentlarimizga topshirish.</p>
       <aside class="agents-demo-note" aria-labelledby="agents-demo-title">
         <h2 id="agents-demo-title" data-ru="Примеры сервисов и демо">Xizmatlar misollari va namoyishlar</h2>
-        <p data-ru="Здесь описаны возможные сценарии работы CORE. Подключение MCP, агенты и серверные сервисы находятся на стадии концепции. Ссылки ведут к существующим данным и демонстрационным материалам.">Bu yerda CORE ning mumkin boʻlgan ish ssenariylari tavsiflangan. MCP orqali ulanish, agentlar va server xizmatlari konsepsiya bosqichida. Havolalar mavjud maʼlumotlar va namoyish materiallariga olib boradi.</p>
+        <p data-ru="Здесь описаны сценарии работы CORE. MCP-сервер CORE уже работает: вузы, учёные, публикации и датасеты. Агенты и серверные сервисы находятся на стадии концепции. Ссылки ведут к существующим данным и демонстрационным материалам.">Bu yerda CORE ish ssenariylari tasvirlangan. CORE MCP serveri allaqachon ishlamoqda: universitetlar, olimlar, nashrlar va maʼlumotlar toʻplamlari. Agentlar va server xizmatlari konsepsiya bosqichida. Havolalar mavjud maʼlumotlar va namoyish materiallariga olib boradi.</p>
       </aside>
       <div class="agents-routes">
         <section class="agents-route" aria-labelledby="connect-agent-title">
@@ -90,7 +90,7 @@
             <div><dt data-ru="Задача">Vazifa</dt><dd data-ru="Определить вуз по названию с учётом языка и вариантов написания.">Til va yozilish variantlarini hisobga olib, universitetni nomi boʻyicha aniqlash.</dd></div>
             <div><dt data-ru="Подключение">Ulanish</dt><dd data-ru="MCP. Агент передаёт название, страну, город или внешний ID.">MCP. Agent nom, mamlakat, shahar yoki tashqi ID ni yuboradi.</dd></div>
             <div><dt data-ru="Результат">Natija</dt><dd data-ru="Кандидаты, постоянные ID CORE, сведения об организациях и источники.">Mos nomzodlar, doimiy CORE ID lari, tashkilotlar haqidagi maʼlumotlar va manbalar.</dd></div>
-            <div class="agents-status-field"><dt data-ru="Готовность">Tayyorlik</dt><dd><span class="agents-status" data-ru="MCP — концепция">MCP — konsepsiya</span><p data-ru="Есть справочник с постоянными ID и публичный JSON API.">Doimiy ID lar bilan maʼlumotnoma va ochiq JSON API mavjud.</p><a class="agents-foundation-link" href="datasets/universities.html" data-ru="Открыть справочник →">Maʼlumotnomani ochish →</a></dd></div>
+            <div class="agents-status-field"><dt data-ru="Готовность">Tayyorlik</dt><dd><span class="agents-status is-live" data-ru="MCP — работает">MCP — ishlamoqda</span><p data-ru="Инструменты search_universities и get_university: поиск по любому названию или аббревиатуре (СамГУ, НУУз, КазНУ) и полный профиль вуза.">search_universities va get_university vositalari: istalgan nom yoki qisqartma boʻyicha qidiruv (SamDU, OʻzMU, KazNU) va universitetning toʻliq profili.</p><a class="agents-foundation-link" href="datasets/universities.html" data-ru="Открыть справочник →">Maʼlumotnomani ochish →</a></dd></div>
           </dl>
         </article>
         <article class="agents-service" aria-labelledby="research-tool-title">
@@ -99,7 +99,7 @@
             <div><dt data-ru="Задача">Vazifa</dt><dd data-ru="Найти работы и датасеты по теме, проследить связи с вузами и источниками.">Mavzu boʻyicha ilmiy ishlar va toʻplamlarni topish, universitetlar va manbalar bilan bogʻlanishlarni kuzatish.</dd></div>
             <div><dt data-ru="Подключение">Ulanish</dt><dd data-ru="MCP. Агент передаёт тему, фильтры или ID исходного объекта.">MCP. Agent mavzu, filtrlar yoki boshlangʻich obyekt ID sini yuboradi.</dd></div>
             <div><dt data-ru="Результат">Natija</dt><dd data-ru="Объекты, типы связей и их основания. Вычисленное сходство отмечается явно.">Obyektlar, bogʻlanish turlari va ularning asoslari. Hisoblangan oʻxshashlik alohida koʻrsatiladi.</dd></div>
-            <div class="agents-status-field"><dt data-ru="Готовность">Tayyorlik</dt><dd><span class="agents-status" data-ru="MCP — концепция">MCP — konsepsiya</span><p data-ru="Есть граф вузов, направлений, соавторства и наборов. Семантический поиск предложен.">Universitetlar, yoʻnalishlar, hammualliflik va toʻplamlar grafigi mavjud. Semantik qidiruv taklif etilgan.</p><a class="agents-foundation-link" href="developers.html#science-map" data-ru="Посмотреть существующие связи →">Mavjud bogʻlanishlarni koʻrish →</a></dd></div>
+            <div class="agents-status-field"><dt data-ru="Готовность">Tayyorlik</dt><dd><span class="agents-status is-live" data-ru="MCP — работает">MCP — ishlamoqda</span><p data-ru="Инструменты search_researchers, get_researcher и search_works: учёные, работы и соавторы из OpenAlex, краткие пересказы статей из Semantic Scholar.">search_researchers, get_researcher va search_works vositalari: OpenAlex’dan olimlar, ishlar va hammualliflar, Semantic Scholar’dan maqolalarning qisqacha mazmuni.</p><a class="agents-foundation-link" href="developers.html#science-map" data-ru="Посмотреть существующие связи →">Mavjud bogʻlanishlarni koʻrish →</a></dd></div>
           </dl>
         </article>
         <article class="agents-service" aria-labelledby="dataset-tool-title">
@@ -108,7 +108,7 @@
             <div><dt data-ru="Задача">Vazifa</dt><dd data-ru="Проверить состав набора и пригодность для задачи перед обработкой.">Ishlov berishdan oldin toʻplam tarkibi va vazifaga mosligini tekshirish.</dd></div>
             <div><dt data-ru="Подключение">Ulanish</dt><dd data-ru="MCP. Агент передаёт ID набора и запрашивает описание, поля или образец.">MCP. Agent toʻplam ID sini yuborib, tavsif, maydonlar yoki namunani soʻraydi.</dd></div>
             <div><dt data-ru="Результат">Natija</dt><dd data-ru="Схема, словарь переменных, образец записей, сведения о качестве и лицензии.">Sxema, oʻzgaruvchilar lugʻati, yozuvlar namunasi, sifat va litsenziya haqida maʼlumot.</dd></div>
-            <div class="agents-status-field"><dt data-ru="Готовность">Tayyorlik</dt><dd><span class="agents-status" data-ru="MCP — концепция">MCP — konsepsiya</span><p data-ru="Есть статический API трёх подготовленных наборов. JSON доступен без проверки ключа.">Uchta tayyorlangan toʻplam uchun statik API mavjud. JSON kalit tekshiruvisiz ochiq.</p><a class="agents-foundation-link" href="../app/api/v1/openapi.json" data-ru="Открыть описание API →">API tavsifini ochish →</a></dd></div>
+            <div class="agents-status-field"><dt data-ru="Готовность">Tayyorlik</dt><dd><span class="agents-status is-live" data-ru="MCP — работает">MCP — ishlamoqda</span><p data-ru="Инструменты search_datasets и get_dataset: описание, лицензия, поля и образец записей для наборов каталога CORE.">search_datasets va get_dataset vositalari: CORE katalogidagi toʻplamlar uchun tavsif, litsenziya, maydonlar va yozuvlar namunasi.</p><a class="agents-foundation-link" href="../app/api/v1/openapi.json" data-ru="Открыть описание API →">API tavsifini ochish →</a></dd></div>
           </dl>
         </article>
       </div>
@@ -207,7 +207,7 @@
     <section class="agents-section" id="connections" aria-labelledby="agents-connections-title">
       <div class="agents-section-heading"><div><h2 id="agents-connections-title" data-ru="Способы подключения">Ulanish usullari</h2><p data-ru="Интерфейс выбирается под операцию и возможности программы заказчика.">Interfeys amal va buyurtmachi dasturining imkoniyatlariga qarab tanlanadi.</p></div></div>
       <div class="agents-interfaces">
-        <div id="mcp-connect"><h3>MCP</h3><p data-ru="Публичный сервер CORE: вузы, учёные, публикации и датасеты. Транспорт Streamable HTTP, ключ не нужен.">Публичный сервер CORE: вузы, учёные, публикации и датасеты. Транспорт Streamable HTTP, ключ не нужен.</p><p style="overflow-wrap:anywhere"><code>https://jjwzntypllcumagzbdcn.supabase.co/functions/v1/core-mcp</code></p><p data-ru="Claude Code:">Claude Code:</p><p style="overflow-wrap:anywhere"><code>claude mcp add --transport http core https://jjwzntypllcumagzbdcn.supabase.co/functions/v1/core-mcp</code></p><p data-ru="Claude Desktop и claude.ai: Settings → Connectors → Add custom connector, тот же URL. Другие клиенты подключают этот URL как MCP-сервер.">Claude Desktop и claude.ai: Settings → Connectors → Add custom connector, тот же URL. Другие клиенты подключают этот URL как MCP-сервер.</p></div>
+        <div id="mcp-connect"><h3>MCP</h3><p data-ru="Публичный сервер CORE: вузы, учёные, публикации и датасеты. Транспорт Streamable HTTP, ключ не нужен.">CORE ochiq serveri: universitetlar, olimlar, nashrlar va maʼlumotlar toʻplamlari. Streamable HTTP transporti, kalit kerak emas.</p><p style="overflow-wrap:anywhere"><code>https://jjwzntypllcumagzbdcn.supabase.co/functions/v1/core-mcp</code></p><p data-ru="Claude Code:">Claude Code:</p><p style="overflow-wrap:anywhere"><code>claude mcp add --transport http core https://jjwzntypllcumagzbdcn.supabase.co/functions/v1/core-mcp</code></p><p data-ru="Claude Desktop и claude.ai: Settings → Connectors → Add custom connector, тот же URL. Другие клиенты подключают этот URL как MCP-сервер.">Claude Desktop va claude.ai: Settings → Connectors → Add custom connector, oʻsha URL. Boshqa mijozlar bu URL’ni MCP server sifatida ulaydi.</p></div>
         <div><h3>HTTP API</h3><p data-ru="Прямые запросы и клиентские библиотеки. Сейчас есть статический JSON API и описание OpenAPI.">Bevosita soʻrovlar va mijoz kutubxonalari. Hozir statik JSON API va OpenAPI tavsifi mavjud.</p></div>
         <div><h3>A2A</h3><p data-ru="Передача поручений агентам CORE и обмен статусами. Предлагаемый интерфейс.">CORE agentlariga vazifalarni topshirish va holatlarni almashish. Taklif etilayotgan interfeys.</p></div>
         <div><h3 data-ru="Вебхуки">Vebhuklar</h3><p data-ru="Доставка событий о новых версиях данных. Предлагаемый интерфейс.">Maʼlumotlarning yangi versiyalari haqidagi hodisalarni yetkazish. Taklif etilayotgan interfeys.</p></div>
@@ -240,7 +240,7 @@
   </div>
 </footer>
 <script src="../assets/config.js?v=7f1b7375"></script>
-<script src="../assets/i18n-uz.js?v=31943ee7"></script>
+<script src="../assets/i18n-uz.js?v=7ab7cb48"></script>
 <script src="../assets/account-store.js?v=ed01f208"></script>
 <script src="../assets/app.js?v=d16fb773"></script>
 <script src="../assets/vendor/supabase-2.119.2.js?v=7d52b31d"></script>

@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css?v=d2b1904a">
-<link rel="stylesheet" href="assets/agents.css?v=6b4113fb">
+<link rel="stylesheet" href="assets/agents.css?v=8bee9bad">
 <link rel="canonical" href="https://coredata.uz/agents.html">
 <link rel="alternate" hreflang="en" href="https://coredata.uz/agents.html">
 <link rel="alternate" hreflang="ru" href="https://coredata.uz/ru/agents.html">
@@ -55,7 +55,7 @@
       <p class="agents-intro" data-ru="Подключение вашего агента к данным CORE и выполнение поручений нашими агентами.">Connecting your agent to CORE data and delegating tasks to our agents.</p>
       <aside class="agents-demo-note" aria-labelledby="agents-demo-title">
         <h2 id="agents-demo-title" data-ru="Примеры сервисов и демо">Service examples and demos</h2>
-        <p data-ru="Здесь описаны возможные сценарии работы CORE. Подключение MCP, агенты и серверные сервисы находятся на стадии концепции. Ссылки ведут к существующим данным и демонстрационным материалам.">This page describes possible CORE workflows. MCP access, agents and server-side services are at the concept stage. Links lead to existing data and demonstration materials.</p>
+        <p data-ru="Здесь описаны сценарии работы CORE. MCP-сервер CORE уже работает: вузы, учёные, публикации и датасеты. Агенты и серверные сервисы находятся на стадии концепции. Ссылки ведут к существующим данным и демонстрационным материалам.">This page describes CORE workflows. The CORE MCP server is live: universities, researchers, publications and datasets. Agents and server-side services are at the concept stage. Links lead to existing data and demonstration materials.</p>
       </aside>
       <div class="agents-routes">
         <section class="agents-route" aria-labelledby="connect-agent-title">
@@ -90,7 +90,7 @@
             <div><dt data-ru="Задача">Task</dt><dd data-ru="Определить вуз по названию с учётом языка и вариантов написания.">Identify a university by name, accounting for language and spelling variants.</dd></div>
             <div><dt data-ru="Подключение">Connection</dt><dd data-ru="MCP. Агент передаёт название, страну, город или внешний ID.">MCP. The agent provides a name, country, city or external ID.</dd></div>
             <div><dt data-ru="Результат">Output</dt><dd data-ru="Кандидаты, постоянные ID CORE, сведения об организациях и источники.">Candidates, persistent CORE IDs, organization details and sources.</dd></div>
-            <div class="agents-status-field"><dt data-ru="Готовность">Readiness</dt><dd><span class="agents-status" data-ru="MCP — концепция">MCP — concept</span><p data-ru="Есть справочник с постоянными ID и публичный JSON API.">A directory with persistent IDs and a public JSON API is available.</p><a class="agents-foundation-link" href="datasets/universities.html" data-ru="Открыть справочник →">Open the directory →</a></dd></div>
+            <div class="agents-status-field"><dt data-ru="Готовность">Readiness</dt><dd><span class="agents-status is-live" data-ru="MCP — работает">MCP — live</span><p data-ru="Инструменты search_universities и get_university: поиск по любому названию или аббревиатуре (СамГУ, НУУз, КазНУ) и полный профиль вуза.">Tools search_universities and get_university: search by any name or abbreviation (SamDU, NUUz, KazNU) and a full university profile.</p><a class="agents-foundation-link" href="datasets/universities.html" data-ru="Открыть справочник →">Open the directory →</a></dd></div>
           </dl>
         </article>
         <article class="agents-service" aria-labelledby="research-tool-title">
@@ -99,7 +99,7 @@
             <div><dt data-ru="Задача">Task</dt><dd data-ru="Найти работы и датасеты по теме, проследить связи с вузами и источниками.">Find papers and datasets by topic and trace their relationships to universities and sources.</dd></div>
             <div><dt data-ru="Подключение">Connection</dt><dd data-ru="MCP. Агент передаёт тему, фильтры или ID исходного объекта.">MCP. The agent provides a topic, filters or the ID of a starting object.</dd></div>
             <div><dt data-ru="Результат">Output</dt><dd data-ru="Объекты, типы связей и их основания. Вычисленное сходство отмечается явно.">Objects, relationship types and supporting evidence. Computed similarity is explicitly labeled.</dd></div>
-            <div class="agents-status-field"><dt data-ru="Готовность">Readiness</dt><dd><span class="agents-status" data-ru="MCP — концепция">MCP — concept</span><p data-ru="Есть граф вузов, направлений, соавторства и наборов. Семантический поиск предложен.">A graph of universities, research areas, co-authorship and datasets exists. Semantic search is proposed.</p><a class="agents-foundation-link" href="developers.html#science-map" data-ru="Посмотреть существующие связи →">Explore existing relationships →</a></dd></div>
+            <div class="agents-status-field"><dt data-ru="Готовность">Readiness</dt><dd><span class="agents-status is-live" data-ru="MCP — работает">MCP — live</span><p data-ru="Инструменты search_researchers, get_researcher и search_works: учёные, работы и соавторы из OpenAlex, краткие пересказы статей из Semantic Scholar.">Tools search_researchers, get_researcher and search_works: researchers, works and co-authors from OpenAlex, short paper summaries from Semantic Scholar.</p><a class="agents-foundation-link" href="developers.html#science-map" data-ru="Посмотреть существующие связи →">Explore existing relationships →</a></dd></div>
           </dl>
         </article>
         <article class="agents-service" aria-labelledby="dataset-tool-title">
@@ -108,7 +108,7 @@
             <div><dt data-ru="Задача">Task</dt><dd data-ru="Проверить состав набора и пригодность для задачи перед обработкой.">Inspect a dataset and assess its suitability before processing.</dd></div>
             <div><dt data-ru="Подключение">Connection</dt><dd data-ru="MCP. Агент передаёт ID набора и запрашивает описание, поля или образец.">MCP. The agent provides a dataset ID and requests its description, fields or a sample.</dd></div>
             <div><dt data-ru="Результат">Output</dt><dd data-ru="Схема, словарь переменных, образец записей, сведения о качестве и лицензии.">Schema, variable dictionary, sample records, quality information and license.</dd></div>
-            <div class="agents-status-field"><dt data-ru="Готовность">Readiness</dt><dd><span class="agents-status" data-ru="MCP — концепция">MCP — concept</span><p data-ru="Есть статический API трёх подготовленных наборов. JSON доступен без проверки ключа.">A static API covers three prepared datasets. JSON is accessible without key verification.</p><a class="agents-foundation-link" href="app/api/v1/openapi.json" data-ru="Открыть описание API →">Open the API description →</a></dd></div>
+            <div class="agents-status-field"><dt data-ru="Готовность">Readiness</dt><dd><span class="agents-status is-live" data-ru="MCP — работает">MCP — live</span><p data-ru="Инструменты search_datasets и get_dataset: описание, лицензия, поля и образец записей для наборов каталога CORE.">Tools search_datasets and get_dataset: description, license, fields and sample records for CORE catalog datasets.</p><a class="agents-foundation-link" href="app/api/v1/openapi.json" data-ru="Открыть описание API →">Open the API description →</a></dd></div>
           </dl>
         </article>
       </div>
@@ -240,7 +240,7 @@
   </div>
 </footer>
 <script src="assets/config.js?v=7f1b7375"></script>
-<script src="assets/i18n-uz.js?v=31943ee7"></script>
+<script src="assets/i18n-uz.js?v=7ab7cb48"></script>
 <script src="assets/account-store.js?v=ed01f208"></script>
 <script src="assets/app.js?v=d16fb773"></script>
 <script src="assets/vendor/supabase-2.119.2.js?v=7d52b31d"></script>
