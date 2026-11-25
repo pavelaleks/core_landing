@@ -151,6 +151,10 @@
       a.href = window.CORE_ACCOUNT.cabinetUrl(user ? accountHash : "#register");
       a.textContent = !user ? T("Register", "Зарегистрироваться") : T("My account", "Личный кабинет");
     });
+    $$("[data-participation-link]").forEach(function (a) {
+      a.href = user ? window.CORE_ACCOUNT.cabinetUrl("#account") : "#participate";
+      a.textContent = user ? T("My account", "Личный кабинет") : T("Join CORE", "Подключиться");
+    });
   }
   refreshAccountLinks();
   window.addEventListener("storage", refreshAccountLinks);

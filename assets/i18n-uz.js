@@ -1,6 +1,6 @@
 /* Uzbek (Latin) translations, keyed by the Russian source string. Missing keys fall back to Russian. */
 window.CORE_UZ = {
-"Хочу участвовать": "Ishtirok etmoqchiman",
+"Подключение к CORE": "CORE ga qoʻshilish",
 "Загружаем данные…": "Maʼlumotlar yuklanmoqda…",
 "строк": "qator",
 "Каталог": "Katalog",
@@ -301,7 +301,7 @@ window.CORE_UZ = {
 "Платформа, API, инфраструктура": "Platforma, API, infratuzilma",
 "Launch Lab 21 (School 21) · Самарканд и Ташкент": "Launch Lab 21 (School 21) · Samarqand va Toshkent",
 "Запросить презентацию для инвесторов": "Investorlar uchun taqdimotni soʻrash",
-"Частые вопросы": "Koʻp beriladigan savollar",
+"Часто задаваемые вопросы": "Koʻp beriladigan savollar",
 "Почему поставщики — только университеты, а не отдельные учёные?": "Nega yetkazib beruvchilar alohida olimlar emas, faqat universitetlar?",
 "Права на данные, созданные в рамках служебных обязанностей, как правило, принадлежат вузу, а исследования с участием людей требуют одобрения этического комитета. Работа через уполномоченных сотрудников вуза даёт покупателю чистую цепочку прав, а учёным — защиту и долю дохода. Исследователи участвуют через кабинет своего вуза.": "Xizmat vazifalari doirasida yaratilgan maʼlumotlarga huquqlar, odatda, universitetga tegishli, odamlar ishtirokidagi tadqiqotlar esa etika qoʻmitasi roziligini talab qiladi. Universitetning vakolatli xodimlari orqali ishlash xaridorga toza huquqlar zanjirini, olimlarga esa himoya va daromad ulushini beradi. Tadqiqotchilar oʻz universiteti kabineti orqali ishtirok etadi.",
 "Чем вы отличаетесь от Hugging Face или открытых порталов?": "Hugging Face yoki ochiq portallardan nimangiz bilan farq qilasiz?",

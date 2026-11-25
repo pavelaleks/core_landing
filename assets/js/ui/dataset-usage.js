@@ -16,6 +16,8 @@ export function renderDatasetUsage(rows, lang = "ru", compact = false) {
   const tr = (en, ru, uz) => lang === "en" ? en : lang === "uz" ? uz : ru;
   const local = value => value?.[lang] || value?.ru || value?.en || "";
   const groups = groupUsage(rows);
+  const title = tr("Examples of use", "Примеры применения", "Qoʻllash misollari");
+  const demoLabel = groups.some(group => group.isDemo) ? ' · ' + tr("including demos", "включая демо", "namoyishlar ham bor") : '';
   const type = {
     research: tr("Research", "Исследование", "Tadqiqot"), digest: tr("Digest", "Дайджест", "Sharh"),
     catalog: tr("Catalog", "Каталог", "Katalog"), analytics: tr("Analytics", "Аналитика", "Tahlil"),
@@ -37,7 +39,6 @@ export function renderDatasetUsage(rows, lang = "ru", compact = false) {
       results.map(result => '<a class="small" href="' + esc(result) + '" target="_blank" rel="noopener">' + tr("Result", "Результат", "Natija") + '</a>').join(" ") + '</li>';
   }).join("");
   const detail = groups.length ? '<ul class="usage-list">' + body + '</ul>' : empty;
-  if (!compact) return groups.length ? '<details class="sheet-section dataset-usage"><summary>' + tr("Where the data is used", "Где используется", "Qayerda ishlatiladi") + '</summary><div class="sheet-body">' + detail + '</div></details>' : "";
-  return '<details class="usage-compact"><summary>' + tr("Who uses the data", "Кто использует данные", "Maʼlumotlardan kim foydalanadi") + ': ' + groups.length +
-    (groups.length ? ' · ' + groups.slice(0, 2).map(group => esc(local(group.consumer.name))).join(", ") : '') + '</summary>' + detail + '</details>';
+  if (!compact) return groups.length ? '<details class="sheet-section dataset-usage"><summary>' + title + demoLabel + '</summary><div class="sheet-body">' + detail + '</div></details>' : "";
+  return '<details class="usage-compact"><summary>' + title + ' · ' + groups.length + demoLabel + '</summary>' + detail + '</details>';
 }

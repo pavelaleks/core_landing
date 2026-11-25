@@ -124,7 +124,9 @@ def usage_html(dataset_id, lang):
     for row in SNAPSHOT["usage"]:
         if row["dataset_id"] == dataset_id and row.get("consumer"):
             groups.setdefault(row["consumer_id"], []).append(row)
-    title = tr(lang, "Where the data is used", "Где используется", "Qayerda ishlatiladi")
+    title = tr(lang, "Examples of use", "Примеры применения", "Qoʻllash misollari")
+    if any(row["is_demo"] or row["consumer"]["is_demo"] for rows in groups.values() for row in rows):
+        title += " · " + tr(lang, "including demos", "включая демо", "namoyishlar ham bor")
     body = ""
     for rows in groups.values():
         consumer = rows[0]["consumer"]

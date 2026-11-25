@@ -1,6 +1,7 @@
 import { listOwnDatasets, getDataset, saveDataset, setPublicationStatus, datasetFields, fetchDatasetUsage, safeLink } from "../api/datasets.js";
 import { databaseMessage } from "../api/query.js";
 import { organizationName, organizationUrl } from "../api/organizations.js";
+import { getProfile } from "../api/profiles.js";
 import { renderDatasetUsage } from "../ui/dataset-usage.js";
 import { datasetSheet, sheetFacts, sheetMeta, sheetSection, wireSheetActions } from "../ui/dataset-sheet.js";
 import { preparedApiExample, preparedData, preparedPassport } from "../ui/prepared-dataset.js";
@@ -165,6 +166,7 @@ export function createDatasetRecords({ view, store, go, getProfileState, languag
         event.preventDefault();
         if (form.getAttribute("aria-busy") === "true" || !form.reportValidity()) return;
         const publish = event.submitter?.value === "publish";
+        let editorHash = location.hash;
         const buttons = [...form.querySelectorAll('[type="submit"]')].map(button => [button, button.disabled]);
         const message = document.getElementById("datasetMessage");
         buttons.forEach(([button]) => { button.disabled = true; });
@@ -184,14 +186,18 @@ export function createDatasetRecords({ view, store, go, getProfileState, languag
             }
           }
           const saved = await saveDataset(id, fields, store.load().user.id, getProfileState().data.organization_id);
+          if (!form.isConnected || location.hash !== editorHash) return;
           id = saved.id;
           form.dataset.editorId = id;
           savedDraft = !published;
           history.replaceState(null, "", location.pathname + location.search + "#datasets/edit/" + encodeURIComponent(id));
+          editorHash = location.hash;
           if (publish) await setPublicationStatus(id, "published", store.load().user.id);
+          if (!form.isConnected || location.hash !== editorHash) return;
           toast(publish ? tr("Dataset published.", "Карточка опубликована.", "Toʻplam eʼlon qilindi.") : tr("Dataset saved.", "Карточка сохранена.", "Toʻplam saqlandi."));
           go(detailHash(id));
         } catch (error) {
+          if (!form.isConnected || location.hash !== editorHash) return;
           message.textContent = (savedDraft ? tr("Draft saved. ", "Черновик сохранён. ", "Qoralama saqlandi. ") : "") + (error.code ? databaseMessage(error) : error.message);
           if (publish) document.getElementById("datasetPublication").open = true;
         } finally {
@@ -216,12 +222,16 @@ export function createDatasetRecords({ view, store, go, getProfileState, languag
       }
       const userId = store.load().user?.id;
       const owner = Boolean(userId && userId === record.owner_id);
-      const profile = getProfileState().data;
+      let profile = getProfileState().data;
       const published = record.publication_status === "published";
       const canonicalUrl = datasetUrl(record, lang);
       if (published && (!publicView || new URL(canonicalUrl).pathname !== location.pathname)) {
         location.replace(canonicalUrl);
         return;
+      }
+      if (owner && !profile) {
+        profile = await getProfile(userId);
+        if (ticket !== revision) return;
       }
       const selectedLicense = record.license_info;
       const documentUrl = licenseUrl(selectedLicense) || safeLink(record.license_url);
@@ -311,7 +321,7 @@ export function createDatasetRecords({ view, store, go, getProfileState, languag
         usage: '<div id="recordUsage" aria-live="polite"></div>',
       }) +
         (owner ? '<div class="public-dataset-tools"><a class="btn btn-ghost" href="' + esc(editUrl) + '">' + tr("Edit", "Редактировать", "Tahrirlash") + '</a><button type="button" class="btn btn-primary" id="publishDataset"' + (!published && !profile?.is_verified ? ' disabled' : '') + '>' + (published ? tr("Unpublish", "Снять с публикации", "Nashrdan olish") : tr("Publish", "Опубликовать", "Eʼlon qilish")) + '</button></div><p id="publicationMessage" class="auth-message" role="status"></p>' : '') +
-        '<section class="dataset-contact" data-guest-only' + (userId ? ' hidden' : '') + '><details class="quick-contact"><summary class="btn btn-ghost">' + tr("I want to participate", "Хочу участвовать", "Ishtirok etmoqchiman") + '</summary>' + quickContactForm(lang, id) + '</details></section></div>';
+        '<section class="dataset-contact" data-guest-only' + (userId ? ' hidden' : '') + '><details class="quick-contact"><summary class="btn btn-ghost">' + tr("Join CORE", "Подключиться", "Qoʻshilish") + '</summary>' + quickContactForm(lang, id) + '</details></section></div>';
       if (publicView) {
         document.title = local(record.title) + " — CORE";
         const canonical = document.querySelector('link[rel="canonical"]');

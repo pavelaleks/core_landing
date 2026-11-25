@@ -751,11 +751,9 @@ def build():
     registry_date = next(ds["updated"] for ds in CAT if ds["slug"] == "universities")
     ranking_data = rankings.collect(registry, public_data.SNAPSHOT["datasets"], registry_date)
     src_index = open(os.path.join(ROOT, "src", "index.html"), encoding="utf-8").read()
-    start_repeat = re.search(r'<section\b[^>]*\bid="contact"[^>]*>.*?</section>', src_index, re.S).group(0)
-    start_repeat = start_repeat.replace('id="contact"', 'id="contact-end"').replace('id="cooperation"', 'id="cooperation-end"').replace('cooperation-title', 'cooperation-title-end').replace('id="participate"', 'id="participate-end"')
-    src_index = src_index.replace("<!--CORE_START_REPEAT-->", start_repeat)
     with open(os.path.join(ROOT, "src", "join-core.html"), encoding="utf-8") as source:
         join_cta = source.read()
+    src_index = src_index.replace("<!--CORE_START_REPEAT-->", join_cta)
     nav = re.search(r"<!-- ============ NAV ============ -->.*?</header>", src_index, re.S).group(0)
     footer = re.search(r'<footer class="foot">.*?</footer>', src_index, re.S).group(0)
     def up(h):
