@@ -1,0 +1,7 @@
+# Supabase CLI config for the MCP function only (used with `--workdir mcp`).
+# The site's own Supabase setup lives in ../../supabase and is not touched by this folder.
+project_id = "core-mcp"
+
+[functions.core-mcp]
+# Public server: any MCP client connects without a Supabase key.
+verify_jwt = false

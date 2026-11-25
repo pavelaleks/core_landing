@@ -1,0 +1,14 @@
+{
+  "name": "core-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Public MCP server for CORE: universities, researchers, publications and datasets of Central Asia",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node server.mjs",
+    "start:local": "node server.mjs --local-data",
+    "test": "node --test \"test/*.test.mjs\"",
+    "test:live": "CORE_MCP_LIVE=1 node --test \"test/*.test.mjs\""
+  }
+}
