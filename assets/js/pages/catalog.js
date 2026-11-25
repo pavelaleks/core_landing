@@ -2,6 +2,7 @@ import { getAccountStore } from "../api/auth.js";
 import { getCatalog, getUniversityAliases, fetchCatalog, fetchDatasetUsage } from "../api/datasets.js";
 import { createCatalogCard } from "../ui/catalog-card.js";
 import { datasetTopicName } from "../ui/data-labels.js";
+import { isCoreDataset } from "../url.js";
 
 export async function initCatalog({ symbolsUrl }) {
   var previousItems = getCatalog() || [], ALL, root = document.getElementById("cat");
@@ -19,12 +20,16 @@ export async function initCatalog({ symbolsUrl }) {
     return;
   }
   var fieldName = value => datasetTopicName(value, lang);
-  var GROUPS = [["", tr("Everything", "Всё", "Hammasi")], ["core", tr("From CORE", "От CORE", "CORE dan")], ["open", tr("Scholars' open datasets", "Открытые наборы учёных", "Olimlarning ochiq toʻplamlari")]];
+  var GROUPS = [["", tr("Everything", "Всё", "Hammasi")], ["core", tr("Prepared by CORE", "Подготовлено CORE", "CORE tayyorlagan")], ["open", tr("External publications", "Внешние публикации", "Tashqi nashrlar")]];
   var state = { q: "", g: "", c: "", f: "", u: "", sort: "rel", shown: 24 };
   var account = getAccountStore(), currentUser = null, favoriteIds = [];
   var q0 = new URLSearchParams(location.search);
   if (q0.get("q")) state.q = q0.get("q");
   if (q0.get("g")) state.g = q0.get("g");
+  for (const parameter of ["c", "f"]) if (q0.get(parameter)) state[parameter] = q0.get(parameter);
+  if (q0.get("sort") === "new") state.sort = "new";
+  const shown = Number(q0.get("shown"));
+  if (Number.isSafeInteger(shown) && shown >= 24) state.shown = Math.min(shown, Math.max(24, ALL.length));
 
   /* Universities: one entry per organisation, searchable by English, Russian and national names and acronyms */
   var ALT = getUniversityAliases(), UNI = {}, UNIS = [];
@@ -63,7 +68,7 @@ export async function initCatalog({ symbolsUrl }) {
   var usageResource = { ready: false, rows: {} };
   var card = createCatalogCard({ lang, L, tr, esc, nf, fieldName, UNI, state, account, symbolsUrl, usageResource });
   function match(it) {
-    if (state.g === "core" && it.t === "open") return false;
+    if (state.g === "core" && !isCoreDataset(it)) return false;
     if (state.g === "open" && it.t !== "open") return false;
     if (state.c && (it.c || "").indexOf(state.c) < 0) return false;
     if (state.f && it.f !== state.f) return false;
@@ -90,6 +95,7 @@ export async function initCatalog({ symbolsUrl }) {
     ["истор", "histor"], ["tarix", "histor"], ["археолог", "archaeolog"], ["наслед", "heritage"], ["туризм", "touris"], ["город", "urban"], ["транспорт", "transport"], ["энерг", "energ"],
     ["изображен", "image"], ["снимк", "image"], ["спутник", "satellite"], ["модел", "model"], ["нейросет", "neural"], ["машинн", "machine learning"], ["землетряс", "earthquake"], ["геолог", "geolog"]];
   function render() {
+    syncUrl();
     if (account) { currentUser = account.load().user; favoriteIds = account.favoriteIds(); }
     var rows = ALL.filter(match).sort(function (a, b) {
       if (state.sort === "new") return (b.y || 0) - (a.y || 0) || rank[a.t] - rank[b.t];
@@ -105,6 +111,7 @@ export async function initCatalog({ symbolsUrl }) {
       var key = id === "catG" ? "g" : "c";
       Array.prototype.forEach.call(document.querySelectorAll("#" + id + " button"), function (b) { b.classList.toggle("on", b.getAttribute("data-" + key) === state[key]); });
     });
+    window.dispatchEvent(new Event("core:catalog-ready"));
   }
   var tmr;
   document.getElementById("catQ").addEventListener("input", function () { var v = this.value; clearTimeout(tmr); tmr = setTimeout(function () { state.q = v.trim(); state.shown = 24; render(); }, 120); });
@@ -131,7 +138,11 @@ export async function initCatalog({ symbolsUrl }) {
   var uIn = document.getElementById("catU"), uList = document.getElementById("catUL"), uSel = -1, uRows = [];
   function syncUrl() {
     var p = new URLSearchParams(location.search);
-    if (state.u) p.set("u", state.u); else p.delete("u");
+    for (const key of ["q", "g", "c", "f", "u"]) {
+      if (state[key]) p.set(key, state[key]); else p.delete(key);
+    }
+    if (state.sort !== "rel") p.set("sort", state.sort); else p.delete("sort");
+    if (state.shown > 24) p.set("shown", state.shown); else p.delete("shown");
     var qs = p.toString(); history.replaceState(null, "", location.pathname + (qs ? "?" + qs : "") + location.hash);
   }
   /* Cyrillic -> Latin, so "самарканд" finds "Samarkand" when the registry has no Russian name;
@@ -170,6 +181,8 @@ export async function initCatalog({ symbolsUrl }) {
 
   document.getElementById("catF").addEventListener("change", function () { state.f = this.value; state.shown = 24; render(); });
   document.getElementById("catS").addEventListener("change", function () { state.sort = this.value; render(); });
+  document.getElementById("catF").value = state.f;
+  document.getElementById("catS").value = state.sort;
   render();
   async function loadUsage() {
     const message = document.getElementById("usageStatus");

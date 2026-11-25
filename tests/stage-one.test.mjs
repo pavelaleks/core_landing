@@ -28,6 +28,33 @@ test("catalog pagination follows actual rows returned when the server caps the p
   assert.deepEqual(calls, [0, 2, 4]);
 });
 
+test("contact requests retain arbitrary contacts and a lost-response retry creates one row", async () => {
+  const saved = new Map();
+  let failure;
+  const client = { from: table => {
+    assert.equal(table, "contact_requests");
+    return { insert: async row => {
+      if (failure) return { error: failure };
+      if (saved.has(row.id)) return { error: { code: "23505" } };
+      saved.set(row.id, JSON.parse(JSON.stringify(row)));
+      return { error: null };
+    } };
+  } };
+  const api = await moduleAt("assets/js/api/contact-requests.js", { window: { CORE_CONFIG: { supabase: { url: "https://example.test", publishableKey: "sb_publishable_test" } } }, supabase: { createClient: () => client } });
+  const values = { name: " Person ", contact: " @telegram-name ", consent: "on", page_url: "https://example.test/ru/", language: "ru" };
+  await api.sendContactRequest(values, "same-retry-id");
+  await api.sendContactRequest(values, "same-retry-id");
+  assert.equal(saved.size, 1);
+  assert.equal(saved.get("same-retry-id").contact, "@telegram-name");
+  assert.equal(saved.get("same-retry-id").consent, true);
+  await api.sendContactRequest({ ...values, contact: "", email: "person@example.test", form_variant: "detailed", org: "University", type: "university", dataset_id: "dataset-id" }, "detailed-id");
+  assert.equal(saved.get("detailed-id").contact, "person@example.test");
+  assert.equal(saved.get("detailed-id").dataset_id, "dataset-id");
+  assert.equal(saved.get("detailed-id").details.org, "University");
+  failure = { code: "42501" };
+  await assert.rejects(api.sendContactRequest(values, "new-id"), error => error.code === "42501");
+});
+
 test("record labels agree with the count and dataset topics use the page language", async () => {
   const labels = await moduleAt("assets/js/ui/data-labels.js");
   for (const [count, word] of [[1, "запись"], [2, "записи"], [5, "записей"], [11, "записей"], [21, "запись"], [112, "записей"], [2982, "записи"]]) {
@@ -55,6 +82,77 @@ test("dataset edits retain other languages and distinguish unknown counts from z
   assert.equal(fields.token_count, null);
   assert.deepEqual(Array.from(fields.countries), ["UZ", "KZ"]);
   assert.equal(fields.links[0].url, "https://example.org/data");
+});
+
+test("a short draft needs only a title and description and keeps omitted saved details", async () => {
+  const api = await moduleAt("assets/js/api/datasets.js");
+  const minimal = api.datasetFields({ title: "Название", description: "Описание" });
+  assert.equal(minimal.license_id, null);
+  assert.equal(minimal.token_count, null);
+
+  const original = {
+    title: { ru: "Прежнее название", en: "Existing title" }, description: { ru: "Описание", uz: "Tavsif" },
+    category: "Research", countries: ["UZ", "KZ"], languages: ["uz", "ru"], record_count: 0,
+    links: [{ type: "source", title: "Источник", url: "https://example.org/data" }], license_id: "metadata-only",
+    token_count: 125, tokenizer: "example@1", token_method: "calculated", token_material: "text", data_version: "1"
+  };
+  const edited = api.datasetFields({ title: "Новое название", description: "Новое описание" }, "ru", original);
+  assert.equal(edited.title.ru, "Новое название");
+  assert.equal(edited.title.en, "Existing title");
+  assert.equal(edited.description.uz, "Tavsif");
+  for (const key of ["category", "countries", "languages", "record_count", "links", "license_id", "token_count", "tokenizer", "token_method", "token_material", "data_version"]) {
+    assert.deepEqual(JSON.parse(JSON.stringify(edited[key])), original[key], key);
+  }
+
+  const cleared = api.datasetFields({ title: "Название", description: "Описание", category: "", countries: "", languages: "", record_count: "", links: [], license_id: "" }, "ru", original);
+  assert.equal(cleared.category, "");
+  assert.equal(cleared.countries.length, 0);
+  assert.equal(cleared.languages.length, 0);
+  assert.equal(cleared.record_count, null);
+  assert.equal(cleared.links.length, 0);
+  assert.equal(cleared.license_id, null);
+  assert.equal(cleared.token_count, 125);
+});
+
+test("a token count for an earlier data version is cleared when the version changes", async () => {
+  const api = await moduleAt("assets/js/api/datasets.js");
+  const fields = api.datasetFields({ title: "Dataset", description: "Description", data_version: "2" }, "en", {
+    token_count: 0, tokenizer: "example@1", token_method: "calculated", token_material: "text", data_version: "1"
+  });
+  assert.equal(fields.data_version, "2");
+  for (const key of ["token_count", "tokenizer", "token_method", "token_material"]) assert.equal(fields[key], null);
+});
+
+test("a delayed dataset usage response leaves a replaced screen alone", async () => {
+  let finishUsage;
+  const usageResponse = new Promise(resolve => { finishUsage = resolve; });
+  const usageBox = { isConnected: true, innerHTML: "" };
+  const view = { innerHTML: "", querySelectorAll: () => [] };
+  const record = { id: "DS-test", kind: "dataset", title: { ru: "Название" }, description: { ru: "Описание" }, links: [] };
+  const client = { from: () => ({
+    select() { return this; }, eq() { return this; }, order() { return this; },
+    maybeSingle: async () => ({ data: record, error: null }),
+    range: () => usageResponse
+  }) };
+  const page = await moduleAt("assets/js/pages/dataset-records.js", {
+    URLSearchParams, location: { search: "" },
+    window: { CORE_CONFIG: { supabase: { url: "https://example.test", publishableKey: "sb_publishable_test" } } },
+    supabase: { createClient: () => client },
+    document: { getElementById: id => id === "dataset-card-template"
+      ? { innerHTML: "{{title}}{{usage}}" }
+      : usageBox.isConnected ? usageBox : null }
+  });
+  const records = page.createDatasetRecords({
+    view, store: { load: () => ({ user: null }), catalogUrl: () => "catalog.html" },
+    go: () => {}, getProfileState: () => ({ data: null })
+  });
+  await records.vDetails(record.id);
+  usageBox.isConnected = false;
+  view.innerHTML = "Another screen";
+  finishUsage({ data: [], error: null, count: 0 });
+  await new Promise(resolve => setTimeout(resolve, 0));
+  assert.equal(view.innerHTML, "Another screen");
+  assert.equal(usageBox.innerHTML, "");
 });
 
 test("token claims require a method, tokenizer, material and version; executable links are rejected", async () => {

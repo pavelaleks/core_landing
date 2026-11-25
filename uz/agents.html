@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CORE agentlari va xizmatlari</title>
-<meta name="description" content="MCP vositalari, CORE agentlari va boshqa agentlar uchun maʼlumotlar xizmatlari. Toʻqqiz imkoniyatning vazifalari, ulanishi, natijalari va joriy tayyorligi.">
+<meta name="description" content="MCP vositalari, CORE agentlari va maʼlumotlar xizmatlari misollari. Vazifalar, ulanish, natijalar va joriy tayyorlik.">
 <meta property="og:title" content="CORE agentlari va xizmatlari">
-<meta property="og:description" content="MCP vositalari, CORE agentlari va boshqa agentlar uchun maʼlumotlar xizmatlari. Toʻqqiz imkoniyatning vazifalari, ulanishi, natijalari va joriy tayyorligi.">
+<meta property="og:description" content="MCP vositalari, CORE agentlari va maʼlumotlar xizmatlari misollari. Vazifalar, ulanish, natijalar va joriy tayyorlik.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://coredata.uz/uz/agents.html">
 <meta property="og:image" content="https://coredata.uz/assets/og.png">
@@ -18,8 +18,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/styles.css?v=106bca04">
-<link rel="stylesheet" href="../assets/agents.css?v=c7378f76">
+<link rel="stylesheet" href="../assets/styles.css?v=a34b9b32">
+<link rel="stylesheet" href="../assets/agents.css?v=6b4113fb">
 <link rel="canonical" href="https://coredata.uz/uz/agents.html">
 <link rel="alternate" hreflang="en" href="https://coredata.uz/agents.html">
 <link rel="alternate" hreflang="ru" href="https://coredata.uz/ru/agents.html">
@@ -53,6 +53,10 @@
     <section class="agents-hero" aria-labelledby="agents-title">
       <h1 id="agents-title" data-ru="Агенты и сервисы CORE">CORE agentlari va xizmatlari</h1>
       <p class="agents-intro" data-ru="Подключение вашего агента к данным CORE и выполнение поручений нашими агентами.">Agentingizni CORE maʼlumotlariga ulash va vazifalarni agentlarimizga topshirish.</p>
+      <aside class="agents-demo-note" aria-labelledby="agents-demo-title">
+        <h2 id="agents-demo-title" data-ru="Примеры сервисов и демо">Xizmatlar misollari va namoyishlar</h2>
+        <p data-ru="Здесь описаны возможные сценарии работы CORE. Подключение MCP, агенты и серверные сервисы находятся на стадии концепции. Ссылки ведут к существующим данным и демонстрационным материалам.">Bu yerda CORE ning mumkin boʻlgan ish ssenariylari tavsiflangan. MCP orqali ulanish, agentlar va server xizmatlari konsepsiya bosqichida. Havolalar mavjud maʼlumotlar va namoyish materiallariga olib boradi.</p>
+      </aside>
       <div class="agents-routes">
         <section class="agents-route" aria-labelledby="connect-agent-title">
           <h2 id="connect-agent-title" data-ru="Подключить своего агента">Oʻz agentingizni ulang</h2>
@@ -70,7 +74,7 @@
       </div>
       <p class="agents-readiness-note">
         <span class="agents-checked"><span data-ru="Готовность по текущей реализации">Joriy amalga oshirish holatiga koʻra tayyorlik</span> · <time datetime="2026-11-25" data-ru="25 ноября 2026">2026-yil 25-noyabr</time></span>
-        <span data-ru="Девять возможностей находятся на стадии концепции. Для каждой указаны предлагаемый интерфейс и уже подготовленные данные, скрипты или демонстрации.">Toʻqqiz imkoniyat konsepsiya bosqichida. Har biri uchun taklif etilayotgan interfeys hamda tayyor maʼlumotlar, skriptlar yoki namoyishlar koʻrsatilgan.</span>
+        <span data-ru="Для каждой возможности указаны предлагаемый интерфейс и уже подготовленные данные, скрипты или демонстрации.">Har bir imkoniyat uchun taklif etilayotgan interfeys hamda tayyor maʼlumotlar, skriptlar yoki namoyishlar koʻrsatilgan.</span>
       </p>
     </section>
 
@@ -149,9 +153,18 @@
     <section class="agents-section" id="agent-services" aria-labelledby="agent-services-title">
       <div class="agents-section-heading">
         <div><h2 id="agent-services-title" data-ru="Сервисы данных для ваших агентов">Agentlaringiz uchun maʼlumotlar xizmatlari</h2><p data-ru="Ваш агент передаёт конкретную операцию CORE и получает результат для следующего шага.">Agentingiz muayyan amalni CORE ga topshiradi va keyingi qadam uchun natija oladi.</p></div>
-        <span class="agents-protocol">HTTP API</span>
+        <span class="agents-protocol">HTTP API · MCP</span>
       </div>
-      <div class="agents-grid">
+      <div class="agents-grid agents-services-grid">
+        <article class="agents-service" aria-labelledby="research-match-service-title">
+          <h3 id="research-match-service-title" data-ru="Кто исследует похожую проблему">Kim oʻxshash muammoni oʻrganmoqda</h3>
+          <dl class="agents-fields">
+            <div><dt data-ru="Задача">Vazifa</dt><dd data-ru="Найти университеты и исследовательские группы, которые работают над похожей задачей.">Oʻxshash vazifa ustida ishlayotgan universitetlar va tadqiqot guruhlarini topish.</dd></div>
+            <div><dt data-ru="Подключение">Ulanish</dt><dd data-ru="API или MCP. Агент передаёт описание задачи, методы и ограничения поиска.">API yoki MCP. Agent vazifa tavsifi, usullar va qidiruv cheklovlarini yuboradi.</dd></div>
+            <div><dt data-ru="Результат">Natija</dt><dd data-ru="Кандидаты, публикации с датами и ссылками на источники, объяснение сходства и связанные датасеты.">Nomzodlar, sanalari va manba havolalari bilan nashrlar, oʻxshashlik izohi va bogʻliq maʼlumotlar toʻplamlari.</dd></div>
+            <div class="agents-status-field"><dt data-ru="Готовность">Tayyorlik</dt><dd><span class="agents-status" data-ru="Сервис — концепция">Xizmat — konsepsiya</span><p data-ru="Есть связи вузов, публикаций и направлений. Для подбора конкретных исследователей понадобятся авторские ID и аффилиации.">Universitetlar, nashrlar va yoʻnalishlar oʻrtasidagi bogʻlanishlar mavjud. Muayyan tadqiqotchilarni tanlash uchun muallif ID lari va tashkilotlarga mansubligi haqidagi maʼlumotlar kerak boʻladi.</p><a class="agents-foundation-link" href="developers.html#science-map" data-ru="Посмотреть существующие связи →">Mavjud bogʻlanishlarni koʻrish →</a></dd></div>
+          </dl>
+        </article>
         <article class="agents-service" aria-labelledby="corpus-service-title">
           <h3 id="corpus-service-title" data-ru="Индексирование корпусов">Korpuslarni indekslash</h3>
           <dl class="agents-fields">
@@ -222,11 +235,11 @@
   </div>
 </footer>
 <script src="../assets/config.js?v=7f1b7375"></script>
-<script src="../assets/i18n-uz.js?v=f3c316e5"></script>
+<script src="../assets/i18n-uz.js?v=ac52ca3b"></script>
 <script src="../assets/account-store.js?v=ed01f208"></script>
-<script src="../assets/app.js?v=2de13c6a"></script>
+<script src="../assets/app.js?v=b6b5e515"></script>
 <script src="../assets/vendor/supabase-2.119.2.js?v=7d52b31d"></script>
-<script type="importmap" data-core-modules>{"imports":{"../assets/js/api/auth.js":"../assets/js/api/auth.js?v=31ec254a","../assets/js/api/datasets.js":"../assets/js/api/datasets.js?v=e74cc7f8","../assets/js/api/demo-auth.js":"../assets/js/api/demo-auth.js?v=57516109","../assets/js/api/demo-data.js":"../assets/js/api/demo-data.js?v=db364f88","../assets/js/api/licenses.js":"../assets/js/api/licenses.js?v=0f4ae0da","../assets/js/api/organizations.js":"../assets/js/api/organizations.js?v=4b862e11","../assets/js/api/profiles.js":"../assets/js/api/profiles.js?v=dc6967ea","../assets/js/api/query.js":"../assets/js/api/query.js?v=931d47a5","../assets/js/api/sql.js":"../assets/js/api/sql.js?v=a80adb52","../assets/js/api/supabase-client.js":"../assets/js/api/supabase-client.js?v=d52c9625","../assets/js/pages/access.js":"../assets/js/pages/access.js?v=2965045a","../assets/js/pages/account.js":"../assets/js/pages/account.js?v=57739729","../assets/js/pages/auth-account.js":"../assets/js/pages/auth-account.js?v=fe726ca4","../assets/js/pages/cabinet.js":"../assets/js/pages/cabinet.js?v=45f67cd3","../assets/js/pages/catalog.js":"../assets/js/pages/catalog.js?v=7ba3a3cc","../assets/js/pages/dataset-api.js":"../assets/js/pages/dataset-api.js?v=1432d881","../assets/js/pages/dataset-records.js":"../assets/js/pages/dataset-records.js?v=076b1e6a","../assets/js/pages/dataset.js":"../assets/js/pages/dataset.js?v=643803a9","../assets/js/pages/demo-cabinet.js":"../assets/js/pages/demo-cabinet.js?v=0460aadb","../assets/js/pages/legacy-auth.js":"../assets/js/pages/legacy-auth.js?v=563a8a4c","../assets/js/pages/operator.js":"../assets/js/pages/operator.js?v=17a62937","../assets/js/pages/organization.js":"../assets/js/pages/organization.js?v=eca20709","../assets/js/pages/submissions.js":"../assets/js/pages/submissions.js?v=95085eba","../assets/js/ui/catalog-card.js":"../assets/js/ui/catalog-card.js?v=3c51923d","../assets/js/ui/data-labels.js":"../assets/js/ui/data-labels.js?v=4a3d72b5","../assets/js/ui/dataset-sheet.js":"../assets/js/ui/dataset-sheet.js?v=bbc90016","../assets/js/ui/dataset-usage.js":"../assets/js/ui/dataset-usage.js?v=c0e47533","../assets/js/ui/format.js":"../assets/js/ui/format.js?v=55785342","../assets/js/ui/organization-fields.js":"../assets/js/ui/organization-fields.js?v=68e1d853","../assets/js/ui/prepared-dataset.js":"../assets/js/ui/prepared-dataset.js?v=25458e08","../assets/js/ui/submission.js":"../assets/js/ui/submission.js?v=bd0f68b4","../assets/js/url.js":"../assets/js/url.js?v=5b9d8eb4"}}</script>
-<script type="module" src="../assets/account-session.js?v=c13eef23"></script>
+<script type="importmap" data-core-modules>{"imports":{"../assets/js/api/auth.js":"../assets/js/api/auth.js?v=31ec254a","../assets/js/api/contact-requests.js":"../assets/js/api/contact-requests.js?v=0448a104","../assets/js/api/datasets.js":"../assets/js/api/datasets.js?v=6e17b1a4","../assets/js/api/demo-auth.js":"../assets/js/api/demo-auth.js?v=57516109","../assets/js/api/demo-data.js":"../assets/js/api/demo-data.js?v=db364f88","../assets/js/api/licenses.js":"../assets/js/api/licenses.js?v=0f4ae0da","../assets/js/api/organizations.js":"../assets/js/api/organizations.js?v=4b862e11","../assets/js/api/profiles.js":"../assets/js/api/profiles.js?v=dc6967ea","../assets/js/api/query.js":"../assets/js/api/query.js?v=931d47a5","../assets/js/api/sql.js":"../assets/js/api/sql.js?v=a80adb52","../assets/js/api/supabase-client.js":"../assets/js/api/supabase-client.js?v=d52c9625","../assets/js/pages/access.js":"../assets/js/pages/access.js?v=2965045a","../assets/js/pages/account.js":"../assets/js/pages/account.js?v=a3a37056","../assets/js/pages/auth-account.js":"../assets/js/pages/auth-account.js?v=b5af552d","../assets/js/pages/cabinet.js":"../assets/js/pages/cabinet.js?v=69410276","../assets/js/pages/catalog.js":"../assets/js/pages/catalog.js?v=1e9b4118","../assets/js/pages/dataset-api.js":"../assets/js/pages/dataset-api.js?v=1432d881","../assets/js/pages/dataset-records.js":"../assets/js/pages/dataset-records.js?v=e88ffbd4","../assets/js/pages/dataset.js":"../assets/js/pages/dataset.js?v=dc35d1a7","../assets/js/pages/demo-cabinet.js":"../assets/js/pages/demo-cabinet.js?v=0460aadb","../assets/js/pages/legacy-auth.js":"../assets/js/pages/legacy-auth.js?v=563a8a4c","../assets/js/pages/operator.js":"../assets/js/pages/operator.js?v=17a62937","../assets/js/pages/organization.js":"../assets/js/pages/organization.js?v=eca20709","../assets/js/pages/submissions.js":"../assets/js/pages/submissions.js?v=95085eba","../assets/js/ui/catalog-card.js":"../assets/js/ui/catalog-card.js?v=ccaa6b49","../assets/js/ui/contact-form.js":"../assets/js/ui/contact-form.js?v=b3dd3e6f","../assets/js/ui/data-labels.js":"../assets/js/ui/data-labels.js?v=4a3d72b5","../assets/js/ui/dataset-sheet.js":"../assets/js/ui/dataset-sheet.js?v=bbc90016","../assets/js/ui/dataset-usage.js":"../assets/js/ui/dataset-usage.js?v=c0e47533","../assets/js/ui/format.js":"../assets/js/ui/format.js?v=55785342","../assets/js/ui/navigation.js":"../assets/js/ui/navigation.js?v=364bdafb","../assets/js/ui/organization-fields.js":"../assets/js/ui/organization-fields.js?v=68e1d853","../assets/js/ui/prepared-dataset.js":"../assets/js/ui/prepared-dataset.js?v=15da5614","../assets/js/ui/submission.js":"../assets/js/ui/submission.js?v=bd0f68b4","../assets/js/url.js":"../assets/js/url.js?v=56c48f7f"}}</script>
+<script type="module" src="../assets/account-session.js?v=70bd5b20"></script>
 </body>
 </html>

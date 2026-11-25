@@ -30,6 +30,11 @@ def safe_url(value):
     return value if value and urlparse(value).scheme in ("https", "http") else ""
 
 
+def dataset_path(row):
+    pages = {"CORE-DS-0001": "datasets/universities.html", "CORE-DS-0002": "datasets/uz_medical_facilities.html", "CORE-DS-0003": "datasets/ca_publications.html", "regions": "regions.html"}
+    return pages.get(row["id"], "dataset.html?id=" + quote(row["id"], safe=""))
+
+
 def license_path(row):
     path = (row.get("license_info") or {}).get("document_path") or ""
     return path if re.fullmatch(r"documents/[a-z0-9-]+\.html", path) else ""
@@ -108,7 +113,7 @@ def provenance_html(row, lang):
     if not organization_id:
         return ""
     name = organization.get("name_" + lang) or organization.get("name") or organization_id
-    label = tr(lang, "Source", "Источник", "Manba") if row["kind"] in ("open", "prep") else tr(lang, "Organization", "Организация", "Tashkilot")
+    label = tr(lang, "Organization", "Организация", "Tashkilot")
     link = '<a href="../organization.html?id=%s">%s</a>' % (quote(organization_id, safe=""), esc(name))
     prepared = '<span>%s <a href="../organization.html?id=ORG-CORE">CORE</a></span>' % tr(lang, "Prepared by", "Подготовлено", "Tayyorlagan") if row["kind"] == "prep" else ""
     return '<div class="dataset-provenance"><span>%s · %s</span>%s</div>' % (label, link, prepared)
@@ -159,7 +164,7 @@ def record_html(row, lang, before_relink=False):
     file = next((link["url"] for link in links if link.get("type") == "data"), "")
     source = safe_url(row.get("source_url")) or next((link["url"] for link in links if link.get("type") == "source"), "")
     target = file or source or "#sheet-access"
-    action = l("Open data files", "Открыть файлы", "Fayllarni ochish") if file else l("Open source page", "Страница источника", "Manba sahifasi") if source else l("Access and terms", "Доступ и условия", "Kirish va shartlar")
+    action = l("Open data files", "Открыть файлы", "Fayllarni ochish") if file else l("Open source", "Открыть источник", "Manbani ochish") if source else l("Access and terms", "Доступ и условия", "Kirish va shartlar")
     token = row.get("token_count")
     token_label = l("Token count", "Количество токенов", "Tokenlar soni")
     data = link_list(link for link in links if link.get("type") == "example")
@@ -171,8 +176,7 @@ def record_html(row, lang, before_relink=False):
     countries = ", ".join(row.get("countries") or [])
     passport = dataset_card.metadata([(l("Topic", "Тематика", "Mavzu"), row.get("category")), (l("Countries", "Страны данных", "Mamlakatlar"), countries),
         (l("Data languages", "Языки данных", "Maʼlumotlar tillari"), ", ".join(row.get("languages") or [])), (l("Version", "Версия", "Versiya"), row.get("data_version")),
-        (l("Formats", "Форматы", "Formatlar"), row.get("formats")), (l("Publication year", "Год публикации", "Nashr yili"), row.get("publication_year")),
-        (token_label, l("No data", "Нет данных", "Maʼlumot yoʻq") if token is None else None)])
+        (l("Formats", "Форматы", "Formatlar"), row.get("formats")), (l("Publication year", "Год публикации", "Nashr yili"), row.get("publication_year"))])
     passport += link_list(link for link in links if link.get("type") not in ("example", "data", "license", "terms"))
     if source and not any(link["url"] == source for link in links):
         passport += '<p><a href="%s">%s</a></p>' % (esc(source), l("Source page", "Страница источника", "Manba sahifasi"))
@@ -193,14 +197,11 @@ def record_html(row, lang, before_relink=False):
 def new_dataset_page(row, nav, footer, base_url):
     if not re.fullmatch(r"[A-Za-z0-9_-]+", row["id"]):
         raise ValueError("Invalid public dataset ID")
-    schema = {"@context": "https://schema.org", "@type": "Dataset", "identifier": row["id"], "name": local(row["title"], "en"),
-              "description": local(row["description"], "en"), "dateModified": row["updated_at"], "url": base_url + "datasets/" + row["id"] + ".html"}
-    if license_path(row):
-        schema["license"] = base_url + license_path(row)
-    elif safe_url(row["license_url"]):
-        schema["license"] = row["license_url"]
-    encoded = json.dumps(schema, ensure_ascii=False).replace("<", "\\u003c")
-    return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>%s — CORE</title><link rel="stylesheet" href="../assets/styles.css"><link rel="stylesheet" href="../assets/dataset-card.css"><script type="application/ld+json">%s</script></head><body data-page="dataset">%s<main><section class="sec sec-first ds-page"><div class="wrap"><div class="sheet-wrap"><!--CORE_RECORD:%s--></div></div></section></main>%s<script src="../assets/config.js"></script><script src="../assets/account-store.js"></script><script src="../assets/vendor/supabase-2.119.2.js"></script><script src="../assets/app.js"></script><script type="module" src="../assets/account-session.js"></script></body></html>' % (esc(local(row["title"], "en")), encoded, nav, row["id"], footer)
+    # Only the ID is built into this shell. Content and visibility are read live.
+    page = Path(ROOT, "src", "dataset.html").read_text(encoding="utf-8")
+    page = page.replace('id="publicDataset"', 'id="publicDataset" data-dataset-id="' + esc(row["id"]) + '"')
+    page = re.sub(r'(src|href)="assets/', r'\1="../assets/', page)
+    return page.replace("<!--CORE_SITE_NAV-->", nav).replace("<!--CORE_SITE_FOOTER-->", footer)
 
 
 def inject(text, lang):

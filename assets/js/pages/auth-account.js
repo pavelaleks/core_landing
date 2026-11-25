@@ -2,6 +2,7 @@ import { authErrorMessage } from "../api/auth.js";
 import { esc } from "../ui/format.js";
 import { createProfile, ORGANIZATION_ROLES } from "../api/profiles.js";
 import { organizationName, organizationUrl } from "../api/organizations.js";
+import { quickContactForm, bindContactForms } from "../ui/contact-form.js";
 import { databaseMessage } from "../api/query.js";
 import { organizationFields, bindOrganizationFields } from "../ui/organization-fields.js";
 
@@ -30,16 +31,19 @@ export function createAuthAccountPages({ store, auth, view, go, onLogin, getProf
   }
 
   function vLogin(register) {
+    const continuation = /\/favorite\/[^/]+$/.exec(location.hash)?.[0] || "";
     view.innerHTML = '<div class="auth-layout"><div class="auth-intro"><span class="kicker">Личный кабинет CORE</span><h1>' +
       (register ? "Создайте аккаунт CORE" : "С возвращением") + '</h1><p class="lead">' +
       (register ? "Выберите университет или укажите компанию. После подтверждения CORE вы сможете публиковать датасеты." : "Войдите в личный кабинет с вашим email и паролем.") + '</p></div>' +
-      '<div class="card auth-card"><div class="auth-tabs"><a href="#login"' + (!register ? ' aria-current="page"' : "") + '>Вход</a><a href="#register"' + (register ? ' aria-current="page"' : "") + '>Регистрация</a></div>' +
+      '<div class="card auth-card"><div class="auth-tabs"><a href="#login' + continuation + '"' + (!register ? ' aria-current="page"' : "") + '>Вход</a><a href="#register' + continuation + '"' + (register ? ' aria-current="page"' : "") + '>Регистрация</a></div>' +
       '<form id="accountForm"><label class="f"><span>Email</span><input name="email" type="email" autocomplete="email" autocapitalize="none" spellcheck="false" required maxlength="254" value="' + esc(email) + '"></label>' +
       password("Пароль", register ? "new-password" : "current-password", register ? "accountPasswordHint" : "") +
       (register ? '<p id="accountPasswordHint" class="auth-hint">Не менее 6 символов.</p>' +
         '<label class="f"><span>Ваше имя <span class="field-optional">Необязательно</span></span><input name="name" autocomplete="name" maxlength="120"></label>' +
         organizationFields() + '<p class="account-verification-note">Аккаунт ожидает подтверждения CORE. До подтверждения можно готовить черновики; после — публиковать от имени организации.</p>' : "") +
-      '<button class="btn btn-primary btn-block" type="submit">' + (register ? "Зарегистрироваться" : "Войти") + '</button>' + status + '</form></div></div>';
+      '<button class="btn btn-primary btn-block" type="submit">' + (register ? "Зарегистрироваться" : "Войти") + '</button>' + status + '</form></div></div>' +
+      (register ? '<details class="quick-contact card participation-form"><summary>Просто рассказать о себе</summary>' + quickContactForm("ru") + '</details>' : '');
+    bindContactForms(view, "ru");
     if (!register) view.querySelector(".auth-card").insertAdjacentHTML("beforeend", '<a class="mvp-link auth-forgot" href="#reset-password">Забыли пароль?</a>');
     const organizationInput = register ? bindOrganizationFields(document.getElementById("accountForm")) : null;
     if (store.auth.notice) { message(store.auth.notice); store.auth.notice = null; }
