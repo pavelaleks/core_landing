@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CORE for universities — put your data to work</title>
-<meta name="description" content="How Central Asian universities license their research data through CORE: closed by default, rights audit, revenue share, no cost to the university.">
-<meta property="og:title" content="CORE for universities">
-<meta property="og:description" content="How Central Asian universities license their research data through CORE: closed by default, rights audit, revenue share, no cost to the university.">
+<title>CORE — university guide</title>
+<meta name="description" content="How a university can get started with CORE, describe its research data, choose a license and publish a dataset description.">
+<meta property="og:title" content="CORE — university guide">
+<meta property="og:description" content="How a university can get started with CORE, describe its research data, choose a license and publish a dataset description.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://coredata.uz/universities.html">
 <meta property="og:image" content="https://coredata.uz/assets/og.png">
@@ -19,14 +19,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles.css?v=106bca04">
+<link rel="stylesheet" href="assets/styles.css?v=a34b9b32">
 <link rel="canonical" href="https://coredata.uz/universities.html">
 <link rel="alternate" hreflang="en" href="https://coredata.uz/universities.html">
 <link rel="alternate" hreflang="ru" href="https://coredata.uz/ru/universities.html">
 <link rel="alternate" hreflang="uz" href="https://coredata.uz/uz/universities.html">
 <link rel="alternate" hreflang="x-default" href="https://coredata.uz/universities.html">
 </head>
-<body data-page="universities" data-form-default="university">
+<body data-page="university-guide" data-form-default="university">
 
 <!-- ============ NAV ============ -->
 <header class="nav" id="top">
@@ -50,197 +50,104 @@
   </div>
 </header>
 
-<main>
-<!-- ============ UNIVERSITIES ============ -->
-<section class="sec sec-first" id="universities">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow" data-ru="Для университетов">For universities</span>
-      <h1 class="h1-page" data-ru="Научные данные вашего вуза могут <em>приносить доход</em>">Your university's research data can <em>earn money</em></h1>
-      <p class="sub" data-ru="Компании, которые создают искусственный интеллект, ищут знания о Центральной Азии: результаты исследований и наблюдений, экспертные тексты, записи речи на местных языках. Такие материалы годами лежат в архивах кафедр. Мы помогаем вузу подготовить их и продать право ими пользоваться — данные при этом остаются собственностью вуза, а большая часть дохода достаётся вузу и авторам.">Companies building artificial intelligence are looking for knowledge about Central Asia: research results and observations, expert texts, speech in local languages. Material like this has sat in department archives for years. We help the university prepare it and sell the right to use it — the data stays the university's property, and most of the revenue goes to the university and its authors.</p>
-    <div class="hero-ctas left"><a href="#contact" class="btn btn-primary" data-form="university" data-ru="Подключить вуз">Bring my university on board</a><a href="#how" class="btn btn-ghost" data-ru="Как это устроено">How it works</a></div>
+<main class="university-guide">
+  <section class="sec guide-hero" id="universities">
+    <div class="wrap">
+      <p class="campus-label" data-ru="Университетам">For universities</p>
+      <h1 data-ru="Руководство для университета">University guide</h1>
+      <p class="lead" data-ru="Как зарегистрироваться в CORE, описать свои данные и выбрать условия их использования.">How to register with CORE, describe your data and choose its terms of use.</p>
+      <div class="guide-actions">
+        <a href="app/index.html#register" class="btn btn-primary" data-registration-link data-ru="Зарегистрироваться">Register</a>
+        <a href="#connect" class="btn btn-ghost" data-ru="Перейти к инструкции">Go to the instructions</a>
+      </div>
     </div>
-<div class="give-get">
-      <div class="card">
-        <h3 data-ru="От вуза">From the university</h3>
-        <ol class="plain-list">
-          <li data-ru="Подписать меморандум о сотрудничестве — он не обязывает вуз ничего продавать">Sign a memorandum of cooperation — it does not oblige the university to sell anything</li>
-          <li data-ru="Назначить сотрудника, который отвечает за данные">Appoint one staff member responsible for data</li>
-          <li data-ru="Решить, какие архивы и материалы можно предлагать">Decide which archives and materials can be offered</li>
+  </section>
+  <div class="wrap guide-layout">
+    <nav class="guide-contents" aria-labelledby="guide-contents-title">
+      <p id="guide-contents-title" data-ru="Содержание">Contents</p>
+      <a href="#benefits" data-ru="Зачем участвовать">Why join</a>
+      <a href="#how" data-ru="Как работает CORE">How CORE works</a>
+      <a href="#prepare" data-ru="Подготовка данных">Preparing your data</a>
+      <a href="#security" data-ru="Кто видит данные">Who can see the data</a>
+      <a href="#connect" data-ru="Регистрация и подключение">Registration and getting started</a>
+      <a href="#manage" data-ru="Публикация и обновление">Publishing and updates</a>
+      <a href="#guide-documents" data-ru="Документы и помощь">Documents and help</a>
+    </nav>
+    <article class="guide-content">
+      <section class="guide-section" id="benefits">
+        <h2 data-ru="Что даёт участие университету">What your university gains</h2>
+        <ul>
+          <li data-ru="Результаты исследований собраны в каталоге с описаниями и ссылками на источники.">Research results are collected in a catalog with descriptions and source links.</li>
+          <li data-ru="Карточки помогают исследователям и компаниям находить данные для своих задач.">Dataset descriptions help researchers and companies find data for their tasks.</li>
+          <li data-ru="Подготовленные описания и материалы можно использовать в новых проектах и грантовых заявках.">Prepared descriptions and materials can support new projects and grant applications.</li>
+        </ul>
+        <a href="catalog.html" class="campus-text-link" data-ru="Посмотреть примеры в каталоге">Explore catalog examples</a>
+      </section>
+      <section class="guide-section" id="how">
+        <h2 data-ru="Как работает CORE">How CORE works</h2>
+        <p data-ru="Создайте карточку набора и расскажите, что содержится в данных, откуда они получены и для каких задач подходят. При необходимости добавьте ссылки на файлы, публикации и документацию.">Create a dataset description explaining what the data contains, where it came from and which tasks it can help with. Add links to files, publications and documentation as needed.</p>
+        <p data-ru="Сначала сохраните черновик в кабинете. После выбора лицензии и подтверждения аккаунта можно опубликовать карточку в каталоге.">First save a draft in your account. Once you have selected a license and your account is verified, you can publish the description in the catalog.</p>
+        <p data-ru="Сценарии применения AI, варианты подключения и примеры работы с данными собраны на странице агентов и сервисов CORE.">The CORE agents and services page presents AI use cases, proposed connections and examples of working with data.</p>
+        <a href="agents.html" class="campus-text-link" data-ru="Агенты и AI-сервисы">Agents and AI services</a>
+      </section>
+      <section class="guide-section" id="prepare">
+        <h2 data-ru="Что подготовить для публикации">What to prepare for publication</h2>
+        <p data-ru="Начните с одного набора, который может пригодиться другим исследователям или компаниям. Это могут быть таблицы, корпуса текстов, изображения, наблюдения или результаты опросов.">Start with one dataset that could help other researchers or companies. It may contain tables, text corpora, images, observations or survey results.</p>
+        <ul>
+          <li data-ru="Для первого черновика достаточно названия и описания.">A title and description are enough for your first draft.</li>
+          <li data-ru="По мере подготовки добавьте источник, ссылки на материалы, форматы, языки, объём и версию данных.">As you prepare the dataset, add its source, material links, formats, languages, size and version.</li>
+          <li data-ru="Перед публикацией убедитесь, что у вас есть право разместить материалы. Проверьте описание и файлы по ссылкам на персональные и конфиденциальные сведения.">Before publishing, make sure you have the right to share the materials. Review the description and linked files for personal and confidential information.</li>
+        </ul>
+        <a href="documents.html#personal-data" class="campus-text-link" data-ru="Документы о персональных данных">Personal data documents</a>
+      </section>
+      <section class="guide-section" id="security">
+        <h2 data-ru="Кто видит ваши данные">Who can see your data</h2>
+        <p data-ru="Черновик доступен в вашем кабинете. После публикации другие посетители увидят описание набора. Редактировать карточку может её владелец.">You can access a draft in your account. Once published, its description becomes visible to other visitors. Only the owner can edit the description.</p>
+        <p data-ru="Вместе с описанием публикуются условия использования и добавленные вами ссылки. Доступ к файлам по этим ссылкам настраивается в хранилище, где они размещены.">The terms of use and links you added are published with the description. Access to the linked files is managed in the storage where they are hosted.</p>
+        <p data-ru="Если выбраны «Только метаданные» или «Доступ по соглашению», перед публикацией удалите ссылки с типом «Файлы данных». Полные условия доступны в тексте лицензии.">If you select Metadata only or Access by agreement, remove links of the Data files type before publishing. Read the license text for the full terms.</p>
+        <a href="documents.html#dataset-terms" class="campus-text-link" data-ru="Лицензии и условия доступа">Licenses and access terms</a>
+      </section>
+      <section class="guide-section" id="connect">
+        <h2 data-ru="Как подключиться">How to get started</h2>
+        <ol>
+          <li><h3 data-ru="Создайте аккаунт">Create an account</h3><p data-ru="Зарегистрируйтесь по email и паролю. После входа заполните профиль.">Register with your email and password. Complete your profile after signing in.</p></li>
+          <li><h3 data-ru="Укажите университет и роль">Choose your university and role</h3><p data-ru="Выберите университет в форме профиля и укажите свою роль в организации.">Choose your university in the profile form and select your role in the organization.</p></li>
+          <li><h3 data-ru="Добавьте первый набор">Add your first dataset</h3><p data-ru="Откройте «Мои датасеты», нажмите «Добавить датасет», заполните название и описание и сохраните черновик.">Open My datasets, choose Add dataset, enter a title and description, then save the draft.</p></li>
+          <li><h3 data-ru="Проверьте статус аккаунта">Check your account status</h3><p data-ru="Статус подтверждения показан в личном кабинете. Публикация станет доступна после подтверждения аккаунта командой CORE.">Your account shows its verification status. Publishing becomes available after CORE verifies your account.</p></li>
         </ol>
-      </div>
-      <div class="card get">
-        <h3 data-ru="Вуз получает">The university gets</h3>
-        <ul class="checks">
-          <li data-ru="70% выручки за готовые данные или 40–50%, если оцифровку и разметку делаем мы">70% of revenue for ready data, or 40–50% if we do the digitization and mark-up</li>
-          <li data-ru="Оцифровку и разметку материалов без затрат для вуза">Digitization and mark-up at no cost to the university</li>
-          <li data-ru="Отчёт: кто купил данные и для чего">A report on who bought the data and why</li>
-          <li data-ru="Право в любой момент остановить новые продажи">The right to stop new sales at any time</li>
-        </ul>
-      </div>
-    </div>
-    <h2 class="sub-h" id="how" data-ru="Ваши данные — под вашим контролем">Your data — under your control</h2>
-    <div class="closed-grid">
-      <div class="cg"><span class="cg-ico"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 11V8a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span><b data-ru="Закрыто по умолчанию">Closed by default</b><p data-ru="Загрузка в кабинет не делает данные видимыми. Доступ есть только у вашей команды и специалистов CORE, работающих по договору.">Uploading to the portal makes nothing visible. Only your team and CORE specialists under contract can access the data.</p></div>
-      <div class="cg"><span class="cg-ico"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="8" cy="14" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M11 11l8-8M16 6l2 2M14 8l2 2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span><b data-ru="Публикуете вы">You decide what goes live</b><p data-ru="В каталог попадает только то, что одобрил распорядитель данных и подписал уполномоченный подписант вуза.">Only what your data steward approves and your authorized signatory signs ever reaches the catalog.</p></div>
-      <div class="cg"><span class="cg-ico"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 12s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span><b data-ru="Описание открыто — данные по запросу">Public datasheet, data on request</b><p data-ru="Миру можно показать только паспорт датасета, а сами данные выдавать каждому покупателю после вашего согласования.">Show the world only the datasheet — and release the data to each buyer only after you approve them.</p></div>
-    </div>
-
-
-    <div class="uni-grid">
-      <div class="card portal" aria-label="University partner portal preview">
-        <div class="portal-bar"><span class="dots"><i></i><i></i><i></i></span><span class="mono small muted" data-ru="partners.core · Ваш университет">partners.core · Your university</span></div>
-        <div class="portal-body">
-          <aside class="portal-side">
-            <span class="on" data-ru="Датасеты">Datasets</span><span data-ru="Права и согласия">Rights &amp; consents</span><span data-ru="Покупатели">Licensees</span><span data-ru="Выплаты">Payouts</span><span data-ru="Команда">Team</span>
-          </aside>
-          <div class="portal-main">
-            <div class="portal-kpis">
-              <div><span class="small muted" data-ru="Доход вуза, год">University revenue, YTD</span><b>$—</b></div>
-              <div><span class="small muted" data-ru="Активных лицензий">Active licenses</span><b>—</b></div>
-              <div><span class="small muted" data-ru="Датасетов в работе">Datasets in pipeline</span><b>3</b></div>
-            </div>
-            <table class="portal-table">
-              <thead><tr><th data-ru="Датасет">Dataset</th><th data-ru="Этап">Stage</th></tr></thead>
-              <tbody>
-                <tr><td data-ru="Гидрологические наблюдения Зарафшана">Zarafshan hydrology observations</td><td><span class="stage s3" data-ru="Экспертная проверка">Expert review</span></td></tr>
-                <tr><td data-ru="Корпус текстов по востоковедению">Oriental studies text corpus</td><td><span class="stage s2" data-ru="Обезличивание">Anonymization</span></td></tr>
-                <tr><td data-ru="Диалектологические записи (аудио)">Dialect field recordings (audio)</td><td><span class="stage s1" data-ru="Аудит прав">Rights audit</span></td></tr>
-              </tbody>
-            </table>
-            <p class="small muted" data-ru="Иллюстрация кабинета. Названия датасетов — примеры.">Portal illustration. Dataset names are examples.</p>
-          </div>
+        <div class="guide-actions">
+          <a href="app/index.html#register" class="btn btn-primary" data-registration-link data-ru="Зарегистрироваться">Register</a>
+          <a href="index.html#contact" class="campus-text-link" data-ru="Связаться с командой CORE">Contact the CORE team</a>
         </div>
-      </div>
-
-      <div class="roles">
-        <h3 data-ru="Кто со стороны вуза работает с нами">Who works with us on the university side</h3>
-        <p class="muted small" data-ru="Кабинет вуза в разработке. Так он будет устроен: доступ — только по приказу ректора, каждое действие записывается в журнал.">The university portal is in development. This is how it will work: access only by rector's order, every action logged.</p>
-        <div class="role"><b data-ru="Кто подписывает">Who signs</b><span data-ru="Ректор или проректор по доверенности. Подписывает рамочный договор и приложения на каждый датасет (ЭЦП / E-IMZO).">Rector or vice-rector under power of attorney. Signs the framework agreement and each dataset schedule (e-signature / E-IMZO).</span></div>
-        <div class="role"><b data-ru="Ответственный за данные">Person responsible for data</b><span data-ru="Назначается приказом. Отбирает фонды, ведёт заявки, приглашает исследователей, утверждает публикацию.">Appointed by order. Selects collections, manages submissions, invites researchers, approves publication.</span></div>
-        <div class="role"><b data-ru="Юрист / этический комитет">Legal &amp; ethics reviewer</b><span data-ru="Подтверждает права, согласия авторов и участников исследований, отсутствие служебной тайны.">Confirms rights, author and participant consents, and absence of restricted information.</span></div>
-        <div class="role"><b data-ru="Исследователь">Researcher</b><span data-ru="Предлагает свой датасет и участвует в подготовке — только по приглашению распорядителя своего вуза.">Nominates their dataset and helps prepare it — by invitation of their university's steward only.</span></div>
-      </div>
-    </div>
-
-    <!-- legal flow -->
-    <div class="flow">
-      <h3 data-ru="Шаг за шагом: от меморандума до первой выплаты">Step by step: from memorandum to first payout</h3>
-      <ol class="flow-steps">
-        <li><span class="fs-n">1</span><b data-ru="Меморандум">MoU</b><span data-ru="Намерения, конфиденциальность, пилотный фонд. Без обязательств по продаже.">Intent, confidentiality, pilot collection. No sales obligations.</span></li>
-        <li><span class="fs-n">2</span><b data-ru="Приказ и доступ">Order &amp; access</b><span data-ru="Приказ ректора о распорядителе данных и подписанте — открываем кабинет.">Rector's order appoints the steward and signatory — portal opens.</span></li>
-        <li><span class="fs-n">3</span><b data-ru="Договор о доле дохода">Revenue-share agreement</b><span data-ru="Вуз разрешает CORE продавать доступ к данным и получает свою долю. Подписывается один раз.">The university lets CORE sell access to the data and receives its share. Signed once.</span></li>
-        <li><span class="fs-n">4</span><b data-ru="Проверка прав и личных данных">Rights and personal-data check</b><span data-ru="Проверяем, кому принадлежат права, есть ли согласия авторов и участников исследований, и убираем личные данные.">We check who owns the rights and whether authors and study participants consented, and remove personal data.</span></li>
-        <li><span class="fs-n">5</span><b data-ru="Описание каждого набора">A sheet for each dataset</b><span data-ru="Что в наборе, как его можно и нельзя использовать, цена. Подписывает ответственный от вуза.">What is in it, how it may and may not be used, the price. Signed by the university's responsible person.</span></li>
-        <li><span class="fs-n">6</span><b data-ru="Публикация и выплаты">Publish &amp; payouts</b><span data-ru="Ежеквартальные отчёты и выплаты на внебюджетный счёт вуза.">Quarterly reports and payouts to the university's extra-budgetary account.</span></li>
-      </ol>
-    </div>
-
-    <div class="uni-bottom">
-      <div class="card terms">
-        <h3 data-ru="Модельные условия для вуза">Model terms for universities</h3>
-        <ul class="checks">
-          <li data-ru="До <b>70%</b> чистой выручки — вузу, если датасет готов к продаже как есть">Up to <b>70%</b> of net revenue to the university when a dataset is ready to license as is</li>
-          <li data-ru="<b>40–50%</b> — если CORE за свой счёт оцифровывает, чистит и размечает фонд">University receives <b>40–50%</b> when CORE digitizes, cleans and annotates a collection at its own cost</li>
-          <li data-ru="Рекомендуемая доля авторов — не менее 30% от доли вуза (по внутреннему положению)">Recommended author pool: at least 30% of the university's share (via internal regulation)</li>
-          <li data-ru="Подготовку, разметку и продажи финансирует CORE — вуз ничего не платит">CORE funds preparation, annotation and sales — no cost to the university</li>
-          <li data-ru="Право запретить продажу отдельным видам покупателей и для отдельных целей">The right to rule out certain kinds of buyers and uses</li>
-          <li data-ru="Право остановить новые лицензии на датасет в любой момент">Right to stop new licenses for any dataset at any time</li>
-          <li data-ru="Публичная атрибуция вуза и авторов в каждом датасете">Public attribution of the university and authors on every dataset</li>
-        </ul>
-        <p class="note" data-ru="Условия ориентировочные; окончательные — в договоре с учётом устава вуза и требований министерства.">Indicative terms; final terms are set in the agreement in line with the university charter and ministry requirements.</p>
-      </div>
-      <div class="card calc">
-        <h3 data-ru="Калькулятор дохода вуза">University revenue estimator</h3>
-        <div class="seg tier" id="cTier">
-          <button type="button" class="on" data-share="0.7" data-ru="Как есть · 70%">As is · 70%</button>
-          <button type="button" data-share="0.45" data-ru="С обработкой CORE · 45%">Processed by CORE · 45%</button>
+      </section>
+      <section class="guide-section" id="manage">
+        <h2 data-ru="Публикация и обновление">Publishing and updates</h2>
+        <h3 data-ru="Как опубликовать набор">How to publish a dataset</h3>
+        <p data-ru="В редакторе карточки откройте «Условия публикации», выберите лицензию и прочитайте её полный текст. Сохраните карточку, затем откройте её страницу и нажмите «Опубликовать».">Open Publication terms in the dataset editor, select a license and read its full text. Save the description, then open its page and choose Publish.</p>
+        <h3 data-ru="Как изменить описание">How to edit the description</h3>
+        <p data-ru="В разделе «Мои датасеты» откройте свой набор и нажмите «Редактировать». Сохранённые изменения обновляют опубликованное описание и ссылки.">Open your dataset in My datasets and choose Edit. Saved changes update the published description and links.</p>
+        <h3 data-ru="Как снять набор с публикации">How to unpublish a dataset</h3>
+        <p data-ru="Откройте свой набор и нажмите «Снять с публикации». Затем его можно найти в разделе «Мои датасеты», отредактировать и опубликовать снова.">Open your dataset and choose Unpublish. You can then find it in My datasets, edit it and publish it again.</p>
+      </section>
+      <section class="guide-section" id="guide-documents">
+        <h2 data-ru="Документы и помощь">Documents and help</h2>
+        <div class="guide-document-links">
+          <a href="documents/metadata-only.html" data-ru="Только метаданные">Metadata only</a>
+          <a href="documents/by-agreement.html" data-ru="Доступ по соглашению">Access by agreement</a>
+          <a href="documents/open-cc-by-4-0.html" data-ru="Открытая лицензия CC BY 4.0">Open CC BY 4.0 license</a>
+          <a href="documents/data-use-agreement.html" data-ru="Шаблон соглашения об использовании данных">Data use agreement template</a>
+          <a href="documents.html#personal-data" data-ru="Документы о персональных данных">Personal data documents</a>
+          <a href="privacy.html" data-ru="Политика конфиденциальности">Privacy policy</a>
         </div>
-        <label><span data-ru="Датасетов в каталоге">Datasets listed</span><output id="oDs">5</output><input type="range" id="cDs" min="1" max="40" value="5"></label>
-        <label><span data-ru="Лицензий на датасет в год">Licenses per dataset / year</span><output id="oLic">3</output><input type="range" id="cLic" min="1" max="20" value="3"></label>
-        <label><span data-ru="Средняя цена лицензии, $">Average license price, $</span><output id="oPrice">4,000</output><input type="range" id="cPrice" min="500" max="50000" step="500" value="4000"></label>
-        <div class="calc-out">
-          <div><span class="small muted" data-ru="Вузу в год">To university / yr</span><b id="rUni">$42,000</b></div>
-          <div><span class="small muted" data-ru="из них авторам (≥30%)">of which authors (≥30%)</span><b id="rAuth">$12,600</b></div>
-        </div>
-        <p class="note" data-ru="Иллюстрация модели раздела дохода, не прогноз.">Illustrates the revenue-share model; not a forecast.</p>
-      </div>
-      <div class="card researcher">
-        <h3 data-ru="Вы исследователь?">Are you a researcher?</h3>
-        <p data-ru="Предложите свой датасет. Мы передадим заявку распорядителю данных вашего вуза, а если вуз ещё не партнёр — пригласим его. Вы получаете атрибуцию и долю авторов по положению вуза.">Nominate your dataset. We route it to your university's data steward — and if your university isn't a partner yet, we invite it. You get attribution and an author share under your university's policy.</p>
-        <div class="sub-check">
-          <span class="small muted" data-ru="Что подготовить">What to prepare</span>
-          <ul class="checks small">
-            <li data-ru="Состав и происхождение: что в наборе, откуда и в каком формате">Contents and origin: what is in it, where it came from, which format</li>
-            <li data-ru="Образец данных или схему полей">A data sample or the field schema</li>
-            <li data-ru="Кто правообладатель и есть ли согласия участников">Who holds the rights and whether participants consented</li>
-          </ul>
-        </div>
-        <a href="#contact" class="btn btn-ghost" data-form="researcher" data-ru="Предложить датасет">Nominate a dataset</a>
-        <a href="#contact" class="btn btn-primary" data-form="university" data-ru="Подключить вуз">Onboard my university</a>
-      </div>
-    </div>
+        <p id="faq"><a class="campus-text-link" href="index.html#faq" data-ru="Частые вопросы">Frequently asked questions</a></p>
+      </section>
+      <section class="guide-section guide-support" id="contact">
+        <h2 data-ru="Нужна помощь с подключением?">Need help getting started?</h2>
+        <p data-ru="Расскажите о своём университете и наборе, с которого хотите начать.">Tell us about your university and the dataset you would like to start with.</p>
+        <a href="index.html#contact" class="btn btn-ghost" data-ru="Связаться с командой CORE">Contact the CORE team</a>
+      </section>
+    </article>
   </div>
-</section>
-
-<!-- ============ FAQ ============ -->
-<section class="sec sec-alt" id="faq">
-  <div class="wrap narrow">
-    <div class="sec-head center"><span class="eyebrow">FAQ</span><h2 data-ru="Частые вопросы">Questions, answered</h2></div>
-    <details class="faq"><summary data-ru="Почему поставщики — только университеты, а не отдельные учёные?">Why only universities as suppliers, not individual researchers?</summary><p data-ru="Права на данные, созданные в рамках служебных обязанностей, как правило, принадлежат вузу, а исследования с участием людей требуют одобрения этического комитета. Работа через уполномоченных сотрудников вуза даёт покупателю чистую цепочку прав, а учёным — защиту и долю дохода. Исследователи участвуют через кабинет своего вуза.">Rights to data created in the course of employment generally belong to the university, and human-subjects research needs ethics approval. Working through authorized university staff gives buyers a clean rights chain and gives researchers protection and a revenue share. Researchers take part through their university's portal.</p></details>
-    <details class="faq"><summary data-ru="Сколько стоит участие для вуза?">What does it cost a university to join?</summary><p data-ru="Ничего. Подготовку, разметку, хранение и продажи финансирует CORE. Поэтому для фондов, которые CORE оцифровывает и размечает за свой счёт, доля вуза ниже — 40–50% вместо 70%.">Nothing. CORE funds preparation, annotation, hosting and sales. That is why the university's share is lower — 40–50% instead of 70% — for collections CORE digitizes and annotates at its own cost.</p></details>
-    <details class="faq"><summary data-ru="Можно ли отозвать датасет?">Can we withdraw a dataset?</summary><p data-ru="Да. Вы можете в любой момент остановить новые лицензии на датасет. Уже выданные лицензии действуют до конца своего срока.">Yes. You can stop new licenses for a dataset at any time. Licenses already granted run until the end of their term.</p></details>
-    <details class="faq"><summary data-ru="Как вы работаете с персональными данными?">How do you handle personal data?</summary><p data-ru="Обезличиваем до передачи покупателю, храним в соответствии с Законом РУз «О персональных данных», данные с идентифицирующей информацией в публичный каталог не попадают. Покупателю запрещена повторная идентификация.">We anonymize before delivery, store data in line with Uzbekistan's Personal Data Law, and identifying data never enters the public catalog. Re-identification is contractually prohibited.</p></details>
-  </div>
-</section>
-
-<!-- ============ CONTACT ============ -->
-<section class="sec contact-band" id="contact">
-  <div class="wrap cb-in">
-    <div>
-      <h2 data-ru="Обсудим вашу задачу">Let's talk about your task</h2>
-      <p class="sub" data-ru="Короткая заявка — ответим в течение рабочего дня. Образец данных — за 24 часа.">A short request — we reply within one working day. A data sample within 24 hours.</p>
-    </div>
-    <div class="cb-actions"><a href="#contact" class="btn btn-primary" data-form="university" data-ru="Подключить вуз">Bring my university on board</a><a href="#contact" class="btn btn-ghost" data-form="buyer" data-ru="Нужны данные">I need data</a><a href="#contact" class="btn btn-ghost" data-form="investor" data-ru="Инвесторам">For investors</a><a class="btn btn-ghost tg-link" href="#" target="_blank" rel="noopener" hidden><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M21.5 4.5 2.9 11.6c-.9.4-.9 1.1 0 1.4l4.7 1.5 1.8 5.6c.2.6.5.7 1 .3l2.6-2.3 4.9 3.6c.6.4 1.1.2 1.3-.6l3.1-14.6c.3-1.2-.4-1.6-1.4-1.2z" fill="currentColor"/></svg><span>Telegram</span></a></div>
-  </div>
-</section>
-<dialog class="dlg" id="contactDlg" aria-labelledby="dlgTitle">
-  <div class="dlg-head"><div><h3 id="dlgTitle" data-ru="Расскажите, что вам нужно">Tell us what you need</h3><p class="small muted" data-ru="Заявка попадёт к нужному человеку в команде.">Your request goes straight to the right person on the team.</p></div>
-  <button type="button" class="dlg-x" id="dlgClose" aria-label="Close">×</button></div>
-  <form class="form" id="leadForm" novalidate>
-      <div class="seg form-type" id="formType">
-        <button type="button" data-t="buyer" data-ru="Нужны данные">I need data</button>
-        <button type="button" data-t="university" data-ru="Вуз">University</button>
-        <button type="button" data-t="researcher" data-ru="Исследователь">Researcher</button>
-        <button type="button" data-t="investor" data-ru="Инвестор">Investor</button>
-      </div>
-      <input type="hidden" name="type" value="buyer">
-      <div class="frow">
-        <label><span data-ru="Имя">Name</span><input name="name" required autocomplete="name"></label>
-        <label><span data-ru="Рабочий email">Work email</span><input name="email" type="email" required autocomplete="email"></label>
-      </div>
-      <div class="frow">
-        <label><span class="org-label" data-ru="Компания">Company</span><input name="org" required autocomplete="organization"></label>
-        <label><span class="role-label" data-ru="Должность">Role</span><input name="role" autocomplete="organization-title"></label>
-      </div>
-      <label class="f-buyer"><span data-ru="Задача">Use case</span>
-        <select name="usecase">
-          <option data-ru="Обучение ИИ: знания о регионе и местные языки">Training AI: regional knowledge and local languages</option>
-          <option data-ru="Проверка знаний модели о регионе">Testing what a model knows about the region</option>
-          <option data-ru="Данные для ассистента или агента">Data for an assistant or agent</option>
-          <option data-ru="Медтуризм / рынок здравоохранения">Medical tourism / healthcare market</option>
-          <option data-ru="Аналитика науки и вузов">Research and university analytics</option>
-          <option data-ru="Данные для бизнеса или госпроекта: подборка, выгрузка, обновления">Data for a business or public project: shortlist, export, updates</option>
-          <option data-ru="Датасет под заказ">Custom dataset</option>
-        </select>
-      </label>
-      <label class="f-researcher" hidden><span data-ru="Ссылка на датасет или публикацию">Link to dataset or paper</span><input name="link" type="url" placeholder="https://doi.org/…"></label>
-      <label><span class="msg-label" data-ru="Что вам нужно?">What do you need?</span><textarea name="message" rows="4"></textarea></label>
-      <label class="consent"><input type="checkbox" name="consent" required> <span data-ru="Согласен(на) на обработку данных для ответа на заявку — <a href='privacy.html'>политика</a>">I agree to the processing of my data to respond to this request — <a href="privacy.html">privacy</a></span></label>
-      <button class="btn btn-primary btn-block" type="submit" data-ru="Отправить">Send request</button>
-      <p class="form-status small" id="formStatus" role="status"></p>
-    </form>
-</dialog>
 </main>
 
 <footer class="foot">
@@ -251,6 +158,7 @@
     </a><p class="small muted" data-ru="Научные данные университетов — для новых исследований и сотрудничества.">University research data — for new research and collaboration.</p></div>
     <div class="foot-links">
       <a href="catalog.html" data-ru="Каталог">Catalog</a>
+      <a href="agents.html" data-ru="Агенты и сервисы">Agents &amp; services</a>
       <a href="index.html#how-it-works" data-ru="Как это работает">How it works</a>
       <a href="index.html#digests" data-ru="Дайджесты">Digests</a>
       <a href="index.html#contact" data-ru="Сотрудничество">Collaboration</a>
@@ -262,11 +170,11 @@
 </footer>
 
 <script src="assets/config.js?v=7f1b7375"></script>
-<script src="assets/i18n-uz.js?v=f3c316e5"></script>
+<script src="assets/i18n-uz.js?v=ac52ca3b"></script>
 <script src="assets/account-store.js?v=ed01f208"></script>
-<script src="assets/app.js?v=2de13c6a"></script>
+<script src="assets/app.js?v=b6b5e515"></script>
 <script src="assets/vendor/supabase-2.119.2.js?v=7d52b31d"></script>
-<script type="importmap" data-core-modules>{"imports":{"./assets/js/api/auth.js":"./assets/js/api/auth.js?v=31ec254a","./assets/js/api/datasets.js":"./assets/js/api/datasets.js?v=e74cc7f8","./assets/js/api/demo-auth.js":"./assets/js/api/demo-auth.js?v=57516109","./assets/js/api/demo-data.js":"./assets/js/api/demo-data.js?v=db364f88","./assets/js/api/licenses.js":"./assets/js/api/licenses.js?v=0f4ae0da","./assets/js/api/organizations.js":"./assets/js/api/organizations.js?v=4b862e11","./assets/js/api/profiles.js":"./assets/js/api/profiles.js?v=dc6967ea","./assets/js/api/query.js":"./assets/js/api/query.js?v=931d47a5","./assets/js/api/sql.js":"./assets/js/api/sql.js?v=a80adb52","./assets/js/api/supabase-client.js":"./assets/js/api/supabase-client.js?v=d52c9625","./assets/js/pages/access.js":"./assets/js/pages/access.js?v=2965045a","./assets/js/pages/account.js":"./assets/js/pages/account.js?v=57739729","./assets/js/pages/auth-account.js":"./assets/js/pages/auth-account.js?v=fe726ca4","./assets/js/pages/cabinet.js":"./assets/js/pages/cabinet.js?v=45f67cd3","./assets/js/pages/catalog.js":"./assets/js/pages/catalog.js?v=7ba3a3cc","./assets/js/pages/dataset-api.js":"./assets/js/pages/dataset-api.js?v=1432d881","./assets/js/pages/dataset-records.js":"./assets/js/pages/dataset-records.js?v=076b1e6a","./assets/js/pages/dataset.js":"./assets/js/pages/dataset.js?v=643803a9","./assets/js/pages/demo-cabinet.js":"./assets/js/pages/demo-cabinet.js?v=0460aadb","./assets/js/pages/legacy-auth.js":"./assets/js/pages/legacy-auth.js?v=563a8a4c","./assets/js/pages/operator.js":"./assets/js/pages/operator.js?v=17a62937","./assets/js/pages/organization.js":"./assets/js/pages/organization.js?v=eca20709","./assets/js/pages/submissions.js":"./assets/js/pages/submissions.js?v=95085eba","./assets/js/ui/catalog-card.js":"./assets/js/ui/catalog-card.js?v=3c51923d","./assets/js/ui/data-labels.js":"./assets/js/ui/data-labels.js?v=4a3d72b5","./assets/js/ui/dataset-sheet.js":"./assets/js/ui/dataset-sheet.js?v=bbc90016","./assets/js/ui/dataset-usage.js":"./assets/js/ui/dataset-usage.js?v=c0e47533","./assets/js/ui/format.js":"./assets/js/ui/format.js?v=55785342","./assets/js/ui/organization-fields.js":"./assets/js/ui/organization-fields.js?v=68e1d853","./assets/js/ui/prepared-dataset.js":"./assets/js/ui/prepared-dataset.js?v=25458e08","./assets/js/ui/submission.js":"./assets/js/ui/submission.js?v=bd0f68b4","./assets/js/url.js":"./assets/js/url.js?v=5b9d8eb4"}}</script>
-<script type="module" src="assets/account-session.js?v=c13eef23"></script>
+<script type="importmap" data-core-modules>{"imports":{"./assets/js/api/auth.js":"./assets/js/api/auth.js?v=31ec254a","./assets/js/api/contact-requests.js":"./assets/js/api/contact-requests.js?v=0448a104","./assets/js/api/datasets.js":"./assets/js/api/datasets.js?v=6e17b1a4","./assets/js/api/demo-auth.js":"./assets/js/api/demo-auth.js?v=57516109","./assets/js/api/demo-data.js":"./assets/js/api/demo-data.js?v=db364f88","./assets/js/api/licenses.js":"./assets/js/api/licenses.js?v=0f4ae0da","./assets/js/api/organizations.js":"./assets/js/api/organizations.js?v=4b862e11","./assets/js/api/profiles.js":"./assets/js/api/profiles.js?v=dc6967ea","./assets/js/api/query.js":"./assets/js/api/query.js?v=931d47a5","./assets/js/api/sql.js":"./assets/js/api/sql.js?v=a80adb52","./assets/js/api/supabase-client.js":"./assets/js/api/supabase-client.js?v=d52c9625","./assets/js/pages/access.js":"./assets/js/pages/access.js?v=2965045a","./assets/js/pages/account.js":"./assets/js/pages/account.js?v=a3a37056","./assets/js/pages/auth-account.js":"./assets/js/pages/auth-account.js?v=b5af552d","./assets/js/pages/cabinet.js":"./assets/js/pages/cabinet.js?v=69410276","./assets/js/pages/catalog.js":"./assets/js/pages/catalog.js?v=1e9b4118","./assets/js/pages/dataset-api.js":"./assets/js/pages/dataset-api.js?v=1432d881","./assets/js/pages/dataset-records.js":"./assets/js/pages/dataset-records.js?v=e88ffbd4","./assets/js/pages/dataset.js":"./assets/js/pages/dataset.js?v=dc35d1a7","./assets/js/pages/demo-cabinet.js":"./assets/js/pages/demo-cabinet.js?v=0460aadb","./assets/js/pages/legacy-auth.js":"./assets/js/pages/legacy-auth.js?v=563a8a4c","./assets/js/pages/operator.js":"./assets/js/pages/operator.js?v=17a62937","./assets/js/pages/organization.js":"./assets/js/pages/organization.js?v=eca20709","./assets/js/pages/submissions.js":"./assets/js/pages/submissions.js?v=95085eba","./assets/js/ui/catalog-card.js":"./assets/js/ui/catalog-card.js?v=ccaa6b49","./assets/js/ui/contact-form.js":"./assets/js/ui/contact-form.js?v=b3dd3e6f","./assets/js/ui/data-labels.js":"./assets/js/ui/data-labels.js?v=4a3d72b5","./assets/js/ui/dataset-sheet.js":"./assets/js/ui/dataset-sheet.js?v=bbc90016","./assets/js/ui/dataset-usage.js":"./assets/js/ui/dataset-usage.js?v=c0e47533","./assets/js/ui/format.js":"./assets/js/ui/format.js?v=55785342","./assets/js/ui/navigation.js":"./assets/js/ui/navigation.js?v=364bdafb","./assets/js/ui/organization-fields.js":"./assets/js/ui/organization-fields.js?v=68e1d853","./assets/js/ui/prepared-dataset.js":"./assets/js/ui/prepared-dataset.js?v=15da5614","./assets/js/ui/submission.js":"./assets/js/ui/submission.js?v=bd0f68b4","./assets/js/url.js":"./assets/js/url.js?v=56c48f7f"}}</script>
+<script type="module" src="assets/account-session.js?v=70bd5b20"></script>
 </body>
 </html>

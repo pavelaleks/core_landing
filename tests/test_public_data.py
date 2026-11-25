@@ -82,9 +82,11 @@ class PublicRecordTests(unittest.TestCase):
             self.assertIn(("../" if lang == "en" else "../../") + license["document_path"], page)
         self.assertEqual(PUBLIC.catalog_item(row)["license"], license)
         self.assertEqual(row["license"], source_license)
-        self.assertIn('"license": "https://example.org/documents/metadata-only.html"', PUBLIC.new_dataset_page(row, "", "", "https://example.org/"))
+        shell = PUBLIC.new_dataset_page(row, "", "", "https://example.org/")
+        self.assertIn('data-dataset-id="' + row["id"] + '"', shell)
+        self.assertIn("assets/dataset-page.js", shell)
 
-    def test_published_user_record_has_pages_schema_and_catalog_from_the_same_snapshot(self):
+    def test_published_user_record_keeps_a_live_shell_and_public_catalog_snapshot(self):
         row = dict(PUBLIC.SNAPSHOT["datasets"][0])
         row.update(id="DS-static-test", kind="dataset", source_url=None,
                    title={"en": "New <dataset>", "ru": "Новый <датасет>", "uz": "Yangi toʻplam"},
@@ -95,8 +97,9 @@ class PublicRecordTests(unittest.TestCase):
             BUILD.build()
             for language, prefix in [("en", ""), ("ru", "ru/"), ("uz", "uz/")]:
                 html = BUILD.OUT[prefix + "datasets/DS-static-test.html"].decode("utf-8")
-                self.assertIn("schema.org", html)
-                self.assertIn(PUBLIC.esc(row["title"][language]), html)
+                self.assertIn('data-dataset-id="DS-static-test"', html)
+                self.assertIn('data-static-lang="' + language + '"', html)
+                self.assertNotIn(PUBLIC.esc(row["title"][language]), html)
                 self.assertNotIn("<script>alert(1)</script>", html)
                 self.assertIn("DS-static-test", BUILD.OUT["sitemap.xml"].decode("utf-8"))
             self.assertIn("DS-static-test", BUILD.OUT["assets/catalog-index.js"].decode("utf-8"))
@@ -122,7 +125,7 @@ class PublicRecordTests(unittest.TestCase):
         for ds in BUILD.CAT:
             with self.subTest(dataset=ds["slug"]):
                 page = BUILD.base_details(ds, "ru")
-                section_ids = [page.index('id="sheet-' + name + '"') for name in ("data", "api", "passport", "access")]
+                section_ids = [page.index('id="sheet-' + name + '"') for name in ("data", "passport", "access", "api")]
                 self.assertEqual(section_ids, sorted(section_ids))
                 self.assertEqual(page.count('class="sheet-section" open'), 1)
                 self.assertIn("Весь справочник" if ds["slug"] == "universities" else "Открытый образец", page)

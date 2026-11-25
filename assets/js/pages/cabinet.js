@@ -8,8 +8,10 @@ import { getProfile } from "../api/profiles.js";
 import { organizationName } from "../api/organizations.js";
 import { databaseMessage } from "../api/query.js";
 import { createDatasetRecords } from "./dataset-records.js";
+import { initDatasetNavigation } from "../ui/navigation.js";
 
 export function initCabinet() {
+  initDatasetNavigation();
   if (/^#demo(?:\/|$)/.test(location.hash)) { initDemoCabinet(); return; }
   const store = getAccountStore(), auth = getAuth(), view = document.getElementById("view");
   const callback = new URLSearchParams(location.hash.slice(1));
@@ -18,9 +20,12 @@ export function initCabinet() {
     history.replaceState(null, "", location.pathname + location.search + "#login");
   }
   let favorite = "";
+  let finishingLogin = false;
   try { favorite = decodeURIComponent(location.hash.split("/favorite/")[1] || ""); } catch (error) {}
   const go = hash => { if (location.hash === hash) render(); else location.hash = hash; };
   async function onLogin() {
+    if (finishingLogin) return;
+    finishingLogin = true;
     if (favorite) {
       try { await fetchCatalog(); }
       catch { store.auth.notice = "Не удалось загрузить каталог для избранного. Повторите добавление из каталога."; }
@@ -29,6 +34,7 @@ export function initCabinet() {
     const destination = favorite ? "#favorites" : "#account";
     favorite = "";
     go(destination);
+    finishingLogin = false;
   }
   let profile = { userId: null, status: "idle", data: null }, profileRevision = 0, lastHash = "";
   const getProfileState = () => profile;
@@ -78,7 +84,7 @@ export function initCabinet() {
     header();
     if (store.auth.registrationPending) { pages.vLoading(); return; }
     const publicMatch = /^#dataset\/(.+)$/.exec(location.hash);
-    if (publicMatch && !sessionUser) {
+    if (publicMatch && store.auth.status !== "loading") {
       try { records.vDetails(decodeURIComponent(publicMatch[1])); } catch { go("#account"); }
       return;
     }
@@ -108,10 +114,16 @@ export function initCabinet() {
       return;
     }
     if (!profile.data) { pages.vCompleteProfile(); return; }
+    if (favorite && !finishingLogin && /^#(?:login|register|account)(?:\/|$)/.test(hash)) { onLogin(); return; }
     if (publicMatch) { try { records.vDetails(decodeURIComponent(publicMatch[1])); } catch { go("#datasets"); } }
     else if (hash === "#datasets") records.vList();
     else if (hash === "#datasets/new") records.vEditor();
-    else if (hash.startsWith("#datasets/edit/")) { try { records.vEditor(decodeURIComponent(hash.slice(15))); } catch { go("#datasets"); } }
+    else if (hash.startsWith("#datasets/edit/")) {
+      try {
+        const [id, section] = hash.slice(15).split("/");
+        records.vEditor(decodeURIComponent(id), section);
+      } catch { go("#datasets"); }
+    }
     else if (hash === "#favorites" && user.role === "buyer") {
       pages.vLoading();
       fetchCatalog().then(() => { if (location.hash === "#favorites" && store.load().user?.id === user.id) vFavorites(); }).catch(error => {

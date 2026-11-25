@@ -6,7 +6,22 @@ function chartValue(label, percent) {
   return '<td class="n">' + esc(label) + '<div class="bar" aria-hidden="true"><i style="width:' + Number(percent) + '%"></i></div></td>';
 }
 
-function insight(d) {
+function insight(d, lang = "ru") {
+  if (lang !== "ru") {
+    const uz = lang === "uz", s = d.summary;
+    if (d.key === "insurance") return table(
+      uz ? ["Guruh", "Ishtirokchilar", "Yuqori sugʻurta qamrovi, %", "Xarid niyati, 1–5"] : ["Group", "Respondents", "High insurance inclusion, %", "Purchase intention, 1–5"],
+      [["all", uz ? "Barcha" : "All"], ["urban", uz ? "Shahar" : "Urban"], ["rural", uz ? "Qishloq" : "Rural"], ["men", uz ? "Erkaklar" : "Men"], ["women", uz ? "Ayollar" : "Women"]].map(([key, label]) => [label, s.segments[key].n, s.segments[key].high_inclusion_pct, s.segments[key].intention])
+    );
+    if (d.key === "covid") return '<p>' + nf(s.analytic) + ' / ' + nf(d.rows) + ' · ' + (uz ? "Tahlilga kiritilgan yozuvlar. Takroriy kasalxonaga yotqizishlar hisobdan chiqarilgan." : "Records included in the analysis. Repeat admissions are excluded.") + '</p>' + table(
+      uz ? ["Davr", "Bemorlar", "Oʻlim, %", "Oʻlim yoki reanimatsiya, %"] : ["Period", "Patients", "Deaths, %", "Death or intensive care, %"],
+      ["Pre-VOC", "Alpha-dominant", "Delta-dominant"].map(key => [key, s.periods[key].n, s.periods[key].death_pct, s.periods[key].severe_pct])
+    );
+    return table(uz ? ["Mavzu", "Atamalar"] : ["Topic", "Terms"], s.categories) + table(
+      uz ? ["Oʻzbekcha", "Ruscha", "Inglizcha", "Maktab", "Universitet"] : ["Uzbek", "Russian", "English", "School", "University"],
+      s.examples.slice(0, 9).map(e => [e.term_uz, e.term_ru, e.term_en, e.freq_school, e.freq_university])
+    );
+  }
   var s = d.summary, h = "";
   if (d.key === "insurance") {
     var seg = [["all", "Все"], ["urban", "Город"], ["rural", "Село"], ["men", "Мужчины"], ["women", "Женщины"], ["age_16_29", "16–29 лет"], ["age_30_44", "30–44 года"], ["age_45_plus", "45+ лет"], ["higher_ed", "С высшим образованием"], ["no_higher_ed", "Без высшего"]];
@@ -55,26 +70,47 @@ export function preparedApiExample(d, lang = "ru") {
     '</p><pre class="sheet-code">' + esc(JSON.stringify(excerpt, null, 2)) + '</pre>';
 }
 
-export function preparedData(d) {
+export function preparedData(d, lang = "ru") {
+  const tr = (en, ru, uz) => lang === "en" ? en : lang === "uz" ? uz : ru;
   const [header, ...rows] = d.preview;
   const fields = previewFields[d.key];
-  const firstRows = rows.slice(0, 3).map(row => fields.map(([key]) => row[header.indexOf(key)]));
-  const graphTitle = {terms: "Темы и частоты в учебниках", insurance: "Страховой охват и намерение купить", covid: "Исходы по периодам госпитализации"}[d.key];
-  const note = d.key === "terms" ? '<p class="sheet-caption">Переводы и тематические категории добавлены для ' + nf(d.summary.glossed) + ' самых частых терминов. Разметка ожидает проверки географом.</p>' : '';
-  return table(fields.map(([, label]) => label), firstRows) + note +
-    '<details class="sheet-extra"><summary>' + graphTitle + '</summary><div class="sheet-chart">' + insight(d) + '</div></details>' +
-    '<details class="sheet-extra"><summary>Первые строки исходной таблицы</summary>' + table(header.slice(0, 9), rows.map(row => row.slice(0, 9))) +
-    '<p class="sheet-caption">Показаны ' + Math.min(9, header.length) + ' из ' + d.columns + ' полей пакета.</p></details>';
+  const firstRows = rows.slice(0, 3).map(row => fields.map(([key]) => {
+    const value = row[header.indexOf(key)];
+    if (key === "settlement") return value === "Urban" ? tr("Urban", "Город", "Shahar") : value === "Rural" ? tr("Rural", "Село", "Qishloq") : value;
+    return value;
+  }));
+  const labels = {
+    terms: [tr("Uzbek", "Узбекский", "Oʻzbekcha"), tr("Russian", "Русский", "Ruscha"), tr("English", "Английский", "Inglizcha")],
+    insurance: [tr("Respondent ID", "Код респондента", "Ishtirokchi kodi"), tr("Settlement", "Тип поселения", "Aholi punkti"), tr("Age", "Возраст", "Yosh")],
+    covid: [tr("Record", "Запись", "Yozuv"), tr("Admission month", "Месяц госпитализации", "Kasalxonaga yotqizilgan oy"), tr("Period", "Период", "Davr")],
+  };
+  const graphTitle = {
+    terms: tr("Topics and textbook frequencies", "Темы и частоты в учебниках", "Mavzular va darsliklardagi chastota"),
+    insurance: tr("Insurance inclusion and purchase intention", "Страховой охват и намерение купить", "Sugʻurta qamrovi va xarid niyati"),
+    covid: tr("Outcomes by admission period", "Исходы по периодам госпитализации", "Kasalxonaga yotqizilgan davrlar boʻyicha natijalar"),
+  }[d.key];
+  const note = d.key === "terms" ? '<p class="sheet-caption">' + nf(d.summary.glossed) + ' · ' + tr("Frequent terms with draft translations and topic labels, awaiting expert review.", "Частые термины с переводами и тематической разметкой. Ожидают проверки географом.", "Tarjima va mavzu belgilari qoʻshilgan keng tarqalgan atamalar. Ekspert tekshiruvi kutilmoqda.") + '</p>' : '';
+  return table(labels[d.key], firstRows) + note +
+    '<details class="sheet-extra"><summary>' + graphTitle + '</summary><div class="sheet-chart">' + insight(d, lang) + '</div></details>' +
+    '<details class="sheet-extra"><summary>' + tr("First rows of the source table", "Первые строки исходной таблицы", "Asl jadvalning birinchi qatorlari") + '</summary>' + table(header.slice(0, 9), rows.map(row => row.slice(0, 9))) +
+    '<p class="sheet-caption">' + tr("Fields shown", "Показано полей", "Koʻrsatilgan maydonlar") + ' · ' + Math.min(9, header.length) + ' / ' + d.columns + '</p></details>';
 }
 
-export function preparedPassport(d) {
+export function preparedPassport(d, lang = "ru", includeSource = true) {
+  const tr = (en, ru, uz) => lang === "en" ? en : lang === "uz" ? uz : ru;
+  const addedUz = {
+    terms: ["Imlo standart oʻzbek lotin yozuviga keltirildi va takrorlar olib tashlandi", "Maktab va universitet darsliklaridagi chastota hamda atama ilk uchragan sinf koʻrsatildi", "Korpusda topilgan har bir atama uchun qoʻllanish misoli berildi", "Eng koʻp uchraydigan 320 atamaga ruscha va inglizcha muqobillar hamda mavzu toifasi qoʻshildi", "Imlo variantlari va korpusda uchramagan atamalar mualliflar uchun belgilandi"],
+    insurance: ["Excel formulalaridagi yakuniy ballar qiymatlarga aylantirildi", "Ustunlar tushunarli nomlandi va ishtirokchi kodi qoʻshildi", "Notoʻgʻri yosh qiymatlari tozalandi va tilga oid boʻsh javoblar kodlandi", "Maydonlar ingliz, rus va oʻzbek tillarida tavsiflandi", "Sakkizta indeks va guruhlar boʻyicha jamlanma qoʻshildi"],
+    covid: ["Mikroorganizmlar nomlari standartlashtirilib, NCBI taksonomiya kodlariga bogʻlandi", "Sezgirlik kodlari S/I/R shakliga keltirildi va antibiotiklarga ATC kodlari qoʻshildi", "Tashxislarga ICD-10 va laboratoriya tahlillariga LOINC kodlari berildi", "Har bir yozuv uchun qiymat va mantiq tekshiruvlari belgilandi", "Maydonlar ingliz, rus va oʻzbek tillarida tavsiflandi"],
+  };
   const types = {formula: "Формула", naming: "Названия", missing: "Пропуски", invalid: "Ошибка", check: "Проверка", normalised: "Стандартизация", added: "Добавлено"};
-  return '<p>Авторы · ' + esc(d.authors.join(", ")) + '</p><p>Исходный набор · <a href="https://doi.org/' + esc(d.doi) + '" target="_blank" rel="noopener">' + esc(d.doi) + '</a></p>' +
-    '<p>Словарь полей доступен на русском, узбекском и английском языках.</p>' +
-    '<h3>Что сделал CORE</h3><ul class="added">' + d.added_ru.map(value => '<li>' + esc(value) + '</li>').join("") + '</ul>' +
-    '<details class="sheet-extra"><summary>До и после</summary>' + (BA[d.slug] || []).map(([before, after]) =>
-      '<div class="ba"><div class="b">' + esc(before) + '</div><div class="arr">→</div><div class="a">' + esc(after) + '</div></div>').join("") + '</details>' +
-    '<details class="sheet-extra"><summary>Отчёт о качестве · ' + d.summary.issues.length + '</summary>' +
-    table(["Что", "Где", "Что нашли и сделали"], d.summary.issues.map(i => [types[i.type] || i.type, i.column, i.detail])) + '</details>' +
-    '<p class="sheet-caption">Демонстрация подготовки CORE на открытых данных. Договор с вузом по этому набору ещё не подписан. CORE предлагает подготовку данных. Разметка «CORE draft» ожидает проверки экспертом вуза.</p>';
+  return '<p>' + tr("Authors", "Авторы", "Mualliflar") + ' · ' + esc(d.authors.join(", ")) + '</p>' +
+    (includeSource ? '<p><a href="https://doi.org/' + esc(d.doi) + '" target="_blank" rel="noopener">' + tr("Original publication on Zenodo", "Исходная публикация на Zenodo", "Asl nashr · Zenodo") + '</a></p>' : '') +
+    '<p>' + tr("Field descriptions are available in Russian, Uzbek and English.", "Словарь полей доступен на русском, узбекском и английском языках.", "Maydonlar tavsifi rus, oʻzbek va ingliz tillarida mavjud.") + '</p>' +
+    '<h3>' + tr("What CORE added", "Что сделал CORE", "CORE nima qoʻshdi") + '</h3><ul class="added">' + (lang === "uz" ? addedUz[d.key] : d["added_" + lang]).map(value => '<li>' + esc(value) + '</li>').join("") + '</ul>' +
+    '<details class="sheet-extra"><summary>' + tr("Before and after · Russian notes", "До и после", "Oldin va keyin · ruscha izohlar") + '</summary><div lang="ru">' + (BA[d.slug] || []).map(([before, after]) =>
+      '<div class="ba"><div class="b">' + esc(before) + '</div><div class="arr">→</div><div class="a">' + esc(after) + '</div></div>').join("") + '</div></details>' +
+    '<details class="sheet-extra"><summary>' + tr("Quality report · source notes in English", "Отчёт о качестве · исходные заметки на английском", "Sifat hisoboti · inglizcha asl izohlar") + ' · ' + d.summary.issues.length + '</summary><div lang="en">' +
+    table(["Что", "Где", "Что нашли и сделали"], d.summary.issues.map(i => [types[i.type] || i.type, i.column, i.detail])) + '</div></details>' +
+    '<p class="sheet-caption">' + tr("CORE preparation demonstration using open research data. Draft annotations await expert review.", "Пример подготовки CORE на открытых данных исследователей. Черновая разметка ожидает экспертной проверки.", "Tadqiqotchilarning ochiq maʼlumotlari asosida CORE tayyorlash misoli. Qoralama belgilar ekspert tekshiruvini kutmoqda.") + '</p>';
 }

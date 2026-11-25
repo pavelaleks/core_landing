@@ -3,6 +3,7 @@ import { getCatalog } from "../api/datasets.js";
 import { STEPS, DS_UNI } from "../api/demo-data.js";
 import { esc, date } from "../ui/format.js";
 import { scanHtml } from "../ui/submission.js";
+import { datasetUrl } from "../url.js";
 
 export function createAccountPages({ store, view, DS, UNIS, go, home }) {
   function favoriteContinuation() {
@@ -59,10 +60,9 @@ export function createAccountPages({ store, view, DS, UNIS, go, home }) {
     var favorites = ids.map(function (id) { return catalog.filter(function (d) { return d.id === id; })[0]; }).filter(Boolean);
     view.innerHTML = '<div class="cabinet-heading"><div><span class="kicker">Личный кабинет</span><h1>Избранные датасеты</h1><p class="lead">Ваша подборка для будущих проектов и сотрудничества.</p></div><a class="btn btn-primary" href="' + store.catalogUrl("ru") + '">Найти данные</a></div>' +
       (favorites.length ? '<div class="saved-grid">' + favorites.map(function (d) {
-        var url = /^https?:/.test(d.href) ? d.href : new URL(d.href, store.rootUrl).href;
-        if (d.t === "prep") url = store.cabinetUrl("#demo/" + d.id);
-        return '<article class="card saved-card"><p class="small muted">' + esc(d.org.ru || d.org.en) + '</p><h2>' + esc(d.title.ru || d.title.en) + '</h2>' +
-          (d.desc ? '<p>' + esc(d.desc.ru || d.desc.en) + '</p>' : "") + '<div class="saved-actions"><a class="btn btn-ghost btn-sm" href="' + esc(url) + '"' + (/^https?:/.test(d.href) ? ' target="_blank" rel="noopener"' : "") + '>Открыть</a><button class="remove-favorite" data-remove-favorite="' + esc(d.id) + '">Убрать из избранного</button></div></article>';
+        var url = datasetUrl(d, "ru");
+        return '<article class="card saved-card"><p class="small muted">' + esc(d.org.ru || d.org.en) + '</p><h2><a href="' + esc(url) + '">' + esc(d.title.ru || d.title.en) + '</a></h2>' +
+          (d.desc ? '<p>' + esc(d.desc.ru || d.desc.en || "") + '</p>' : "") + '<div class="saved-actions"><a class="btn btn-ghost btn-sm" href="' + esc(url) + '">О наборе</a><button class="remove-favorite" data-remove-favorite="' + esc(d.id) + '">Убрать из избранного</button></div></article>';
       }).join("") + '</div>' : '<div class="card cabinet-empty"><h2>Сохраните первый датасет</h2><p>Откройте общий каталог и нажмите «В избранное» на подходящей карточке. Здесь появится ваша подборка.</p><a class="btn btn-ghost" href="' + store.catalogUrl("ru") + '">Перейти в каталог</a></div>') +
       (store.isDemo ? '<p class="cabinet-secondary"><a class="mvp-link" href="#my">Мои заявки на доступ</a></p>' : '<p class="cabinet-secondary">Избранное сохраняется только в этом браузере.</p>');
     Array.prototype.forEach.call(view.querySelectorAll("[data-remove-favorite]"), function (b) { b.onclick = function () { store.toggleFavorite(b.getAttribute("data-remove-favorite")); S = store.s; vFavorites(); }; });
@@ -77,7 +77,7 @@ export function createAccountPages({ store, view, DS, UNIS, go, home }) {
       '<div class="university-list">' + submissions.map(function (s) {
         return '<article class="card university-dataset"><div><span class="dataset-status">' + esc(s.status === 0 ? "Описание сохранено · демо" : STEPS[s.status] || STEPS[0]) + '</span><h2>' + esc(s.title) + '</h2><p>' + esc(s.desc) + '</p><p class="small muted">' + esc(s.field) + ' · ' + date(s.created) + '</p></div>' +
           '<details><summary>Описание загрузки</summary><p>' + esc(s.file && s.file.name || "") + '</p>' + scanHtml(s.file || {}) + '<p class="small muted">В демо сохранены сведения о файле, без передачи в CORE.</p></details></article>';
-      }).join("") + published.map(function (d) { return '<article class="card university-dataset"><div><span class="dataset-status">Открытый набор · демо CORE</span><h2>' + esc(d.title_ru) + '</h2><p>' + esc(d.buyers_ru) + '</p></div><a class="btn btn-ghost btn-sm" href="#ds/' + d.slug + '">Открыть</a></article>'; }).join("") + '</div>') +
+      }).join("") + published.map(function (d) { return '<article class="card university-dataset"><div><span class="dataset-status">Демонстрационный пример</span><h2>' + esc(d.title_ru) + '</h2><p>' + esc(d.buyers_ru) + '</p></div><a class="btn btn-ghost btn-sm" href="#ds/' + d.slug + '">Открыть</a></article>'; }).join("") + '</div>') +
       '<p class="cabinet-secondary"><a class="mvp-link" href="#uni/legacy">Заявки и этапы обработки</a></p>';
   }
 

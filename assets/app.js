@@ -590,41 +590,11 @@
   listeners.push(function () { setType(ftype); });
   }
 
-  if (form) form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    var status = $("#formStatus");
-    status.classList.remove("err");
-    $$("input[required]", form).forEach(function (i) { i.classList.add("touched"); });
-    if (!form.checkValidity()) {
-      status.classList.add("err");
-      status.textContent = T("Please fill in name, email, organization and accept the privacy terms.", "Заполните имя, email, организацию и подтвердите согласие.");
-      return;
-    }
-    var data = {};
-    new FormData(form).forEach(function (v, k) { data[k] = v; });
-    data.lang = lang; data.page = location.href; data.ts = new Date().toISOString();
-    var TYPE_RU = { med: "медтуризм", buyer: "покупатель", bench: "бенчмарк", university: "вуз", researcher: "исследователь", investor: "инвестор" };
-    data._subject = "CORE · заявка: " + (TYPE_RU[data.type] || data.type) + " · " + data.org;
-    data._template = "table"; data._captcha = "false";
-    if (data.email) data._replyto = data.email;
-    var btn = $("button[type=submit]", form); btn.disabled = true;
-    var ok = function () {
-      status.textContent = T("Thank you! We'll get back to you within 24 hours.", "Спасибо! Мы ответим в течение 24 часов.");
-      form.reset(); setType(ftype); btn.disabled = false;
-    };
-    if (CFG.formEndpoint) {
-      fetch(CFG.formEndpoint, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(data) })
-        .then(function (r) { if (!r.ok) throw new Error(r.status); ok(); })
-        .catch(function () { btn.disabled = false; status.classList.add("err"); status.textContent = T("Couldn't send. Please email us directly: ", "Не удалось отправить. Напишите нам: ") + (CFG.contactEmail || ""); });
-    } else if (CFG.contactEmail) {
-      var body = Object.keys(data).map(function (k) { return k + ": " + data[k]; }).join("\n");
-      location.href = "mailto:" + CFG.contactEmail + "?subject=" + encodeURIComponent("CORE · " + data.type + " · " + data.org) + "&body=" + encodeURIComponent(body);
-      ok();
-    } else {
-      btn.disabled = false; status.classList.add("err");
-      status.textContent = T("The form is not connected yet (see assets/config.js).", "Форма ещё не подключена (см. assets/config.js).");
-    }
-  });
+  if (form) {
+    form.setAttribute("data-contact-form", "");
+    form.dataset.datasetId = new URLSearchParams(location.search).get("dataset") || document.body.dataset.datasetId || "";
+    form.addEventListener("core:contact-sent", function () { setType(ftype); });
+  }
 
   /* ---------------- telegram & analytics (from config.js) ---------------- */
   if (CFG.telegram) {

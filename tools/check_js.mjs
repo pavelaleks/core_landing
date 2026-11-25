@@ -33,6 +33,8 @@ for (const entry of [
   "assets/app.js",
   "assets/graph3d.js",
   "assets/catalog-page.js",
+  "assets/dataset-page.js",
+  "assets/contact-forms.js",
   "assets/regions-page.js",
   "assets/rankings.js",
   "assets/how-page.js",

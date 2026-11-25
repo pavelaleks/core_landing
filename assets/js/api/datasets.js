@@ -71,26 +71,28 @@ export function fetchDatasetUsage(datasetId) {
 }
 
 export function datasetFields(input, language = "ru", original = {}) {
-  const text = key => String(input[key] || "").trim();
+  const values = { ...original, ...input };
+  const text = key => String(values[key] || "").trim();
   const integer = key => {
-    if (input[key] == null || String(input[key]).trim() === "") return null;
-    const value = Number(input[key]);
+    if (values[key] == null || String(values[key]).trim() === "") return null;
+    const value = Number(values[key]);
     if (!Number.isSafeInteger(value) || value < 0) throw new Error("Укажите целое неотрицательное число.");
     return value;
   };
-  if (!text("title") || !text("description")) throw new Error("Заполните название и описание.");
-  const links = Array.isArray(input.links) ? input.links.map(link => {
+  if (!String(input.title || "").trim() || !String(input.description || "").trim()) throw new Error("Заполните название и описание.");
+  const links = Array.isArray(values.links) ? values.links.map(link => {
     const url = safeLink(link.url);
     if (!url) throw new Error("В ссылках используйте полный адрес https:// или http://.");
     return { type: String(link.type || "documentation"), title: String(link.title || "").trim(), url };
-  }) : String(input.links || "").split(/\r?\n/).filter(line => line.trim()).map(line => {
+  }) : String(values.links || "").split(/\r?\n/).filter(line => line.trim()).map(line => {
     const parts = line.split("|").map(part => part.trim());
     const url = safeLink(parts.length > 1 ? parts.pop() : parts[0]);
     if (!url) throw new Error("В ссылках используйте полный адрес https:// или http://.");
     const type = parts.length > 1 ? parts.shift() : "documentation";
     return { type, title: parts[0] && parts[0] !== url ? parts[0] : "", url };
   });
-  const tokenCount = integer("token_count");
+  const changedVersion = !Object.hasOwn(input, "token_count") && text("data_version") !== String(original.data_version || "").trim();
+  const tokenCount = changedVersion ? null : integer("token_count");
   if (tokenCount != null && (!text("tokenizer") || !text("token_method") || !text("token_material") || !text("data_version"))) throw new Error("Для токенов укажите токенизатор, метод, материал и версию данных.");
   return {
     title: { ...(original.title || {}), [language]: text("title") },

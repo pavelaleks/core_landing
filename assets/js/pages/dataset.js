@@ -2,6 +2,7 @@ import { PRICE, ROLES, id } from "../api/demo-data.js";
 import { fetchDatasetUsage, getCatalog } from "../api/datasets.js";
 import { organizationUrl } from "../api/organizations.js";
 import { recordUnit } from "../ui/data-labels.js";
+import { datasetUrl } from "../url.js";
 import { renderDatasetUsage } from "../ui/dataset-usage.js";
 import { datasetSheet, openSheetSection, sheetFacts, sheetSection, wireSheetActions } from "../ui/dataset-sheet.js";
 import { preparedApiExample, preparedData, preparedPassport } from "../ui/prepared-dataset.js";
@@ -62,10 +63,10 @@ export function createDatasetPage({ store, view, ds, myReq, go, render, switchRo
       '<button class="sheet-text-action" type="button" data-sheet-open="api">' + (api ? 'Попробовать API · демо' : 'Пример API · демо') + '</button>' +
       (buyer ? '<button type="button" class="favorite-button" id="saveDataset" aria-pressed="' + saved + '">' + (saved ? "В избранном" : "В избранное") + '</button>' : '');
     const volume = d.key === "terms" ? nf(d.rows) + " терминов" : d.key === "insurance" ? nf(d.rows) + " респондента" : nf(d.rows) + " " + recordUnit(d.rows, "ru");
-    view.innerHTML = '<div class="sheet-wrap"><a class="back" href="#catalog">← Каталог</a>' + datasetSheet({
-      eyebrow: '<p class="sheet-kicker">Демо-пакет CORE · ' + esc(d.field_ru) + ' · ' + esc(d.country) + '</p>',
+    view.innerHTML = '<div class="sheet-wrap"><a class="back" data-dataset-back href="' + esc(datasetUrl({ id: slug }, "ru")) + '">← К набору данных</a>' + datasetSheet({
+      eyebrow: '<p class="sheet-kicker">Демонстрационный пример · ' + esc(d.field_ru) + ' · ' + esc(d.country) + '</p>',
       title: esc(d.title_ru), description: '<p class="sheet-intro">' + esc(descriptions[d.key]) + '</p>',
-      source: '<p class="sheet-by">Источник · ' + organization + ' · <a href="' + esc(organizationUrl("ORG-CORE", "ru")) + '">Подготовлено CORE</a></p>',
+      source: '<p class="sheet-by">' + organization + ' · Подготовлено CORE</p>',
       facts: sheetFacts([volume, d.columns + " полей", "CC BY 4.0"]),
       actions: '<div class="sheet-actions">' + actions + '</div>',
       data: sheetSection("data", preparedData(d)),

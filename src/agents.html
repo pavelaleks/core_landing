@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CORE agents and services</title>
-<meta name="description" content="MCP tools, CORE agents and data services for external agents. Tasks, connections, outputs and current readiness for nine capabilities.">
+<meta name="description" content="Examples of MCP tools, CORE agents and data services. Tasks, connections, outputs and current readiness.">
 <meta property="og:title" content="CORE agents and services">
-<meta property="og:description" content="MCP tools, CORE agents and data services for external agents. Tasks, connections, outputs and current readiness for nine capabilities.">
+<meta property="og:description" content="Examples of MCP tools, CORE agents and data services. Tasks, connections, outputs and current readiness.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://coredata.uz/agents.html">
 <meta property="og:image" content="https://coredata.uz/assets/og.png">
@@ -29,6 +29,10 @@
     <section class="agents-hero" aria-labelledby="agents-title">
       <h1 id="agents-title" data-ru="Агенты и сервисы CORE">CORE agents and services</h1>
       <p class="agents-intro" data-ru="Подключение вашего агента к данным CORE и выполнение поручений нашими агентами.">Connecting your agent to CORE data and delegating tasks to our agents.</p>
+      <aside class="agents-demo-note" aria-labelledby="agents-demo-title">
+        <h2 id="agents-demo-title" data-ru="Примеры сервисов и демо">Service examples and demos</h2>
+        <p data-ru="Здесь описаны возможные сценарии работы CORE. Подключение MCP, агенты и серверные сервисы находятся на стадии концепции. Ссылки ведут к существующим данным и демонстрационным материалам.">This page describes possible CORE workflows. MCP access, agents and server-side services are at the concept stage. Links lead to existing data and demonstration materials.</p>
+      </aside>
       <div class="agents-routes">
         <section class="agents-route" aria-labelledby="connect-agent-title">
           <h2 id="connect-agent-title" data-ru="Подключить своего агента">Connect your agent</h2>
@@ -46,7 +50,7 @@
       </div>
       <p class="agents-readiness-note">
         <span class="agents-checked"><span data-ru="Готовность по текущей реализации">Readiness based on the current implementation</span> · <time datetime="2026-11-25" data-ru="25 ноября 2026">25 November 2026</time></span>
-        <span data-ru="Девять возможностей находятся на стадии концепции. Для каждой указаны предлагаемый интерфейс и уже подготовленные данные, скрипты или демонстрации.">The nine capabilities are at the concept stage. Each lists its proposed interface and the data, scripts or demonstrations already available.</span>
+        <span data-ru="Для каждой возможности указаны предлагаемый интерфейс и уже подготовленные данные, скрипты или демонстрации.">Each capability lists its proposed interface and the data, scripts or demonstrations already available.</span>
       </p>
     </section>
 
@@ -125,9 +129,18 @@
     <section class="agents-section" id="agent-services" aria-labelledby="agent-services-title">
       <div class="agents-section-heading">
         <div><h2 id="agent-services-title" data-ru="Сервисы данных для ваших агентов">Data services for your agents</h2><p data-ru="Ваш агент передаёт конкретную операцию CORE и получает результат для следующего шага.">Your agent delegates a specific operation to CORE and receives a result for its next step.</p></div>
-        <span class="agents-protocol">HTTP API</span>
+        <span class="agents-protocol">HTTP API · MCP</span>
       </div>
-      <div class="agents-grid">
+      <div class="agents-grid agents-services-grid">
+        <article class="agents-service" aria-labelledby="research-match-service-title">
+          <h3 id="research-match-service-title" data-ru="Кто исследует похожую проблему">Who studies a similar problem</h3>
+          <dl class="agents-fields">
+            <div><dt data-ru="Задача">Task</dt><dd data-ru="Найти университеты и исследовательские группы, которые работают над похожей задачей.">Find universities and research groups working on a similar problem.</dd></div>
+            <div><dt data-ru="Подключение">Connection</dt><dd data-ru="API или MCP. Агент передаёт описание задачи, методы и ограничения поиска.">API or MCP. The agent provides a problem description, methods and search constraints.</dd></div>
+            <div><dt data-ru="Результат">Output</dt><dd data-ru="Кандидаты, публикации с датами и ссылками на источники, объяснение сходства и связанные датасеты.">Candidates, publications with dates and source links, an explanation of the match and related datasets.</dd></div>
+            <div class="agents-status-field"><dt data-ru="Готовность">Readiness</dt><dd><span class="agents-status" data-ru="Сервис — концепция">Service — concept</span><p data-ru="Есть связи вузов, публикаций и направлений. Для подбора конкретных исследователей понадобятся авторские ID и аффилиации.">Links between universities, publications and research areas are available. Finding individual researchers requires author IDs and affiliations.</p><a class="agents-foundation-link" href="developers.html#science-map" data-ru="Посмотреть существующие связи →">Explore existing relationships →</a></dd></div>
+          </dl>
+        </article>
         <article class="agents-service" aria-labelledby="corpus-service-title">
           <h3 id="corpus-service-title" data-ru="Индексирование корпусов">Corpus indexing</h3>
           <dl class="agents-fields">

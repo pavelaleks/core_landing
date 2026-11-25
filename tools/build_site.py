@@ -96,10 +96,10 @@ META = {
                  "uz": "Oʻzbekiston, Qozogʻiston, Qirgʻiziston va Tojikistonning 48 hududi bitta jadvalda: rasmiy demografiya, universitetlar, ilm-fan, klinikalar va soʻrov natijalari, ISO 3166-2 kodi bilan bogʻlangan."},
     },
     "universities.html": {
-        "title": {"en": "CORE for universities — put your data to work", "ru": "CORE для университетов — данные работают на вуз", "uz": "Universitetlar uchun CORE — maʼlumotlaringiz universitet uchun ishlaydi"},
-        "desc": {"en": "How Central Asian universities license their research data through CORE: closed by default, rights audit, revenue share, no cost to the university.",
-                 "ru": "Как университеты Центральной Азии лицензируют свои научные данные через CORE: закрыто по умолчанию, аудит прав, раздел дохода, без затрат для вуза.",
-                 "uz": "Markaziy Osiyo universitetlari ilmiy maʼlumotlarini CORE orqali qanday litsenziyalaydi: sukut boʻyicha yopiq, huquqlar auditi, daromad taqsimoti, universitet uchun xarajatsiz."},
+        "title": {"en": "CORE — university guide", "ru": "CORE — руководство для университета", "uz": "CORE — universitet uchun qoʻllanma"},
+        "desc": {"en": "How a university can get started with CORE, describe its research data, choose a license and publish a dataset description.",
+                 "ru": "Как университету начать работу с CORE, описать свои научные данные, выбрать лицензию и опубликовать набор в каталоге.",
+                 "uz": "Universitetning CORE da ish boshlashi, ilmiy maʼlumotlarini tavsiflashi, litsenziya tanlashi va katalogda eʼlon qilishi uchun qoʻllanma."},
     },
 }
 META["digests.html"] = {
@@ -120,9 +120,9 @@ META["rankings.html"] = {
 }
 META["agents.html"] = {
     "title": {"en": "CORE agents and services", "ru": "Агенты и сервисы CORE", "uz": "CORE agentlari va xizmatlari"},
-    "desc": {"en": "MCP tools, CORE agents and data services for external agents. Tasks, connections, outputs and current readiness for nine capabilities.",
-             "ru": "MCP-инструменты, агенты CORE и сервисы данных для чужих агентов. Задачи, подключение, результаты и фактическая готовность девяти возможностей.",
-             "uz": "MCP vositalari, CORE agentlari va boshqa agentlar uchun maʼlumotlar xizmatlari. Toʻqqiz imkoniyatning vazifalari, ulanishi, natijalari va joriy tayyorligi."},
+    "desc": {"en": "Examples of MCP tools, CORE agents and data services. Tasks, connections, outputs and current readiness.",
+             "ru": "Примеры MCP-инструментов, агентов CORE и сервисов данных. Задачи, подключение, результаты и текущая готовность.",
+             "uz": "MCP vositalari, CORE agentlari va maʼlumotlar xizmatlari misollari. Vazifalar, ulanish, natijalar va joriy tayyorlik."},
 }
 LICENSE_URL = {"CC0-1.0": "https://creativecommons.org/publicdomain/zero/1.0/", "ODbL-1.0": "https://opendatacommons.org/licenses/odbl/1-0/"}
 COUNTRY_EN = {"UZ": "Uzbekistan", "KZ": "Kazakhstan", "KG": "Kyrgyzstan", "TJ": "Tajikistan"}
@@ -303,9 +303,10 @@ def base_details(ds, lang):
     passport += '<h3>' + l("What CORE added", "Что добавил CORE", "CORE nima qoʻshdi") + '</h3><ul class="checks">' + "".join('<li>' + esc(T(lang, en, ru)) + '</li>' for en, ru in zip(ds["adds_en"], ds["adds_ru"])) + '</ul>'
     csv = l("Download registry (CSV)", "Скачать справочник (CSV)", "Maʼlumotnomani yuklab olish (CSV)") if full else l("Download sample (CSV)", "Скачать образец (CSV)", "Namunani yuklab olish (CSV)")
     request = l("Discuss updates and integration", "Обсудить обновления и интеграцию", "Yangilash va integratsiyani muhokama qilish") if full else l("Request the full dataset", "Запросить полный набор", "Toʻliq toʻplamni soʻrash")
-    primary = f'<a class="sheet-primary" href="{api}/sample.csv" download>{csv}</a>' if full else f'<a class="sheet-primary" href="../index.html#contact">{request}</a>'
+    request_url = "../index.html?dataset=" + ds["id"] + "#contact"
+    primary = f'<a class="sheet-primary" href="{api}/sample.csv" download>{csv}</a>' if full else f'<a class="sheet-primary" href="{request_url}">{request}</a>'
     scope_note = l("The full registry is free to download and use, including commercially. Regular updates and integration are paid services.", "Весь справочник можно бесплатно скачать и использовать, в том числе в коммерческих продуктах. Регулярные обновления и интеграция оплачиваются отдельно.", "Toʻliq maʼlumotnomani bepul yuklab olish va tijorat maqsadida ham ishlatish mumkin. Muntazam yangilanish va integratsiya pullik xizmatlardir.") if full else l("The sample and metadata are free without registration. The full dataset, updates and full API are available under license.", "Образец и метаданные доступны бесплатно без регистрации. Полный набор, обновления и доступ к нему по API предоставляются по лицензии.", "Namuna va metamaʼlumotlar roʻyxatdan oʻtmasdan bepul. Toʻliq toʻplam, yangilanishlar va toʻliq API litsenziya asosida beriladi.")
-    access = f'<p id="license">{esc(license_text)}</p><p>{scope_note}</p><p><a href="{api}/sample.csv" download>{csv}</a> · <a href="{api}/croissant.json">Croissant (JSON)</a></p><p><a href="../index.html#contact">{request}</a></p>'
+    access = f'<p id="license">{esc(license_text)}</p><p>{scope_note}</p><p><a href="{api}/sample.csv" download>{csv}</a> · <a href="{api}/croissant.json">Croissant (JSON)</a></p><p><a href="{request_url}">{request}</a></p>'
     return dataset_card.sheet(eyebrow='<p class="sheet-kicker">' + esc(kind + " · " + " · ".join(countries)) + '</p>',
         title=esc(title), description='<p class="sheet-intro">' + esc(description) + '</p>', source=public_data.provenance_html(record, lang),
         facts=dataset_card.facts(fmt(volume) + " " + units, license_text, "v" + ds["version"]),
@@ -506,7 +507,7 @@ def version_modules(text, page_dir):
     """Keep native module imports fresh using the existing content-hash mechanism."""
     text = re.sub(r'<script type="importmap" data-core-modules>.*?</script>\n?', "", text, flags=re.S)
     pattern = r'<script type="module" src="([^"]+)"></script>'
-    maintained = ("assets/catalog-page.js", "assets/organization-page.js", "assets/account-session.js", "app/app.js")
+    maintained = ("assets/catalog-page.js", "assets/organization-page.js", "assets/account-session.js", "assets/dataset-page.js", "assets/contact-forms.js", "app/app.js")
     def target_of(entry):
         return posixpath.normpath(posixpath.join(page_dir, entry.group(1).split("?", 1)[0]))
     entries = [entry for entry in re.finditer(pattern, text) if target_of(entry) in maintained]
@@ -540,6 +541,15 @@ def version_modules(text, page_dir):
 
 
 def finalize(text, lang, page_path, meta):
+    published_path = page_path if lang == "en" else lang + "/" + page_path
+    assets = posixpath.relpath("assets", posixpath.dirname(published_path) or ".") + "/"
+    if 'id="leadForm"' in text or 'data-quick-contact' in text or 'id="publicDataset"' in text:
+        text = text.replace('</body>', '<script type="module" src="' + assets + 'contact-forms.js"></script>\n</body>')
+    if page_path in ("datasets/universities.html", "datasets/uz_medical_facilities.html", "datasets/ca_publications.html", "regions.html"):
+        ids = {"datasets/universities.html": "CORE-DS-0001", "datasets/uz_medical_facilities.html": "CORE-DS-0002", "datasets/ca_publications.html": "CORE-DS-0003", "regions.html": "regions"}
+        text = text.replace('<body ', '<body data-dataset-id="' + ids[page_path] + '" ', 1)
+        text = text.replace('<main>', '<template id="dataset-card-template">' + dataset_card.TEMPLATE + '</template><p class="wrap sec-first" id="datasetLoading" role="status">' + public_data.tr(lang, "Loading data…", "Загружаем данные…", "Maʼlumotlar yuklanmoqda…") + '</p><main hidden>', 1)
+        text = text.replace('</body>', '<script type="module" src="' + assets + 'dataset-page.js"></script>\n<script type="module" src="' + assets + 'contact-forms.js"></script>\n</body>')
     text = re.sub(r'\b(src|href)="((?:\.\./)*assets/[^"?#]+\.(?:js|css))"', asset_version, text)
     sw = lang_switch(page_path)(lang)
     text = re.sub(r'<div class="lang" role="group" aria-label="Language">.*?</div>', lambda m: sw, text, count=1, flags=re.S)
@@ -551,7 +561,7 @@ def finalize(text, lang, page_path, meta):
     text = re.sub(r'<meta property="og:url" content="[^"]*">', '<meta property="og:url" content="%s">' % page_url(lang, page_path), text)
     if meta:
         t, d = meta["title"][lang], meta["desc"][lang]
-        if page_path in ("index.html", "catalog.html", "digests.html", "organization.html", "rankings.html", "agents.html"):
+        if page_path in ("index.html", "catalog.html", "digests.html", "organization.html", "rankings.html", "agents.html", "universities.html"):
             text = re.sub(r'<meta property="og:title" content="[^"]*">', '<meta property="og:title" content="%s">' % esc(t), text, count=1)
         text = re.sub(r"<title>.*?</title>", "<title>%s</title>" % esc(t), text, count=1, flags=re.S)
         text = re.sub(r'<meta name="description" content="[^"]*">', '<meta name="description" content="%s">' % esc(d), text, count=1)
@@ -741,6 +751,11 @@ def build():
     registry_date = next(ds["updated"] for ds in CAT if ds["slug"] == "universities")
     ranking_data = rankings.collect(registry, public_data.SNAPSHOT["datasets"], registry_date)
     src_index = open(os.path.join(ROOT, "src", "index.html"), encoding="utf-8").read()
+    start_repeat = re.search(r'<section\b[^>]*\bid="contact"[^>]*>.*?</section>', src_index, re.S).group(0)
+    start_repeat = start_repeat.replace('id="contact"', 'id="contact-end"').replace('id="cooperation"', 'id="cooperation-end"').replace('cooperation-title', 'cooperation-title-end').replace('id="participate"', 'id="participate-end"')
+    src_index = src_index.replace("<!--CORE_START_REPEAT-->", start_repeat)
+    with open(os.path.join(ROOT, "src", "join-core.html"), encoding="utf-8") as source:
+        join_cta = source.read()
     nav = re.search(r"<!-- ============ NAV ============ -->.*?</header>", src_index, re.S).group(0)
     footer = re.search(r'<footer class="foot">.*?</footer>', src_index, re.S).group(0)
     def up(h):
@@ -758,6 +773,7 @@ def build():
              "pricing.html": open(os.path.join(ROOT, "src", "pricing.html"), encoding="utf-8").read(),
              "how.html": open(os.path.join(ROOT, "src", "how.html"), encoding="utf-8").read(),
              "catalog.html": open(os.path.join(ROOT, "src", "catalog.html"), encoding="utf-8").read(),
+             "dataset.html": open(os.path.join(ROOT, "src", "dataset.html"), encoding="utf-8").read(),
              "organization.html": open(os.path.join(ROOT, "src", "organization.html"), encoding="utf-8").read(),
              "documents.html": open(os.path.join(ROOT, "src", "documents.html"), encoding="utf-8").read()}
     for d in CAT:
@@ -766,13 +782,15 @@ def build():
         if row["kind"] == "dataset":
             page_path = "datasets/" + row["id"] + ".html"
             pages[page_path] = public_data.new_dataset_page(row, up(nav), up(footer), BASE)
-            META[page_path] = {"title": {lang: public_data.local(row["title"], lang) + " — CORE" for lang in LANGS}, "desc": {lang: public_data.local(row["description"], lang) for lang in LANGS}}
+            META[page_path] = {"title": {lang: public_data.tr(lang, "Dataset — CORE", "Набор данных — CORE", "Maʼlumotlar toʻplami — CORE") for lang in LANGS}, "desc": {lang: public_data.tr(lang, "Research data and access terms.", "Научные данные и условия доступа.", "Ilmiy maʼlumotlar va kirish shartlari.") for lang in LANGS}}
     LOCAL_PAGES = set(pages.keys()) | {"."}
     for path, text in pages.items():
         page_dir = posixpath.dirname(path)
         nav_target = {"digests.html": "index.html#digests"}.get(path, path)
         page_nav = nav.replace('href="%s"' % nav_target, 'href="%s" aria-current="page"' % nav_target, 1)
         text = text.replace("<!--CORE_SITE_NAV-->", page_nav).replace("<!--CORE_SITE_FOOTER-->", footer)
+        text = text.replace("<!--CORE_JOIN_CTA-->", join_cta)
+        text = text.replace("<!--CORE_DATASET_TEMPLATE-->", '<template id="dataset-card-template">' + dataset_card.TEMPLATE + '</template>')
         for lang in LANGS:
             t = localize(text, lang)
             if "<!--CORE_BASE:" in t:

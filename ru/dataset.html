@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ru" data-static-lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dataset — CORE</title>
+<meta name="description" content="Research data, original publications, preparation and access terms.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles.css?v=a34b9b32">
+<link rel="stylesheet" href="../assets/dataset-card.css?v=922a923e">
+<link rel="canonical" href="https://coredata.uz/ru/dataset.html">
+<link rel="alternate" hreflang="en" href="https://coredata.uz/dataset.html">
+<link rel="alternate" hreflang="ru" href="https://coredata.uz/ru/dataset.html">
+<link rel="alternate" hreflang="uz" href="https://coredata.uz/uz/dataset.html">
+<link rel="alternate" hreflang="x-default" href="https://coredata.uz/dataset.html">
+</head>
+<body data-page="dataset">
+<!-- ============ NAV ============ -->
+<header class="nav" id="top">
+  <div class="wrap nav-in">
+    <a href="index.html" class="logo" aria-label="CORE home">
+      <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="2.2" opacity=".35"/><circle cx="16" cy="16" r="8.5" fill="none" stroke="currentColor" stroke-width="2.2" opacity=".7"/><circle cx="16" cy="16" r="3.4" fill="var(--teal)"/></svg>
+      <span>CORE</span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="index.html#how-it-works" data-ru="Как это работает">Как это работает</a>
+      <a href="catalog.html" data-ru="Каталог">Каталог</a>
+      <a href="agents.html" data-ru="Агенты и сервисы">Агенты и сервисы</a>
+      <a href="index.html#digests" data-ru="Дайджесты">Дайджесты</a>
+      <a href="../app/index.html#login" class="nav-account-mobile" data-account-link data-ru="Войти">Войти</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang" role="group" aria-label="Language"><a data-lang="en" href="../dataset.html" hreflang="en">EN</a><a data-lang="ru" href="dataset.html" hreflang="ru" aria-current="true">RU</a><a data-lang="uz" href="../uz/dataset.html" hreflang="uz">UZ</a></div>
+      <a href="../app/index.html#login" class="btn btn-primary btn-sm" data-account-link data-ru="Войти">Войти</a>
+      <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<template id="dataset-card-template"><article class="dataset-sheet">
+  <header class="sheet-head">
+    {{eyebrow}}
+    <h1>{{title}}</h1>
+    {{description}}
+    {{source}}
+    {{facts}}
+    {{actions}}
+  </header>
+  {{data}}
+  {{passport}}
+  {{access}}
+  {{api}}
+  {{usage}}
+</article></template>
+<main><section class="sec sec-first"><div class="wrap" id="publicDataset" aria-live="polite"><p data-ru="Загружаем данные…">Загружаем данные…</p></div></section></main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div><a href="index.html" class="logo" aria-label="CORE home">
+      <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="2.2" opacity=".35"/><circle cx="16" cy="16" r="8.5" fill="none" stroke="currentColor" stroke-width="2.2" opacity=".7"/><circle cx="16" cy="16" r="3.4" fill="var(--teal)"/></svg>
+      <span>CORE</span>
+    </a><p class="small muted" data-ru="Научные данные университетов — для новых исследований и сотрудничества.">Научные данные университетов — для новых исследований и сотрудничества.</p></div>
+    <div class="foot-links">
+      <a href="catalog.html" data-ru="Каталог">Каталог</a>
+      <a href="agents.html" data-ru="Агенты и сервисы">Агенты и сервисы</a>
+      <a href="index.html#how-it-works" data-ru="Как это работает">Как это работает</a>
+      <a href="index.html#digests" data-ru="Дайджесты">Дайджесты</a>
+      <a href="index.html#contact" data-ru="Сотрудничество">Сотрудничество</a>
+      <a href="../app/index.html#login" data-account-link data-ru="Личный кабинет">Личный кабинет</a>
+      <a href="documents.html" data-ru="Конфиденциальность">Конфиденциальность</a>
+    </div>
+    <p class="small muted attr" data-ru="Данные: © участники OpenStreetMap (ODbL), OpenAlex, ROR, Wikidata (CC0). Границы: Natural Earth.">Данные: © участники OpenStreetMap (ODbL), OpenAlex, ROR, Wikidata (CC0). Границы: Natural Earth.</p>
+  </div>
+</footer>
+<script src="../assets/config.js?v=7f1b7375"></script>
+<script src="../assets/i18n-uz.js?v=ac52ca3b"></script>
+<script src="../assets/i18n-topics.js?v=7b9d473b"></script>
+<script src="../assets/account-store.js?v=ed01f208"></script>
+<script src="../assets/app.js?v=b6b5e515"></script>
+<script src="../assets/vendor/supabase-2.119.2.js?v=7d52b31d"></script>
+<script type="importmap" data-core-modules>{"imports":{"../assets/js/api/auth.js":"../assets/js/api/auth.js?v=31ec254a","../assets/js/api/contact-requests.js":"../assets/js/api/contact-requests.js?v=0448a104","../assets/js/api/datasets.js":"../assets/js/api/datasets.js?v=6e17b1a4","../assets/js/api/demo-auth.js":"../assets/js/api/demo-auth.js?v=57516109","../assets/js/api/demo-data.js":"../assets/js/api/demo-data.js?v=db364f88","../assets/js/api/licenses.js":"../assets/js/api/licenses.js?v=0f4ae0da","../assets/js/api/organizations.js":"../assets/js/api/organizations.js?v=4b862e11","../assets/js/api/profiles.js":"../assets/js/api/profiles.js?v=dc6967ea","../assets/js/api/query.js":"../assets/js/api/query.js?v=931d47a5","../assets/js/api/sql.js":"../assets/js/api/sql.js?v=a80adb52","../assets/js/api/supabase-client.js":"../assets/js/api/supabase-client.js?v=d52c9625","../assets/js/pages/access.js":"../assets/js/pages/access.js?v=2965045a","../assets/js/pages/account.js":"../assets/js/pages/account.js?v=a3a37056","../assets/js/pages/auth-account.js":"../assets/js/pages/auth-account.js?v=b5af552d","../assets/js/pages/cabinet.js":"../assets/js/pages/cabinet.js?v=69410276","../assets/js/pages/catalog.js":"../assets/js/pages/catalog.js?v=1e9b4118","../assets/js/pages/dataset-api.js":"../assets/js/pages/dataset-api.js?v=1432d881","../assets/js/pages/dataset-records.js":"../assets/js/pages/dataset-records.js?v=e88ffbd4","../assets/js/pages/dataset.js":"../assets/js/pages/dataset.js?v=dc35d1a7","../assets/js/pages/demo-cabinet.js":"../assets/js/pages/demo-cabinet.js?v=0460aadb","../assets/js/pages/legacy-auth.js":"../assets/js/pages/legacy-auth.js?v=563a8a4c","../assets/js/pages/operator.js":"../assets/js/pages/operator.js?v=17a62937","../assets/js/pages/organization.js":"../assets/js/pages/organization.js?v=eca20709","../assets/js/pages/submissions.js":"../assets/js/pages/submissions.js?v=95085eba","../assets/js/ui/catalog-card.js":"../assets/js/ui/catalog-card.js?v=ccaa6b49","../assets/js/ui/contact-form.js":"../assets/js/ui/contact-form.js?v=b3dd3e6f","../assets/js/ui/data-labels.js":"../assets/js/ui/data-labels.js?v=4a3d72b5","../assets/js/ui/dataset-sheet.js":"../assets/js/ui/dataset-sheet.js?v=bbc90016","../assets/js/ui/dataset-usage.js":"../assets/js/ui/dataset-usage.js?v=c0e47533","../assets/js/ui/format.js":"../assets/js/ui/format.js?v=55785342","../assets/js/ui/navigation.js":"../assets/js/ui/navigation.js?v=364bdafb","../assets/js/ui/organization-fields.js":"../assets/js/ui/organization-fields.js?v=68e1d853","../assets/js/ui/prepared-dataset.js":"../assets/js/ui/prepared-dataset.js?v=15da5614","../assets/js/ui/submission.js":"../assets/js/ui/submission.js?v=bd0f68b4","../assets/js/url.js":"../assets/js/url.js?v=56c48f7f"}}</script>
+<script type="module" src="../assets/dataset-page.js?v=d3d7588d"></script>
+<script type="module" src="../assets/account-session.js?v=70bd5b20"></script>
+<script type="module" src="../assets/contact-forms.js?v=ccb1caa1"></script>
+</body>
+</html>

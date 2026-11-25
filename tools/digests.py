@@ -2,8 +2,7 @@
 import json
 import os
 from pathlib import Path
-from urllib.parse import quote
-from public_data import ROOT, RECORDS, local, tr, esc, safe_url
+from public_data import ROOT, RECORDS, local, tr, esc, safe_url, dataset_path
 
 SOURCE = json.loads(Path(ROOT, "data-src", "digests.json").read_text(encoding="utf-8"))
 
@@ -21,7 +20,7 @@ def render(lang, preview=False):
             record = RECORDS.get(dataset_id)
             if record is None:
                 continue  # Unpublished records do not enter the next static edition.
-            source = record.get("source_url") or "app/index.html?lang=" + lang + "#dataset/" + quote(dataset_id)
+            source = dataset_path(record)
             if source.startswith(("http:", "https:")) and not safe_url(source):
                 continue
             organization = record.get("organization") or {}

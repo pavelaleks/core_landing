@@ -19,15 +19,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/styles.css?v=106bca04">
-<link rel="stylesheet" href="../assets/dataset-card.css?v=a94ca6f3">
+<link rel="stylesheet" href="../assets/styles.css?v=a34b9b32">
+<link rel="stylesheet" href="../assets/dataset-card.css?v=922a923e">
 <link rel="canonical" href="https://coredata.uz/uz/regions.html">
 <link rel="alternate" hreflang="en" href="https://coredata.uz/regions.html">
 <link rel="alternate" hreflang="ru" href="https://coredata.uz/ru/regions.html">
 <link rel="alternate" hreflang="uz" href="https://coredata.uz/uz/regions.html">
 <link rel="alternate" hreflang="x-default" href="https://coredata.uz/regions.html">
 </head>
-<body data-page="regions" data-form-default="buyer">
+<body data-dataset-id="regions" data-page="regions" data-form-default="buyer">
 
 <!-- ============ NAV ============ -->
 <header class="nav" id="top">
@@ -51,7 +51,21 @@
   </div>
 </header>
 
-<main>
+<template id="dataset-card-template"><article class="dataset-sheet">
+  <header class="sheet-head">
+    {{eyebrow}}
+    <h1>{{title}}</h1>
+    {{description}}
+    {{source}}
+    {{facts}}
+    {{actions}}
+  </header>
+  {{data}}
+  {{passport}}
+  {{access}}
+  {{api}}
+  {{usage}}
+</article></template><p class="wrap sec-first" id="datasetLoading" role="status">Maʼlumotlar yuklanmoqda…</p><main hidden>
 <section class="sec rg-hero" data-nav="Регионы" data-nav-en="Regions" data-nav-uz="Hududlar">
   <div class="wrap"><div class="sheet-wrap">
     <p class="crumbs mono small"><a href="catalog.html" data-ru="Каталог">Katalog</a> / ISO 3166-2</p>
@@ -93,11 +107,6 @@
     </tr></thead><tbody></tbody></table></div></div>
       </div>
     </div></details>
-  <details class="sheet-section"><summary>API va misollar</summary><div class="sheet-body" id="sheet-api">
-      <p><a href="../api/v0/regions.json" data-ru="API (JSON)">API (JSON)</a></p>
-      <p class="sheet-caption" data-ru="Опрос Гулистанского госуниверситета (353 человека) о страховании лежит в той же сетке регионов, что и официальная демография. Поэтому ответы можно сравнить со структурой населения области, а выборку для нового опроса — построить по квотам из этой же таблицы.">Guliston davlat universitetining sugʻurta haqidagi soʻrovi (353 kishi) rasmiy demografiya bilan bir xil hududlar tarmogʻida joylashgan. Shuning uchun javoblarni viloyat aholisi tarkibi bilan solishtirish, yangi soʻrov tanlanmasini esa shu jadvaldagi kvotalar boʻyicha tuzish mumkin.</p>
-      <div class="rg-join card"><pre id="rgJoin"></pre></div>
-    </div></details>
   <details class="sheet-section"><summary>Toʻplam pasporti va sifat</summary><div class="sheet-body" id="sheet-passport">
     <p class="small muted rg-note" data-ru="Годы демографии: Узбекистан и Кыргызстан — 2018, Таджикистан — 2019, Казахстан — 2023. Возрастная структура по Узбекистану и доля городского населения по Казахстану и Таджикистану в источнике не даны. Медучреждения — только Узбекистан, по нашей базе на основе OpenStreetMap.">Demografiya yillari: Oʻzbekiston va Qirgʻiziston — 2018, Tojikiston — 2019, Qozogʻiston — 2023. Oʻzbekiston boʻyicha yosh tarkibi va Qozogʻiston hamda Tojikiston boʻyicha shahar aholisi ulushi manbada berilmagan. Tibbiyot muassasalari — faqat Oʻzbekiston, OpenStreetMap asosidagi bazamiz boʻyicha.</p>
     <p class="small muted rg-note" data-ru="Источники: демография — Common Operational Datasets ООН (OCHA, UNFPA) на основе данных национальных статистических ведомств, CC BY-IGO; границы для привязки вузов — geoBoundaries (OpenStreetMap, ODbL); вузы и научные работы — CORE (CC0, OpenAlex); медучреждения — CORE на основе OpenStreetMap (ODbL); опрос — Гулистанский госуниверситет (CC BY 4.0), подготовка CORE.">Manbalar: demografiya — BMTning Common Operational Datasets (OCHA, UNFPA), milliy statistika idoralari maʼlumotlari asosida, CC BY-IGO; universitetlarni bogʻlash uchun chegaralar — geoBoundaries (OpenStreetMap, ODbL); universitetlar va ilmiy ishlar — CORE (CC0, OpenAlex); tibbiyot muassasalari — OpenStreetMap asosida CORE (ODbL); soʻrov — Guliston davlat universiteti (CC BY 4.0), CORE tayyorlagan.</p>
@@ -105,6 +114,11 @@
   <details class="sheet-section"><summary>Kirish va shartlar</summary><div class="sheet-body" id="sheet-access">
       <p><a href="../api/v0/regions.csv" download data-ru="Скачать таблицу (CSV)">Jadvalni yuklab olish (CSV)</a></p>
       <p><a href="#contact" data-form="buyer" data-ru="Обсудить задачу">Vazifani muhokama qilish</a></p>
+    </div></details>
+  <details class="sheet-section"><summary>API va misollar</summary><div class="sheet-body" id="sheet-api">
+      <p><a href="../api/v0/regions.json" data-ru="API (JSON)">API (JSON)</a></p>
+      <p class="sheet-caption" data-ru="Опрос Гулистанского госуниверситета (353 человека) о страховании лежит в той же сетке регионов, что и официальная демография. Поэтому ответы можно сравнить со структурой населения области, а выборку для нового опроса — построить по квотам из этой же таблицы.">Guliston davlat universitetining sugʻurta haqidagi soʻrovi (353 kishi) rasmiy demografiya bilan bir xil hududlar tarmogʻida joylashgan. Shuning uchun javoblarni viloyat aholisi tarkibi bilan solishtirish, yangi soʻrov tanlanmasini esa shu jadvaldagi kvotalar boʻyicha tuzish mumkin.</p>
+      <div class="rg-join card"><pre id="rgJoin"></pre></div>
     </div></details>
 
 </article>
@@ -263,14 +277,17 @@
   </div>
 </footer>
 <script src="../assets/config.js?v=7f1b7375"></script>
-<script src="../assets/i18n-uz.js?v=f3c316e5"></script>
+<script src="../assets/i18n-uz.js?v=ac52ca3b"></script>
 <script src="../assets/geo.js?v=72b529c8"></script>
 <script src="../assets/regions.js?v=8ffe2409"></script>
 <script src="../assets/account-store.js?v=ed01f208"></script>
-<script src="../assets/app.js?v=2de13c6a"></script>
+<script src="../assets/app.js?v=b6b5e515"></script>
 <script src="../assets/regions-page.js?v=38d8e5b4"></script>
 <script src="../assets/vendor/supabase-2.119.2.js?v=7d52b31d"></script>
-<script type="importmap" data-core-modules>{"imports":{"../assets/js/api/auth.js":"../assets/js/api/auth.js?v=31ec254a","../assets/js/api/datasets.js":"../assets/js/api/datasets.js?v=e74cc7f8","../assets/js/api/demo-auth.js":"../assets/js/api/demo-auth.js?v=57516109","../assets/js/api/demo-data.js":"../assets/js/api/demo-data.js?v=db364f88","../assets/js/api/licenses.js":"../assets/js/api/licenses.js?v=0f4ae0da","../assets/js/api/organizations.js":"../assets/js/api/organizations.js?v=4b862e11","../assets/js/api/profiles.js":"../assets/js/api/profiles.js?v=dc6967ea","../assets/js/api/query.js":"../assets/js/api/query.js?v=931d47a5","../assets/js/api/sql.js":"../assets/js/api/sql.js?v=a80adb52","../assets/js/api/supabase-client.js":"../assets/js/api/supabase-client.js?v=d52c9625","../assets/js/pages/access.js":"../assets/js/pages/access.js?v=2965045a","../assets/js/pages/account.js":"../assets/js/pages/account.js?v=57739729","../assets/js/pages/auth-account.js":"../assets/js/pages/auth-account.js?v=fe726ca4","../assets/js/pages/cabinet.js":"../assets/js/pages/cabinet.js?v=45f67cd3","../assets/js/pages/catalog.js":"../assets/js/pages/catalog.js?v=7ba3a3cc","../assets/js/pages/dataset-api.js":"../assets/js/pages/dataset-api.js?v=1432d881","../assets/js/pages/dataset-records.js":"../assets/js/pages/dataset-records.js?v=076b1e6a","../assets/js/pages/dataset.js":"../assets/js/pages/dataset.js?v=643803a9","../assets/js/pages/demo-cabinet.js":"../assets/js/pages/demo-cabinet.js?v=0460aadb","../assets/js/pages/legacy-auth.js":"../assets/js/pages/legacy-auth.js?v=563a8a4c","../assets/js/pages/operator.js":"../assets/js/pages/operator.js?v=17a62937","../assets/js/pages/organization.js":"../assets/js/pages/organization.js?v=eca20709","../assets/js/pages/submissions.js":"../assets/js/pages/submissions.js?v=95085eba","../assets/js/ui/catalog-card.js":"../assets/js/ui/catalog-card.js?v=3c51923d","../assets/js/ui/data-labels.js":"../assets/js/ui/data-labels.js?v=4a3d72b5","../assets/js/ui/dataset-sheet.js":"../assets/js/ui/dataset-sheet.js?v=bbc90016","../assets/js/ui/dataset-usage.js":"../assets/js/ui/dataset-usage.js?v=c0e47533","../assets/js/ui/format.js":"../assets/js/ui/format.js?v=55785342","../assets/js/ui/organization-fields.js":"../assets/js/ui/organization-fields.js?v=68e1d853","../assets/js/ui/prepared-dataset.js":"../assets/js/ui/prepared-dataset.js?v=25458e08","../assets/js/ui/submission.js":"../assets/js/ui/submission.js?v=bd0f68b4","../assets/js/url.js":"../assets/js/url.js?v=5b9d8eb4"}}</script>
-<script type="module" src="../assets/account-session.js?v=c13eef23"></script>
+<script type="importmap" data-core-modules>{"imports":{"../assets/js/api/auth.js":"../assets/js/api/auth.js?v=31ec254a","../assets/js/api/contact-requests.js":"../assets/js/api/contact-requests.js?v=0448a104","../assets/js/api/datasets.js":"../assets/js/api/datasets.js?v=6e17b1a4","../assets/js/api/demo-auth.js":"../assets/js/api/demo-auth.js?v=57516109","../assets/js/api/demo-data.js":"../assets/js/api/demo-data.js?v=db364f88","../assets/js/api/licenses.js":"../assets/js/api/licenses.js?v=0f4ae0da","../assets/js/api/organizations.js":"../assets/js/api/organizations.js?v=4b862e11","../assets/js/api/profiles.js":"../assets/js/api/profiles.js?v=dc6967ea","../assets/js/api/query.js":"../assets/js/api/query.js?v=931d47a5","../assets/js/api/sql.js":"../assets/js/api/sql.js?v=a80adb52","../assets/js/api/supabase-client.js":"../assets/js/api/supabase-client.js?v=d52c9625","../assets/js/pages/access.js":"../assets/js/pages/access.js?v=2965045a","../assets/js/pages/account.js":"../assets/js/pages/account.js?v=a3a37056","../assets/js/pages/auth-account.js":"../assets/js/pages/auth-account.js?v=b5af552d","../assets/js/pages/cabinet.js":"../assets/js/pages/cabinet.js?v=69410276","../assets/js/pages/catalog.js":"../assets/js/pages/catalog.js?v=1e9b4118","../assets/js/pages/dataset-api.js":"../assets/js/pages/dataset-api.js?v=1432d881","../assets/js/pages/dataset-records.js":"../assets/js/pages/dataset-records.js?v=e88ffbd4","../assets/js/pages/dataset.js":"../assets/js/pages/dataset.js?v=dc35d1a7","../assets/js/pages/demo-cabinet.js":"../assets/js/pages/demo-cabinet.js?v=0460aadb","../assets/js/pages/legacy-auth.js":"../assets/js/pages/legacy-auth.js?v=563a8a4c","../assets/js/pages/operator.js":"../assets/js/pages/operator.js?v=17a62937","../assets/js/pages/organization.js":"../assets/js/pages/organization.js?v=eca20709","../assets/js/pages/submissions.js":"../assets/js/pages/submissions.js?v=95085eba","../assets/js/ui/catalog-card.js":"../assets/js/ui/catalog-card.js?v=ccaa6b49","../assets/js/ui/contact-form.js":"../assets/js/ui/contact-form.js?v=b3dd3e6f","../assets/js/ui/data-labels.js":"../assets/js/ui/data-labels.js?v=4a3d72b5","../assets/js/ui/dataset-sheet.js":"../assets/js/ui/dataset-sheet.js?v=bbc90016","../assets/js/ui/dataset-usage.js":"../assets/js/ui/dataset-usage.js?v=c0e47533","../assets/js/ui/format.js":"../assets/js/ui/format.js?v=55785342","../assets/js/ui/navigation.js":"../assets/js/ui/navigation.js?v=364bdafb","../assets/js/ui/organization-fields.js":"../assets/js/ui/organization-fields.js?v=68e1d853","../assets/js/ui/prepared-dataset.js":"../assets/js/ui/prepared-dataset.js?v=15da5614","../assets/js/ui/submission.js":"../assets/js/ui/submission.js?v=bd0f68b4","../assets/js/url.js":"../assets/js/url.js?v=56c48f7f"}}</script>
+<script type="module" src="../assets/account-session.js?v=70bd5b20"></script>
+<script type="module" src="../assets/contact-forms.js?v=ccb1caa1"></script>
+<script type="module" src="../assets/dataset-page.js?v=d3d7588d"></script>
+<script type="module" src="../assets/contact-forms.js?v=ccb1caa1"></script>
 </body>
 </html>

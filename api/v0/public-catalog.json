@@ -222,12 +222,12 @@
    "title": {
     "en": "Hospitalised COVID-19 patients in Almaty, 2020–2021 (n = 2,313), standardised",
     "ru": "Госпитализированные пациенты с COVID-19, Алматы, 2020–2021 (2 313 человек), стандартизировано",
-    "uz": "COVID-19 bilan yotqizilgan bemorlar, Almati, 2020–2021 (2 313 kishi), standartlashtirilgan"
+    "uz": "Olmaotada COVID-19 bilan kasalxonaga yotqizilgan bemorlar, 2020–2021"
    },
    "description": {
-    "en": "Free-text organism names (partly Russian) mapped to standard species names and NCBI taxon IDs; Mixed susceptibility codes unified to S/I/R; antibiotics coded with ATC.",
-    "ru": "Названия микроорганизмов из свободного текста (частично на русском) приведены к стандарту и кодам таксономии NCBI; Разнобой в кодах чувствительности сведён к S/I/R, антибиотики закодированы по ATC.",
-    "uz": "Названия микроорганизмов из свободного текста (частично на русском) приведены к стандарту и кодам таксономии NCBI; Разнобой в кодах чувствительности сведён к S/I/R, антибиотики закодированы по ATC."
+    "en": "Records of COVID-19 hospital admissions in Almaty during 2020–2021, including clinical measurements, laboratory results and outcomes.",
+    "ru": "Записи о госпитализациях пациентов с COVID-19 в Алматы за 2020–2021 годы. Клинические показатели, результаты анализов и исходы лечения.",
+    "uz": "2020–2021 yillarda Olmaotada COVID-19 bilan kasalxonaga yotqizilgan bemorlar qaydlari. Klinik koʻrsatkichlar, tahlil natijalari va davolash yakunlari."
    },
    "category": "Medicine",
    "countries": [
@@ -251,7 +251,7 @@
    "formats": null,
    "publication_year": 2026,
    "mentions_central_asia": false,
-   "updated_at": "2026-11-24T10:06:10.869797+00:00",
+   "updated_at": "2026-11-25T02:25:07.052355+00:00",
    "organization": {
     "id": "UNI-KZ-0094",
     "name": "Казахский национальный медицинский университет имени С. Д. Асфендиярова",
@@ -269,12 +269,12 @@
    "title": {
     "en": "Insurance literacy and inclusion survey, Syrdarya region (n = 353)",
     "ru": "Опрос о страховой грамотности и охвате, Сырдарьинская область (353 человека)",
-    "uz": "Sugʻurta savodxonligi va qamrovi soʻrovi, Sirdaryo viloyati (353 kishi)"
+    "uz": "Sirdaryo viloyatida sugʻurta savodxonligi va qamrovi boʻyicha soʻrov"
    },
    "description": {
-    "en": "Composite scores stored as Excel formulas evaluated into values; Columns renamed to readable names; a respondent ID added.",
-    "ru": "Итоговые баллы, хранившиеся формулами Excel, пересчитаны в значения; Колонки переименованы понятно, добавлен ID респондента.",
-    "uz": "Итоговые баллы, хранившиеся формулами Excel, пересчитаны в значения; Колонки переименованы понятно, добавлен ID респондента."
+    "en": "Responses from 353 residents of the Syrdarya region about insurance, trust in insurers and intentions to buy a policy.",
+    "ru": "Ответы 353 жителей Сырдарьинской области о страховании, доверии к страховщикам и намерении купить полис.",
+    "uz": "Sirdaryo viloyatidagi 353 ishtirokchining sugʻurta, sugʻurtalovchilarga ishonch va polis sotib olish niyati haqidagi javoblari."
    },
    "category": "Sociology and finance",
    "countries": [
@@ -298,7 +298,7 @@
    "formats": null,
    "publication_year": 2026,
    "mentions_central_asia": false,
-   "updated_at": "2026-11-24T10:06:10.869797+00:00",
+   "updated_at": "2026-11-25T02:25:07.052355+00:00",
    "organization": {
     "id": "UNI-UZ-0017",
     "name": "Gulistan State University",
@@ -366,12 +366,12 @@
    "title": {
     "en": "Uzbek geography terminology, annotated",
     "ru": "Терминология географии на узбекском, размеченная",
-    "uz": "Oʻzbek tilidagi geografiya terminologiyasi, belgilangan"
+    "uz": "Oʻzbekcha geografiya atamalari, izohlangan"
    },
    "description": {
-    "en": "Spelling normalised to the standard Uzbek Latin alphabet; duplicates removed; Frequency in school (grades 5–11) and university textbooks, and the grade where each term first appears.",
-    "ru": "Написание приведено к стандартной узбекской латинице, убраны дубли; Частота в школьных (5–11 кл.) и вузовских учебниках и класс, где термин появляется впервые.",
-    "uz": "Написание приведено к стандартной узбекской латинице, убраны дубли; Частота в школьных (5–11 кл.) и вузовских учебниках и класс, где термин появляется впервые."
+    "en": "Uzbek geography terms from school and university textbooks, with usage frequencies, examples and translations for a subset of terms.",
+    "ru": "Термины из школьных и вузовских учебников географии на узбекском языке. Частоты употребления, примеры и переводы для части терминов.",
+    "uz": "Maktab va universitet geografiya darsliklaridagi oʻzbekcha atamalar. Qoʻllanish chastotalari, misollar va atamalarning bir qismi uchun tarjimalar."
    },
    "category": "Language and knowledge",
    "countries": [
@@ -395,7 +395,7 @@
    "formats": null,
    "publication_year": 2026,
    "mentions_central_asia": false,
-   "updated_at": "2026-11-24T10:06:10.869797+00:00",
+   "updated_at": "2026-11-25T02:25:07.052355+00:00",
    "organization": {
     "id": "UNI-UZ-0180",
     "name": "Ургенчский государственный университет имени Аль-Бируни",
