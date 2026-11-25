@@ -11,7 +11,7 @@ export function quickContactForm(lang = "ru", datasetId = "", requestType = "par
     '<label><span>' + tr("How can we contact you?", "Как с вами связаться?", "Siz bilan qanday bogʻlanamiz?") + '</span><input name="contact" type="text" required maxlength="500" placeholder="' + tr("Telegram, phone, email or another contact", "Telegram, телефон, email или другой контакт", "Telegram, telefon, email yoki boshqa aloqa") + '"></label>' +
     '<label><span>' + tr("Comment · optional", "Комментарий · необязательно", "Izoh · ixtiyoriy") + '</span><textarea name="comment" rows="3" maxlength="20000"></textarea></label>' +
     '<label class="consent"><input type="checkbox" name="consent" required><span>' + tr("I agree to the processing of my information to reply to this request", "Согласен(на) на обработку данных для ответа на обращение", "Murojaatga javob berish uchun maʼlumotlarim qayta ishlanishiga roziman") + ' · <a href="' + new URL("documents/personal-data-consent.html", rootUrl).href + '" target="_blank" rel="noopener">' + tr("consent", "согласие", "rozilik") + '</a></span></label>' +
-    '<button class="btn btn-primary" type="submit">' + (requestType === "participation" ? tr("I want to participate", "Хочу участвовать", "Ishtirok etmoqchiman") : tr("Send request", "Отправить запрос", "Soʻrov yuborish")) + '</button><p class="form-status small" role="status" aria-live="polite"></p></form>';
+    '<button class="btn btn-primary" type="submit">' + (requestType === "participation" ? tr("Join CORE", "Подключиться", "Qoʻshilish") : tr("Send request", "Отправить запрос", "Soʻrov yuborish")) + '</button><p class="form-status small" role="status" aria-live="polite"></p></form>';
 }
 
 export function bindContactForms(root = document, lang = "ru") {

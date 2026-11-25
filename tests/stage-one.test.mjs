@@ -171,7 +171,7 @@ test("one consumer using metadata and data is counted once and demo evidence sta
   const rows = ["metadata", "data"].map(usage_scope => ({ consumer_id: "one", consumer, usage_scope, purpose: { ru: "Проверка" }, is_demo: true }));
   assert.equal(api.groupUsage(rows).length, 1);
   const html = api.renderDatasetUsage(rows, "ru", true);
-  assert.match(html, /Кто использует данные: 1/);
+  assert.match(html, /Примеры применения · 1 · включая демо/);
   assert.match(html, /Метаданные/);
   assert.match(html, /Содержимое/);
   assert.match(html, /Демо/);

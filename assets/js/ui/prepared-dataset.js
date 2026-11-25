@@ -29,15 +29,15 @@ function insight(d, lang = "ru") {
       '<div class="tbl-wrap"><table class="t"><tr><th>Сегмент</th><th>Человек</th><th>Высокий охват</th><th>Намерение купить, 1–5</th></tr>' +
       seg.map(function (x) { var v = s.segments[x[0]]; return "<tr><td>" + x[1] + '</td><td class="n">' + v.n + '</td>' + chartValue(v.high_inclusion_pct + "%", v.high_inclusion_pct) + '<td class="n">' + String(v.intention).replace(".", ",") + "</td></tr>"; }).join("") +
       "</table></div>" +
-      '<p class="sheet-caption">С намерением купить сильнее всего связаны: ' + s.drivers_of_intention.slice(0, 3).map(function (x) { return "<b>" + x[2].toLowerCase() + "</b> (r = " + String(x[4]).replace(".", ",") + ")"; }).join(", ") +
-      ". Финансовая грамотность связана слабо (r = " + String(s.drivers_of_intention.filter(function (x) { return x[0] === "fin_literacy_score"; })[0][4]).replace(".", ",") + "): продавать надо пользу и доверие, а не обучение. Сельские жители застрахованы реже городских.</p>";
+      '<p class="sheet-caption">Связь с намерением купить — ' + s.drivers_of_intention.slice(0, 3).map(function (x) { return "<b>" + x[2].toLowerCase() + "</b> (r = " + String(x[4]).replace(".", ",") + ")"; }).join(", ") +
+      ". Финансовая грамотность связана слабо (r = " + String(s.drivers_of_intention.filter(function (x) { return x[0] === "fin_literacy_score"; })[0][4]).replace(".", ",") + "). Показанные связи относятся к участникам этого опроса.</p>";
   } else if (d.key === "covid") {
     var order = ["Pre-VOC", "Alpha-dominant", "Delta-dominant"], lbl = { "Pre-VOC": "До новых вариантов (до 31.01.2021)", "Alpha-dominant": "Альфа (02–06.2021)", "Delta-dominant": "Дельта (07–12.2021)" };
     h += "<h2>Исходы по периодам</h2>" +
       '<p class="sheet-caption">В анализ вошли ' + nf(s.analytic) + ' из ' + nf(d.rows) + ' записей. Повторные госпитализации исключены из расчёта.</p><div class="tbl-wrap"><table class="t"><tr><th>Период</th><th>Пациентов</th><th>Смертность</th><th>Смерть или реанимация</th></tr>' +
       order.map(function (k) { var v = s.periods[k]; return "<tr><td>" + lbl[k] + '</td><td class="n">' + nf(v.n) + '</td>' + chartValue(String(v.death_pct).replace(".", ",") + "%", v.death_pct) + '<td class="n">' + String(v.severe_pct).replace(".", ",") + "%</td></tr>"; }).join("") +
       "</table></div>" +
-      '<p class="sheet-caption">Чаще всего в посевах: ' + s.top_organisms.slice(0, 4).map(function (x) { return "<i>" + esc(x[0]) + "</i> (" + x[1] + ")"; }).join(", ") + ". " + s.coded_variables + " переменных получили стандартные коды (МКБ-10, LOINC, ATC, NCBI) — набор можно объединять с другими клиниками.</p>";
+      '<p class="sheet-caption">Часто встречающиеся микроорганизмы в посевах — ' + s.top_organisms.slice(0, 4).map(function (x) { return "<i>" + esc(x[0]) + "</i> (" + x[1] + ")"; }).join(", ") + ". " + s.coded_variables + " переменных получили стандартные коды (МКБ-10, LOINC, ATC, NCBI).</p>";
   } else {
     var max = s.categories[0][1];
     h += "<h2>Темы и частоты терминов</h2>" +

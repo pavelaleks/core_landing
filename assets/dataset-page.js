@@ -78,7 +78,7 @@ async function render() {
       const intro = main.querySelector(".sheet-intro");
       if (intro && local(record.description)) intro.textContent = local(record.description);
       favoriteControl(main);
-      if (!main.querySelector(".dataset-contact")) main.insertAdjacentHTML("beforeend", '<div class="wrap"><section class="dataset-contact sheet-wrap" data-guest-only><details class="quick-contact"><summary class="btn btn-ghost">' + tr("I want to participate", "Хочу участвовать", "Ishtirok etmoqchiman") + '</summary><div data-quick-contact data-dataset-id="' + esc(id) + '"></div></details></section></div>');
+      if (!main.querySelector(".dataset-contact")) main.insertAdjacentHTML("beforeend", '<div class="wrap"><section class="dataset-contact sheet-wrap" data-guest-only><details class="quick-contact"><summary class="btn btn-ghost">' + tr("Join CORE", "Подключиться", "Qoʻshilish") + '</summary><div data-quick-contact data-dataset-id="' + esc(id) + '"></div></details></section></div>');
       mountQuickContacts(main, lang);
       document.dispatchEvent(new Event("core:quick-contact"));
     }
