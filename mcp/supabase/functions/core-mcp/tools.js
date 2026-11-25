@@ -276,7 +276,7 @@ export async function researcherProfile(data, oa, { id, works = 10 }, s2 = null)
   }
   const mostCited = (top?.results || []).map((w) => workSummary(data, w));
   const latest = (recent?.results || []).slice(0, n).map((w) => workSummary(data, w));
-  await enrichWorks(s2, [...mostCited, ...latest]);
+  const s2Error = await enrichWorks(s2, [...mostCited, ...latest]);
   const coauthors = [...co.values()].sort((a, b) => b.joint_works - a.joint_works).slice(0, 15).map((c) => ({ ...c, institutions: [...c.institutions].slice(0, 3) }));
   return compact({
     ...researcherSummary(data, author),
@@ -287,6 +287,7 @@ export async function researcherProfile(data, oa, { id, works = 10 }, s2 = null)
     recent_works: latest,
     frequent_coauthors: coauthors,
     coauthors_note: "Counted over the latest 100 works, excluding papers with more than 50 authors.",
+    enrichment_note: s2Error,
     source: (s2 ? "OpenAlex (CC0) and Semantic Scholar (tldr, abstract, influential_citations), live." : "OpenAlex (CC0), live.") + " Author disambiguation is OpenAlex's; one person can have several profiles.",
   });
 }
@@ -304,11 +305,14 @@ export async function searchWorks(data, oa, { query, university, from_year, limi
   } else filters.push(`institutions.country_code:${CA_COUNTRIES}`);
   if (from_year) filters.push(`publication_year:>${clamp(from_year, 1900, 2100, 2000) - 1}`);
   const page = await oa("works", { search: query, filter: filters.join(","), per_page: per, select: WORK_FIELDS });
+  const results = (page?.results || []).map((w) => workSummary(data, w));
+  const s2Error = await enrichWorks(s2, results);
   return compact({
     query,
     university: uni ? { id: uni.id, name: uni.name_en || uni.name } : null,
     total_in_openalex: page?.meta?.count,
-    results: await enrichWorks(s2, (page?.results || []).map((w) => workSummary(data, w))),
+    results,
+    enrichment_note: s2Error,
     source: s2 ? "OpenAlex (CC0) and Semantic Scholar (tldr, abstract, influential_citations), live" : "OpenAlex (CC0), live",
   });
 }

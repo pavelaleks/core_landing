@@ -159,6 +159,7 @@ test("Semantic Scholar enriches works only when a key is set, and never breaks a
   const res = await call(h, "search_works", { query: "paper" });
   assert.ok(!res.isError);
   assert.equal(res.structuredContent.results[0].tldr, undefined);
+  assert.equal(res.structuredContent.enrichment_note, "Semantic Scholar HTTP 500");
 });
 
 test("datasets: search by university and inspect", async () => {
